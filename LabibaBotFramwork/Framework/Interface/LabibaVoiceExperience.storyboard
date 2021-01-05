@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dzc-VA-Y6M">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Voice ExperienceVC-->
+        <scene sceneID="LIO-5I-vf1">
+            <objects>
+                <viewController storyboardIdentifier="VoiceExperienceVC" id="dzc-VA-Y6M" customClass="VoiceExperienceVC" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S0p-gY-j1i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zl-Ws-YVr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1Q-7V-NZd">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCt-pm-ibh">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="M2L-fG-Nd1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="M2L-fG-Nd1" secondAttribute="trailing" id="O1N-kR-PE7"/>
+                                                    <constraint firstItem="M2L-fG-Nd1" firstAttribute="top" secondItem="OCt-pm-ibh" secondAttribute="top" id="knI-iO-GBi"/>
+                                                    <constraint firstAttribute="bottom" secondItem="M2L-fG-Nd1" secondAttribute="bottom" id="lNY-iX-UI2"/>
+                                                    <constraint firstItem="M2L-fG-Nd1" firstAttribute="leading" secondItem="OCt-pm-ibh" secondAttribute="leading" id="xxB-pv-buq"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="OCt-pm-ibh" secondAttribute="trailing" id="kPI-Wa-kJi"/>
+                                            <constraint firstItem="OCt-pm-ibh" firstAttribute="top" secondItem="d1Q-7V-NZd" secondAttribute="top" id="uVf-jk-Drj"/>
+                                            <constraint firstAttribute="bottom" secondItem="OCt-pm-ibh" secondAttribute="bottom" id="umT-nt-mRi"/>
+                                            <constraint firstItem="OCt-pm-ibh" firstAttribute="leading" secondItem="d1Q-7V-NZd" secondAttribute="leading" id="vNT-DE-pvW"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="d1Q-7V-NZd" firstAttribute="top" secondItem="6zl-Ws-YVr" secondAttribute="top" id="Clg-w6-m1L"/>
+                                    <constraint firstItem="OCt-pm-ibh" firstAttribute="width" secondItem="6zl-Ws-YVr" secondAttribute="width" id="Dfi-WH-eIb"/>
+                                    <constraint firstAttribute="trailing" secondItem="d1Q-7V-NZd" secondAttribute="trailing" id="FPS-F3-0fK"/>
+                                    <constraint firstItem="OCt-pm-ibh" firstAttribute="height" secondItem="6zl-Ws-YVr" secondAttribute="height" priority="250" id="T2C-wL-SOI"/>
+                                    <constraint firstAttribute="bottom" secondItem="d1Q-7V-NZd" secondAttribute="bottom" id="kUe-aF-uFn"/>
+                                    <constraint firstItem="d1Q-7V-NZd" firstAttribute="leading" secondItem="6zl-Ws-YVr" secondAttribute="leading" id="p5d-Lj-IkA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6zl-Ws-YVr" secondAttribute="bottom" id="ITa-W9-DfX"/>
+                            <constraint firstItem="6zl-Ws-YVr" firstAttribute="leading" secondItem="WGv-mf-peu" secondAttribute="leading" id="NhE-A3-IVM"/>
+                            <constraint firstItem="6zl-Ws-YVr" firstAttribute="trailing" secondItem="WGv-mf-peu" secondAttribute="trailing" id="g5E-vB-jm9"/>
+                            <constraint firstItem="6zl-Ws-YVr" firstAttribute="top" secondItem="WGv-mf-peu" secondAttribute="top" id="hv2-sz-lSo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WGv-mf-peu"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="yAb-YE-T58" appends="YES" id="TsO-96-xH0"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="reusableStackView" destination="M2L-fG-Nd1" id="yA5-oY-TIU"/>
+                        <outlet property="reusableView" destination="OCt-pm-ibh" id="pGP-QJ-BhY"/>
+                        <outlet property="scrollView" destination="d1Q-7V-NZd" id="n3y-Cj-opT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jj1-Sz-LWT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yAb-YE-T58">
+                    <connections>
+                        <action selector="viewDidTap:" destination="dzc-VA-Y6M" id="szy-2q-Jlt"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-97.101449275362327" y="162.72321428571428"/>
+        </scene>
+    </scenes>
+</document>

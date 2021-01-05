@@ -1,0 +1,167 @@
+/* 
+  Localizable.strings
+  LabibaClient_DL
+
+  Created by AhmeDroid on 9/18/17.
+  Copyright © 2017 Imagine Technologies. All rights reserved.
+*/
+
+
+// lg: Login
+"lg-fail-message" = "عذراً !. معلومات الحساب المدخلة خاطئة، هل تريد التسجيل؟";
+"lg-fail-connect" = "تعذر الإتصال بالخدمة";
+"lg-fail-connect-op-re" = "أعد التسجيل";
+"lg-fail-connect-op-try" = "حاول مرة أخرى";
+"lg-invalid-fields" = "الرجاء ملء جميع الحقول بشكل مناسب";
+
+
+// sn: Sign Up
+"sn-internet-error" = "التسجيل غير ممكن. الرجاء تفقد الإتصال بالإنترنت ومن ثم المحاولة مرة أخرى";
+"sn-invalid-info" = "التسجيل غير ممكن. المعلومات المدخلة لاسم المستخدم أو كلمة سر غير صالحة";
+"sn-went-wrong" = "عذراً، خطأ غير متوقع !";
+"sn-novalid-response" = "إجابة غير صالحة لطلب تسجيل المستخدم";
+"sn-pwd-mismatch" = "كلمة السر غير مطابقة";
+
+
+// al: Alerts
+"al-call-message" = "هل أنت متأكد من أنك تريد الإتصال ؟";
+"al-feedback-placeholder" = "اكتب تعليقك هنا";
+"make_sure_siri_enabled" = "الرجاءالتأكد من تفعيل siri ";
+"make_sure_voice_recognition_enabled" = "الرجاء تفعيل خاصية التعرف على الصوت";
+"make_sure_mic_enabled" = "الرجاء تفعيل الميكروفون";
+"chang_language" = "تغيير اللغة";
+"alert" = "تنبيه";
+"appLacationServiceActivation" = "للمتابعة يرجى تفعيل الموقع الجغرافي للتطبيق";
+"deviceLacationServiceActivation" = "للمتابعة يرجى تفعيل الموقع الجغرافي للجهاز \n Setting > Privacy > Location Services";
+
+
+
+// cv: Conversation
+"cv-action-fail" = "عذراً، لا أستطيع الإجابة هذه اللحظة. من فضلك حاول في وقت لاحق.";
+"cv-default-fail" = "عذراً، لا أستطيع إجابة طلبك هذا. من فضلك حاول في وقت لاحق.";
+"cv-default-fail-op1" = "حاول مرة أخرى";
+"cv-default-fail-op2" = "تحدث مع الدليل السياحي";
+
+
+// gp: Generic Place
+"gp-opening" = "أوقات الدوام";
+"gp-phone" = "رقم الهاتف";
+"gp-website" = "الموقع الالكتروني";
+"gp-email" = "البريد الإلكتروني";
+"gp-date" = "الموعد";
+"gp-time" = "الوقت";
+"gp-price" = "مستوى الأسعار";
+"gp-address" = "العنوان";
+"gp-category" = "الفئة";
+"gp-organizer" = "الجهة المنظمة";
+"gp-hotel-stars" = "التصنيف";
+
+
+// it: Itinerary
+"it-added-message" = "أضيف للخطة";
+"it-fav-added-message" = "أضيف لفعالياتك المفضلة";
+"it-fav-btn-added" = "مضاف للخطة";
+"it-fav-btn-removed" =  "أضف إلى الخطة";
+
+//"app-title" = "نات هيلث";
+//"app-title" = "Sharjah AI Tour Guide";
+//"app-title" = "AI Tour Guide";
+"app-title" = "ChatBot";
+
+"Back" = "رجوع";
+"Cancel" = "إلغاء";
+"Yes" = "نعم";
+"Close" = "إغلاق";
+"Save" = "حفظ";
+"OK" = "حسناً";
+"Choose From Library" = "اختر من مكتبة الصور";
+"Take Photo" = "التقط صورة بالكاميرا";
+"Unknown" = "غير معروف";
+"Guest" = "ضيفنا الكريم" ;
+"Select Location" = "اختر المكان";
+"detectLocation" = "تحديد الموقع";
+"locationError" = "حدث خطأ في تحديد موقعك الحالي";
+"location-msg" = "هل ترغب باختيار مكانك '%@' ؟";
+"Call" = "إتصل";
+"why-msg" = "هلّا أخبرتنا لماذا؟";
+"Submit" = "إرسال";
+"Sign Up" = "تسجيل";
+"Please wait" = "الرجاء الإنتظار ..";
+"Try Again" = "أعِد المحاولة";
+"Day" = "اليوم";
+"City" = "المدينة";
+"error-msg" = "عذراً . وقع خطأ ما، الرجاء المحاولة لاحقاً";
+
+"attach-title" = "اختر نوع المرفق";
+"attach-photo" = "صورة";
+"attach-place" = "مكان";
+
+"conv-load" = "تحضير المحادثة";
+"labiba" = "لبيبة";
+"uploading" = "تحميل";
+"loading" = "جار التحميل";
+
+"radius-title" = "حول '%@' بمسافة:";
+"radius-default-title" = "حول المكان المختار بمسافة:";
+
+"km" = "كيلومتراً";
+"meter" = "متراً";
+"countdown-title" = "العداد التنازلي";
+
+"camera-inaccessible" = "معذرة! لا يمكن إستخدام الكاميرا، تأكد من منح التطبيق إمكانية الوصول للكاميرا";
+"library-inaccessible" = "معذرة! لا يمكن الوصول لمكتبة الصور، تأكد من منح التطبيق إمكانية الوصول للمكتبة";
+
+"select-date" = "إختر وقتاً";
+"complete-dates" = "الرجاء إختيار وقت البداية والنهاية";
+"validate-dates" = "وقت البداية يجب ان يكون قبل وقت النهاية";
+
+"start-recording" = "إبدأ التحدث !";
+"Click to choose" = "انقر للاختيار";
+"scanTitle" = "مسح QR Code";
+"main menu" = "القائمة الرئيسية";
+"startSpeakingOrTyping" = "ابدأ الكتابة او التحدث";
+
+// Validation
+"You Should Enter A Valid Number & Must be At not more than " = "يجب ادخال رقم صحيح ، وان لايكون اكثر من  ";
+"You Should Enter A Valid Characters and Numbers & Must be At not more than " = " يجب ادخال ارقام وحروف صحيحة ويجب الا تكون اكثر من  " ;
+"You Should Enter A Valid Arabic Characters  & Must be At not more than " = "يجب ادخال حروف باللغه العربيه والا تتجاوز ";
+"You Should Enter A Valid Characters & Must be At not more than " = "يجب ادخال حروف صحيحة والا تتجاوز";
+"You Should Enter A Valid Date" = "يجب ادخال تاريخ صحيح ";
+"You Should Enter A Valid Mail & Must be At not more than " = "يجب ادخال ايميل صحيح وان لايتجاوز " ;
+"You Should Enter A Valid Text" = "يجب ادخال نص صحيح";
+"Character" = "حرف";
+// ratingScreen
+"submit" = "تقديم";
+"rateLater" = "التقييم لاحقا";
+"enterPhoneNumber" = "يرجى ادخال رقم هاتفك";
+"Phone Number(optional)" = "رقم الهاتف (اختياري)";
+
+// choices
+"Pick date and time" = "إختر التاريخ والوقت";
+"Pick date" = "إختر التاريخ";
+"scan" = "مسح";
+"Pick time" = "إختر الوقت" ;
+"Select Location" = "إختر الموقع" ;
+// popups
+"thanksForYourRating" = "شكرا على التقييم";
+
+
+// NatHealth
+
+
+"I’m Natalie" = "\"مرحبا، أنا نتالي\"" ;
+"Please tap the mic icon" = "يمكنك الضغط على زر الميكرفون أدناه لكي تتحدث معي وتسألني أي سؤال" ;
+"writeComment" = "اكتب تعليقك هنا...";
+
+
+// Bahrain cridet
+"I’m Yousef" = "\"مرحبا، أنا يوسف!\"" ;
+
+
+// sharja
+"I’m Fatma" =                        "\"مرحبا، أنا فاطمة\"" ;
+"Please tap the mic icon sharjah" = "الرجاء الضغط على زر الميكرفون لكي تتحدث معي أو كتابة ما تبحث عنه" ;
+"writeComment" = "اكتب تعليقك هنا...";
+
+//Rating form
+"sharRating" = "شاركنا رأيك!";

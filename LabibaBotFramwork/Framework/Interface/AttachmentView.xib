@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="AttachmentView" id="iN0-l3-epB" customClass="AttachmentView" customModule="LabibaBotFramwork" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="627" height="181"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74t-66-fy6">
+                    <rect key="frame" x="0.0" y="0.0" width="627" height="181"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperclip-solid" translatesAutoresizingMaskIntoConstraints="NO" id="in9-tL-Wwp">
+                            <rect key="frame" x="15" y="75.666666666666671" width="30" height="30"/>
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="BHv-rB-2In"/>
+                                <constraint firstAttribute="width" constant="30" id="aS9-xQ-poo"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmm-MZ-Fxu">
+                            <rect key="frame" x="60" y="10" width="1" height="161"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="Czz-cg-374"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="file_name.pdf" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtp-cA-GlE">
+                            <rect key="frame" x="76" y="10" width="546" height="161"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0af-vZ-qsT">
+                            <rect key="frame" x="0.0" y="0.0" width="627" height="181"/>
+                            <connections>
+                                <action selector="didClickCell:" destination="iN0-l3-epB" eventType="touchUpInside" id="bXn-1C-WAK"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="in9-tL-Wwp" firstAttribute="centerY" secondItem="74t-66-fy6" secondAttribute="centerY" id="0dx-Y0-qNy"/>
+                        <constraint firstItem="dmm-MZ-Fxu" firstAttribute="top" secondItem="74t-66-fy6" secondAttribute="top" constant="10" id="Gnd-y1-t5Q"/>
+                        <constraint firstItem="Xtp-cA-GlE" firstAttribute="leading" secondItem="dmm-MZ-Fxu" secondAttribute="trailing" constant="15" id="HlU-8f-iSm"/>
+                        <constraint firstItem="in9-tL-Wwp" firstAttribute="leading" secondItem="74t-66-fy6" secondAttribute="leading" constant="15" id="McX-Ot-qr7"/>
+                        <constraint firstItem="0af-vZ-qsT" firstAttribute="height" secondItem="74t-66-fy6" secondAttribute="height" id="Ned-hi-he2"/>
+                        <constraint firstAttribute="bottom" secondItem="Xtp-cA-GlE" secondAttribute="bottom" constant="10" id="QfU-ao-xky"/>
+                        <constraint firstItem="Xtp-cA-GlE" firstAttribute="top" secondItem="74t-66-fy6" secondAttribute="top" constant="10" id="RmT-ae-e5X"/>
+                        <constraint firstAttribute="bottom" secondItem="dmm-MZ-Fxu" secondAttribute="bottom" constant="10" id="ZCD-4U-GdA"/>
+                        <constraint firstItem="dmm-MZ-Fxu" firstAttribute="leading" secondItem="in9-tL-Wwp" secondAttribute="trailing" constant="15" id="d46-CA-hq7"/>
+                        <constraint firstItem="0af-vZ-qsT" firstAttribute="centerY" secondItem="74t-66-fy6" secondAttribute="centerY" id="eQ9-e2-hF7"/>
+                        <constraint firstAttribute="trailing" secondItem="Xtp-cA-GlE" secondAttribute="trailing" constant="5" id="m8H-Ok-jVO"/>
+                        <constraint firstItem="0af-vZ-qsT" firstAttribute="width" secondItem="74t-66-fy6" secondAttribute="width" id="mR0-aV-ti1"/>
+                        <constraint firstItem="0af-vZ-qsT" firstAttribute="centerX" secondItem="74t-66-fy6" secondAttribute="centerX" id="r2m-SI-bgI"/>
+                        <constraint firstItem="Xtp-cA-GlE" firstAttribute="centerY" secondItem="74t-66-fy6" secondAttribute="centerY" id="zgI-Fh-Gc5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="74t-66-fy6" secondAttribute="trailing" id="Jn4-pL-mvD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="74t-66-fy6" secondAttribute="bottom" id="OPg-pf-8LU"/>
+                <constraint firstItem="74t-66-fy6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hCb-A5-62z"/>
+                <constraint firstItem="74t-66-fy6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="lI9-eN-B1E"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="containerView" destination="74t-66-fy6" id="eSb-eW-x9B"/>
+                <outlet property="imageView" destination="in9-tL-Wwp" id="orh-SY-KRS"/>
+                <outlet property="separatorView" destination="dmm-MZ-Fxu" id="leH-p6-b4o"/>
+                <outlet property="titleLbl" destination="Xtp-cA-GlE" id="HV8-KA-qUR"/>
+            </connections>
+            <point key="canvasLocation" x="290.57971014492756" y="-86.820652173913047"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="paperclip-solid" width="448" height="512"/>
+    </resources>
+</document>

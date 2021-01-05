@@ -1,0 +1,89 @@
+//
+//  CommonGlobals.swift
+//  LabibaBotFramwork
+//
+//  Created by Abdulrahman on 9/22/19.
+//  Copyright © 2019 Abdul Rahman. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+public var ipadFactor:CGFloat = 0
+public var ipadMargin:CGFloat {
+    return ipadFactor*80
+}
+
+
+//func applyBotFont(textLang:Language? = nil  ,bold:Bool = false,size:CGFloat = 17)->UIFont{
+//    let langCode = textLang ?? SharedPreference.shared.botLangCode
+//    let ipadIncrease = ipadFactor * 5
+//    switch langCode {
+//    case .ar:
+//        if bold {return  UIFont(name: "TheSans-Bold", size:size + ipadIncrease )!}
+//       return  UIFont(name: "TheSans-Plain", size:size + ipadIncrease )!
+//    case .en:
+//        if bold {return  UIFont(name: "AvantGarde-Bold", size:size + 1 + ipadIncrease)!}
+//        return  UIFont(name: "AvantGarde-Medium", size:size + 1 + ipadIncrease)!
+//    }
+//} // nathealth
+
+
+// func applyBotFont(textLang:Language? = nil  ,bold:Bool = false,size:CGFloat = 17)->UIFont{
+//    let langCode = textLang ?? SharedPreference.shared.botLangCode
+//     let ipadIncrease = ipadFactor * 9
+//    switch langCode {
+//    case .ar:
+//        if bold {return  UIFont(name: "DINNextLTW23-Bold", size:size + ipadIncrease )!}
+//        return  UIFont(name: "DINNextLTW23-Regular", size:size + ipadIncrease )!
+//    case .en:
+//        if bold {return  UIFont(name: "DINNextLTW23-Bold", size:size + 1 + ipadIncrease)!}
+//        return  UIFont(name: "DINNextLTW23-Regular", size:size + 1 + ipadIncrease)!
+//    }
+//}// sharja
+
+ func applyBotFont(textLang:Language? = nil  ,bold:Bool = false,size:CGFloat = 17)->UIFont{
+    let langCode = textLang ?? SharedPreference.shared.botLangCode
+     let ipadIncrease = ipadFactor * 9
+    var font:UIFont?
+    
+    switch langCode {
+    case .ar:
+        if bold {font =  UIFont(name: Labiba.font?.boldAR ?? "" , size:size + ipadIncrease )}else{
+            font =  UIFont(name: Labiba.font?.regAR ?? "", size:size + ipadIncrease )}
+    case .en:
+        if bold {font =  UIFont(name:  Labiba.font?.boldEN ?? "", size:size + 1 + ipadIncrease)}else{
+            font =  UIFont(name: Labiba.font?.regEN ?? "", size:size + 1 + ipadIncrease)}
+    case .de :
+        break
+    case .ru:
+        break
+    case .zh :
+        break
+    }
+    
+    return font ?? UIFont.systemFont(ofSize: size  + ipadIncrease)
+}
+
+func showToast(message : String , inView view :UIView)
+{
+    let size = message.size(maxWidth: screenWidth - 50 , font: applyBotFont(size: 15))
+    let width = size.width + 30
+    let toastLabel = UILabel(frame: CGRect(x: screenWidth/2 - width/2, y: screenHeight - 100 , width: width, height: size.height + 10))
+    toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+    toastLabel.textColor = UIColor.white
+    toastLabel.numberOfLines = 5
+    toastLabel.textAlignment = .center;
+    toastLabel.font = applyBotFont(size: 15)
+    toastLabel.text = message
+    toastLabel.alpha = 1.0
+    toastLabel.layer.cornerRadius = 10;
+    toastLabel.clipsToBounds  =  true
+    view.addSubview(toastLabel)
+    UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+        toastLabel.alpha = 0.0
+    }, completion: {(isCompleted) in
+        toastLabel.removeFromSuperview()
+    })
+}
+

@@ -1,0 +1,155 @@
+/* 
+  Localizable.strings
+  LabibaClient_DL
+
+  Created by AhmeDroid on 9/18/17.
+  Copyright © 2017 Imagine Technologies. All rights reserved.
+*/
+
+
+// lg: Login
+"lg-fail-message" = "Invalid account information. Would you like to sign up?";
+"lg-fail-connect" = "Can't connect user to server.";
+"lg-fail-connect-op-re" = "Re-login";
+"lg-fail-connect-op-try" = "Try Again";
+"lg-invalid-fields" = "Please fill all fields properly";
+
+
+// sn: Sign Up
+"sn-internet-error" = "Unable to log in. Please check your internet connection and try again";
+"sn-invalid-info" = "Unable to Sign In. An invalid User Name or Password was entered.";
+"sn-went-wrong" = "Oops something went wrong";
+"sn-novalid-response" = "No valid response for user signing up request";
+"sn-pwd-mismatch" = "Passwords do not match";
+
+
+// al: Alerts
+"al-call-message" = "Are you sure you want to call?";
+"al-feedback-placeholder" = "Type your comment";
+"make_sure_siri_enabled" = "Please make sure siri is enabled";
+"make_sure_voice_recognition_enabled" = "Please enable voice recognition";
+"make_sure_mic_enabled" = "Please enable the microphone";
+"chang_language" = "Изменить язык";
+"alert" = "Alert";
+"appLacationServiceActivation" = "Please activate App Location services to continue";
+"deviceLacationServiceActivation" = "Please activate device Location services to continue\n Setting > Privacy > Location Services";
+
+// cv: Conversation
+"cv-action-fail" = "I’m sorry, I can’t answer at the moment. Please try again later.";
+"cv-default-fail" = "I'm not able to get that for you, please try again later.";
+"cv-default-fail-op1" = "Try Again";
+"cv-default-fail-op2" = "Speak with our agent";
+
+
+// gp: Generic Place
+"gp-opening" = "OPENING HOURS";
+"gp-phone" = "PHONE NUMBER";
+"gp-website" = "WEBSITE";
+"gp-email" = "EMAIL ADDRESS";
+"gp-date" = "DATE";
+"gp-time" = "TIME";
+"gp-price" = "PRICE RANGE";
+"gp-address" = "ADDRESS";
+"gp-category" = "CATEGORY";
+"gp-organizer" = "ORGANIZER NAME";
+"gp-hotel-stars" = "STARS";
+
+
+// it: Itinerary
+"it-added-message" = "was added to plan";
+"it-fav-added-message" =  "was added to your favorites";
+"it-fav-btn-added" = "ADDED";
+"it-fav-btn-removed" =  "ADD TO TRIP";
+
+//"app-title" = "NatHealth";
+//"app-title" = "Sharjah AI Tour Guide";
+//"app-title" = "AI Tour Guide";
+"app-title" = "ChatBot";
+
+"Back" = "Back";
+"Cancel" = "Cancel";
+"Yes" = "Yes";
+"Close" = "Close";
+"Save" = "Save";
+"OK" = "OK";
+"Choose From Library" = "Choose From Library";
+"Take Photo" = "Take Photo";
+"Unknown" = "Unknown";
+"Guest" = "Guest" ;
+"Select Location" = "Select Location";
+"detectLocation" = "Select Location";
+"locationError" = "An error occurred while determining your current location";
+"location-msg" = "Are you sure you want to choose '%@' as your location?";
+"Call" = "Call";
+"why-msg" = "Would you tell us why?";
+"Submit" = "Submit";
+"Sign Up" = "Sign Up";
+"Please wait" = "Please wait ..";
+"Try Again" = "Try Again";
+"Day" = "Day";
+"City" = "City";
+"error-msg" = "Sorry !. Something went wrong, Please try later !";
+
+"attach-title" = "Select Media";
+"attach-photo" = "Photo";
+"attach-place" = "Location";
+
+"conv-load" = "Starting Conversation";
+"labiba" = "Labiba";
+"uploading" = "Uploading";
+"loading" = "погрузка";
+
+"radius-title" = "Around '%@' by:";
+"radius-default-title" = "Around selected place by:";
+
+"km" = "KM";
+"meter" = "meters";
+"countdown-title" = "Countdown Timer";
+
+"camera-inaccessible" = "Sorry. Device Camera is not accessible !";
+"library-inaccessible" ="Sorry. Photo Library is not accessible !";
+
+"select-date" = "Select Date";
+"complete-dates" = "Please select Date , from time and to time";
+"validate-dates" = "From time should be before to time";
+
+"start-recording" = "Start Recording !";
+"scanTitle" = "Scan QR Code";
+"main menu" = "Главное меню" ;
+
+
+// Validation
+"You Should Enter A Valid Number & Must be At not more than " = "You Should Enter A Valid Number & Must be At not more than ";
+"You Should Enter A Valid Characters and Numbers & Must be At not more than " = "You Should Enter A Valid Characters and Numbers & Must be At not more than " ;
+"You Should Enter A Valid Characters and Numbers & Must be At not more than " = "You Should Enter A Valid Characters and Numbers & Must be At not moer than " ;
+"You Should Enter A Valid Arabic Characters  & Must be At not more than " = "You Should Enter A Valid Arabic Characters  & Must be At not more than ";
+"You Should Enter A Valid Characters & Must be At not more than "="You Should Enter A Valid Characters & Must be At not more than ";
+"You Should Enter A Valid Date & Must be At not more than " = "You Should Enter A Valid Date & Must be At not more than ";
+"You Should Enter A Valid Numbers & Must be At not more than " = "You Should Enter A Valid Numbers & Must be At not more than ";
+"You Should Enter A Valid Mail & Must be At not more than " = "You Should Enter A Valid Mail & Must be At not more than " ;
+"You Should Enter A Valid Text" = "You Should Enter A Valid Text";
+"Character" ="Character";
+
+// ratingScreen
+"submit" = "Submit";
+"rateLater" = "Rate Later";
+// choices
+"Pick date and time" = "Pick date and time";
+"Pick date" = "Pick date" ;
+"scan" = "Scan";
+"Pick time" = "Pick time" ;
+"Select Location" = "Select Location" ;
+// popups
+"thanksForYourRating" = "Thank you for the rating";
+// NatHealth
+"I’m Natalie" = "\"Hi, I’m Natalie!\"";
+"Please tap the mic icon" = "Please tap the mic icon below to ask me a question.";
+"writeComment" = "Write your comment here";
+
+// Bahrain cridet
+"I’m Yousef" = "\"Hi, I’m Yousif!\"";
+
+// sharja
+"I’m Fatma" =                       "\"Привет, я Фатима!\"";
+"Please tap the mic icon sharjah" = "Введите то, что ищете";
+

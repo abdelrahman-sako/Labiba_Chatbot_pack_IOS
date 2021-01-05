@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomCollectionViewCell" customModule="LabibaBotFramwork" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="184" height="214"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUF-my-PUS">
+                    <rect key="frame" x="0.0" y="0.0" width="184" height="214"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2fZ-oI-74r">
+                            <rect key="frame" x="32" y="10" width="120" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="2fZ-oI-74r" secondAttribute="height" multiplier="1:1" id="3Lv-2J-7Sn"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Documents/Cards/Ids/Tickets" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQ5-Kq-mkc">
+                            <rect key="frame" x="10" y="135" width="164" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.0" green="0.57647058823529407" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="PQ5-Kq-mkc" firstAttribute="leading" secondItem="EUF-my-PUS" secondAttribute="leading" constant="10" id="3Jd-Ni-1cx"/>
+                        <constraint firstAttribute="trailing" secondItem="PQ5-Kq-mkc" secondAttribute="trailing" constant="10" id="5fX-PJ-coD"/>
+                        <constraint firstItem="2fZ-oI-74r" firstAttribute="top" secondItem="EUF-my-PUS" secondAttribute="top" constant="10" id="79z-uq-2bJ"/>
+                        <constraint firstItem="2fZ-oI-74r" firstAttribute="centerX" secondItem="PQ5-Kq-mkc" secondAttribute="centerX" id="BCd-cS-vrs"/>
+                        <constraint firstItem="PQ5-Kq-mkc" firstAttribute="top" secondItem="2fZ-oI-74r" secondAttribute="bottom" constant="5" id="Yvl-SQ-66T"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PQ5-Kq-mkc" secondAttribute="bottom" id="dHR-vh-59M"/>
+                        <constraint firstItem="2fZ-oI-74r" firstAttribute="leading" secondItem="EUF-my-PUS" secondAttribute="leading" constant="32" id="qSI-4X-eVK"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EUF-my-PUS" secondAttribute="trailing" id="Enl-JC-jMy"/>
+                <constraint firstItem="EUF-my-PUS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JLe-a0-qCg"/>
+                <constraint firstAttribute="bottom" secondItem="EUF-my-PUS" secondAttribute="bottom" id="Too-4V-6qz"/>
+                <constraint firstItem="EUF-my-PUS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="baE-06-sih"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bacgroundView" destination="EUF-my-PUS" id="tzf-bw-ISZ"/>
+                <outlet property="cellImageView" destination="2fZ-oI-74r" id="FLd-v7-Y7t"/>
+                <outlet property="cellNameLabel" destination="PQ5-Kq-mkc" id="V0w-Q9-NUk"/>
+            </connections>
+            <point key="canvasLocation" x="-172.80000000000001" y="-241.07946026986508"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="MediaView" customModule="LabibaBotFramwork">
+            <rect key="frame" x="0.0" y="0.0" width="738" height="372"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7c-bb-m9c">
+                    <rect key="frame" x="0.0" y="0.0" width="738" height="372"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="tintColor" white="1" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ic_play_circle_filled_48pt"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AP-cL-xtW">
+                    <rect key="frame" x="0.0" y="0.0" width="738" height="372"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="tintColor" white="1" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="playPause:" destination="iN0-l3-epB" eventType="touchUpInside" id="zjv-nl-aF5"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHN-Fa-k17">
+                    <rect key="frame" x="698" y="332" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <color key="tintColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ic_fullscreen_36pt"/>
+                    <connections>
+                        <action selector="enterFullscreenMode:" destination="iN0-l3-epB" eventType="touchUpInside" id="Rqq-tQ-pD7"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="playIcon" destination="B7c-bb-m9c" id="LCJ-jA-yaW"/>
+            </connections>
+            <point key="canvasLocation" x="84.057971014492765" y="-125.22321428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_fullscreen_36pt" width="36" height="36"/>
+        <image name="ic_play_circle_filled_48pt" width="48" height="48"/>
+    </resources>
+</document>

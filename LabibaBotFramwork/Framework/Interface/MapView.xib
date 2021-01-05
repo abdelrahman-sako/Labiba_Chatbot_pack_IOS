@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MapView" customModule="LabibaBotFramwork">
+            <rect key="frame" x="0.0" y="0.0" width="341" height="254"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tnk-Fo-yp6">
+                    <rect key="frame" x="0.0" y="0.0" width="341" height="254"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIh-Xm-SRE">
+                    <rect key="frame" x="0.0" y="199" width="341" height="55"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBV-hV-wBT">
+                            <rect key="frame" x="8" y="8" width="247" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="1" green="0.99215686270000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3I-IL-ExN">
+                            <rect key="frame" x="263" y="8" width="70" height="0.0"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="hI4-cF-0b2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="1" green="0.99215686270000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.15686274509803921" green="0.61568627450980395" blue="0.3457298801369863" alpha="0.65726669520547942" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="4cI-Sw-hXn"/>
+                        <constraint firstItem="f3I-IL-ExN" firstAttribute="top" secondItem="kIh-Xm-SRE" secondAttribute="top" constant="8" id="AWQ-GA-ZpV"/>
+                        <constraint firstItem="hBV-hV-wBT" firstAttribute="top" secondItem="kIh-Xm-SRE" secondAttribute="top" constant="8" id="Nuf-Yv-Txn"/>
+                        <constraint firstAttribute="trailing" secondItem="f3I-IL-ExN" secondAttribute="trailing" constant="8" id="Sav-lq-3YT"/>
+                        <constraint firstItem="f3I-IL-ExN" firstAttribute="leading" secondItem="hBV-hV-wBT" secondAttribute="trailing" constant="8" id="foJ-Wc-Uqk"/>
+                        <constraint firstItem="hBV-hV-wBT" firstAttribute="leading" secondItem="kIh-Xm-SRE" secondAttribute="leading" constant="8" id="mdw-Vu-98v"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CST-cC-NId">
+                    <rect key="frame" x="0.0" y="0.0" width="341" height="254"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="TpU-v5-KDv" appends="YES" id="bNo-ar-4lm"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="kIh-Xm-SRE" secondAttribute="bottom" id="1xJ-sI-DWN"/>
+                <constraint firstItem="kIh-Xm-SRE" firstAttribute="trailing" secondItem="Tnk-Fo-yp6" secondAttribute="trailing" id="56l-fN-Nag"/>
+                <constraint firstAttribute="trailing" secondItem="Tnk-Fo-yp6" secondAttribute="trailing" id="VwV-Mj-H7i"/>
+                <constraint firstAttribute="trailing" secondItem="CST-cC-NId" secondAttribute="trailing" id="bEo-eC-xID"/>
+                <constraint firstItem="Tnk-Fo-yp6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="c7m-9M-q4D"/>
+                <constraint firstItem="Tnk-Fo-yp6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cDe-BM-P9T"/>
+                <constraint firstAttribute="bottom" secondItem="CST-cC-NId" secondAttribute="bottom" id="eYl-xJ-7OG"/>
+                <constraint firstItem="CST-cC-NId" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gmn-Yl-Xaf"/>
+                <constraint firstAttribute="bottom" secondItem="Tnk-Fo-yp6" secondAttribute="bottom" id="hkD-8M-D5U"/>
+                <constraint firstItem="CST-cC-NId" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="usN-ij-Fau"/>
+                <constraint firstItem="kIh-Xm-SRE" firstAttribute="leading" secondItem="Tnk-Fo-yp6" secondAttribute="leading" id="xqs-G4-XH2"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="Tnk-Fo-yp6" id="DL9-zZ-Lhx"/>
+                <outlet property="lbl_address" destination="hBV-hV-wBT" id="oBN-qD-haZ"/>
+                <outlet property="lbl_distance" destination="f3I-IL-ExN" id="17s-aR-2mg"/>
+                <outlet property="overlay" destination="CST-cC-NId" id="JW1-nZ-Pwv"/>
+                <outlet property="view_gradinet" destination="kIh-Xm-SRE" id="jcT-nt-wCy"/>
+            </connections>
+            <point key="canvasLocation" x="18.399999999999999" y="-152.02398800599701"/>
+        </view>
+        <tapGestureRecognizer id="TpU-v5-KDv">
+            <connections>
+                <action selector="viewWasTapped:" destination="iN0-l3-epB" id="UWz-yN-z36"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

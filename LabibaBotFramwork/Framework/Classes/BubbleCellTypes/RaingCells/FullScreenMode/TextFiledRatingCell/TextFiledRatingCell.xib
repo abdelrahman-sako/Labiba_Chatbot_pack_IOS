@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="TextFiledRatingCell" customModule="LabibaBotFramwork" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="599" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="599" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your phone number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4E-cg-L2Q">
+                        <rect key="frame" x="15" y="5" width="569" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhN-Yg-X76">
+                        <rect key="frame" x="20" y="44" width="559" height="50"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Po-G6-VUE">
+                                <rect key="frame" x="0.0" y="0.0" width="559" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQ4-ia-Hrc">
+                                        <rect key="frame" x="10" y="5" width="539" height="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="aQ4-ia-Hrc" secondAttribute="bottom" constant="5" id="OGo-LX-pw9"/>
+                                    <constraint firstItem="aQ4-ia-Hrc" firstAttribute="top" secondItem="0Po-G6-VUE" secondAttribute="top" constant="5" id="Tlr-b9-RDu"/>
+                                    <constraint firstAttribute="trailing" secondItem="aQ4-ia-Hrc" secondAttribute="trailing" constant="10" id="az4-V4-bhs"/>
+                                    <constraint firstItem="aQ4-ia-Hrc" firstAttribute="leading" secondItem="0Po-G6-VUE" secondAttribute="leading" constant="10" id="qyU-Tv-pMQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0Po-G6-VUE" secondAttribute="trailing" id="56k-sP-0wJ"/>
+                            <constraint firstAttribute="height" constant="50" id="6Jy-An-ILr"/>
+                            <constraint firstAttribute="height" constant="300" id="D0c-mo-Xui"/>
+                            <constraint firstAttribute="bottom" secondItem="0Po-G6-VUE" secondAttribute="bottom" id="dTr-4b-7Nt"/>
+                            <constraint firstItem="0Po-G6-VUE" firstAttribute="leading" secondItem="RhN-Yg-X76" secondAttribute="leading" id="nZ0-Eq-9jA"/>
+                            <constraint firstItem="0Po-G6-VUE" firstAttribute="top" secondItem="RhN-Yg-X76" secondAttribute="top" id="qbM-gI-NCG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6Jy-An-ILr"/>
+                                <exclude reference="D0c-mo-Xui"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="6Jy-An-ILr"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="D0c-mo-Xui"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="l4E-cg-L2Q" secondAttribute="trailing" constant="15" id="2jU-Fp-H0w"/>
+                    <constraint firstAttribute="trailing" secondItem="RhN-Yg-X76" secondAttribute="trailing" constant="20" id="4yB-ay-Ibw"/>
+                    <constraint firstItem="RhN-Yg-X76" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="8Fz-sg-Pxi"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="RhN-Yg-X76" secondAttribute="bottom" constant="10" id="9re-la-mZf"/>
+                    <constraint firstItem="l4E-cg-L2Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Nuf-lv-Qvn"/>
+                    <constraint firstItem="l4E-cg-L2Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="RlQ-qR-yge"/>
+                    <constraint firstItem="RhN-Yg-X76" firstAttribute="top" secondItem="l4E-cg-L2Q" secondAttribute="bottom" constant="10" id="orA-RC-9Jy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="RhN-Yg-X76" id="pgc-Kp-n5F"/>
+                <outlet property="phoneTextField" destination="aQ4-ia-Hrc" id="Kzd-YX-qyV"/>
+                <outlet property="titleLbl" destination="l4E-cg-L2Q" id="FLm-30-H39"/>
+            </connections>
+            <point key="canvasLocation" x="339.85507246376812" y="171.09375"/>
+        </tableViewCell>
+    </objects>
+</document>

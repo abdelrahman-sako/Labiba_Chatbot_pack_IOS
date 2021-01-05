@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FloatingBubblesVisualizer" customModule="LabibaBotFramwork" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="dEF-jX-ctX" id="Jh5-ph-iVq"/>
+                <outlet property="firstBallImg" destination="h3S-UQ-YIG" id="Nyp-1D-OI8"/>
+                <outlet property="logoImg" destination="dPc-Nn-pSb" id="sQb-0S-uHb"/>
+                <outlet property="scondBallImg" destination="Aid-Sd-wPv" id="aWl-aH-q31"/>
+                <outlet property="shadowImg" destination="cxy-Q4-67K" id="pJ1-jX-kxY"/>
+                <outlet property="thirdBallImg" destination="0Op-MH-P3P" id="caA-Nx-Wjh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="154" height="133"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="dEF-jX-ctX">
+                    <rect key="frame" x="0.0" y="0.0" width="154" height="133"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dPc-Nn-pSb">
+                            <rect key="frame" x="-1" y="-1" width="156" height="135"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cxy-Q4-67K">
+                            <rect key="frame" x="3" y="3" width="148" height="127"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h3S-UQ-YIG">
+                            <rect key="frame" x="4" y="4" width="146" height="125"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aid-Sd-wPv">
+                            <rect key="frame" x="3" y="3" width="148" height="127"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Op-MH-P3P">
+                            <rect key="frame" x="3" y="3" width="148" height="127"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="0Op-MH-P3P" secondAttribute="trailing" constant="3" id="4n4-U2-1Fk"/>
+                        <constraint firstAttribute="bottom" secondItem="cxy-Q4-67K" secondAttribute="bottom" constant="3" id="4ub-ZM-RFz"/>
+                        <constraint firstItem="cxy-Q4-67K" firstAttribute="leading" secondItem="dEF-jX-ctX" secondAttribute="leading" constant="3" id="5kO-Uo-zRx"/>
+                        <constraint firstItem="Aid-Sd-wPv" firstAttribute="top" secondItem="dEF-jX-ctX" secondAttribute="top" constant="3" id="9WE-ag-0mF"/>
+                        <constraint firstItem="cxy-Q4-67K" firstAttribute="top" secondItem="dEF-jX-ctX" secondAttribute="top" constant="3" id="CZ2-qd-88U"/>
+                        <constraint firstItem="h3S-UQ-YIG" firstAttribute="top" secondItem="dEF-jX-ctX" secondAttribute="top" constant="4" id="GF7-hq-tFs"/>
+                        <constraint firstAttribute="trailing" secondItem="dPc-Nn-pSb" secondAttribute="trailing" constant="-1" id="LIm-r5-bUP"/>
+                        <constraint firstItem="0Op-MH-P3P" firstAttribute="top" secondItem="dEF-jX-ctX" secondAttribute="top" constant="3" id="OpA-j3-ZA1"/>
+                        <constraint firstItem="Aid-Sd-wPv" firstAttribute="leading" secondItem="dEF-jX-ctX" secondAttribute="leading" constant="3" id="Qxk-nH-n3b"/>
+                        <constraint firstAttribute="bottom" secondItem="h3S-UQ-YIG" secondAttribute="bottom" constant="4" id="RzS-a6-GxM"/>
+                        <constraint firstAttribute="trailing" secondItem="cxy-Q4-67K" secondAttribute="trailing" constant="3" id="SSD-eA-O6Z"/>
+                        <constraint firstItem="0Op-MH-P3P" firstAttribute="leading" secondItem="dEF-jX-ctX" secondAttribute="leading" constant="3" id="WUG-cL-8A3"/>
+                        <constraint firstAttribute="bottom" secondItem="0Op-MH-P3P" secondAttribute="bottom" constant="3" id="bV8-wz-83Y"/>
+                        <constraint firstItem="dPc-Nn-pSb" firstAttribute="top" secondItem="dEF-jX-ctX" secondAttribute="top" constant="-1" id="dZk-63-Bm3"/>
+                        <constraint firstItem="h3S-UQ-YIG" firstAttribute="leading" secondItem="dEF-jX-ctX" secondAttribute="leading" constant="4" id="f0X-C7-7g7"/>
+                        <constraint firstAttribute="trailing" secondItem="Aid-Sd-wPv" secondAttribute="trailing" constant="3" id="iKi-q4-Wrd"/>
+                        <constraint firstItem="dPc-Nn-pSb" firstAttribute="leading" secondItem="dEF-jX-ctX" secondAttribute="leading" constant="-1" id="jr9-gI-Ggh"/>
+                        <constraint firstAttribute="trailing" secondItem="h3S-UQ-YIG" secondAttribute="trailing" constant="4" id="v3i-1F-8oL"/>
+                        <constraint firstAttribute="bottom" secondItem="dPc-Nn-pSb" secondAttribute="bottom" constant="-1" id="vsL-Qx-h6h"/>
+                        <constraint firstAttribute="bottom" secondItem="Aid-Sd-wPv" secondAttribute="bottom" constant="3" id="yb5-W5-E6z"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="dEF-jX-ctX" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="GYv-s5-N33"/>
+                <constraint firstItem="dEF-jX-ctX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="V61-21-FuT"/>
+                <constraint firstItem="dEF-jX-ctX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ceD-Y2-C6w"/>
+                <constraint firstItem="dEF-jX-ctX" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="tqi-Xm-xiY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-47.826086956521742" y="354.21195652173918"/>
+        </view>
+    </objects>
+</document>
