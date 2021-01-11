@@ -154,9 +154,9 @@ class SelectableCardView: UIView
             let size = titleLabel.text?.size(maxWidth: self.frame.width - 10, font: self.titleLabel.font)
             let titleHight = size?.height ?? 40
             if Labiba.CarousalCardView.backgroundImageStyleEnabled && card.imageUrl != nil{
-                height += 40 + ipadFactor*35
+                height += 40 + ipadFactor*50
             }else{
-                height += (titleHight < 40 ? 40 : titleHight) + ipadFactor*35
+                height += (titleHight < 40 ? 40 : titleHight) + ipadFactor*70
             }
         }else{
             titleLabel.isHidden = true

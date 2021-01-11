@@ -78,9 +78,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     {
         super.viewDidLoad()
         print("did load")
-        maskImage = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: self.view.bounds.width, height: self.view.bounds.height - 100)))
-        maskImage.image = Image(named: "gradientMask-6")
-        tableView.mask = maskImage
+        addTableMask()
         muteButton.isHidden = Labiba.isMuteButtonHidden
         VedioCallButton.isHidden = Labiba.isVedioButtonHidden
         self.view.applySemanticAccordingToBotLang()
@@ -202,6 +200,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     func HideCardsView() {
+    }
+    
+    func addTableMask()  {
+        maskImage = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: self.view.bounds.width, height: self.view.bounds.height - 100)))
+        
+        maskImage.image = Image(named: ipadFactor == 0 ? "gradientMask-9":"gradientMask-7")
+        tableView.mask = maskImage
     }
     
     func addHintsCell() {
@@ -400,7 +405,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                    // ratingVC.delegate = self
 //                    ratingVC.modalPresentationStyle = .fullScreen
 //                    self.present(ratingVC, animated: true, completion: nil)
-                    RatingSheetVC.present(fromVC: self, delegate: self)
+                    switch Labiba.RatingForm.style {
+                    case .fullScreen:
+                        RatingVC.present(fromVC: self, delegate: self)
+                    case .sheet:
+                        RatingSheetVC.present(fromVC: self, delegate: self)
+                    }
+                    
                 }else{
                     exit(0)
                 }
@@ -420,33 +431,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         //self.botConnector.sendMessage(payload: message)
         self.submitUserText(message)
     }
+    
     func labibaHeaderViewDidRequestVedioCallAction() {
         delegate?.createPost?(onView: self.view, ["startVideoCall":true], completionHandler: { (status, data) in})
-//         botConnector.generateVedio { (result) in
-//                    switch result {
-//                    case .success(let url):
-//                        var newLink: String = url
-//                        newLink = newLink.replacingOccurrences(of: "https://", with:  "googlechromes://").replacingOccurrences(of: "http://", with: "googlechromes://")
-//                        if let url = URL(string: newLink),
-//                            UIApplication.shared.canOpenURL(url) {
-//                            print("urllllllllll" , url)
-//                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//                            // UIApplication.shared.openURL(url)
-//                        }else{
-//                            if let url = URL(string: url),
-//                                UIApplication.shared.canOpenURL(url) {
-//                                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//                            }
-////                            let alertController = UIAlertController(title: "Sorry", message: "Google Chrome app is not installed", preferredStyle: .alert)
-////                            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-////                            alertController.addAction(okAction)
-////                            self.present(alertController, animated: true, completion: nil)
-//                        }
-//                   //  WebPageViewController.launchWithUrl(url: url, title: "")
-//                    case .failure(let err):
-//                        showErrorMessage(err.localizedDescription)
-//                    }
-//                }
     }
     
     

@@ -10,13 +10,18 @@ import Foundation
 import UIKit
 
 public class LabibaRatingForm {
+    public enum RatingStyle{
+        case fullScreen
+        case sheet
+    }
+    public var style:RatingStyle = .fullScreen
     public var background:LabibaBacground = .solid(color:UIColor(argb: 0xff5387B8))
     public var titleColor: UIColor = .white
     public var titleFont:UIFont = applyBotFont( bold: true, size: 18)
     public var questionsColor: UIColor = .white
     public var questionsFont: (size:CGFloat,weight:LabibaFontWeight) = (15,.regular ) 
     public var fullStarTintColor: UIColor = UIColor(argb: 0xffF4B63F)
-    public var emptyStarTintColor: UIColor = .gray
+    public var emptyStarTintColor: UIColor = UIColor(argb: 0xffD4D9DD)
     public var starsContainerBorderColor: UIColor = .gray
     public var commentContainerColor:UIColor = UIColor.white.withAlphaComponent(0.1)
     public var commentContainerCornerRadius:CGFloat = 0

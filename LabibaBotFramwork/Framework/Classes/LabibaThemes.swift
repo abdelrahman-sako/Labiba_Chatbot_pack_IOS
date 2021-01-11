@@ -189,7 +189,7 @@ import UIKit
         let gTColor1 = UIColor(argb: 0xff5488B8)
         let gCColor1 = UIColor(argb: 0xff5488B8)
         let gEColor1 = UIColor(argb: 0x005488B8)
-        Labiba.setHeaderBackground(gradient: Labiba.GradientSpecs.init(colors: [gTColor1 ,gCColor1 , gEColor1], locations: [0 ,0.85,1], start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) , viewBackgroundColor: .clear)) // Toolbar
+        //Labiba.setHeaderBackground(gradient: Labiba.GradientSpecs.init(colors: [gTColor1 ,gCColor1 , gEColor1], locations: [0 ,0.85,1], start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) , viewBackgroundColor: .clear)) // Toolbar
         
         Labiba.setStatusBarColor(color: gTColor1) // Statusbar
         let gTColor2 = UIColor(argb: 0xff5488B8)

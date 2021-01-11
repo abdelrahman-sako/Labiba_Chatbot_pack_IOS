@@ -122,7 +122,10 @@ class QuickChoicesHeaderView: LabibaChatHeaderView {
         choices = questions[0..<4].map({$0.localForChosnLangCodeMB})
         
         choicesCollectionView.transform = SharedPreference.shared.botLangCode == .ar ? CGAffineTransform(scaleX: -1, y: 1) : .identity
-        choicesCollectionView.reloadData()
+        DispatchQueue.main.async {
+            self.choicesCollectionView.reloadData()
+        }
+        
         layoutIfNeeded()
     }
        
