@@ -418,10 +418,10 @@ public enum LabibaFontWeight{
     
     
     //MARK:- Bottom View : Voice Assistance,keyboard and AttachmentMenu Views UIConfiguration
-    
-    static var _UserInputColors:(background: UIColor ,tintColor:UIColor, textColor:UIColor ,hintColor:UIColor) = (UIColor.white ,UIColor.black, UIColor.black , UIColor(white: 0, alpha: 0.3))
-    static var _SendButtonTintColor : UIColor = #colorLiteral(red: 0.03137254902, green: 0.3725490196, blue: 1, alpha: 1)
-    static var _SendButtonBackgroundColor : UIColor?
+    public static let UserInputView = LabibaUserInputView()
+//    static var _UserInputColors:(background: UIColor ,tintColor:UIColor, textColor:UIColor ,hintColor:UIColor) = (UIColor.white ,UIColor.black, UIColor.black , UIColor(white: 0, alpha: 0.3))
+//    static var _SendButtonTintColor : UIColor = #colorLiteral(red: 0.03137254902, green: 0.3725490196, blue: 1, alpha: 1)
+//    static var _SendButtonBackgroundColor : UIColor?
     static var _MicButtonTintColor: UIColor = UIColor(argb: 0xFFFFFFFF)
     static var _KeyboardIconTintColor: UIColor = UIColor(argb: 0xFFFFFFFF)
     static var _MicButtonBackGroundColor: UIColor = UIColor(argb: 0x8066439F)
@@ -435,16 +435,16 @@ public enum LabibaFontWeight{
     static var _AttachmentMenuBackgroundColor : UIColor = #colorLiteral(red: 0.03137254902, green: 0.3725490196, blue: 1, alpha: 1)
     static var _AttachmentMenuTintColor : UIColor = .white
     
-    public static func setUserInputColors(background: UIColor,tintColor:UIColor ,  textColor:UIColor , hintColor:UIColor )
-    {
-        self._UserInputColors = (background ,tintColor ,textColor, hintColor)
-    }
-    
-    public static func setSendButtonColors(background: UIColor , tint:UIColor)
-    {
-        self._SendButtonBackgroundColor = background
-        self._SendButtonTintColor = tint
-    }
+//    public static func setUserInputColors(background: UIColor,tintColor:UIColor ,  textColor:UIColor , hintColor:UIColor )
+//    {
+//        self._UserInputColors = (background ,tintColor ,textColor, hintColor)
+//    }
+//
+//    public static func setSendButtonColors(background: UIColor , tint:UIColor)
+//    {
+//        self._SendButtonBackgroundColor = background
+//        self._SendButtonTintColor = tint
+//    }
     
     public static func setMicButtonColors(background: UIColor , tint:UIColor , wave:UIColor = .white , keyboardTint:UIColor? = nil)
     {
@@ -481,122 +481,127 @@ public enum LabibaFontWeight{
     
     
     //MARK:- Choices Button View UIConfiguration
+    public static let ChoiceView = LabibaChoiceView()
     
-    static var _ChoicesButtonBackgroundColor: UIColor = .white
-    static var _ChoicesButtonTintColor: UIColor = .white
-    static var _ChoicesButtonBorderColor: UIColor = .white
-    static var _ChoicesButtonCornerRadius: CGFloat = 10
-    
-    public static func setChoicesButtonColors(background: UIColor ,  tint:UIColor ,borderColor:UIColor,  cornerRadius:CGFloat = 10) // for choice buttons , while border and text color set by setTintColor()
-    {
-        self._ChoicesButtonBackgroundColor = background
-        self._ChoicesButtonTintColor = tint
-        self._ChoicesButtonBorderColor = borderColor
-        self._ChoicesButtonCornerRadius = cornerRadius
-    }
+//    static var _ChoicesButtonBackgroundColor: UIColor = .white
+//    static var _ChoicesButtonTintColor: UIColor = .white
+//    static var _ChoicesButtonBorderColor: UIColor = .white
+//    static var _ChoicesButtonCornerRadius: CGFloat = 10
+//    
+//    public static func setChoicesButtonColors(background: UIColor ,  tint:UIColor ,borderColor:UIColor,  cornerRadius:CGFloat = 10) // for choice buttons , while border and text color set by setTintColor()
+//    {
+//        self._ChoicesButtonBackgroundColor = background
+//        self._ChoicesButtonTintColor = tint
+//        self._ChoicesButtonBorderColor = borderColor
+//        self._ChoicesButtonCornerRadius = cornerRadius
+//    }
     
     
        //MARK:- Location Setting and Map View UIConfiguration
+    public static let MapView = LabibaMapView()
     
-    public static var _MapViewCornerRadius: CGFloat = 10
-    static var  defaultLocation:(latitude:Double , longitude:Double) = (31.9499895,  35.9394769)
-    
-    public static func setDefaultLocation(latitude:Double , longitude:Double)
-    {
-        self.defaultLocation = (latitude  , longitude)
-    }
+//    public static var _MapViewCornerRadius: CGFloat = 10
+//    static var  defaultLocation:(latitude:Double , longitude:Double) = (31.9499895,  35.9394769)
+//    
+//    public static func setDefaultLocation(latitude:Double , longitude:Double)
+//    {
+//        self.defaultLocation = (latitude  , longitude)
+//    }
     
    
     
     //MARK:- Chat Bubble View UIConfiguration
     
-    static var _TypingIndicatorColor: UIColor?
     
-    static var _userBubbleBackgroundGradient: GradientSpecs?
-    static var _userBubbleBackgroundColor: UIColor = #colorLiteral(red: 0.03137254902, green: 0.3725490196, blue: 1, alpha: 1)
-    static var _userBubbleTextColor: UIColor = UIColor.gray
-    static var _userBubbleAlpha: CGFloat = 1
-    static var _userBubbleCorner: CGFloat = 10
-    static var _userBubbleCornerMask: CACornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
-    static var _userAvatar:UIImage?
+    public static let UserChatBubble = LabibaUserChatBubble()
+    public static let BotChatBubble = LabibaBotChatBubble()
+//    static var _userBubbleBackgroundGradient: GradientSpecs?
+//    static var _userBubbleBackgroundColor: UIColor = #colorLiteral(red: 0.03137254902, green: 0.3725490196, blue: 1, alpha: 1)
+//    static var _userBubbleTextColor: UIColor = UIColor.gray
+//    static var _userBubbleAlpha: CGFloat = 1
+//    static var _userBubbleCorner: CGFloat = 10
+//    static var _userBubbleCornerMask: CACornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
+//    static var _userAvatar:UIImage?
     
-    static var _botBubbleBackgroundGradient: GradientSpecs?
-    static var _botBubbleBackgroundColor: UIColor?
-    static var _botBubbleTextColor: UIColor = UIColor.black
-    static var _botBubbleTextAlignment:NSTextAlignment?
-    static var _botBubbleAlpha: CGFloat = 1
-    static var _botBubbleCorner: CGFloat = 10
-    static var _botBubbleCornerMask: CACornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
-    public static var _botBubbleShadow: ShadowModel = ShadowModel(shadowColor: UIColor.clear.cgColor, shadowOffset: .zero, shadowRadius: 0, shadowOpacity: 0)
-    static var _botAvatar:UIImage?
-    
-    public static func setTypingIndicatorColor(color: UIColor)
-    {
-        self._TypingIndicatorColor = color
-    }
-    
-    public static func setUserBubbleBackground(gradient: GradientSpecs)
-    {
-        self._userBubbleBackgroundGradient = gradient
-    }
-    
-    public static func setUserBubbleBackground(color: UIColor)
-    {
-        self._userBubbleBackgroundColor = color
-    }
-    
-    public static func setUserBubbleTextColor( color: UIColor)
-    {
-        self._userBubbleTextColor = color
-    }
-    
-    public static func setUserBubbleAlpha( alpha: CGFloat)
-    {
-        self._userBubbleAlpha = alpha
-    }
-    public static func setUserBubbleCorner( corner: CGFloat,mask:CACornerMask)
-    {
-        self._userBubbleCorner = corner
-        self._userBubbleCornerMask = mask
-    }
-    
-    public static func setUserAvatar(_ image: UIImage?)
-    {
-        self._userAvatar = image
-    }
+//    static var _TypingIndicatorColor: UIColor?
+//    static var _botBubbleBackgroundGradient: GradientSpecs?
+//    static var _botBubbleBackgroundColor: UIColor?
+//    static var _botBubbleTextColor: UIColor = UIColor.black
+//    static var _botBubbleTextAlignment:NSTextAlignment?
+//    static var _botBubbleAlpha: CGFloat = 1
+//    static var _botBubbleCorner: CGFloat = 10
+//    static var _botBubbleCornerMask: CACornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
+//    public static var _botBubbleShadow: LabibaShadowModel = LabibaShadowModel(shadowColor: UIColor.clear.cgColor, shadowOffset: .zero, shadowRadius: 0, shadowOpacity: 0)
+//    static var _botAvatar:UIImage?
     
     
-    public static func setBotBubbleBackground(gradient: GradientSpecs)
-    {
-        self._botBubbleBackgroundGradient = gradient
-    }
     
-    public static func setBotBubbleBackground(color: UIColor)
-    {
-        self._botBubbleBackgroundColor = color
-    }
+//    public static func setUserBubbleBackground(gradient: GradientSpecs)
+//    {
+//        self._userBubbleBackgroundGradient = gradient
+//    }
+//
+//    public static func setUserBubbleBackground(color: UIColor)
+//    {
+//        self._userBubbleBackgroundColor = color
+//    }
+//
+//    public static func setUserBubbleTextColor( color: UIColor)
+//    {
+//        self._userBubbleTextColor = color
+//    }
+//
+//    public static func setUserBubbleAlpha( alpha: CGFloat)
+//    {
+//        self._userBubbleAlpha = alpha
+//    }
+//    public static func setUserBubbleCorner( corner: CGFloat,mask:CACornerMask)
+//    {
+//        self._userBubbleCorner = corner
+//        self._userBubbleCornerMask = mask
+//    }
+//
+//    public static func setUserAvatar(_ image: UIImage?)
+//    {
+//        self._userAvatar = image
+//    }
     
-    public static func setBotBubbleText(color: UIColor , alignment:NSTextAlignment? = nil)
-    {
-        self._botBubbleTextColor = color
-        self._botBubbleTextAlignment = alignment
-    }
-    
-    public static func setBotBubbleAlpha( alpha: CGFloat)
-    {
-        self._botBubbleAlpha = alpha
-    }
-    
-    public static func setBotBubbleCorner( corner: CGFloat,mask:CACornerMask)
-    {
-        self._botBubbleCorner = corner
-        self._botBubbleCornerMask = mask
-    }
-    
-    public static func setBotAvatar(_ image: UIImage?)
-    {
-        self._botAvatar = image
-    }
+//    public static func setTypingIndicatorColor(color: UIColor)
+//    {
+//        self._TypingIndicatorColor = color
+//    }
+//
+//    public static func setBotBubbleBackground(gradient: GradientSpecs)
+//    {
+//        self._botBubbleBackgroundGradient = gradient
+//    }
+//
+//    public static func setBotBubbleBackground(color: UIColor)
+//    {
+//        self._botBubbleBackgroundColor = color
+//    }
+//
+//    public static func setBotBubbleText(color: UIColor , alignment:NSTextAlignment? = nil)
+//    {
+//        self._botBubbleTextColor = color
+//        self._botBubbleTextAlignment = alignment
+//    }
+//
+//    public static func setBotBubbleAlpha( alpha: CGFloat)
+//    {
+//        self._botBubbleAlpha = alpha
+//    }
+//
+//    public static func setBotBubbleCorner( corner: CGFloat,mask:CACornerMask)
+//    {
+//        self._botBubbleCorner = corner
+//        self._botBubbleCornerMask = mask
+//    }
+//
+//    public static func setBotAvatar(_ image: UIImage?)
+//    {
+//        self._botAvatar = image
+//    }
     
     
     
@@ -849,18 +854,6 @@ public enum LabibaFontWeight{
 //    }
 //}
 
-public class ShadowModel {
-    var shadowColor:CGColor
-    var shadowOffset:CGSize
-    var shadowRadius:CGFloat
-    var shadowOpacity:Float
-    public init(shadowColor:CGColor , shadowOffset:CGSize , shadowRadius:CGFloat , shadowOpacity:Float) {
-        self.shadowColor = shadowColor
-        self.shadowOffset = shadowOffset
-        self.shadowRadius = shadowRadius
-        self.shadowOpacity = shadowOpacity
-    }
-}
 
  
 

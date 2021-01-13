@@ -63,7 +63,8 @@ class UserTextInput: UIView, UITextViewDelegate, LocationSelectViewControllerDel
         let y = r.size.height
         self.frame = CGRect(x: 0, y: y, width: w, height: UserTextInput.HEIGHT)
 
-        self.sendButton.tintColor = Labiba._UserInputColors.tintColor 
+//        self.sendButton.tintColor = Labiba._UserInputColors.tintColor
+        self.sendButton.tintColor = Labiba.UserInputView.tintColor
 
         self.textView.delegate = self
         placeholderLabel = UILabel()

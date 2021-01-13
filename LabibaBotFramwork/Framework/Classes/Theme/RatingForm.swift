@@ -15,7 +15,7 @@ public class LabibaRatingForm {
         case sheet
     }
     public var style:RatingStyle = .fullScreen
-    public var background:LabibaBacground = .solid(color:UIColor(argb: 0xff5387B8))
+    public var background:LabibaBackground = .solid(color:UIColor(argb: 0xff5387B8))
     public var titleColor: UIColor = .white
     public var titleFont:UIFont = applyBotFont( bold: true, size: 18)
     public var questionsColor: UIColor = .white

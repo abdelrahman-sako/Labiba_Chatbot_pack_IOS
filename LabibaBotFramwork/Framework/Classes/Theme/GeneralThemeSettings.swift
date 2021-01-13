@@ -9,7 +9,21 @@
 import Foundation
 import UIKit
 
-public enum LabibaBacground {
+public enum LabibaBackground {
     case solid (color:UIColor)
-    case gradient (colors:[UIColor])
+    case gradient (gradientSpecs:Labiba.GradientSpecs)
 }
+
+public class LabibaShadowModel {
+    var shadowColor:CGColor
+    var shadowOffset:CGSize
+    var shadowRadius:CGFloat
+    var shadowOpacity:Float
+    public init(shadowColor:CGColor , shadowOffset:CGSize , shadowRadius:CGFloat , shadowOpacity:Float) {
+        self.shadowColor = shadowColor
+        self.shadowOffset = shadowOffset
+        self.shadowRadius = shadowRadius
+        self.shadowOpacity = shadowOpacity
+    }
+}
+

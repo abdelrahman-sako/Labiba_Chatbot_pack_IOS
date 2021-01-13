@@ -75,13 +75,17 @@ class VisualizerVoiceAssistantView: UIView {
         userInputContainerView.layer.maskedCorners = userInputMask
         
         // theme
-        userInputContainerView.backgroundColor = Labiba._UserInputColors.background
+       // userInputContainerView.backgroundColor = Labiba._UserInputColors.background
+        userInputContainerView.backgroundColor = Labiba.UserInputView.backgroundColor
         textView.font = applyBotFont(size: 13)
-        textView.textColor = Labiba._UserInputColors.textColor
+//        textView.textColor = Labiba._UserInputColors.textColor
+        textView.textColor = Labiba.UserInputView.textColor
         placeholderLbl.text = "startSpeakingOrTyping".localForChosnLangCodeBB
         placeholderLbl.font = applyBotFont(size: 13)
-        placeholderLbl.textColor = Labiba._UserInputColors.hintColor
-        sendImageView.tintColor = Labiba._UserInputColors.tintColor
+      //  placeholderLbl.textColor = Labiba._UserInputColors.hintColor
+        placeholderLbl.textColor = Labiba.UserInputView.hintColor
+//        sendImageView.tintColor = Labiba._UserInputColors.tintColor
+        sendImageView.tintColor = Labiba.UserInputView.tintColor
         //audioVisualizerView.colors = [ UIColor(argb: 0xffffcf01), UIColor(argb: 0xffc61d23)]
         audioVisualizerView.isHidden = true
         // gif

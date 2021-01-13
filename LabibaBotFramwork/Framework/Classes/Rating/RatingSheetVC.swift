@@ -31,8 +31,8 @@ class RatingSheetVC: RatingBaseVC {
         switch Labiba.RatingForm.background {
         case .solid(color: let color):
             self.containerView.backgroundColor = color
-        case .gradient(colors: let colors):
-            self.containerView.applyGradient(colours: colors, locations: nil)
+        case .gradient(gradientSpecs: let grad):
+            self.containerView.applyGradient(colours: grad.colors, locations: nil)
         }
         ratingTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         containerView.layer.cornerRadius  = 15

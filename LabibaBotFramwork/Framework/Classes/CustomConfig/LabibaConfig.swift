@@ -51,15 +51,26 @@ public class LabibaConfig {
 
         Labiba.setLogo(UIImage(named: ""))
 
-        Labiba.setUserBubbleBackground(color:  UIColor.black.withAlphaComponent(0.1))
-        Labiba.setUserBubbleTextColor( color : UIColor(argb: 0xffffffff))
-        Labiba.setUserBubbleCorner(corner: 23, mask: [.layerMinXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMaxYCorner])
+//        Labiba.setUserBubbleBackground(color:  UIColor.black.withAlphaComponent(0.1))
+//        Labiba.setUserBubbleTextColor( color : UIColor(argb: 0xffffffff))
+//        Labiba.setUserBubbleCorner(corner: 23, mask: [.layerMinXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMaxYCorner])
+        
+        Labiba.UserChatBubble.background = .solid(color:  UIColor.black.withAlphaComponent(0.1))
+        Labiba.UserChatBubble.textColor = UIColor(argb: 0xffffffff)
+        Labiba.UserChatBubble.cornerRadius = 23
+        Labiba.UserChatBubble.CornerMask = [.layerMinXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
 
-        Labiba.setTypingIndicatorColor(color: UIColor(argb: 0xffffffff))
-        Labiba.setBotBubbleBackground(color: UIColor.white.withAlphaComponent(0.2))
-        Labiba.setBotBubbleText(color: UIColor(argb: 0xffffffff))
-        Labiba.setBotBubbleCorner(corner: 23, mask: [.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner])
-
+//        Labiba.setTypingIndicatorColor(color: UIColor(argb: 0xffffffff))
+//        Labiba.setBotBubbleBackground(color: UIColor.white.withAlphaComponent(0.2))
+//        Labiba.setBotBubbleText(color: UIColor(argb: 0xffffffff))
+//        Labiba.setBotBubbleCorner(corner: 23, mask: [.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner])
+        Labiba.BotChatBubble.typingIndicatorColor = UIColor(argb: 0xffffffff)
+        Labiba.BotChatBubble.background = .solid(color: UIColor.white.withAlphaComponent(0.2))
+        Labiba.BotChatBubble.textColor =  UIColor(argb: 0xffffffff)
+        Labiba.BotChatBubble.cornerRadius = 23
+        Labiba.BotChatBubble.CornerMask =  [.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner]
+        
+        
         Labiba.setMargin(left: 20, right: 20)
 
         Labiba.setMicButtonColors(background: UIColor.black.withAlphaComponent(0.1), tint: UIColor(argb: 0xffffffff) , wave: UIColor(argb: 0xffffffff))
@@ -67,9 +78,7 @@ public class LabibaConfig {
         Labiba.MenuCardView.clearNonSelectedItems = false
         Labiba.MenuCardView.textColor =  UIColor(argb: 0xffffffff)
         Labiba.MenuCardView.fontSize = 12
-        //Labiba.setMenuCardsCollectionColor(color: .clear)
-//        Labiba.setMenuCardSetup(color: UIColor(argb: 0x00ffffff), clearNonSelectedItems: false)
-//        Labiba.setMenuCardText(color: UIColor(argb: 0xffffffff), fontSize: 12)
+       
         Labiba.CarousalCardView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         Labiba.CarousalCardView.cornerRadius = 30
         Labiba.CarousalCardView.titleFont = (14,.bold)
@@ -77,24 +86,27 @@ public class LabibaConfig {
         let bColor1 = UIColor(argb: 0x1100263E)
         let bColor2 = UIColor(argb: 0xff00263E)
         Labiba.CarousalCardView.bottomGradient = Labiba.GradientSpecs.init(colors: [bColor1 , bColor2 ], locations: [0,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) )
-        //Labiba.setCarousalCardColor(backgroundColor: UIColor.black.withAlphaComponent(0.1) , cornerRadius: 30)
-       // Labiba._CarousalCardTitleFont = (14,.bold)
-//        Labiba._CarousalCardTitleColor = UIColor(argb: 0xffffffff)
-//        Labiba._CarousalCardSubtitleColor = UIColor(argb: 0xEEffffff)
-       // Labiba._CarousalCardButtonTitleColor = UIColor(argb: 0xffffffff)
-      //  Labiba._CarousalCardButtonBorder = ( UIColor.white.withAlphaComponent(0.1) , 25)
-//        let bColor1 = UIColor(argb: 0x1100263E)
-//        let bColor2 = UIColor(argb: 0xff00263E)
-//        Labiba.setCarousalCardBottom(gradient:  Labiba.GradientSpecs.init(colors: [bColor1 , bColor2 ], locations: [0,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
+      
 
-        Labiba._MapViewCornerRadius = 20
+        //Labiba._MapViewCornerRadius = 20
+        Labiba.MapView.cornerRadius = 20
 
-        Labiba.setChoicesButtonColors(background: .clear, tint: UIColor(argb: 0xffffffff), borderColor:  UIColor(argb: 0xffffffff))
+      //  Labiba.setChoicesButtonColors(background: .clear, tint: UIColor(argb: 0xffffffff), borderColor:  UIColor(argb: 0xffffffff))
+        Labiba.ChoiceView.backgroundColor = .clear
+        Labiba.ChoiceView.tintColor = UIColor(argb: 0xffffffff)
+        Labiba.ChoiceView.borderColor =  UIColor(argb: 0xffffffff)
 
-
-        Labiba.setSendButtonColors(background: UIColor.black.withAlphaComponent(0.1), tint: UIColor(argb: 0xffffffff))
+       // Labiba.setSendButtonColors(background: UIColor.black.withAlphaComponent(0.1), tint: UIColor(argb: 0xffffffff))
+        Labiba.UserInputView.sendButton.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        Labiba.UserInputView.sendButton.tintColor = UIColor(argb: 0xffffffff)
+        
         Labiba.setAttachmentMenuColors(background: UIColor.black.withAlphaComponent(0.1), tint: UIColor(argb: 0xffffffff))
-        Labiba.setUserInputColors(background: UIColor.black.withAlphaComponent(0.15), tintColor: .white, textColor: .white, hintColor: UIColor(argb: 0xccffffff))
+        //Labiba.setUserInputColors(background: UIColor.black.withAlphaComponent(0.15), tintColor: .white, textColor: .white, hintColor: UIColor(argb: 0xccffffff))
+        Labiba.UserInputView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+        Labiba.UserInputView.tintColor = .white
+        Labiba.UserInputView.textColor  = .white
+        Labiba.UserInputView.hintColor =  UIColor(argb: 0xccffffff)
+        
        // Labiba.setMicButtondIcon(icon: UIImage(named: "BOJ Logo")!)
         Labiba.setFont(regAR: "Cairo-Regular", boldAR: "Cairo-Bold", regEN: "Cairo-Regular", boldEN: "Cairo-Bold")
         Labiba.setHeaderBackground(gradient: Labiba.GradientSpecs.init(colors: [UIColor(argb: 0xff0C263C) ,UIColor(argb: 0xff0C263C),UIColor(argb: 0x000C263C) ], locations: [0 ,0.85,1], start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) , viewBackgroundColor: .clear)) // Toolbar

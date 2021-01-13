@@ -19,7 +19,8 @@ class TypingIndicatorCell: EntryViewCell
         super.awakeFromNib()
         loadingIndicator = NVActivityIndicatorView(frame: CGRect.zero)
         loadingIndicator.type = NVActivityIndicatorType.ballPulse
-        loadingIndicator.color = Labiba._TypingIndicatorColor ?? UIColor.gray
+//        loadingIndicator.color = Labiba._TypingIndicatorColor ?? UIColor.gray
+        loadingIndicator.color = Labiba.BotChatBubble.typingIndicatorColor
         loadingIndicator.backgroundColor = UIColor.white
         loadingIndicator.padding = 7.0
 
@@ -47,7 +48,8 @@ class TypingIndicatorCell: EntryViewCell
 
         if !self.isShown
         {
-             let avatarWidth = Labiba._botAvatar == nil ? 0 : AvatarWidth + 5
+             //let avatarWidth = Labiba._botAvatar == nil ? 0 : AvatarWidth + 5
+            let avatarWidth = Labiba.BotChatBubble.avatar == nil ? 0 : AvatarWidth + 5
             let margin = LbLanguage.isArabic ? Labiba._Margin.right : Labiba._Margin.left
            // var px = LbLanguage.isArabic ? self.frame.width - 50 - 5 - AvatarWidth - 5 : 5 + AvatarWidth + 5
             let totalMargin = avatarWidth + ipadMargin + margin
@@ -79,17 +81,27 @@ class TypingIndicatorCell: EntryViewCell
     
     
     func setBackgroundColor() {
-        if let grad = Labiba._botBubbleBackgroundGradient {
-            
+//        if let grad = Labiba._botBubbleBackgroundGradient {
+//            
+//            let gview = GradientView(frame: loadingIndicator.bounds)
+//            gview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//            gview.setGradient(grad)
+//            
+//            loadingIndicator.insertSubview(gview, at: 0)
+//            
+//        } else if let bgColor = Labiba._botBubbleBackgroundColor {
+//            
+//            loadingIndicator.backgroundColor = bgColor
+//        }
+        
+        switch Labiba.BotChatBubble.background {
+        case .solid(color: let color):
+            loadingIndicator.backgroundColor = color
+        case .gradient(gradientSpecs: let grad):
             let gview = GradientView(frame: loadingIndicator.bounds)
             gview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             gview.setGradient(grad)
-            
             loadingIndicator.insertSubview(gview, at: 0)
-            
-        } else if let bgColor = Labiba._botBubbleBackgroundColor {
-            
-            loadingIndicator.backgroundColor = bgColor
         }
     }
 }

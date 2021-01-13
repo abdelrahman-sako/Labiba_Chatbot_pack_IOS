@@ -98,8 +98,11 @@ class LocationSelectViewController: UIViewController, CLLocationManagerDelegate,
         let radius: CLLocationDistance = 500
 
         self.mapView.delegate = self
+//        self.mapView.region = MKCoordinateRegion(
+//            center: CLLocationCoordinate2D(latitude: Labiba.defaultLocation.latitude, longitude: Labiba.defaultLocation.longitude),
+//            latitudinalMeters: radius * 2.0, longitudinalMeters: radius * 2.0)
         self.mapView.region = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: Labiba.defaultLocation.latitude, longitude: Labiba.defaultLocation.longitude),
+            center: CLLocationCoordinate2D(latitude: Labiba.MapView.defaultLocation.latitude, longitude: Labiba.MapView.defaultLocation.longitude),
             latitudinalMeters: radius * 2.0, longitudinalMeters: radius * 2.0)
         self.lookForUserLocation()
     }

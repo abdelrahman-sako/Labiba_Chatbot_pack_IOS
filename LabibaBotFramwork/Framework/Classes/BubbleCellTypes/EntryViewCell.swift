@@ -67,7 +67,8 @@ class EntryViewCell: UITableViewCell
         var bf = self.avatar.frame
         bf.origin.y = 0
 
-        if let img = self.conversationParty == .user ? Labiba._userAvatar : Labiba._botAvatar
+      //  if let img = self.conversationParty == .user ? Labiba._userAvatar : Labiba._botAvatar
+        if let img = self.conversationParty == .user ? Labiba.UserChatBubble.avatar : Labiba.BotChatBubble.avatar
         {
             self.avatar.frame = bf
             self.avatar.image = img

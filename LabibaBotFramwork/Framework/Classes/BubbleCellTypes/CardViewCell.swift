@@ -17,8 +17,10 @@ class CardViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.titleLabel.textColor = Labiba._UserInputColors.textColor
-        self.cellImageView.tintColor = Labiba._UserInputColors.tintColor 
+//        self.titleLabel.textColor = Labiba._UserInputColors.textColor
+//        self.cellImageView.tintColor = Labiba._UserInputColors.tintColor
+        self.titleLabel.textColor = Labiba.UserInputView.textColor
+        self.cellImageView.tintColor = Labiba.UserInputView.tintColor
         
         self.belowView.backgroundColor = UIColor.white
         self.belowView.layer.cornerRadius = 4

@@ -217,7 +217,8 @@ class StateOnHoldEntryCell: StateEntryCell, EntryDisplayDelegate, SelectableCard
 
     @discardableResult func ensureButtonsContainer(_ bch: CGFloat, forCards: Bool) -> CGFloat
     {
-        let avatarWidth = Labiba._botAvatar == nil ? -5 : AvatarWidth
+        //let avatarWidth = Labiba._botAvatar == nil ? -5 : AvatarWidth
+        let avatarWidth = Labiba.BotChatBubble.avatar == nil ? -5 : AvatarWidth
         let ty = self.botBubbleMaxY + 10
         let dx:CGFloat = 0//(forCards) ? avatarWidth + 10 : 0
 
@@ -273,7 +274,8 @@ class StateOnHoldEntryCell: StateEntryCell, EntryDisplayDelegate, SelectableCard
     func renderAsCardsDialog(_ cards: [DialogCard]) -> Void
     {
         let totalMargin = margin + ipadMargin
-        let avatarWidth = Labiba._botAvatar == nil ? -5 : AvatarWidth
+        //let avatarWidth = Labiba._botAvatar == nil ? -5 : AvatarWidth
+        let avatarWidth = Labiba.BotChatBubble.avatar == nil ? -5 : AvatarWidth
         let ty = self.botBubbleMaxY + 10
         let dx = avatarWidth + 10
 

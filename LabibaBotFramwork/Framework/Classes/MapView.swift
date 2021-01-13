@@ -138,7 +138,8 @@ class MapView: UIView, MKMapViewDelegate, ReusableComponent
         self.layer.shadowOffset = CGSize(width: 0, height: 1)
         self.layer.shadowRadius = 1.0
         self.layer.shadowOpacity = 0.2
-        self.layer.cornerRadius = Labiba._MapViewCornerRadius
+      //  self.layer.cornerRadius = Labiba._MapViewCornerRadius
+        self.layer.cornerRadius = Labiba.MapView.cornerRadius
         self.layer.masksToBounds = true
 
         self.imageView.layer.cornerRadius = 10

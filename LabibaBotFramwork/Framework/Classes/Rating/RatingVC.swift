@@ -30,8 +30,8 @@ class RatingVC: RatingBaseVC {
         switch Labiba.RatingForm.background {
         case .solid(color: let color):
             self.view.backgroundColor = color
-        case .gradient(colors: let colors):
-            self.view.applyGradient(colours: colors, locations: nil)
+        case .gradient(gradientSpecs: let grad):
+            self.view.applyGradient(colours: grad.colors, locations: nil)
         }
         ratingTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tapGesture.addTarget(self, action: #selector(didTap(_:)))

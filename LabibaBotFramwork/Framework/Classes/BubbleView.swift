@@ -54,8 +54,8 @@ enum BubbleSource
                 if(source != .incoming)
                 {
                     let lang = text.detectedLangauge()
-                    let attribute = [NSAttributedString.Key.font :applyBotFont(textLang: Language(rawValue: lang ?? "") ?? .ar,size: 13),NSAttributedString.Key.foregroundColor:Labiba._userBubbleTextColor]
-                    print(Labiba._userBubbleTextColor)
+//                    let attribute = [NSAttributedString.Key.font :applyBotFont(textLang: Language(rawValue: lang ?? "") ?? .ar,size: 13),NSAttributedString.Key.foregroundColor:Labiba._userBubbleTextColor]
+                    let attribute = [NSAttributedString.Key.font :applyBotFont(textLang: Language(rawValue: lang ?? "") ?? .ar,size: 13),NSAttributedString.Key.foregroundColor:Labiba.UserChatBubble.textColor]
                     let attributedText = NSAttributedString(string: text, attributes: attribute )
                     self.textLabel.attributedText = attributedText
                 }
@@ -64,11 +64,13 @@ enum BubbleSource
                     let lang = text.detectedLangauge()
                     let boldFont =  applyBotFont(textLang: Language(rawValue: lang ?? "") ?? .ar ,bold:true, size: 13 )
                     let regularFont =  applyBotFont(textLang: Language(rawValue: lang ?? "") ?? .ar , size: 13)
-                    self.textLabel.attributedText = text.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba._botBubbleTextColor ?? UIColor.black)
+                    //self.textLabel.attributedText = text.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba._botBubbleTextColor ?? UIColor.black)
+                    self.textLabel.attributedText = text.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba.BotChatBubble.textColor)
                 }
                 
                 let lang = textLabel.text?.detectedLangauge()
-                if let alignment = Labiba._botBubbleTextAlignment{
+                //  if let alignment = Labiba._botBubbleTextAlignment{
+                if let alignment = Labiba.BotChatBubble.textAlignment{
                     self.textLabel.textAlignment = alignment
                     if  alignment == .justified {
                         let paragraphStyle = NSMutableParagraphStyle()
@@ -78,7 +80,7 @@ enum BubbleSource
                         let text: NSMutableAttributedString = NSMutableAttributedString(attributedString: self.textLabel.attributedText!)
                         text.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, text.length))
                         self.textLabel.attributedText = text
-
+                        
                     }
                 }else{
                     self.textLabel.textAlignment = (lang ?? "ar" ) == "ar" ? .right : .left

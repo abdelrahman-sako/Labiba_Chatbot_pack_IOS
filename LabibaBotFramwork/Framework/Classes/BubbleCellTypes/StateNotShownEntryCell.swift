@@ -155,7 +155,8 @@ class StateNotShownEntryCell: StateEntryCell, SelectableCardViewDelegate, Select
     
     func ensureButtonsContainer(_ bch: CGFloat, forCards: Bool)
     {
-        let avatarWidth = Labiba._botAvatar == nil ? -5 : AvatarWidth
+      //  let avatarWidth = Labiba._botAvatar == nil ? -5 : AvatarWidth
+        let avatarWidth = Labiba.BotChatBubble.avatar == nil ? -5 : AvatarWidth
         let ty = self.currentDisplay.height + 10
         let dx:CGFloat = (forCards) ? avatarWidth + 10 : 0
         
@@ -424,9 +425,9 @@ class ChoiceButton: UIButton
         self.choice = choice
         super.init(frame: CGRect(x: 0, y: 0, width: 1, height: 35))
         
-        self.layer.cornerRadius =  Labiba._ChoicesButtonCornerRadius
+        self.layer.cornerRadius =  Labiba.ChoiceView.cornerRadius
         self.layer.masksToBounds = true
-        self.layer.borderColor = Labiba._ChoicesButtonBorderColor.cgColor
+        self.layer.borderColor = Labiba.ChoiceView.borderColor.cgColor
         self.layer.borderWidth = 1.0
         self.titleLabel?.font = applyBotFont(size: 13)
         
@@ -434,11 +435,11 @@ class ChoiceButton: UIButton
         let text = title
         
         self.setTitle(text, for: .normal)
-        self.backgroundColor = Labiba._ChoicesButtonBackgroundColor //UIColor(white: 0.98, alpha: 1.0)
+        self.backgroundColor = Labiba.ChoiceView.backgroundColor //UIColor(white: 0.98, alpha: 1.0)
         
-        self.tintColor = Labiba._ChoicesButtonTintColor
-        self.setTitleColor(Labiba._ChoicesButtonTintColor, for: .normal)
-        self.setTitleColor(Labiba._ChoicesButtonTintColor, for: .highlighted)
+        self.tintColor = Labiba.ChoiceView.tintColor
+        self.setTitleColor(Labiba.ChoiceView.tintColor, for: .normal)
+        self.setTitleColor(Labiba.ChoiceView.tintColor, for: .highlighted)
         
         self.titleLabel?.sizeToFit()
         self.sizeToFit()
@@ -470,7 +471,7 @@ class ChoiceButton: UIButton
         
         UIView.animate(withDuration: 0.2)
         {
-            self.setTitleColor(Labiba._ChoicesButtonTintColor, for: .normal)
+            self.setTitleColor(Labiba.ChoiceView.tintColor, for: .normal)
         }
     }
     

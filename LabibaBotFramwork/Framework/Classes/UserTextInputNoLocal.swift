@@ -92,10 +92,15 @@ class UserTextInputNoLocal: UIView, UITextViewDelegate, LocationSelectViewContro
         sideMarginsCons.forEach { (cons) in
             cons.constant += (ipadMargin - cons.constant)*ipadFactor
         }
-        container.backgroundColor = Labiba._UserInputColors.background
-        textView.textColor = Labiba._UserInputColors.textColor
-        self.sendButton.tintColor = Labiba._SendButtonTintColor 
-        self.sendButton.backgroundColor = Labiba._SendButtonBackgroundColor ?? .white
+//        container.backgroundColor = Labiba._UserInputColors.background
+//        textView.textColor = Labiba._UserInputColors.textColor
+//        self.sendButton.tintColor = Labiba._SendButtonTintColor
+//        self.sendButton.backgroundColor = Labiba._SendButtonBackgroundColor ?? .white
+        
+        container.backgroundColor = Labiba.UserInputView.backgroundColor
+        textView.textColor = Labiba.UserInputView.textColor
+        self.sendButton.tintColor = Labiba.UserInputView.sendButton.tintColor
+        self.sendButton.backgroundColor = Labiba.UserInputView.sendButton.backgroundColor
         
         self.textView.delegate = self
         placeholderLabel.text = ""//"al-feedback-placeholder".localBasedOnChoosenLangCode
@@ -106,13 +111,16 @@ class UserTextInputNoLocal: UIView, UITextViewDelegate, LocationSelectViewContro
         self.textView.font = applyBotFont(size: 13)
         self.textView.addSubview(placeholderLabel)
         
-        placeholderLabel.textColor = Labiba._UserInputColors.hintColor//UIColor(white: 0, alpha: 0.3)
+//        placeholderLabel.textColor = Labiba._UserInputColors.hintColor//UIColor(white: 0, alpha: 0.3)
+        placeholderLabel.textColor = Labiba.UserInputView.textColor
         placeholderLabel.isHidden = !textView.text.isEmpty
         
         
       
-        requestAttachmentButton.tintColor = Labiba._UserInputColors.tintColor
-        self.micButton.tintColor = Labiba._UserInputColors.tintColor
+      //  requestAttachmentButton.tintColor = Labiba._UserInputColors.tintColor
+        requestAttachmentButton.tintColor = Labiba.UserInputView.tintColor
+//        self.micButton.tintColor = Labiba._UserInputColors.tintColor
+        self.micButton.tintColor = Labiba.UserInputView.tintColor
         self.container.applyDarkShadow(opacity: 0.2, offset: CGSize(width: 1, height: 1), radius: 2)
         self.sendButton.applyDarkShadow(opacity: 0.2, offset: CGSize(width: 1, height: 1), radius: 2)
         self.applySemanticAccordingToBotLang()
@@ -323,7 +331,8 @@ class UserTextInputNoLocal: UIView, UITextViewDelegate, LocationSelectViewContro
             UIView.animate(withDuration: 0.4, animations: {
                 self.micButton.transform = CGAffineTransform.identity
                 self.micButton.backgroundColor = .clear
-                self.micButton.tintColor = Labiba._UserInputColors.tintColor
+                //self.micButton.tintColor = Labiba._UserInputColors.tintColor
+                self.micButton.tintColor = Labiba.UserInputView.tintColor
             })
             UIView.animate(withDuration: 0.6, animations: {
                 self.placeholderLabel.alpha = 1

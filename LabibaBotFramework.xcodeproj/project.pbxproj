@@ -136,6 +136,8 @@
 		37EF9ABF2313E83100FF49B3 /* DynamicGIF.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EF9ABE2313E83100FF49B3 /* DynamicGIF.xib */; };
 		37F003D0233388E900A1AC17 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B42954F622DDDBD2002DE3E9 /* ProximaNova-Light.otf */; };
 		37F003DE2333B57600A1AC17 /* SplashScreenWithStaticImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F003DD2333B57600A1AC17 /* SplashScreenWithStaticImage.swift */; };
+		5214229425AC965400B78AB0 /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214229325AC965300B78AB0 /* ChoiceView.swift */; };
+		5214229825AC9B7800B78AB0 /* LabibaMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214229725AC9B7800B78AB0 /* LabibaMapView.swift */; };
 		5214489B258647B90099BF38 /* Rating.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5214489A258647B90099BF38 /* Rating.storyboard */; };
 		521448A425864FE00099BF38 /* RatingSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521448A325864FE00099BF38 /* RatingSheetVC.swift */; };
 		521448A8258651D20099BF38 /* RatingBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521448A7258651D20099BF38 /* RatingBaseVC.swift */; };
@@ -173,6 +175,7 @@
 		52C0A0952588AFEF004D7AAA /* SubmitRatingLightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C0A0932588AFEF004D7AAA /* SubmitRatingLightCell.swift */; };
 		52C0A0962588AFEF004D7AAA /* SubmitRatingLightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C0A0942588AFEF004D7AAA /* SubmitRatingLightCell.xib */; };
 		52C16E69251B838E0026D20D /* JsonExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 52C16E63251B82BA0026D20D /* JsonExample.json */; };
+		52C5A6E625AF052C00FDAB6B /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5A6E525AF052C00FDAB6B /* UserInputView.swift */; };
 		52C6DBA624694849005CFE27 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6DB9D24694847005CFE27 /* ImageDownloader.swift */; };
 		52C6DBA724694849005CFE27 /* UIButton+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6DB9E24694848005CFE27 /* UIButton+AlamofireImage.swift */; };
 		52C6DBA824694849005CFE27 /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6DB9F24694848005CFE27 /* ImageFilter.swift */; };
@@ -182,6 +185,8 @@
 		52C6DBAC24694849005CFE27 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6DBA324694848005CFE27 /* Image.swift */; };
 		52C6DBAD24694849005CFE27 /* AFIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6DBA424694848005CFE27 /* AFIError.swift */; };
 		52C6DBAE24694849005CFE27 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6DBA524694848005CFE27 /* ImageCache.swift */; };
+		52D2F06725ADB8C500FBE51C /* UserChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2F06625ADB8C500FBE51C /* UserChatBubble.swift */; };
+		52D2F06B25ADC1A300FBE51C /* BotChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2F06A25ADC1A300FBE51C /* BotChatBubble.swift */; };
 		52DE30712462D6A000DAF3E7 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE30602462D69D00DAF3E7 /* TaskDelegate.swift */; };
 		52DE30722462D6A000DAF3E7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE30612462D69D00DAF3E7 /* NetworkReachabilityManager.swift */; };
 		52DE30732462D6A000DAF3E7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE30622462D69D00DAF3E7 /* Response.swift */; };
@@ -450,6 +455,8 @@
 		37EF9ABC2313E82100FF49B3 /* DynamicGIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicGIF.swift; sourceTree = "<group>"; };
 		37EF9ABE2313E83100FF49B3 /* DynamicGIF.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicGIF.xib; sourceTree = "<group>"; };
 		37F003DD2333B57600A1AC17 /* SplashScreenWithStaticImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenWithStaticImage.swift; sourceTree = "<group>"; };
+		5214229325AC965300B78AB0 /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
+		5214229725AC9B7800B78AB0 /* LabibaMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaMapView.swift; sourceTree = "<group>"; };
 		5214489A258647B90099BF38 /* Rating.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rating.storyboard; sourceTree = "<group>"; };
 		521448A325864FE00099BF38 /* RatingSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingSheetVC.swift; sourceTree = "<group>"; };
 		521448A7258651D20099BF38 /* RatingBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingBaseVC.swift; sourceTree = "<group>"; };
@@ -487,6 +494,7 @@
 		52C0A0932588AFEF004D7AAA /* SubmitRatingLightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitRatingLightCell.swift; sourceTree = "<group>"; };
 		52C0A0942588AFEF004D7AAA /* SubmitRatingLightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitRatingLightCell.xib; sourceTree = "<group>"; };
 		52C16E63251B82BA0026D20D /* JsonExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonExample.json; sourceTree = "<group>"; };
+		52C5A6E525AF052C00FDAB6B /* UserInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
 		52C6DB9D24694847005CFE27 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		52C6DB9E24694848005CFE27 /* UIButton+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+AlamofireImage.swift"; sourceTree = "<group>"; };
 		52C6DB9F24694848005CFE27 /* ImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilter.swift; sourceTree = "<group>"; };
@@ -496,6 +504,8 @@
 		52C6DBA324694848005CFE27 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		52C6DBA424694848005CFE27 /* AFIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFIError.swift; sourceTree = "<group>"; };
 		52C6DBA524694848005CFE27 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		52D2F06625ADB8C500FBE51C /* UserChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatBubble.swift; sourceTree = "<group>"; };
+		52D2F06A25ADC1A300FBE51C /* BotChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotChatBubble.swift; sourceTree = "<group>"; };
 		52DE30602462D69D00DAF3E7 /* TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
 		52DE30612462D69D00DAF3E7 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		52DE30622462D69D00DAF3E7 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -1067,6 +1077,11 @@
 				522D1658256E9C46002758D5 /* RatingForm.swift */,
 				522A169925821534008AAC17 /* MenuCardView.swift */,
 				522A169D2582291D008AAC17 /* CarousalCardView.swift */,
+				5214229325AC965300B78AB0 /* ChoiceView.swift */,
+				5214229725AC9B7800B78AB0 /* LabibaMapView.swift */,
+				52D2F06625ADB8C500FBE51C /* UserChatBubble.swift */,
+				52D2F06A25ADC1A300FBE51C /* BotChatBubble.swift */,
+				52C5A6E525AF052C00FDAB6B /* UserInputView.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -1769,10 +1784,12 @@
 				52DE8DC5248CB9C60067F5EC /* IQUIScrollView+Additions.swift in Sources */,
 				377FF961235465C900D6FA42 /* RatingModel.swift in Sources */,
 				B429551822DDDBD2002DE3E9 /* CornerLocation.swift in Sources */,
+				5214229425AC965400B78AB0 /* ChoiceView.swift in Sources */,
 				B429553522DDDBD2002DE3E9 /* ImagePicking.swift in Sources */,
 				52DE8DCA248CB9C60067F5EC /* IQInvocation.swift in Sources */,
 				52DE8DC4248CB9C60067F5EC /* IQUITextFieldView+Additions.swift in Sources */,
 				374FB3E923EABE5A0066E325 /* StanderdSplashVC.swift in Sources */,
+				52D2F06B25ADC1A300FBE51C /* BotChatBubble.swift in Sources */,
 				372BB4C324B1E1CD003A8297 /* VoiceAssistant.swift in Sources */,
 				B429554E22DDDBD2002DE3E9 /* LabibaBotConnector.swift in Sources */,
 				B429553422DDDBD2002DE3E9 /* PlacesAutoCompleteModel.swift in Sources */,
@@ -1821,6 +1838,7 @@
 				37A1484624B5C6B90025954D /* FloatingBubblesVisualizer.swift in Sources */,
 				52BF2F592471336600820B37 /* SpeechToTextManager.swift in Sources */,
 				3782D9A623BA1369006A79D4 /* SRHash.m in Sources */,
+				52D2F06725ADB8C500FBE51C /* UserChatBubble.swift in Sources */,
 				3782D9AA23BA1369006A79D4 /* SRRandom.m in Sources */,
 				3772B5262339E9F100262298 /* Reachability.swift in Sources */,
 				3782D9B023BA1369006A79D4 /* SRIOConsumerPool.m in Sources */,
@@ -1904,6 +1922,7 @@
 				B429551B22DDDBD2002DE3E9 /* HeaderVC.swift in Sources */,
 				5281A65224502E09001605E8 /* WepPageViewController.swift in Sources */,
 				52DE8DC2248CB9C60067F5EC /* IQNSArray+Sort.swift in Sources */,
+				52C5A6E625AF052C00FDAB6B /* UserInputView.swift in Sources */,
 				52C6DBA824694849005CFE27 /* ImageFilter.swift in Sources */,
 				52C6DBAC24694849005CFE27 /* Image.swift in Sources */,
 				52DE8DD1248CB9C60067F5EC /* IQPreviousNextView.swift in Sources */,
@@ -1911,6 +1930,7 @@
 				52FC5CF624D0262F00C7B7CF /* LabibaVoiceExperience.swift in Sources */,
 				52DE30732462D6A000DAF3E7 /* Response.swift in Sources */,
 				3782D94F23B9F511006A79D4 /* NVActivityIndicatorViewable.swift in Sources */,
+				5214229825AC9B7800B78AB0 /* LabibaMapView.swift in Sources */,
 				3782D9AE23BA1369006A79D4 /* SRIOConsumer.m in Sources */,
 				B429553122DDDBD2002DE3E9 /* LbLanguage.swift in Sources */,
 				B429551122DDDBD2002DE3E9 /* Constants.swift in Sources */,

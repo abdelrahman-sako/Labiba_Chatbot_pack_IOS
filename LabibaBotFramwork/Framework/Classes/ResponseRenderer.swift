@@ -46,7 +46,8 @@ class MediaStreamResponseRenderer: ResponseRenderer
 
     func buildStreamDisplay(forType type: MediaType, andURL url: URL) -> Void
     {
-        let avatarWidth = Labiba._botAvatar == nil ? 0 : AvatarWidth + 5
+       // let avatarWidth = Labiba._botAvatar == nil ? 0 : AvatarWidth + 5
+        let avatarWidth = Labiba.BotChatBubble.avatar == nil ? 0 : AvatarWidth + 5
         let ty = display.height + 4
         let w = (type == .Audio) ? 200 : view.frame.width - avatarWidth - 10//view.frame.width - BubbleMargin - AvatarWidth - 10 + 20
         let h = (type == .Audio) ? 60 : 0.60 * w//0.75 * w
@@ -124,7 +125,8 @@ class PhotoReponseRenderer: ResponseRenderer
     func buildPhotoDisplay(_ photo: UIImage, byUser: Bool) -> Void
     {
         let totalMargin = margin + ipadMargin
-        let avatarWidth = Labiba._botAvatar == nil ? 0 : AvatarWidth + 5
+       // let avatarWidth = Labiba._botAvatar == nil ? 0 : AvatarWidth + 5
+        let avatarWidth = Labiba.BotChatBubble.avatar == nil ? 0 : AvatarWidth + 5
         let ty = display.height + 4
         let w =  view.frame.width - avatarWidth - 10 - 2*totalMargin//view.frame.width - BubbleMargin - AvatarWidth - 10 + 20
         let h =  0.60 * w//0.75 * w

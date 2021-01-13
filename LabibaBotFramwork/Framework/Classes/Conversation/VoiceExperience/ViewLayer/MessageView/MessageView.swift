@@ -49,7 +49,8 @@ class MessageView: VoiceExperienceBaseView{
     var newOriginX:CGFloat = 0.0
     override func awakeFromNib() {
         messageLbl.font = applyBotFont( bold: false,size: fontSize)
-        messageLbl.textColor = Labiba._botBubbleTextColor
+       // messageLbl.textColor = Labiba._botBubbleTextColor
+        messageLbl.textColor = Labiba.BotChatBubble.textColor
         messageLbl.text = ""
         containerView.applySemanticAccordingToBotLang()
     }
@@ -64,7 +65,8 @@ class MessageView: VoiceExperienceBaseView{
         
         let boldFont =  applyBotFont(textLang: Language(rawValue: lang ) ?? .ar ,bold:true, size: fontSize )
         let regularFont =  applyBotFont(textLang: Language(rawValue: lang ) ?? .ar , size: fontSize)
-        self.messageLbl.attributedText = filteredMessage.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba._botBubbleTextColor)
+//        self.messageLbl.attributedText = filteredMessage.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba._botBubbleTextColor)
+        self.messageLbl.attributedText = filteredMessage.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba.BotChatBubble.textColor)
         setAlignment()
         self.messageLbl.alpha = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
