@@ -37,21 +37,21 @@ class UserBubble: BubbleView
             //            if  !Labiba._userBubbleCornerMask.contains(.layerMaxXMinYCorner){
             //                Labiba._userBubbleCornerMask.insert(.layerMaxXMinYCorner)
             //                Labiba._userBubbleCornerMask.remove(.layerMinXMinYCorner)
-            if  !Labiba.UserChatBubble.CornerMask.contains(.layerMaxXMinYCorner){
-                Labiba.UserChatBubble.CornerMask.insert(.layerMaxXMinYCorner)
-                Labiba.UserChatBubble.CornerMask.remove(.layerMinXMinYCorner)
+            if  !Labiba.UserChatBubble.cornerMask.contains(.layerMaxXMinYCorner){
+                Labiba.UserChatBubble.cornerMask.insert(.layerMaxXMinYCorner)
+                Labiba.UserChatBubble.cornerMask.remove(.layerMinXMinYCorner)
             }
         }else{
             //  if  !Labiba._userBubbleCornerMask.contains(.layerMinXMinYCorner){
             //                Labiba._userBubbleCornerMask.insert(.layerMinXMinYCorner)
             //                Labiba._userBubbleCornerMask.remove(.layerMaxXMinYCorner)
-            if  !Labiba.UserChatBubble.CornerMask.contains(.layerMinXMinYCorner){
-                Labiba.UserChatBubble.CornerMask.insert(.layerMinXMinYCorner)
-                Labiba.UserChatBubble.CornerMask.remove(.layerMaxXMinYCorner)
+            if  !Labiba.UserChatBubble.cornerMask.contains(.layerMinXMinYCorner){
+                Labiba.UserChatBubble.cornerMask.insert(.layerMinXMinYCorner)
+                Labiba.UserChatBubble.cornerMask.remove(.layerMaxXMinYCorner)
             }
         }
         // bubble.layer.maskedCorners = Labiba._userBubbleCornerMask
-        bubble.layer.maskedCorners = Labiba.UserChatBubble.CornerMask
+        bubble.layer.maskedCorners = Labiba.UserChatBubble.cornerMask
         //bubble.alpha = Labiba._userBubbleAlpha
         bubble.alpha = Labiba.UserChatBubble.alpha
         //        if let grad = Labiba._userBubbleBackgroundGradient

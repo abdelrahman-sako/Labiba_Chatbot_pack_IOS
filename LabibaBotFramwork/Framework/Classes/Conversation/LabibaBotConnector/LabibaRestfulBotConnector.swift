@@ -151,7 +151,12 @@ class LabibaRestfulBotConnector:BotConnector{
             
             let dialog = ConversationDialog(by: .bot, time: Date())
             let message = model.message
-            message?.text = message?.text?.replacingOccurrences(of: "livechat.transfer:", with: "")// I know that it doesn't make sense, but this is how they want me to work, they said that this is Hussam fault  :( :(
+            if message?.text?.contains("livechat.transfer")  ?? false {
+                delegate?.botConnector(self, didRequestLiveChatTransferWithMessage: "livechat.transfer")
+            }else  if message?.text?.contains("livechat.transfer.once")  ?? false{
+                delegate?.botConnector(self, didRequestLiveChatTransferWithMessage: "livechat.transfer.once")
+            }
+            message?.text = message?.text?.replacingOccurrences(of: "livechat.transfer:", with: "").replacingOccurrences(of: "livechat.transfer.once:", with: "")// I know that it doesn't make sense, but this is how they asked me to work, they said that this is Hussam fault  :( :(
             // dialog.message = message?.text
             //            message?.text = "مَا هُوَ رَقْمُ الْعَمِيلِ الخَاْصِّ بِكْ !@:@<speak> <s> <emphasis level='strong'> أهلَوْ سَهْلَ </emphasis> </s> <break strength='strong'/> أنا بووجيْ مسؤولِتْ حْسابَكْ لِجْدِيدِهْ <break strength='strong'/> <s> كِيـفْ بَأْدَرْ أَساعْدَكِلْيُومْ؟ </s> </speak>"
             if let messages = message?.text?.components(separatedBy: "@:@"){

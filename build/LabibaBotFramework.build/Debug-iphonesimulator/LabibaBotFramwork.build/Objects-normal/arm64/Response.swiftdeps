@@ -1,0 +1,512 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "DefaultDataResponse"
+- "DataResponse"
+- "DefaultDownloadResponse"
+- "DownloadResponse"
+- "Response"
+provides-nominal:
+- "17LabibaBotFramwork19DefaultDataResponseV"
+- "17LabibaBotFramwork12DataResponseV"
+- "17LabibaBotFramwork23DefaultDownloadResponseV"
+- "17LabibaBotFramwork16DownloadResponseV"
+- "17LabibaBotFramwork8ResponseP"
+provides-member:
+- ["17LabibaBotFramwork19DefaultDataResponseV", ""]
+- ["17LabibaBotFramwork12DataResponseV", ""]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", ""]
+- ["17LabibaBotFramwork16DownloadResponseV", ""]
+- ["17LabibaBotFramwork8ResponseP", ""]
+- ["17LabibaBotFramwork12DataResponseV", "map"]
+- ["17LabibaBotFramwork12DataResponseV", "flatMap"]
+- ["17LabibaBotFramwork12DataResponseV", "mapError"]
+- ["17LabibaBotFramwork12DataResponseV", "flatMapError"]
+- ["17LabibaBotFramwork16DownloadResponseV", "map"]
+- ["17LabibaBotFramwork16DownloadResponseV", "flatMap"]
+- ["17LabibaBotFramwork16DownloadResponseV", "mapError"]
+- ["17LabibaBotFramwork16DownloadResponseV", "flatMapError"]
+- ["17LabibaBotFramwork8ResponseP", "add"]
+provides-dynamic-lookup:
+depends-top-level:
+- "??"
+- "AnyObject"
+- "AssignmentPrecedence"
+- "CastingPrecedence"
+- "CustomDebugStringConvertible"
+- "CustomStringConvertible"
+- "Data"
+- "DataResponse"
+- "DefaultDataResponse"
+- "DefaultDownloadResponse"
+- "DownloadResponse"
+- "Error"
+- "FloatLiteralType"
+- "HTTPURLResponse"
+- "IntegerLiteralType"
+- "Response"
+- "Result"
+- "String"
+- !private "StringLiteralType"
+- "Timeline"
+- "URL"
+- "URLRequest"
+- "URLSessionTaskMetrics"
+- "UTF8"
+- "UnicodeScalarType"
+- "Value"
+- !private "_metrics"
+- !private "data"
+- !private "destinationURL"
+- !private "request"
+- !private "response"
+- !private "result"
+- !private "resumeData"
+- !private "temporaryURL"
+- !private "timeline"
+depends-member:
+- ["SK", ""]
+- !private ["SK", "count"]
+- !private ["SK", "init"]
+- !private ["s7CVarArgP", "init"]
+- ["Sl", ""]
+- !private ["Sl", "_copyToContiguousArray"]
+- !private ["Sl", "_customIndexOfEquatableElement"]
+- !private ["Sl", "_customLastIndexOfEquatableElement"]
+- !private ["Sl", "_failEarlyRangeCheck"]
+- !private ["Sl", "count"]
+- !private ["Sl", "distance"]
+- !private ["Sl", "endIndex"]
+- !private ["Sl", "formIndex"]
+- !private ["Sl", "index"]
+- !private ["Sl", "indices"]
+- !private ["Sl", "init"]
+- !private ["Sl", "isEmpty"]
+- !private ["Sl", "makeIterator"]
+- !private ["Sl", "startIndex"]
+- !private ["Sl", "subscript"]
+- !private ["Sl", "underestimatedCount"]
+- ["SL", ""]
+- !private ["SL", "init"]
+- !private ["10Foundation15ContiguousBytesP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "DataResponse"]
+- !private ["s28CustomDebugStringConvertibleP", "DownloadResponse"]
+- !private ["s28CustomDebugStringConvertibleP", "String"]
+- !private ["s28CustomDebugStringConvertibleP", "Timeline"]
+- !private ["s28CustomDebugStringConvertibleP", "UTF8"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- ["s28CustomDebugStringConvertibleP", "_metrics"]
+- ["s28CustomDebugStringConvertibleP", "add"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "data"]
+- ["s28CustomDebugStringConvertibleP", "debugDescription"]
+- ["s28CustomDebugStringConvertibleP", "description"]
+- !private ["s28CustomDebugStringConvertibleP", "destinationURL"]
+- !private ["s28CustomDebugStringConvertibleP", "error"]
+- !private ["s28CustomDebugStringConvertibleP", "flatMap"]
+- !private ["s28CustomDebugStringConvertibleP", "flatMapError"]
+- !private ["s28CustomDebugStringConvertibleP", "httpBody"]
+- !private ["s28CustomDebugStringConvertibleP", "httpMethod"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "map"]
+- !private ["s28CustomDebugStringConvertibleP", "mapError"]
+- ["s28CustomDebugStringConvertibleP", "metrics"]
+- !private ["s28CustomDebugStringConvertibleP", "path"]
+- !private ["s28CustomDebugStringConvertibleP", "request"]
+- !private ["s28CustomDebugStringConvertibleP", "response"]
+- !private ["s28CustomDebugStringConvertibleP", "result"]
+- !private ["s28CustomDebugStringConvertibleP", "resumeData"]
+- !private ["s28CustomDebugStringConvertibleP", "temporaryURL"]
+- !private ["s28CustomDebugStringConvertibleP", "timeline"]
+- !private ["s28CustomDebugStringConvertibleP", "value"]
+- !private ["s17CustomReflectableP", "count"]
+- !private ["s17CustomReflectableP", "httpBody"]
+- !private ["s17CustomReflectableP", "httpMethod"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "map"]
+- !private ["s23CustomStringConvertibleP", "DataResponse"]
+- !private ["s23CustomStringConvertibleP", "DownloadResponse"]
+- !private ["s23CustomStringConvertibleP", "String"]
+- !private ["s23CustomStringConvertibleP", "Timeline"]
+- !private ["s23CustomStringConvertibleP", "UTF8"]
+- ["s23CustomStringConvertibleP", ""]
+- ["s23CustomStringConvertibleP", "_metrics"]
+- ["s23CustomStringConvertibleP", "add"]
+- !private ["s23CustomStringConvertibleP", "appendInterpolation"]
+- !private ["s23CustomStringConvertibleP", "appendLiteral"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "data"]
+- ["s23CustomStringConvertibleP", "debugDescription"]
+- ["s23CustomStringConvertibleP", "description"]
+- !private ["s23CustomStringConvertibleP", "destinationURL"]
+- !private ["s23CustomStringConvertibleP", "error"]
+- !private ["s23CustomStringConvertibleP", "flatMap"]
+- !private ["s23CustomStringConvertibleP", "flatMapError"]
+- !private ["s23CustomStringConvertibleP", "httpBody"]
+- !private ["s23CustomStringConvertibleP", "httpMethod"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "map"]
+- !private ["s23CustomStringConvertibleP", "mapError"]
+- ["s23CustomStringConvertibleP", "metrics"]
+- !private ["s23CustomStringConvertibleP", "path"]
+- !private ["s23CustomStringConvertibleP", "request"]
+- !private ["s23CustomStringConvertibleP", "response"]
+- !private ["s23CustomStringConvertibleP", "result"]
+- !private ["s23CustomStringConvertibleP", "resumeData"]
+- !private ["s23CustomStringConvertibleP", "temporaryURL"]
+- !private ["s23CustomStringConvertibleP", "timeline"]
+- !private ["s23CustomStringConvertibleP", "value"]
+- !private ["10Foundation4DataV", "count"]
+- !private ["10Foundation12DataProtocolP", ""]
+- !private ["10Foundation12DataProtocolP", "count"]
+- ["17LabibaBotFramwork12DataResponseV", "AnyObject"]
+- ["17LabibaBotFramwork12DataResponseV", "Data"]
+- ["17LabibaBotFramwork12DataResponseV", "DataResponse"]
+- ["17LabibaBotFramwork12DataResponseV", "Error"]
+- ["17LabibaBotFramwork12DataResponseV", "HTTPURLResponse"]
+- ["17LabibaBotFramwork12DataResponseV", "Result"]
+- ["17LabibaBotFramwork12DataResponseV", "String"]
+- ["17LabibaBotFramwork12DataResponseV", "Timeline"]
+- ["17LabibaBotFramwork12DataResponseV", "URLRequest"]
+- ["17LabibaBotFramwork12DataResponseV", "URLSessionTaskMetrics"]
+- !private ["17LabibaBotFramwork12DataResponseV", "UTF8"]
+- ["17LabibaBotFramwork12DataResponseV", ""]
+- ["17LabibaBotFramwork12DataResponseV", "_metrics"]
+- ["17LabibaBotFramwork12DataResponseV", "add"]
+- ["17LabibaBotFramwork12DataResponseV", "data"]
+- ["17LabibaBotFramwork12DataResponseV", "debugDescription"]
+- ["17LabibaBotFramwork12DataResponseV", "description"]
+- ["17LabibaBotFramwork12DataResponseV", "error"]
+- ["17LabibaBotFramwork12DataResponseV", "flatMap"]
+- ["17LabibaBotFramwork12DataResponseV", "flatMapError"]
+- ["17LabibaBotFramwork12DataResponseV", "init"]
+- ["17LabibaBotFramwork12DataResponseV", "map"]
+- ["17LabibaBotFramwork12DataResponseV", "mapError"]
+- ["17LabibaBotFramwork12DataResponseV", "metrics"]
+- ["17LabibaBotFramwork12DataResponseV", "request"]
+- ["17LabibaBotFramwork12DataResponseV", "response"]
+- ["17LabibaBotFramwork12DataResponseV", "result"]
+- ["17LabibaBotFramwork12DataResponseV", "timeline"]
+- ["17LabibaBotFramwork12DataResponseV", "value"]
+- !private ["Se", "count"]
+- !private ["Se", "init"]
+- !private ["Se", "map"]
+- !private ["Se", "path"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "AnyObject"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "Data"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "Error"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "HTTPURLResponse"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "Timeline"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "URLRequest"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "URLSessionTaskMetrics"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", ""]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "_metrics"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "add"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "data"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "error"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "init"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "metrics"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "request"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "response"]
+- ["17LabibaBotFramwork19DefaultDataResponseV", "timeline"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "AnyObject"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "Data"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "Error"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "HTTPURLResponse"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "Timeline"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "URL"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "URLRequest"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "URLSessionTaskMetrics"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", ""]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "_metrics"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "add"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "destinationURL"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "error"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "init"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "metrics"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "request"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "response"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "resumeData"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "temporaryURL"]
+- ["17LabibaBotFramwork23DefaultDownloadResponseV", "timeline"]
+- !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
+- !private ["s26DefaultStringInterpolationV", "appendLiteral"]
+- ["17LabibaBotFramwork16DownloadResponseV", "AnyObject"]
+- ["17LabibaBotFramwork16DownloadResponseV", "Data"]
+- ["17LabibaBotFramwork16DownloadResponseV", "DownloadResponse"]
+- ["17LabibaBotFramwork16DownloadResponseV", "Error"]
+- ["17LabibaBotFramwork16DownloadResponseV", "HTTPURLResponse"]
+- ["17LabibaBotFramwork16DownloadResponseV", "Result"]
+- ["17LabibaBotFramwork16DownloadResponseV", "String"]
+- ["17LabibaBotFramwork16DownloadResponseV", "Timeline"]
+- ["17LabibaBotFramwork16DownloadResponseV", "URL"]
+- ["17LabibaBotFramwork16DownloadResponseV", "URLRequest"]
+- ["17LabibaBotFramwork16DownloadResponseV", "URLSessionTaskMetrics"]
+- !private ["17LabibaBotFramwork16DownloadResponseV", "UTF8"]
+- ["17LabibaBotFramwork16DownloadResponseV", ""]
+- ["17LabibaBotFramwork16DownloadResponseV", "_metrics"]
+- ["17LabibaBotFramwork16DownloadResponseV", "add"]
+- ["17LabibaBotFramwork16DownloadResponseV", "debugDescription"]
+- ["17LabibaBotFramwork16DownloadResponseV", "description"]
+- ["17LabibaBotFramwork16DownloadResponseV", "destinationURL"]
+- ["17LabibaBotFramwork16DownloadResponseV", "error"]
+- ["17LabibaBotFramwork16DownloadResponseV", "flatMap"]
+- ["17LabibaBotFramwork16DownloadResponseV", "flatMapError"]
+- ["17LabibaBotFramwork16DownloadResponseV", "init"]
+- ["17LabibaBotFramwork16DownloadResponseV", "map"]
+- ["17LabibaBotFramwork16DownloadResponseV", "mapError"]
+- ["17LabibaBotFramwork16DownloadResponseV", "metrics"]
+- ["17LabibaBotFramwork16DownloadResponseV", "request"]
+- ["17LabibaBotFramwork16DownloadResponseV", "response"]
+- ["17LabibaBotFramwork16DownloadResponseV", "result"]
+- ["17LabibaBotFramwork16DownloadResponseV", "resumeData"]
+- ["17LabibaBotFramwork16DownloadResponseV", "temporaryURL"]
+- ["17LabibaBotFramwork16DownloadResponseV", "timeline"]
+- ["17LabibaBotFramwork16DownloadResponseV", "value"]
+- !private ["SE", "count"]
+- !private ["SE", "init"]
+- !private ["SE", "map"]
+- !private ["SE", "path"]
+- ["SQ", ""]
+- !private ["SQ", "count"]
+- !private ["SQ", "httpBody"]
+- !private ["SQ", "httpMethod"]
+- !private ["SQ", "init"]
+- !private ["SQ", "map"]
+- !private ["SQ", "path"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s23ExpressibleByNilLiteralP", "map"]
+- !private ["s32ExpressibleByStringInterpolationP", "StringInterpolation"]
+- ["s32ExpressibleByStringInterpolationP", ""]
+- !private ["s32ExpressibleByStringInterpolationP", "init"]
+- ["s26ExpressibleByStringLiteralP", ""]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["SH", ""]
+- !private ["SH", "count"]
+- !private ["SH", "httpBody"]
+- !private ["SH", "httpMethod"]
+- !private ["SH", "init"]
+- !private ["SH", "map"]
+- !private ["SH", "path"]
+- !private ["17LabibaBotFramwork17JSONSubscriptTypeP", "init"]
+- ["s25LosslessStringConvertibleP", ""]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["SM", ""]
+- !private ["SM", "count"]
+- !private ["10Foundation19MutableDataProtocolP", "count"]
+- ["So8NSCodingP", ""]
+- ["So8NSObjectC", ""]
+- !private ["Sq", "map"]
+- !private ["Sk", ""]
+- !private ["Sk", "count"]
+- !private ["Sk", "distance"]
+- !private ["Sk", "index"]
+- !private ["Sm", ""]
+- !private ["Sm", "count"]
+- !private ["Sm", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "count"]
+- !private ["10Foundation20ReferenceConvertibleP", "httpBody"]
+- !private ["10Foundation20ReferenceConvertibleP", "httpMethod"]
+- !private ["10Foundation20ReferenceConvertibleP", "path"]
+- ["17LabibaBotFramwork8ResponseP", "AnyObject"]
+- !private ["17LabibaBotFramwork8ResponseP", "DataResponse"]
+- !private ["17LabibaBotFramwork8ResponseP", "DownloadResponse"]
+- !private ["17LabibaBotFramwork8ResponseP", "String"]
+- !private ["17LabibaBotFramwork8ResponseP", "Timeline"]
+- !private ["17LabibaBotFramwork8ResponseP", "URLSessionTaskMetrics"]
+- !private ["17LabibaBotFramwork8ResponseP", "UTF8"]
+- ["17LabibaBotFramwork8ResponseP", ""]
+- ["17LabibaBotFramwork8ResponseP", "_metrics"]
+- ["17LabibaBotFramwork8ResponseP", "add"]
+- !private ["17LabibaBotFramwork8ResponseP", "data"]
+- ["17LabibaBotFramwork8ResponseP", "debugDescription"]
+- ["17LabibaBotFramwork8ResponseP", "description"]
+- !private ["17LabibaBotFramwork8ResponseP", "destinationURL"]
+- !private ["17LabibaBotFramwork8ResponseP", "error"]
+- !private ["17LabibaBotFramwork8ResponseP", "init"]
+- ["17LabibaBotFramwork8ResponseP", "metrics"]
+- !private ["17LabibaBotFramwork8ResponseP", "request"]
+- !private ["17LabibaBotFramwork8ResponseP", "response"]
+- !private ["17LabibaBotFramwork8ResponseP", "result"]
+- !private ["17LabibaBotFramwork8ResponseP", "resumeData"]
+- !private ["17LabibaBotFramwork8ResponseP", "temporaryURL"]
+- !private ["17LabibaBotFramwork8ResponseP", "timeline"]
+- !private ["17LabibaBotFramwork6ResultO", ""]
+- !private ["17LabibaBotFramwork6ResultO", "debugDescription"]
+- !private ["17LabibaBotFramwork6ResultO", "error"]
+- !private ["17LabibaBotFramwork6ResultO", "flatMap"]
+- !private ["17LabibaBotFramwork6ResultO", "flatMapError"]
+- !private ["17LabibaBotFramwork6ResultO", "map"]
+- !private ["17LabibaBotFramwork6ResultO", "mapError"]
+- !private ["17LabibaBotFramwork6ResultO", "value"]
+- ["ST", ""]
+- !private ["ST", "_copyContents"]
+- !private ["ST", "_copyToContiguousArray"]
+- !private ["ST", "_customContainsEquatableElement"]
+- !private ["ST", "count"]
+- !private ["ST", "init"]
+- !private ["ST", "makeIterator"]
+- !private ["ST", "underestimatedCount"]
+- !private ["ST", "withContiguousStorageIfAvailable"]
+- !private ["SS", "init"]
+- !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
+- !private ["s27StringInterpolationProtocolP", "appendLiteral"]
+- !private ["s27StringInterpolationProtocolP", "init"]
+- !private ["Sy", "init"]
+- ["s16TextOutputStreamP", ""]
+- !private ["s16TextOutputStreamP", "appendInterpolation"]
+- !private ["s16TextOutputStreamP", "appendLiteral"]
+- !private ["s16TextOutputStreamP", "init"]
+- ["s20TextOutputStreamableP", ""]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["17LabibaBotFramwork8TimelineV", ""]
+- !private ["17LabibaBotFramwork8TimelineV", "debugDescription"]
+- !private ["17LabibaBotFramwork8TimelineV", "init"]
+- !private ["10Foundation3URLV", "path"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "init"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "path"]
+- !private ["10Foundation10URLRequestV", "httpBody"]
+- !private ["10Foundation10URLRequestV", "httpMethod"]
+- !private ["17LabibaBotFramwork21URLRequestConvertibleP", "httpBody"]
+- !private ["17LabibaBotFramwork21URLRequestConvertibleP", "httpMethod"]
+- ["So13NSURLResponseC", ""]
+- !private ["s30_CustomPlaygroundQuickLookableP", "init"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "path"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "path"]
+- !private ["s19_HasContiguousBytesP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- !private ["s21_ObjectiveCBridgeableP", "httpBody"]
+- !private ["s21_ObjectiveCBridgeableP", "httpMethod"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "map"]
+- !private ["s21_ObjectiveCBridgeableP", "path"]
+depends-nominal:
+- "SK"
+- !private "s7CVarArgP"
+- "Sl"
+- "SL"
+- !private "10Foundation15ContiguousBytesP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "10Foundation4DataV"
+- !private "10Foundation12DataProtocolP"
+- "17LabibaBotFramwork12DataResponseV"
+- !private "Se"
+- "17LabibaBotFramwork19DefaultDataResponseV"
+- "17LabibaBotFramwork23DefaultDownloadResponseV"
+- !private "s26DefaultStringInterpolationV"
+- "17LabibaBotFramwork16DownloadResponseV"
+- !private "SE"
+- "SQ"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- "s32ExpressibleByStringInterpolationP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- "SH"
+- !private "17LabibaBotFramwork17JSONSubscriptTypeP"
+- "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "SM"
+- !private "10Foundation19MutableDataProtocolP"
+- "So8NSCodingP"
+- "So8NSObjectC"
+- !private "Sq"
+- !private "Sk"
+- !private "Sm"
+- !private "10Foundation20ReferenceConvertibleP"
+- "17LabibaBotFramwork8ResponseP"
+- !private "17LabibaBotFramwork6ResultO"
+- "ST"
+- !private "SS"
+- !private "s27StringInterpolationProtocolP"
+- !private "Sy"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- !private "17LabibaBotFramwork8TimelineV"
+- !private "10Foundation3URLV"
+- !private "17LabibaBotFramwork14URLConvertibleP"
+- !private "10Foundation10URLRequestV"
+- !private "17LabibaBotFramwork21URLRequestConvertibleP"
+- "So13NSURLResponseC"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s34_ExpressibleByFileReferenceLiteralP"
+- !private "s19_HasContiguousBytesP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/ObjectiveC.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMIDI.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMedia.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/simd.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreImage.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/NaturalLanguage.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/QuartzCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Accelerate.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Speech.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Dispatch.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Metal.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Darwin.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreLocation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Foundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/AVFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreAudio.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreGraphics.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/os.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UniformTypeIdentifiers.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Contacts.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Swift.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/WebKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/MapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/LabibaBotFramwork.h"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/Framework/Classes/Manegers/SocketRocket/SRWebSocket.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/build/LabibaBotFramework.build/Debug-iphonesimulator/LabibaBotFramwork.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Accelerate.framework/Headers/Accelerate.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Speech.framework/Headers/Speech.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/os.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UniformTypeIdentifiers.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "64c587447e322de2822b39380cf28253"

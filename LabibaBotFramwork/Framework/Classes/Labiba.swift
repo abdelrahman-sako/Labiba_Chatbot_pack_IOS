@@ -419,21 +419,22 @@ public enum LabibaFontWeight{
     
     //MARK:- Bottom View : Voice Assistance,keyboard and AttachmentMenu Views UIConfiguration
     public static let UserInputView = LabibaUserInputView()
+    public static let VoiceAssistantView = LabibaVoiceAssistantView()
 //    static var _UserInputColors:(background: UIColor ,tintColor:UIColor, textColor:UIColor ,hintColor:UIColor) = (UIColor.white ,UIColor.black, UIColor.black , UIColor(white: 0, alpha: 0.3))
 //    static var _SendButtonTintColor : UIColor = #colorLiteral(red: 0.03137254902, green: 0.3725490196, blue: 1, alpha: 1)
 //    static var _SendButtonBackgroundColor : UIColor?
-    static var _MicButtonTintColor: UIColor = UIColor(argb: 0xFFFFFFFF)
-    static var _KeyboardIconTintColor: UIColor = UIColor(argb: 0xFFFFFFFF)
-    static var _MicButtonBackGroundColor: UIColor = UIColor(argb: 0x8066439F)
-    static var _MicButtonWaveColor: UIColor = UIColor(argb: 0xFFFFFFFF)
-    static var _MicButtonAlpha: CGFloat = 1
-    static var _MicButtonIcon: UIImage = Image(named: "micIcon")!
-    static var _KeyboardButtonIcon: UIImage = Image(named: "keyboard_icon")!
-    static var _AttachmentButtonIcon: UIImage = Image(named: "paperclip-solid")!
-    public static var  isAttachmentButtonHidden:Bool  = true
-    static var _bottomBackgroundGradient: GradientSpecs?
-    static var _AttachmentMenuBackgroundColor : UIColor = #colorLiteral(red: 0.03137254902, green: 0.3725490196, blue: 1, alpha: 1)
-    static var _AttachmentMenuTintColor : UIColor = .white
+    
+//    static var _MicButtonTintColor: UIColor = UIColor(argb: 0xFFFFFFFF)
+//    static var _KeyboardIconTintColor: UIColor = UIColor(argb: 0xFFFFFFFF)
+  //  static var _MicButtonBackGroundColor: UIColor = UIColor(argb: 0x8066439F)
+   // static var _MicButtonWaveColor: UIColor = UIColor(argb: 0xFFFFFFFF)
+  //  static var _MicButtonAlpha: CGFloat = 1
+   // static var _MicButtonIcon: UIImage = Image(named: "micIcon")!
+   // static var _KeyboardButtonIcon: UIImage = Image(named: "keyboard_icon")!
+   // static var _AttachmentButtonIcon: UIImage = Image(named: "paperclip-solid")!
+   // public static var  isAttachmentButtonHidden:Bool  = true
+   // static var _bottomBackgroundGradient: GradientSpecs?
+   
     
 //    public static func setUserInputColors(background: UIColor,tintColor:UIColor ,  textColor:UIColor , hintColor:UIColor )
 //    {
@@ -446,39 +447,34 @@ public enum LabibaFontWeight{
 //        self._SendButtonTintColor = tint
 //    }
     
-    public static func setMicButtonColors(background: UIColor , tint:UIColor , wave:UIColor = .white , keyboardTint:UIColor? = nil)
-    {
-        self._MicButtonTintColor = tint
-        self._MicButtonBackGroundColor = background
-        self._MicButtonWaveColor = wave
-        self._KeyboardIconTintColor = keyboardTint ?? tint
-    }
+//    public static func setMicButtonColors(background: UIColor , tint:UIColor , wave:UIColor = .white , keyboardTint:UIColor? = nil)
+//    {
+//        self._MicButtonTintColor = tint
+//        self._MicButtonBackGroundColor = background
+//        self._MicButtonWaveColor = wave
+//        self._KeyboardIconTintColor = keyboardTint ?? tint
+//    }
+//
+//    public static func setMicButtondAlpha(alpha: CGFloat)
+//    {
+//        self._MicButtonAlpha = alpha
+//    }
+//    public static func setMicButtondIcon(icon: UIImage)
+//       {
+//           self._MicButtonIcon = icon
+//       }
+//    public static func setKeyboardButtondIcon(icon: UIImage)
+//    {
+//        self._KeyboardButtonIcon = icon
+//    }
+//    
+//    
+//    public static func setBottomBackground(gradient: GradientSpecs)
+//    {
+//        self._bottomBackgroundGradient = gradient
+//    }
     
-    public static func setMicButtondAlpha(alpha: CGFloat)
-    {
-        self._MicButtonAlpha = alpha
-    }
-    public static func setMicButtondIcon(icon: UIImage)
-       {
-           self._MicButtonIcon = icon
-       }
-    public static func setKeyboardButtondIcon(icon: UIImage)
-    {
-        self._KeyboardButtonIcon = icon
-    }
-    
-    
-    public static func setBottomBackground(gradient: GradientSpecs)
-    {
-        self._bottomBackgroundGradient = gradient
-    }
-    
-    public static func setAttachmentMenuColors(background: UIColor , tint:UIColor)
-    {
-        self._AttachmentMenuBackgroundColor = background
-        self._AttachmentMenuTintColor = tint
-    }
-    
+   
     
     //MARK:- Choices Button View UIConfiguration
     public static let ChoiceView = LabibaChoiceView()
@@ -508,7 +504,18 @@ public enum LabibaFontWeight{
 //        self.defaultLocation = (latitude  , longitude)
 //    }
     
-   
+    //MARK:- Attachment Card View UIConfiguration
+ public static let attachmentThemeModel = LabibaAttachmentThemeModel()
+    
+    
+//    static var _AttachmentMenuBackgroundColor : UIColor = #colorLiteral(red: 0.03137254902, green: 0.3725490196, blue: 1, alpha: 1)
+//    static var _AttachmentMenuTintColor : UIColor = .white
+//    
+//    public static func setAttachmentMenuColors(background: UIColor , tint:UIColor)
+//    {
+//        self._AttachmentMenuBackgroundColor = background
+//        self._AttachmentMenuTintColor = tint
+//    }
     
     //MARK:- Chat Bubble View UIConfiguration
     
@@ -803,6 +810,7 @@ public enum LabibaFontWeight{
 
 @objc public protocol LabibaDelegate {
     @objc optional func createPost(onView view:UIView,_ data:Dictionary<String, Any> , completionHandler:@escaping(_ status:Bool , _ data:[String:Any]?)->Void)
+    @objc optional func liveChatTransfer(onView view:UIView, transferMessage:String)
     @objc optional func labibaWillClose()
 }
 

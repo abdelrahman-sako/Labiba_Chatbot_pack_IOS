@@ -1,0 +1,10 @@
+framework module LabibaBotFramwork {
+  umbrella header "LabibaBotFramwork.h"
+
+  export *
+  module * { export * }
+}
+
+module LabibaBotFramwork.__Swift {
+    exclude header "LabibaBotFramwork-Swift.h"
+}

@@ -1,0 +1,446 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ScrollViewCellView"
+provides-nominal:
+- "17LabibaBotFramwork014ScrollViewCellE0C"
+provides-member:
+- ["17LabibaBotFramwork014ScrollViewCellE0C", ""]
+provides-dynamic-lookup:
+- "buttonsContainer"
+- "create"
+- "created"
+- "reuseId"
+depends-top-level:
+- "AssignmentPrecedence"
+- "Bool"
+- "BooleanLiteralType"
+- "CGRect"
+- "CastingPrecedence"
+- "ReusableComponent"
+- "ScrollViewCellView"
+- "String"
+- "StringLiteralType"
+- "UIScrollView"
+- "UIView"
+depends-member:
+- ["So15CALayerDelegateP", "CGRect"]
+- ["So15CALayerDelegateP", "ReusableComponent"]
+- !private ["So15CALayerDelegateP", "ScrollViewCellView"]
+- ["So15CALayerDelegateP", "String"]
+- !private ["So15CALayerDelegateP", "UIView"]
+- ["So15CALayerDelegateP", ""]
+- ["So15CALayerDelegateP", "buttonsContainer"]
+- ["So15CALayerDelegateP", "create"]
+- ["So15CALayerDelegateP", "created"]
+- !private ["So15CALayerDelegateP", "frame"]
+- ["So15CALayerDelegateP", "init"]
+- !private ["So15CALayerDelegateP", "loadFromNibNamedFromDefaultBundle"]
+- ["So15CALayerDelegateP", "reuseId"]
+- !private ["s7CVarArgP", "UIView"]
+- ["s7CVarArgP", ""]
+- ["s7CVarArgP", "create"]
+- ["s7CVarArgP", "created"]
+- !private ["s7CVarArgP", "frame"]
+- !private ["s7CVarArgP", "loadFromNibNamedFromDefaultBundle"]
+- ["s7CVarArgP", "reuseId"]
+- !private ["s28CustomDebugStringConvertibleP", "UIView"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- ["s28CustomDebugStringConvertibleP", "create"]
+- ["s28CustomDebugStringConvertibleP", "created"]
+- !private ["s28CustomDebugStringConvertibleP", "frame"]
+- !private ["s28CustomDebugStringConvertibleP", "loadFromNibNamedFromDefaultBundle"]
+- ["s28CustomDebugStringConvertibleP", "reuseId"]
+- !private ["s23CustomStringConvertibleP", "UIView"]
+- ["s23CustomStringConvertibleP", ""]
+- ["s23CustomStringConvertibleP", "create"]
+- ["s23CustomStringConvertibleP", "created"]
+- !private ["s23CustomStringConvertibleP", "frame"]
+- !private ["s23CustomStringConvertibleP", "loadFromNibNamedFromDefaultBundle"]
+- ["s23CustomStringConvertibleP", "reuseId"]
+- !private ["SQ", "UIView"]
+- ["SQ", ""]
+- ["SQ", "create"]
+- ["SQ", "created"]
+- !private ["SQ", "frame"]
+- !private ["SQ", "loadFromNibNamedFromDefaultBundle"]
+- ["SQ", "reuseId"]
+- !private ["SH", "UIView"]
+- ["SH", ""]
+- ["SH", "create"]
+- ["SH", "created"]
+- !private ["SH", "frame"]
+- !private ["SH", "loadFromNibNamedFromDefaultBundle"]
+- ["SH", "reuseId"]
+- ["So8NSCodingP", "CGRect"]
+- ["So8NSCodingP", "ReusableComponent"]
+- !private ["So8NSCodingP", "ScrollViewCellView"]
+- ["So8NSCodingP", "String"]
+- !private ["So8NSCodingP", "UIView"]
+- ["So8NSCodingP", ""]
+- ["So8NSCodingP", "buttonsContainer"]
+- ["So8NSCodingP", "create"]
+- ["So8NSCodingP", "created"]
+- !private ["So8NSCodingP", "frame"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "loadFromNibNamedFromDefaultBundle"]
+- ["So8NSCodingP", "reuseId"]
+- ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "CGRect"]
+- ["So8NSObjectC", "ReusableComponent"]
+- !private ["So8NSObjectC", "ScrollViewCellView"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "UIScrollView"]
+- ["So8NSObjectC", "UIView"]
+- ["So8NSObjectC", ""]
+- ["So8NSObjectC", "buttonsContainer"]
+- ["So8NSObjectC", "create"]
+- ["So8NSObjectC", "created"]
+- !private ["So8NSObjectC", "frame"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "loadFromNibNamedFromDefaultBundle"]
+- ["So8NSObjectC", "reuseId"]
+- ["So8NSObjectP", "ReusableComponent"]
+- !private ["So8NSObjectP", "ScrollViewCellView"]
+- !private ["So8NSObjectP", "UIView"]
+- ["So8NSObjectP", ""]
+- ["So8NSObjectP", "buttonsContainer"]
+- ["So8NSObjectP", "create"]
+- ["So8NSObjectP", "created"]
+- !private ["So8NSObjectP", "frame"]
+- ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "loadFromNibNamedFromDefaultBundle"]
+- ["So8NSObjectP", "reuseId"]
+- !private ["17LabibaBotFramwork17ReusableComponentP", "UIView"]
+- ["17LabibaBotFramwork17ReusableComponentP", ""]
+- ["17LabibaBotFramwork17ReusableComponentP", "create"]
+- ["17LabibaBotFramwork17ReusableComponentP", "created"]
+- !private ["17LabibaBotFramwork17ReusableComponentP", "frame"]
+- ["17LabibaBotFramwork17ReusableComponentP", "reuseId"]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", "Bool"]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", "CGRect"]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", "ReusableComponent"]
+- !private ["17LabibaBotFramwork014ScrollViewCellE0C", "ScrollViewCellView"]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", "String"]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", "UIScrollView"]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", "UIView"]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", ""]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", "buttonsContainer"]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", "create"]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", "created"]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", "deinit"]
+- !private ["17LabibaBotFramwork014ScrollViewCellE0C", "frame"]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", "init"]
+- ["17LabibaBotFramwork014ScrollViewCellE0C", "reuseId"]
+- ["So29UIAccessibilityIdentificationP", "CGRect"]
+- ["So29UIAccessibilityIdentificationP", "ReusableComponent"]
+- !private ["So29UIAccessibilityIdentificationP", "ScrollViewCellView"]
+- ["So29UIAccessibilityIdentificationP", "String"]
+- !private ["So29UIAccessibilityIdentificationP", "UIView"]
+- ["So29UIAccessibilityIdentificationP", ""]
+- ["So29UIAccessibilityIdentificationP", "buttonsContainer"]
+- ["So29UIAccessibilityIdentificationP", "create"]
+- ["So29UIAccessibilityIdentificationP", "created"]
+- !private ["So29UIAccessibilityIdentificationP", "frame"]
+- ["So29UIAccessibilityIdentificationP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "loadFromNibNamedFromDefaultBundle"]
+- ["So29UIAccessibilityIdentificationP", "reuseId"]
+- ["So12UIAppearanceP", "CGRect"]
+- ["So12UIAppearanceP", "ReusableComponent"]
+- !private ["So12UIAppearanceP", "ScrollViewCellView"]
+- ["So12UIAppearanceP", "String"]
+- !private ["So12UIAppearanceP", "UIView"]
+- ["So12UIAppearanceP", ""]
+- ["So12UIAppearanceP", "buttonsContainer"]
+- ["So12UIAppearanceP", "create"]
+- ["So12UIAppearanceP", "created"]
+- !private ["So12UIAppearanceP", "frame"]
+- ["So12UIAppearanceP", "init"]
+- !private ["So12UIAppearanceP", "loadFromNibNamedFromDefaultBundle"]
+- ["So12UIAppearanceP", "reuseId"]
+- ["So21UIAppearanceContainerP", "CGRect"]
+- ["So21UIAppearanceContainerP", "ReusableComponent"]
+- !private ["So21UIAppearanceContainerP", "ScrollViewCellView"]
+- ["So21UIAppearanceContainerP", "String"]
+- !private ["So21UIAppearanceContainerP", "UIView"]
+- ["So21UIAppearanceContainerP", ""]
+- ["So21UIAppearanceContainerP", "buttonsContainer"]
+- ["So21UIAppearanceContainerP", "create"]
+- ["So21UIAppearanceContainerP", "created"]
+- !private ["So21UIAppearanceContainerP", "frame"]
+- ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "loadFromNibNamedFromDefaultBundle"]
+- ["So21UIAppearanceContainerP", "reuseId"]
+- ["So17UICoordinateSpaceP", "CGRect"]
+- ["So17UICoordinateSpaceP", "ReusableComponent"]
+- !private ["So17UICoordinateSpaceP", "ScrollViewCellView"]
+- ["So17UICoordinateSpaceP", "String"]
+- !private ["So17UICoordinateSpaceP", "UIView"]
+- ["So17UICoordinateSpaceP", ""]
+- ["So17UICoordinateSpaceP", "buttonsContainer"]
+- ["So17UICoordinateSpaceP", "create"]
+- ["So17UICoordinateSpaceP", "created"]
+- !private ["So17UICoordinateSpaceP", "frame"]
+- ["So17UICoordinateSpaceP", "init"]
+- !private ["So17UICoordinateSpaceP", "loadFromNibNamedFromDefaultBundle"]
+- ["So17UICoordinateSpaceP", "reuseId"]
+- ["So13UIDynamicItemP", "CGRect"]
+- ["So13UIDynamicItemP", "ReusableComponent"]
+- !private ["So13UIDynamicItemP", "ScrollViewCellView"]
+- ["So13UIDynamicItemP", "String"]
+- !private ["So13UIDynamicItemP", "UIView"]
+- ["So13UIDynamicItemP", ""]
+- ["So13UIDynamicItemP", "buttonsContainer"]
+- ["So13UIDynamicItemP", "create"]
+- ["So13UIDynamicItemP", "created"]
+- !private ["So13UIDynamicItemP", "frame"]
+- ["So13UIDynamicItemP", "init"]
+- !private ["So13UIDynamicItemP", "loadFromNibNamedFromDefaultBundle"]
+- ["So13UIDynamicItemP", "reuseId"]
+- ["So18UIFocusEnvironmentP", "CGRect"]
+- ["So18UIFocusEnvironmentP", "ReusableComponent"]
+- !private ["So18UIFocusEnvironmentP", "ScrollViewCellView"]
+- ["So18UIFocusEnvironmentP", "String"]
+- !private ["So18UIFocusEnvironmentP", "UIView"]
+- ["So18UIFocusEnvironmentP", ""]
+- ["So18UIFocusEnvironmentP", "buttonsContainer"]
+- ["So18UIFocusEnvironmentP", "create"]
+- ["So18UIFocusEnvironmentP", "created"]
+- !private ["So18UIFocusEnvironmentP", "frame"]
+- ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "loadFromNibNamedFromDefaultBundle"]
+- ["So18UIFocusEnvironmentP", "reuseId"]
+- ["So11UIFocusItemP", "CGRect"]
+- ["So11UIFocusItemP", "ReusableComponent"]
+- !private ["So11UIFocusItemP", "ScrollViewCellView"]
+- ["So11UIFocusItemP", "String"]
+- !private ["So11UIFocusItemP", "UIView"]
+- ["So11UIFocusItemP", ""]
+- ["So11UIFocusItemP", "buttonsContainer"]
+- ["So11UIFocusItemP", "create"]
+- ["So11UIFocusItemP", "created"]
+- !private ["So11UIFocusItemP", "frame"]
+- ["So11UIFocusItemP", "init"]
+- !private ["So11UIFocusItemP", "loadFromNibNamedFromDefaultBundle"]
+- ["So11UIFocusItemP", "reuseId"]
+- ["So20UIFocusItemContainerP", "CGRect"]
+- ["So20UIFocusItemContainerP", "ReusableComponent"]
+- !private ["So20UIFocusItemContainerP", "ScrollViewCellView"]
+- ["So20UIFocusItemContainerP", "String"]
+- !private ["So20UIFocusItemContainerP", "UIView"]
+- ["So20UIFocusItemContainerP", ""]
+- ["So20UIFocusItemContainerP", "buttonsContainer"]
+- ["So20UIFocusItemContainerP", "create"]
+- ["So20UIFocusItemContainerP", "created"]
+- !private ["So20UIFocusItemContainerP", "frame"]
+- ["So20UIFocusItemContainerP", "init"]
+- !private ["So20UIFocusItemContainerP", "loadFromNibNamedFromDefaultBundle"]
+- ["So20UIFocusItemContainerP", "reuseId"]
+- ["So24UILargeContentViewerItemP", "CGRect"]
+- ["So24UILargeContentViewerItemP", "ReusableComponent"]
+- !private ["So24UILargeContentViewerItemP", "ScrollViewCellView"]
+- ["So24UILargeContentViewerItemP", "String"]
+- !private ["So24UILargeContentViewerItemP", "UIView"]
+- ["So24UILargeContentViewerItemP", ""]
+- ["So24UILargeContentViewerItemP", "buttonsContainer"]
+- ["So24UILargeContentViewerItemP", "create"]
+- ["So24UILargeContentViewerItemP", "created"]
+- !private ["So24UILargeContentViewerItemP", "frame"]
+- ["So24UILargeContentViewerItemP", "init"]
+- !private ["So24UILargeContentViewerItemP", "loadFromNibNamedFromDefaultBundle"]
+- ["So24UILargeContentViewerItemP", "reuseId"]
+- ["So30UIPasteConfigurationSupportingP", "CGRect"]
+- ["So30UIPasteConfigurationSupportingP", "ReusableComponent"]
+- !private ["So30UIPasteConfigurationSupportingP", "ScrollViewCellView"]
+- !private ["So30UIPasteConfigurationSupportingP", "UIView"]
+- ["So30UIPasteConfigurationSupportingP", ""]
+- ["So30UIPasteConfigurationSupportingP", "buttonsContainer"]
+- ["So30UIPasteConfigurationSupportingP", "create"]
+- ["So30UIPasteConfigurationSupportingP", "created"]
+- !private ["So30UIPasteConfigurationSupportingP", "frame"]
+- ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "loadFromNibNamedFromDefaultBundle"]
+- ["So30UIPasteConfigurationSupportingP", "reuseId"]
+- ["So11UIResponderC", "Bool"]
+- ["So11UIResponderC", "CGRect"]
+- ["So11UIResponderC", "ReusableComponent"]
+- !private ["So11UIResponderC", "ScrollViewCellView"]
+- ["So11UIResponderC", "String"]
+- ["So11UIResponderC", "UIScrollView"]
+- ["So11UIResponderC", "UIView"]
+- ["So11UIResponderC", ""]
+- ["So11UIResponderC", "buttonsContainer"]
+- ["So11UIResponderC", "create"]
+- ["So11UIResponderC", "created"]
+- !private ["So11UIResponderC", "frame"]
+- ["So11UIResponderC", "init"]
+- !private ["So11UIResponderC", "loadFromNibNamedFromDefaultBundle"]
+- ["So11UIResponderC", "reuseId"]
+- ["So30UIResponderStandardEditActionsP", "CGRect"]
+- ["So30UIResponderStandardEditActionsP", "ReusableComponent"]
+- !private ["So30UIResponderStandardEditActionsP", "ScrollViewCellView"]
+- !private ["So30UIResponderStandardEditActionsP", "UIView"]
+- ["So30UIResponderStandardEditActionsP", ""]
+- ["So30UIResponderStandardEditActionsP", "buttonsContainer"]
+- ["So30UIResponderStandardEditActionsP", "create"]
+- ["So30UIResponderStandardEditActionsP", "created"]
+- !private ["So30UIResponderStandardEditActionsP", "frame"]
+- ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "loadFromNibNamedFromDefaultBundle"]
+- ["So30UIResponderStandardEditActionsP", "reuseId"]
+- ["So18UITraitEnvironmentP", "CGRect"]
+- ["So18UITraitEnvironmentP", "ReusableComponent"]
+- !private ["So18UITraitEnvironmentP", "ScrollViewCellView"]
+- ["So18UITraitEnvironmentP", "String"]
+- !private ["So18UITraitEnvironmentP", "UIView"]
+- ["So18UITraitEnvironmentP", ""]
+- ["So18UITraitEnvironmentP", "buttonsContainer"]
+- ["So18UITraitEnvironmentP", "create"]
+- ["So18UITraitEnvironmentP", "created"]
+- !private ["So18UITraitEnvironmentP", "frame"]
+- ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "loadFromNibNamedFromDefaultBundle"]
+- ["So18UITraitEnvironmentP", "reuseId"]
+- ["So23UIUserActivityRestoringP", "CGRect"]
+- ["So23UIUserActivityRestoringP", "ReusableComponent"]
+- !private ["So23UIUserActivityRestoringP", "ScrollViewCellView"]
+- !private ["So23UIUserActivityRestoringP", "UIView"]
+- ["So23UIUserActivityRestoringP", ""]
+- ["So23UIUserActivityRestoringP", "buttonsContainer"]
+- ["So23UIUserActivityRestoringP", "create"]
+- ["So23UIUserActivityRestoringP", "created"]
+- !private ["So23UIUserActivityRestoringP", "frame"]
+- ["So23UIUserActivityRestoringP", "init"]
+- !private ["So23UIUserActivityRestoringP", "loadFromNibNamedFromDefaultBundle"]
+- ["So23UIUserActivityRestoringP", "reuseId"]
+- ["So6UIViewC", "Bool"]
+- ["So6UIViewC", "CGRect"]
+- ["So6UIViewC", "ReusableComponent"]
+- !private ["So6UIViewC", "ScrollViewCellView"]
+- ["So6UIViewC", "String"]
+- ["So6UIViewC", "UIScrollView"]
+- ["So6UIViewC", "UIView"]
+- ["So6UIViewC", ""]
+- ["So6UIViewC", "buttonsContainer"]
+- ["So6UIViewC", "create"]
+- ["So6UIViewC", "created"]
+- !private ["So6UIViewC", "frame"]
+- ["So6UIViewC", "init"]
+- !private ["So6UIViewC", "loadFromNibNamedFromDefaultBundle"]
+- ["So6UIViewC", "reuseId"]
+- ["s35_ExpressibleByBuiltinBooleanLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIView"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- ["10Foundation27_KeyValueCodingAndObservingP", "create"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "created"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "frame"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "loadFromNibNamedFromDefaultBundle"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "reuseId"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "UIView"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "create"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "created"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "frame"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "loadFromNibNamedFromDefaultBundle"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "reuseId"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "UIView"]
+- ["s38__DefaultCustomPlaygroundQuickLookableP", ""]
+- ["s38__DefaultCustomPlaygroundQuickLookableP", "create"]
+- ["s38__DefaultCustomPlaygroundQuickLookableP", "created"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "frame"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "loadFromNibNamedFromDefaultBundle"]
+- ["s38__DefaultCustomPlaygroundQuickLookableP", "reuseId"]
+depends-nominal:
+- "So15CALayerDelegateP"
+- "s7CVarArgP"
+- "s28CustomDebugStringConvertibleP"
+- "s23CustomStringConvertibleP"
+- "SQ"
+- "SH"
+- "So8NSCodingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- "17LabibaBotFramwork17ReusableComponentP"
+- "17LabibaBotFramwork014ScrollViewCellE0C"
+- "So29UIAccessibilityIdentificationP"
+- "So12UIAppearanceP"
+- "So21UIAppearanceContainerP"
+- "So17UICoordinateSpaceP"
+- "So13UIDynamicItemP"
+- "So18UIFocusEnvironmentP"
+- "So11UIFocusItemP"
+- "So20UIFocusItemContainerP"
+- "So24UILargeContentViewerItemP"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- "So18UITraitEnvironmentP"
+- "So23UIUserActivityRestoringP"
+- "So6UIViewC"
+- "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- "s38__DefaultCustomPlaygroundQuickLookableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/ObjectiveC.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMIDI.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMedia.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/simd.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreImage.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/NaturalLanguage.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/QuartzCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Accelerate.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Speech.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Dispatch.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Metal.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Darwin.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreLocation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Foundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/AVFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreAudio.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreGraphics.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/os.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UniformTypeIdentifiers.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Contacts.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Swift.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/WebKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/MapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/LabibaBotFramwork.h"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/Framework/Classes/Manegers/SocketRocket/SRWebSocket.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/build/LabibaBotFramework.build/Debug-iphonesimulator/LabibaBotFramwork.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Accelerate.framework/Headers/Accelerate.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Speech.framework/Headers/Speech.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/os.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UniformTypeIdentifiers.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "cfa91d91c52bf9b0b04744486aa20e8a"

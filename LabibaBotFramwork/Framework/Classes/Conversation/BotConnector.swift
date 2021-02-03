@@ -15,6 +15,7 @@ import CoreLocation
 protocol BotConnectorDelegate:class {
     
     func botConnector(_ botConnector:BotConnector, didRecieveActivity activity:ConversationDialog) -> Void
+    func botConnector(_ botConnector:BotConnector, didRequestLiveChatTransferWithMessage message:String) -> Void
     func botConnectorDidRecieveTypingActivity(_ botConnector:BotConnector) -> Void
 }
 

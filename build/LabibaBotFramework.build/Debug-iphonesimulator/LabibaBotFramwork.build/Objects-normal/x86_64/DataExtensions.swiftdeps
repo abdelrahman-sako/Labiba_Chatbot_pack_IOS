@@ -1,0 +1,576 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "JSONDateFomatter"
+provides-nominal:
+provides-member:
+- ["17LabibaBotFramwork7RequestC", ""]
+- ["17LabibaBotFramwork11DataRequestC", ""]
+- ["17LabibaBotFramwork4JSONV", ""]
+- ["10Foundation3URLV", ""]
+- ["17LabibaBotFramwork7RequestC", "serializeResponseSwiftyJSON"]
+- ["17LabibaBotFramwork11DataRequestC", "swiftyJsonResponseSerializer"]
+- ["17LabibaBotFramwork11DataRequestC", "responseSwiftyJSON"]
+- ["17LabibaBotFramwork4JSONV", "defaultDate"]
+- ["17LabibaBotFramwork4JSONV", "date"]
+- ["10Foundation3URLV", "mimeType"]
+provides-dynamic-lookup:
+- "responseSwiftyJSON"
+- "serializeResponseSwiftyJSON"
+- "swiftyJsonResponseSerializer"
+depends-top-level:
+- !private "=="
+- !private ">"
+- !private "AFError"
+- !private "Array"
+- "AssignmentPrecedence"
+- "CastingPrecedence"
+- "Data"
+- "DataRequest"
+- "DataResponse"
+- "DataResponseSerializer"
+- "Date"
+- "DateFormatter"
+- "DispatchQueue"
+- "Error"
+- !private "FloatLiteralType"
+- "HTTPURLResponse"
+- "Int"
+- !private "IntegerLiteralType"
+- "JSON"
+- "JSONDateFomatter"
+- "JSONSerialization"
+- "NSString"
+- "Request"
+- "Result"
+- "Self"
+- "Set"
+- "String"
+- !private "StringLiteralType"
+- "URL"
+- !private "UTTypeCopyPreferredTagWithClass"
+- !private "UTTypeCreatePreferredIdentifierForTag"
+- "Void"
+- !private "kUTTagClassFilenameExtension"
+- !private "kUTTagClassMIMEType"
+- !private "response"
+depends-member:
+- !private ["17LabibaBotFramwork7AFErrorO", ""]
+- !private ["17LabibaBotFramwork7AFErrorO", "responseSerializationFailed"]
+- !private ["SK", ""]
+- !private ["SK", "count"]
+- ["s7CVarArgP", "ReadingOptions"]
+- !private ["s7CVarArgP", "contains"]
+- !private ["s7CVarArgP", "date"]
+- !private ["s7CVarArgP", "dateFormat"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "statusCode"]
+- !private ["Sl", "JSONDateFomatter"]
+- !private ["Sl", ""]
+- !private ["Sl", "_customIndexOfEquatableElement"]
+- !private ["Sl", "_customLastIndexOfEquatableElement"]
+- !private ["Sl", "_failEarlyRangeCheck"]
+- !private ["Sl", "contains"]
+- !private ["Sl", "count"]
+- !private ["Sl", "date"]
+- !private ["Sl", "distance"]
+- !private ["Sl", "endIndex"]
+- !private ["Sl", "formIndex"]
+- !private ["Sl", "index"]
+- !private ["Sl", "indices"]
+- !private ["Sl", "init"]
+- !private ["Sl", "isEmpty"]
+- !private ["Sl", "makeIterator"]
+- !private ["Sl", "null"]
+- !private ["Sl", "startIndex"]
+- !private ["Sl", "string"]
+- !private ["Sl", "subscript"]
+- !private ["SL", "JSONDateFomatter"]
+- !private ["SL", "date"]
+- !private ["SL", "init"]
+- !private ["SL", "null"]
+- !private ["SL", "string"]
+- !private ["10Foundation15ContiguousBytesP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "AFError"]
+- !private ["s28CustomDebugStringConvertibleP", "DataRequest"]
+- !private ["s28CustomDebugStringConvertibleP", "DataResponseSerializer"]
+- !private ["s28CustomDebugStringConvertibleP", "JSON"]
+- !private ["s28CustomDebugStringConvertibleP", "JSONDateFomatter"]
+- ["s28CustomDebugStringConvertibleP", "ReadingOptions"]
+- !private ["s28CustomDebugStringConvertibleP", "Request"]
+- ["s28CustomDebugStringConvertibleP", "Self"]
+- !private ["s28CustomDebugStringConvertibleP", "UTTypeCopyPreferredTagWithClass"]
+- !private ["s28CustomDebugStringConvertibleP", "UTTypeCreatePreferredIdentifierForTag"]
+- !private ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "callAsFunction"]
+- !private ["s28CustomDebugStringConvertibleP", "contains"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "date"]
+- !private ["s28CustomDebugStringConvertibleP", "dateFormat"]
+- !private ["s28CustomDebugStringConvertibleP", "failure"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "kUTTagClassFilenameExtension"]
+- !private ["s28CustomDebugStringConvertibleP", "kUTTagClassMIMEType"]
+- !private ["s28CustomDebugStringConvertibleP", "null"]
+- !private ["s28CustomDebugStringConvertibleP", "pathExtension"]
+- !private ["s28CustomDebugStringConvertibleP", "response"]
+- !private ["s28CustomDebugStringConvertibleP", "serializeResponseSwiftyJSON"]
+- !private ["s28CustomDebugStringConvertibleP", "statusCode"]
+- !private ["s28CustomDebugStringConvertibleP", "string"]
+- !private ["s28CustomDebugStringConvertibleP", "success"]
+- !private ["s28CustomDebugStringConvertibleP", "swiftyJsonResponseSerializer"]
+- !private ["s17CustomReflectableP", "callAsFunction"]
+- !private ["s17CustomReflectableP", "contains"]
+- !private ["s17CustomReflectableP", "count"]
+- !private ["s23CustomStringConvertibleP", "AFError"]
+- !private ["s23CustomStringConvertibleP", "DataRequest"]
+- !private ["s23CustomStringConvertibleP", "DataResponseSerializer"]
+- !private ["s23CustomStringConvertibleP", "JSON"]
+- !private ["s23CustomStringConvertibleP", "JSONDateFomatter"]
+- ["s23CustomStringConvertibleP", "ReadingOptions"]
+- !private ["s23CustomStringConvertibleP", "Request"]
+- ["s23CustomStringConvertibleP", "Self"]
+- !private ["s23CustomStringConvertibleP", "UTTypeCopyPreferredTagWithClass"]
+- !private ["s23CustomStringConvertibleP", "UTTypeCreatePreferredIdentifierForTag"]
+- !private ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "contains"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "date"]
+- !private ["s23CustomStringConvertibleP", "dateFormat"]
+- !private ["s23CustomStringConvertibleP", "failure"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "kUTTagClassFilenameExtension"]
+- !private ["s23CustomStringConvertibleP", "kUTTagClassMIMEType"]
+- !private ["s23CustomStringConvertibleP", "null"]
+- !private ["s23CustomStringConvertibleP", "pathExtension"]
+- !private ["s23CustomStringConvertibleP", "response"]
+- !private ["s23CustomStringConvertibleP", "serializeResponseSwiftyJSON"]
+- !private ["s23CustomStringConvertibleP", "statusCode"]
+- !private ["s23CustomStringConvertibleP", "string"]
+- !private ["s23CustomStringConvertibleP", "success"]
+- !private ["s23CustomStringConvertibleP", "swiftyJsonResponseSerializer"]
+- !private ["10Foundation4DataV", "count"]
+- !private ["10Foundation12DataProtocolP", ""]
+- !private ["10Foundation12DataProtocolP", "count"]
+- !private ["17LabibaBotFramwork11DataRequestC", "DataRequest"]
+- ["17LabibaBotFramwork11DataRequestC", "DataResponse"]
+- ["17LabibaBotFramwork11DataRequestC", "DataResponseSerializer"]
+- ["17LabibaBotFramwork11DataRequestC", "DispatchQueue"]
+- ["17LabibaBotFramwork11DataRequestC", "JSON"]
+- ["17LabibaBotFramwork11DataRequestC", "JSONSerialization"]
+- !private ["17LabibaBotFramwork11DataRequestC", "Request"]
+- ["17LabibaBotFramwork11DataRequestC", "Self"]
+- ["17LabibaBotFramwork11DataRequestC", "Void"]
+- ["17LabibaBotFramwork11DataRequestC", ""]
+- !private ["17LabibaBotFramwork11DataRequestC", "response"]
+- ["17LabibaBotFramwork11DataRequestC", "responseSwiftyJSON"]
+- ["17LabibaBotFramwork11DataRequestC", "swiftyJsonResponseSerializer"]
+- !private ["17LabibaBotFramwork22DataResponseSerializerV", ""]
+- !private ["17LabibaBotFramwork22DataResponseSerializerV", "init"]
+- !private ["17LabibaBotFramwork30DataResponseSerializerProtocolP", "SerializedObject"]
+- !private ["17LabibaBotFramwork30DataResponseSerializerProtocolP", "init"]
+- !private ["So15NSDateFormatterC", "date"]
+- !private ["So15NSDateFormatterC", "dateFormat"]
+- ["So15NSDateFormatterC", "init"]
+- !private ["Se", "JSONDateFomatter"]
+- !private ["Se", "UTTypeCopyPreferredTagWithClass"]
+- !private ["Se", "UTTypeCreatePreferredIdentifierForTag"]
+- !private ["Se", "callAsFunction"]
+- !private ["Se", "contains"]
+- !private ["Se", "count"]
+- !private ["Se", "date"]
+- !private ["Se", "init"]
+- !private ["Se", "kUTTagClassFilenameExtension"]
+- !private ["Se", "kUTTagClassMIMEType"]
+- !private ["Se", "null"]
+- !private ["Se", "pathExtension"]
+- !private ["Se", "string"]
+- !private ["SE", "JSONDateFomatter"]
+- !private ["SE", "UTTypeCopyPreferredTagWithClass"]
+- !private ["SE", "UTTypeCreatePreferredIdentifierForTag"]
+- !private ["SE", "callAsFunction"]
+- !private ["SE", "contains"]
+- !private ["SE", "count"]
+- !private ["SE", "date"]
+- !private ["SE", "init"]
+- !private ["SE", "kUTTagClassFilenameExtension"]
+- !private ["SE", "kUTTagClassMIMEType"]
+- !private ["SE", "null"]
+- !private ["SE", "pathExtension"]
+- !private ["SE", "string"]
+- !private ["SQ", "JSONDateFomatter"]
+- ["SQ", "ReadingOptions"]
+- !private ["SQ", "UTTypeCopyPreferredTagWithClass"]
+- !private ["SQ", "UTTypeCreatePreferredIdentifierForTag"]
+- ["SQ", ""]
+- !private ["SQ", "allowFragments"]
+- !private ["SQ", "callAsFunction"]
+- !private ["SQ", "contains"]
+- !private ["SQ", "count"]
+- !private ["SQ", "date"]
+- !private ["SQ", "dateFormat"]
+- ["SQ", "init"]
+- !private ["SQ", "kUTTagClassFilenameExtension"]
+- !private ["SQ", "kUTTagClassMIMEType"]
+- !private ["SQ", "null"]
+- !private ["SQ", "pathExtension"]
+- !private ["SQ", "statusCode"]
+- !private ["SQ", "string"]
+- !private ["s5ErrorP", ""]
+- !private ["s5ErrorP", "responseSerializationFailed"]
+- !private ["s25ExpressibleByArrayLiteralP", "JSONDateFomatter"]
+- !private ["s25ExpressibleByArrayLiteralP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "allowFragments"]
+- !private ["s25ExpressibleByArrayLiteralP", "contains"]
+- !private ["s25ExpressibleByArrayLiteralP", "date"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "null"]
+- !private ["s25ExpressibleByArrayLiteralP", "string"]
+- !private ["s27ExpressibleByBooleanLiteralP", "JSONDateFomatter"]
+- !private ["s27ExpressibleByBooleanLiteralP", "date"]
+- !private ["s27ExpressibleByBooleanLiteralP", "init"]
+- !private ["s27ExpressibleByBooleanLiteralP", "null"]
+- !private ["s27ExpressibleByBooleanLiteralP", "string"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "JSONDateFomatter"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "date"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "init"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "null"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "string"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "JSONDateFomatter"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "StringLiteralType"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "date"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "null"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "string"]
+- !private ["s25ExpressibleByFloatLiteralP", "JSONDateFomatter"]
+- !private ["s25ExpressibleByFloatLiteralP", "date"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "null"]
+- !private ["s25ExpressibleByFloatLiteralP", "string"]
+- !private ["s27ExpressibleByIntegerLiteralP", "JSONDateFomatter"]
+- !private ["s27ExpressibleByIntegerLiteralP", "date"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "null"]
+- !private ["s27ExpressibleByIntegerLiteralP", "string"]
+- !private ["s23ExpressibleByNilLiteralP", "callAsFunction"]
+- !private ["s23ExpressibleByNilLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "JSONDateFomatter"]
+- !private ["s26ExpressibleByStringLiteralP", "date"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "null"]
+- !private ["s26ExpressibleByStringLiteralP", "string"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "ExtendedGraphemeClusterLiteralType"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "JSONDateFomatter"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "date"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "null"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "string"]
+- ["So11NSFormatterC", ""]
+- !private ["So11NSFormatterC", "date"]
+- !private ["So11NSFormatterC", "dateFormat"]
+- !private ["So11NSFormatterC", "dateFormatFromTemplate"]
+- !private ["So11NSFormatterC", "dateFromString"]
+- ["So11NSFormatterC", "init"]
+- !private ["So17NSHTTPURLResponseC", "statusCode"]
+- ["SH", "ReadingOptions"]
+- !private ["SH", "UTTypeCopyPreferredTagWithClass"]
+- !private ["SH", "UTTypeCreatePreferredIdentifierForTag"]
+- !private ["SH", ""]
+- !private ["SH", "callAsFunction"]
+- !private ["SH", "contains"]
+- !private ["SH", "count"]
+- !private ["SH", "date"]
+- !private ["SH", "dateFormat"]
+- ["SH", "init"]
+- !private ["SH", "kUTTagClassFilenameExtension"]
+- !private ["SH", "kUTTagClassMIMEType"]
+- !private ["SH", "pathExtension"]
+- !private ["SH", "statusCode"]
+- ["17LabibaBotFramwork4JSONV", "Date"]
+- !private ["17LabibaBotFramwork4JSONV", "JSONDateFomatter"]
+- ["17LabibaBotFramwork4JSONV", "String"]
+- ["17LabibaBotFramwork4JSONV", ""]
+- ["17LabibaBotFramwork4JSONV", "date"]
+- ["17LabibaBotFramwork4JSONV", "defaultDate"]
+- !private ["17LabibaBotFramwork4JSONV", "init"]
+- !private ["17LabibaBotFramwork4JSONV", "null"]
+- !private ["17LabibaBotFramwork4JSONV", "string"]
+- ["So19NSJSONSerializationC", "ReadingOptions"]
+- !private ["10Foundation14LocalizedErrorP", "responseSerializationFailed"]
+- !private ["SM", ""]
+- !private ["SM", "count"]
+- !private ["10Foundation19MutableDataProtocolP", "count"]
+- ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "date"]
+- !private ["So8NSCodingP", "dateFormat"]
+- !private ["So8NSCodingP", "dateFormatFromTemplate"]
+- !private ["So8NSCodingP", "dateFromString"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "statusCode"]
+- !private ["So9NSCopyingP", ""]
+- !private ["So9NSCopyingP", "date"]
+- !private ["So9NSCopyingP", "dateFormat"]
+- !private ["So9NSCopyingP", "dateFormatFromTemplate"]
+- !private ["So9NSCopyingP", "dateFromString"]
+- ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "statusCode"]
+- ["So8NSObjectC", "ReadingOptions"]
+- ["So8NSObjectC", ""]
+- !private ["So8NSObjectC", "date"]
+- !private ["So8NSObjectC", "dateFormat"]
+- !private ["So8NSObjectC", "dateFormatFromTemplate"]
+- !private ["So8NSObjectC", "dateFromString"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "statusCode"]
+- ["So8NSObjectP", "ReadingOptions"]
+- !private ["So8NSObjectP", "date"]
+- !private ["So8NSObjectP", "dateFormat"]
+- !private ["So8NSObjectP", "dateFormatFromTemplate"]
+- !private ["So8NSObjectP", "dateFromString"]
+- ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "statusCode"]
+- !private ["So14NSSecureCodingP", ""]
+- !private ["So14NSSecureCodingP", "statusCode"]
+- !private ["s9OptionSetP", "allowFragments"]
+- !private ["Sq", "callAsFunction"]
+- !private ["Sk", ""]
+- !private ["Sk", "count"]
+- !private ["Sk", "distance"]
+- !private ["Sk", "index"]
+- !private ["Sm", ""]
+- !private ["Sm", "count"]
+- !private ["SY", "JSONDateFomatter"]
+- !private ["SY", ""]
+- !private ["SY", "allowFragments"]
+- !private ["SY", "date"]
+- !private ["SY", "init"]
+- !private ["SY", "null"]
+- !private ["SY", "string"]
+- !private ["So20NSJSONReadingOptionsV", "allowFragments"]
+- !private ["10Foundation20ReferenceConvertibleP", "UTTypeCopyPreferredTagWithClass"]
+- !private ["10Foundation20ReferenceConvertibleP", "UTTypeCreatePreferredIdentifierForTag"]
+- !private ["10Foundation20ReferenceConvertibleP", "count"]
+- !private ["10Foundation20ReferenceConvertibleP", "kUTTagClassFilenameExtension"]
+- !private ["10Foundation20ReferenceConvertibleP", "kUTTagClassMIMEType"]
+- !private ["10Foundation20ReferenceConvertibleP", "pathExtension"]
+- !private ["17LabibaBotFramwork7RequestC", "AFError"]
+- ["17LabibaBotFramwork7RequestC", "Data"]
+- !private ["17LabibaBotFramwork7RequestC", "DataRequest"]
+- ["17LabibaBotFramwork7RequestC", "DataResponse"]
+- ["17LabibaBotFramwork7RequestC", "DataResponseSerializer"]
+- ["17LabibaBotFramwork7RequestC", "DispatchQueue"]
+- ["17LabibaBotFramwork7RequestC", "Error"]
+- ["17LabibaBotFramwork7RequestC", "HTTPURLResponse"]
+- !private ["17LabibaBotFramwork7RequestC", "Int"]
+- ["17LabibaBotFramwork7RequestC", "JSON"]
+- ["17LabibaBotFramwork7RequestC", "JSONSerialization"]
+- !private ["17LabibaBotFramwork7RequestC", "Request"]
+- ["17LabibaBotFramwork7RequestC", "Result"]
+- ["17LabibaBotFramwork7RequestC", "Self"]
+- !private ["17LabibaBotFramwork7RequestC", "Set"]
+- ["17LabibaBotFramwork7RequestC", "Void"]
+- ["17LabibaBotFramwork7RequestC", ""]
+- !private ["17LabibaBotFramwork7RequestC", "response"]
+- ["17LabibaBotFramwork7RequestC", "responseSwiftyJSON"]
+- ["17LabibaBotFramwork7RequestC", "serializeResponseSwiftyJSON"]
+- ["17LabibaBotFramwork7RequestC", "swiftyJsonResponseSerializer"]
+- !private ["17LabibaBotFramwork7AFErrorO34ResponseSerializationFailureReasonO", "inputDataNilOrZeroLength"]
+- !private ["17LabibaBotFramwork7AFErrorO34ResponseSerializationFailureReasonO", "jsonSerializationFailed"]
+- !private ["17LabibaBotFramwork6ResultO", "failure"]
+- !private ["17LabibaBotFramwork6ResultO", "success"]
+- !private ["ST", "JSONDateFomatter"]
+- !private ["ST", ""]
+- !private ["ST", "contains"]
+- !private ["ST", "count"]
+- !private ["ST", "date"]
+- !private ["ST", "init"]
+- !private ["ST", "null"]
+- !private ["ST", "string"]
+- !private ["Sh", "contains"]
+- !private ["s10SetAlgebraP", ""]
+- !private ["s10SetAlgebraP", "allowFragments"]
+- !private ["s10SetAlgebraP", "contains"]
+- !private ["10Foundation3URLV", "NSString"]
+- ["10Foundation3URLV", "String"]
+- !private ["10Foundation3URLV", "UTTypeCopyPreferredTagWithClass"]
+- !private ["10Foundation3URLV", "UTTypeCreatePreferredIdentifierForTag"]
+- ["10Foundation3URLV", ""]
+- !private ["10Foundation3URLV", "kUTTagClassFilenameExtension"]
+- !private ["10Foundation3URLV", "kUTTagClassMIMEType"]
+- ["10Foundation3URLV", "mimeType"]
+- !private ["10Foundation3URLV", "pathExtension"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "UTTypeCopyPreferredTagWithClass"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "UTTypeCreatePreferredIdentifierForTag"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "kUTTagClassFilenameExtension"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "kUTTagClassMIMEType"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "pathExtension"]
+- ["So13NSURLResponseC", ""]
+- !private ["So13NSURLResponseC", "statusCode"]
+- !private ["s9UnmanagedV", "takeRetainedValue"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "UTTypeCopyPreferredTagWithClass"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "UTTypeCreatePreferredIdentifierForTag"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "kUTTagClassFilenameExtension"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "kUTTagClassMIMEType"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "pathExtension"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "UTTypeCopyPreferredTagWithClass"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "UTTypeCreatePreferredIdentifierForTag"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "kUTTagClassFilenameExtension"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "kUTTagClassMIMEType"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "pathExtension"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "contains"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "ReadingOptions"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "date"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dateFormat"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "statusCode"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ReadingOptions"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "date"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "dateFormat"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "statusCode"]
+- !private ["s21_ObjectiveCBridgeableP", "UTTypeCopyPreferredTagWithClass"]
+- !private ["s21_ObjectiveCBridgeableP", "UTTypeCreatePreferredIdentifierForTag"]
+- !private ["s21_ObjectiveCBridgeableP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "_ObjectiveCType"]
+- !private ["s21_ObjectiveCBridgeableP", "callAsFunction"]
+- !private ["s21_ObjectiveCBridgeableP", "contains"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- !private ["s21_ObjectiveCBridgeableP", "kUTTagClassFilenameExtension"]
+- !private ["s21_ObjectiveCBridgeableP", "kUTTagClassMIMEType"]
+- !private ["s21_ObjectiveCBridgeableP", "pathExtension"]
+depends-nominal:
+- !private "17LabibaBotFramwork7AFErrorO"
+- !private "SK"
+- "s7CVarArgP"
+- !private "Sl"
+- !private "SL"
+- !private "10Foundation15ContiguousBytesP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "10Foundation4DataV"
+- !private "10Foundation12DataProtocolP"
+- "17LabibaBotFramwork11DataRequestC"
+- !private "17LabibaBotFramwork22DataResponseSerializerV"
+- !private "17LabibaBotFramwork30DataResponseSerializerProtocolP"
+- "So15NSDateFormatterC"
+- !private "Se"
+- !private "SE"
+- "SQ"
+- !private "s5ErrorP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "So11NSFormatterC"
+- !private "So17NSHTTPURLResponseC"
+- "SH"
+- "17LabibaBotFramwork4JSONV"
+- "So19NSJSONSerializationC"
+- !private "10Foundation14LocalizedErrorP"
+- !private "SM"
+- !private "10Foundation19MutableDataProtocolP"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "So14NSSecureCodingP"
+- !private "s9OptionSetP"
+- !private "Sq"
+- !private "Sk"
+- !private "Sm"
+- !private "SY"
+- !private "So20NSJSONReadingOptionsV"
+- !private "10Foundation20ReferenceConvertibleP"
+- "17LabibaBotFramwork7RequestC"
+- !private "17LabibaBotFramwork7AFErrorO34ResponseSerializationFailureReasonO"
+- !private "17LabibaBotFramwork6ResultO"
+- !private "ST"
+- !private "Sh"
+- !private "s10SetAlgebraP"
+- "10Foundation3URLV"
+- !private "17LabibaBotFramwork14URLConvertibleP"
+- "So13NSURLResponseC"
+- !private "s9UnmanagedV"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s34_ExpressibleByFileReferenceLiteralP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/ObjectiveC.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMIDI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMedia.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/simd.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreImage.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/NaturalLanguage.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/QuartzCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Accelerate.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Speech.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Dispatch.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Metal.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Darwin.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreLocation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Foundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/AVFoundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreFoundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreAudio.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreGraphics.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/os.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UniformTypeIdentifiers.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Contacts.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Swift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/WebKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/MapKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/LabibaBotFramwork.h"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/Framework/Classes/Manegers/SocketRocket/SRWebSocket.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/build/LabibaBotFramework.build/Debug-iphonesimulator/LabibaBotFramwork.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Accelerate.framework/Headers/Accelerate.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Speech.framework/Headers/Speech.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/os.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UniformTypeIdentifiers.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "5519a1d52f7bf7e0f493f93a29fa8b95"

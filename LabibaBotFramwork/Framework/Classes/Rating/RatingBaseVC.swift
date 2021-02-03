@@ -7,19 +7,20 @@
 //
 
 import UIKit
-protocol RatingScreenProtocol {
-    func ratingScreenDidDisappear()
+protocol SubViewControllerDelegate {
+    func subViewDidDisappear()
+    func SubViewDidAppear()
 }
 
 class RatingBaseVC: UIViewController {
 
-    class func present(fromVC:UIViewController, delegate:RatingScreenProtocol){}
+    class func present(fromVC:UIViewController, delegate:SubViewControllerDelegate){}
     
     @IBOutlet weak var ratingTableView: UITableView!
     
     var questions:[RatingQuestionModel] = []
     var botConnector:BotConnector = LabibaBotConnectorJC()
-    var delegate:RatingScreenProtocol?
+    var delegate:SubViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class RatingBaseVC: UIViewController {
             print("viewWillDisappear")
             IQKeyboardManager.shared.enable =  false
             IQKeyboardManager.shared.enableAutoToolbar = false
-           delegate?.ratingScreenDidDisappear()
+           delegate?.subViewDidDisappear()
         }
     
     override func viewWillDisappear(_ animated: Bool) {

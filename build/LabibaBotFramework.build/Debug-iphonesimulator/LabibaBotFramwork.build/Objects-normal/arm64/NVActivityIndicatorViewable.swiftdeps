@@ -1,0 +1,402 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "NVActivityIndicatorViewable"
+provides-nominal:
+- "17LabibaBotFramwork27NVActivityIndicatorViewableP"
+provides-member:
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", ""]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "isAnimating"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "startAnimating"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "stopAnimating"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "ActivityData"
+- "Bool"
+- "CGFloat"
+- "CGSize"
+- "FadeInAnimation"
+- "FadeOutAnimation"
+- "Int"
+- !private "NVActivityIndicatorPresenter"
+- "NVActivityIndicatorType"
+- "NVActivityIndicatorView"
+- "NVActivityIndicatorViewable"
+- "Self"
+- "String"
+- "UIColor"
+- "UIFont"
+- "UIViewController"
+depends-member:
+- !private ["17LabibaBotFramwork12ActivityDataC", "init"]
+- !private ["So15CALayerDelegateP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So15CALayerDelegateP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["s7CVarArgP", "ActivityData"]
+- !private ["s7CVarArgP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["s7CVarArgP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["s7CVarArgP", "NVActivityIndicatorPresenter"]
+- !private ["s7CVarArgP", "NVActivityIndicatorView"]
+- !private ["s28CustomDebugStringConvertibleP", "ActivityData"]
+- !private ["s28CustomDebugStringConvertibleP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["s28CustomDebugStringConvertibleP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["s28CustomDebugStringConvertibleP", "NVActivityIndicatorPresenter"]
+- !private ["s28CustomDebugStringConvertibleP", "NVActivityIndicatorView"]
+- !private ["s23CustomStringConvertibleP", "ActivityData"]
+- !private ["s23CustomStringConvertibleP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["s23CustomStringConvertibleP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["s23CustomStringConvertibleP", "NVActivityIndicatorPresenter"]
+- !private ["s23CustomStringConvertibleP", "NVActivityIndicatorView"]
+- !private ["SQ", "ActivityData"]
+- !private ["SQ", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["SQ", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["SQ", "NVActivityIndicatorPresenter"]
+- !private ["SQ", "NVActivityIndicatorView"]
+- !private ["SQ", ""]
+- !private ["SH", "ActivityData"]
+- !private ["SH", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["SH", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["SH", "NVActivityIndicatorPresenter"]
+- !private ["SH", "NVActivityIndicatorView"]
+- !private ["So8NSCodingP", "ActivityData"]
+- ["So8NSCodingP", "CGFloat"]
+- ["So8NSCodingP", "CGSize"]
+- !private ["So8NSCodingP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So8NSCodingP", "DEFAULT_FADE_OUT_ANIMATION"]
+- ["So8NSCodingP", "FadeInAnimation"]
+- ["So8NSCodingP", "FadeOutAnimation"]
+- ["So8NSCodingP", "Int"]
+- !private ["So8NSCodingP", "NVActivityIndicatorPresenter"]
+- ["So8NSCodingP", "NVActivityIndicatorType"]
+- !private ["So8NSCodingP", "NVActivityIndicatorView"]
+- ["So8NSCodingP", "UIColor"]
+- ["So8NSCodingP", "UIFont"]
+- ["So8NSCodingP", "UIViewController"]
+- !private ["So26NSExtensionRequestHandlingP", "ActivityData"]
+- ["So26NSExtensionRequestHandlingP", "CGFloat"]
+- ["So26NSExtensionRequestHandlingP", "CGSize"]
+- ["So26NSExtensionRequestHandlingP", "FadeInAnimation"]
+- ["So26NSExtensionRequestHandlingP", "FadeOutAnimation"]
+- ["So26NSExtensionRequestHandlingP", "Int"]
+- !private ["So26NSExtensionRequestHandlingP", "NVActivityIndicatorPresenter"]
+- ["So26NSExtensionRequestHandlingP", "NVActivityIndicatorType"]
+- !private ["So26NSExtensionRequestHandlingP", "NVActivityIndicatorView"]
+- ["So26NSExtensionRequestHandlingP", "UIColor"]
+- ["So26NSExtensionRequestHandlingP", "UIFont"]
+- ["So26NSExtensionRequestHandlingP", "UIViewController"]
+- !private ["So8NSObjectC", "ActivityData"]
+- ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "CGFloat"]
+- ["So8NSObjectC", "CGSize"]
+- !private ["So8NSObjectC", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So8NSObjectC", "DEFAULT_FADE_OUT_ANIMATION"]
+- ["So8NSObjectC", "FadeInAnimation"]
+- ["So8NSObjectC", "FadeOutAnimation"]
+- ["So8NSObjectC", "Int"]
+- !private ["So8NSObjectC", "NVActivityIndicatorPresenter"]
+- ["So8NSObjectC", "NVActivityIndicatorType"]
+- !private ["So8NSObjectC", "NVActivityIndicatorView"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "UIColor"]
+- ["So8NSObjectC", "UIFont"]
+- ["So8NSObjectC", "UIViewController"]
+- !private ["So8NSObjectP", "ActivityData"]
+- !private ["So8NSObjectP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So8NSObjectP", "DEFAULT_FADE_OUT_ANIMATION"]
+- ["So8NSObjectP", "FadeInAnimation"]
+- ["So8NSObjectP", "FadeOutAnimation"]
+- !private ["So8NSObjectP", "NVActivityIndicatorPresenter"]
+- ["So8NSObjectP", "NVActivityIndicatorType"]
+- !private ["So8NSObjectP", "NVActivityIndicatorView"]
+- ["So8NSObjectP", "UIColor"]
+- ["So8NSObjectP", "UIFont"]
+- ["So8NSObjectP", "UIViewController"]
+- !private ["So8NSObjectP", ""]
+- !private ["17LabibaBotFramwork28NVActivityIndicatorPresenterC", "isAnimating"]
+- !private ["17LabibaBotFramwork28NVActivityIndicatorPresenterC", "sharedInstance"]
+- !private ["17LabibaBotFramwork28NVActivityIndicatorPresenterC", "startAnimating"]
+- !private ["17LabibaBotFramwork28NVActivityIndicatorPresenterC", "stopAnimating"]
+- !private ["17LabibaBotFramwork23NVActivityIndicatorViewC", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["17LabibaBotFramwork23NVActivityIndicatorViewC", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "ActivityData"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "Bool"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "CGFloat"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "CGSize"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "FadeInAnimation"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "FadeOutAnimation"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "Int"]
+- !private ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "NVActivityIndicatorPresenter"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "NVActivityIndicatorType"]
+- !private ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "NVActivityIndicatorView"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "String"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "UIColor"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "UIFont"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "UIViewController"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", ""]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "isAnimating"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "startAnimating"]
+- ["17LabibaBotFramwork27NVActivityIndicatorViewableP", "stopAnimating"]
+- !private ["So29UIAccessibilityIdentificationP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So29UIAccessibilityIdentificationP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["So12UIAppearanceP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So12UIAppearanceP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["So21UIAppearanceContainerP", "ActivityData"]
+- ["So21UIAppearanceContainerP", "CGFloat"]
+- ["So21UIAppearanceContainerP", "CGSize"]
+- !private ["So21UIAppearanceContainerP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So21UIAppearanceContainerP", "DEFAULT_FADE_OUT_ANIMATION"]
+- ["So21UIAppearanceContainerP", "FadeInAnimation"]
+- ["So21UIAppearanceContainerP", "FadeOutAnimation"]
+- ["So21UIAppearanceContainerP", "Int"]
+- !private ["So21UIAppearanceContainerP", "NVActivityIndicatorPresenter"]
+- ["So21UIAppearanceContainerP", "NVActivityIndicatorType"]
+- !private ["So21UIAppearanceContainerP", "NVActivityIndicatorView"]
+- ["So21UIAppearanceContainerP", "UIColor"]
+- ["So21UIAppearanceContainerP", "UIFont"]
+- ["So21UIAppearanceContainerP", "UIViewController"]
+- !private ["So18UIContentContainerP", "ActivityData"]
+- ["So18UIContentContainerP", "CGFloat"]
+- ["So18UIContentContainerP", "CGSize"]
+- ["So18UIContentContainerP", "FadeInAnimation"]
+- ["So18UIContentContainerP", "FadeOutAnimation"]
+- ["So18UIContentContainerP", "Int"]
+- !private ["So18UIContentContainerP", "NVActivityIndicatorPresenter"]
+- ["So18UIContentContainerP", "NVActivityIndicatorType"]
+- !private ["So18UIContentContainerP", "NVActivityIndicatorView"]
+- ["So18UIContentContainerP", "UIColor"]
+- ["So18UIContentContainerP", "UIFont"]
+- ["So18UIContentContainerP", "UIViewController"]
+- !private ["So17UICoordinateSpaceP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So17UICoordinateSpaceP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["So13UIDynamicItemP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So13UIDynamicItemP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["So18UIFocusEnvironmentP", "ActivityData"]
+- ["So18UIFocusEnvironmentP", "CGFloat"]
+- ["So18UIFocusEnvironmentP", "CGSize"]
+- !private ["So18UIFocusEnvironmentP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So18UIFocusEnvironmentP", "DEFAULT_FADE_OUT_ANIMATION"]
+- ["So18UIFocusEnvironmentP", "FadeInAnimation"]
+- ["So18UIFocusEnvironmentP", "FadeOutAnimation"]
+- ["So18UIFocusEnvironmentP", "Int"]
+- !private ["So18UIFocusEnvironmentP", "NVActivityIndicatorPresenter"]
+- ["So18UIFocusEnvironmentP", "NVActivityIndicatorType"]
+- !private ["So18UIFocusEnvironmentP", "NVActivityIndicatorView"]
+- ["So18UIFocusEnvironmentP", "UIColor"]
+- ["So18UIFocusEnvironmentP", "UIFont"]
+- ["So18UIFocusEnvironmentP", "UIViewController"]
+- !private ["So18UIFocusEnvironmentP", ""]
+- !private ["So11UIFocusItemP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So11UIFocusItemP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["So20UIFocusItemContainerP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So20UIFocusItemContainerP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["So24UILargeContentViewerItemP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So24UILargeContentViewerItemP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["So30UIPasteConfigurationSupportingP", "ActivityData"]
+- ["So30UIPasteConfigurationSupportingP", "CGFloat"]
+- ["So30UIPasteConfigurationSupportingP", "CGSize"]
+- !private ["So30UIPasteConfigurationSupportingP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So30UIPasteConfigurationSupportingP", "DEFAULT_FADE_OUT_ANIMATION"]
+- ["So30UIPasteConfigurationSupportingP", "FadeInAnimation"]
+- ["So30UIPasteConfigurationSupportingP", "FadeOutAnimation"]
+- ["So30UIPasteConfigurationSupportingP", "Int"]
+- !private ["So30UIPasteConfigurationSupportingP", "NVActivityIndicatorPresenter"]
+- ["So30UIPasteConfigurationSupportingP", "NVActivityIndicatorType"]
+- !private ["So30UIPasteConfigurationSupportingP", "NVActivityIndicatorView"]
+- ["So30UIPasteConfigurationSupportingP", "UIColor"]
+- ["So30UIPasteConfigurationSupportingP", "UIFont"]
+- ["So30UIPasteConfigurationSupportingP", "UIViewController"]
+- !private ["So11UIResponderC", "ActivityData"]
+- ["So11UIResponderC", "Bool"]
+- ["So11UIResponderC", "CGFloat"]
+- ["So11UIResponderC", "CGSize"]
+- !private ["So11UIResponderC", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So11UIResponderC", "DEFAULT_FADE_OUT_ANIMATION"]
+- ["So11UIResponderC", "FadeInAnimation"]
+- ["So11UIResponderC", "FadeOutAnimation"]
+- ["So11UIResponderC", "Int"]
+- !private ["So11UIResponderC", "NVActivityIndicatorPresenter"]
+- ["So11UIResponderC", "NVActivityIndicatorType"]
+- !private ["So11UIResponderC", "NVActivityIndicatorView"]
+- ["So11UIResponderC", "String"]
+- ["So11UIResponderC", "UIColor"]
+- ["So11UIResponderC", "UIFont"]
+- ["So11UIResponderC", "UIViewController"]
+- !private ["So30UIResponderStandardEditActionsP", "ActivityData"]
+- ["So30UIResponderStandardEditActionsP", "CGFloat"]
+- ["So30UIResponderStandardEditActionsP", "CGSize"]
+- !private ["So30UIResponderStandardEditActionsP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So30UIResponderStandardEditActionsP", "DEFAULT_FADE_OUT_ANIMATION"]
+- ["So30UIResponderStandardEditActionsP", "FadeInAnimation"]
+- ["So30UIResponderStandardEditActionsP", "FadeOutAnimation"]
+- ["So30UIResponderStandardEditActionsP", "Int"]
+- !private ["So30UIResponderStandardEditActionsP", "NVActivityIndicatorPresenter"]
+- ["So30UIResponderStandardEditActionsP", "NVActivityIndicatorType"]
+- !private ["So30UIResponderStandardEditActionsP", "NVActivityIndicatorView"]
+- ["So30UIResponderStandardEditActionsP", "UIColor"]
+- ["So30UIResponderStandardEditActionsP", "UIFont"]
+- ["So30UIResponderStandardEditActionsP", "UIViewController"]
+- !private ["So16UIStateRestoringP", "ActivityData"]
+- ["So16UIStateRestoringP", "CGFloat"]
+- ["So16UIStateRestoringP", "CGSize"]
+- ["So16UIStateRestoringP", "FadeInAnimation"]
+- ["So16UIStateRestoringP", "FadeOutAnimation"]
+- ["So16UIStateRestoringP", "Int"]
+- !private ["So16UIStateRestoringP", "NVActivityIndicatorPresenter"]
+- ["So16UIStateRestoringP", "NVActivityIndicatorType"]
+- !private ["So16UIStateRestoringP", "NVActivityIndicatorView"]
+- ["So16UIStateRestoringP", "UIColor"]
+- ["So16UIStateRestoringP", "UIFont"]
+- ["So16UIStateRestoringP", "UIViewController"]
+- !private ["So18UITraitEnvironmentP", "ActivityData"]
+- ["So18UITraitEnvironmentP", "CGFloat"]
+- ["So18UITraitEnvironmentP", "CGSize"]
+- !private ["So18UITraitEnvironmentP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So18UITraitEnvironmentP", "DEFAULT_FADE_OUT_ANIMATION"]
+- ["So18UITraitEnvironmentP", "FadeInAnimation"]
+- ["So18UITraitEnvironmentP", "FadeOutAnimation"]
+- ["So18UITraitEnvironmentP", "Int"]
+- !private ["So18UITraitEnvironmentP", "NVActivityIndicatorPresenter"]
+- ["So18UITraitEnvironmentP", "NVActivityIndicatorType"]
+- !private ["So18UITraitEnvironmentP", "NVActivityIndicatorView"]
+- ["So18UITraitEnvironmentP", "UIColor"]
+- ["So18UITraitEnvironmentP", "UIFont"]
+- ["So18UITraitEnvironmentP", "UIViewController"]
+- !private ["So23UIUserActivityRestoringP", "ActivityData"]
+- ["So23UIUserActivityRestoringP", "CGFloat"]
+- ["So23UIUserActivityRestoringP", "CGSize"]
+- !private ["So23UIUserActivityRestoringP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So23UIUserActivityRestoringP", "DEFAULT_FADE_OUT_ANIMATION"]
+- ["So23UIUserActivityRestoringP", "FadeInAnimation"]
+- ["So23UIUserActivityRestoringP", "FadeOutAnimation"]
+- ["So23UIUserActivityRestoringP", "Int"]
+- !private ["So23UIUserActivityRestoringP", "NVActivityIndicatorPresenter"]
+- ["So23UIUserActivityRestoringP", "NVActivityIndicatorType"]
+- !private ["So23UIUserActivityRestoringP", "NVActivityIndicatorView"]
+- ["So23UIUserActivityRestoringP", "UIColor"]
+- ["So23UIUserActivityRestoringP", "UIFont"]
+- ["So23UIUserActivityRestoringP", "UIViewController"]
+- !private ["So6UIViewC", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["So6UIViewC", "DEFAULT_FADE_OUT_ANIMATION"]
+- ["So6UIViewC", ""]
+- !private ["So16UIViewControllerC", "ActivityData"]
+- ["So16UIViewControllerC", "Bool"]
+- ["So16UIViewControllerC", "CGFloat"]
+- ["So16UIViewControllerC", "CGSize"]
+- ["So16UIViewControllerC", "FadeInAnimation"]
+- ["So16UIViewControllerC", "FadeOutAnimation"]
+- ["So16UIViewControllerC", "Int"]
+- !private ["So16UIViewControllerC", "NVActivityIndicatorPresenter"]
+- ["So16UIViewControllerC", "NVActivityIndicatorType"]
+- !private ["So16UIViewControllerC", "NVActivityIndicatorView"]
+- ["So16UIViewControllerC", "String"]
+- ["So16UIViewControllerC", "UIColor"]
+- ["So16UIViewControllerC", "UIFont"]
+- ["So16UIViewControllerC", "UIViewController"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "ActivityData"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NVActivityIndicatorPresenter"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NVActivityIndicatorView"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ActivityData"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "DEFAULT_FADE_OUT_ANIMATION"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "NVActivityIndicatorPresenter"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "NVActivityIndicatorView"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "DEFAULT_FADE_IN_ANIMATION"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "DEFAULT_FADE_OUT_ANIMATION"]
+depends-nominal:
+- !private "17LabibaBotFramwork12ActivityDataC"
+- !private "So15CALayerDelegateP"
+- !private "s7CVarArgP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s23CustomStringConvertibleP"
+- !private "SQ"
+- !private "SH"
+- "So8NSCodingP"
+- "So26NSExtensionRequestHandlingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "17LabibaBotFramwork28NVActivityIndicatorPresenterC"
+- !private "17LabibaBotFramwork23NVActivityIndicatorViewC"
+- "17LabibaBotFramwork27NVActivityIndicatorViewableP"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So12UIAppearanceP"
+- "So21UIAppearanceContainerP"
+- "So18UIContentContainerP"
+- !private "So17UICoordinateSpaceP"
+- !private "So13UIDynamicItemP"
+- "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So20UIFocusItemContainerP"
+- !private "So24UILargeContentViewerItemP"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- "So16UIStateRestoringP"
+- "So18UITraitEnvironmentP"
+- "So23UIUserActivityRestoringP"
+- "So6UIViewC"
+- "So16UIViewControllerC"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "s38__DefaultCustomPlaygroundQuickLookableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/ObjectiveC.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMIDI.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMedia.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/simd.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreImage.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/NaturalLanguage.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/QuartzCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Accelerate.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Speech.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Dispatch.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Metal.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Darwin.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreLocation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Foundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/AVFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreAudio.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreGraphics.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/os.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UniformTypeIdentifiers.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Contacts.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Swift.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/WebKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/MapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/LabibaBotFramwork.h"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/Framework/Classes/Manegers/SocketRocket/SRWebSocket.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/build/LabibaBotFramework.build/Debug-iphonesimulator/LabibaBotFramwork.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Accelerate.framework/Headers/Accelerate.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Speech.framework/Headers/Speech.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/os.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UniformTypeIdentifiers.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "3f0f38d10cb9c3b28a4d3102cecc358f"

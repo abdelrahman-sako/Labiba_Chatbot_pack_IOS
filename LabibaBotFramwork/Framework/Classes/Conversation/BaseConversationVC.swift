@@ -314,7 +314,9 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
     //MARK:-   BotConnectorDelegate implementation
 
     func botConnector(_ botConnector: BotConnector, didRecieveActivity activity: ConversationDialog) {}
-    
+    func botConnector(_ botConnector: BotConnector, didRequestLiveChatTransferWithMessage message: String) {
+        delegate?.liveChatTransfer?(onView: self.view, transferMessage: message)
+    }
     func botConnectorDidRecieveTypingActivity(_ botConnector: BotConnector) {}
 }
 

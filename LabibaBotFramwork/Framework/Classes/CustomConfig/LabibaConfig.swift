@@ -58,7 +58,7 @@ public class LabibaConfig {
         Labiba.UserChatBubble.background = .solid(color:  UIColor.black.withAlphaComponent(0.1))
         Labiba.UserChatBubble.textColor = UIColor(argb: 0xffffffff)
         Labiba.UserChatBubble.cornerRadius = 23
-        Labiba.UserChatBubble.CornerMask = [.layerMinXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
+        Labiba.UserChatBubble.cornerMask = [.layerMinXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
 
 //        Labiba.setTypingIndicatorColor(color: UIColor(argb: 0xffffffff))
 //        Labiba.setBotBubbleBackground(color: UIColor.white.withAlphaComponent(0.2))
@@ -68,12 +68,16 @@ public class LabibaConfig {
         Labiba.BotChatBubble.background = .solid(color: UIColor.white.withAlphaComponent(0.2))
         Labiba.BotChatBubble.textColor =  UIColor(argb: 0xffffffff)
         Labiba.BotChatBubble.cornerRadius = 23
-        Labiba.BotChatBubble.CornerMask =  [.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner]
+        Labiba.BotChatBubble.cornerMask =  [.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner]
         
         
         Labiba.setMargin(left: 20, right: 20)
 
-        Labiba.setMicButtonColors(background: UIColor.black.withAlphaComponent(0.1), tint: UIColor(argb: 0xffffffff) , wave: UIColor(argb: 0xffffffff))
+      //  Labiba.setMicButtonColors(background: UIColor.black.withAlphaComponent(0.1), tint: UIColor(argb: 0xffffffff) , wave: UIColor(argb: 0xffffffff))
+        Labiba.VoiceAssistantView.micButton.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        Labiba.VoiceAssistantView.micButton.tintColor = UIColor(argb: 0xffffffff)
+        Labiba.VoiceAssistantView.waveColor = UIColor(argb: 0xffffffff)
+        
         Labiba.MenuCardView.backgroundColor = UIColor(argb: 0x00ffffff)
         Labiba.MenuCardView.clearNonSelectedItems = false
         Labiba.MenuCardView.textColor =  UIColor(argb: 0xffffffff)
@@ -100,7 +104,9 @@ public class LabibaConfig {
         Labiba.UserInputView.sendButton.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         Labiba.UserInputView.sendButton.tintColor = UIColor(argb: 0xffffffff)
         
-        Labiba.setAttachmentMenuColors(background: UIColor.black.withAlphaComponent(0.1), tint: UIColor(argb: 0xffffffff))
+        //Labiba.setAttachmentMenuColors(background: UIColor.black.withAlphaComponent(0.1), tint: UIColor(argb: 0xffffffff))
+        Labiba.attachmentThemeModel.menu.background = UIColor.black.withAlphaComponent(0.1)
+        Labiba.attachmentThemeModel.menu.tint = UIColor(argb: 0xffffffff)
         //Labiba.setUserInputColors(background: UIColor.black.withAlphaComponent(0.15), tintColor: .white, textColor: .white, hintColor: UIColor(argb: 0xccffffff))
         Labiba.UserInputView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         Labiba.UserInputView.tintColor = .white
@@ -115,10 +121,11 @@ public class LabibaConfig {
          let bodyAndTitles = ["en_title":"\"Hi, I’m BOJ!\"","ar_title": "\"مرحبا، أنا بوجي!\""  , "en_body": "Please tap the mic icon below to ask me\n a question.", "ar_body":"يمكنك الضغط على زر الميكرفون أدناه لكي تتحدث معي وتسألني أي سؤال"  ]
 
         let header = GreetingHeaderView.create(bodyAndTitle: bodyAndTitles )
+        header.settingType = .help
         header.centerImageView.isHidden = true
         header.homeButton.isHidden = true
-        header.settingButton.isHidden = true
-        header.settingButton.setImage(Image(named: "language-icon2"), for: .normal)
+       // header.settingButton.isHidden = true
+       header.settingButton.setImage(Image(named: "info_Icon"), for: .normal)
         header.closeButton.setImage(Image(named: "cancelled"), for: .normal)
         header.volumUpImage = Image(named: "unmute-icon")
         header.volumOffImage = Image(named: "mute-icon")

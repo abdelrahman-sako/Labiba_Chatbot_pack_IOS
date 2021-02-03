@@ -1,0 +1,416 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "PlacesAutoCompleteModel"
+- "Prediction"
+- "MatchedSubstring"
+- "StructuredFormatting"
+- "Term"
+provides-nominal:
+- "17LabibaBotFramwork23PlacesAutoCompleteModelV"
+- "17LabibaBotFramwork10PredictionV"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork16MatchedSubstringV"
+- "17LabibaBotFramwork20StructuredFormattingV"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork4TermV"
+provides-member:
+- ["17LabibaBotFramwork23PlacesAutoCompleteModelV", ""]
+- ["17LabibaBotFramwork10PredictionV", ""]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", ""]
+- ["17LabibaBotFramwork16MatchedSubstringV", ""]
+- ["17LabibaBotFramwork20StructuredFormattingV", ""]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", ""]
+- ["17LabibaBotFramwork4TermV", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "=="
+- !private "Array"
+- "Codable"
+- "CodingKey"
+- !private "FloatLiteralType"
+- "Int"
+- !private "IntegerLiteralType"
+- "MatchedSubstring"
+- "PlacesAutoCompleteModel"
+- "Prediction"
+- "String"
+- "StringLiteralType"
+- "StructuredFormatting"
+- "Term"
+- !private "_findStringSwitchCase"
+- !private "~="
+depends-member:
+- ["s9CodingKeyP", "=="]
+- ["s9CodingKeyP", "Default_RawValue"]
+- ["s9CodingKeyP", "RawValue"]
+- ["s9CodingKeyP", ""]
+- ["s9CodingKeyP", "_Default_RawValue"]
+- !private ["s9CodingKeyP", "_findStringSwitchCase"]
+- ["s9CodingKeyP", "_rawHashValue"]
+- ["s9CodingKeyP", "debugDescription"]
+- ["s9CodingKeyP", "description"]
+- !private ["s9CodingKeyP", "findStringSwitchCase"]
+- ["s9CodingKeyP", "hash"]
+- ["s9CodingKeyP", "hashValue"]
+- ["s9CodingKeyP", "init"]
+- ["s9CodingKeyP", "intValue"]
+- ["s9CodingKeyP", "rawValue"]
+- ["s9CodingKeyP", "stringValue"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "=="]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "=="]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "Default_RawValue"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "Default_RawValue"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "RawValue"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "RawValue"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", ""]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", ""]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "_Default_RawValue"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "_Default_RawValue"]
+- !private ["17LabibaBotFramwork10PredictionV10CodingKeysO", "_findStringSwitchCase"]
+- !private ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "_findStringSwitchCase"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "_rawHashValue"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "_rawHashValue"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "debugDescription"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "debugDescription"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "description"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "description"]
+- !private ["17LabibaBotFramwork10PredictionV10CodingKeysO", "findStringSwitchCase"]
+- !private ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "findStringSwitchCase"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "hash"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "hash"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "hashValue"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "hashValue"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "id"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "init"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "init"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "intValue"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "intValue"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "mainText"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "mainTextMatchedSubstrings"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "matchedSubstrings"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "placeID"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "rawValue"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "rawValue"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "reference"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "secondaryText"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "secondaryTextMatchedSubstrings"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "stringValue"]
+- ["17LabibaBotFramwork20StructuredFormattingV10CodingKeysO", "stringValue"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "structuredFormatting"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "terms"]
+- ["17LabibaBotFramwork10PredictionV10CodingKeysO", "types"]
+- ["s28CustomDebugStringConvertibleP", "=="]
+- ["s28CustomDebugStringConvertibleP", "Default_RawValue"]
+- ["s28CustomDebugStringConvertibleP", "RawValue"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- ["s28CustomDebugStringConvertibleP", "_Default_RawValue"]
+- !private ["s28CustomDebugStringConvertibleP", "_findStringSwitchCase"]
+- ["s28CustomDebugStringConvertibleP", "_rawHashValue"]
+- ["s28CustomDebugStringConvertibleP", "debugDescription"]
+- ["s28CustomDebugStringConvertibleP", "description"]
+- !private ["s28CustomDebugStringConvertibleP", "findStringSwitchCase"]
+- ["s28CustomDebugStringConvertibleP", "hash"]
+- ["s28CustomDebugStringConvertibleP", "hashValue"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "intValue"]
+- ["s28CustomDebugStringConvertibleP", "rawValue"]
+- ["s28CustomDebugStringConvertibleP", "stringValue"]
+- ["s23CustomStringConvertibleP", "=="]
+- ["s23CustomStringConvertibleP", "Default_RawValue"]
+- ["s23CustomStringConvertibleP", "RawValue"]
+- ["s23CustomStringConvertibleP", ""]
+- ["s23CustomStringConvertibleP", "_Default_RawValue"]
+- !private ["s23CustomStringConvertibleP", "_findStringSwitchCase"]
+- ["s23CustomStringConvertibleP", "_rawHashValue"]
+- ["s23CustomStringConvertibleP", "debugDescription"]
+- ["s23CustomStringConvertibleP", "description"]
+- !private ["s23CustomStringConvertibleP", "findStringSwitchCase"]
+- ["s23CustomStringConvertibleP", "hash"]
+- ["s23CustomStringConvertibleP", "hashValue"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "intValue"]
+- ["s23CustomStringConvertibleP", "rawValue"]
+- ["s23CustomStringConvertibleP", "stringValue"]
+- ["Se", "CodingKey"]
+- ["Se", ""]
+- !private ["Se", "_findStringSwitchCase"]
+- !private ["Se", "description"]
+- ["Se", "encode"]
+- !private ["Se", "findStringSwitchCase"]
+- !private ["Se", "id"]
+- ["Se", "init"]
+- !private ["Se", "length"]
+- !private ["Se", "mainText"]
+- !private ["Se", "mainTextMatchedSubstrings"]
+- !private ["Se", "matchedSubstrings"]
+- !private ["Se", "offset"]
+- !private ["Se", "placeID"]
+- !private ["Se", "predictions"]
+- !private ["Se", "reference"]
+- !private ["Se", "secondaryText"]
+- !private ["Se", "secondaryTextMatchedSubstrings"]
+- !private ["Se", "status"]
+- !private ["Se", "structuredFormatting"]
+- !private ["Se", "terms"]
+- !private ["Se", "types"]
+- !private ["Se", "value"]
+- !private ["s7DecoderP", "container"]
+- ["SE", "CodingKey"]
+- ["SE", ""]
+- !private ["SE", "_findStringSwitchCase"]
+- !private ["SE", "description"]
+- ["SE", "encode"]
+- !private ["SE", "findStringSwitchCase"]
+- !private ["SE", "id"]
+- ["SE", "init"]
+- !private ["SE", "length"]
+- !private ["SE", "mainText"]
+- !private ["SE", "mainTextMatchedSubstrings"]
+- !private ["SE", "matchedSubstrings"]
+- !private ["SE", "offset"]
+- !private ["SE", "placeID"]
+- !private ["SE", "predictions"]
+- !private ["SE", "reference"]
+- !private ["SE", "secondaryText"]
+- !private ["SE", "secondaryTextMatchedSubstrings"]
+- !private ["SE", "status"]
+- !private ["SE", "structuredFormatting"]
+- !private ["SE", "terms"]
+- !private ["SE", "types"]
+- !private ["SE", "value"]
+- !private ["s7EncoderP", "container"]
+- ["SQ", "=="]
+- ["SQ", "Default_RawValue"]
+- ["SQ", "RawValue"]
+- ["SQ", ""]
+- ["SQ", "_Default_RawValue"]
+- !private ["SQ", "_findStringSwitchCase"]
+- ["SQ", "_rawHashValue"]
+- ["SQ", "debugDescription"]
+- ["SQ", "description"]
+- !private ["SQ", "findStringSwitchCase"]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- ["SQ", "init"]
+- ["SQ", "intValue"]
+- ["SQ", "rawValue"]
+- ["SQ", "stringValue"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- ["SH", "=="]
+- ["SH", "Default_RawValue"]
+- ["SH", "RawValue"]
+- ["SH", ""]
+- ["SH", "_Default_RawValue"]
+- !private ["SH", "_findStringSwitchCase"]
+- ["SH", "_rawHashValue"]
+- ["SH", "debugDescription"]
+- ["SH", "description"]
+- !private ["SH", "findStringSwitchCase"]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- ["SH", "init"]
+- ["SH", "intValue"]
+- ["SH", "rawValue"]
+- ["SH", "stringValue"]
+- !private ["s6HasherV", "combine"]
+- !private ["s22KeyedDecodingContainerV", "decode"]
+- !private ["s30KeyedDecodingContainerProtocolP", "decode"]
+- !private ["s22KeyedEncodingContainerV", "encode"]
+- !private ["s30KeyedEncodingContainerProtocolP", "encode"]
+- ["17LabibaBotFramwork16MatchedSubstringV", "CodingKeys"]
+- ["17LabibaBotFramwork16MatchedSubstringV", "Int"]
+- ["17LabibaBotFramwork16MatchedSubstringV", ""]
+- ["17LabibaBotFramwork16MatchedSubstringV", "encode"]
+- ["17LabibaBotFramwork16MatchedSubstringV", "init"]
+- ["17LabibaBotFramwork16MatchedSubstringV", "length"]
+- ["17LabibaBotFramwork16MatchedSubstringV", "offset"]
+- ["17LabibaBotFramwork23PlacesAutoCompleteModelV", "CodingKeys"]
+- ["17LabibaBotFramwork23PlacesAutoCompleteModelV", "Prediction"]
+- ["17LabibaBotFramwork23PlacesAutoCompleteModelV", "String"]
+- ["17LabibaBotFramwork23PlacesAutoCompleteModelV", ""]
+- ["17LabibaBotFramwork23PlacesAutoCompleteModelV", "encode"]
+- ["17LabibaBotFramwork23PlacesAutoCompleteModelV", "init"]
+- ["17LabibaBotFramwork23PlacesAutoCompleteModelV", "predictions"]
+- ["17LabibaBotFramwork23PlacesAutoCompleteModelV", "status"]
+- ["17LabibaBotFramwork10PredictionV", "CodingKey"]
+- ["17LabibaBotFramwork10PredictionV", "CodingKeys"]
+- ["17LabibaBotFramwork10PredictionV", "MatchedSubstring"]
+- ["17LabibaBotFramwork10PredictionV", "String"]
+- ["17LabibaBotFramwork10PredictionV", "StructuredFormatting"]
+- ["17LabibaBotFramwork10PredictionV", "Term"]
+- ["17LabibaBotFramwork10PredictionV", ""]
+- !private ["17LabibaBotFramwork10PredictionV", "_findStringSwitchCase"]
+- ["17LabibaBotFramwork10PredictionV", "description"]
+- ["17LabibaBotFramwork10PredictionV", "encode"]
+- !private ["17LabibaBotFramwork10PredictionV", "findStringSwitchCase"]
+- ["17LabibaBotFramwork10PredictionV", "id"]
+- ["17LabibaBotFramwork10PredictionV", "init"]
+- ["17LabibaBotFramwork10PredictionV", "matchedSubstrings"]
+- ["17LabibaBotFramwork10PredictionV", "placeID"]
+- ["17LabibaBotFramwork10PredictionV", "reference"]
+- ["17LabibaBotFramwork10PredictionV", "structuredFormatting"]
+- ["17LabibaBotFramwork10PredictionV", "terms"]
+- ["17LabibaBotFramwork10PredictionV", "types"]
+- ["SY", "=="]
+- ["SY", "Default_RawValue"]
+- ["SY", "RawValue"]
+- ["SY", ""]
+- ["SY", "_Default_RawValue"]
+- !private ["SY", "_findStringSwitchCase"]
+- ["SY", "_rawHashValue"]
+- ["SY", "debugDescription"]
+- ["SY", "description"]
+- !private ["SY", "findStringSwitchCase"]
+- ["SY", "hash"]
+- ["SY", "hashValue"]
+- ["SY", "init"]
+- ["SY", "intValue"]
+- ["SY", "rawValue"]
+- ["SY", "stringValue"]
+- ["17LabibaBotFramwork20StructuredFormattingV", "CodingKey"]
+- ["17LabibaBotFramwork20StructuredFormattingV", "CodingKeys"]
+- ["17LabibaBotFramwork20StructuredFormattingV", "MatchedSubstring"]
+- ["17LabibaBotFramwork20StructuredFormattingV", "String"]
+- ["17LabibaBotFramwork20StructuredFormattingV", ""]
+- !private ["17LabibaBotFramwork20StructuredFormattingV", "_findStringSwitchCase"]
+- ["17LabibaBotFramwork20StructuredFormattingV", "encode"]
+- !private ["17LabibaBotFramwork20StructuredFormattingV", "findStringSwitchCase"]
+- ["17LabibaBotFramwork20StructuredFormattingV", "init"]
+- ["17LabibaBotFramwork20StructuredFormattingV", "mainText"]
+- ["17LabibaBotFramwork20StructuredFormattingV", "mainTextMatchedSubstrings"]
+- ["17LabibaBotFramwork20StructuredFormattingV", "secondaryText"]
+- ["17LabibaBotFramwork20StructuredFormattingV", "secondaryTextMatchedSubstrings"]
+- ["17LabibaBotFramwork4TermV", "CodingKeys"]
+- ["17LabibaBotFramwork4TermV", "Int"]
+- ["17LabibaBotFramwork4TermV", "String"]
+- ["17LabibaBotFramwork4TermV", ""]
+- ["17LabibaBotFramwork4TermV", "encode"]
+- ["17LabibaBotFramwork4TermV", "init"]
+- ["17LabibaBotFramwork4TermV", "offset"]
+- ["17LabibaBotFramwork4TermV", "value"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+depends-nominal:
+- "s9CodingKeyP"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- !private "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- !private "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- !private "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- !private "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "17LabibaBotFramwork20StructuredFormattingV10CodingKeysO"
+- "17LabibaBotFramwork10PredictionV10CodingKeysO"
+- "s28CustomDebugStringConvertibleP"
+- "s23CustomStringConvertibleP"
+- "Se"
+- !private "s7DecoderP"
+- "SE"
+- !private "s7EncoderP"
+- "SQ"
+- !private "s25ExpressibleByArrayLiteralP"
+- "SH"
+- !private "s6HasherV"
+- !private "s22KeyedDecodingContainerV"
+- !private "s30KeyedDecodingContainerProtocolP"
+- !private "s22KeyedEncodingContainerV"
+- !private "s30KeyedEncodingContainerProtocolP"
+- "17LabibaBotFramwork16MatchedSubstringV"
+- "17LabibaBotFramwork23PlacesAutoCompleteModelV"
+- "17LabibaBotFramwork10PredictionV"
+- "SY"
+- "17LabibaBotFramwork20StructuredFormattingV"
+- "17LabibaBotFramwork4TermV"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/ObjectiveC.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMIDI.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMedia.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/simd.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreImage.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/NaturalLanguage.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/QuartzCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Accelerate.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Speech.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Dispatch.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Metal.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Darwin.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreLocation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Foundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/AVFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreAudio.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreGraphics.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/os.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UniformTypeIdentifiers.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Contacts.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Swift.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/WebKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/MapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/LabibaBotFramwork.h"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/Framework/Classes/Manegers/SocketRocket/SRWebSocket.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/build/LabibaBotFramework.build/Debug-iphonesimulator/LabibaBotFramwork.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Accelerate.framework/Headers/Accelerate.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Speech.framework/Headers/Speech.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/os.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UniformTypeIdentifiers.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "399f07d726ffab91b6944e37ccbd81a7"

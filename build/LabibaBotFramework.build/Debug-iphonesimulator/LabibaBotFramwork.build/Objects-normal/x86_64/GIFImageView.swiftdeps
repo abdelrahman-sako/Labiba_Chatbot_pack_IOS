@@ -1,0 +1,559 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "GIFImageView"
+- "im"
+provides-nominal:
+- "17LabibaBotFramwork12GIFImageViewC"
+- "17LabibaBotFramwork2imC"
+provides-member:
+- ["17LabibaBotFramwork12GIFImageViewC", ""]
+- ["17LabibaBotFramwork2imC", ""]
+provides-dynamic-lookup:
+- "$__lazy_storage_$_animator"
+- "animator"
+- "animator2"
+- "display"
+depends-top-level:
+- "Animator"
+- "AssignmentPrecedence"
+- "CALayer"
+- "CGRect"
+- "GIFAnimatable"
+- "GIFImageView"
+- "NSCoder"
+- "UIImageView"
+- "UIView"
+- !private "animator"
+- "animator2"
+- "im"
+- !private "updateImageIfNeeded"
+depends-member:
+- !private ["17LabibaBotFramwork8AnimatorC", "init"]
+- ["So15CALayerDelegateP", "$__lazy_storage_$_animator"]
+- ["So15CALayerDelegateP", "Animator"]
+- ["So15CALayerDelegateP", "CALayer"]
+- ["So15CALayerDelegateP", "CGRect"]
+- ["So15CALayerDelegateP", ""]
+- ["So15CALayerDelegateP", "__lazy_storage_$_animator"]
+- ["So15CALayerDelegateP", "animator"]
+- ["So15CALayerDelegateP", "animator2"]
+- ["So15CALayerDelegateP", "contentMode"]
+- ["So15CALayerDelegateP", "display"]
+- ["So15CALayerDelegateP", "frame"]
+- ["So15CALayerDelegateP", "init"]
+- ["So15CALayerDelegateP", "layer"]
+- !private ["So15CALayerDelegateP", "updateImageIfNeeded"]
+- !private ["s7CVarArgP", "Animator"]
+- ["s7CVarArgP", ""]
+- ["s7CVarArgP", "animator"]
+- ["s7CVarArgP", "animator2"]
+- ["s7CVarArgP", "contentMode"]
+- !private ["s7CVarArgP", "display"]
+- ["s7CVarArgP", "frame"]
+- !private ["s7CVarArgP", "init"]
+- ["s7CVarArgP", "layer"]
+- !private ["s7CVarArgP", "updateImageIfNeeded"]
+- !private ["s28CustomDebugStringConvertibleP", "Animator"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- ["s28CustomDebugStringConvertibleP", "animator"]
+- ["s28CustomDebugStringConvertibleP", "animator2"]
+- ["s28CustomDebugStringConvertibleP", "contentMode"]
+- !private ["s28CustomDebugStringConvertibleP", "display"]
+- ["s28CustomDebugStringConvertibleP", "frame"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "layer"]
+- !private ["s28CustomDebugStringConvertibleP", "updateImageIfNeeded"]
+- !private ["s23CustomStringConvertibleP", "Animator"]
+- ["s23CustomStringConvertibleP", ""]
+- ["s23CustomStringConvertibleP", "animator"]
+- ["s23CustomStringConvertibleP", "animator2"]
+- ["s23CustomStringConvertibleP", "contentMode"]
+- !private ["s23CustomStringConvertibleP", "display"]
+- ["s23CustomStringConvertibleP", "frame"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "layer"]
+- !private ["s23CustomStringConvertibleP", "updateImageIfNeeded"]
+- !private ["SQ", "Animator"]
+- ["SQ", ""]
+- ["SQ", "animator"]
+- ["SQ", "animator2"]
+- ["SQ", "contentMode"]
+- !private ["SQ", "display"]
+- ["SQ", "frame"]
+- !private ["SQ", "init"]
+- ["SQ", "layer"]
+- !private ["SQ", "updateImageIfNeeded"]
+- !private ["17LabibaBotFramwork13GIFAnimatableP", "Animator"]
+- ["17LabibaBotFramwork13GIFAnimatableP", ""]
+- ["17LabibaBotFramwork13GIFAnimatableP", "animator"]
+- ["17LabibaBotFramwork13GIFAnimatableP", "animator2"]
+- ["17LabibaBotFramwork13GIFAnimatableP", "contentMode"]
+- !private ["17LabibaBotFramwork13GIFAnimatableP", "display"]
+- ["17LabibaBotFramwork13GIFAnimatableP", "frame"]
+- ["17LabibaBotFramwork13GIFAnimatableP", "layer"]
+- !private ["17LabibaBotFramwork13GIFAnimatableP", "updateImageIfNeeded"]
+- !private ["17LabibaBotFramwork12GIFImageViewC", "$__lazy_storage_$_animator"]
+- ["17LabibaBotFramwork12GIFImageViewC", "Animator"]
+- ["17LabibaBotFramwork12GIFImageViewC", "CALayer"]
+- ["17LabibaBotFramwork12GIFImageViewC", "CGRect"]
+- ["17LabibaBotFramwork12GIFImageViewC", "NSCoder"]
+- ["17LabibaBotFramwork12GIFImageViewC", ""]
+- ["17LabibaBotFramwork12GIFImageViewC", "animator"]
+- ["17LabibaBotFramwork12GIFImageViewC", "animator2"]
+- ["17LabibaBotFramwork12GIFImageViewC", "contentMode"]
+- ["17LabibaBotFramwork12GIFImageViewC", "deinit"]
+- ["17LabibaBotFramwork12GIFImageViewC", "display"]
+- ["17LabibaBotFramwork12GIFImageViewC", "frame"]
+- ["17LabibaBotFramwork12GIFImageViewC", "init"]
+- ["17LabibaBotFramwork12GIFImageViewC", "layer"]
+- !private ["17LabibaBotFramwork12GIFImageViewC", "updateImageIfNeeded"]
+- !private ["SH", "Animator"]
+- ["SH", ""]
+- ["SH", "animator"]
+- ["SH", "animator2"]
+- ["SH", "contentMode"]
+- !private ["SH", "display"]
+- ["SH", "frame"]
+- !private ["SH", "init"]
+- ["SH", "layer"]
+- !private ["SH", "updateImageIfNeeded"]
+- !private ["17LabibaBotFramwork14ImageContainerP", "Animator"]
+- ["17LabibaBotFramwork14ImageContainerP", ""]
+- ["17LabibaBotFramwork14ImageContainerP", "animator"]
+- ["17LabibaBotFramwork14ImageContainerP", "animator2"]
+- ["17LabibaBotFramwork14ImageContainerP", "contentMode"]
+- !private ["17LabibaBotFramwork14ImageContainerP", "display"]
+- ["17LabibaBotFramwork14ImageContainerP", "frame"]
+- !private ["17LabibaBotFramwork14ImageContainerP", "init"]
+- ["17LabibaBotFramwork14ImageContainerP", "layer"]
+- !private ["17LabibaBotFramwork14ImageContainerP", "updateImageIfNeeded"]
+- ["So8NSCodingP", "$__lazy_storage_$_animator"]
+- ["So8NSCodingP", "Animator"]
+- ["So8NSCodingP", "CALayer"]
+- ["So8NSCodingP", "CGRect"]
+- ["So8NSCodingP", ""]
+- ["So8NSCodingP", "__lazy_storage_$_animator"]
+- ["So8NSCodingP", "animator"]
+- ["So8NSCodingP", "animator2"]
+- ["So8NSCodingP", "contentMode"]
+- ["So8NSCodingP", "display"]
+- ["So8NSCodingP", "frame"]
+- ["So8NSCodingP", "init"]
+- ["So8NSCodingP", "layer"]
+- !private ["So8NSCodingP", "updateImageIfNeeded"]
+- ["So8NSObjectC", "$__lazy_storage_$_animator"]
+- ["So8NSObjectC", "Animator"]
+- ["So8NSObjectC", "CALayer"]
+- ["So8NSObjectC", "CGRect"]
+- ["So8NSObjectC", "NSCoder"]
+- ["So8NSObjectC", ""]
+- ["So8NSObjectC", "__lazy_storage_$_animator"]
+- ["So8NSObjectC", "animator"]
+- ["So8NSObjectC", "animator2"]
+- ["So8NSObjectC", "contentMode"]
+- ["So8NSObjectC", "display"]
+- ["So8NSObjectC", "frame"]
+- ["So8NSObjectC", "frameForAlignmentRect"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "layer"]
+- !private ["So8NSObjectC", "updateImageIfNeeded"]
+- ["So8NSObjectP", "$__lazy_storage_$_animator"]
+- ["So8NSObjectP", "Animator"]
+- ["So8NSObjectP", "CALayer"]
+- ["So8NSObjectP", "CGRect"]
+- ["So8NSObjectP", ""]
+- ["So8NSObjectP", "__lazy_storage_$_animator"]
+- ["So8NSObjectP", "animator"]
+- ["So8NSObjectP", "animator2"]
+- ["So8NSObjectP", "contentMode"]
+- ["So8NSObjectP", "display"]
+- ["So8NSObjectP", "frame"]
+- ["So8NSObjectP", "frameForAlignmentRect"]
+- ["So8NSObjectP", "init"]
+- ["So8NSObjectP", "layer"]
+- !private ["So8NSObjectP", "updateImageIfNeeded"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "$__lazy_storage_$_animator"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "Animator"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "CALayer"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "CGRect"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "NSCoder"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", ""]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "__lazy_storage_$_animator"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "animator"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "animator2"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "contentMode"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "display"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "frame"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "init"]
+- ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "layer"]
+- !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "updateImageIfNeeded"]
+- ["So29UIAccessibilityIdentificationP", "$__lazy_storage_$_animator"]
+- ["So29UIAccessibilityIdentificationP", "Animator"]
+- ["So29UIAccessibilityIdentificationP", "CALayer"]
+- ["So29UIAccessibilityIdentificationP", "CGRect"]
+- ["So29UIAccessibilityIdentificationP", ""]
+- ["So29UIAccessibilityIdentificationP", "__lazy_storage_$_animator"]
+- ["So29UIAccessibilityIdentificationP", "animator"]
+- ["So29UIAccessibilityIdentificationP", "animator2"]
+- ["So29UIAccessibilityIdentificationP", "contentMode"]
+- ["So29UIAccessibilityIdentificationP", "display"]
+- ["So29UIAccessibilityIdentificationP", "frame"]
+- ["So29UIAccessibilityIdentificationP", "init"]
+- ["So29UIAccessibilityIdentificationP", "layer"]
+- !private ["So29UIAccessibilityIdentificationP", "updateImageIfNeeded"]
+- ["So12UIAppearanceP", "$__lazy_storage_$_animator"]
+- ["So12UIAppearanceP", "Animator"]
+- ["So12UIAppearanceP", "CALayer"]
+- ["So12UIAppearanceP", "CGRect"]
+- ["So12UIAppearanceP", ""]
+- ["So12UIAppearanceP", "__lazy_storage_$_animator"]
+- ["So12UIAppearanceP", "animator"]
+- ["So12UIAppearanceP", "animator2"]
+- ["So12UIAppearanceP", "contentMode"]
+- ["So12UIAppearanceP", "display"]
+- ["So12UIAppearanceP", "frame"]
+- ["So12UIAppearanceP", "init"]
+- ["So12UIAppearanceP", "layer"]
+- !private ["So12UIAppearanceP", "updateImageIfNeeded"]
+- ["So21UIAppearanceContainerP", "$__lazy_storage_$_animator"]
+- ["So21UIAppearanceContainerP", "Animator"]
+- ["So21UIAppearanceContainerP", "CALayer"]
+- ["So21UIAppearanceContainerP", "CGRect"]
+- ["So21UIAppearanceContainerP", ""]
+- ["So21UIAppearanceContainerP", "__lazy_storage_$_animator"]
+- ["So21UIAppearanceContainerP", "animator"]
+- ["So21UIAppearanceContainerP", "animator2"]
+- ["So21UIAppearanceContainerP", "contentMode"]
+- ["So21UIAppearanceContainerP", "display"]
+- ["So21UIAppearanceContainerP", "frame"]
+- ["So21UIAppearanceContainerP", "init"]
+- ["So21UIAppearanceContainerP", "layer"]
+- !private ["So21UIAppearanceContainerP", "updateImageIfNeeded"]
+- ["So17UICoordinateSpaceP", "$__lazy_storage_$_animator"]
+- ["So17UICoordinateSpaceP", "Animator"]
+- ["So17UICoordinateSpaceP", "CALayer"]
+- ["So17UICoordinateSpaceP", "CGRect"]
+- ["So17UICoordinateSpaceP", ""]
+- ["So17UICoordinateSpaceP", "__lazy_storage_$_animator"]
+- ["So17UICoordinateSpaceP", "animator"]
+- ["So17UICoordinateSpaceP", "animator2"]
+- ["So17UICoordinateSpaceP", "contentMode"]
+- ["So17UICoordinateSpaceP", "display"]
+- ["So17UICoordinateSpaceP", "frame"]
+- ["So17UICoordinateSpaceP", "init"]
+- ["So17UICoordinateSpaceP", "layer"]
+- !private ["So17UICoordinateSpaceP", "updateImageIfNeeded"]
+- ["So13UIDynamicItemP", "$__lazy_storage_$_animator"]
+- ["So13UIDynamicItemP", "Animator"]
+- ["So13UIDynamicItemP", "CALayer"]
+- ["So13UIDynamicItemP", "CGRect"]
+- ["So13UIDynamicItemP", ""]
+- ["So13UIDynamicItemP", "__lazy_storage_$_animator"]
+- ["So13UIDynamicItemP", "animator"]
+- ["So13UIDynamicItemP", "animator2"]
+- ["So13UIDynamicItemP", "contentMode"]
+- ["So13UIDynamicItemP", "display"]
+- ["So13UIDynamicItemP", "frame"]
+- ["So13UIDynamicItemP", "init"]
+- ["So13UIDynamicItemP", "layer"]
+- !private ["So13UIDynamicItemP", "updateImageIfNeeded"]
+- ["So18UIFocusEnvironmentP", "$__lazy_storage_$_animator"]
+- ["So18UIFocusEnvironmentP", "Animator"]
+- ["So18UIFocusEnvironmentP", "CALayer"]
+- ["So18UIFocusEnvironmentP", "CGRect"]
+- ["So18UIFocusEnvironmentP", ""]
+- ["So18UIFocusEnvironmentP", "__lazy_storage_$_animator"]
+- ["So18UIFocusEnvironmentP", "animator"]
+- ["So18UIFocusEnvironmentP", "animator2"]
+- ["So18UIFocusEnvironmentP", "contentMode"]
+- ["So18UIFocusEnvironmentP", "display"]
+- ["So18UIFocusEnvironmentP", "frame"]
+- ["So18UIFocusEnvironmentP", "init"]
+- ["So18UIFocusEnvironmentP", "layer"]
+- !private ["So18UIFocusEnvironmentP", "updateImageIfNeeded"]
+- ["So11UIFocusItemP", "$__lazy_storage_$_animator"]
+- ["So11UIFocusItemP", "Animator"]
+- ["So11UIFocusItemP", "CALayer"]
+- ["So11UIFocusItemP", "CGRect"]
+- ["So11UIFocusItemP", ""]
+- ["So11UIFocusItemP", "__lazy_storage_$_animator"]
+- ["So11UIFocusItemP", "animator"]
+- ["So11UIFocusItemP", "animator2"]
+- ["So11UIFocusItemP", "contentMode"]
+- ["So11UIFocusItemP", "display"]
+- ["So11UIFocusItemP", "frame"]
+- ["So11UIFocusItemP", "init"]
+- ["So11UIFocusItemP", "layer"]
+- !private ["So11UIFocusItemP", "updateImageIfNeeded"]
+- ["So20UIFocusItemContainerP", "$__lazy_storage_$_animator"]
+- ["So20UIFocusItemContainerP", "Animator"]
+- ["So20UIFocusItemContainerP", "CALayer"]
+- ["So20UIFocusItemContainerP", "CGRect"]
+- ["So20UIFocusItemContainerP", ""]
+- ["So20UIFocusItemContainerP", "__lazy_storage_$_animator"]
+- ["So20UIFocusItemContainerP", "animator"]
+- ["So20UIFocusItemContainerP", "animator2"]
+- ["So20UIFocusItemContainerP", "contentMode"]
+- ["So20UIFocusItemContainerP", "display"]
+- ["So20UIFocusItemContainerP", "frame"]
+- ["So20UIFocusItemContainerP", "init"]
+- ["So20UIFocusItemContainerP", "layer"]
+- !private ["So20UIFocusItemContainerP", "updateImageIfNeeded"]
+- ["So11UIImageViewC", "$__lazy_storage_$_animator"]
+- ["So11UIImageViewC", "Animator"]
+- ["So11UIImageViewC", "CALayer"]
+- ["So11UIImageViewC", "CGRect"]
+- ["So11UIImageViewC", "NSCoder"]
+- ["So11UIImageViewC", ""]
+- ["So11UIImageViewC", "__lazy_storage_$_animator"]
+- ["So11UIImageViewC", "animator"]
+- ["So11UIImageViewC", "animator2"]
+- ["So11UIImageViewC", "contentMode"]
+- ["So11UIImageViewC", "display"]
+- ["So11UIImageViewC", "frame"]
+- ["So11UIImageViewC", "init"]
+- ["So11UIImageViewC", "layer"]
+- !private ["So11UIImageViewC", "updateImageIfNeeded"]
+- ["So24UILargeContentViewerItemP", "$__lazy_storage_$_animator"]
+- ["So24UILargeContentViewerItemP", "Animator"]
+- ["So24UILargeContentViewerItemP", "CALayer"]
+- ["So24UILargeContentViewerItemP", "CGRect"]
+- ["So24UILargeContentViewerItemP", ""]
+- ["So24UILargeContentViewerItemP", "__lazy_storage_$_animator"]
+- ["So24UILargeContentViewerItemP", "animator"]
+- ["So24UILargeContentViewerItemP", "animator2"]
+- ["So24UILargeContentViewerItemP", "contentMode"]
+- ["So24UILargeContentViewerItemP", "display"]
+- ["So24UILargeContentViewerItemP", "frame"]
+- ["So24UILargeContentViewerItemP", "init"]
+- ["So24UILargeContentViewerItemP", "layer"]
+- !private ["So24UILargeContentViewerItemP", "updateImageIfNeeded"]
+- ["So30UIPasteConfigurationSupportingP", "$__lazy_storage_$_animator"]
+- ["So30UIPasteConfigurationSupportingP", "Animator"]
+- ["So30UIPasteConfigurationSupportingP", "CALayer"]
+- ["So30UIPasteConfigurationSupportingP", "CGRect"]
+- ["So30UIPasteConfigurationSupportingP", ""]
+- ["So30UIPasteConfigurationSupportingP", "__lazy_storage_$_animator"]
+- ["So30UIPasteConfigurationSupportingP", "animator"]
+- ["So30UIPasteConfigurationSupportingP", "animator2"]
+- ["So30UIPasteConfigurationSupportingP", "contentMode"]
+- ["So30UIPasteConfigurationSupportingP", "display"]
+- ["So30UIPasteConfigurationSupportingP", "frame"]
+- ["So30UIPasteConfigurationSupportingP", "frameForAlignmentRect"]
+- ["So30UIPasteConfigurationSupportingP", "init"]
+- ["So30UIPasteConfigurationSupportingP", "layer"]
+- !private ["So30UIPasteConfigurationSupportingP", "updateImageIfNeeded"]
+- ["So11UIResponderC", "$__lazy_storage_$_animator"]
+- ["So11UIResponderC", "Animator"]
+- ["So11UIResponderC", "CALayer"]
+- ["So11UIResponderC", "CGRect"]
+- ["So11UIResponderC", "NSCoder"]
+- ["So11UIResponderC", ""]
+- ["So11UIResponderC", "__lazy_storage_$_animator"]
+- ["So11UIResponderC", "animator"]
+- ["So11UIResponderC", "animator2"]
+- ["So11UIResponderC", "contentMode"]
+- ["So11UIResponderC", "display"]
+- ["So11UIResponderC", "frame"]
+- ["So11UIResponderC", "frameForAlignmentRect"]
+- ["So11UIResponderC", "init"]
+- ["So11UIResponderC", "layer"]
+- !private ["So11UIResponderC", "updateImageIfNeeded"]
+- ["So30UIResponderStandardEditActionsP", "$__lazy_storage_$_animator"]
+- ["So30UIResponderStandardEditActionsP", "Animator"]
+- ["So30UIResponderStandardEditActionsP", "CALayer"]
+- ["So30UIResponderStandardEditActionsP", "CGRect"]
+- ["So30UIResponderStandardEditActionsP", ""]
+- ["So30UIResponderStandardEditActionsP", "__lazy_storage_$_animator"]
+- ["So30UIResponderStandardEditActionsP", "animator"]
+- ["So30UIResponderStandardEditActionsP", "animator2"]
+- ["So30UIResponderStandardEditActionsP", "contentMode"]
+- ["So30UIResponderStandardEditActionsP", "display"]
+- ["So30UIResponderStandardEditActionsP", "frame"]
+- ["So30UIResponderStandardEditActionsP", "frameForAlignmentRect"]
+- ["So30UIResponderStandardEditActionsP", "init"]
+- ["So30UIResponderStandardEditActionsP", "layer"]
+- !private ["So30UIResponderStandardEditActionsP", "updateImageIfNeeded"]
+- ["So18UITraitEnvironmentP", "$__lazy_storage_$_animator"]
+- ["So18UITraitEnvironmentP", "Animator"]
+- ["So18UITraitEnvironmentP", "CALayer"]
+- ["So18UITraitEnvironmentP", "CGRect"]
+- ["So18UITraitEnvironmentP", ""]
+- ["So18UITraitEnvironmentP", "__lazy_storage_$_animator"]
+- ["So18UITraitEnvironmentP", "animator"]
+- ["So18UITraitEnvironmentP", "animator2"]
+- ["So18UITraitEnvironmentP", "contentMode"]
+- ["So18UITraitEnvironmentP", "display"]
+- ["So18UITraitEnvironmentP", "frame"]
+- ["So18UITraitEnvironmentP", "init"]
+- ["So18UITraitEnvironmentP", "layer"]
+- !private ["So18UITraitEnvironmentP", "updateImageIfNeeded"]
+- ["So23UIUserActivityRestoringP", "$__lazy_storage_$_animator"]
+- ["So23UIUserActivityRestoringP", "Animator"]
+- ["So23UIUserActivityRestoringP", "CALayer"]
+- ["So23UIUserActivityRestoringP", "CGRect"]
+- ["So23UIUserActivityRestoringP", ""]
+- ["So23UIUserActivityRestoringP", "__lazy_storage_$_animator"]
+- ["So23UIUserActivityRestoringP", "animator"]
+- ["So23UIUserActivityRestoringP", "animator2"]
+- ["So23UIUserActivityRestoringP", "contentMode"]
+- ["So23UIUserActivityRestoringP", "display"]
+- ["So23UIUserActivityRestoringP", "frame"]
+- ["So23UIUserActivityRestoringP", "frameForAlignmentRect"]
+- ["So23UIUserActivityRestoringP", "init"]
+- ["So23UIUserActivityRestoringP", "layer"]
+- !private ["So23UIUserActivityRestoringP", "updateImageIfNeeded"]
+- ["So6UIViewC", "$__lazy_storage_$_animator"]
+- ["So6UIViewC", "Animator"]
+- ["So6UIViewC", "CALayer"]
+- ["So6UIViewC", "CGRect"]
+- ["So6UIViewC", "NSCoder"]
+- ["So6UIViewC", ""]
+- ["So6UIViewC", "__lazy_storage_$_animator"]
+- ["So6UIViewC", "animator"]
+- ["So6UIViewC", "animator2"]
+- ["So6UIViewC", "contentMode"]
+- ["So6UIViewC", "display"]
+- ["So6UIViewC", "frame"]
+- ["So6UIViewC", "init"]
+- ["So6UIViewC", "layer"]
+- !private ["So6UIViewC", "updateImageIfNeeded"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Animator"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- ["10Foundation27_KeyValueCodingAndObservingP", "animator"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "animator2"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "contentMode"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "display"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "frame"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "layer"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "updateImageIfNeeded"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Animator"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "animator"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "animator2"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "contentMode"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "display"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "frame"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "layer"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "updateImageIfNeeded"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "Animator"]
+- ["s38__DefaultCustomPlaygroundQuickLookableP", ""]
+- ["s38__DefaultCustomPlaygroundQuickLookableP", "animator"]
+- ["s38__DefaultCustomPlaygroundQuickLookableP", "animator2"]
+- ["s38__DefaultCustomPlaygroundQuickLookableP", "contentMode"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "display"]
+- ["s38__DefaultCustomPlaygroundQuickLookableP", "frame"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "init"]
+- ["s38__DefaultCustomPlaygroundQuickLookableP", "layer"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "updateImageIfNeeded"]
+- ["17LabibaBotFramwork2imC", "Animator"]
+- ["17LabibaBotFramwork2imC", "CGRect"]
+- ["17LabibaBotFramwork2imC", "NSCoder"]
+- ["17LabibaBotFramwork2imC", ""]
+- ["17LabibaBotFramwork2imC", "animator"]
+- ["17LabibaBotFramwork2imC", "contentMode"]
+- ["17LabibaBotFramwork2imC", "deinit"]
+- ["17LabibaBotFramwork2imC", "frame"]
+- ["17LabibaBotFramwork2imC", "init"]
+- ["17LabibaBotFramwork2imC", "layer"]
+depends-nominal:
+- !private "17LabibaBotFramwork8AnimatorC"
+- "So15CALayerDelegateP"
+- "s7CVarArgP"
+- "s28CustomDebugStringConvertibleP"
+- "s23CustomStringConvertibleP"
+- "SQ"
+- "17LabibaBotFramwork13GIFAnimatableP"
+- "17LabibaBotFramwork12GIFImageViewC"
+- "SH"
+- "17LabibaBotFramwork14ImageContainerP"
+- "So8NSCodingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- "So48UIAccessibilityContentSizeCategoryImageAdjustingP"
+- "So29UIAccessibilityIdentificationP"
+- "So12UIAppearanceP"
+- "So21UIAppearanceContainerP"
+- "So17UICoordinateSpaceP"
+- "So13UIDynamicItemP"
+- "So18UIFocusEnvironmentP"
+- "So11UIFocusItemP"
+- "So20UIFocusItemContainerP"
+- "So11UIImageViewC"
+- "So24UILargeContentViewerItemP"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- "So18UITraitEnvironmentP"
+- "So23UIUserActivityRestoringP"
+- "So6UIViewC"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- "s38__DefaultCustomPlaygroundQuickLookableP"
+- "17LabibaBotFramwork2imC"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/ObjectiveC.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMIDI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMedia.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/simd.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreImage.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/NaturalLanguage.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/QuartzCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Accelerate.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Speech.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Dispatch.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Metal.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Darwin.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreLocation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Foundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/AVFoundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreFoundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreAudio.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreGraphics.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/os.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UniformTypeIdentifiers.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Contacts.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Swift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/WebKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/MapKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/LabibaBotFramwork.h"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/Framework/Classes/Manegers/SocketRocket/SRWebSocket.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/build/LabibaBotFramework.build/Debug-iphonesimulator/LabibaBotFramwork.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Accelerate.framework/Headers/Accelerate.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Speech.framework/Headers/Speech.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/os.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UniformTypeIdentifiers.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "85695d4aebd74dfbc51dfa09e006c80a"

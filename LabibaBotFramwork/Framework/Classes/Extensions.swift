@@ -94,6 +94,8 @@ extension UIView
                 if textFiled.textAlignment == .natural {
                     textFiled.applyAlignmentAccordingToOnboardingLang()
                 }
+            }else if let imageView = subview as? UIImageView {
+                imageView.transform = CGAffineTransform(scaleX: SharedPreference.shared.botLangCode == .ar ? -1 : 1, y: 1)
             }
         }
     }

@@ -35,7 +35,7 @@ class AttachmentView: UIView, ReusableComponent {
         containerView.layer.shadowOffset = CGSize(width: 0, height: 0)
         titleLbl.font = applyBotFont(size: 12)
         containerView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
-        imageView.tintColor = Labiba._MicButtonWaveColor
+        imageView.tintColor = Labiba.attachmentThemeModel.card.tint
     }
     func startAnimation()  {
         DispatchQueue.main.async { [weak self] in

@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 import ContactsUI
-class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsViewControllerDelegate, LabibaChatHeaderViewDelegate, CustomMapPickerDelegate , RatingScreenProtocol
+class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsViewControllerDelegate, LabibaChatHeaderViewDelegate, CustomMapPickerDelegate
 {
     
     override func collectionView(dialogIndex: Int,selectedCardIndex: Int, selectedCellDialogCardButton: DialogCardButton?, didTappedInTableview TableCell: CustomTableViewCell) {
@@ -421,10 +421,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         backAction()
     }
 
-    func ratingScreenDidDisappear(){
-      botConnector.delegate = self
-//        UIApplication.shared.setStatusBarColor(color: Labiba._StatusBarColor )
-    }
+
     
     func labibaHeaderViewDidSubmitText(message: String) {
         stopTTS_STT()
@@ -1358,6 +1355,17 @@ extension UIImage
 }
 
 
+extension ConversationViewController: SubViewControllerDelegate {
+    func SubViewDidAppear() {
+        TextToSpeechManeger.Shared.setVolume(volume: 0)
+        Labiba.EnableAutoListening
+    }
+    func subViewDidDisappear(){
+      botConnector.delegate = self
+        TextToSpeechManeger.Shared.setVolume(volume: isTTSMuted ? 0 : 1)
+    }
+    
+}
 
 
 

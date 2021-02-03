@@ -1,0 +1,1098 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "RatingScreenProtocol"
+- "RatingBaseVC"
+provides-nominal:
+- "17LabibaBotFramwork20RatingScreenProtocolP"
+- "17LabibaBotFramwork12RatingBaseVCC"
+provides-member:
+- ["17LabibaBotFramwork20RatingScreenProtocolP", ""]
+- ["17LabibaBotFramwork12RatingBaseVCC", ""]
+provides-dynamic-lookup:
+- "botConnector"
+- "delegate"
+- "getQuestions"
+- "present"
+- "questions"
+- "ratingTableView"
+- "showAlert"
+- "viewDidDisappear"
+- "viewDidLoad"
+- "viewWillAppear"
+- "viewWillDisappear"
+depends-top-level:
+- ">"
+- "??"
+- !private "Array"
+- "AssignmentPrecedence"
+- "Bool"
+- !private "BooleanLiteralType"
+- "BotConnector"
+- "FloatLiteralType"
+- !private "IQKeyboardManager"
+- "IntegerLiteralType"
+- "LabibaBotConnectorJC"
+- "RatingBaseVC"
+- "RatingQuestionModel"
+- "RatingScreenProtocol"
+- "String"
+- !private "StringLiteralType"
+- !private "UIAlertAction"
+- !private "UIAlertController"
+- !private "UIApplication"
+- "UITableView"
+- "UIViewController"
+- !private "botConnector"
+- !private "delegate"
+- "exit"
+- !private "getQuestions"
+- !private "print"
+depends-member:
+- !private ["10Accelerate0A6BufferP", ""]
+- !private ["10Accelerate0A6BufferP", "count"]
+- !private ["10Accelerate0A6BufferP", "subscript"]
+- !private ["10Accelerate0A13MutableBufferP", "count"]
+- !private ["10Accelerate0A13MutableBufferP", "subscript"]
+- !private ["s18AdditiveArithmeticP", ""]
+- !private ["Sa", "count"]
+- !private ["Sa", "subscript"]
+- !private ["Sa", "withUnsafeBufferPointer"]
+- ["SK", ""]
+- !private ["SK", "count"]
+- !private ["SK", "localForChosnLangCodeBB"]
+- !private ["SK", "subscript"]
+- ["17LabibaBotFramwork0B9ConnectorC", ""]
+- !private ["17LabibaBotFramwork0B9ConnectorC", "getRatingQuestions"]
+- ["17LabibaBotFramwork0B9ConnectorC", "init"]
+- !private ["So15CALayerDelegateP", "reloadData"]
+- !private ["So15CNKeyDescriptorP", "localForChosnLangCodeBB"]
+- !private ["s7CVarArgP", "IQKeyboardManager"]
+- ["s7CVarArgP", "LabibaBotConnectorJC"]
+- !private ["s7CVarArgP", "UIAlertAction"]
+- !private ["s7CVarArgP", "UIAlertController"]
+- !private ["s7CVarArgP", "UIApplication"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "addAction"]
+- !private ["s7CVarArgP", "botConnector"]
+- !private ["s7CVarArgP", "clear"]
+- !private ["s7CVarArgP", "count"]
+- !private ["s7CVarArgP", "delegate"]
+- !private ["s7CVarArgP", "enable"]
+- !private ["s7CVarArgP", "enableAutoToolbar"]
+- !private ["s7CVarArgP", "exit"]
+- !private ["s7CVarArgP", "getQuestions"]
+- !private ["s7CVarArgP", "getRatingQuestions"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "localForChosnLangCodeBB"]
+- !private ["s7CVarArgP", "present"]
+- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "questions"]
+- !private ["s7CVarArgP", "ratingTableView"]
+- !private ["s7CVarArgP", "reloadData"]
+- !private ["s7CVarArgP", "setStatusBarColor"]
+- !private ["s7CVarArgP", "shared"]
+- !private ["s7CVarArgP", "showAlert"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["s7CVarArgP", "viewDidDisappear"]
+- !private ["s7CVarArgP", "viewDidLoad"]
+- !private ["s7CVarArgP", "viewWillAppear"]
+- !private ["s7CVarArgP", "viewWillDisappear"]
+- ["Sl", ""]
+- !private ["Sl", "count"]
+- !private ["Sl", "localForChosnLangCodeBB"]
+- !private ["Sl", "subscript"]
+- ["SL", ""]
+- !private ["SL", "localForChosnLangCodeBB"]
+- !private ["10Foundation15ContiguousBytesP", "count"]
+- !private ["10Foundation15ContiguousBytesP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "IQKeyboardManager"]
+- ["s28CustomDebugStringConvertibleP", "LabibaBotConnectorJC"]
+- !private ["s28CustomDebugStringConvertibleP", "UIAlertAction"]
+- !private ["s28CustomDebugStringConvertibleP", "UIAlertController"]
+- !private ["s28CustomDebugStringConvertibleP", "UIApplication"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "addAction"]
+- !private ["s28CustomDebugStringConvertibleP", "botConnector"]
+- !private ["s28CustomDebugStringConvertibleP", "clear"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "delegate"]
+- !private ["s28CustomDebugStringConvertibleP", "enable"]
+- !private ["s28CustomDebugStringConvertibleP", "enableAutoToolbar"]
+- !private ["s28CustomDebugStringConvertibleP", "exit"]
+- !private ["s28CustomDebugStringConvertibleP", "failure"]
+- !private ["s28CustomDebugStringConvertibleP", "getQuestions"]
+- !private ["s28CustomDebugStringConvertibleP", "getRatingQuestions"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "localForChosnLangCodeBB"]
+- !private ["s28CustomDebugStringConvertibleP", "present"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "questions"]
+- !private ["s28CustomDebugStringConvertibleP", "ratingTableView"]
+- !private ["s28CustomDebugStringConvertibleP", "reloadData"]
+- !private ["s28CustomDebugStringConvertibleP", "setStatusBarColor"]
+- !private ["s28CustomDebugStringConvertibleP", "shared"]
+- !private ["s28CustomDebugStringConvertibleP", "showAlert"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "success"]
+- !private ["s28CustomDebugStringConvertibleP", "viewDidDisappear"]
+- !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
+- !private ["s28CustomDebugStringConvertibleP", "viewWillAppear"]
+- !private ["s28CustomDebugStringConvertibleP", "viewWillDisappear"]
+- !private ["s17CustomReflectableP", "count"]
+- !private ["s17CustomReflectableP", "localForChosnLangCodeBB"]
+- !private ["s17CustomReflectableP", "reloadData"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "IQKeyboardManager"]
+- ["s23CustomStringConvertibleP", "LabibaBotConnectorJC"]
+- !private ["s23CustomStringConvertibleP", "UIAlertAction"]
+- !private ["s23CustomStringConvertibleP", "UIAlertController"]
+- !private ["s23CustomStringConvertibleP", "UIApplication"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "addAction"]
+- !private ["s23CustomStringConvertibleP", "botConnector"]
+- !private ["s23CustomStringConvertibleP", "clear"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "delegate"]
+- !private ["s23CustomStringConvertibleP", "enable"]
+- !private ["s23CustomStringConvertibleP", "enableAutoToolbar"]
+- !private ["s23CustomStringConvertibleP", "exit"]
+- !private ["s23CustomStringConvertibleP", "failure"]
+- !private ["s23CustomStringConvertibleP", "getQuestions"]
+- !private ["s23CustomStringConvertibleP", "getRatingQuestions"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "localForChosnLangCodeBB"]
+- !private ["s23CustomStringConvertibleP", "present"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "questions"]
+- !private ["s23CustomStringConvertibleP", "ratingTableView"]
+- !private ["s23CustomStringConvertibleP", "reloadData"]
+- !private ["s23CustomStringConvertibleP", "setStatusBarColor"]
+- !private ["s23CustomStringConvertibleP", "shared"]
+- !private ["s23CustomStringConvertibleP", "showAlert"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "success"]
+- !private ["s23CustomStringConvertibleP", "viewDidDisappear"]
+- !private ["s23CustomStringConvertibleP", "viewDidLoad"]
+- !private ["s23CustomStringConvertibleP", "viewWillAppear"]
+- !private ["s23CustomStringConvertibleP", "viewWillDisappear"]
+- !private ["10Foundation12DataProtocolP", ""]
+- !private ["10Foundation12DataProtocolP", "count"]
+- !private ["10Foundation12DataProtocolP", "subscript"]
+- !private ["Se", "count"]
+- !private ["Se", "localForChosnLangCodeBB"]
+- !private ["Se", "questions"]
+- !private ["Se", "reloadData"]
+- !private ["Se", "subscript"]
+- !private ["SE", "count"]
+- !private ["SE", "localForChosnLangCodeBB"]
+- !private ["SE", "questions"]
+- !private ["SE", "reloadData"]
+- !private ["SE", "subscript"]
+- !private ["SQ", "IQKeyboardManager"]
+- ["SQ", "LabibaBotConnectorJC"]
+- !private ["SQ", "UIAlertAction"]
+- !private ["SQ", "UIAlertController"]
+- !private ["SQ", "UIApplication"]
+- ["SQ", ""]
+- !private ["SQ", "addAction"]
+- !private ["SQ", "alert"]
+- !private ["SQ", "botConnector"]
+- !private ["SQ", "clear"]
+- !private ["SQ", "count"]
+- !private ["SQ", "default"]
+- !private ["SQ", "delegate"]
+- !private ["SQ", "enable"]
+- !private ["SQ", "enableAutoToolbar"]
+- !private ["SQ", "exit"]
+- !private ["SQ", "getQuestions"]
+- !private ["SQ", "getRatingQuestions"]
+- ["SQ", "init"]
+- !private ["SQ", "localForChosnLangCodeBB"]
+- !private ["SQ", "present"]
+- !private ["SQ", "print"]
+- !private ["SQ", "questions"]
+- !private ["SQ", "ratingTableView"]
+- !private ["SQ", "reloadData"]
+- !private ["SQ", "setStatusBarColor"]
+- !private ["SQ", "shared"]
+- !private ["SQ", "showAlert"]
+- !private ["SQ", "subscript"]
+- !private ["SQ", "viewDidDisappear"]
+- !private ["SQ", "viewDidLoad"]
+- !private ["SQ", "viewWillAppear"]
+- !private ["SQ", "viewWillDisappear"]
+- !private ["s5ErrorP", "localizedDescription"]
+- !private ["s25ExpressibleByArrayLiteralP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
+- ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "localForChosnLangCodeBB"]
+- !private ["s25ExpressibleByFloatLiteralP", ""]
+- !private ["s27ExpressibleByIntegerLiteralP", ""]
+- !private ["s23ExpressibleByNilLiteralP", "reloadData"]
+- ["s32ExpressibleByStringInterpolationP", ""]
+- !private ["s32ExpressibleByStringInterpolationP", "localForChosnLangCodeBB"]
+- ["s26ExpressibleByStringLiteralP", ""]
+- !private ["s26ExpressibleByStringLiteralP", "localForChosnLangCodeBB"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "localForChosnLangCodeBB"]
+- !private ["SF", ""]
+- !private ["17LabibaBotFramwork27GetRatingFormQuestionsModelC", "questions"]
+- !private ["SH", "IQKeyboardManager"]
+- ["SH", "LabibaBotConnectorJC"]
+- !private ["SH", "UIAlertAction"]
+- !private ["SH", "UIAlertController"]
+- !private ["SH", "UIApplication"]
+- ["SH", ""]
+- !private ["SH", "addAction"]
+- !private ["SH", "alert"]
+- !private ["SH", "botConnector"]
+- !private ["SH", "clear"]
+- !private ["SH", "count"]
+- !private ["SH", "default"]
+- !private ["SH", "delegate"]
+- !private ["SH", "enable"]
+- !private ["SH", "enableAutoToolbar"]
+- !private ["SH", "exit"]
+- !private ["SH", "getQuestions"]
+- !private ["SH", "getRatingQuestions"]
+- ["SH", "init"]
+- !private ["SH", "localForChosnLangCodeBB"]
+- !private ["SH", "present"]
+- !private ["SH", "print"]
+- !private ["SH", "questions"]
+- !private ["SH", "ratingTableView"]
+- !private ["SH", "reloadData"]
+- !private ["SH", "setStatusBarColor"]
+- !private ["SH", "shared"]
+- !private ["SH", "showAlert"]
+- !private ["SH", "subscript"]
+- !private ["SH", "viewDidDisappear"]
+- !private ["SH", "viewDidLoad"]
+- !private ["SH", "viewWillAppear"]
+- !private ["SH", "viewWillDisappear"]
+- !private ["17LabibaBotFramwork17IQKeyboardManagerC", "enable"]
+- !private ["17LabibaBotFramwork17IQKeyboardManagerC", "enableAutoToolbar"]
+- !private ["17LabibaBotFramwork17IQKeyboardManagerC", "shared"]
+- !private ["17LabibaBotFramwork17JSONSubscriptTypeP", "localForChosnLangCodeBB"]
+- ["17LabibaBotFramwork0aB11ConnectorJCC", "init"]
+- !private ["17LabibaBotFramwork23LocationServiceDelegateP", "getRatingQuestions"]
+- ["17LabibaBotFramwork23LocationServiceDelegateP", "init"]
+- ["s25LosslessStringConvertibleP", ""]
+- !private ["s25LosslessStringConvertibleP", "localForChosnLangCodeBB"]
+- !private ["s10MirrorPathP", "localForChosnLangCodeBB"]
+- !private ["SM", ""]
+- !private ["SM", "count"]
+- !private ["SM", "subscript"]
+- !private ["10Foundation19MutableDataProtocolP", "count"]
+- !private ["10Foundation19MutableDataProtocolP", "subscript"]
+- ["So8NSCodingP", "Bool"]
+- ["So8NSCodingP", "BotConnector"]
+- !private ["So8NSCodingP", "IQKeyboardManager"]
+- ["So8NSCodingP", "LabibaBotConnectorJC"]
+- ["So8NSCodingP", "RatingQuestionModel"]
+- ["So8NSCodingP", "RatingScreenProtocol"]
+- ["So8NSCodingP", "String"]
+- !private ["So8NSCodingP", "UIAlertAction"]
+- !private ["So8NSCodingP", "UIAlertController"]
+- !private ["So8NSCodingP", "UIApplication"]
+- ["So8NSCodingP", "UITableView"]
+- ["So8NSCodingP", "UIViewController"]
+- ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "addAction"]
+- !private ["So8NSCodingP", "alertControllerWithTitle"]
+- ["So8NSCodingP", "botConnector"]
+- !private ["So8NSCodingP", "clear"]
+- ["So8NSCodingP", "delegate"]
+- !private ["So8NSCodingP", "exit"]
+- ["So8NSCodingP", "getQuestions"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "localForChosnLangCodeBB"]
+- ["So8NSCodingP", "present"]
+- !private ["So8NSCodingP", "print"]
+- ["So8NSCodingP", "questions"]
+- ["So8NSCodingP", "ratingTableView"]
+- !private ["So8NSCodingP", "reloadData"]
+- ["So8NSCodingP", "showAlert"]
+- ["So8NSCodingP", "viewDidDisappear"]
+- ["So8NSCodingP", "viewDidLoad"]
+- ["So8NSCodingP", "viewWillAppear"]
+- ["So8NSCodingP", "viewWillDisappear"]
+- !private ["So9NSCopyingP", ""]
+- !private ["So9NSCopyingP", "clear"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "localForChosnLangCodeBB"]
+- ["So26NSExtensionRequestHandlingP", "Bool"]
+- ["So26NSExtensionRequestHandlingP", "BotConnector"]
+- !private ["So26NSExtensionRequestHandlingP", "IQKeyboardManager"]
+- ["So26NSExtensionRequestHandlingP", "LabibaBotConnectorJC"]
+- ["So26NSExtensionRequestHandlingP", "RatingQuestionModel"]
+- ["So26NSExtensionRequestHandlingP", "RatingScreenProtocol"]
+- ["So26NSExtensionRequestHandlingP", "String"]
+- !private ["So26NSExtensionRequestHandlingP", "UIAlertAction"]
+- !private ["So26NSExtensionRequestHandlingP", "UIAlertController"]
+- !private ["So26NSExtensionRequestHandlingP", "UIApplication"]
+- ["So26NSExtensionRequestHandlingP", "UITableView"]
+- ["So26NSExtensionRequestHandlingP", "UIViewController"]
+- ["So26NSExtensionRequestHandlingP", ""]
+- !private ["So26NSExtensionRequestHandlingP", "addAction"]
+- !private ["So26NSExtensionRequestHandlingP", "alertControllerWithTitle"]
+- ["So26NSExtensionRequestHandlingP", "botConnector"]
+- ["So26NSExtensionRequestHandlingP", "delegate"]
+- !private ["So26NSExtensionRequestHandlingP", "exit"]
+- ["So26NSExtensionRequestHandlingP", "getQuestions"]
+- ["So26NSExtensionRequestHandlingP", "init"]
+- ["So26NSExtensionRequestHandlingP", "present"]
+- !private ["So26NSExtensionRequestHandlingP", "print"]
+- ["So26NSExtensionRequestHandlingP", "questions"]
+- ["So26NSExtensionRequestHandlingP", "ratingTableView"]
+- ["So26NSExtensionRequestHandlingP", "showAlert"]
+- ["So26NSExtensionRequestHandlingP", "viewDidDisappear"]
+- ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
+- ["So26NSExtensionRequestHandlingP", "viewWillAppear"]
+- ["So26NSExtensionRequestHandlingP", "viewWillDisappear"]
+- !private ["So21NSItemProviderReadingP", "clear"]
+- !private ["So21NSItemProviderReadingP", "localForChosnLangCodeBB"]
+- !private ["So21NSItemProviderWritingP", "clear"]
+- !private ["So21NSItemProviderWritingP", "localForChosnLangCodeBB"]
+- !private ["So16NSMutableCopyingP", "localForChosnLangCodeBB"]
+- ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "BotConnector"]
+- !private ["So8NSObjectC", "IQKeyboardManager"]
+- ["So8NSObjectC", "LabibaBotConnectorJC"]
+- ["So8NSObjectC", "RatingQuestionModel"]
+- ["So8NSObjectC", "RatingScreenProtocol"]
+- ["So8NSObjectC", "String"]
+- !private ["So8NSObjectC", "UIAlertAction"]
+- !private ["So8NSObjectC", "UIAlertController"]
+- !private ["So8NSObjectC", "UIApplication"]
+- ["So8NSObjectC", "UITableView"]
+- ["So8NSObjectC", "UIViewController"]
+- ["So8NSObjectC", ""]
+- !private ["So8NSObjectC", "actionWithTitle"]
+- !private ["So8NSObjectC", "addAction"]
+- !private ["So8NSObjectC", "alertControllerWithTitle"]
+- ["So8NSObjectC", "botConnector"]
+- !private ["So8NSObjectC", "clear"]
+- ["So8NSObjectC", "delegate"]
+- !private ["So8NSObjectC", "enable"]
+- !private ["So8NSObjectC", "enableAutoToolbar"]
+- !private ["So8NSObjectC", "exit"]
+- ["So8NSObjectC", "getQuestions"]
+- !private ["So8NSObjectC", "getRatingQuestions"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "localForChosnLangCodeBB"]
+- ["So8NSObjectC", "present"]
+- ["So8NSObjectC", "presentViewController"]
+- !private ["So8NSObjectC", "print"]
+- ["So8NSObjectC", "questions"]
+- ["So8NSObjectC", "ratingTableView"]
+- !private ["So8NSObjectC", "reloadData"]
+- !private ["So8NSObjectC", "setStatusBarColor"]
+- !private ["So8NSObjectC", "shared"]
+- ["So8NSObjectC", "showAlert"]
+- ["So8NSObjectC", "viewDidDisappear"]
+- ["So8NSObjectC", "viewDidLoad"]
+- ["So8NSObjectC", "viewWillAppear"]
+- ["So8NSObjectC", "viewWillDisappear"]
+- ["So8NSObjectP", "Bool"]
+- ["So8NSObjectP", "BotConnector"]
+- !private ["So8NSObjectP", "IQKeyboardManager"]
+- ["So8NSObjectP", "LabibaBotConnectorJC"]
+- ["So8NSObjectP", "RatingQuestionModel"]
+- ["So8NSObjectP", "RatingScreenProtocol"]
+- ["So8NSObjectP", "String"]
+- !private ["So8NSObjectP", "UIAlertAction"]
+- !private ["So8NSObjectP", "UIAlertController"]
+- !private ["So8NSObjectP", "UIApplication"]
+- ["So8NSObjectP", "UITableView"]
+- ["So8NSObjectP", "UIViewController"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "actionWithTitle"]
+- !private ["So8NSObjectP", "addAction"]
+- !private ["So8NSObjectP", "alertControllerWithTitle"]
+- ["So8NSObjectP", "botConnector"]
+- !private ["So8NSObjectP", "clear"]
+- ["So8NSObjectP", "delegate"]
+- !private ["So8NSObjectP", "enable"]
+- !private ["So8NSObjectP", "enableAutoToolbar"]
+- !private ["So8NSObjectP", "exit"]
+- ["So8NSObjectP", "getQuestions"]
+- !private ["So8NSObjectP", "getRatingQuestions"]
+- ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "localForChosnLangCodeBB"]
+- ["So8NSObjectP", "present"]
+- ["So8NSObjectP", "presentViewController"]
+- !private ["So8NSObjectP", "print"]
+- ["So8NSObjectP", "questions"]
+- ["So8NSObjectP", "ratingTableView"]
+- !private ["So8NSObjectP", "reloadData"]
+- ["So8NSObjectP", "setStatusBarColor"]
+- !private ["So8NSObjectP", "shared"]
+- ["So8NSObjectP", "showAlert"]
+- ["So8NSObjectP", "viewDidDisappear"]
+- ["So8NSObjectP", "viewDidLoad"]
+- ["So8NSObjectP", "viewWillAppear"]
+- ["So8NSObjectP", "viewWillDisappear"]
+- !private ["So14NSSecureCodingP", ""]
+- !private ["So14NSSecureCodingP", "clear"]
+- !private ["So14NSSecureCodingP", "localForChosnLangCodeBB"]
+- !private ["So8NSStringC", "localForChosnLangCodeBB"]
+- !private ["Sj", ""]
+- !private ["Sq", "reloadData"]
+- !private ["Sk", ""]
+- !private ["Sk", "count"]
+- !private ["Sk", "subscript"]
+- !private ["Sm", ""]
+- !private ["Sm", "count"]
+- !private ["Sm", "localForChosnLangCodeBB"]
+- !private ["Sm", "subscript"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "Bool"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "BotConnector"]
+- !private ["17LabibaBotFramwork12RatingBaseVCC", "IQKeyboardManager"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "LabibaBotConnectorJC"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "RatingQuestionModel"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "RatingScreenProtocol"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "String"]
+- !private ["17LabibaBotFramwork12RatingBaseVCC", "UIAlertAction"]
+- !private ["17LabibaBotFramwork12RatingBaseVCC", "UIAlertController"]
+- !private ["17LabibaBotFramwork12RatingBaseVCC", "UIApplication"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "UITableView"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "UIViewController"]
+- ["17LabibaBotFramwork12RatingBaseVCC", ""]
+- ["17LabibaBotFramwork12RatingBaseVCC", "botConnector"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "deinit"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "delegate"]
+- !private ["17LabibaBotFramwork12RatingBaseVCC", "exit"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "getQuestions"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "init"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "present"]
+- !private ["17LabibaBotFramwork12RatingBaseVCC", "print"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "questions"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "ratingTableView"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "showAlert"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "viewDidDisappear"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "viewDidLoad"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "viewWillAppear"]
+- ["17LabibaBotFramwork12RatingBaseVCC", "viewWillDisappear"]
+- ["17LabibaBotFramwork20RatingScreenProtocolP", "ratingScreenDidDisappear"]
+- !private ["SY", "alert"]
+- !private ["SY", "default"]
+- !private ["17LabibaBotFramwork6ResultO", "failure"]
+- !private ["17LabibaBotFramwork6ResultO", "success"]
+- ["So19SRWebSocketDelegateP", "init"]
+- ["ST", ""]
+- !private ["ST", "count"]
+- !private ["ST", "localForChosnLangCodeBB"]
+- !private ["ST", "subscript"]
+- !private ["s13SignedNumericP", ""]
+- !private ["Sx", ""]
+- !private ["SS", "localForChosnLangCodeBB"]
+- !private ["Sy", "localForChosnLangCodeBB"]
+- !private ["So22UIAlertControllerStyleV", "alert"]
+- !private ["So18UIAlertActionStyleV", "default"]
+- ["s16TextOutputStreamP", ""]
+- !private ["s16TextOutputStreamP", "localForChosnLangCodeBB"]
+- ["s20TextOutputStreamableP", ""]
+- !private ["s20TextOutputStreamableP", "localForChosnLangCodeBB"]
+- !private ["So29UIAccessibilityIdentificationP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "reloadData"]
+- !private ["So13UIAlertActionC", "init"]
+- !private ["So17UIAlertControllerC", "addAction"]
+- !private ["So17UIAlertControllerC", "init"]
+- !private ["So12UIAppearanceP", "reloadData"]
+- ["So21UIAppearanceContainerP", "Bool"]
+- ["So21UIAppearanceContainerP", "BotConnector"]
+- !private ["So21UIAppearanceContainerP", "IQKeyboardManager"]
+- ["So21UIAppearanceContainerP", "LabibaBotConnectorJC"]
+- ["So21UIAppearanceContainerP", "RatingQuestionModel"]
+- ["So21UIAppearanceContainerP", "RatingScreenProtocol"]
+- ["So21UIAppearanceContainerP", "String"]
+- !private ["So21UIAppearanceContainerP", "UIAlertAction"]
+- !private ["So21UIAppearanceContainerP", "UIAlertController"]
+- !private ["So21UIAppearanceContainerP", "UIApplication"]
+- ["So21UIAppearanceContainerP", "UITableView"]
+- ["So21UIAppearanceContainerP", "UIViewController"]
+- ["So21UIAppearanceContainerP", ""]
+- !private ["So21UIAppearanceContainerP", "addAction"]
+- !private ["So21UIAppearanceContainerP", "alertControllerWithTitle"]
+- ["So21UIAppearanceContainerP", "botConnector"]
+- ["So21UIAppearanceContainerP", "delegate"]
+- !private ["So21UIAppearanceContainerP", "exit"]
+- ["So21UIAppearanceContainerP", "getQuestions"]
+- ["So21UIAppearanceContainerP", "init"]
+- ["So21UIAppearanceContainerP", "present"]
+- !private ["So21UIAppearanceContainerP", "print"]
+- ["So21UIAppearanceContainerP", "questions"]
+- ["So21UIAppearanceContainerP", "ratingTableView"]
+- !private ["So21UIAppearanceContainerP", "reloadData"]
+- ["So21UIAppearanceContainerP", "showAlert"]
+- ["So21UIAppearanceContainerP", "viewDidDisappear"]
+- ["So21UIAppearanceContainerP", "viewDidLoad"]
+- ["So21UIAppearanceContainerP", "viewWillAppear"]
+- ["So21UIAppearanceContainerP", "viewWillDisappear"]
+- !private ["So13UIApplicationC", "setStatusBarColor"]
+- !private ["So13UIApplicationC", "shared"]
+- !private ["So7UIColorC", "clear"]
+- ["So18UIContentContainerP", "Bool"]
+- ["So18UIContentContainerP", "BotConnector"]
+- !private ["So18UIContentContainerP", "IQKeyboardManager"]
+- ["So18UIContentContainerP", "LabibaBotConnectorJC"]
+- ["So18UIContentContainerP", "RatingQuestionModel"]
+- ["So18UIContentContainerP", "RatingScreenProtocol"]
+- ["So18UIContentContainerP", "String"]
+- !private ["So18UIContentContainerP", "UIAlertAction"]
+- !private ["So18UIContentContainerP", "UIAlertController"]
+- !private ["So18UIContentContainerP", "UIApplication"]
+- ["So18UIContentContainerP", "UITableView"]
+- ["So18UIContentContainerP", "UIViewController"]
+- ["So18UIContentContainerP", ""]
+- !private ["So18UIContentContainerP", "addAction"]
+- !private ["So18UIContentContainerP", "alertControllerWithTitle"]
+- ["So18UIContentContainerP", "botConnector"]
+- ["So18UIContentContainerP", "delegate"]
+- !private ["So18UIContentContainerP", "exit"]
+- ["So18UIContentContainerP", "getQuestions"]
+- ["So18UIContentContainerP", "init"]
+- ["So18UIContentContainerP", "present"]
+- !private ["So18UIContentContainerP", "print"]
+- ["So18UIContentContainerP", "questions"]
+- ["So18UIContentContainerP", "ratingTableView"]
+- ["So18UIContentContainerP", "showAlert"]
+- ["So18UIContentContainerP", "viewDidDisappear"]
+- ["So18UIContentContainerP", "viewDidLoad"]
+- ["So18UIContentContainerP", "viewWillAppear"]
+- ["So18UIContentContainerP", "viewWillDisappear"]
+- !private ["So17UICoordinateSpaceP", "reloadData"]
+- !private ["So23UIDataSourceTranslatingP", "reloadData"]
+- !private ["So13UIDynamicItemP", "reloadData"]
+- ["So18UIFocusEnvironmentP", "Bool"]
+- ["So18UIFocusEnvironmentP", "BotConnector"]
+- !private ["So18UIFocusEnvironmentP", "IQKeyboardManager"]
+- ["So18UIFocusEnvironmentP", "LabibaBotConnectorJC"]
+- ["So18UIFocusEnvironmentP", "RatingQuestionModel"]
+- ["So18UIFocusEnvironmentP", "RatingScreenProtocol"]
+- ["So18UIFocusEnvironmentP", "String"]
+- !private ["So18UIFocusEnvironmentP", "UIAlertAction"]
+- !private ["So18UIFocusEnvironmentP", "UIAlertController"]
+- !private ["So18UIFocusEnvironmentP", "UIApplication"]
+- ["So18UIFocusEnvironmentP", "UITableView"]
+- ["So18UIFocusEnvironmentP", "UIViewController"]
+- ["So18UIFocusEnvironmentP", ""]
+- !private ["So18UIFocusEnvironmentP", "addAction"]
+- !private ["So18UIFocusEnvironmentP", "alertControllerWithTitle"]
+- ["So18UIFocusEnvironmentP", "botConnector"]
+- ["So18UIFocusEnvironmentP", "delegate"]
+- !private ["So18UIFocusEnvironmentP", "exit"]
+- ["So18UIFocusEnvironmentP", "getQuestions"]
+- ["So18UIFocusEnvironmentP", "init"]
+- ["So18UIFocusEnvironmentP", "present"]
+- !private ["So18UIFocusEnvironmentP", "print"]
+- ["So18UIFocusEnvironmentP", "questions"]
+- ["So18UIFocusEnvironmentP", "ratingTableView"]
+- !private ["So18UIFocusEnvironmentP", "reloadData"]
+- ["So18UIFocusEnvironmentP", "showAlert"]
+- ["So18UIFocusEnvironmentP", "viewDidDisappear"]
+- ["So18UIFocusEnvironmentP", "viewDidLoad"]
+- ["So18UIFocusEnvironmentP", "viewWillAppear"]
+- ["So18UIFocusEnvironmentP", "viewWillDisappear"]
+- !private ["So11UIFocusItemP", "reloadData"]
+- !private ["So20UIFocusItemContainerP", ""]
+- !private ["So20UIFocusItemContainerP", "reloadData"]
+- !private ["So30UIFocusItemScrollableContainerP", "reloadData"]
+- !private ["So27UIGestureRecognizerDelegateP", "enable"]
+- !private ["So27UIGestureRecognizerDelegateP", "enableAutoToolbar"]
+- !private ["So27UIGestureRecognizerDelegateP", "shared"]
+- !private ["So24UILargeContentViewerItemP", "reloadData"]
+- ["So30UIPasteConfigurationSupportingP", "Bool"]
+- ["So30UIPasteConfigurationSupportingP", "BotConnector"]
+- !private ["So30UIPasteConfigurationSupportingP", "IQKeyboardManager"]
+- ["So30UIPasteConfigurationSupportingP", "LabibaBotConnectorJC"]
+- ["So30UIPasteConfigurationSupportingP", "RatingQuestionModel"]
+- ["So30UIPasteConfigurationSupportingP", "RatingScreenProtocol"]
+- ["So30UIPasteConfigurationSupportingP", "String"]
+- !private ["So30UIPasteConfigurationSupportingP", "UIAlertAction"]
+- !private ["So30UIPasteConfigurationSupportingP", "UIAlertController"]
+- !private ["So30UIPasteConfigurationSupportingP", "UIApplication"]
+- ["So30UIPasteConfigurationSupportingP", "UITableView"]
+- ["So30UIPasteConfigurationSupportingP", "UIViewController"]
+- ["So30UIPasteConfigurationSupportingP", ""]
+- !private ["So30UIPasteConfigurationSupportingP", "addAction"]
+- !private ["So30UIPasteConfigurationSupportingP", "alertControllerWithTitle"]
+- ["So30UIPasteConfigurationSupportingP", "botConnector"]
+- ["So30UIPasteConfigurationSupportingP", "delegate"]
+- !private ["So30UIPasteConfigurationSupportingP", "exit"]
+- ["So30UIPasteConfigurationSupportingP", "getQuestions"]
+- ["So30UIPasteConfigurationSupportingP", "init"]
+- ["So30UIPasteConfigurationSupportingP", "present"]
+- ["So30UIPasteConfigurationSupportingP", "presentViewController"]
+- !private ["So30UIPasteConfigurationSupportingP", "print"]
+- ["So30UIPasteConfigurationSupportingP", "questions"]
+- ["So30UIPasteConfigurationSupportingP", "ratingTableView"]
+- !private ["So30UIPasteConfigurationSupportingP", "reloadData"]
+- ["So30UIPasteConfigurationSupportingP", "setStatusBarColor"]
+- !private ["So30UIPasteConfigurationSupportingP", "shared"]
+- ["So30UIPasteConfigurationSupportingP", "showAlert"]
+- ["So30UIPasteConfigurationSupportingP", "viewDidDisappear"]
+- ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
+- ["So30UIPasteConfigurationSupportingP", "viewWillAppear"]
+- ["So30UIPasteConfigurationSupportingP", "viewWillDisappear"]
+- ["So11UIResponderC", "Bool"]
+- ["So11UIResponderC", "BotConnector"]
+- !private ["So11UIResponderC", "IQKeyboardManager"]
+- ["So11UIResponderC", "LabibaBotConnectorJC"]
+- ["So11UIResponderC", "RatingQuestionModel"]
+- ["So11UIResponderC", "RatingScreenProtocol"]
+- ["So11UIResponderC", "String"]
+- !private ["So11UIResponderC", "UIAlertAction"]
+- !private ["So11UIResponderC", "UIAlertController"]
+- !private ["So11UIResponderC", "UIApplication"]
+- ["So11UIResponderC", "UITableView"]
+- ["So11UIResponderC", "UIViewController"]
+- ["So11UIResponderC", ""]
+- !private ["So11UIResponderC", "addAction"]
+- !private ["So11UIResponderC", "alertControllerWithTitle"]
+- ["So11UIResponderC", "botConnector"]
+- ["So11UIResponderC", "delegate"]
+- !private ["So11UIResponderC", "exit"]
+- ["So11UIResponderC", "getQuestions"]
+- ["So11UIResponderC", "init"]
+- ["So11UIResponderC", "present"]
+- ["So11UIResponderC", "presentViewController"]
+- !private ["So11UIResponderC", "print"]
+- ["So11UIResponderC", "questions"]
+- ["So11UIResponderC", "ratingTableView"]
+- !private ["So11UIResponderC", "reloadData"]
+- !private ["So11UIResponderC", "setStatusBarColor"]
+- !private ["So11UIResponderC", "shared"]
+- ["So11UIResponderC", "showAlert"]
+- ["So11UIResponderC", "viewDidDisappear"]
+- ["So11UIResponderC", "viewDidLoad"]
+- ["So11UIResponderC", "viewWillAppear"]
+- ["So11UIResponderC", "viewWillDisappear"]
+- ["So30UIResponderStandardEditActionsP", "Bool"]
+- ["So30UIResponderStandardEditActionsP", "BotConnector"]
+- !private ["So30UIResponderStandardEditActionsP", "IQKeyboardManager"]
+- ["So30UIResponderStandardEditActionsP", "LabibaBotConnectorJC"]
+- ["So30UIResponderStandardEditActionsP", "RatingQuestionModel"]
+- ["So30UIResponderStandardEditActionsP", "RatingScreenProtocol"]
+- ["So30UIResponderStandardEditActionsP", "String"]
+- !private ["So30UIResponderStandardEditActionsP", "UIAlertAction"]
+- !private ["So30UIResponderStandardEditActionsP", "UIAlertController"]
+- !private ["So30UIResponderStandardEditActionsP", "UIApplication"]
+- ["So30UIResponderStandardEditActionsP", "UITableView"]
+- ["So30UIResponderStandardEditActionsP", "UIViewController"]
+- ["So30UIResponderStandardEditActionsP", ""]
+- !private ["So30UIResponderStandardEditActionsP", "addAction"]
+- !private ["So30UIResponderStandardEditActionsP", "alertControllerWithTitle"]
+- ["So30UIResponderStandardEditActionsP", "botConnector"]
+- ["So30UIResponderStandardEditActionsP", "delegate"]
+- !private ["So30UIResponderStandardEditActionsP", "exit"]
+- ["So30UIResponderStandardEditActionsP", "getQuestions"]
+- ["So30UIResponderStandardEditActionsP", "init"]
+- ["So30UIResponderStandardEditActionsP", "present"]
+- ["So30UIResponderStandardEditActionsP", "presentViewController"]
+- !private ["So30UIResponderStandardEditActionsP", "print"]
+- ["So30UIResponderStandardEditActionsP", "questions"]
+- ["So30UIResponderStandardEditActionsP", "ratingTableView"]
+- !private ["So30UIResponderStandardEditActionsP", "reloadData"]
+- ["So30UIResponderStandardEditActionsP", "setStatusBarColor"]
+- !private ["So30UIResponderStandardEditActionsP", "shared"]
+- ["So30UIResponderStandardEditActionsP", "showAlert"]
+- ["So30UIResponderStandardEditActionsP", "viewDidDisappear"]
+- ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
+- ["So30UIResponderStandardEditActionsP", "viewWillAppear"]
+- ["So30UIResponderStandardEditActionsP", "viewWillDisappear"]
+- ["So12UIScrollViewC", ""]
+- !private ["So12UIScrollViewC", "reloadData"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "addAction"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "init"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "reloadData"]
+- ["So16UIStateRestoringP", "Bool"]
+- ["So16UIStateRestoringP", "BotConnector"]
+- !private ["So16UIStateRestoringP", "IQKeyboardManager"]
+- ["So16UIStateRestoringP", "LabibaBotConnectorJC"]
+- ["So16UIStateRestoringP", "RatingQuestionModel"]
+- ["So16UIStateRestoringP", "RatingScreenProtocol"]
+- ["So16UIStateRestoringP", "String"]
+- !private ["So16UIStateRestoringP", "UIAlertAction"]
+- !private ["So16UIStateRestoringP", "UIAlertController"]
+- !private ["So16UIStateRestoringP", "UIApplication"]
+- ["So16UIStateRestoringP", "UITableView"]
+- ["So16UIStateRestoringP", "UIViewController"]
+- ["So16UIStateRestoringP", ""]
+- !private ["So16UIStateRestoringP", "addAction"]
+- !private ["So16UIStateRestoringP", "alertControllerWithTitle"]
+- ["So16UIStateRestoringP", "botConnector"]
+- ["So16UIStateRestoringP", "delegate"]
+- !private ["So16UIStateRestoringP", "exit"]
+- ["So16UIStateRestoringP", "getQuestions"]
+- ["So16UIStateRestoringP", "init"]
+- ["So16UIStateRestoringP", "present"]
+- !private ["So16UIStateRestoringP", "print"]
+- ["So16UIStateRestoringP", "questions"]
+- ["So16UIStateRestoringP", "ratingTableView"]
+- ["So16UIStateRestoringP", "showAlert"]
+- ["So16UIStateRestoringP", "viewDidDisappear"]
+- ["So16UIStateRestoringP", "viewDidLoad"]
+- ["So16UIStateRestoringP", "viewWillAppear"]
+- ["So16UIStateRestoringP", "viewWillDisappear"]
+- !private ["So11UITableViewC", "reloadData"]
+- ["So18UITraitEnvironmentP", "Bool"]
+- ["So18UITraitEnvironmentP", "BotConnector"]
+- !private ["So18UITraitEnvironmentP", "IQKeyboardManager"]
+- ["So18UITraitEnvironmentP", "LabibaBotConnectorJC"]
+- ["So18UITraitEnvironmentP", "RatingQuestionModel"]
+- ["So18UITraitEnvironmentP", "RatingScreenProtocol"]
+- ["So18UITraitEnvironmentP", "String"]
+- !private ["So18UITraitEnvironmentP", "UIAlertAction"]
+- !private ["So18UITraitEnvironmentP", "UIAlertController"]
+- !private ["So18UITraitEnvironmentP", "UIApplication"]
+- ["So18UITraitEnvironmentP", "UITableView"]
+- ["So18UITraitEnvironmentP", "UIViewController"]
+- ["So18UITraitEnvironmentP", ""]
+- !private ["So18UITraitEnvironmentP", "addAction"]
+- !private ["So18UITraitEnvironmentP", "alertControllerWithTitle"]
+- ["So18UITraitEnvironmentP", "botConnector"]
+- ["So18UITraitEnvironmentP", "delegate"]
+- !private ["So18UITraitEnvironmentP", "exit"]
+- ["So18UITraitEnvironmentP", "getQuestions"]
+- ["So18UITraitEnvironmentP", "init"]
+- ["So18UITraitEnvironmentP", "present"]
+- !private ["So18UITraitEnvironmentP", "print"]
+- ["So18UITraitEnvironmentP", "questions"]
+- ["So18UITraitEnvironmentP", "ratingTableView"]
+- !private ["So18UITraitEnvironmentP", "reloadData"]
+- ["So18UITraitEnvironmentP", "showAlert"]
+- ["So18UITraitEnvironmentP", "viewDidDisappear"]
+- ["So18UITraitEnvironmentP", "viewDidLoad"]
+- ["So18UITraitEnvironmentP", "viewWillAppear"]
+- ["So18UITraitEnvironmentP", "viewWillDisappear"]
+- ["So23UIUserActivityRestoringP", "Bool"]
+- ["So23UIUserActivityRestoringP", "BotConnector"]
+- !private ["So23UIUserActivityRestoringP", "IQKeyboardManager"]
+- ["So23UIUserActivityRestoringP", "LabibaBotConnectorJC"]
+- ["So23UIUserActivityRestoringP", "RatingQuestionModel"]
+- ["So23UIUserActivityRestoringP", "RatingScreenProtocol"]
+- ["So23UIUserActivityRestoringP", "String"]
+- !private ["So23UIUserActivityRestoringP", "UIAlertAction"]
+- !private ["So23UIUserActivityRestoringP", "UIAlertController"]
+- !private ["So23UIUserActivityRestoringP", "UIApplication"]
+- ["So23UIUserActivityRestoringP", "UITableView"]
+- ["So23UIUserActivityRestoringP", "UIViewController"]
+- ["So23UIUserActivityRestoringP", ""]
+- !private ["So23UIUserActivityRestoringP", "addAction"]
+- !private ["So23UIUserActivityRestoringP", "alertControllerWithTitle"]
+- ["So23UIUserActivityRestoringP", "botConnector"]
+- ["So23UIUserActivityRestoringP", "delegate"]
+- !private ["So23UIUserActivityRestoringP", "exit"]
+- ["So23UIUserActivityRestoringP", "getQuestions"]
+- ["So23UIUserActivityRestoringP", "init"]
+- ["So23UIUserActivityRestoringP", "present"]
+- ["So23UIUserActivityRestoringP", "presentViewController"]
+- !private ["So23UIUserActivityRestoringP", "print"]
+- ["So23UIUserActivityRestoringP", "questions"]
+- ["So23UIUserActivityRestoringP", "ratingTableView"]
+- !private ["So23UIUserActivityRestoringP", "reloadData"]
+- ["So23UIUserActivityRestoringP", "setStatusBarColor"]
+- !private ["So23UIUserActivityRestoringP", "shared"]
+- ["So23UIUserActivityRestoringP", "showAlert"]
+- ["So23UIUserActivityRestoringP", "viewDidDisappear"]
+- ["So23UIUserActivityRestoringP", "viewDidLoad"]
+- ["So23UIUserActivityRestoringP", "viewWillAppear"]
+- ["So23UIUserActivityRestoringP", "viewWillDisappear"]
+- ["So6UIViewC", ""]
+- !private ["So6UIViewC", "reloadData"]
+- ["So16UIViewControllerC", "Bool"]
+- ["So16UIViewControllerC", "BotConnector"]
+- !private ["So16UIViewControllerC", "IQKeyboardManager"]
+- ["So16UIViewControllerC", "LabibaBotConnectorJC"]
+- ["So16UIViewControllerC", "RatingQuestionModel"]
+- ["So16UIViewControllerC", "RatingScreenProtocol"]
+- ["So16UIViewControllerC", "String"]
+- !private ["So16UIViewControllerC", "UIAlertAction"]
+- !private ["So16UIViewControllerC", "UIAlertController"]
+- !private ["So16UIViewControllerC", "UIApplication"]
+- ["So16UIViewControllerC", "UITableView"]
+- ["So16UIViewControllerC", "UIViewController"]
+- ["So16UIViewControllerC", ""]
+- !private ["So16UIViewControllerC", "addAction"]
+- !private ["So16UIViewControllerC", "alertControllerWithTitle"]
+- ["So16UIViewControllerC", "botConnector"]
+- ["So16UIViewControllerC", "delegate"]
+- !private ["So16UIViewControllerC", "exit"]
+- ["So16UIViewControllerC", "getQuestions"]
+- ["So16UIViewControllerC", "init"]
+- ["So16UIViewControllerC", "present"]
+- !private ["So16UIViewControllerC", "print"]
+- ["So16UIViewControllerC", "questions"]
+- ["So16UIViewControllerC", "ratingTableView"]
+- ["So16UIViewControllerC", "showAlert"]
+- ["So16UIViewControllerC", "viewDidDisappear"]
+- ["So16UIViewControllerC", "viewDidLoad"]
+- ["So16UIViewControllerC", "viewWillAppear"]
+- ["So16UIViewControllerC", "viewWillDisappear"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "localForChosnLangCodeBB"]
+- !private ["s14_ArrayProtocolP", "count"]
+- !private ["s14_ArrayProtocolP", "subscript"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "localForChosnLangCodeBB"]
+- !private ["s24_DestructorSafeContainerP", "count"]
+- !private ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "init"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "localForChosnLangCodeBB"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "localForChosnLangCodeBB"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "localForChosnLangCodeBB"]
+- !private ["s26_ExpressibleByColorLiteralP", "clear"]
+- !private ["s19_HasContiguousBytesP", "count"]
+- !private ["s19_HasContiguousBytesP", "localForChosnLangCodeBB"]
+- !private ["s19_HasContiguousBytesP", "subscript"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "count"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "localForChosnLangCodeBB"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "IQKeyboardManager"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "LabibaBotConnectorJC"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIAlertAction"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIAlertController"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIApplication"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addAction"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "botConnector"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "clear"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "enable"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "enableAutoToolbar"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "exit"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "getQuestions"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "getRatingQuestions"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "localForChosnLangCodeBB"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "present"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "questions"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "ratingTableView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "reloadData"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setStatusBarColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "shared"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "showAlert"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidDisappear"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "viewWillAppear"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "viewWillDisappear"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "IQKeyboardManager"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "LabibaBotConnectorJC"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "UIAlertAction"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "UIAlertController"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "UIApplication"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "addAction"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "botConnector"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "clear"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "delegate"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "enable"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "enableAutoToolbar"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "exit"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "getQuestions"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "getRatingQuestions"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "localForChosnLangCodeBB"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "present"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "print"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "questions"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ratingTableView"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "reloadData"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setStatusBarColor"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "shared"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "showAlert"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "viewDidDisappear"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "viewDidLoad"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "viewWillAppear"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "viewWillDisappear"]
+- !private ["s21_ObjectiveCBridgeableP", "_ObjectiveCType"]
+- !private ["s21_ObjectiveCBridgeableP", "_bridgeToObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_conditionallyBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_forceBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_unconditionallyBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- !private ["s21_ObjectiveCBridgeableP", "localForChosnLangCodeBB"]
+- !private ["s21_ObjectiveCBridgeableP", "reloadData"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "reloadData"]
+depends-nominal:
+- !private "10Accelerate0A6BufferP"
+- !private "10Accelerate0A13MutableBufferP"
+- !private "s18AdditiveArithmeticP"
+- !private "Sa"
+- "SK"
+- "17LabibaBotFramwork0B9ConnectorC"
+- !private "So15CALayerDelegateP"
+- !private "So15CNKeyDescriptorP"
+- "s7CVarArgP"
+- "Sl"
+- "SL"
+- !private "10Foundation15ContiguousBytesP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "10Foundation12DataProtocolP"
+- !private "Se"
+- !private "SE"
+- "SQ"
+- !private "s5ErrorP"
+- "s25ExpressibleByArrayLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- "s32ExpressibleByStringInterpolationP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "SF"
+- !private "17LabibaBotFramwork27GetRatingFormQuestionsModelC"
+- "SH"
+- !private "17LabibaBotFramwork17IQKeyboardManagerC"
+- !private "17LabibaBotFramwork17JSONSubscriptTypeP"
+- "17LabibaBotFramwork0aB11ConnectorJCC"
+- "17LabibaBotFramwork23LocationServiceDelegateP"
+- "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "SM"
+- !private "10Foundation19MutableDataProtocolP"
+- "So8NSCodingP"
+- !private "So9NSCopyingP"
+- "So26NSExtensionRequestHandlingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- !private "Sj"
+- !private "Sq"
+- !private "Sk"
+- !private "Sm"
+- "17LabibaBotFramwork12RatingBaseVCC"
+- "17LabibaBotFramwork20RatingScreenProtocolP"
+- !private "SY"
+- !private "17LabibaBotFramwork6ResultO"
+- "So19SRWebSocketDelegateP"
+- "ST"
+- !private "s13SignedNumericP"
+- !private "Sx"
+- !private "SS"
+- !private "Sy"
+- !private "So22UIAlertControllerStyleV"
+- !private "So18UIAlertActionStyleV"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So13UIAlertActionC"
+- !private "So17UIAlertControllerC"
+- !private "So12UIAppearanceP"
+- "So21UIAppearanceContainerP"
+- !private "So13UIApplicationC"
+- !private "So7UIColorC"
+- "So18UIContentContainerP"
+- !private "So17UICoordinateSpaceP"
+- !private "So23UIDataSourceTranslatingP"
+- !private "So13UIDynamicItemP"
+- "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So20UIFocusItemContainerP"
+- !private "So30UIFocusItemScrollableContainerP"
+- !private "So27UIGestureRecognizerDelegateP"
+- !private "So24UILargeContentViewerItemP"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- "So12UIScrollViewC"
+- !private "So35UISpringLoadedInteractionSupportingP"
+- "So16UIStateRestoringP"
+- !private "So11UITableViewC"
+- "So18UITraitEnvironmentP"
+- "So23UIUserActivityRestoringP"
+- "So6UIViewC"
+- "So16UIViewControllerC"
+- !private "17LabibaBotFramwork14URLConvertibleP"
+- !private "s14_ArrayProtocolP"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s26_ExpressibleByColorLiteralP"
+- !private "s19_HasContiguousBytesP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s38__DefaultCustomPlaygroundQuickLookableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/ObjectiveC.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMIDI.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMedia.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/simd.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreImage.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/NaturalLanguage.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/QuartzCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Accelerate.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Speech.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Dispatch.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Metal.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Darwin.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreLocation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Foundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/AVFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreAudio.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreGraphics.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/os.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UniformTypeIdentifiers.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Contacts.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Swift.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/WebKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/MapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/LabibaBotFramwork.h"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/Framework/Classes/Manegers/SocketRocket/SRWebSocket.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/build/LabibaBotFramework.build/Debug-iphonesimulator/LabibaBotFramwork.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Accelerate.framework/Headers/Accelerate.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Speech.framework/Headers/Speech.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/os.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UniformTypeIdentifiers.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "032e03cad8b4fb266e1c7570913039f2"

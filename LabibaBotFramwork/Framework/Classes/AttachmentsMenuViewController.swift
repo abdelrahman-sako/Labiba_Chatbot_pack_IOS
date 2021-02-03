@@ -59,8 +59,11 @@ class AttachmentsMenuViewController: UIViewController {
             
             let view = self.stackView.arrangedSubviews[i]
             
-            view.tintColor = Labiba._AttachmentMenuTintColor 
-            view.backgroundColor = Labiba._AttachmentMenuBackgroundColor
+//            view.tintColor = Labiba._AttachmentMenuTintColor
+//            view.backgroundColor = Labiba._AttachmentMenuBackgroundColor
+            view.tintColor = Labiba.attachmentThemeModel.menu.tint
+            view.backgroundColor = Labiba.attachmentThemeModel.menu.background
+            
             view.layer.cornerRadius = view.frame.height/2
             view.applyDarkShadow(opacity: 0.4, offsetY: 1, radius: 2)
             

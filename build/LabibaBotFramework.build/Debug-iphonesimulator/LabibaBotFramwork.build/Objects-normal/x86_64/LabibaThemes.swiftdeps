@@ -1,0 +1,688 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "LabibaThemes"
+provides-nominal:
+- "17LabibaBotFramwork0A6ThemesC"
+provides-member:
+- ["17LabibaBotFramwork0A6ThemesC", ""]
+provides-dynamic-lookup:
+- "BSF_Gradient_Animation_Colors"
+- "default_Gradient_Animation_Colors"
+- "isThemeApplied"
+- "setBSF_Theme"
+- "setBahrainCredit_Theme"
+- "setChatDefaultTheme"
+- "setLabibaTheme"
+- "setNatHealth_Theme"
+- "setSharja_Theme"
+- "setVoiceDefaultTheme"
+- "set_IA_Theme"
+depends-top-level:
+- "Array"
+- "AssignmentPrecedence"
+- "BooleanLiteralType"
+- "CGColor"
+- !private "CGPoint"
+- !private "Dictionary"
+- "FloatLiteralType"
+- !private "GreetingHeaderView"
+- !private "Image"
+- "IntegerLiteralType"
+- !private "Labiba"
+- "LabibaThemes"
+- !private "QuickChoicesHeaderView"
+- !private "SharedPreference"
+- !private "StringLiteralType"
+- "UIColor"
+- !private "UIImage"
+depends-member:
+- !private ["17LabibaBotFramwork0B4TypeO", "keyboardType"]
+- !private ["17LabibaBotFramwork0B4TypeO", "keyboardWithTTS"]
+- !private ["17LabibaBotFramwork0B4TypeO", "voiceAndKeyboard"]
+- !private ["So15CALayerDelegateP", "create"]
+- !private ["So7CGPointV", "init"]
+- !private ["s7CVarArgP", "BotChatBubble"]
+- !private ["s7CVarArgP", "Bot_Type"]
+- !private ["s7CVarArgP", "CarousalCardView"]
+- !private ["s7CVarArgP", "ChoiceView"]
+- !private ["s7CVarArgP", "GradientSpecs"]
+- !private ["s7CVarArgP", "MapView"]
+- !private ["s7CVarArgP", "MenuCardView"]
+- !private ["s7CVarArgP", "UserChatBubble"]
+- !private ["s7CVarArgP", "UserInputView"]
+- !private ["s7CVarArgP", "VoiceAssistantView"]
+- !private ["s7CVarArgP", "WithRatingVC"]
+- !private ["s7CVarArgP", "_WithRatingVC"]
+- !private ["s7CVarArgP", "attachmentThemeModel"]
+- !private ["s7CVarArgP", "black"]
+- ["s7CVarArgP", "cgColor"]
+- !private ["s7CVarArgP", "clear"]
+- !private ["s7CVarArgP", "create"]
+- !private ["s7CVarArgP", "darkGray"]
+- !private ["s7CVarArgP", "gray"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "setBotType"]
+- !private ["s7CVarArgP", "setChatMainBackground"]
+- !private ["s7CVarArgP", "setCustomHeaderView"]
+- !private ["s7CVarArgP", "setEnableTextToSpeech"]
+- !private ["s7CVarArgP", "setFont"]
+- !private ["s7CVarArgP", "setHeaderBackground"]
+- !private ["s7CVarArgP", "setListeningDuration"]
+- !private ["s7CVarArgP", "setLogo"]
+- !private ["s7CVarArgP", "setStatusBarColor"]
+- !private ["s7CVarArgP", "setVoiceAssistanteRate"]
+- !private ["s7CVarArgP", "setVoiceMan"]
+- !private ["s7CVarArgP", "white"]
+- ["s12CaseIterableP", "ar"]
+- !private ["s28CustomDebugStringConvertibleP", "BotChatBubble"]
+- !private ["s28CustomDebugStringConvertibleP", "Bot_Type"]
+- !private ["s28CustomDebugStringConvertibleP", "CarousalCardView"]
+- !private ["s28CustomDebugStringConvertibleP", "ChoiceView"]
+- !private ["s28CustomDebugStringConvertibleP", "GradientSpecs"]
+- !private ["s28CustomDebugStringConvertibleP", "MapView"]
+- !private ["s28CustomDebugStringConvertibleP", "MenuCardView"]
+- !private ["s28CustomDebugStringConvertibleP", "UserChatBubble"]
+- !private ["s28CustomDebugStringConvertibleP", "UserInputView"]
+- !private ["s28CustomDebugStringConvertibleP", "VoiceAssistantView"]
+- !private ["s28CustomDebugStringConvertibleP", "WithRatingVC"]
+- !private ["s28CustomDebugStringConvertibleP", "_WithRatingVC"]
+- !private ["s28CustomDebugStringConvertibleP", "attachmentThemeModel"]
+- !private ["s28CustomDebugStringConvertibleP", "black"]
+- ["s28CustomDebugStringConvertibleP", "cgColor"]
+- !private ["s28CustomDebugStringConvertibleP", "clear"]
+- !private ["s28CustomDebugStringConvertibleP", "create"]
+- !private ["s28CustomDebugStringConvertibleP", "darkGray"]
+- !private ["s28CustomDebugStringConvertibleP", "gray"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "justified"]
+- !private ["s28CustomDebugStringConvertibleP", "setBotType"]
+- !private ["s28CustomDebugStringConvertibleP", "setChatMainBackground"]
+- !private ["s28CustomDebugStringConvertibleP", "setCustomHeaderView"]
+- !private ["s28CustomDebugStringConvertibleP", "setEnableTextToSpeech"]
+- !private ["s28CustomDebugStringConvertibleP", "setFont"]
+- !private ["s28CustomDebugStringConvertibleP", "setHeaderBackground"]
+- !private ["s28CustomDebugStringConvertibleP", "setListeningDuration"]
+- !private ["s28CustomDebugStringConvertibleP", "setLogo"]
+- !private ["s28CustomDebugStringConvertibleP", "setStatusBarColor"]
+- !private ["s28CustomDebugStringConvertibleP", "setVoiceAssistanteRate"]
+- !private ["s28CustomDebugStringConvertibleP", "setVoiceMan"]
+- !private ["s28CustomDebugStringConvertibleP", "white"]
+- !private ["s17CustomReflectableP", "clear"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "justified"]
+- !private ["s23CustomStringConvertibleP", "BotChatBubble"]
+- !private ["s23CustomStringConvertibleP", "Bot_Type"]
+- !private ["s23CustomStringConvertibleP", "CarousalCardView"]
+- !private ["s23CustomStringConvertibleP", "ChoiceView"]
+- !private ["s23CustomStringConvertibleP", "GradientSpecs"]
+- !private ["s23CustomStringConvertibleP", "MapView"]
+- !private ["s23CustomStringConvertibleP", "MenuCardView"]
+- !private ["s23CustomStringConvertibleP", "UserChatBubble"]
+- !private ["s23CustomStringConvertibleP", "UserInputView"]
+- !private ["s23CustomStringConvertibleP", "VoiceAssistantView"]
+- !private ["s23CustomStringConvertibleP", "WithRatingVC"]
+- !private ["s23CustomStringConvertibleP", "_WithRatingVC"]
+- !private ["s23CustomStringConvertibleP", "attachmentThemeModel"]
+- !private ["s23CustomStringConvertibleP", "black"]
+- ["s23CustomStringConvertibleP", "cgColor"]
+- !private ["s23CustomStringConvertibleP", "clear"]
+- !private ["s23CustomStringConvertibleP", "create"]
+- !private ["s23CustomStringConvertibleP", "darkGray"]
+- !private ["s23CustomStringConvertibleP", "gray"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "setBotType"]
+- !private ["s23CustomStringConvertibleP", "setChatMainBackground"]
+- !private ["s23CustomStringConvertibleP", "setCustomHeaderView"]
+- !private ["s23CustomStringConvertibleP", "setEnableTextToSpeech"]
+- !private ["s23CustomStringConvertibleP", "setFont"]
+- !private ["s23CustomStringConvertibleP", "setHeaderBackground"]
+- !private ["s23CustomStringConvertibleP", "setListeningDuration"]
+- !private ["s23CustomStringConvertibleP", "setLogo"]
+- !private ["s23CustomStringConvertibleP", "setStatusBarColor"]
+- !private ["s23CustomStringConvertibleP", "setVoiceAssistanteRate"]
+- !private ["s23CustomStringConvertibleP", "setVoiceMan"]
+- !private ["s23CustomStringConvertibleP", "white"]
+- !private ["Se", "clear"]
+- !private ["Se", "init"]
+- !private ["Se", "justified"]
+- !private ["SE", "clear"]
+- !private ["SE", "init"]
+- !private ["SE", "justified"]
+- !private ["SQ", "BotChatBubble"]
+- !private ["SQ", "Bot_Type"]
+- !private ["SQ", "CarousalCardView"]
+- !private ["SQ", "ChoiceView"]
+- !private ["SQ", "GradientSpecs"]
+- !private ["SQ", "MapView"]
+- !private ["SQ", "MenuCardView"]
+- !private ["SQ", "UserChatBubble"]
+- !private ["SQ", "UserInputView"]
+- !private ["SQ", "VoiceAssistantView"]
+- !private ["SQ", "WithRatingVC"]
+- ["SQ", ""]
+- !private ["SQ", "_WithRatingVC"]
+- ["SQ", "ar"]
+- !private ["SQ", "attachmentThemeModel"]
+- !private ["SQ", "black"]
+- ["SQ", "cgColor"]
+- !private ["SQ", "clear"]
+- !private ["SQ", "create"]
+- !private ["SQ", "darkGray"]
+- !private ["SQ", "gray"]
+- ["SQ", "init"]
+- !private ["SQ", "justified"]
+- !private ["SQ", "keyboardType"]
+- !private ["SQ", "keyboardWithTTS"]
+- !private ["SQ", "setBotType"]
+- !private ["SQ", "setChatMainBackground"]
+- !private ["SQ", "setCustomHeaderView"]
+- !private ["SQ", "setEnableTextToSpeech"]
+- !private ["SQ", "setFont"]
+- !private ["SQ", "setHeaderBackground"]
+- !private ["SQ", "setListeningDuration"]
+- !private ["SQ", "setLogo"]
+- !private ["SQ", "setStatusBarColor"]
+- !private ["SQ", "setVoiceAssistanteRate"]
+- !private ["SQ", "setVoiceMan"]
+- !private ["SQ", "voiceAndKeyboard"]
+- !private ["SQ", "white"]
+- ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "Key"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "Value"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "FloatLiteralType"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "IntegerLiteralType"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s23ExpressibleByNilLiteralP", "clear"]
+- !private ["s23ExpressibleByNilLiteralP", "justified"]
+- !private ["17LabibaBotFramwork0A0C13GradientSpecsC", "init"]
+- !private ["17LabibaBotFramwork18GreetingHeaderViewC", "create"]
+- !private ["SH", "BotChatBubble"]
+- !private ["SH", "Bot_Type"]
+- !private ["SH", "CarousalCardView"]
+- !private ["SH", "ChoiceView"]
+- !private ["SH", "GradientSpecs"]
+- !private ["SH", "MapView"]
+- !private ["SH", "MenuCardView"]
+- !private ["SH", "UserChatBubble"]
+- !private ["SH", "UserInputView"]
+- !private ["SH", "VoiceAssistantView"]
+- !private ["SH", "WithRatingVC"]
+- !private ["SH", "_WithRatingVC"]
+- ["SH", "ar"]
+- !private ["SH", "attachmentThemeModel"]
+- !private ["SH", "black"]
+- ["SH", "cgColor"]
+- !private ["SH", "clear"]
+- !private ["SH", "create"]
+- !private ["SH", "darkGray"]
+- !private ["SH", "gray"]
+- ["SH", "init"]
+- !private ["SH", "justified"]
+- !private ["SH", "keyboardType"]
+- !private ["SH", "keyboardWithTTS"]
+- !private ["SH", "setBotType"]
+- !private ["SH", "setChatMainBackground"]
+- !private ["SH", "setCustomHeaderView"]
+- !private ["SH", "setEnableTextToSpeech"]
+- !private ["SH", "setFont"]
+- !private ["SH", "setHeaderBackground"]
+- !private ["SH", "setListeningDuration"]
+- !private ["SH", "setLogo"]
+- !private ["SH", "setStatusBarColor"]
+- !private ["SH", "setVoiceAssistanteRate"]
+- !private ["SH", "setVoiceMan"]
+- !private ["SH", "voiceAndKeyboard"]
+- !private ["SH", "white"]
+- !private ["17LabibaBotFramwork0A0C", "BotChatBubble"]
+- !private ["17LabibaBotFramwork0A0C", "Bot_Type"]
+- !private ["17LabibaBotFramwork0A0C", "CarousalCardView"]
+- !private ["17LabibaBotFramwork0A0C", "ChoiceView"]
+- !private ["17LabibaBotFramwork0A0C", "GradientSpecs"]
+- !private ["17LabibaBotFramwork0A0C", "MapView"]
+- !private ["17LabibaBotFramwork0A0C", "MenuCardView"]
+- !private ["17LabibaBotFramwork0A0C", "UserChatBubble"]
+- !private ["17LabibaBotFramwork0A0C", "UserInputView"]
+- !private ["17LabibaBotFramwork0A0C", "VoiceAssistantView"]
+- !private ["17LabibaBotFramwork0A0C", "WithRatingVC"]
+- !private ["17LabibaBotFramwork0A0C", "_WithRatingVC"]
+- !private ["17LabibaBotFramwork0A0C", "attachmentThemeModel"]
+- !private ["17LabibaBotFramwork0A0C", "setBotType"]
+- !private ["17LabibaBotFramwork0A0C", "setChatMainBackground"]
+- !private ["17LabibaBotFramwork0A0C", "setCustomHeaderView"]
+- !private ["17LabibaBotFramwork0A0C", "setEnableTextToSpeech"]
+- !private ["17LabibaBotFramwork0A0C", "setFont"]
+- !private ["17LabibaBotFramwork0A0C", "setHeaderBackground"]
+- !private ["17LabibaBotFramwork0A0C", "setListeningDuration"]
+- !private ["17LabibaBotFramwork0A0C", "setLogo"]
+- !private ["17LabibaBotFramwork0A0C", "setStatusBarColor"]
+- !private ["17LabibaBotFramwork0A0C", "setVoiceAssistanteRate"]
+- !private ["17LabibaBotFramwork0A0C", "setVoiceMan"]
+- !private ["17LabibaBotFramwork0A20AttachmentThemeModelC", "menu"]
+- !private ["17LabibaBotFramwork0A10BackgroundO", "gradient"]
+- !private ["17LabibaBotFramwork0A10BackgroundO", "solid"]
+- !private ["17LabibaBotFramwork0aB10ChatBubbleC", "avatar"]
+- !private ["17LabibaBotFramwork0aB10ChatBubbleC", "background"]
+- !private ["17LabibaBotFramwork0aB10ChatBubbleC", "textAlignment"]
+- !private ["17LabibaBotFramwork0aB10ChatBubbleC", "textColor"]
+- !private ["17LabibaBotFramwork0aB10ChatBubbleC", "typingIndicatorColor"]
+- !private ["17LabibaBotFramwork0A16CarousalCardViewC", "backgroundColor"]
+- !private ["17LabibaBotFramwork0A16CarousalCardViewC", "buttonTitleColor"]
+- !private ["17LabibaBotFramwork0A16CarousalCardViewC", "subtitleColor"]
+- !private ["17LabibaBotFramwork0A16CarousalCardViewC", "titleColor"]
+- ["17LabibaBotFramwork0A14ChatHeaderViewC", ""]
+- !private ["17LabibaBotFramwork0A14ChatHeaderViewC", "create"]
+- !private ["17LabibaBotFramwork0A10ChoiceViewC", "backgroundColor"]
+- !private ["17LabibaBotFramwork0A10ChoiceViewC", "borderColor"]
+- !private ["17LabibaBotFramwork0A10ChoiceViewC", "tintColor"]
+- !private ["17LabibaBotFramwork0A7MapViewC", "defaultLocation"]
+- !private ["17LabibaBotFramwork0A12MenuCardViewC", "backgroundColor"]
+- !private ["17LabibaBotFramwork0A12MenuCardViewC", "clearNonSelectedItems"]
+- !private ["17LabibaBotFramwork0A12MenuCardViewC", "collectionColor"]
+- !private ["17LabibaBotFramwork0A12MenuCardViewC", "fontSize"]
+- !private ["17LabibaBotFramwork0A12MenuCardViewC", "textColor"]
+- ["17LabibaBotFramwork0A6ThemesC", "BSF_Gradient_Animation_Colors"]
+- ["17LabibaBotFramwork0A6ThemesC", "CGColor"]
+- !private ["17LabibaBotFramwork0A6ThemesC", "CGPoint"]
+- !private ["17LabibaBotFramwork0A6ThemesC", "GreetingHeaderView"]
+- !private ["17LabibaBotFramwork0A6ThemesC", "Image"]
+- !private ["17LabibaBotFramwork0A6ThemesC", "Labiba"]
+- !private ["17LabibaBotFramwork0A6ThemesC", "LabibaThemes"]
+- !private ["17LabibaBotFramwork0A6ThemesC", "QuickChoicesHeaderView"]
+- !private ["17LabibaBotFramwork0A6ThemesC", "SharedPreference"]
+- ["17LabibaBotFramwork0A6ThemesC", "UIColor"]
+- !private ["17LabibaBotFramwork0A6ThemesC", "UIImage"]
+- ["17LabibaBotFramwork0A6ThemesC", "default_Gradient_Animation_Colors"]
+- ["17LabibaBotFramwork0A6ThemesC", "deinit"]
+- ["17LabibaBotFramwork0A6ThemesC", "init"]
+- ["17LabibaBotFramwork0A6ThemesC", "isThemeApplied"]
+- ["17LabibaBotFramwork0A6ThemesC", "setBSF_Theme"]
+- ["17LabibaBotFramwork0A6ThemesC", "setBahrainCredit_Theme"]
+- ["17LabibaBotFramwork0A6ThemesC", "setChatDefaultTheme"]
+- ["17LabibaBotFramwork0A6ThemesC", "setLabibaTheme"]
+- ["17LabibaBotFramwork0A6ThemesC", "setNatHealth_Theme"]
+- ["17LabibaBotFramwork0A6ThemesC", "setSharja_Theme"]
+- ["17LabibaBotFramwork0A6ThemesC", "setVoiceDefaultTheme"]
+- ["17LabibaBotFramwork0A6ThemesC", "set_IA_Theme"]
+- !private ["17LabibaBotFramwork0A14UserChatBubbleC", "alpha"]
+- !private ["17LabibaBotFramwork0A14UserChatBubbleC", "background"]
+- !private ["17LabibaBotFramwork0A14UserChatBubbleC", "textColor"]
+- !private ["17LabibaBotFramwork0A13UserInputViewC", "backgroundColor"]
+- !private ["17LabibaBotFramwork0A13UserInputViewC", "hintColor"]
+- !private ["17LabibaBotFramwork0A13UserInputViewC", "sendButton"]
+- !private ["17LabibaBotFramwork0A13UserInputViewC", "textColor"]
+- !private ["17LabibaBotFramwork0A13UserInputViewC", "tintColor"]
+- !private ["17LabibaBotFramwork0A18VoiceAssistantViewC", "background"]
+- !private ["17LabibaBotFramwork0A18VoiceAssistantViewC", "micButton"]
+- !private ["17LabibaBotFramwork0A18VoiceAssistantViewC", "waveColor"]
+- ["17LabibaBotFramwork8LanguageO", "ar"]
+- ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "black"]
+- ["So8NSCodingP", "cgColor"]
+- !private ["So8NSCodingP", "clear"]
+- !private ["So8NSCodingP", "create"]
+- !private ["So8NSCodingP", "darkGray"]
+- !private ["So8NSCodingP", "gray"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "white"]
+- !private ["So9NSCopyingP", "black"]
+- ["So9NSCopyingP", "cgColor"]
+- !private ["So9NSCopyingP", "clear"]
+- !private ["So9NSCopyingP", "darkGray"]
+- !private ["So9NSCopyingP", "gray"]
+- ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "white"]
+- !private ["So21NSItemProviderReadingP", "black"]
+- ["So21NSItemProviderReadingP", "cgColor"]
+- !private ["So21NSItemProviderReadingP", "clear"]
+- !private ["So21NSItemProviderReadingP", "darkGray"]
+- !private ["So21NSItemProviderReadingP", "gray"]
+- ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderReadingP", "white"]
+- !private ["So21NSItemProviderWritingP", "black"]
+- ["So21NSItemProviderWritingP", "cgColor"]
+- !private ["So21NSItemProviderWritingP", "clear"]
+- !private ["So21NSItemProviderWritingP", "darkGray"]
+- !private ["So21NSItemProviderWritingP", "gray"]
+- ["So21NSItemProviderWritingP", "init"]
+- !private ["So21NSItemProviderWritingP", "white"]
+- !private ["So8NSObjectC", "BotChatBubble"]
+- !private ["So8NSObjectC", "Bot_Type"]
+- !private ["So8NSObjectC", "CarousalCardView"]
+- !private ["So8NSObjectC", "ChoiceView"]
+- !private ["So8NSObjectC", "GradientSpecs"]
+- !private ["So8NSObjectC", "MapView"]
+- !private ["So8NSObjectC", "MenuCardView"]
+- !private ["So8NSObjectC", "UserChatBubble"]
+- !private ["So8NSObjectC", "UserInputView"]
+- !private ["So8NSObjectC", "VoiceAssistantView"]
+- !private ["So8NSObjectC", "WithRatingVC"]
+- ["So8NSObjectC", ""]
+- !private ["So8NSObjectC", "_WithRatingVC"]
+- !private ["So8NSObjectC", "attachmentThemeModel"]
+- !private ["So8NSObjectC", "black"]
+- ["So8NSObjectC", "cgColor"]
+- !private ["So8NSObjectC", "clear"]
+- !private ["So8NSObjectC", "create"]
+- !private ["So8NSObjectC", "darkGray"]
+- !private ["So8NSObjectC", "gray"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "setBotType"]
+- !private ["So8NSObjectC", "setChatMainBackground"]
+- !private ["So8NSObjectC", "setCustomHeaderView"]
+- !private ["So8NSObjectC", "setEnableTextToSpeech"]
+- !private ["So8NSObjectC", "setFont"]
+- !private ["So8NSObjectC", "setHeaderBackground"]
+- !private ["So8NSObjectC", "setListeningDuration"]
+- !private ["So8NSObjectC", "setLogo"]
+- !private ["So8NSObjectC", "setStatusBarColor"]
+- !private ["So8NSObjectC", "setVoiceAssistanteRate"]
+- !private ["So8NSObjectC", "setVoiceMan"]
+- !private ["So8NSObjectC", "white"]
+- !private ["So8NSObjectP", "BotChatBubble"]
+- !private ["So8NSObjectP", "Bot_Type"]
+- !private ["So8NSObjectP", "CarousalCardView"]
+- !private ["So8NSObjectP", "ChoiceView"]
+- !private ["So8NSObjectP", "GradientSpecs"]
+- !private ["So8NSObjectP", "MapView"]
+- !private ["So8NSObjectP", "MenuCardView"]
+- !private ["So8NSObjectP", "UserChatBubble"]
+- !private ["So8NSObjectP", "UserInputView"]
+- !private ["So8NSObjectP", "VoiceAssistantView"]
+- !private ["So8NSObjectP", "WithRatingVC"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "_WithRatingVC"]
+- !private ["So8NSObjectP", "attachmentThemeModel"]
+- !private ["So8NSObjectP", "black"]
+- ["So8NSObjectP", "cgColor"]
+- !private ["So8NSObjectP", "clear"]
+- !private ["So8NSObjectP", "create"]
+- !private ["So8NSObjectP", "darkGray"]
+- !private ["So8NSObjectP", "gray"]
+- ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "setBotType"]
+- !private ["So8NSObjectP", "setChatMainBackground"]
+- !private ["So8NSObjectP", "setCustomHeaderView"]
+- !private ["So8NSObjectP", "setEnableTextToSpeech"]
+- !private ["So8NSObjectP", "setFont"]
+- !private ["So8NSObjectP", "setHeaderBackground"]
+- !private ["So8NSObjectP", "setListeningDuration"]
+- !private ["So8NSObjectP", "setLogo"]
+- !private ["So8NSObjectP", "setStatusBarColor"]
+- !private ["So8NSObjectP", "setVoiceAssistanteRate"]
+- !private ["So8NSObjectP", "setVoiceMan"]
+- !private ["So8NSObjectP", "white"]
+- !private ["So14NSSecureCodingP", "black"]
+- ["So14NSSecureCodingP", "cgColor"]
+- !private ["So14NSSecureCodingP", "clear"]
+- !private ["So14NSSecureCodingP", "darkGray"]
+- !private ["So14NSSecureCodingP", "gray"]
+- ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "white"]
+- !private ["So15NSTextAlignmentV", "justified"]
+- !private ["Sq", "clear"]
+- !private ["Sq", "justified"]
+- !private ["17LabibaBotFramwork22QuickChoicesHeaderViewC", "create"]
+- ["SY", "ar"]
+- !private ["SY", "justified"]
+- !private ["SY", "keyboardType"]
+- !private ["SY", "keyboardWithTTS"]
+- !private ["SY", "voiceAndKeyboard"]
+- !private ["17LabibaBotFramwork16SharedPreferenceC", "botLangCode"]
+- !private ["17LabibaBotFramwork16SharedPreferenceC", "shared"]
+- !private ["So29UIAccessibilityIdentificationP", "create"]
+- !private ["So29UIAccessibilityIdentificationP", "init"]
+- !private ["So12UIAppearanceP", "create"]
+- !private ["So21UIAppearanceContainerP", "create"]
+- !private ["So26UICollectionViewDataSourceP", "create"]
+- !private ["So24UICollectionViewDelegateP", ""]
+- !private ["So24UICollectionViewDelegateP", "create"]
+- !private ["So34UICollectionViewDelegateFlowLayoutP", "create"]
+- !private ["So7UIColorC", "black"]
+- ["So7UIColorC", "cgColor"]
+- !private ["So7UIColorC", "clear"]
+- !private ["So7UIColorC", "darkGray"]
+- !private ["So7UIColorC", "gray"]
+- ["So7UIColorC", "init"]
+- !private ["So7UIColorC", "white"]
+- !private ["So17UICoordinateSpaceP", "create"]
+- !private ["So13UIDynamicItemP", "create"]
+- !private ["So18UIFocusEnvironmentP", ""]
+- !private ["So18UIFocusEnvironmentP", "create"]
+- !private ["So11UIFocusItemP", "create"]
+- !private ["So20UIFocusItemContainerP", "create"]
+- !private ["So7UIImageC", "init"]
+- !private ["So39UIItemProviderPresentationSizeProvidingP", "init"]
+- !private ["So24UILargeContentViewerItemP", "create"]
+- !private ["So30UIPasteConfigurationSupportingP", "create"]
+- !private ["So11UIResponderC", "create"]
+- !private ["So30UIResponderStandardEditActionsP", "create"]
+- !private ["So20UIScrollViewDelegateP", ""]
+- !private ["So20UIScrollViewDelegateP", "create"]
+- !private ["So18UITraitEnvironmentP", "create"]
+- !private ["So23UIUserActivityRestoringP", "create"]
+- ["So6UIViewC", ""]
+- !private ["So6UIViewC", "create"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "init"]
+- ["s35_ExpressibleByBuiltinBooleanLiteralP", "init"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
+- ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s26_ExpressibleByColorLiteralP", "black"]
+- ["s26_ExpressibleByColorLiteralP", "cgColor"]
+- !private ["s26_ExpressibleByColorLiteralP", "clear"]
+- !private ["s26_ExpressibleByColorLiteralP", "darkGray"]
+- !private ["s26_ExpressibleByColorLiteralP", "gray"]
+- ["s26_ExpressibleByColorLiteralP", "init"]
+- !private ["s26_ExpressibleByColorLiteralP", "white"]
+- !private ["s26_ExpressibleByImageLiteralP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "BotChatBubble"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Bot_Type"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CarousalCardView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "ChoiceView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "GradientSpecs"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "MapView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "MenuCardView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UserChatBubble"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UserInputView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "VoiceAssistantView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "WithRatingVC"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "_WithRatingVC"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "attachmentThemeModel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "black"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "cgColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "clear"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "create"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "darkGray"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "gray"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setBotType"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setChatMainBackground"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setCustomHeaderView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setEnableTextToSpeech"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setFont"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setHeaderBackground"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setListeningDuration"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setLogo"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setStatusBarColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setVoiceAssistanteRate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setVoiceMan"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "white"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "BotChatBubble"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Bot_Type"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "CarousalCardView"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ChoiceView"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "GradientSpecs"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "MapView"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "MenuCardView"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "UserChatBubble"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "UserInputView"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "VoiceAssistantView"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "WithRatingVC"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "_WithRatingVC"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "attachmentThemeModel"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "black"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "cgColor"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "clear"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "create"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "darkGray"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "gray"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setBotType"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setChatMainBackground"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setCustomHeaderView"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setEnableTextToSpeech"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setFont"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setHeaderBackground"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setListeningDuration"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setLogo"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setStatusBarColor"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setVoiceAssistanteRate"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setVoiceMan"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "white"]
+- !private ["s21_ObjectiveCBridgeableP", "clear"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "justified"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "create"]
+depends-nominal:
+- !private "17LabibaBotFramwork0B4TypeO"
+- !private "So15CALayerDelegateP"
+- !private "So7CGPointV"
+- "s7CVarArgP"
+- "s12CaseIterableP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "SE"
+- "SQ"
+- "s25ExpressibleByArrayLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- !private "17LabibaBotFramwork0A0C13GradientSpecsC"
+- !private "17LabibaBotFramwork18GreetingHeaderViewC"
+- "SH"
+- !private "17LabibaBotFramwork0A0C"
+- !private "17LabibaBotFramwork0A20AttachmentThemeModelC"
+- !private "17LabibaBotFramwork0A10BackgroundO"
+- !private "17LabibaBotFramwork0aB10ChatBubbleC"
+- !private "17LabibaBotFramwork0A16CarousalCardViewC"
+- "17LabibaBotFramwork0A14ChatHeaderViewC"
+- !private "17LabibaBotFramwork0A10ChoiceViewC"
+- !private "17LabibaBotFramwork0A7MapViewC"
+- !private "17LabibaBotFramwork0A12MenuCardViewC"
+- "17LabibaBotFramwork0A6ThemesC"
+- !private "17LabibaBotFramwork0A14UserChatBubbleC"
+- !private "17LabibaBotFramwork0A13UserInputViewC"
+- !private "17LabibaBotFramwork0A18VoiceAssistantViewC"
+- "17LabibaBotFramwork8LanguageO"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- "So21NSItemProviderReadingP"
+- "So21NSItemProviderWritingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- "So14NSSecureCodingP"
+- !private "So15NSTextAlignmentV"
+- !private "Sq"
+- !private "17LabibaBotFramwork22QuickChoicesHeaderViewC"
+- "SY"
+- !private "17LabibaBotFramwork16SharedPreferenceC"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So12UIAppearanceP"
+- !private "So21UIAppearanceContainerP"
+- !private "So26UICollectionViewDataSourceP"
+- !private "So24UICollectionViewDelegateP"
+- !private "So34UICollectionViewDelegateFlowLayoutP"
+- "So7UIColorC"
+- !private "So17UICoordinateSpaceP"
+- !private "So13UIDynamicItemP"
+- !private "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So20UIFocusItemContainerP"
+- !private "So7UIImageC"
+- !private "So39UIItemProviderPresentationSizeProvidingP"
+- !private "So24UILargeContentViewerItemP"
+- !private "So30UIPasteConfigurationSupportingP"
+- !private "So11UIResponderC"
+- !private "So30UIResponderStandardEditActionsP"
+- !private "So20UIScrollViewDelegateP"
+- !private "So18UITraitEnvironmentP"
+- !private "So23UIUserActivityRestoringP"
+- "So6UIViewC"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s33_ExpressibleByBuiltinFloatLiteralP"
+- "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- "s26_ExpressibleByColorLiteralP"
+- !private "s26_ExpressibleByImageLiteralP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s38__DefaultCustomPlaygroundQuickLookableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/ObjectiveC.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMIDI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMedia.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/simd.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreImage.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/NaturalLanguage.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/QuartzCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Accelerate.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Speech.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Dispatch.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Metal.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Darwin.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreLocation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Foundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/AVFoundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreFoundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreAudio.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreGraphics.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/os.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UniformTypeIdentifiers.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Contacts.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Swift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/WebKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/MapKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/LabibaBotFramwork.h"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/Framework/Classes/Manegers/SocketRocket/SRWebSocket.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/build/LabibaBotFramework.build/Debug-iphonesimulator/LabibaBotFramwork.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Accelerate.framework/Headers/Accelerate.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Speech.framework/Headers/Speech.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/os.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UniformTypeIdentifiers.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "8747206d62cb1bb085b9e0f5174d4846"

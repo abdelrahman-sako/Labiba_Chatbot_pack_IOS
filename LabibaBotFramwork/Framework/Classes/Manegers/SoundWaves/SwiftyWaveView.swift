@@ -59,7 +59,9 @@ open class SwiftyWaveView: UIView {
     public var frequency: Int = 6
     @IBInspectable
 //    public var color: UIColor = Labiba._MicButtonWaveColor
-    public var colors: [UIColor] = [Labiba._MicButtonWaveColor]
+//    public var colors: [UIColor] = [Labiba._MicButtonWaveColor]
+    public var colors: [UIColor] = [Labiba.VoiceAssistantView.waveColor]
+    
     
     public private(set) var animating = false
     

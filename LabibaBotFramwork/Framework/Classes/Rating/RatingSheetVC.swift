@@ -10,7 +10,7 @@ import UIKit
 
 class RatingSheetVC: RatingBaseVC {
 
-    override class func present(fromVC vc:UIViewController,delegate:RatingScreenProtocol){
+    override class func present(fromVC vc:UIViewController,delegate:SubViewControllerDelegate){
         let ratingVC = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingSheetVC") as! RatingBaseVC
         ratingVC.modalPresentationStyle = .overCurrentContext
         ratingVC.modalTransitionStyle = .crossDissolve

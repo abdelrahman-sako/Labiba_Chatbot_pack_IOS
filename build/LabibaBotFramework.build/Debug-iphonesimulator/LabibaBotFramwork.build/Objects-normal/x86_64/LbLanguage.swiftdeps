@@ -1,0 +1,494 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "localString"
+- "LbLanguage"
+provides-nominal:
+- "17LabibaBotFramwork10LbLanguageC"
+provides-member:
+- ["SS", ""]
+- ["17LabibaBotFramwork10LbLanguageC", ""]
+- ["SS", "local"]
+- ["SS", "localBasedOnLastMessage"]
+- ["SS", "localForChosnLangCodeBB"]
+- ["SS", "localForChosnLangCodeMB"]
+provides-dynamic-lookup:
+- "current"
+- "isArabic"
+depends-top-level:
+- !private "=="
+- "Bool"
+- !private "Bundle"
+- !private "Constants"
+- !private "Labiba"
+- "LbLanguage"
+- !private "Locale"
+- !private "SharedPreference"
+- "String"
+- !private "StringLiteralType"
+- "TernaryPrecedence"
+- "localString"
+depends-member:
+- !private ["SK", "Bundle"]
+- !private ["SK", "Constants"]
+- !private ["SK", "Labiba"]
+- !private ["SK", "LbLanguage"]
+- !private ["SK", "SharedPreference"]
+- !private ["SK", ""]
+- !private ["SK", "local"]
+- !private ["So8NSBundleC", "init"]
+- !private ["So8NSBundleC", "localizedString"]
+- !private ["So8NSBundleC", "main"]
+- !private ["So8NSBundleC", "path"]
+- !private ["So15CNKeyDescriptorP", "local"]
+- !private ["s7CVarArgP", "Bundle"]
+- !private ["s7CVarArgP", "Constants"]
+- !private ["s7CVarArgP", "Labiba"]
+- !private ["s7CVarArgP", "LastMessageLangCode"]
+- !private ["s7CVarArgP", "LbLanguage"]
+- !private ["s7CVarArgP", "SharedPreference"]
+- !private ["s7CVarArgP", "_LastMessageLangCode"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "local"]
+- !private ["s7CVarArgP", "localizedString"]
+- !private ["s7CVarArgP", "main"]
+- !private ["s7CVarArgP", "path"]
+- !private ["s12CaseIterableP", "ar"]
+- !private ["s12CaseIterableP", "rawValue"]
+- !private ["Sl", "Bundle"]
+- !private ["Sl", "Constants"]
+- !private ["Sl", "Labiba"]
+- !private ["Sl", "LbLanguage"]
+- !private ["Sl", "SharedPreference"]
+- !private ["Sl", ""]
+- !private ["Sl", "local"]
+- !private ["SL", "Bundle"]
+- !private ["SL", "Constants"]
+- !private ["SL", "Labiba"]
+- !private ["SL", "LbLanguage"]
+- !private ["SL", "SharedPreference"]
+- !private ["SL", ""]
+- !private ["SL", "local"]
+- !private ["17LabibaBotFramwork9ConstantsV", "mainBundle"]
+- !private ["s28CustomDebugStringConvertibleP", "Bundle"]
+- !private ["s28CustomDebugStringConvertibleP", "Constants"]
+- !private ["s28CustomDebugStringConvertibleP", "Labiba"]
+- !private ["s28CustomDebugStringConvertibleP", "LastMessageLangCode"]
+- !private ["s28CustomDebugStringConvertibleP", "LbLanguage"]
+- !private ["s28CustomDebugStringConvertibleP", "SharedPreference"]
+- !private ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "_LastMessageLangCode"]
+- !private ["s28CustomDebugStringConvertibleP", "current"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "languageCode"]
+- !private ["s28CustomDebugStringConvertibleP", "local"]
+- !private ["s28CustomDebugStringConvertibleP", "localizedString"]
+- !private ["s28CustomDebugStringConvertibleP", "main"]
+- !private ["s28CustomDebugStringConvertibleP", "path"]
+- !private ["s17CustomReflectableP", "Bundle"]
+- !private ["s17CustomReflectableP", "Constants"]
+- !private ["s17CustomReflectableP", "Labiba"]
+- !private ["s17CustomReflectableP", "LbLanguage"]
+- !private ["s17CustomReflectableP", "SharedPreference"]
+- !private ["s17CustomReflectableP", "current"]
+- !private ["s17CustomReflectableP", "languageCode"]
+- !private ["s17CustomReflectableP", "local"]
+- !private ["s23CustomStringConvertibleP", "Bundle"]
+- !private ["s23CustomStringConvertibleP", "Constants"]
+- !private ["s23CustomStringConvertibleP", "Labiba"]
+- !private ["s23CustomStringConvertibleP", "LastMessageLangCode"]
+- !private ["s23CustomStringConvertibleP", "LbLanguage"]
+- !private ["s23CustomStringConvertibleP", "SharedPreference"]
+- !private ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "_LastMessageLangCode"]
+- !private ["s23CustomStringConvertibleP", "current"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "languageCode"]
+- !private ["s23CustomStringConvertibleP", "local"]
+- !private ["s23CustomStringConvertibleP", "localizedString"]
+- !private ["s23CustomStringConvertibleP", "main"]
+- !private ["s23CustomStringConvertibleP", "path"]
+- !private ["Se", "Bundle"]
+- !private ["Se", "Constants"]
+- !private ["Se", "Labiba"]
+- !private ["Se", "LbLanguage"]
+- !private ["Se", "SharedPreference"]
+- !private ["Se", "current"]
+- !private ["Se", "languageCode"]
+- !private ["Se", "local"]
+- !private ["SE", "Bundle"]
+- !private ["SE", "Constants"]
+- !private ["SE", "Labiba"]
+- !private ["SE", "LbLanguage"]
+- !private ["SE", "SharedPreference"]
+- !private ["SE", "current"]
+- !private ["SE", "languageCode"]
+- !private ["SE", "local"]
+- !private ["SQ", "=="]
+- !private ["SQ", "Bundle"]
+- !private ["SQ", "Constants"]
+- !private ["SQ", "Labiba"]
+- !private ["SQ", "LastMessageLangCode"]
+- !private ["SQ", "LbLanguage"]
+- !private ["SQ", "SharedPreference"]
+- !private ["SQ", ""]
+- !private ["SQ", "_LastMessageLangCode"]
+- !private ["SQ", "ar"]
+- !private ["SQ", "current"]
+- !private ["SQ", "init"]
+- !private ["SQ", "languageCode"]
+- !private ["SQ", "local"]
+- !private ["SQ", "localizedString"]
+- !private ["SQ", "main"]
+- !private ["SQ", "path"]
+- !private ["SQ", "rawValue"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "Bundle"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "Constants"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "Labiba"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "LbLanguage"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "SharedPreference"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "local"]
+- !private ["s32ExpressibleByStringInterpolationP", "Bundle"]
+- !private ["s32ExpressibleByStringInterpolationP", "Constants"]
+- !private ["s32ExpressibleByStringInterpolationP", "Labiba"]
+- !private ["s32ExpressibleByStringInterpolationP", "LbLanguage"]
+- !private ["s32ExpressibleByStringInterpolationP", "SharedPreference"]
+- !private ["s32ExpressibleByStringInterpolationP", ""]
+- !private ["s32ExpressibleByStringInterpolationP", "local"]
+- !private ["s26ExpressibleByStringLiteralP", "Bundle"]
+- !private ["s26ExpressibleByStringLiteralP", "Constants"]
+- !private ["s26ExpressibleByStringLiteralP", "Labiba"]
+- !private ["s26ExpressibleByStringLiteralP", "LbLanguage"]
+- !private ["s26ExpressibleByStringLiteralP", "SharedPreference"]
+- !private ["s26ExpressibleByStringLiteralP", ""]
+- !private ["s26ExpressibleByStringLiteralP", "local"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "Bundle"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "Constants"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "Labiba"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "LbLanguage"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "SharedPreference"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "local"]
+- !private ["SH", "Bundle"]
+- !private ["SH", "Constants"]
+- !private ["SH", "Labiba"]
+- !private ["SH", "LastMessageLangCode"]
+- !private ["SH", "LbLanguage"]
+- !private ["SH", "SharedPreference"]
+- !private ["SH", ""]
+- !private ["SH", "_LastMessageLangCode"]
+- !private ["SH", "ar"]
+- !private ["SH", "current"]
+- !private ["SH", "init"]
+- !private ["SH", "languageCode"]
+- !private ["SH", "local"]
+- !private ["SH", "localizedString"]
+- !private ["SH", "main"]
+- !private ["SH", "path"]
+- !private ["SH", "rawValue"]
+- !private ["17LabibaBotFramwork17JSONSubscriptTypeP", "Bundle"]
+- !private ["17LabibaBotFramwork17JSONSubscriptTypeP", "Constants"]
+- !private ["17LabibaBotFramwork17JSONSubscriptTypeP", "Labiba"]
+- !private ["17LabibaBotFramwork17JSONSubscriptTypeP", "LbLanguage"]
+- !private ["17LabibaBotFramwork17JSONSubscriptTypeP", "SharedPreference"]
+- !private ["17LabibaBotFramwork17JSONSubscriptTypeP", "local"]
+- !private ["17LabibaBotFramwork0A0C", "LastMessageLangCode"]
+- !private ["17LabibaBotFramwork0A0C", "_LastMessageLangCode"]
+- !private ["17LabibaBotFramwork8LanguageO", "RawValue"]
+- !private ["17LabibaBotFramwork8LanguageO", ""]
+- !private ["17LabibaBotFramwork8LanguageO", "ar"]
+- !private ["17LabibaBotFramwork8LanguageO", "rawValue"]
+- ["17LabibaBotFramwork10LbLanguageC", "Bool"]
+- !private ["17LabibaBotFramwork10LbLanguageC", "Locale"]
+- !private ["17LabibaBotFramwork10LbLanguageC", "SharedPreference"]
+- ["17LabibaBotFramwork10LbLanguageC", "String"]
+- ["17LabibaBotFramwork10LbLanguageC", "current"]
+- ["17LabibaBotFramwork10LbLanguageC", "deinit"]
+- ["17LabibaBotFramwork10LbLanguageC", "init"]
+- ["17LabibaBotFramwork10LbLanguageC", "isArabic"]
+- !private ["10Foundation6LocaleV", "current"]
+- !private ["10Foundation6LocaleV", "languageCode"]
+- !private ["s25LosslessStringConvertibleP", "Bundle"]
+- !private ["s25LosslessStringConvertibleP", "Constants"]
+- !private ["s25LosslessStringConvertibleP", "Labiba"]
+- !private ["s25LosslessStringConvertibleP", "LbLanguage"]
+- !private ["s25LosslessStringConvertibleP", "SharedPreference"]
+- !private ["s25LosslessStringConvertibleP", ""]
+- !private ["s25LosslessStringConvertibleP", "local"]
+- !private ["s10MirrorPathP", "Bundle"]
+- !private ["s10MirrorPathP", "Constants"]
+- !private ["s10MirrorPathP", "Labiba"]
+- !private ["s10MirrorPathP", "LbLanguage"]
+- !private ["s10MirrorPathP", "SharedPreference"]
+- !private ["s10MirrorPathP", "local"]
+- !private ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "local"]
+- !private ["So9NSCopyingP", ""]
+- !private ["So9NSCopyingP", "local"]
+- !private ["So21NSItemProviderReadingP", "local"]
+- !private ["So21NSItemProviderWritingP", "local"]
+- !private ["So16NSMutableCopyingP", "local"]
+- !private ["So8NSObjectC", "LastMessageLangCode"]
+- ["So8NSObjectC", ""]
+- !private ["So8NSObjectC", "_LastMessageLangCode"]
+- !private ["So8NSObjectC", "bundleForClass"]
+- !private ["So8NSObjectC", "bundleWithIdentifier"]
+- !private ["So8NSObjectC", "bundleWithPath"]
+- !private ["So8NSObjectC", "bundleWithURL"]
+- !private ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "local"]
+- !private ["So8NSObjectC", "localizedString"]
+- !private ["So8NSObjectC", "localizedStringForKey"]
+- !private ["So8NSObjectC", "main"]
+- !private ["So8NSObjectC", "path"]
+- !private ["So8NSObjectC", "pathForAuxiliaryExecutable"]
+- !private ["So8NSObjectC", "pathForResource"]
+- !private ["So8NSObjectP", "LastMessageLangCode"]
+- !private ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "_LastMessageLangCode"]
+- !private ["So8NSObjectP", "bundleForClass"]
+- !private ["So8NSObjectP", "bundleWithIdentifier"]
+- !private ["So8NSObjectP", "bundleWithPath"]
+- !private ["So8NSObjectP", "bundleWithURL"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "local"]
+- !private ["So8NSObjectP", "localizedString"]
+- !private ["So8NSObjectP", "localizedStringForKey"]
+- !private ["So8NSObjectP", "main"]
+- !private ["So8NSObjectP", "path"]
+- !private ["So8NSObjectP", "pathForAuxiliaryExecutable"]
+- !private ["So8NSObjectP", "pathForResource"]
+- !private ["So14NSSecureCodingP", ""]
+- !private ["So14NSSecureCodingP", "local"]
+- !private ["So8NSStringC", "local"]
+- !private ["Sm", "Bundle"]
+- !private ["Sm", "Constants"]
+- !private ["Sm", "Labiba"]
+- !private ["Sm", "LbLanguage"]
+- !private ["Sm", "SharedPreference"]
+- !private ["Sm", "local"]
+- !private ["SY", "ar"]
+- !private ["SY", "rawValue"]
+- !private ["10Foundation20ReferenceConvertibleP", "current"]
+- !private ["10Foundation20ReferenceConvertibleP", "languageCode"]
+- !private ["ST", "Bundle"]
+- !private ["ST", "Constants"]
+- !private ["ST", "Labiba"]
+- !private ["ST", "LbLanguage"]
+- !private ["ST", "SharedPreference"]
+- !private ["ST", ""]
+- !private ["ST", "local"]
+- !private ["17LabibaBotFramwork16SharedPreferenceC", "botLangCode"]
+- !private ["17LabibaBotFramwork16SharedPreferenceC", "shared"]
+- !private ["SS", "Bundle"]
+- !private ["SS", "Constants"]
+- !private ["SS", "Labiba"]
+- !private ["SS", "LbLanguage"]
+- !private ["SS", "SharedPreference"]
+- ["SS", "String"]
+- ["SS", ""]
+- ["SS", "local"]
+- ["SS", "localBasedOnLastMessage"]
+- ["SS", "localForChosnLangCodeBB"]
+- ["SS", "localForChosnLangCodeMB"]
+- !private ["Sy", "Bundle"]
+- !private ["Sy", "Constants"]
+- !private ["Sy", "Labiba"]
+- !private ["Sy", "LbLanguage"]
+- !private ["Sy", "SharedPreference"]
+- !private ["Sy", "local"]
+- !private ["s16TextOutputStreamP", "Bundle"]
+- !private ["s16TextOutputStreamP", "Constants"]
+- !private ["s16TextOutputStreamP", "Labiba"]
+- !private ["s16TextOutputStreamP", "LbLanguage"]
+- !private ["s16TextOutputStreamP", "SharedPreference"]
+- !private ["s16TextOutputStreamP", ""]
+- !private ["s16TextOutputStreamP", "local"]
+- !private ["s20TextOutputStreamableP", "Bundle"]
+- !private ["s20TextOutputStreamableP", "Constants"]
+- !private ["s20TextOutputStreamableP", "Labiba"]
+- !private ["s20TextOutputStreamableP", "LbLanguage"]
+- !private ["s20TextOutputStreamableP", "SharedPreference"]
+- !private ["s20TextOutputStreamableP", ""]
+- !private ["s20TextOutputStreamableP", "local"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "Bundle"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "Constants"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "Labiba"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "LbLanguage"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "SharedPreference"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "local"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "Bundle"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "Constants"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "Labiba"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "LbLanguage"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "SharedPreference"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "local"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "Bundle"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "Constants"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "Labiba"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "LbLanguage"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "SharedPreference"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "local"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "Bundle"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "Constants"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "Labiba"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "LbLanguage"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "SharedPreference"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "local"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "Bundle"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "Constants"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "Labiba"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "LbLanguage"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "SharedPreference"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "local"]
+- !private ["s19_HasContiguousBytesP", "Bundle"]
+- !private ["s19_HasContiguousBytesP", "Constants"]
+- !private ["s19_HasContiguousBytesP", "Labiba"]
+- !private ["s19_HasContiguousBytesP", "LbLanguage"]
+- !private ["s19_HasContiguousBytesP", "SharedPreference"]
+- !private ["s19_HasContiguousBytesP", "local"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "local"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "LastMessageLangCode"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "_LastMessageLangCode"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "local"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "localizedString"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "path"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "LastMessageLangCode"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "_LastMessageLangCode"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "local"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "localizedString"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "main"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "path"]
+- !private ["s21_ObjectiveCBridgeableP", "Bundle"]
+- !private ["s21_ObjectiveCBridgeableP", "Constants"]
+- !private ["s21_ObjectiveCBridgeableP", "Labiba"]
+- !private ["s21_ObjectiveCBridgeableP", "LbLanguage"]
+- !private ["s21_ObjectiveCBridgeableP", "SharedPreference"]
+- !private ["s21_ObjectiveCBridgeableP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "_ObjectiveCType"]
+- !private ["s21_ObjectiveCBridgeableP", "current"]
+- !private ["s21_ObjectiveCBridgeableP", "languageCode"]
+- !private ["s21_ObjectiveCBridgeableP", "local"]
+depends-nominal:
+- !private "SK"
+- !private "So8NSBundleC"
+- !private "So15CNKeyDescriptorP"
+- !private "s7CVarArgP"
+- !private "s12CaseIterableP"
+- !private "Sl"
+- !private "SL"
+- !private "17LabibaBotFramwork9ConstantsV"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "SE"
+- !private "SQ"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s32ExpressibleByStringInterpolationP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "SH"
+- !private "17LabibaBotFramwork17JSONSubscriptTypeP"
+- !private "17LabibaBotFramwork0A0C"
+- !private "17LabibaBotFramwork8LanguageO"
+- "17LabibaBotFramwork10LbLanguageC"
+- !private "10Foundation6LocaleV"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- !private "So8NSObjectP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- !private "Sm"
+- !private "SY"
+- !private "10Foundation20ReferenceConvertibleP"
+- !private "ST"
+- !private "17LabibaBotFramwork16SharedPreferenceC"
+- "SS"
+- !private "Sy"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "17LabibaBotFramwork14URLConvertibleP"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s19_HasContiguousBytesP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/ObjectiveC.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMIDI.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMedia.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/simd.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreImage.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/NaturalLanguage.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/QuartzCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Accelerate.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Speech.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Dispatch.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Metal.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Darwin.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreLocation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Foundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/AVFoundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreFoundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreAudio.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreGraphics.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/os.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UniformTypeIdentifiers.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Contacts.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Swift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/WebKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/MapKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/LabibaBotFramwork.h"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/Framework/Classes/Manegers/SocketRocket/SRWebSocket.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/build/LabibaBotFramework.build/Debug-iphonesimulator/LabibaBotFramwork.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Accelerate.framework/Headers/Accelerate.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Speech.framework/Headers/Speech.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/os.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UniformTypeIdentifiers.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "6e7391575dd1f4b102f705fae97c617d"

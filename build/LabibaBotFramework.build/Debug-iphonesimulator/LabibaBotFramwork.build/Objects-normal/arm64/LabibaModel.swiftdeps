@@ -1,0 +1,507 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "LabibaModel"
+- "RecipientModel"
+- "MessageModel"
+- "QuickReplyModel"
+- "QuickReplyPayloadModel"
+- "AttachmentModel"
+- "PayloadModel"
+- "PayloadElementModel"
+- "PayloadElementButtonModel"
+provides-nominal:
+- "17LabibaBotFramwork0A5ModelC"
+- "17LabibaBotFramwork14RecipientModelC"
+- "17LabibaBotFramwork12MessageModelC"
+- "17LabibaBotFramwork15QuickReplyModelC"
+- "17LabibaBotFramwork22QuickReplyPayloadModelC"
+- "17LabibaBotFramwork15AttachmentModelC"
+- "17LabibaBotFramwork12PayloadModelC"
+- "17LabibaBotFramwork19PayloadElementModelC"
+- "17LabibaBotFramwork25PayloadElementButtonModelC"
+provides-member:
+- ["17LabibaBotFramwork0A5ModelC", ""]
+- ["17LabibaBotFramwork14RecipientModelC", ""]
+- ["17LabibaBotFramwork12MessageModelC", ""]
+- ["17LabibaBotFramwork15QuickReplyModelC", ""]
+- ["17LabibaBotFramwork22QuickReplyPayloadModelC", ""]
+- ["17LabibaBotFramwork15AttachmentModelC", ""]
+- ["17LabibaBotFramwork12PayloadModelC", ""]
+- ["17LabibaBotFramwork19PayloadElementModelC", ""]
+- ["17LabibaBotFramwork25PayloadElementButtonModelC", ""]
+provides-dynamic-lookup:
+- "ParamToken"
+- "attachment"
+- "buttons"
+- "content_type"
+- "elements"
+- "encode"
+- "getPayloadObj"
+- "id"
+- "image_aspect_ratio"
+- "image_url"
+- "message"
+- "messaging_type"
+- "metadata"
+- "payload"
+- "quick_replies"
+- "recipient"
+- "sharable"
+- "subtitle"
+- "template_type"
+- "text"
+- "title"
+- "type"
+- "url"
+depends-top-level:
+- "=="
+- !private "??"
+- "AttachmentModel"
+- "Bool"
+- "Codable"
+- !private "Data"
+- !private "FloatLiteralType"
+- !private "IntegerLiteralType"
+- !private "JSONDecoder"
+- "LabibaModel"
+- "MessageModel"
+- "PayloadElementButtonModel"
+- "PayloadElementModel"
+- "PayloadModel"
+- "QuickReplyModel"
+- "QuickReplyPayloadModel"
+- "RecipientModel"
+- "String"
+- !private "StringLiteralType"
+- !private "payload"
+- !private "~="
+depends-member:
+- ["17LabibaBotFramwork15AttachmentModelC", "CodingKeys"]
+- ["17LabibaBotFramwork15AttachmentModelC", "PayloadModel"]
+- ["17LabibaBotFramwork15AttachmentModelC", "String"]
+- ["17LabibaBotFramwork15AttachmentModelC", ""]
+- ["17LabibaBotFramwork15AttachmentModelC", "deinit"]
+- ["17LabibaBotFramwork15AttachmentModelC", "encode"]
+- ["17LabibaBotFramwork15AttachmentModelC", "init"]
+- ["17LabibaBotFramwork15AttachmentModelC", "payload"]
+- ["17LabibaBotFramwork15AttachmentModelC", "type"]
+- !private ["SK", ""]
+- !private ["SK", "init"]
+- !private ["SK", "utf8"]
+- !private ["So15CNKeyDescriptorP", "utf8"]
+- !private ["s7CVarArgP", "utf8"]
+- ["s9CodingKeyP", "=="]
+- !private ["s9CodingKeyP", ""]
+- ["s9CodingKeyP", "_rawHashValue"]
+- ["s9CodingKeyP", "debugDescription"]
+- ["s9CodingKeyP", "description"]
+- ["s9CodingKeyP", "hash"]
+- ["s9CodingKeyP", "hashValue"]
+- ["s9CodingKeyP", "init"]
+- ["s9CodingKeyP", "intValue"]
+- ["s9CodingKeyP", "stringValue"]
+- !private ["Sl", ""]
+- !private ["Sl", "init"]
+- !private ["Sl", "utf8"]
+- !private ["SL", ""]
+- !private ["SL", "utf8"]
+- !private ["10Foundation15ContiguousBytesP", "init"]
+- ["s28CustomDebugStringConvertibleP", "=="]
+- ["s28CustomDebugStringConvertibleP", ""]
+- ["s28CustomDebugStringConvertibleP", "_rawHashValue"]
+- ["s28CustomDebugStringConvertibleP", "debugDescription"]
+- ["s28CustomDebugStringConvertibleP", "description"]
+- ["s28CustomDebugStringConvertibleP", "hash"]
+- ["s28CustomDebugStringConvertibleP", "hashValue"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "intValue"]
+- ["s28CustomDebugStringConvertibleP", "stringValue"]
+- !private ["s28CustomDebugStringConvertibleP", "utf8"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "utf8"]
+- ["s23CustomStringConvertibleP", "=="]
+- ["s23CustomStringConvertibleP", ""]
+- ["s23CustomStringConvertibleP", "_rawHashValue"]
+- ["s23CustomStringConvertibleP", "debugDescription"]
+- ["s23CustomStringConvertibleP", "description"]
+- ["s23CustomStringConvertibleP", "hash"]
+- ["s23CustomStringConvertibleP", "hashValue"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "intValue"]
+- ["s23CustomStringConvertibleP", "stringValue"]
+- !private ["s23CustomStringConvertibleP", "utf8"]
+- !private ["10Foundation4DataV", "init"]
+- !private ["10Foundation12DataProtocolP", ""]
+- !private ["10Foundation12DataProtocolP", "init"]
+- !private ["Se", "Data"]
+- !private ["Se", "JSONDecoder"]
+- !private ["Se", "ParamToken"]
+- !private ["Se", "QuickReplyPayloadModel"]
+- ["Se", ""]
+- !private ["Se", "attachment"]
+- !private ["Se", "buttons"]
+- !private ["Se", "content_type"]
+- !private ["Se", "elements"]
+- ["Se", "encode"]
+- !private ["Se", "id"]
+- !private ["Se", "image_aspect_ratio"]
+- !private ["Se", "image_url"]
+- ["Se", "init"]
+- !private ["Se", "message"]
+- !private ["Se", "messaging_type"]
+- !private ["Se", "metadata"]
+- !private ["Se", "payload"]
+- !private ["Se", "quick_replies"]
+- !private ["Se", "recipient"]
+- !private ["Se", "sharable"]
+- !private ["Se", "subtitle"]
+- !private ["Se", "template_type"]
+- !private ["Se", "text"]
+- !private ["Se", "title"]
+- !private ["Se", "type"]
+- !private ["Se", "url"]
+- !private ["Se", "utf8"]
+- !private ["s7DecoderP", "container"]
+- !private ["SE", "Data"]
+- !private ["SE", "JSONDecoder"]
+- !private ["SE", "ParamToken"]
+- !private ["SE", "QuickReplyPayloadModel"]
+- ["SE", ""]
+- !private ["SE", "attachment"]
+- !private ["SE", "buttons"]
+- !private ["SE", "content_type"]
+- !private ["SE", "elements"]
+- ["SE", "encode"]
+- !private ["SE", "id"]
+- !private ["SE", "image_aspect_ratio"]
+- !private ["SE", "image_url"]
+- ["SE", "init"]
+- !private ["SE", "message"]
+- !private ["SE", "messaging_type"]
+- !private ["SE", "metadata"]
+- !private ["SE", "payload"]
+- !private ["SE", "quick_replies"]
+- !private ["SE", "recipient"]
+- !private ["SE", "sharable"]
+- !private ["SE", "subtitle"]
+- !private ["SE", "template_type"]
+- !private ["SE", "text"]
+- !private ["SE", "title"]
+- !private ["SE", "type"]
+- !private ["SE", "url"]
+- !private ["SE", "utf8"]
+- !private ["s7EncoderP", "container"]
+- ["SQ", "=="]
+- ["SQ", ""]
+- ["SQ", "_rawHashValue"]
+- ["SQ", "debugDescription"]
+- ["SQ", "description"]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- ["SQ", "init"]
+- ["SQ", "intValue"]
+- ["SQ", "stringValue"]
+- !private ["SQ", "utf8"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "utf8"]
+- !private ["s23ExpressibleByNilLiteralP", "utf8"]
+- !private ["s32ExpressibleByStringInterpolationP", ""]
+- !private ["s32ExpressibleByStringInterpolationP", "utf8"]
+- !private ["s26ExpressibleByStringLiteralP", ""]
+- !private ["s26ExpressibleByStringLiteralP", "utf8"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "utf8"]
+- ["SH", "=="]
+- !private ["SH", ""]
+- ["SH", "_rawHashValue"]
+- ["SH", "debugDescription"]
+- ["SH", "description"]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- ["SH", "init"]
+- ["SH", "intValue"]
+- ["SH", "stringValue"]
+- !private ["SH", "utf8"]
+- !private ["s6HasherV", "combine"]
+- !private ["10Foundation11JSONDecoderC", "decode"]
+- !private ["10Foundation11JSONDecoderC", "init"]
+- !private ["17LabibaBotFramwork17JSONSubscriptTypeP", "utf8"]
+- !private ["s22KeyedDecodingContainerV", "decodeIfPresent"]
+- !private ["s30KeyedDecodingContainerProtocolP", "decodeIfPresent"]
+- !private ["s22KeyedEncodingContainerV", "encodeIfPresent"]
+- !private ["s30KeyedEncodingContainerProtocolP", "encodeIfPresent"]
+- ["17LabibaBotFramwork0A5ModelC", "CodingKeys"]
+- ["17LabibaBotFramwork0A5ModelC", "MessageModel"]
+- ["17LabibaBotFramwork0A5ModelC", "RecipientModel"]
+- ["17LabibaBotFramwork0A5ModelC", "String"]
+- ["17LabibaBotFramwork0A5ModelC", ""]
+- ["17LabibaBotFramwork0A5ModelC", "deinit"]
+- ["17LabibaBotFramwork0A5ModelC", "encode"]
+- ["17LabibaBotFramwork0A5ModelC", "init"]
+- ["17LabibaBotFramwork0A5ModelC", "message"]
+- ["17LabibaBotFramwork0A5ModelC", "messaging_type"]
+- ["17LabibaBotFramwork0A5ModelC", "recipient"]
+- !private ["s25LosslessStringConvertibleP", ""]
+- !private ["s25LosslessStringConvertibleP", "utf8"]
+- ["17LabibaBotFramwork12MessageModelC", "AttachmentModel"]
+- ["17LabibaBotFramwork12MessageModelC", "CodingKeys"]
+- ["17LabibaBotFramwork12MessageModelC", "QuickReplyModel"]
+- ["17LabibaBotFramwork12MessageModelC", "String"]
+- ["17LabibaBotFramwork12MessageModelC", ""]
+- ["17LabibaBotFramwork12MessageModelC", "attachment"]
+- ["17LabibaBotFramwork12MessageModelC", "deinit"]
+- ["17LabibaBotFramwork12MessageModelC", "encode"]
+- ["17LabibaBotFramwork12MessageModelC", "init"]
+- ["17LabibaBotFramwork12MessageModelC", "metadata"]
+- ["17LabibaBotFramwork12MessageModelC", "quick_replies"]
+- ["17LabibaBotFramwork12MessageModelC", "text"]
+- !private ["s10MirrorPathP", "utf8"]
+- !private ["SM", ""]
+- !private ["SM", "init"]
+- !private ["10Foundation19MutableDataProtocolP", "init"]
+- !private ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "utf8"]
+- !private ["So9NSCopyingP", ""]
+- !private ["So9NSCopyingP", "utf8"]
+- !private ["So21NSItemProviderReadingP", "utf8"]
+- !private ["So21NSItemProviderWritingP", "utf8"]
+- !private ["So16NSMutableCopyingP", "utf8"]
+- !private ["So8NSObjectC", "utf8"]
+- !private ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "utf8"]
+- !private ["So14NSSecureCodingP", ""]
+- !private ["So14NSSecureCodingP", "utf8"]
+- !private ["So8NSStringC", "utf8"]
+- !private ["Sq", "utf8"]
+- ["17LabibaBotFramwork25PayloadElementButtonModelC", "CodingKeys"]
+- ["17LabibaBotFramwork25PayloadElementButtonModelC", "String"]
+- ["17LabibaBotFramwork25PayloadElementButtonModelC", ""]
+- ["17LabibaBotFramwork25PayloadElementButtonModelC", "deinit"]
+- ["17LabibaBotFramwork25PayloadElementButtonModelC", "encode"]
+- ["17LabibaBotFramwork25PayloadElementButtonModelC", "init"]
+- ["17LabibaBotFramwork25PayloadElementButtonModelC", "payload"]
+- ["17LabibaBotFramwork25PayloadElementButtonModelC", "title"]
+- ["17LabibaBotFramwork25PayloadElementButtonModelC", "type"]
+- ["17LabibaBotFramwork25PayloadElementButtonModelC", "url"]
+- ["17LabibaBotFramwork19PayloadElementModelC", "CodingKeys"]
+- ["17LabibaBotFramwork19PayloadElementModelC", "PayloadElementButtonModel"]
+- ["17LabibaBotFramwork19PayloadElementModelC", "String"]
+- ["17LabibaBotFramwork19PayloadElementModelC", ""]
+- ["17LabibaBotFramwork19PayloadElementModelC", "buttons"]
+- ["17LabibaBotFramwork19PayloadElementModelC", "deinit"]
+- ["17LabibaBotFramwork19PayloadElementModelC", "encode"]
+- ["17LabibaBotFramwork19PayloadElementModelC", "image_url"]
+- ["17LabibaBotFramwork19PayloadElementModelC", "init"]
+- ["17LabibaBotFramwork19PayloadElementModelC", "subtitle"]
+- ["17LabibaBotFramwork19PayloadElementModelC", "title"]
+- ["17LabibaBotFramwork12PayloadModelC", "Bool"]
+- ["17LabibaBotFramwork12PayloadModelC", "CodingKeys"]
+- ["17LabibaBotFramwork12PayloadModelC", "PayloadElementModel"]
+- ["17LabibaBotFramwork12PayloadModelC", "String"]
+- ["17LabibaBotFramwork12PayloadModelC", ""]
+- ["17LabibaBotFramwork12PayloadModelC", "deinit"]
+- ["17LabibaBotFramwork12PayloadModelC", "elements"]
+- ["17LabibaBotFramwork12PayloadModelC", "encode"]
+- ["17LabibaBotFramwork12PayloadModelC", "image_aspect_ratio"]
+- ["17LabibaBotFramwork12PayloadModelC", "init"]
+- ["17LabibaBotFramwork12PayloadModelC", "sharable"]
+- ["17LabibaBotFramwork12PayloadModelC", "template_type"]
+- ["17LabibaBotFramwork12PayloadModelC", "url"]
+- ["17LabibaBotFramwork15QuickReplyModelC", "CodingKeys"]
+- !private ["17LabibaBotFramwork15QuickReplyModelC", "Data"]
+- !private ["17LabibaBotFramwork15QuickReplyModelC", "JSONDecoder"]
+- ["17LabibaBotFramwork15QuickReplyModelC", "QuickReplyPayloadModel"]
+- ["17LabibaBotFramwork15QuickReplyModelC", "String"]
+- ["17LabibaBotFramwork15QuickReplyModelC", ""]
+- ["17LabibaBotFramwork15QuickReplyModelC", "content_type"]
+- ["17LabibaBotFramwork15QuickReplyModelC", "deinit"]
+- ["17LabibaBotFramwork15QuickReplyModelC", "encode"]
+- ["17LabibaBotFramwork15QuickReplyModelC", "getPayloadObj"]
+- ["17LabibaBotFramwork15QuickReplyModelC", "image_url"]
+- ["17LabibaBotFramwork15QuickReplyModelC", "init"]
+- ["17LabibaBotFramwork15QuickReplyModelC", "payload"]
+- ["17LabibaBotFramwork15QuickReplyModelC", "title"]
+- ["17LabibaBotFramwork22QuickReplyPayloadModelC", "CodingKeys"]
+- ["17LabibaBotFramwork22QuickReplyPayloadModelC", "ParamToken"]
+- ["17LabibaBotFramwork22QuickReplyPayloadModelC", "String"]
+- ["17LabibaBotFramwork22QuickReplyPayloadModelC", ""]
+- ["17LabibaBotFramwork22QuickReplyPayloadModelC", "deinit"]
+- ["17LabibaBotFramwork22QuickReplyPayloadModelC", "encode"]
+- ["17LabibaBotFramwork22QuickReplyPayloadModelC", "init"]
+- !private ["Sk", ""]
+- !private ["Sk", "init"]
+- !private ["Sm", ""]
+- !private ["Sm", "init"]
+- !private ["Sm", "utf8"]
+- ["17LabibaBotFramwork14RecipientModelC", "CodingKeys"]
+- ["17LabibaBotFramwork14RecipientModelC", "String"]
+- ["17LabibaBotFramwork14RecipientModelC", ""]
+- ["17LabibaBotFramwork14RecipientModelC", "deinit"]
+- ["17LabibaBotFramwork14RecipientModelC", "encode"]
+- ["17LabibaBotFramwork14RecipientModelC", "id"]
+- ["17LabibaBotFramwork14RecipientModelC", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["ST", ""]
+- !private ["ST", "init"]
+- !private ["ST", "utf8"]
+- !private ["SS", "utf8"]
+- !private ["Sy", "utf8"]
+- !private ["s16TextOutputStreamP", ""]
+- !private ["s16TextOutputStreamP", "utf8"]
+- !private ["s20TextOutputStreamableP", ""]
+- !private ["s20TextOutputStreamableP", "utf8"]
+- !private ["7Combine15TopLevelDecoderP", "decode"]
+- !private ["7Combine15TopLevelDecoderP", "init"]
+- !private ["17LabibaBotFramwork14URLConvertibleP", "utf8"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "utf8"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "utf8"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "utf8"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "utf8"]
+- !private ["s19_HasContiguousBytesP", "utf8"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "utf8"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "utf8"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "utf8"]
+- !private ["s21_ObjectiveCBridgeableP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "_ObjectiveCType"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "utf8"]
+depends-nominal:
+- "17LabibaBotFramwork15AttachmentModelC"
+- !private "SK"
+- !private "So15CNKeyDescriptorP"
+- !private "s7CVarArgP"
+- "s9CodingKeyP"
+- !private "Sl"
+- !private "SL"
+- !private "10Foundation15ContiguousBytesP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "10Foundation4DataV"
+- !private "10Foundation12DataProtocolP"
+- "Se"
+- !private "s7DecoderP"
+- "SE"
+- !private "s7EncoderP"
+- "SQ"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- !private "s32ExpressibleByStringInterpolationP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "SH"
+- !private "s6HasherV"
+- !private "10Foundation11JSONDecoderC"
+- !private "17LabibaBotFramwork17JSONSubscriptTypeP"
+- !private "s22KeyedDecodingContainerV"
+- !private "s30KeyedDecodingContainerProtocolP"
+- !private "s22KeyedEncodingContainerV"
+- !private "s30KeyedEncodingContainerProtocolP"
+- "17LabibaBotFramwork0A5ModelC"
+- !private "s25LosslessStringConvertibleP"
+- "17LabibaBotFramwork12MessageModelC"
+- !private "s10MirrorPathP"
+- !private "SM"
+- !private "10Foundation19MutableDataProtocolP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- !private "So8NSObjectC"
+- !private "So8NSObjectP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- !private "Sq"
+- "17LabibaBotFramwork25PayloadElementButtonModelC"
+- "17LabibaBotFramwork19PayloadElementModelC"
+- "17LabibaBotFramwork12PayloadModelC"
+- "17LabibaBotFramwork15QuickReplyModelC"
+- "17LabibaBotFramwork22QuickReplyPayloadModelC"
+- !private "Sk"
+- !private "Sm"
+- "17LabibaBotFramwork14RecipientModelC"
+- !private "10Foundation20ReferenceConvertibleP"
+- !private "ST"
+- !private "SS"
+- !private "Sy"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "7Combine15TopLevelDecoderP"
+- !private "17LabibaBotFramwork14URLConvertibleP"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s19_HasContiguousBytesP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/ObjectiveC.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMIDI.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreMedia.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/simd.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreImage.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/NaturalLanguage.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/QuartzCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Accelerate.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Speech.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Dispatch.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Metal.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Darwin.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreLocation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Foundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/AVFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreAudio.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreGraphics.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/os.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UniformTypeIdentifiers.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Contacts.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Swift.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/WebKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/MapKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/arm64-apple-ios-simulator.swiftmodule"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/LabibaBotFramwork.h"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/LabibaBotFramwork/Framework/Classes/Manegers/SocketRocket/SRWebSocket.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/macbookpro/Desktop/abdulrhman/LabibaBotFramework/build/LabibaBotFramework.build/Debug-iphonesimulator/LabibaBotFramwork.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Accelerate.framework/Headers/Accelerate.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Speech.framework/Headers/Speech.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/os.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UniformTypeIdentifiers.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MapKit.framework/Headers/MapKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.3.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "1d58ac496110f05c7d5f0d0987aa97aa"

@@ -15,7 +15,7 @@ public class LabibaUserChatBubble {
     public var textColor:UIColor = UIColor.gray
     public var alpha:CGFloat = 1
     public var cornerRadius:CGFloat = 10
-    public var CornerMask: CACornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
+    public var cornerMask: CACornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
     public var avatar:UIImage?
     
 }
