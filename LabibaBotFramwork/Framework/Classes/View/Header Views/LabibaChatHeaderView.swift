@@ -21,7 +21,7 @@ import UIKit
 
 open class LabibaChatHeaderView: UIView
 {
-    enum SettingType{
+    public enum SettingType{
         case language
         case help
     }
@@ -29,7 +29,7 @@ open class LabibaChatHeaderView: UIView
     @IBOutlet public weak var backButton: UIButton!
     
     weak var delegate: LabibaChatHeaderViewDelegate?
-    var settingType:SettingType = .language
+    public var settingType:SettingType = .language
     func restartApplication () {
         NotificationCenter.default.post(name: Constants.NotificationNames.StopTextToSpeech,
                                         object: nil)

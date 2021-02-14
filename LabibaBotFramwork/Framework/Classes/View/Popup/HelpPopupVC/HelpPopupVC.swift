@@ -34,7 +34,9 @@ class HelpPopupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIConfiguration()
-        addItems(items: ["d","","","","d","","",""])
+       
+        getData() 
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,14 +45,40 @@ class HelpPopupVC: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         delegate?.subViewDidDisappear()
     }
+    
+    
     func UIConfiguration()  {
+        // rest
+        descTitleLbl.text = ""
+        descLbl.text = "."
+        
         discreptionContainerView.layer.cornerRadius = 20
         descTitleLbl.font = applyBotFont( bold: true, size: 20)
         descLbl.font = applyBotFont( size: 14)
         scrollView.delegate = self
         addScrollViewMask()
         scrollView.contentInset.top = 30
-        self.view.applyHierarchicalSemantics()
+        DispatchQueue.main.async {
+            self.view.applyHierarchicalSemantics()
+        }
+       
+        
+    }
+    
+    func getData()  {
+        LabibaRestfulBotConnector.shared.getHelpPageData { (result) in
+            switch result {
+            case .success(let model):
+                self.descTitleLbl.text = model.Title ?? ""
+                self.descLbl.attributedText = model.Description?.htmlAttributedString(regularFont: applyBotFont(size: 14), boldFont: applyBotFont(bold:true,size: 14), color: UIColor(red: 1, green: 1, blue: 1, alpha: 0.7))
+                self.descLbl.applyAlignmentAccordingToOnboardingLang()
+                self.addItems(items: model.ExpandableItems ?? [])
+            case .failure(let err):
+                self.dismiss(animated: true) {
+                    showErrorMessage(err.localizedDescription)
+                }
+            }
+        }
     }
     
     func addScrollViewMask()  {
@@ -60,17 +88,17 @@ class HelpPopupVC: UIViewController {
         scrollView.mask = maskImage
     }
     
-    func addItems(items:[String])  {
+    func addItems(items:[HelpPageModel.ExpandableItem])  {
         ItemViews.removeAll()
-        for i in items.indices{
+        for (index,item) in items.enumerated(){
             let view = HelpExpandableView.create()
             view.delegate = self
-            view.tag = i
-            let title = "Expandable title "
-             let desc = "<h2>Expandable title</h2><br><p>Description here <i><ins>dfkjghdjghdksjfghksdfgjhkdjfhgddfkjgdfghsdkjgh</ins></i> d  ghjdfgkjsdh <mark>gdsgdg</mark> dgd ghdf gd ghjdjfghdjkfghdkj g h ghdkf ghdkjghdk gdkj g jkd <sub>gjkdhgk</sub> jdhgkjdhfgkjd fgkdj gkjd fgkd fgk dfg dkghdfkj </p> <dl> <dt>Flavio</dt> <dd>The name</dd> <dt>Copes</dt> <dd>The surname</dd></dl>"
+            view.tag = index
+            let title = item.Title ?? ""
+             let desc =  item.Description ?? ""
             view.titleLbl.attributedText = title.htmlAttributedString(regularFont: applyBotFont(size: 17), boldFont: applyBotFont(bold:true,size: 17), color: .white)
-            descriptions.append(desc.htmlAttributedString(regularFont: applyBotFont(size: 15), boldFont: applyBotFont(bold:true,size: 15), color: .white))
-            if i == 0 {
+            descriptions.append(desc.htmlAttributedString(regularFont: applyBotFont(size: 14), boldFont: applyBotFont(bold:true,size: 14), color: UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)))
+            if index == 0 {
                 view.descLbl.attributedText = descriptions[0]
             }else{
                 view.descLbl.text = ""
@@ -79,6 +107,7 @@ class HelpPopupVC: UIViewController {
             view.resetIcone()
             ItemViews.append(view)
             stackView.addArrangedSubview(view)
+            view.applyHierarchicalSemantics()
         }
     }
 
@@ -102,6 +131,7 @@ extension HelpPopupVC:HelpExpandableViewDelegate {
                 ItemViews[index].descLbl.text = ""
             }
         }
+        ItemViews[index].descLbl.applyAlignmentAccordingToOnboardingLang()
         ItemViews[index].resetIcone()
         ItemViews[selectedItemIndex].resetIcone()
         selectedItemIndex = index

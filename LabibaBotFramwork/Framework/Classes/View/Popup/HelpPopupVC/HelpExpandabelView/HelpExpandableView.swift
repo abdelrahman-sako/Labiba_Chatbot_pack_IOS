@@ -26,6 +26,7 @@ class HelpExpandableView: UIView {
     override func awakeFromNib() {
         titleLbl.font = applyBotFont(size: 18)
         descLbl.font = applyBotFont(size: 15)
+       // self.applyHierarchicalSemantics()
     }
     
     func resetIcone()  {

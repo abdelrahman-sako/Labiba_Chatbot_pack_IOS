@@ -53,7 +53,6 @@
 		3772B5262339E9F100262298 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772B5252339E9F100262298 /* Reachability.swift */; };
 		3773C47E24BC88CC009A6E04 /* AudioVisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3773C47D24BC88CC009A6E04 /* AudioVisualizerView.swift */; };
 		3778B5F423CAFDC2005CD740 /* LabibaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3778B5F323CAFDC2005CD740 /* LabibaModel.swift */; };
-		377FF961235465C900D6FA42 /* RatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377FF960235465C900D6FA42 /* RatingModel.swift */; };
 		3782D94C23B9F511006A79D4 /* CircularGradientLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D93E23B9F511006A79D4 /* CircularGradientLoadingIndicator.swift */; };
 		3782D94D23B9F511006A79D4 /* NVActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D94023B9F511006A79D4 /* NVActivityIndicatorAnimationDelegate.swift */; };
 		3782D94E23B9F511006A79D4 /* NVActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D94223B9F511006A79D4 /* NVActivityIndicatorPresenter.swift */; };
@@ -245,6 +244,7 @@
 		52FC5CF124D00A9000C7B7CF /* MapPerviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF024D00A9000C7B7CF /* MapPerviewView.swift */; };
 		52FC5CF624D0262F00C7B7CF /* LabibaVoiceExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */; };
 		52FC5CF824D02EA500C7B7CF /* VoiceExperienceBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF724D02EA500C7B7CF /* VoiceExperienceBaseView.swift */; };
+		52FFB72425D271D300CFB629 /* HelpPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFB72325D271D300CFB629 /* HelpPageModel.swift */; };
 		B429548222DDD9D1002DE3E9 /* LabibaBotFramwork.h in Headers */ = {isa = PBXBuildFile; fileRef = B429548022DDD9D1002DE3E9 /* LabibaBotFramwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B429550022DDDBD2002DE3E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B429549522DDDBD2002DE3E9 /* Localizable.strings */; };
 		B429550122DDDBD2002DE3E9 /* SelectableCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B429549822DDDBD2002DE3E9 /* SelectableCardView.xib */; };
@@ -376,7 +376,6 @@
 		3772B5252339E9F100262298 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		3773C47D24BC88CC009A6E04 /* AudioVisualizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioVisualizerView.swift; sourceTree = "<group>"; };
 		3778B5F323CAFDC2005CD740 /* LabibaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaModel.swift; sourceTree = "<group>"; };
-		377FF960235465C900D6FA42 /* RatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingModel.swift; sourceTree = "<group>"; };
 		3782D93E23B9F511006A79D4 /* CircularGradientLoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularGradientLoadingIndicator.swift; sourceTree = "<group>"; };
 		3782D94023B9F511006A79D4 /* NVActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
 		3782D94223B9F511006A79D4 /* NVActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
@@ -571,6 +570,7 @@
 		52FC5CF024D00A9000C7B7CF /* MapPerviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPerviewView.swift; sourceTree = "<group>"; };
 		52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaVoiceExperience.swift; sourceTree = "<group>"; };
 		52FC5CF724D02EA500C7B7CF /* VoiceExperienceBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceExperienceBaseView.swift; sourceTree = "<group>"; };
+		52FFB72325D271D300CFB629 /* HelpPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageModel.swift; sourceTree = "<group>"; };
 		B429547D22DDD9D1002DE3E9 /* LabibaBotFramwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LabibaBotFramwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B429548022DDD9D1002DE3E9 /* LabibaBotFramwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabibaBotFramwork.h; sourceTree = "<group>"; };
 		B429548122DDD9D1002DE3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -760,12 +760,12 @@
 			isa = PBXGroup;
 			children = (
 				37460D99230A7AC1002748CE /* ReferralModel.swift */,
-				377FF960235465C900D6FA42 /* RatingModel.swift */,
 				522D1649256E44F2002758D5 /* GetRatingFormQuestionsModel.swift */,
 				3778B5F323CAFDC2005CD740 /* LabibaModel.swift */,
 				37BD1BC123CB5807005DBA67 /* LabibaModelEnums.swift */,
 				3732461323CDA6C8004F87F7 /* LiveChatModel.swift */,
 				374A3FF523E85F0800C99766 /* TextToSpeechModel.swift */,
+				52FFB72325D271D300CFB629 /* HelpPageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1837,7 +1837,6 @@
 				527260E12518BB1A002130BA /* AttachmentView.swift in Sources */,
 				3782D94C23B9F511006A79D4 /* CircularGradientLoadingIndicator.swift in Sources */,
 				52DE8DC5248CB9C60067F5EC /* IQUIScrollView+Additions.swift in Sources */,
-				377FF961235465C900D6FA42 /* RatingModel.swift in Sources */,
 				B429551822DDDBD2002DE3E9 /* CornerLocation.swift in Sources */,
 				5214229425AC965400B78AB0 /* ChoiceView.swift in Sources */,
 				B429553522DDDBD2002DE3E9 /* ImagePicking.swift in Sources */,
@@ -1963,6 +1962,7 @@
 				B429553022DDDBD2002DE3E9 /* DatePickerViewController.swift in Sources */,
 				B429554D22DDDBD2002DE3E9 /* ConversationViewController.swift in Sources */,
 				3782D9A023BA1369006A79D4 /* SRHTTPConnectMessage.m in Sources */,
+				52FFB72425D271D300CFB629 /* HelpPageModel.swift in Sources */,
 				3782D94E23B9F511006A79D4 /* NVActivityIndicatorPresenter.swift in Sources */,
 				B429551222DDDBD2002DE3E9 /* UIViewController+Extensions.swift in Sources */,
 				52DE8DC8248CB9C60067F5EC /* IQTitleBarButtonItem.swift in Sources */,

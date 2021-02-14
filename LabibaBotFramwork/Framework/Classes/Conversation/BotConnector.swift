@@ -25,14 +25,24 @@ protocol BotConnectorInterface:class {
     func botConnectorDidRecieveTypingActivity(_ botConnector:BotConnector) -> Void
 }
 
-
+enum NetworkError: String, Error {
+    case badURL
+    case encodingError = "Encoding error"
+}
+extension NetworkError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .badURL:
+            return "unvalid url"
+        case .encodingError:
+            return "response could not be decoded"
+        }
+    }
+}
 class BotConnector: NSObject {
     
     var currentRequest: DataRequest?
-    enum NetworkError: String, Error {
-        case badURL
-        case encodingError = "Encoding error"
-    }
+
     var loader = CircularGradientLoadingIndicator()
     
 
@@ -117,7 +127,7 @@ class BotConnector: NSObject {
     
     func uploadDataToLabiba(filename: String, data: Data, completion: @escaping (String?) -> Void) -> Void
     {
-        
+//        let LabibaUploadPath = "https://botbuilder.labiba.ai/WebBotConversation/UploadHomeReport?id=\(SharedPreference.shared.currentUserId)" // we add this since the old one produce 500 due to a viruse as nour said
         upload(multipartFormData: { (formData) in
             
             formData.append(data, withName: "Filedata", fileName: filename, mimeType: "")
@@ -130,8 +140,6 @@ class BotConnector: NSObject {
            }
        }
     func textToSpeech(model:TextToSpeechModel, completion: @escaping (Result<String>) -> Void){
-       //let path = "\(Labiba._voiceBasePath)/translate/texttospeech"
-        //let path = "\(Labiba._voiceBasePath)/Handlers/Translate.ashx"
         let path = "\(Labiba._voiceBasePath)\(Labiba._voiceServicePath)"
         
         let params:[String:Any] = [
@@ -143,11 +151,6 @@ class BotConnector: NSObject {
         ]
     print("url ", path , "\n params \n ",params)
         
-//        let config = URLSessionConfiguration()
-//
-//        //config.timeoutIntervalForRequest = 50
-//
-//        let session = SessionManager(configuration: .default, delegate: SessionDelegate(), serverTrustPolicyManager: MyServerTrustPolicyManager(policies: [:]))
         
       currentRequest =   request(path, method: .post, parameters: params ,encoding: URLEncoding(), headers: nil ).responseData { (response) in
             // URLEncoding() -> application/x-www-form-urlencoded
@@ -236,30 +239,31 @@ class BotConnector: NSObject {
         }
     }
     
-    func generateVedio ( completion:@escaping (Result<String>) -> Void) {
-        let path1 = "http://imaginebotwebservice.engagemaster.com/Riyadh/api/RiyadhMunicipality/GenerateVideoURL"
-        loader.show()
-        request(path1, method: .get, parameters: nil ,encoding: JSONEncoding.default, headers: nil ).responseData { (response) in
-            self.loader.dismiss()
+    func getHelpPageData(completion: @escaping (Result<HelpPageModel>) -> Void){
+        let path = Labiba._helpPath
+        let params:[String:Any] = [
+            "bot_id" : SharedPreference.shared.currentUserId // "6bd2ecb6-958e-4bb5-905a-51bb6350490a"
+        ]
+       // print(params)
+        showLoadingIndicator()
+        request(path, method: .get, parameters: params ,encoding: URLEncoding.default , headers: nil ).responseData { (response) in
+            
             switch response.result{
-            case .success(_):
+            case .success(let data):
+                print(String(data: data , encoding: .utf8))
                 do {
-                    let response = try JSONDecoder().decode([String:String].self, from: response.data ?? Data())
-                    if  let result = response["state"] , result == "success" {
-                        if let url = response["SlotFillingState"] {
-                            completion(.success(url))
-                        }
-                    }else{
-                        completion(.failure(NetworkError.encodingError))
-                    }
+                    let response = try JSONDecoder().decode(HelpPageModel.self, from: data)
+                    completion(.success(response))
                 }catch{
                     completion(.failure(NetworkError.encodingError))
                 }
             case .failure(let err):
                 completion(.failure(err))
             }
+            self.loader.dismiss()
         }
     }
+   
 }
 
 

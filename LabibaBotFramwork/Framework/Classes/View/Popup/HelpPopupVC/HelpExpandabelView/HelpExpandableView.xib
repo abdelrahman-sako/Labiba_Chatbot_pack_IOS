@@ -36,12 +36,6 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wed-ep-qKV">
                                     <rect key="frame" x="460" y="0.0" width="40" height="40"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzK-Hf-p3N">
-                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                            <connections>
-                                                <action selector="itemDidTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qp2-KB-WYN"/>
-                                            </connections>
-                                        </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add" translatesAutoresizingMaskIntoConstraints="NO" id="M5e-SS-u80">
                                             <rect key="frame" x="10" y="12.5" width="20" height="20"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,14 +47,16 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="RzK-Hf-p3N" firstAttribute="top" secondItem="Wed-ep-qKV" secondAttribute="top" id="292-JL-p2i"/>
                                         <constraint firstItem="M5e-SS-u80" firstAttribute="centerX" secondItem="Wed-ep-qKV" secondAttribute="centerX" id="KHd-qP-yF8"/>
-                                        <constraint firstAttribute="trailing" secondItem="RzK-Hf-p3N" secondAttribute="trailing" id="Lqb-M2-ZbU"/>
-                                        <constraint firstAttribute="bottom" secondItem="RzK-Hf-p3N" secondAttribute="bottom" id="aRh-Fe-YYy"/>
-                                        <constraint firstItem="RzK-Hf-p3N" firstAttribute="leading" secondItem="Wed-ep-qKV" secondAttribute="leading" id="cED-gH-ggv"/>
                                         <constraint firstAttribute="width" constant="40" id="kNo-P3-Pzh"/>
                                     </constraints>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzK-Hf-p3N">
+                                    <rect key="frame" x="0.0" y="0.0" width="500" height="40"/>
+                                    <connections>
+                                        <action selector="itemDidTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qp2-KB-WYN"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -68,11 +64,15 @@
                                 <constraint firstItem="Wed-ep-qKV" firstAttribute="top" secondItem="RHi-qE-D5x" secondAttribute="top" id="8RV-cG-8TF"/>
                                 <constraint firstItem="M5e-SS-u80" firstAttribute="centerY" secondItem="JJ3-Tu-BCb" secondAttribute="centerY" id="8rc-Bu-oLR"/>
                                 <constraint firstAttribute="trailing" secondItem="Wed-ep-qKV" secondAttribute="trailing" id="ET3-fa-6TA"/>
+                                <constraint firstItem="RzK-Hf-p3N" firstAttribute="centerX" secondItem="RHi-qE-D5x" secondAttribute="centerX" id="GKc-HS-oTw"/>
                                 <constraint firstAttribute="bottom" secondItem="Wed-ep-qKV" secondAttribute="bottom" id="IPo-d3-Wef"/>
                                 <constraint firstAttribute="height" constant="40" id="K6V-UA-oZd"/>
+                                <constraint firstItem="RzK-Hf-p3N" firstAttribute="centerY" secondItem="RHi-qE-D5x" secondAttribute="centerY" id="nUL-7W-8cc"/>
                                 <constraint firstItem="JJ3-Tu-BCb" firstAttribute="leading" secondItem="RHi-qE-D5x" secondAttribute="leading" id="npG-E7-Oui"/>
                                 <constraint firstAttribute="bottom" secondItem="JJ3-Tu-BCb" secondAttribute="bottom" id="nue-8K-Bj4"/>
                                 <constraint firstItem="Wed-ep-qKV" firstAttribute="leading" secondItem="JJ3-Tu-BCb" secondAttribute="trailing" constant="10" id="tYz-YL-qJ6"/>
+                                <constraint firstItem="RzK-Hf-p3N" firstAttribute="height" secondItem="RHi-qE-D5x" secondAttribute="height" id="xA1-hI-I2h"/>
+                                <constraint firstItem="RzK-Hf-p3N" firstAttribute="width" secondItem="RHi-qE-D5x" secondAttribute="width" id="xUM-QG-4rz"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPs-SH-UX2">

@@ -94,6 +94,10 @@ extension UIView
                 if textFiled.textAlignment == .natural {
                     textFiled.applyAlignmentAccordingToOnboardingLang()
                 }
+            } else if let label = subview as? UILabel {
+                if label.textAlignment == .natural {
+                    label.applyAlignmentAccordingToOnboardingLang()
+                }
             }else if let imageView = subview as? UIImageView {
                 imageView.transform = CGAffineTransform(scaleX: SharedPreference.shared.botLangCode == .ar ? -1 : 1, y: 1)
             }
@@ -119,6 +123,16 @@ extension UIView
     }
 }
 extension UITextField {
+    func applyAlignmentAccordingToOnboardingLang() {
+        let currentLang =   SharedPreference.shared.botLangCode
+        if currentLang == .ar {
+            self.textAlignment = .right
+        }else{
+            self.textAlignment = .left
+        }
+    }
+}
+extension UILabel {
     func applyAlignmentAccordingToOnboardingLang() {
         let currentLang =   SharedPreference.shared.botLangCode
         if currentLang == .ar {

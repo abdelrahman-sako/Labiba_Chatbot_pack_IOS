@@ -15,7 +15,7 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
  
     
     
-    var botConnector:BotConnector = LabibaRestfulBotConnector()
+    var botConnector:BotConnector = LabibaRestfulBotConnector.shared
     var delegate:LabibaDelegate?
     
     func displayDialog(_ dialog:ConversationDialog ) -> Void {}

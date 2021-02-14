@@ -113,7 +113,7 @@ public class GreetingHeaderView: LabibaChatHeaderView {
     }
     
     
-    func resetUIs() {
+    public func resetUIs() {
         if IsViewFliped {
             self.backGroundView.applyReversedSemanticAccordingToBotLang()
             self.leftStack.applyReversedSemanticAccordingToBotLang()

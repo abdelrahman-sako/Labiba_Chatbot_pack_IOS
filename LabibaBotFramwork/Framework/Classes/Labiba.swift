@@ -36,6 +36,8 @@ public enum LabibaFontWeight{
     static var _messagingServicePath = "/api/MobileAPI/MessageHandler"
     static var _voiceBasePath = "https://voice.labibabot.com"
     static var _voiceServicePath = "/translate/texttospeech"
+    static var _helpPath = "https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage"
+    
     
     static var  delegate:LabibaDelegate?
     
@@ -119,6 +121,11 @@ public enum LabibaFontWeight{
     public static func set_voiceServicePath(_ path: String)
     {
         self._voiceServicePath = path
+    }
+    
+    public static func set_helpPath(_ path: String)
+    {
+        self._helpPath = path
     }
       
     

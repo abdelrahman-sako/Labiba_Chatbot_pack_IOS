@@ -14,7 +14,8 @@ class LabibaRestfulBotConnector:BotConnector{
     var baseURL = "\(Labiba._basePath)\(Labiba._messagingServicePath)"
     var attachmentPayload:PayloadModel?
     let sessionManager:SessionManager
-    override init() {
+    static let shared = LabibaRestfulBotConnector()
+    override private init() {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 60
         sessionManager = SessionManager(configuration: configuration)
