@@ -51,6 +51,8 @@ class RatingBaseVC: UIViewController {
                 if model.count > 0 {
                     self?.questions = model[0].questions ?? []
                     self?.ratingTableView.reloadData()
+                }else{
+                    self?.showAlert(result: true, message: "Empty questions array")
                 }
             case .failure(let err):
                 self?.showAlert(result: true, message: err.localizedDescription)

@@ -47,6 +47,8 @@ class SelectableCardView: UIView
         view.layer.shadowRadius = 1.5
         view.layer.shadowOpacity = 0.15
         view.layer.cornerRadius = Labiba.CarousalCardView.cornerRadius + 30*ipadFactor
+        view.layer.borderWidth = Labiba.CarousalCardView.border.width
+        view.layer.borderColor = Labiba.CarousalCardView.border.color.cgColor
         view.backgroundColor =  Labiba.CarousalCardView.backgroundColor
         view.alpha = Labiba.CarousalCardView.alpha
         
@@ -142,9 +144,9 @@ class SelectableCardView: UIView
         //
         self.card = card
         self.titleLabel.text = card.title
-        self.titleLabel.font = applyBotFont(bold: true, size: Labiba.CarousalCardView.titleFont.size + ipadFactor*1)
+        self.titleLabel.font = applyBotFont(bold: Labiba.CarousalCardView.titleFont.weight == .bold, size: Labiba.CarousalCardView.titleFont.size + ipadFactor*1)
 
-        self.descriptionLabel.attributedText = card.subtitle?.htmlAttributedString(regularFont:applyBotFont(size:  Labiba.CarousalCardView.subtitleFont.size + ipadFactor*1), boldFont: applyBotFont(bold: true,size: Labiba.CarousalCardView.subtitleFont.size + ipadFactor*1) ,color: Labiba.CarousalCardView.subtitleColor )
+        self.descriptionLabel.attributedText = card.subtitle?.htmlAttributedString(regularFont:applyBotFont(size:  Labiba.CarousalCardView.subtitleFont.size + ipadFactor*1), boldFont: applyBotFont(bold: Labiba.CarousalCardView.subtitleFont.weight == .bold,size: Labiba.CarousalCardView.subtitleFont.size + ipadFactor*1) ,color: Labiba.CarousalCardView.subtitleColor )
         self.descriptionLabel.textAlignment = .center
         
         self.titleLabel.textColor = Labiba.CarousalCardView.titleColor
@@ -240,10 +242,10 @@ class SelectableCardView: UIView
            view.isHidden = true
         }
         borders.forEach { (view) in
-            view.backgroundColor = Labiba.CarousalCardView.buttonBorder.color
+            view.backgroundColor = Labiba.CarousalCardView.buttonSeparatorLine.color
         }
-        buttonBordersLeadingCons.constant = Labiba.CarousalCardView.buttonBorder.inset
-        buttonBordersTrailingCons.constant = Labiba.CarousalCardView.buttonBorder.inset
+        buttonBordersLeadingCons.constant = Labiba.CarousalCardView.buttonSeparatorLine.inset
+        buttonBordersTrailingCons.constant = Labiba.CarousalCardView.buttonSeparatorLine.inset
 
         if card.buttons.count == 1 {
             borders[0].isHidden = true
@@ -285,7 +287,15 @@ class SelectableCardView: UIView
             }else{
                 //buttons[i].setAttributedTitle(card_btn.title.underLine(), for: .normal)
                 buttons[i].setTitle(card_btn.title, for: .normal)
-                buttons[i].titleLabel?.font = applyBotFont( size: 11 - ipadFactor)
+                buttons[i].titleLabel?.font = applyBotFont( bold: Labiba.CarousalCardView.buttonFont.weight == .bold,size: Labiba.CarousalCardView.buttonFont.size - ipadFactor)
+                buttons[i].layer.borderColor = Labiba.CarousalCardView.buttonBorder.color.cgColor
+                buttons[i].layer.borderWidth = Labiba.CarousalCardView.buttonBorder.width
+                buttons[i].layer.borderWidth = Labiba.CarousalCardView.buttonBorder.width
+                if Labiba.CarousalCardView.buttonCornerRadius >  buttons[i].frame.height {
+                    buttons[i].layer.cornerRadius = buttons[i].frame.height/2
+                }else{
+                buttons[i].layer.cornerRadius = Labiba.CarousalCardView.buttonCornerRadius
+                }
             }
             
         }

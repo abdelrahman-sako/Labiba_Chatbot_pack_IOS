@@ -118,12 +118,13 @@ class TextToSpeechManeger:NSObject{
         }
     }
     
-    
+    //var data:Data?
     func downloadFileFromURL(url:URL){
         
         var downloadTask:URLSessionDownloadTask
         downloadTask = URLSession.shared.downloadTask(with: url  , completionHandler: {[weak self](url, response, err) in
             guard let url = url else{return}
+          //  self?.data = try! Data(contentsOf: url)
             self?.play(url: url)
         })
         
@@ -145,6 +146,7 @@ class TextToSpeechManeger:NSObject{
         do {
             try audioSession.setCategory(AVAudioSession.Category.playback)
             self.player = try AVAudioPlayer(contentsOf: url)
+            //self.player = try AVAudioPlayer(data: data!)
             delegate?.TextToSpeechDidStart()
             player?.prepareToPlay()
             player?.volume = volume

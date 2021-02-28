@@ -74,10 +74,43 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     lazy var voiceTypeDialog = VoiceAssistantView.create()
     lazy var dynamicGifView = DynamicGIF.create()
     var maskImage:UIImageView!
+    
+    // to remove
+    @objc func tapaction(){
+        if SpeechToTextManager.shared.isRecording {
+            NotificationCenter.default.post(name: Constants.NotificationNames.StopSpeechToText,
+            object: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                UINotificationFeedbackGenerator().notificationOccurred(.error)
+            }
+        }else{
+            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                NotificationCenter.default.post(name: Constants.NotificationNames.StartSpeechToText,
+                object: nil)
+            }
+         
+        }
+       
+       
+       
+        
+    }
+    override  func accessibilityPerformMagicTap() -> Bool {
+        tapaction()
+        return true
+    }
+   
     override public func viewDidLoad()
     {
         super.viewDidLoad()
+        // to remove
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapaction))
+        gesture.numberOfTapsRequired = 3
+        self.view.addGestureRecognizer(gesture)
+       
         print("did load")
+        
         addTableMask()
         muteButton.isHidden = Labiba.isMuteButtonHidden
         VedioCallButton.isHidden = Labiba.isVedioButtonHidden

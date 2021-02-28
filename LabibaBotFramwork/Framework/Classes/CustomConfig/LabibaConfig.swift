@@ -21,23 +21,23 @@ public class LabibaConfig {
     //*************
     var conversationVC:ConversationViewController?
     //*************
-    public func BOJConnect(language:String ,customerID:String,callback:(()->Void)?){
+    public func BOJConnect(language:String ,customerID:String,trxnlimit:Int,callback:(()->Void)?){
         self.callback = callback
         //MARK: initialization
        // Labiba.initialize(RecipientIdAR:"5bfcd0bf-cb9a-4034-96ff-7c67000df2d3",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547") // BOJ builder IDs
         Labiba.initialize(RecipientIdAR:"b553e8c1-d9d9-409e-b5b4-573a63506dce",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// bot builder IDs
 //
         Labiba.setBotLanguage(LangCode: language == "Arabic" ? .ar : .en)
-        Labiba.createCustomReferral(object: ["Customer ID":customerID])
+        Labiba.createCustomReferral(object: ["Customer ID":customerID,"trxnlimit":trxnlimit])
 
 
         //MARK: Theme
         Labiba.setDelegate(delegate: self)
-        Labiba.set_basePath("https://boji.bankofjordan.com.jo")
-        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
-
-        Labiba.set_voiceBasePath("https://boji.bankofjordan.com.jo")
-        Labiba.set_voiceServicePath("/api/VoiceAPI/VoiceClip")
+//        Labiba.set_basePath("https://boji.bankofjordan.com.jo")
+//        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
+//
+//        Labiba.set_voiceBasePath("https://boji.bankofjordan.com.jo")
+//        Labiba.set_voiceServicePath("/api/VoiceAPI/VoiceClip")
         Labiba.set_helpPath("https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage")
         
 //        Labiba.set_basePath("https://bojibot.bankofjordan.com.jo")
@@ -85,13 +85,25 @@ public class LabibaConfig {
         Labiba.MenuCardView.textColor =  UIColor(argb: 0xffffffff)
         Labiba.MenuCardView.fontSize = 12
        
+//        Labiba.CarousalCardView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+//        Labiba.CarousalCardView.cornerRadius = 30
+//        Labiba.CarousalCardView.titleFont = (14,.bold)
+//        Labiba.CarousalCardView.buttonSeparatorLine = ( UIColor.white.withAlphaComponent(0.1) , 25)
+//        let bColor1 = UIColor(argb: 0x1100263E)
+//        let bColor2 = UIColor(argb: 0xff00263E)
+//        Labiba.CarousalCardView.bottomGradient = Labiba.GradientSpecs.init(colors: [bColor1 , bColor2 ], locations: [0,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) )
+        
         Labiba.CarousalCardView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
-        Labiba.CarousalCardView.cornerRadius = 30
-        Labiba.CarousalCardView.titleFont = (14,.bold)
-        Labiba.CarousalCardView.buttonBorder = ( UIColor.white.withAlphaComponent(0.1) , 25)
-        let bColor1 = UIColor(argb: 0x1100263E)
-        let bColor2 = UIColor(argb: 0xff00263E)
-        Labiba.CarousalCardView.bottomGradient = Labiba.GradientSpecs.init(colors: [bColor1 , bColor2 ], locations: [0,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) )
+        Labiba.CarousalCardView.cornerRadius = 14
+        Labiba.CarousalCardView.titleFont = (18,.bold)
+        Labiba.CarousalCardView.buttonSeparatorLine = ( UIColor.white , 25)
+        Labiba.CarousalCardView.border = (1,UIColor.white.withAlphaComponent(0.2))
+        Labiba.CarousalCardView.buttonBorder = (1,UIColor.white.withAlphaComponent(0.6))
+        Labiba.CarousalCardView.buttonFont = (13,.regular)
+        Labiba.CarousalCardView.buttonCornerRadius = 40
+        
+        
+        
       
 
         //Labiba._MapViewCornerRadius = 20

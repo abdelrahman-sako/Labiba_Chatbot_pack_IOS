@@ -86,6 +86,9 @@ class BotConnector: NSObject {
     {
         if let data = photo.jpegData(compressionQuality: 0.8)
         {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.delegate?.botConnectorDidRecieveTypingActivity(self)
+            }
             uploadDataToLabiba(filename: "photo.jpg", data: data)
             { (url) in
                 
@@ -115,7 +118,8 @@ class BotConnector: NSObject {
                     self.delegate?.botConnector(self, didRecieveActivity: dialog)
                     self.sendMessage(withAttachments: [
                         [
-                            "type": "file",
+                             "type": "file",
+                          //  "type": "image",
                             "payload": ["url": fileURL]
                         ]
                     ])

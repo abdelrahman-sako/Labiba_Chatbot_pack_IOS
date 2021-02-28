@@ -12,6 +12,7 @@ import UIKit
 public class LabibaCarousalCardView {
     
     public var backgroundColor:UIColor = UIColor(argb: 0xFFf7f7f7)
+    public var border:(width:CGFloat,color:UIColor) = (0,.clear)
     public var alpha: CGFloat = 1
     public var cornerRadius:CGFloat = 10
     public var tintColor: UIColor = #colorLiteral(red: 0.03137254902, green: 0.3725490196, blue: 1, alpha: 1)
@@ -33,5 +34,8 @@ public class LabibaCarousalCardView {
     
     public var buttonTitleColor:UIColor = UIColor(argb: 0xffffffff)
     public var buttonFont: (size:CGFloat,weight:LabibaFontWeight) = (11,.regular)
-    public var buttonBorder:(color:UIColor,inset:CGFloat) = (.white,0)
+    public var buttonBorder:(width:CGFloat,color:UIColor) = (0,.clear)
+    public var buttonSeparatorLine:(color:UIColor,inset:CGFloat) = (.white,0)
+    public var buttonCornerRadius:CGFloat = 0
+    
 }
