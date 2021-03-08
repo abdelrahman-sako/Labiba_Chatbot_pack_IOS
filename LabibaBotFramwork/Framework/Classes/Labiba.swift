@@ -37,7 +37,7 @@ public enum LabibaFontWeight{
     static var _voiceBasePath = "https://voice.labibabot.com"
     static var _voiceServicePath = "/translate/texttospeech"
     static var _helpPath = "https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage"
-    
+    static var _loggingPath = "http://api.labiba.ai/api/Mobile/LogAPI"
     
     static var  delegate:LabibaDelegate?
     
@@ -632,6 +632,10 @@ public enum LabibaFontWeight{
         return podBundle
     }
 
+    static var version:String {
+        bundle.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String  ?? "0.0"
+    }
+    
     static var storyboard: UIStoryboard
     {
         return UIStoryboard(name: "Labiba", bundle: bundle)

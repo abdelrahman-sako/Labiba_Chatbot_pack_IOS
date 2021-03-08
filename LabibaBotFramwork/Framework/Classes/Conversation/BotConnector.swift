@@ -131,7 +131,7 @@ class BotConnector: NSObject {
     
     func uploadDataToLabiba(filename: String, data: Data, completion: @escaping (String?) -> Void) -> Void
     {
-//        let LabibaUploadPath = "https://botbuilder.labiba.ai/WebBotConversation/UploadHomeReport?id=\(SharedPreference.shared.currentUserId)" // we add this since the old one produce 500 due to a viruse as nour said
+       let LabibaUploadPath = "https://botbuilder.labiba.ai/WebBotConversation/UploadHomeReport?id=\(SharedPreference.shared.currentUserId)" // we add this since the old one produce 500 due to a viruse as nour said
         upload(multipartFormData: { (formData) in
             
             formData.append(data, withName: "Filedata", fileName: filename, mimeType: "")
@@ -267,6 +267,62 @@ class BotConnector: NSObject {
             self.loader.dismiss()
         }
     }
+    enum LoggingTag:String {
+        case matchID = "MATCH_ID"
+        case keysRequest  = "KEYS_REQUEST"
+        case liveness = "LIVENESS"
+    }
+    
+    func log(url:String,headers:String? = nil,tag:LoggingTag,method:HTTPMethod,parameter:String ,response:String,exception:String? = nil) {
+        UIDevice.current.isBatteryMonitoringEnabled = true
+        DispatchQueue.global(qos: .background).async {
+            let deviceDetails:String = """
+ModelName: \(UIDevice.modelName)
+SystemName: \(UIDevice.current.systemName)
+SystemVersion: \(UIDevice.current.systemVersion)
+Model: \(UIDevice.current.model)
+BatteryLevel: \(UIDevice.current.batteryLevel*100)%
+"""
+            let requestDetails:String = """
+URL: \(url)
+Method: \(method.rawValue)
+Headers:\(headers ?? "")
+Body: \(parameter)
+"""
+            let userDetails:String = """
+Name:
+PhoneNumber:
+Email:
+"""
+            let body:[String:String] = [
+                "Source":"IOS",
+                "Tag":tag.rawValue,
+                "DeviceDetails":deviceDetails,
+                "UserDetails":userDetails,
+                "Request":requestDetails,
+                "Response":response,
+                "Exception":exception ?? "",
+                "SDKVersion":Labiba.version
+            ]
+            let data = try! JSONEncoder().encode(body)
+            prettyPrintedRespons(data: data)
+            let url = Labiba._loggingPath
+            DispatchQueue.global(qos: .background).async {
+                request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: nil).responseData { (response) in
+                    print ( "log api " ,response.response?.statusCode ?? "0")
+                    if  response.error != nil {
+                        return
+                    }
+                    guard let data  = response.data else  {
+                        return
+                    }
+                    
+                    print("log success data\(String(data: data, encoding: .utf8) ?? "")")
+                }
+            }
+        }
+
+    }
    
 }
 
@@ -280,23 +336,30 @@ fileprivate func createEncodingBlock(completion: @escaping (String?) -> Void) ->
         
         switch encodeRes
         {
-            
+        
         case .success(let request, _, _):
             
             request.responseSwiftyJSON(completionHandler: { (res) in
                 
                 switch res.result
                 {
-                    
+                
                 case .success(let json):
                     
-                    var url = json["url"].string
-                    if url != nil && url!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-                    {
-                        url = nil
-                    }
+                    // var url = json["url"].string
+                    // if url != nil && url!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                    // {
+                    //     url = nil
+                    // }
                     
-                    completion(url)
+                    let urls = json["urls"].array
+                    if urls?.count ?? 0 > 0 {
+                        if let url = urls![0].string, !url.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                            completion(url)
+                            return
+                        }
+                    }
+                    completion(nil)
                     
                 case .failure:
                     completion(nil)
