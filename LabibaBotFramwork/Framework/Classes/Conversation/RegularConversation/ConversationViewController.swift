@@ -428,16 +428,12 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     {
         delegate?.labibaWillClose?()
         if Labiba._WithRatingVC {
-//            if let ratingVC = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingVC") as? RatingVC {
                 if canLunchRating {
                     self.view.endEditing(true)
                     botConnector.delegate = nil //o ensure that the text to speech will not work if the response return after chat shut down
                     self.isClosed = true
                     stopTTS_STT()
                     stopSTT()
-                   // ratingVC.delegate = self
-//                    ratingVC.modalPresentationStyle = .fullScreen
-//                    self.present(ratingVC, animated: true, completion: nil)
                     switch Labiba.RatingForm.style {
                     case .fullScreen:
                         RatingVC.present(fromVC: self, delegate: self)
@@ -449,8 +445,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                     exit(0)
                 }
                 return
-//            }
-        }
+            }
+       // }
         backAction()
     }
 

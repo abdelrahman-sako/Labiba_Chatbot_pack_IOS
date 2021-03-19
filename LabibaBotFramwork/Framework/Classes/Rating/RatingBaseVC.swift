@@ -19,7 +19,7 @@ class RatingBaseVC: UIViewController {
     @IBOutlet weak var ratingTableView: UITableView!
     
     var questions:[RatingQuestionModel] = []
-    var botConnector:BotConnector = LabibaBotConnectorJC()
+    var botConnector:BotConnector = LabibaRestfulBotConnector.shared
     var delegate:SubViewControllerDelegate?
     
     override func viewDidLoad() {

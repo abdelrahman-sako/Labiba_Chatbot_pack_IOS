@@ -72,4 +72,7 @@ class TextToSpeechModel{
         self.isSSML = isSSML
         
     }
+    func testText() -> String {
+        return "دَفِعْ 1.912 دينار اردني لِفَاتُورَة <br> <br>مِنْ حْسَابْ جَّارِيْ 000@:@<speak> رَحْ تِدْفَعْ 1.912 دينار اردني لَفَاتُوْرِةْ مِنْ حْسَابْ جَّارِيْ 000</speak>‎"
+    }
 }

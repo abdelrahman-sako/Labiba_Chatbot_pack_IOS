@@ -24,8 +24,8 @@ public class LabibaConfig {
     public func BOJConnect(language:String ,customerID:String,trxnlimit:Int,callback:(()->Void)?){
         self.callback = callback
         //MARK: initialization
-       //Labiba.initialize(RecipientIdAR:"5bfcd0bf-cb9a-4034-96ff-7c67000df2d3",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547") // BOJ builder IDs
-        Labiba.initialize(RecipientIdAR:"b553e8c1-d9d9-409e-b5b4-573a63506dce",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// bot builder IDs
+       Labiba.initialize(RecipientIdAR:"5bfcd0bf-cb9a-4034-96ff-7c67000df2d3",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547") // BOJ builder IDs
+       // Labiba.initialize(RecipientIdAR:"b553e8c1-d9d9-409e-b5b4-573a63506dce",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// bot builder IDs
 //
         Labiba.setBotLanguage(LangCode: language == "Arabic" ? .ar : .en)
         Labiba.createCustomReferral(object: ["Customer ID":customerID,"trxnlimit":trxnlimit])
@@ -33,12 +33,11 @@ public class LabibaConfig {
 
         //MARK: Theme
         Labiba.setDelegate(delegate: self)
-//        Labiba.set_basePath("https://boji.bankofjordan.com.jo:777")
-//        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
-//
-//        Labiba.set_voiceBasePath("https://boji.bankofjordan.com.jo")
-//        Labiba.set_voiceServicePath("/api/VoiceAPI/VoiceClip")
-        Labiba.set_helpPath("https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage")
+        Labiba.set_basePath("https://boji.bankofjordan.com.jo")
+        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
+
+        Labiba.set_voiceBasePath("https://boji.bankofjordan.com.jo")
+        Labiba.set_voiceServicePath("/api/VoiceAPI/VoiceClip")
         
 //        Labiba.set_basePath("https://bojibot.bankofjordan.com.jo")
 //        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
@@ -53,19 +52,12 @@ public class LabibaConfig {
 
         Labiba.setLogo(UIImage(named: ""))
 
-//        Labiba.setUserBubbleBackground(color:  UIColor.black.withAlphaComponent(0.1))
-//        Labiba.setUserBubbleTextColor( color : UIColor(argb: 0xffffffff))
-//        Labiba.setUserBubbleCorner(corner: 23, mask: [.layerMinXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMaxYCorner])
         
         Labiba.UserChatBubble.background = .solid(color:  UIColor.black.withAlphaComponent(0.1))
         Labiba.UserChatBubble.textColor = UIColor(argb: 0xffffffff)
         Labiba.UserChatBubble.cornerRadius = 23
         Labiba.UserChatBubble.cornerMask = [.layerMinXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
 
-//        Labiba.setTypingIndicatorColor(color: UIColor(argb: 0xffffffff))
-//        Labiba.setBotBubbleBackground(color: UIColor.white.withAlphaComponent(0.2))
-//        Labiba.setBotBubbleText(color: UIColor(argb: 0xffffffff))
-//        Labiba.setBotBubbleCorner(corner: 23, mask: [.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner])
         Labiba.BotChatBubble.typingIndicatorColor = UIColor(argb: 0xffffffff)
         Labiba.BotChatBubble.background = .solid(color: UIColor.white.withAlphaComponent(0.2))
         Labiba.BotChatBubble.textColor =  UIColor(argb: 0xffffffff)
@@ -75,7 +67,6 @@ public class LabibaConfig {
         
         Labiba.setMargin(left: 20, right: 20)
 
-      //  Labiba.setMicButtonColors(background: UIColor.black.withAlphaComponent(0.1), tint: UIColor(argb: 0xffffffff) , wave: UIColor(argb: 0xffffffff))
         Labiba.VoiceAssistantView.micButton.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         Labiba.VoiceAssistantView.micButton.tintColor = UIColor(argb: 0xffffffff)
         Labiba.VoiceAssistantView.waveColor = UIColor(argb: 0xffffffff)
@@ -105,24 +96,17 @@ public class LabibaConfig {
         
         
         
-      
-
-        //Labiba._MapViewCornerRadius = 20
         Labiba.MapView.cornerRadius = 20
 
-      //  Labiba.setChoicesButtonColors(background: .clear, tint: UIColor(argb: 0xffffffff), borderColor:  UIColor(argb: 0xffffffff))
         Labiba.ChoiceView.backgroundColor = .clear
         Labiba.ChoiceView.tintColor = UIColor(argb: 0xffffffff)
         Labiba.ChoiceView.borderColor =  UIColor(argb: 0xffffffff)
 
-       // Labiba.setSendButtonColors(background: UIColor.black.withAlphaComponent(0.1), tint: UIColor(argb: 0xffffffff))
         Labiba.UserInputView.sendButton.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         Labiba.UserInputView.sendButton.tintColor = UIColor(argb: 0xffffffff)
         
-        //Labiba.setAttachmentMenuColors(background: UIColor.black.withAlphaComponent(0.1), tint: UIColor(argb: 0xffffffff))
         Labiba.attachmentThemeModel.menu.background = UIColor.black.withAlphaComponent(0.1)
         Labiba.attachmentThemeModel.menu.tint = UIColor(argb: 0xffffffff)
-        //Labiba.setUserInputColors(background: UIColor.black.withAlphaComponent(0.15), tintColor: .white, textColor: .white, hintColor: UIColor(argb: 0xccffffff))
         Labiba.UserInputView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         Labiba.UserInputView.tintColor = .white
         Labiba.UserInputView.textColor  = .white

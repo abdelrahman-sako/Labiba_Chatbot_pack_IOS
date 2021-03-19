@@ -36,8 +36,10 @@ public enum LabibaFontWeight{
     static var _messagingServicePath = "/api/MobileAPI/MessageHandler"
     static var _voiceBasePath = "https://voice.labibabot.com"
     static var _voiceServicePath = "/translate/texttospeech"
-    static var _helpPath = "https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage"
-    static var _loggingPath = "http://api.labiba.ai/api/Mobile/LogAPI"
+   // static var _helpPath = "https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage"
+//    static var _submitRatingPath = "https://botbuilder.labiba.ai/api/ratingform/submit"
+//    static var _ratingQuestionsPath = "https://botbuilder.labiba.ai/api/MobileAPI/FetchQuestions"
+  //  static var _loggingPath = "http://api.labiba.ai/api/Mobile/LogAPI"
     
     static var  delegate:LabibaDelegate?
     
@@ -55,6 +57,7 @@ public enum LabibaFontWeight{
     public static var liveChatModel:LiveChatModel?
     public static let labibaThemes = LabibaThemes()
     public  static var _WithRatingVC: Bool = false
+    public  static var isLoggingEnabled: Bool = false
 
      // MARK:- Main Settings
     
@@ -123,11 +126,21 @@ public enum LabibaFontWeight{
         self._voiceServicePath = path
     }
     
-    public static func set_helpPath(_ path: String)
-    {
-        self._helpPath = path
-    }
+//    public static func set_helpPath(_ path: String)
+//    {
+//        self._helpPath = path
+//    }
       
+//    public static func set_ratingQuestionsPath(_ path: String)
+//    {
+//        self._ratingQuestionsPath = path
+//    }
+//
+//    public static func set_submitRatingPath(_ path: String)
+//    {
+//        self._submitRatingPath = path
+//    }
+//
     
     
     

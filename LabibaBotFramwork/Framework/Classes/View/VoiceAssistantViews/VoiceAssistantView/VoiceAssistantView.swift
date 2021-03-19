@@ -193,11 +193,11 @@ class VoiceAssistantView: UIView {
         let topVC = getTheMostTopViewController()
         let documentPicker = UIDocumentPickerViewController(documentTypes: [
             kUTTypePlainText,
-            kUTTypeAudio,
-            kUTTypeMovie,
-            kUTTypeCompositeContent,
-            kUTTypeImage,
-            kUTTypeVideo,
+           // kUTTypeAudio,
+          //  kUTTypeMovie,
+          //  kUTTypeCompositeContent,
+           // kUTTypeImage,
+         //   kUTTypeVideo,
             kUTTypePDF
             ].map({ $0 as String }), in: .import)
         documentPicker.delegate = self

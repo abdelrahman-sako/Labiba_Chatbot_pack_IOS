@@ -1,0 +1,894 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name LabibaBotFramwork
+import AVFoundation
+import AVKit
+import Accelerate
+import ContactsUI
+import CoreGraphics
+import CoreImage
+import CoreLocation
+import Dispatch
+import Foundation
+import ImageIO
+@_exported import LabibaBotFramwork
+import MapKit
+import MobileCoreServices
+import NaturalLanguage
+import QuartzCore
+import Speech
+import Swift
+import SystemConfiguration
+import UIKit
+import WebKit
+public enum GenericActivityFormat : Swift.Int {
+  case event
+  case attraction
+  case resturant
+  case hotel
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class GenericActivity : ObjectiveC.NSObject, Foundation.NSCoding {
+  public var id: Swift.String
+  public var format: LabibaBotFramwork.GenericActivityFormat
+  public var type: Swift.String
+  public var allCount: Swift.Int
+  public var nextPage: Swift.Int?
+  public var name: Swift.String
+  public var card: LabibaBotFramwork.GenericActivityCard
+  public var details: LabibaBotFramwork.GenericActivityDetails
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_hasMissingDesignatedInitializers public class GenericActivityReview : ObjectiveC.NSObject, Foundation.NSCoding {
+  public var name: Swift.String
+  public var photoUrl: Swift.String?
+  public var comment: Swift.String
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_hasMissingDesignatedInitializers public class GenericActivityFeature : ObjectiveC.NSObject, Foundation.NSCoding {
+  public var label: Swift.String
+  public var iconUrl: Swift.String
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GenericActivityDetails : ObjectiveC.NSObject, Foundation.NSCoding {
+  public var cuisine: [Swift.String]
+  public var images: [Swift.String]
+  public var reviews: [LabibaBotFramwork.GenericActivityReview]
+  public var bookUrl: Swift.String?
+  public var openingHours: Swift.String?
+  public var cityId: Swift.Int?
+  public var ranking: Swift.String?
+  public var ratingImageUrl: Swift.String?
+  public var ratingPNGImageUrl: Swift.String?
+  public var reviewsCount: Swift.Int
+  public var reviewsUrl: Swift.String?
+  public var startDate: Foundation.Date?
+  public var endDate: Foundation.Date?
+  public var about: Swift.String?
+  public var time: Swift.String?
+  public var price: Swift.String?
+  public var address: Swift.String?
+  public var category: Swift.String?
+  public var stars: Swift.String?
+  public var features: [LabibaBotFramwork.GenericActivityFeature]
+  public var organizerName: Swift.String?
+  public var phone: Swift.String?
+  public var email: Swift.String?
+  public var website: Swift.String?
+  public var location: Swift.String?
+  public func coordinates() -> CoreLocation.CLLocationCoordinate2D
+  public func date() -> Swift.String?
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class GenericActivityCard : ObjectiveC.NSObject, Foundation.NSCoding {
+  public var desc: Swift.String?
+  public var imageUrl: Swift.String
+  public var image: UIKit.UIImage?
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+public func parseGenericActivitysData(_ dataList: [[Swift.String : Swift.AnyObject]]) -> [LabibaBotFramwork.GenericActivity]?
+public struct GoogleVoice {
+}
+@_hasMissingDesignatedInitializers public class LabibaRatingForm {
+  public enum RatingStyle {
+    case fullScreen
+    case sheet
+    public static func == (a: LabibaBotFramwork.LabibaRatingForm.RatingStyle, b: LabibaBotFramwork.LabibaRatingForm.RatingStyle) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public var style: LabibaBotFramwork.LabibaRatingForm.RatingStyle
+  public var background: LabibaBotFramwork.LabibaBackground
+  public var titleColor: UIKit.UIColor
+  public var titleFont: UIKit.UIFont
+  public var questionsColor: UIKit.UIColor
+  public var questionsFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
+  public var fullStarTintColor: UIKit.UIColor
+  public var emptyStarTintColor: UIKit.UIColor
+  public var starsContainerBorderColor: UIKit.UIColor
+  public var commentContainerColor: UIKit.UIColor
+  public var commentContainerCornerRadius: CoreGraphics.CGFloat
+  public var commentFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
+  public var commentColor: UIKit.UIColor
+  public var mobileNumContainerColor: UIKit.UIColor
+  public var mobileNumFont: UIKit.UIFont
+  public var mobileNumColor: UIKit.UIColor
+  public var buttonTintColor: UIKit.UIColor
+  public var buttonBackgroundColor: UIKit.UIColor
+  @objc deinit
+}
+public enum Language : Swift.String, Swift.CaseIterable {
+  case ar
+  case en
+  case de
+  case ru
+  case zh
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public typealias AllCases = [LabibaBotFramwork.Language]
+  public static var allCases: [LabibaBotFramwork.Language] {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class CircularGradientLoadingIndicator : UIKit.UIView {
+  public var LoadingText: Swift.String {
+    get
+    set
+  }
+  @objc dynamic public init()
+  @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  public func show()
+  public func dismiss()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+}
+public enum CornerLocation {
+  case `default`
+  case inside
+  case outside
+  public static func == (a: LabibaBotFramwork.CornerLocation, b: LabibaBotFramwork.CornerLocation) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@_hasMissingDesignatedInitializers public class LabibaChoiceView {
+  public var backgroundColor: UIKit.UIColor
+  public var tintColor: UIKit.UIColor
+  public var borderColor: UIKit.UIColor
+  public var cornerRadius: CoreGraphics.CGFloat
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class StanderdSplashVC : LabibaBotFramwork.SplashVC {
+  override public static func create() -> LabibaBotFramwork.StanderdSplashVC
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@_hasMissingDesignatedInitializers public class LabibaBotChatBubble {
+  public var typingIndicatorColor: UIKit.UIColor
+  public var background: LabibaBotFramwork.LabibaBackground
+  public var textColor: UIKit.UIColor
+  public var textAlignment: UIKit.NSTextAlignment?
+  public var alpha: CoreGraphics.CGFloat
+  public var cornerRadius: CoreGraphics.CGFloat
+  public var cornerMask: QuartzCore.CACornerMask
+  public var shadow: LabibaBotFramwork.LabibaShadowModel
+  public var avatar: UIKit.UIImage?
+  @objc deinit
+}
+public func imageNamed(_ name: Swift.String) -> UIKit.UIImage
+@objc @_inheritsConvenienceInitializers public class GreetingHeaderView : LabibaBotFramwork.LabibaChatHeaderView {
+  public static func create(withAction: Swift.Bool = true, appLogoImgURl: Swift.String? = nil, centerImageURL: Swift.String? = nil, centerImage: UIKit.UIImage? = nil, backgroundImgURL: Swift.String? = nil, backgroundImg: UIKit.UIImage? = nil, bodyAndTitle: [Swift.String : Swift.String]) -> LabibaBotFramwork.GreetingHeaderView
+  @objc @IBOutlet weak public var centerImageView: UIKit.UIImageView!
+  @objc @IBOutlet weak public var centerImageTopCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var centerImageWidthCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var titleLbl: UIKit.UILabel!
+  @objc @IBOutlet weak public var homeButton: UIKit.UIButton!
+  @objc @IBOutlet weak public var settingButton: UIKit.UIButton!
+  @objc @IBOutlet weak public var vedioCallButton: UIKit.UIButton!
+  @objc @IBOutlet weak public var leftStack: UIKit.UIStackView!
+  @objc @IBOutlet weak public var leftStackLeadingCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var leftStackTopCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var leftStackHightCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var rightStack: UIKit.UIStackView!
+  @objc @IBOutlet weak public var righStackTrailingCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var righStackTopCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var righStackHightCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var muteButton: UIKit.UIButton!
+  public var volumUpImage: UIKit.UIImage? {
+    get
+    set
+  }
+  public var volumOffImage: UIKit.UIImage?
+  public var titleColor: UIKit.UIColor {
+    get
+    set
+  }
+  public var bodyColor: UIKit.UIColor {
+    get
+    set
+  }
+  @objc override dynamic public func awakeFromNib()
+  public func resetUIs()
+  public func flibView()
+  public func setTintColor()
+  @objc override dynamic public func updateConstraints()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ScanView : UIKit.UIView {
+  public var scanAnimationStyle: LabibaBotFramwork.ScanAnimationStyle {
+    get
+    set
+  }
+  public var cornerLocation: LabibaBotFramwork.CornerLocation {
+    get
+    set
+  }
+  public var borderColor: UIKit.UIColor {
+    get
+    set
+  }
+  public var borderLineWidth: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var cornerColor: UIKit.UIColor {
+    get
+    set
+  }
+  public var cornerWidth: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var backgroundAlpha: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var scanBorderWidthRadio: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var tips: Swift.String {
+    get
+    set
+  }
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LabibaCarousalCardView {
+  public var backgroundColor: UIKit.UIColor
+  public var border: (width: CoreGraphics.CGFloat, color: UIKit.UIColor)
+  public var alpha: CoreGraphics.CGFloat
+  public var cornerRadius: CoreGraphics.CGFloat
+  public var tintColor: UIKit.UIColor
+  public var backgroundImageStyleEnabled: Swift.Bool
+  public var bottomGradient: LabibaBotFramwork.Labiba.GradientSpecs? {
+    get
+    set
+  }
+  public var titleColor: UIKit.UIColor
+  public var titleFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
+  public var subtitleColor: UIKit.UIColor
+  public var subtitleFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
+  public var buttonTitleColor: UIKit.UIColor
+  public var buttonFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
+  public var buttonBorder: (width: CoreGraphics.CGFloat, color: UIKit.UIColor)
+  public var buttonSeparatorLine: (color: UIKit.UIColor, inset: CoreGraphics.CGFloat)
+  public var buttonCornerRadius: CoreGraphics.CGFloat
+  @objc deinit
+}
+public struct DateRange {
+  public var SelectedDate: Foundation.Date
+  public var start: Foundation.Date
+  public var end: Foundation.Date
+}
+public protocol DateRangeViewControllerDelegate : AnyObject {
+  func dateRangeController(_ dateRangeVC: LabibaBotFramwork.DateRangeViewController, didSelectRange selectedRange: LabibaBotFramwork.DateRange)
+  func dateRangeControllerDidClearSelection(_ dateRangeVC: LabibaBotFramwork.DateRangeViewController)
+}
+@objc @_inheritsConvenienceInitializers public class DateRangeViewController : UIKit.UIViewController {
+  public class func present(withDelegate delegate: LabibaBotFramwork.DateRangeViewControllerDelegate?, mode: UIKit.UIDatePicker.Mode = .dateAndTime, initialDate: Foundation.Date? = nil, maximumDate: Foundation.Date? = nil, userData: Any? = nil)
+  @objc override dynamic public func viewDidLoad()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension UIDevice {
+  public static let modelName: Swift.String
+}
+@_hasMissingDesignatedInitializers public class LabibaUserChatBubble {
+  public var background: LabibaBotFramwork.LabibaBackground
+  public var textColor: UIKit.UIColor
+  public var alpha: CoreGraphics.CGFloat
+  public var cornerRadius: CoreGraphics.CGFloat
+  public var cornerMask: QuartzCore.CACornerMask
+  public var avatar: UIKit.UIImage?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SplashVC : UIKit.UIViewController {
+  public class func create() -> UIKit.UIViewController
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SplashScreenVC : LabibaBotFramwork.SplashVC {
+  override public static func create() -> LabibaBotFramwork.SplashScreenVC
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension AVMetadataObject.ObjectType {
+  public static let upca: AVFoundation.AVMetadataObject.ObjectType
+  public static var metadata: [AVFoundation.AVMetadataObject.ObjectType]
+}
+public protocol RadiusViewControllerDelegate : AnyObject {
+  func radiusController(_ radiusVC: LabibaBotFramwork.RadiusViewController, didSelectLocation location: CoreLocation.CLLocationCoordinate2D, withDistance distance: Swift.Double)
+}
+@objc @_inheritsConvenienceInitializers public class RadiusViewController : UIKit.UIViewController, MapKit.MKMapViewDelegate {
+  public class func presentOn<Type>(_ vc: Type) where Type : UIKit.UIViewController, Type : LabibaBotFramwork.RadiusViewControllerDelegate
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc public func mapView(_ mapView: MapKit.MKMapView, regionDidChangeAnimated animated: Swift.Bool)
+  @objc override dynamic public func viewDidLoad()
+  @objc public func mapView(_ mapView: MapKit.MKMapView, rendererFor overlay: MapKit.MKOverlay) -> MapKit.MKOverlayRenderer
+  @objc public func mapView(_ mapView: MapKit.MKMapView, viewFor annotation: MapKit.MKAnnotation) -> MapKit.MKAnnotationView?
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@_hasMissingDesignatedInitializers public class LabibaVoiceAssistantView {
+  public var background: LabibaBotFramwork.LabibaBackground
+  public var micButton: (icon: UIKit.UIImage, tintColor: UIKit.UIColor, backgroundColor: UIKit.UIColor, alpha: CoreGraphics.CGFloat)
+  public var keyboardButton: (icon: UIKit.UIImage, tintColor: UIKit.UIColor)
+  public var attachmentButton: (icon: UIKit.UIImage, tintColor: UIKit.UIColor, isHidden: Swift.Bool)
+  public var waveColor: UIKit.UIColor
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LabibaAttachmentThemeModel {
+  public var card: (tint: UIKit.UIColor, background: UIKit.UIColor)
+  public var menu: (tint: UIKit.UIColor, background: UIKit.UIColor)
+  @objc deinit
+}
+public class LiveChatModel {
+  public init(licenseId: Swift.String, name: Swift.String? = nil, email: Swift.String? = nil, variables: [Swift.String : Swift.String]? = nil, groupId: Swift.String? = nil)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class ScannerVC : UIKit.UIViewController {
+  public var headerViewController: LabibaBotFramwork.HeaderVC {
+    get
+    set
+  }
+  public var cameraViewController: LabibaBotFramwork.CameraVC {
+    get
+    set
+  }
+  public var animationStyle: LabibaBotFramwork.ScanAnimationStyle {
+    get
+    set
+  }
+  public var scannerColor: UIKit.UIColor {
+    get
+    set
+  }
+  public var scannerTips: Swift.String {
+    get
+    set
+  }
+  public var metadata: [AVFoundation.AVMetadataObject.ObjectType] {
+    get
+    set
+  }
+  public var successBlock: ((Swift.String) -> ())?
+  @objc override dynamic public var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  public var closeImage: UIKit.UIImage? {
+    get
+    set
+  }
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension ScannerVC : LabibaBotFramwork.HeaderViewControllerDelegate {
+  public func didClickedCloseButton()
+}
+public enum LabibaBackground {
+  case solid(color: UIKit.UIColor)
+  case gradient(gradientSpecs: LabibaBotFramwork.Labiba.GradientSpecs)
+}
+public class LabibaShadowModel {
+  public init(shadowColor: CoreGraphics.CGColor, shadowOffset: CoreGraphics.CGSize, shadowRadius: CoreGraphics.CGFloat, shadowOpacity: Swift.Float)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable open class SwiftyWaveView : UIKit.UIView {
+  @objc @IBInspectable public var speed: CoreGraphics.CGFloat
+  @objc @IBInspectable public var amplitude: CoreGraphics.CGFloat
+  @objc @IBInspectable public var frequency: Swift.Int
+  @objc @IBInspectable public var colors: [UIKit.UIColor]
+  public var animating: Swift.Bool {
+    get
+  }
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic open func layoutSubviews()
+  public func start()
+  public func stop()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LabibaThemes {
+  public static var isThemeApplied: Swift.Bool
+  public static func setVoiceDefaultTheme()
+  public static func setLabibaTheme()
+  public static func setBSF_Theme()
+  public static func setSharja_Theme()
+  public static func set_IA_Theme()
+  public static func setBahrainCredit_Theme()
+  @objc deinit
+}
+public enum TorchMode {
+  case on
+  case off
+  public static func == (a: LabibaBotFramwork.TorchMode, b: LabibaBotFramwork.TorchMode) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@_hasMissingDesignatedInitializers public class LabibaMenuCardView {
+  public var backgroundColor: UIKit.UIColor
+  public var textColor: UIKit.UIColor
+  public var fontSize: CoreGraphics.CGFloat
+  public var alpha: CoreGraphics.CGFloat
+  public var collectionColor: UIKit.UIColor
+  public var clearNonSelectedItems: Swift.Bool
+  @objc deinit
+}
+public protocol DatePickerViewControllerDelegate : AnyObject {
+  func datePickerController(_ datePickerVC: LabibaBotFramwork.DatePickerViewController, didSelectDate selectedDate: Foundation.Date)
+  func datePickerControllerDidClearSelection(_ datePickerVC: LabibaBotFramwork.DatePickerViewController)
+}
+@objc @_inheritsConvenienceInitializers public class DatePickerViewController : UIKit.UIViewController {
+  public class func present(withDelegate delegate: LabibaBotFramwork.DatePickerViewControllerDelegate?, mode: UIKit.UIDatePicker.Mode = .dateAndTime, initialDate: Foundation.Date? = nil, maximumDate: Foundation.Date? = nil, userData: Any? = nil)
+  @objc override dynamic public func viewDidLoad()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+final public class ActivityData {
+  public init(size: CoreGraphics.CGSize? = nil, message: Swift.String? = nil, messageFont: UIKit.UIFont? = nil, messageSpacing: CoreGraphics.CGFloat? = nil, type: LabibaBotFramwork.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil, displayTimeThreshold: Swift.Int? = nil, minimumDisplayTime: Swift.Int? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class NVActivityIndicatorPresenter {
+  public static let sharedInstance: LabibaBotFramwork.NVActivityIndicatorPresenter
+  final public var isAnimating: Swift.Bool {
+    get
+  }
+  final public func startAnimating(_ data: LabibaBotFramwork.ActivityData, _ fadeInAnimation: LabibaBotFramwork.FadeInAnimation? = nil)
+  final public func stopAnimating(_ fadeOutAnimation: LabibaBotFramwork.FadeOutAnimation? = nil)
+  final public func setMessage(_ message: Swift.String?)
+  @objc deinit
+}
+extension UIViewController {
+  public func add(_ childController: UIKit.UIViewController)
+}
+public enum BotType : Swift.Int {
+  case keyboardType
+  case keyboardWithTTS
+  case voiceAssistance
+  case voiceAndKeyboard
+  case voiceToVoice
+  case visualizer
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum LabibaFontWeight {
+  case regular
+  case bold
+  public static func == (a: LabibaBotFramwork.LabibaFontWeight, b: LabibaBotFramwork.LabibaFontWeight) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@_inheritsConvenienceInitializers @objc public class Labiba : ObjectiveC.NSObject {
+  public static var liveChatModel: LabibaBotFramwork.LiveChatModel?
+  public static let labibaThemes: LabibaBotFramwork.LabibaThemes
+  public static var _WithRatingVC: Swift.Bool
+  public static var isLoggingEnabled: Swift.Bool
+  public static func initialize(RecipientIdAR: Swift.String, RecipientIdEng: Swift.String, language: LabibaBotFramwork.Language = .ar)
+  public static func setDelegate(delegate: LabibaBotFramwork.LabibaDelegate)
+  public static func setSenderId(_ senderId: Swift.String)
+  public static func set_basePath(_ path: Swift.String)
+  public static func set_messagingServicePath(_ path: Swift.String)
+  public static func set_voiceBasePath(_ path: Swift.String)
+  public static func set_voiceServicePath(_ path: Swift.String)
+  public static var _ReferralSource: Swift.String
+  public static func setUserParams(first_name: Swift.String? = nil, last_name: Swift.String? = nil, profile_pic: Swift.String? = nil, gender: Swift.String? = nil, location: Swift.String? = nil, country: Swift.String? = nil, username: Swift.String? = nil, email: Swift.String? = nil, token: Swift.String? = nil, customParameters: [Swift.String : Swift.String]? = nil)
+  public static func setRefreshToken(refreshtoken: Swift.String)
+  public static func setBotLanguage(LangCode: LabibaBotFramwork.Language)
+  public static func setLastMessageLangCode(_ text: Swift.String)
+  public static func setBotType(botType: LabibaBotFramwork.BotType)
+  public static func setFont(regAR: Swift.String, boldAR: Swift.String, regEN: Swift.String, boldEN: Swift.String)
+  public static func setVoiceAssistanteRate(ARrate: Swift.Float, ENRate: Swift.Float)
+  public static func setVoiceMan(ar: Swift.String?, en: Swift.String?)
+  public static func setEnableTextToSpeech(enable: Swift.Bool)
+  public static func setEnableAutoListening(enable: Swift.Bool)
+  public static func setListeningDuration(Duration: Swift.Double)
+  public static func setHintsArray(hints: [Swift.String])
+  public static func setMargin(left: CoreGraphics.CGFloat, right: CoreGraphics.CGFloat)
+  public static func setStatusBarColor(color: UIKit.UIColor)
+  public static func setStatusBarStyle(style: UIKit.UIStatusBarStyle)
+  public static var isMuteButtonHidden: Swift.Bool
+  public static var isVedioButtonHidden: Swift.Bool
+  public static var _HeaderTintColor: UIKit.UIColor
+  public static func setHeaderBackground(gradient: LabibaBotFramwork.Labiba.GradientSpecs)
+  public static func setHeaderBackground(color: UIKit.UIColor)
+  public static func setCustomHeaderView(_ view: LabibaBotFramwork.LabibaChatHeaderView, withHeight height: CoreGraphics.CGFloat = 90)
+  public static func setLogo(_ image: UIKit.UIImage?)
+  public static func setChatMainBackground(color: UIKit.UIColor)
+  public static func setChatMainBackground(gradient: LabibaBotFramwork.Labiba.GradientSpecs)
+  public static func setChatMainBackground(image: UIKit.UIImage?)
+  public static let MenuCardView: LabibaBotFramwork.LabibaMenuCardView
+  public static let CarousalCardView: LabibaBotFramwork.LabibaCarousalCardView
+  public static let UserInputView: LabibaBotFramwork.LabibaUserInputView
+  public static let VoiceAssistantView: LabibaBotFramwork.LabibaVoiceAssistantView
+  public static let ChoiceView: LabibaBotFramwork.LabibaChoiceView
+  public static let MapView: LabibaBotFramwork.LabibaMapView
+  public static let attachmentThemeModel: LabibaBotFramwork.LabibaAttachmentThemeModel
+  public static let UserChatBubble: LabibaBotFramwork.LabibaUserChatBubble
+  public static let BotChatBubble: LabibaBotFramwork.LabibaBotChatBubble
+  public static let RatingForm: LabibaBotFramwork.LabibaRatingForm
+  public static func startConversation(onView vc: UIKit.UIViewController? = nil, animated: Swift.Bool = true, onClose: LabibaBotFramwork.Labiba.ConversationCloseHandler? = nil)
+  public typealias ConversationCloseHandler = () -> Swift.Void
+  public static func createConversation(closable: Swift.Bool = true, onClose: LabibaBotFramwork.Labiba.ConversationCloseHandler? = nil) -> UIKit.UIViewController
+  public static func createVoiceExperienceConversation(onClose: LabibaBotFramwork.Labiba.ConversationCloseHandler? = nil) -> UIKit.UIViewController
+  public static func createSplash<vc>(vc: vc.Type) -> UIKit.UIViewController where vc : LabibaBotFramwork.SplashVC
+  public static func showMovableAlias(corner: UIKit.UIRectCorner, margin: CoreGraphics.CGFloat = 15, animated: Swift.Bool)
+  public static func showMovableAlias(position: CoreGraphics.CGPoint, animated: Swift.Bool)
+  @objc public class GradientSpecs : ObjectiveC.NSObject {
+    public var colors: [UIKit.UIColor]
+    public var locations: [CoreGraphics.CGFloat]
+    public var start: CoreGraphics.CGPoint
+    public var end: CoreGraphics.CGPoint
+    public var viewBackgroundColor: UIKit.UIColor?
+    public init(colors: [UIKit.UIColor], locations: [CoreGraphics.CGFloat], start: CoreGraphics.CGPoint, end: CoreGraphics.CGPoint, viewBackgroundColor: UIKit.UIColor? = nil)
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public protocol LabibaDelegate {
+  @objc optional func createPost(onView view: UIKit.UIView, _ data: Swift.Dictionary<Swift.String, Any>, completionHandler: @escaping (Swift.Bool, [Swift.String : Any]?) -> Swift.Void)
+  @objc optional func liveChatTransfer(onView view: UIKit.UIView, transferMessage: Swift.String)
+  @objc optional func labibaWillClose()
+}
+public var ipadFactor: CoreGraphics.CGFloat
+public var ipadMargin: CoreGraphics.CGFloat {
+  get
+}
+@objc @_inheritsConvenienceInitializers public class SplashScreenWithImgeVC : LabibaBotFramwork.SplashVC {
+  override public static func create() -> LabibaBotFramwork.SplashScreenWithImgeVC
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class BubbleView : UIKit.UIView {
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public protocol HeaderViewControllerDelegate : AnyObject {
+  func didClickedCloseButton()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class HeaderVC : UIKit.UIViewController {
+  @objc override dynamic public var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  public var closeImage: UIKit.UIImage {
+    get
+    set
+  }
+  @objc @IBOutlet weak public var navigationBar: UIKit.UINavigationBar!
+  weak public var delegate: LabibaBotFramwork.HeaderViewControllerDelegate?
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc deinit
+}
+extension HeaderVC : UIKit.UINavigationBarDelegate {
+  @objc dynamic public func position(for bar: UIKit.UIBarPositioning) -> UIKit.UIBarPosition
+}
+@_hasMissingDesignatedInitializers public class LabibaUserInputView {
+  public var backgroundColor: UIKit.UIColor
+  public var tintColor: UIKit.UIColor
+  public var textColor: UIKit.UIColor
+  public var hintColor: UIKit.UIColor
+  public var sendButton: (tintColor: UIKit.UIColor, backgroundColor: UIKit.UIColor)
+  @objc deinit
+}
+public protocol NVActivityIndicatorViewable {
+}
+extension NVActivityIndicatorViewable where Self : UIKit.UIViewController {
+  public var isAnimating: Swift.Bool {
+    get
+  }
+  public func startAnimating(_ size: CoreGraphics.CGSize? = nil, message: Swift.String? = nil, messageFont: UIKit.UIFont? = nil, type: LabibaBotFramwork.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil, displayTimeThreshold: Swift.Int? = nil, minimumDisplayTime: Swift.Int? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil, fadeInAnimation: LabibaBotFramwork.FadeInAnimation? = NVActivityIndicatorView.DEFAULT_FADE_IN_ANIMATION)
+  public func stopAnimating(_ fadeOutAnimation: LabibaBotFramwork.FadeOutAnimation? = NVActivityIndicatorView.DEFAULT_FADE_OUT_ANIMATION)
+}
+@_hasMissingDesignatedInitializers public class LabibaMapView {
+  public var cornerRadius: CoreGraphics.CGFloat
+  public var defaultLocation: (latitude: Swift.Double, longitude: Swift.Double)
+  @objc deinit
+}
+extension String {
+  public var local: Swift.String {
+    get
+  }
+  public var localBasedOnLastMessage: Swift.String {
+    get
+  }
+  public var localForChosnLangCodeBB: Swift.String {
+    get
+  }
+  public var localForChosnLangCodeMB: Swift.String {
+    get
+  }
+}
+extension UIImage {
+  public func changeColor(_ color: UIKit.UIColor) -> UIKit.UIImage
+  public class func generateQRCode(_ text: Swift.String, _ width: CoreGraphics.CGFloat, _ fillImage: UIKit.UIImage? = nil, _ color: UIKit.UIColor? = nil) -> UIKit.UIImage?
+  public class func generateCode128(_ text: Swift.String, _ size: CoreGraphics.CGSize, _ color: UIKit.UIColor? = nil) -> UIKit.UIImage?
+}
+@objc @_inheritsConvenienceInitializers public class CameraVC : UIKit.UIViewController {
+  public var flashBtn: UIKit.UIButton {
+    get
+    set
+  }
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension CameraVC : AVFoundation.AVCaptureMetadataOutputObjectsDelegate {
+  @objc dynamic public func metadataOutput(_ output: AVFoundation.AVCaptureMetadataOutput, didOutput metadataObjects: [AVFoundation.AVMetadataObject], from connection: AVFoundation.AVCaptureConnection)
+}
+extension CameraVC : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+}
+public enum NVActivityIndicatorType : Swift.CaseIterable {
+  case ballPulse
+  case ballScale
+  case ballScaleMultiple
+  case ballSpinFadeLoader
+  public static func == (a: LabibaBotFramwork.NVActivityIndicatorType, b: LabibaBotFramwork.NVActivityIndicatorType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [LabibaBotFramwork.NVActivityIndicatorType]
+  public static var allCases: [LabibaBotFramwork.NVActivityIndicatorType] {
+    get
+  }
+}
+public typealias FadeInAnimation = (UIKit.UIView) -> Swift.Void
+public typealias FadeOutAnimation = (UIKit.UIView, @escaping () -> Swift.Void) -> Swift.Void
+@objc final public class NVActivityIndicatorView : UIKit.UIView {
+  public static var DEFAULT_TYPE: LabibaBotFramwork.NVActivityIndicatorType
+  public static var DEFAULT_COLOR: UIKit.UIColor
+  public static var DEFAULT_TEXT_COLOR: UIKit.UIColor
+  public static var DEFAULT_PADDING: CoreGraphics.CGFloat
+  public static var DEFAULT_BLOCKER_SIZE: CoreGraphics.CGSize
+  public static var DEFAULT_BLOCKER_DISPLAY_TIME_THRESHOLD: Swift.Int
+  public static var DEFAULT_BLOCKER_MINIMUM_DISPLAY_TIME: Swift.Int
+  public static var DEFAULT_BLOCKER_MESSAGE: Swift.String?
+  public static var DEFAULT_BLOCKER_MESSAGE_SPACING: CoreGraphics.CGFloat
+  public static var DEFAULT_BLOCKER_MESSAGE_FONT: UIKit.UIFont
+  public static var DEFAULT_BLOCKER_BACKGROUND_COLOR: UIKit.UIColor
+  public static var DEFAULT_FADE_IN_ANIMATION: (UIKit.UIView) -> Swift.Void
+  public static var DEFAULT_FADE_OUT_ANIMATION: (UIKit.UIView, @escaping () -> Swift.Void) -> Swift.Void
+  final public var type: LabibaBotFramwork.NVActivityIndicatorType
+  @objc @IBInspectable final public var color: UIKit.UIColor
+  @objc @IBInspectable final public var padding: CoreGraphics.CGFloat
+  @available(*, deprecated)
+  final public var animating: Swift.Bool {
+    get
+  }
+  final public var isAnimating: Swift.Bool {
+    get
+  }
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public init(frame: CoreGraphics.CGRect, type: LabibaBotFramwork.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil)
+  @objc override final public var intrinsicContentSize: CoreGraphics.CGSize {
+    @objc get
+  }
+  @objc override final public var bounds: CoreGraphics.CGRect {
+    @objc get
+    @objc set
+  }
+  final public func startAnimating()
+  final public func stopAnimating()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+extension String {
+  public func htmlAttributedString(regularFont: UIKit.UIFont, boldFont: UIKit.UIFont, color: UIKit.UIColor) -> Foundation.NSAttributedString
+}
+extension UIColor {
+  convenience public init(red: Swift.Int, green: Swift.Int, blue: Swift.Int, a: Swift.Int = 0xFF)
+  convenience public init(argb: Swift.Int)
+}
+public enum ScanAnimationStyle {
+  case `default`
+  case grid
+  public static func == (a: LabibaBotFramwork.ScanAnimationStyle, b: LabibaBotFramwork.ScanAnimationStyle) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public class LabibaConfig {
+  public init()
+  public func BOJConnect(language: Swift.String, customerID: Swift.String, trxnlimit: Swift.Int, callback: (() -> Swift.Void)?)
+  @objc deinit
+}
+extension LabibaConfig : LabibaBotFramwork.LabibaDelegate {
+  @objc dynamic public func createPost(onView view: UIKit.UIView, _ data: Swift.Dictionary<Swift.String, Any>, completionHandler: @escaping (Swift.Bool, [Swift.String : Any]?) -> Swift.Void)
+  @objc dynamic public func labibaWillClose()
+}
+@objc @_inheritsConvenienceInitializers open class LabibaChatHeaderView : UIKit.UIView {
+  public enum SettingType {
+    case language
+    case help
+    public static func == (a: LabibaBotFramwork.LabibaChatHeaderView.SettingType, b: LabibaBotFramwork.LabibaChatHeaderView.SettingType) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  @objc @IBOutlet weak public var closeButton: UIKit.UIButton!
+  @objc @IBOutlet weak public var backButton: UIKit.UIButton!
+  public var settingType: LabibaBotFramwork.LabibaChatHeaderView.SettingType
+  public func closeChat()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class BotBubble : LabibaBotFramwork.BubbleView {
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class BankOfJoSplashVC : LabibaBotFramwork.SplashVC {
+  override public static func create() -> LabibaBotFramwork.BankOfJoSplashVC
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class SplashScreenWithStaticImage : LabibaBotFramwork.SplashVC {
+  override public static func create() -> LabibaBotFramwork.SplashScreenWithStaticImage
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public enum LabibaFont {
+  case DINNextLTW23
+  case TheSans
+  public static func == (a: LabibaBotFramwork.LabibaFont, b: LabibaBotFramwork.LabibaFont) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@objc public enum ScreenType : Swift.Int {
+  case iPhone3_5
+  case iPhone4_0
+  case iPhone4_7
+  case iPhone5_5
+  case iPhone5_8
+  case iPhone6_1
+  case iPhone6_5
+  case iPad9_7
+  case iPad10_5
+  case iPad12_9
+  case ipad
+  case unknown
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension ScreenType : Swift.Comparable {
+  public static func < (lhs: LabibaBotFramwork.ScreenType, rhs: LabibaBotFramwork.ScreenType) -> Swift.Bool
+}
+extension UIScreen {
+  @objc public static var current: LabibaBotFramwork.ScreenType {
+    @objc get
+  }
+}
+extension LabibaBotFramwork.GenericActivityFormat : Swift.Equatable {}
+extension LabibaBotFramwork.GenericActivityFormat : Swift.Hashable {}
+extension LabibaBotFramwork.GenericActivityFormat : Swift.RawRepresentable {}
+extension LabibaBotFramwork.LabibaRatingForm.RatingStyle : Swift.Equatable {}
+extension LabibaBotFramwork.LabibaRatingForm.RatingStyle : Swift.Hashable {}
+extension LabibaBotFramwork.Language : Swift.Equatable {}
+extension LabibaBotFramwork.Language : Swift.Hashable {}
+extension LabibaBotFramwork.Language : Swift.RawRepresentable {}
+extension LabibaBotFramwork.CornerLocation : Swift.Equatable {}
+extension LabibaBotFramwork.CornerLocation : Swift.Hashable {}
+extension LabibaBotFramwork.TorchMode : Swift.Equatable {}
+extension LabibaBotFramwork.TorchMode : Swift.Hashable {}
+extension LabibaBotFramwork.BotType : Swift.Equatable {}
+extension LabibaBotFramwork.BotType : Swift.Hashable {}
+extension LabibaBotFramwork.BotType : Swift.RawRepresentable {}
+extension LabibaBotFramwork.LabibaFontWeight : Swift.Equatable {}
+extension LabibaBotFramwork.LabibaFontWeight : Swift.Hashable {}
+extension LabibaBotFramwork.NVActivityIndicatorType : Swift.Equatable {}
+extension LabibaBotFramwork.NVActivityIndicatorType : Swift.Hashable {}
+extension LabibaBotFramwork.ScanAnimationStyle : Swift.Equatable {}
+extension LabibaBotFramwork.ScanAnimationStyle : Swift.Hashable {}
+extension LabibaBotFramwork.LabibaChatHeaderView.SettingType : Swift.Equatable {}
+extension LabibaBotFramwork.LabibaChatHeaderView.SettingType : Swift.Hashable {}
+extension LabibaBotFramwork.LabibaFont : Swift.Equatable {}
+extension LabibaBotFramwork.LabibaFont : Swift.Hashable {}
+extension LabibaBotFramwork.ScreenType : Swift.Hashable {}
+extension LabibaBotFramwork.ScreenType : Swift.RawRepresentable {}

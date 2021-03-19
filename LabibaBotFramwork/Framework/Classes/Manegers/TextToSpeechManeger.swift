@@ -24,7 +24,7 @@ class TextToSpeechManeger:NSObject{
     private let audioSession =  AVAudioSession.sharedInstance()
     var delegate:TextToSpeechDelegate?
     static let Shared = TextToSpeechManeger()
-    var botConnector:BotConnector = LabibaBotConnectorJC()
+    var botConnector:BotConnector = LabibaRestfulBotConnector.shared
     
     private override init(){
         super.init()

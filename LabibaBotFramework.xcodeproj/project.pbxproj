@@ -982,10 +982,10 @@
 		37B5326523CC562F001D2BDF /* LabibaBotConnector */ = {
 			isa = PBXGroup;
 			children = (
-				B42954EF22DDDBD2002DE3E9 /* LabibaBotConnector.swift */,
-				37B5326323CC5623001D2BDF /* LabibaBotConnectorJC.swift */,
+				B42954BE22DDDBD2002DE3E9 /* BotConnector.swift */,
 				521C0085244C2E2700961B54 /* LabibaRestfulBotConnector.swift */,
 				52C16E63251B82BA0026D20D /* JsonExample.json */,
+				52A8A91F2600BA9E00B7FAB7 /* old socket */,
 			);
 			path = LabibaBotConnector;
 			sourceTree = "<group>";
@@ -1142,6 +1142,15 @@
 				5296E22A25EF9F63001FB31C /* UIDeviceExt.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		52A8A91F2600BA9E00B7FAB7 /* old socket */ = {
+			isa = PBXGroup;
+			children = (
+				B42954EF22DDDBD2002DE3E9 /* LabibaBotConnector.swift */,
+				37B5326323CC5623001D2BDF /* LabibaBotConnectorJC.swift */,
+			);
+			path = "old socket";
 			sourceTree = "<group>";
 		};
 		52B6B37E25B6F8C40051ABCE /* View */ = {
@@ -1491,6 +1500,7 @@
 				B42954E922DDDBD2002DE3E9 /* ResponseRenderer.swift */,
 				B42954EA22DDDBD2002DE3E9 /* GradientView.swift */,
 				B42954EB22DDDBD2002DE3E9 /* LoadingIndicator.swift */,
+				37B5326523CC562F001D2BDF /* LabibaBotConnector */,
 				B42954EC22DDDBD2002DE3E9 /* Conversation */,
 				521448A225864DFC0099BF38 /* Rating */,
 				B42954F022DDDBD2002DE3E9 /* PhotoViewController.swift */,
@@ -1603,8 +1613,6 @@
 			isa = PBXGroup;
 			children = (
 				52BF2F44247130FE00820B37 /* BaseConversationVC.swift */,
-				B42954BE22DDDBD2002DE3E9 /* BotConnector.swift */,
-				37B5326523CC562F001D2BDF /* LabibaBotConnector */,
 				52BF2F462471314900820B37 /* RegularConversation */,
 				52BF2F472471317600820B37 /* VoiceExperience */,
 			);
@@ -2167,7 +2175,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2227,7 +2235,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2244,6 +2252,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -2320,6 +2329,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

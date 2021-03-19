@@ -12,7 +12,24 @@ import ContactsUI
 class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewCellDelegate ,CustomCollectionCellDelegate, DatePickerViewControllerDelegate, DateRangeViewControllerDelegate, LocationSelectViewControllerDelegate , ImageSelectorDelegate {
    
    
- 
+    override func viewDidLoad() {
+        //OCR or LIVENESS
+        //AR or EN
+        delegate?.createPost?(onView: self.view, ["post":"{\"Role\":\"OCR\",\"BotSessionID\": \"botSessionID\",\"PhoneNumber\": \"07788663666\",\"BotID\":\"9873432472345-345938753-39485739583\",\"Language\": \"EN\"}"], completionHandler: { (status, data) in
+            if status {
+                var object:[String:Any] = ["status":"success"] // "status":"success" added for BOJ
+                if let data = data {
+                    data.forEach({object[$0.key] = $0.value})
+                }
+                Labiba.createCustomReferral(object: object)
+               
+            }else{
+                Labiba.createCustomReferral(object: ["status":"fail"])
+            }
+            self.botConnector.sendMessage("get started")
+        })
+        return
+    }
     
     
     var botConnector:BotConnector = LabibaRestfulBotConnector.shared
@@ -32,6 +49,7 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
      //MARK:-  EntryTableViewCellDelegate methods
     
     func choiceWasSelectedFor(display: EntryDisplay, choice: DialogChoice) {
+//    b
         stopTTS_STT()
         print("TrackSteps Choice selected: \(choice.title)")
         if let action = choice.action
@@ -136,7 +154,7 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
 //                    data.forEach({object[$0.key] = $0.value})
 //                }
 //                Labiba.createCustomReferral(object: object)
-//               
+//
 //            }else{
 //                Labiba.createCustomReferral(object: ["status":"fail"])
 //            }
