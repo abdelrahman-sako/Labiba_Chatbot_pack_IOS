@@ -162,35 +162,6 @@ class BotConnector: NSObject {
                 completion(.failure(err))
             }
         }
-//        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
-//            self.log(url: path, tag: .voice, method: .post, parameter: params.description, response: respons,exception: exception)
-//        }
-//      currentRequest =   request(path, method: .post, parameters: params ,encoding: URLEncoding(), headers: nil ).responseData { (response) in
-//            // URLEncoding() -> application/x-www-form-urlencoded
-//            switch response.result{
-//            case .success(_):
-//                let data = response.data ?? Data()
-//                do {
-//                    let response = try JSONDecoder().decode([String:String].self, from:data )
-//                    if  let result = response["status"] , result == "success" {
-//                        if let file = response["file"] {
-//                            print(file)
-//                            completion(.success(file))
-//                            return
-//                        }
-//                    }else{
-//                        completion(.failure(NetworkError.encodingError))
-//                    }
-//                }catch{
-//                    completion(.failure(NetworkError.encodingError))
-//                }
-//                log(String(data: data , encoding: .utf8) ?? "",NetworkError.encodingError.localizedDescription)
-//            case .failure(let err):
-//                log("",err.localizedDescription)
-//                completion(.failure(err))
-//            }
-//            self.loader.dismiss()
-//        }
     }
     
     func submitRating(ratingModel:SubmitRatingModel, completion: @escaping (Result<Bool>) -> Void){
@@ -198,8 +169,6 @@ class BotConnector: NSObject {
         guard let data = try? JSONEncoder().encode(ratingModel)  else {
             return
         }
-        
-        
         do {
             let params = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
             prettyPrintedRespons(data: data, name: "Submit Rating Form")
@@ -217,33 +186,6 @@ class BotConnector: NSObject {
                 }
                 self.loader.dismiss()
             }
-//            let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
-//                self.log(url: path, tag: .ratingSubmit, method: .post, parameter: params?.description ?? "", response: respons,exception: exception)
-//            }
-//            request(path, method: .post, parameters: params ,encoding: JSONEncoding.default , headers: nil ).responseData { (response) in
-//
-//                switch response.result{
-//                case .success(let data):
-//
-//                    print(String(data: data , encoding: .utf8))
-//                    do {
-//                        let response = try JSONDecoder().decode([String:Bool].self, from: data)
-//                        if  let result = response["response"] {
-//                            completion(.success(result))
-//                            return
-//                        }else{
-//                            completion(.failure(NetworkError.encodingError))
-//                        }
-//                    }catch{
-//                        completion(.failure(NetworkError.encodingError))
-//                    }
-//                    log(String(data: data , encoding: .utf8) ?? "",NetworkError.encodingError.localizedDescription)
-//                case .failure(let err):
-//                    log("",err.localizedDescription)
-//                    completion(.failure(err))
-//                }
-//                self.loader.dismiss()
-//            }
         }catch let err{
             completion(.failure(err))
         }
@@ -264,26 +206,6 @@ class BotConnector: NSObject {
             }
             self.loader.dismiss()
         }
-//        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
-//            self.log(url: path, tag: .ratingQuestions, method: .get, parameter: params.description, response: respons,exception: exception)
-//        }
-//        request(path, method: .get, parameters: params ,encoding: URLEncoding.default , headers: nil ).responseData { (response) in
-//
-//            switch response.result{
-//            case .success(let data):
-//                do {
-//                    let response = try JSONDecoder().decode([GetRatingFormQuestionsModel].self, from: data)
-//                    completion(.success(response))
-//                }catch{
-//                    log(String(data: data , encoding: .utf8) ?? "",NetworkError.encodingError.localizedDescription)
-//                    completion(.failure(NetworkError.encodingError))
-//                }
-//            case .failure(let err):
-//                log("",err.localizedDescription)
-//                completion(.failure(err))
-//            }
-//            self.loader.dismiss()
-//        }
     }
     
     func getHelpPageData(completion: @escaping (Result<HelpPageModel>) -> Void){
@@ -301,27 +223,6 @@ class BotConnector: NSObject {
             }
             self.loader.dismiss()
         }
-//        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
-//            self.log(url: path, tag: .help, method: .get, parameter: params.description, response: respons,exception: exception)
-//        }
-//        request(path, method: .get, parameters: params ,encoding: URLEncoding.default , headers: nil ).responseData { (response) in
-//            
-//            switch response.result{
-//            case .success(let data):
-////                print(String(data: data , encoding: .utf8))
-//                do {
-//                    let response = try JSONDecoder().decode(HelpPageModel.self, from: data)
-//                    completion(.success(response))
-//                }catch{
-//                    log(String(data: data , encoding: .utf8) ?? "",NetworkError.encodingError.localizedDescription)
-//                    completion(.failure(NetworkError.encodingError))
-//                }
-//            case .failure(let err):
-//                log("",err.localizedDescription)
-//                completion(.failure(err))
-//            }
-//            self.loader.dismiss()
-//        }
     }
     
     func LabibaRequest<T:Codable>(_:T.Type,url:String,method:HTTPMethod,parameters: Parameters? = nil,encoding: ParameterEncoding = URLEncoding.default,logTag:LoggingTag? = nil, completion: @escaping (Result<T>)->Void) {
@@ -333,7 +234,7 @@ class BotConnector: NSObject {
         request(url, method: method, parameters: parameters ,encoding: encoding , headers: nil ).responseData { (response) in
             switch response.result{
             case .success(let data):
-                //                print(String(data: data , encoding: .utf8))
+                prettyPrintedRespons(data: data, name: URL(string: url)?.lastPathComponent ?? "request")
                 do {
                     let response = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(response))
@@ -428,10 +329,6 @@ fileprivate func createEncodingBlock(completion: @escaping (String?) -> Void) ->
         {
         
         case .success(let request, _, _):
-//            print(request.response?.statusCode)
-//            request.responseJSON { (data) in
-//                print(String(data: data.data!, encoding: .utf8) )
-//            }
             request.responseSwiftyJSON(completionHandler: { (res) in
                 
                 switch res.result

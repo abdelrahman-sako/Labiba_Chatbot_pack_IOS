@@ -42,7 +42,8 @@ public class SplashScreenVC: SplashVC {
             button.layer.borderColor = UIColor.white.cgColor
         }
         
-        
+       
+        idTextField.text = "9157be5d-7e1f-4a17-a3a6-78900d03daa8" 
          //idTextField.text = "72ac7d95-6a55-4d57-aaed-326c9fe42927" // voice assistant
         //idTextField.text = "d1a1fd87-4459-46a9-a34b-aa6546bb6a15" // email ,map
        // idTextField.text = "6872d977-47de-4d49-a6b6-146e828ea56d" // vedio and gif
