@@ -429,7 +429,7 @@ class ChoiceButton: UIButton
         self.layer.masksToBounds = true
         self.layer.borderColor = Labiba.ChoiceView.borderColor.cgColor
         self.layer.borderWidth = 1.0
-        self.titleLabel?.font = applyBotFont(size: 13)
+        self.titleLabel?.font = applyBotFont(bold: Labiba.ChoiceView.font.weight == .bold, size: Labiba.ChoiceView.font.size)
         
         //let text = Emoticonizer.emoticonizeString(aString: title)
         let text = title

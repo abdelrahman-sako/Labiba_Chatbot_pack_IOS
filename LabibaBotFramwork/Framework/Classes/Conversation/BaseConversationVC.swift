@@ -15,7 +15,7 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
     override func viewDidLoad() {
         //OCR or LIVENESS
         //AR or EN
-        delegate?.createPost?(onView: self.view, ["post":"{\"Role\":\"LIVENESS\",\"BotSessionID\": \"botSessionID\",\"PhoneNumber\": \"07788663666\",\"BotID\":\"9873432472345-345938753-39485739583\",\"Language\": \"AR\"}"], completionHandler: { (status, data) in
+        delegate?.createPost?(onView: self.view, ["post":"{\"Role\":\"OCR\",\"BotSessionID\": \"botSessionID\",\"PhoneNumber\": \"07788663666\",\"BotID\":\"0aa6d142-1ec1-497a-9915-4aefb42f7e51\",\"Language\": \"AR\"}"], completionHandler: { (status, data) in
             if status {
                 var object:[String:Any] = ["status":"success"] // "status":"success" added for BOJ
                 if let data = data {
@@ -28,7 +28,7 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
             }
             self.botConnector.sendMessage("get started")
         })
-        return
+//        return
     }
     
     

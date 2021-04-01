@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+public enum LabibaFontWeight{
+    case regular
+    case bold
+}
+
 public enum LabibaBackground {
     case solid (color:UIColor)
     case gradient (gradientSpecs:Labiba.GradientSpecs)

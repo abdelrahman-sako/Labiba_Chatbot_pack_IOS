@@ -25,7 +25,7 @@ public class LabibaConfig {
         self.callback = callback
         //MARK: initialization
        Labiba.initialize(RecipientIdAR:"5bfcd0bf-cb9a-4034-96ff-7c67000df2d3",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547") // BOJ builder IDs
-       // Labiba.initialize(RecipientIdAR:"b553e8c1-d9d9-409e-b5b4-573a63506dce",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// bot builder IDs
+      //  Labiba.initialize(RecipientIdAR:"b553e8c1-d9d9-409e-b5b4-573a63506dce",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// bot builder IDs
 //
         Labiba.setBotLanguage(LangCode: language == "Arabic" ? .ar : .en)
         Labiba.createCustomReferral(object: ["Customer ID":customerID,"trxnlimit":trxnlimit])
@@ -41,7 +41,6 @@ public class LabibaConfig {
         
 //        Labiba.set_basePath("https://bojibot.bankofjordan.com.jo")
 //        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
-//
 //        Labiba.set_voiceBasePath("https://bojibot.bankofjordan.com.jo")
 //        Labiba.set_voiceServicePath("/api/VoiceAPI/VoiceClip")
         
@@ -117,7 +116,7 @@ public class LabibaConfig {
         Labiba.setHeaderBackground(gradient: Labiba.GradientSpecs.init(colors: [UIColor(argb: 0xff0C263C) ,UIColor(argb: 0xff0C263C),UIColor(argb: 0x000C263C) ], locations: [0 ,0.85,1], start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) , viewBackgroundColor: .clear)) // Toolbar
         Labiba.setStatusBarColor(color:UIColor(argb: 0xff0C263C))
         Labiba.isMuteButtonHidden = false
-         let bodyAndTitles = ["en_title":"\"Hi, I’m BOJ!\"","ar_title": "\"مرحبا، أنا بوجي!\""  , "en_body": "Please tap the mic icon below to ask me\n a question.", "ar_body":"يمكنك الضغط على زر الميكرفون أدناه لكي تتحدث معي وتسألني أي سؤال"  ]
+         let bodyAndTitles = ["en_title":"\"Hi, I’m BOJI!\"","ar_title": "\"مرحبا، أنا بوجي!\""  , "en_body": "Please tap the mic icon below to ask me\n a question.", "ar_body":"يمكنك الضغط على زر الميكرفون أدناه لكي تتحدث معي وتسألني أي سؤال"  ]
 
         let header = GreetingHeaderView.create(bodyAndTitle: bodyAndTitles )
         header.settingType = .help
@@ -144,6 +143,7 @@ public class LabibaConfig {
         Labiba.setListeningDuration(Duration: 1.0)
         Labiba.setStatusBarStyle(style: .lightContent)
         Labiba.setEnableAutoListening(enable: true)
+        Labiba.isLoggingEnabled = true
 
 
 

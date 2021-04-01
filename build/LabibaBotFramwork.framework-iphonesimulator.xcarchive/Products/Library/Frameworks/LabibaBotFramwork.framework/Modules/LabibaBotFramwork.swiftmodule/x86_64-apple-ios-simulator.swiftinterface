@@ -133,8 +133,8 @@ public struct GoogleVoice {
   public var mobileNumContainerColor: UIKit.UIColor
   public var mobileNumFont: UIKit.UIFont
   public var mobileNumColor: UIKit.UIColor
-  public var buttonTintColor: UIKit.UIColor
-  public var buttonBackgroundColor: UIKit.UIColor
+  public var submitButton: (tint: UIKit.UIColor, background: UIKit.UIColor)
+  public var rateLaterButton: (tint: UIKit.UIColor, background: UIKit.UIColor)
   @objc deinit
 }
 public enum Language : Swift.String, Swift.CaseIterable {

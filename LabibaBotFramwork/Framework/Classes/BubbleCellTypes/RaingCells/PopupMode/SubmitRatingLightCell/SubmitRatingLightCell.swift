@@ -14,13 +14,13 @@ class SubmitRatingLightCell: RatingCell {
     @IBOutlet weak var stackView: UIStackView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        submitButton.titleLabel?.textColor = Labiba.RatingForm.buttonTintColor
+        submitButton.titleLabel?.textColor = Labiba.RatingForm.submitButton.tint
         submitButton.layer.cornerRadius =  submitButton.frame.height/2 + ipadFactor*12.5
         rateLaterButton.layer.cornerRadius =  rateLaterButton.frame.height/2 + ipadFactor*12.5
-       let buttonAttribute = [NSAttributedString.Key.foregroundColor : Labiba.RatingForm.buttonTintColor,NSAttributedString.Key.font : applyBotFont(size: 13)]
+        let buttonAttribute = [NSAttributedString.Key.foregroundColor : Labiba.RatingForm.submitButton.tint,NSAttributedString.Key.font : applyBotFont(size: 13)]
         submitButton.setAttributedTitle(NSAttributedString(string: "submit".localForChosnLangCodeBB, attributes: buttonAttribute), for: .normal)
         rateLaterButton.setAttributedTitle(NSAttributedString(string: "rateLater".localForChosnLangCodeBB, attributes: buttonAttribute), for: .normal)
-        submitButton.backgroundColor = Labiba.RatingForm.buttonBackgroundColor
+        submitButton.backgroundColor = Labiba.RatingForm.submitButton.background
         rateLaterButton.backgroundColor = UIColor(argb: 0xffCCCCCC)
     }
 }

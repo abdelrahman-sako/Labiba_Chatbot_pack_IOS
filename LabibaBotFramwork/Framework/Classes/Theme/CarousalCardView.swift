@@ -37,5 +37,6 @@ public class LabibaCarousalCardView {
     public var buttonBorder:(width:CGFloat,color:UIColor) = (0,.clear)
     public var buttonSeparatorLine:(color:UIColor,inset:CGFloat) = (.white,0)
     public var buttonCornerRadius:CGFloat = 0
+    public var shadow:LabibaShadowModel = LabibaShadowModel(shadowColor:  UIColor.black.cgColor, shadowOffset: CGSize(width: 0, height: 1), shadowRadius: 1.5, shadowOpacity: 0.15)
     
 }

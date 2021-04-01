@@ -90,13 +90,13 @@ func showToast(message : String , inView view :UIView)
 func prettyPrintedRespons(data:Data,name:String = "")  {
     print("\n***********************************  \(name) RESPONSE  ***********************************\n")
     do {
-        let jsonObjectModel = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-        let prettyModel = try JSONSerialization.data(withJSONObject: jsonObjectModel, options: .prettyPrinted)
-        
-        print(String(data: prettyModel, encoding: .utf8)!)
-        
+        if let jsonObjectModel = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] {
+            let prettyModel = try JSONSerialization.data(withJSONObject: jsonObjectModel, options: .prettyPrinted)
+            print(String(data: prettyModel, encoding: .utf8)!)
+        }
     } catch  {
         print("error in \(#function) \n \(error.localizedDescription)")
+        print(String(data: data, encoding: .utf8))
     }
     print("\n*********************************** END \(name) RESPONSE ***********************************\n")
     

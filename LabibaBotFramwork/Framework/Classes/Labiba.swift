@@ -19,10 +19,6 @@ public enum BotType:Int {
     case visualizer = 6
 }
 
-public enum LabibaFontWeight{
-    case regular
-    case bold
-}
 
 @objc public class Labiba: NSObject
 {
@@ -36,6 +32,7 @@ public enum LabibaFontWeight{
     static var _messagingServicePath = "/api/MobileAPI/MessageHandler"
     static var _voiceBasePath = "https://voice.labibabot.com"
     static var _voiceServicePath = "/translate/texttospeech"
+    //static var _voiceServicePath = "/Handlers/Translate.ashx")
    // static var _helpPath = "https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage"
 //    static var _submitRatingPath = "https://botbuilder.labiba.ai/api/ratingform/submit"
 //    static var _ratingQuestionsPath = "https://botbuilder.labiba.ai/api/MobileAPI/FetchQuestions"

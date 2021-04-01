@@ -180,7 +180,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         addNotificationCenterObservers()
       
         
-        self.fillEdgeSpace(withColor: self.view.backgroundColor ?? .white, edge: .bottom)
+        //self.fillEdgeSpace(withColor: self.view.backgroundColor ?? .white, edge: .bottom)
        // addHintsCell()
         self.startConversation() //it's now from [ self.botConnector.configureInternetReachability()]
         
@@ -236,7 +236,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     func addTableMask()  {
-        maskImage = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: self.view.bounds.width, height: self.view.bounds.height - 100)))
+        maskImage = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: self.view.bounds.width, height: self.view.bounds.height)))
         
         maskImage.image = Image(named: ipadFactor == 0 ? "gradientMask-9":"gradientMask-7")
         tableView.mask = maskImage

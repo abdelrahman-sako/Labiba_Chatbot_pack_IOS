@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,57 +25,57 @@
             <objects>
                 <viewController storyboardIdentifier="conversationVC" automaticallyAdjustsScrollViewInsets="NO" id="2Em-15-PQC" customClass="ConversationViewController" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="ebT-ec-Tcz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pnl-EE-mfl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r7M-Sd-vC3">
-                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
+                                <rect key="frame" x="0.0" y="114" width="428" height="812"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UsageGuideCell" rowHeight="16" id="d2s-J7-WZp" customClass="UsageGuideCell" customModule="LabibaBotFramwork" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="16"/>
+                                        <rect key="frame" x="0.0" y="28" width="428" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d2s-J7-WZp" id="eir-kU-igI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="16"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="notShownCell" id="HRd-BO-pZS" customClass="StateNotShownEntryCell" customModule="LabibaBotFramwork" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HRd-BO-pZS" id="c9A-fm-q78">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="onHoldCell" id="naV-zx-0q2" customClass="StateOnHoldEntryCell" customModule="LabibaBotFramwork" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="88" width="428" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="naV-zx-0q2" id="YFH-oG-vGa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="shownCell" id="MKP-Kl-anH" customClass="StateShownEntryCell" customModule="LabibaBotFramwork" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="132" width="428" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MKP-Kl-anH" id="JKe-gv-wTh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="indicatorCell" id="Xnq-FB-5ZR" customClass="TypingIndicatorCell" customModule="LabibaBotFramwork" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="428" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xnq-FB-5ZR" id="KWl-ed-nLQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -87,10 +87,10 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iZ-nO-Jrz">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="70"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTv-G8-3xR">
-                                        <rect key="frame" x="332" y="33" width="44" height="44"/>
+                                        <rect key="frame" x="385" y="33" width="44" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="ic_close"/>
                                         <connections>
@@ -98,7 +98,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:bB4-KX-PwK:image" translatesAutoresizingMaskIntoConstraints="NO" id="bB4-KX-PwK">
-                                        <rect key="frame" x="170" y="10" width="35" height="50"/>
+                                        <rect key="frame" x="170" y="10" width="88" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="9zd-o3-2th"/>
                                         </constraints>
@@ -208,18 +208,18 @@
             <objects>
                 <viewController storyboardIdentifier="customMapPicker" id="VmH-2t-GMi" customClass="CustomMapPicker" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wrs-Vb-9s1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGS-JD-rP8" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="703"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="817"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noT-QL-rio">
-                                <rect key="frame" x="0.0" y="628" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="742" width="428" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Aa-Y4-wQw">
-                                        <rect key="frame" x="15" y="0.0" width="345" height="29"/>
+                                        <rect key="frame" x="15" y="0.0" width="398" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="j1N-0g-Ikn"/>
                                         </constraints>
@@ -228,7 +228,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16Y-V5-vjV">
-                                        <rect key="frame" x="87" y="80" width="200" height="30"/>
+                                        <rect key="frame" x="87" y="80" width="253" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="PVN-rk-wtz"/>
                                         </constraints>
@@ -240,7 +240,7 @@
                                         </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="kCw-KP-KF2">
-                                        <rect key="frame" x="15" y="37" width="345" height="36"/>
+                                        <rect key="frame" x="15" y="37" width="398" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="ioH-fi-JFj"/>
                                         </constraints>
@@ -271,7 +271,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DfI-zI-dCg">
-                                <rect key="frame" x="16" y="69" width="343" height="50"/>
+                                <rect key="frame" x="16" y="69" width="396" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XEX-wI-iFm"/>
                                 </constraints>
@@ -311,11 +311,11 @@
             <objects>
                 <viewController storyboardIdentifier="photoVC" id="VGX-3C-1Ob" customClass="PhotoViewController" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MXZ-Ck-qVl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ab-kW-qEl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -323,7 +323,7 @@
                                 </connections>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIb-8m-9LX">
-                                <rect key="frame" x="320" y="30" width="40" height="40"/>
+                                <rect key="frame" x="373" y="30" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -362,11 +362,11 @@
             <objects>
                 <viewController storyboardIdentifier="cardsVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="287-7P-3Rf" customClass="CardsViewController" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZiX-qL-lWW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drq-1b-OpM">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="160"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -374,10 +374,10 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3F-eo-AsC">
-                                <rect key="frame" x="0.0" y="160" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="160" width="428" height="732"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JTm-xx-TG9">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="568"/>
+                                        <rect key="frame" x="0.0" y="50" width="428" height="682"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WSE-no-jC5">
                                             <size key="itemSize" width="100" height="140"/>
@@ -435,7 +435,7 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cI1-RJ-gh0">
-                                        <rect key="frame" x="15" y="12" width="345" height="32"/>
+                                        <rect key="frame" x="15" y="12" width="398" height="32"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -486,11 +486,11 @@
             <objects>
                 <viewController storyboardIdentifier="locationSelectVC" id="aK4-0X-fka" customClass="LocationSelectViewController" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ehp-9T-3X1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8lG-zB-PcJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -525,7 +525,7 @@
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS4-Lj-v5v">
-                                <rect key="frame" x="329" y="25" width="36" height="36"/>
+                                <rect key="frame" x="382" y="25" width="36" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.31372549020000001" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -552,7 +552,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flc-VA-gaz">
-                                <rect key="frame" x="126" y="760" width="124" height="35"/>
+                                <rect key="frame" x="153" y="874" width="124" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.54901960780000003" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
@@ -602,21 +602,21 @@
             <objects>
                 <viewController storyboardIdentifier="WebPageViewController" id="Q3B-vE-Z0p" customClass="WebPageViewController" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AmB-So-STK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlB-80-mey">
-                                <rect key="frame" x="0.0" y="44" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="0.0"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="H5F-Df-JWG"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMv-TL-3zQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc3-TC-hyN">
-                                        <rect key="frame" x="171" y="59" width="33" height="20"/>
+                                        <rect key="frame" x="197.66666666666666" y="59" width="33" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -634,7 +634,7 @@
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="f95-cc-ERD">
-                                        <rect key="frame" x="340" y="59" width="20" height="20"/>
+                                        <rect key="frame" x="393" y="59" width="20" height="20"/>
                                         <color key="tintColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="2tv-oj-QqE"/>
@@ -653,7 +653,7 @@
                                 </constraints>
                             </view>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sW-Mf-At4">
-                                <rect key="frame" x="0.0" y="94" width="375" height="718"/>
+                                <rect key="frame" x="0.0" y="94" width="428" height="832"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -694,16 +694,16 @@
             <objects>
                 <viewController storyboardIdentifier="locationVC" id="Sss-8X-BXp" customClass="LocationViewController" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2yv-Y7-ZaW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kHo-fs-vzC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypb-bb-i5s">
-                                <rect key="frame" x="325" y="54" width="40" height="40"/>
+                                <rect key="frame" x="378" y="54" width="40" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="DPs-XO-dTi"/>
@@ -733,7 +733,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1G8-Sn-pRs">
-                                <rect key="frame" x="202" y="726" width="163" height="40"/>
+                                <rect key="frame" x="255" y="840" width="163" height="40"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mE4-z0-Wp6">
                                         <rect key="frame" x="0.0" y="0.0" width="163" height="40"/>
@@ -831,17 +831,17 @@
             <objects>
                 <viewController storyboardIdentifier="radiusVC" id="21L-TP-ZZH" customClass="RadiusViewController" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EIa-Hs-D8H">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MgF-L7-WQW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="892"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbu-47-Ova">
-                                <rect key="frame" x="0.0" y="647" width="375" height="165"/>
+                                <rect key="frame" x="0.0" y="761" width="428" height="165"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.32 km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFt-7f-dBS">
-                                        <rect key="frame" x="8" y="50" width="359" height="30"/>
+                                        <rect key="frame" x="8" y="50" width="412" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="40J-cu-vQm"/>
                                         </constraints>
@@ -850,13 +850,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="25" text="Search around your location by:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPZ-U0-v7X">
-                                        <rect key="frame" x="8" y="15" width="359" height="25"/>
+                                        <rect key="frame" x="8" y="15" width="412" height="25"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="15"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OdB-co-sT2">
-                                        <rect key="frame" x="97.666666666666686" y="95" width="180" height="40"/>
+                                        <rect key="frame" x="124" y="95" width="180" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9P-cs-tJF">
                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
@@ -993,29 +993,29 @@
             <objects>
                 <viewController storyboardIdentifier="datePickerVC" title="Select Date" id="1we-Z6-Ott" customClass="DatePickerViewController" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zKx-J9-MPw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rK-gx-hpF">
-                                <rect key="frame" x="0.0" y="502" width="375" height="310"/>
+                                <rect key="frame" x="0.0" y="616" width="428" height="310"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="JO2-D4-hKk">
-                                        <rect key="frame" x="15" y="3" width="229" height="40"/>
+                                        <rect key="frame" x="15" y="3" width="282" height="40"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="nFO-2O-Dck">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="260"/>
+                                        <rect key="frame" x="0.0" y="50" width="428" height="260"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <connections>
                                             <action selector="datePickerChanged:" destination="1we-Z6-Ott" eventType="valueChanged" id="DPQ-sh-HTt"/>
                                         </connections>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYJ-sH-bx3">
-                                        <rect key="frame" x="310" y="0.0" width="65" height="45"/>
+                                        <rect key="frame" x="363" y="0.0" width="65" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
@@ -1025,7 +1025,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwK-9b-JhD">
-                                        <rect key="frame" x="245" y="0.0" width="65" height="45"/>
+                                        <rect key="frame" x="298" y="0.0" width="65" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                         <color key="tintColor" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1055,11 +1055,11 @@
             <objects>
                 <viewController storyboardIdentifier="dateRangeVC" title="Select Date Range" id="24a-fl-dKv" customClass="DateRangeViewController" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="27S-Rg-sIo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lE0-db-nDD">
-                                <rect key="frame" x="0.0" y="334.66666666666674" width="375" height="443.33333333333326"/>
+                                <rect key="frame" x="0.0" y="407.66666666666674" width="375" height="484.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Date Range" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="aUw-2e-xvZ">
                                         <rect key="frame" x="15" y="8" width="160" height="40"/>
@@ -1069,7 +1069,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ywd-yY-I9C">
-                                        <rect key="frame" x="0.0" y="55" width="375" height="388.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="54.999999999999972" width="375" height="429.33333333333326"/>
                                         <subviews>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WdP-ym-nIR">
                                                 <rect key="frame" x="0.0" y="-45" width="375" height="45"/>
@@ -1176,7 +1176,7 @@
                                                 </constraints>
                                             </view>
                                             <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ENM-x9-jb8">
-                                                <rect key="frame" x="0.0" y="-146.00000000000003" width="375" height="146"/>
+                                                <rect key="frame" x="0.0" y="-166.66666666666669" width="375" height="166.66666666666666"/>
                                                 <connections>
                                                     <action selector="datePickerChanged:" destination="24a-fl-dKv" eventType="valueChanged" id="CZh-Ec-VeW"/>
                                                 </connections>
@@ -1229,7 +1229,7 @@
                                                 </constraints>
                                             </view>
                                             <datePicker tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="6g3-Jh-p7B">
-                                                <rect key="frame" x="0.0" y="47" width="375" height="146.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="46.999999999999986" width="375" height="166.66666666666663"/>
                                                 <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
                                                     <!--1970-01-01 11:00:00 +0000-->
                                                 </date>
@@ -1238,7 +1238,7 @@
                                                 </connections>
                                             </datePicker>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wY-vv-yZn">
-                                                <rect key="frame" x="0.0" y="195.33333333333331" width="375" height="45"/>
+                                                <rect key="frame" x="0.0" y="215.66666666666669" width="375" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7y-Du-N17">
                                                         <rect key="frame" x="15.000000000000002" y="15" width="22.666666666666671" height="15"/>
@@ -1289,7 +1289,7 @@
                                                 </constraints>
                                             </view>
                                             <datePicker tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="vQf-Nh-rCq">
-                                                <rect key="frame" x="0.0" y="242.33333333333331" width="375" height="146"/>
+                                                <rect key="frame" x="0.0" y="262.66666666666669" width="375" height="166.66666666666669"/>
                                                 <connections>
                                                     <action selector="datePickerChanged:" destination="24a-fl-dKv" eventType="valueChanged" id="PD9-cV-H7l"/>
                                                 </connections>
@@ -1352,14 +1352,14 @@
             <objects>
                 <viewController storyboardIdentifier="attachMenuVC" id="Xft-wE-dLK" customClass="AttachmentsMenuViewController" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PdA-Jf-zi5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rim-7F-rd2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7yc-2R-Sbv">
-                                        <rect key="frame" x="0.0" y="629" width="64" height="128"/>
+                                        <rect key="frame" x="0.0" y="743" width="64" height="128"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="weP-Tb-Tkz">
                                                 <rect key="frame" x="10" y="15" width="44" height="98"/>

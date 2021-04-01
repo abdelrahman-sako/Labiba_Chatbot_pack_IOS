@@ -15,13 +15,22 @@ class SubmitRatingCell: RatingCell {
     @IBOutlet weak var stackView: UIStackView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        submitButton.titleLabel?.textColor = Labiba.RatingForm.buttonTintColor
+        submitButton.titleLabel?.textColor = Labiba.RatingForm.submitButton.tint
+        submitButton.backgroundColor = Labiba.RatingForm.submitButton.background
         submitButton.layer.borderWidth = 1
-        submitButton.layer.borderColor = Labiba.RatingForm.buttonTintColor.cgColor
+        submitButton.layer.borderColor = Labiba.RatingForm.submitButton.tint.cgColor
         submitButton.layer.cornerRadius =  submitButton.frame.height/2 + ipadFactor*12.5
-       let buttonAttribute = [NSAttributedString.Key.foregroundColor : Labiba.RatingForm.buttonTintColor,NSAttributedString.Key.font : applyBotFont(size: 18)]
-        submitButton.setAttributedTitle(NSAttributedString(string: "submit".localForChosnLangCodeBB, attributes: buttonAttribute), for: .normal)
-        rateLaterButton.setAttributedTitle(NSAttributedString(string: "rateLater".localForChosnLangCodeBB, attributes: buttonAttribute), for: .normal)
+        
+        rateLaterButton.titleLabel?.textColor = Labiba.RatingForm.rateLaterButton.tint
+        rateLaterButton.backgroundColor = Labiba.RatingForm.rateLaterButton.background
+       
+        
+       let submitButtonAttribute = [NSAttributedString.Key.foregroundColor : Labiba.RatingForm.submitButton.tint,NSAttributedString.Key.font : applyBotFont(size: 18)]
+        
+        let rateLaterButtonAttribute = [NSAttributedString.Key.foregroundColor : Labiba.RatingForm.rateLaterButton.tint,NSAttributedString.Key.font : applyBotFont(size: 18)]
+        
+        submitButton.setAttributedTitle(NSAttributedString(string: "submit".localForChosnLangCodeBB, attributes: submitButtonAttribute), for: .normal)
+        rateLaterButton.setAttributedTitle(NSAttributedString(string: "rateLater".localForChosnLangCodeBB, attributes: rateLaterButtonAttribute), for: .normal)
         
     }
 

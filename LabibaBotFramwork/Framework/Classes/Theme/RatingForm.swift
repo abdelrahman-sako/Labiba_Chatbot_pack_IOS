@@ -31,8 +31,8 @@ public class LabibaRatingForm {
     public var mobileNumFont:UIFont = applyBotFont(size: 15)
     public var mobileNumColor:UIColor = UIColor.white
     
-    public var buttonTintColor:UIColor = UIColor.white
-    public var buttonBackgroundColor:UIColor = .clear
+    public var submitButton:(tint:UIColor,background:UIColor) = (.white,.clear)
+    public var rateLaterButton:(tint:UIColor,background:UIColor) = (.white,.clear)
     
     
 }

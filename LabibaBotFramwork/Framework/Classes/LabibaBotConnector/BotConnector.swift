@@ -237,6 +237,7 @@ class BotConnector: NSObject {
                 prettyPrintedRespons(data: data, name: URL(string: url)?.lastPathComponent ?? "request")
                 do {
                     let response = try JSONDecoder().decode(T.self, from: data)
+                    log("ios","ios")
                     completion(.success(response))
                 }catch{
                     log(String(data: data , encoding: .utf8) ?? "",NetworkError.encodingError.localizedDescription)
@@ -282,13 +283,17 @@ Name:
 PhoneNumber:
 Email:
 """
+            var filterdRespose = response
+            if response.range(of: "<[a-z][\\s\\S]*>", options: .regularExpression, range: nil, locale: nil) != nil {
+                filterdRespose = "HTML response"
+            }
             let body:[String:String] = [
                 "Source":"IOS",
                 "Tag":tag.rawValue,
                 "DeviceDetails":deviceDetails,
                 "UserDetails":userDetails,
                 "Request":requestDetails,
-                "Response":response,
+                "Response":filterdRespose,
                 "Exception":exception ?? "",
                 "SDKVersion":Labiba.version
             ]

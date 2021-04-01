@@ -42,10 +42,10 @@ class SelectableCardView: UIView
         let view = UIView.loadFromNibNamedFromDefaultBundle("SelectableCardView") as! SelectableCardView
         view.frame = frame
         
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOffset = CGSize(width: 0, height: 1)
-        view.layer.shadowRadius = 1.5
-        view.layer.shadowOpacity = 0.15
+        view.layer.shadowColor = Labiba.CarousalCardView.shadow.shadowColor
+        view.layer.shadowOffset = Labiba.CarousalCardView.shadow.shadowOffset
+        view.layer.shadowRadius = Labiba.CarousalCardView.shadow.shadowRadius
+        view.layer.shadowOpacity = Labiba.CarousalCardView.shadow.shadowOpacity
         view.layer.cornerRadius = Labiba.CarousalCardView.cornerRadius + 30*ipadFactor
         view.layer.borderWidth = Labiba.CarousalCardView.border.width
         view.layer.borderColor = Labiba.CarousalCardView.border.color.cgColor

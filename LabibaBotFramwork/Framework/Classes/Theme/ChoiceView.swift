@@ -13,6 +13,7 @@ public class LabibaChoiceView {
     
     public var backgroundColor: UIColor = .white
     public var tintColor: UIColor = .white
+    public var font: (size:CGFloat,weight:LabibaFontWeight) = (13,.regular)
     public var borderColor: UIColor = .white
     public var cornerRadius: CGFloat = 10
     

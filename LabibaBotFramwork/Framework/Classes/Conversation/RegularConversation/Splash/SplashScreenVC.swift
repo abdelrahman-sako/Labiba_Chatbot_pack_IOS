@@ -43,7 +43,7 @@ public class SplashScreenVC: SplashVC {
         }
         
        
-        idTextField.text = "9157be5d-7e1f-4a17-a3a6-78900d03daa8" 
+        //idTextField.text = "9157be5d-7e1f-4a17-a3a6-78900d03daa8" 
          //idTextField.text = "72ac7d95-6a55-4d57-aaed-326c9fe42927" // voice assistant
         //idTextField.text = "d1a1fd87-4459-46a9-a34b-aa6546bb6a15" // email ,map
        // idTextField.text = "6872d977-47de-4d49-a6b6-146e828ea56d" // vedio and gif
@@ -52,7 +52,7 @@ public class SplashScreenVC: SplashVC {
        //  idTextField.text = "b474192c-a618-4c49-a5ee-663414fd75e5"
        //idTextField.text = "22b06f22-2077-44d6-9dbe-e45b9791e11f"
        //idTextField.text = "9d1b0690-a651-49c4-b5dc-a27a97725325" // BSF
-       //idTextField.text = "d0b8e34a-26ba-4ed6-a2af-4412b55ef442" // natHealth
+       idTextField.text = "d0b8e34a-26ba-4ed6-a2af-4412b55ef442" // natHealth
        // idTextField.text = "9ccaab56-12c1-401c-a3df-beddf3845349"  // IA
       //  idTextField.text = "e5f08da0-a645-4ff5-b01f-091e3a1df7ea"
         // idTextField.text =  "ef29c433-ce70-44f5-a9ae-9bbf025d2a4f"
