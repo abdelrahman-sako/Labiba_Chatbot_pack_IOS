@@ -10,6 +10,9 @@ import Foundation
 
 enum QuickReplyContentType:String {
     case dateAndTime = "DATE_AND_TIME"
+    case camera = "CAMERA"
+    case image = "IMAGE"
+    case gallery = "GALLERY"
     case date = "DATE"
     case time = "TIME"
     case location = "location"
@@ -33,8 +36,10 @@ enum QuickReplyContentType:String {
             return "scan".localBasedOnLastMessage
         case .userEmail,.number ,.userPhoneNumber ,.freeText:
             return ""
-            
-            
+        case .camera,.image:
+            return "camera".localBasedOnLastMessage
+        case .gallery:
+            return "gallery".localBasedOnLastMessage
             
         }
     }
@@ -53,6 +58,10 @@ enum QuickReplyContentType:String {
             return .QRCode
         case .userEmail,.number ,.userPhoneNumber ,.freeText:
             return nil
+        case .camera,.image:
+            return .camera
+        case .gallery:
+            return .gallery
         }
     }
 }

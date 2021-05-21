@@ -32,11 +32,14 @@ public enum BotType:Int {
     static var _messagingServicePath = "/api/MobileAPI/MessageHandler"
     static var _voiceBasePath = "https://voice.labibabot.com"
     static var _voiceServicePath = "/translate/texttospeech"
+    static var _loggingServicePath = "/api/MobileAPI/MobileLogging"
+    static var _helpServicePath = "/api/MobileAPI/FetchHelpPage"
+   // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
-   // static var _helpPath = "https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage"
+   
 //    static var _submitRatingPath = "https://botbuilder.labiba.ai/api/ratingform/submit"
 //    static var _ratingQuestionsPath = "https://botbuilder.labiba.ai/api/MobileAPI/FetchQuestions"
-  //  static var _loggingPath = "http://api.labiba.ai/api/Mobile/LogAPI"
+  
     
     static var  delegate:LabibaDelegate?
     
@@ -122,6 +125,12 @@ public enum BotType:Int {
     {
         self._voiceServicePath = path
     }
+    
+    public static func set_loggingServicePath(_ path: String)
+    {
+        self._loggingServicePath = path
+    }
+    
     
 //    public static func set_helpPath(_ path: String)
 //    {
@@ -714,8 +723,11 @@ public enum BotType:Int {
 
         if let topVC = vc ?? getTheMostTopViewController()
         {
-
-            topVC.present(createConversation(onClose: onClose), animated: animated, completion: nil)
+           let nav = LabibaNavigationController(rootViewController: createConversation(onClose: onClose))
+            nav.modalPresentationStyle = .fullScreen
+            nav.modalTransitionStyle = .crossDissolve
+            UIApplication.shared.keyWindow?.rootViewController?.present(nav, animated: animated, completion: nil)
+           // topVC.present(createConversation(onClose: onClose), animated: animated, completion: nil)
         }
     }
 
@@ -833,6 +845,16 @@ public enum BotType:Int {
     @objc optional func createPost(onView view:UIView,_ data:Dictionary<String, Any> , completionHandler:@escaping(_ status:Bool , _ data:[String:Any]?)->Void)
     @objc optional func liveChatTransfer(onView view:UIView, transferMessage:String)
     @objc optional func labibaWillClose()
+}
+
+class LabibaNavigationController:UINavigationController {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+            return .portrait
+       
+    }
+    override open var shouldAutorotate: Bool {
+          return false
+      }
 }
 
 

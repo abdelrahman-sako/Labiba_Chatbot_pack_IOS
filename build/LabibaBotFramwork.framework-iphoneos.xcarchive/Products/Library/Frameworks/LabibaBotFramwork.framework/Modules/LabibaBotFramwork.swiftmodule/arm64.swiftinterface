@@ -178,6 +178,7 @@ public enum CornerLocation {
 @_hasMissingDesignatedInitializers public class LabibaChoiceView {
   public var backgroundColor: UIKit.UIColor
   public var tintColor: UIKit.UIColor
+  public var font: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
   public var borderColor: UIKit.UIColor
   public var cornerRadius: CoreGraphics.CGFloat
   @objc deinit
@@ -197,6 +198,7 @@ public enum CornerLocation {
   public var typingIndicatorColor: UIKit.UIColor
   public var background: LabibaBotFramwork.LabibaBackground
   public var textColor: UIKit.UIColor
+  public var fontsize: CoreGraphics.CGFloat
   public var textAlignment: UIKit.NSTextAlignment?
   public var alpha: CoreGraphics.CGFloat
   public var cornerRadius: CoreGraphics.CGFloat
@@ -302,11 +304,16 @@ public func imageNamed(_ name: Swift.String) -> UIKit.UIImage
   public var titleFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
   public var subtitleColor: UIKit.UIColor
   public var subtitleFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
+  public var buttonsSpacing: CoreGraphics.CGFloat
   public var buttonTitleColor: UIKit.UIColor
   public var buttonFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
   public var buttonBorder: (width: CoreGraphics.CGFloat, color: UIKit.UIColor)
   public var buttonSeparatorLine: (color: UIKit.UIColor, inset: CoreGraphics.CGFloat)
   public var buttonCornerRadius: CoreGraphics.CGFloat
+  public var shadow: LabibaBotFramwork.LabibaShadowModel
+  public var button1: (backgroundColor: UIKit.UIColor, titleColor: UIKit.UIColor)?
+  public var button2: (backgroundColor: UIKit.UIColor, titleColor: UIKit.UIColor)?
+  public var button3: (backgroundColor: UIKit.UIColor, titleColor: UIKit.UIColor)?
   @objc deinit
 }
 public struct DateRange {
@@ -331,6 +338,7 @@ extension UIDevice {
 @_hasMissingDesignatedInitializers public class LabibaUserChatBubble {
   public var background: LabibaBotFramwork.LabibaBackground
   public var textColor: UIKit.UIColor
+  public var fontsize: CoreGraphics.CGFloat
   public var alpha: CoreGraphics.CGFloat
   public var cornerRadius: CoreGraphics.CGFloat
   public var cornerMask: QuartzCore.CACornerMask
@@ -378,6 +386,7 @@ public protocol RadiusViewControllerDelegate : AnyObject {
   public var keyboardButton: (icon: UIKit.UIImage, tintColor: UIKit.UIColor)
   public var attachmentButton: (icon: UIKit.UIImage, tintColor: UIKit.UIColor, isHidden: Swift.Bool)
   public var waveColor: UIKit.UIColor
+  public var attachmentTypes: [CoreFoundation.CFString]
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class LabibaAttachmentThemeModel {
@@ -431,6 +440,15 @@ public class LiveChatModel {
 }
 extension ScannerVC : LabibaBotFramwork.HeaderViewControllerDelegate {
   public func didClickedCloseButton()
+}
+public enum LabibaFontWeight {
+  case regular
+  case bold
+  public static func == (a: LabibaBotFramwork.LabibaFontWeight, b: LabibaBotFramwork.LabibaFontWeight) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum LabibaBackground {
   case solid(color: UIKit.UIColor)
@@ -524,15 +542,6 @@ public enum BotType : Swift.Int {
     get
   }
 }
-public enum LabibaFontWeight {
-  case regular
-  case bold
-  public static func == (a: LabibaBotFramwork.LabibaFontWeight, b: LabibaBotFramwork.LabibaFontWeight) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-  public func hash(into hasher: inout Swift.Hasher)
-}
 @_inheritsConvenienceInitializers @objc public class Labiba : ObjectiveC.NSObject {
   public static var liveChatModel: LabibaBotFramwork.LiveChatModel?
   public static let labibaThemes: LabibaBotFramwork.LabibaThemes
@@ -545,6 +554,7 @@ public enum LabibaFontWeight {
   public static func set_messagingServicePath(_ path: Swift.String)
   public static func set_voiceBasePath(_ path: Swift.String)
   public static func set_voiceServicePath(_ path: Swift.String)
+  public static func set_loggingServicePath(_ path: Swift.String)
   public static var _ReferralSource: Swift.String
   public static func setUserParams(first_name: Swift.String? = nil, last_name: Swift.String? = nil, profile_pic: Swift.String? = nil, gender: Swift.String? = nil, location: Swift.String? = nil, country: Swift.String? = nil, username: Swift.String? = nil, email: Swift.String? = nil, token: Swift.String? = nil, customParameters: [Swift.String : Swift.String]? = nil)
   public static func setRefreshToken(refreshtoken: Swift.String)
@@ -875,13 +885,13 @@ extension LabibaBotFramwork.Language : Swift.Hashable {}
 extension LabibaBotFramwork.Language : Swift.RawRepresentable {}
 extension LabibaBotFramwork.CornerLocation : Swift.Equatable {}
 extension LabibaBotFramwork.CornerLocation : Swift.Hashable {}
+extension LabibaBotFramwork.LabibaFontWeight : Swift.Equatable {}
+extension LabibaBotFramwork.LabibaFontWeight : Swift.Hashable {}
 extension LabibaBotFramwork.TorchMode : Swift.Equatable {}
 extension LabibaBotFramwork.TorchMode : Swift.Hashable {}
 extension LabibaBotFramwork.BotType : Swift.Equatable {}
 extension LabibaBotFramwork.BotType : Swift.Hashable {}
 extension LabibaBotFramwork.BotType : Swift.RawRepresentable {}
-extension LabibaBotFramwork.LabibaFontWeight : Swift.Equatable {}
-extension LabibaBotFramwork.LabibaFontWeight : Swift.Hashable {}
 extension LabibaBotFramwork.NVActivityIndicatorType : Swift.Equatable {}
 extension LabibaBotFramwork.NVActivityIndicatorType : Swift.Hashable {}
 extension LabibaBotFramwork.ScanAnimationStyle : Swift.Equatable {}

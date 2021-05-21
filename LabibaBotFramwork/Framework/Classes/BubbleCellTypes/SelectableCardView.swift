@@ -33,6 +33,7 @@ class SelectableCardView: UIView
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var bacgroundImage: UIImageView!
     @IBOutlet weak var bottomGradientView: UIView!
+    @IBOutlet weak var buttonsStackView: UIStackView!
     
     weak var delegate: SelectableCardViewDelegate?
     var selectionEnabled:Bool = true
@@ -140,7 +141,10 @@ class SelectableCardView: UIView
         let backgroundStyle = Labiba.CarousalCardView.backgroundImageStyleEnabled
         imageHightCons.constant = backgroundStyle ? 10 : (card.type.imageSize.hight + ipadFactor*70)
         var height:CGFloat = imageHight + 5
-        
+        buttonsStackView.spacing = Labiba.CarousalCardView.buttonsSpacing
+        if card.buttons.count > 1 {
+            height += CGFloat(card.buttons.count - 1)*Labiba.CarousalCardView.buttonsSpacing
+        }
         //
         self.card = card
         self.titleLabel.text = card.title
@@ -267,15 +271,28 @@ class SelectableCardView: UIView
         for i in 0..<card.buttons.count
         {
             
-            
-            height += 35 + ipadFactor*25
+            let buttonHeight:CGFloat = 35
+            height += buttonHeight + ipadFactor*25
             buttonContainerViews[i].isHidden = false
             let card_btn = card.buttons[i]
             
             
             buttons[i].tintColor = Labiba.CarousalCardView.buttonTitleColor
-            //  btn.frame = bf
+            if i == 0, let btn1 = Labiba.CarousalCardView.button1{
+                buttons[i].tintColor = btn1.titleColor
+                buttons[i].backgroundColor = btn1.backgroundColor
+            }
+            if i == 1, let btn2 = Labiba.CarousalCardView.button2{
+                buttons[i].tintColor = btn2.titleColor
+                buttons[i].backgroundColor = btn2.backgroundColor
+            }
+            if i == 2, let btn3 = Labiba.CarousalCardView.button3{
+                buttons[i].tintColor = btn3.titleColor
+                buttons[i].backgroundColor = btn3.backgroundColor
+            }
             
+            
+            //  btn.frame = bf
             if card_btn.title.verifyUrl() {
                 buttons[i].setTitle("", for: .normal)
                 //buttons[i].kf.setImage(with: URL(string: card_btn.title), for: .normal)
@@ -289,7 +306,6 @@ class SelectableCardView: UIView
                 buttons[i].setTitle(card_btn.title, for: .normal)
                 buttons[i].titleLabel?.font = applyBotFont( bold: Labiba.CarousalCardView.buttonFont.weight == .bold,size: Labiba.CarousalCardView.buttonFont.size - ipadFactor)
                 buttons[i].layer.borderColor = Labiba.CarousalCardView.buttonBorder.color.cgColor
-                buttons[i].layer.borderWidth = Labiba.CarousalCardView.buttonBorder.width
                 buttons[i].layer.borderWidth = Labiba.CarousalCardView.buttonBorder.width
                 if Labiba.CarousalCardView.buttonCornerRadius >  buttons[i].frame.height {
                     buttons[i].layer.cornerRadius = buttons[i].frame.height/2

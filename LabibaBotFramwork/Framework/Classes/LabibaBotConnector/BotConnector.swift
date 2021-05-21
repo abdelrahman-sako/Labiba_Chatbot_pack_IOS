@@ -17,6 +17,7 @@ protocol BotConnectorDelegate:class {
     func botConnector(_ botConnector:BotConnector, didRecieveActivity activity:ConversationDialog) -> Void
     func botConnector(_ botConnector:BotConnector, didRequestLiveChatTransferWithMessage message:String) -> Void
     func botConnectorDidRecieveTypingActivity(_ botConnector:BotConnector) -> Void
+    func botConnectorRemoveTypingActivity(_ botConnector:BotConnector) -> Void
 }
 
 protocol BotConnectorInterface:class {
@@ -63,6 +64,7 @@ class BotConnector: NSObject {
     func configureInternetReachability() -> Void {}
     func startConversation() -> Void {}
     func reconnectConversation() -> Void {}
+    func resumeConnection() {}
     func close() -> Void {
         print("Request \"\(currentRequest?.request?.url?.absoluteString ?? "")\" was canceld")
         currentRequest?.cancel()
@@ -92,7 +94,7 @@ class BotConnector: NSObject {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.delegate?.botConnectorDidRecieveTypingActivity(self)
             }
-            uploadDataToLabiba(filename: "photo.jpg", data: data)
+            uploadDataToLabiba(filename: "photo.jpg", data: data,mimetype: "image/jpeg")
             { (url) in
                 
                 if let imgUrl = url
@@ -111,18 +113,17 @@ class BotConnector: NSObject {
         if let data = try? Data(contentsOf: url)
         {
             self.delegate?.botConnectorDidRecieveTypingActivity(self)
-            uploadDataToLabiba(filename: url.lastPathComponent, data: data)
-            { (url) in
+            uploadDataToLabiba(filename: url.lastPathComponent, data: data, mimetype: url.mimeType)
+            { (fileURL) in
               
-                if let fileURL = url
+                if let fileURL = fileURL
                 {
                     let dialog = ConversationDialog(by: .user, time: Date())
                     dialog.attachment = AttachmentCard(link: fileURL)
                     self.delegate?.botConnector(self, didRecieveActivity: dialog)
                     self.sendMessage(withAttachments: [
                         [
-                             "type": "file",
-                          //  "type": "image",
+                            "type": url.isImage() ?  "image":"file",
                             "payload": ["url": fileURL]
                         ]
                     ])
@@ -132,13 +133,13 @@ class BotConnector: NSObject {
     }
 
     
-    func uploadDataToLabiba(filename: String, data: Data, completion: @escaping (String?) -> Void) -> Void
+    func uploadDataToLabiba(filename: String, data: Data,mimetype:String, completion: @escaping (String?) -> Void) -> Void
     {
       // let LabibaUploadPath = "https://botbuilder.labiba.ai/WebBotConversation/UploadHomeReport?id=\(SharedPreference.shared.currentUserId)" // we add this since the old one produce 500 due to a viruse as nour said
         
         upload(multipartFormData: { (formData) in
             
-            formData.append(data, withName: "Filedata", fileName: filename, mimeType: "")
+            formData.append(data, withName: "Filedata", fileName: filename, mimeType: mimetype)
             
         }, to: LabibaUploadPath, encodingCompletion: createEncodingBlock(completion: completion))
     }
@@ -171,7 +172,7 @@ class BotConnector: NSObject {
         }
         do {
             let params = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
-            prettyPrintedRespons(data: data, name: "Submit Rating Form")
+            prettyPrintedResponse(data: data, name: "Submit Rating Form")
             showLoadingIndicator()
             LabibaRequest([String:Bool].self, url: path, method: .post, parameters: params, encoding:JSONEncoding.default , logTag: .ratingSubmit) { (result) in
                 switch result {
@@ -209,7 +210,7 @@ class BotConnector: NSObject {
     }
     
     func getHelpPageData(completion: @escaping (Result<HelpPageModel>) -> Void){
-        let path = "\(Labiba._basePath)/api/MobileAPI/FetchHelpPage"//Labiba._helpPath
+        let path = "\(Labiba._basePath)\(Labiba._helpServicePath)"//Labiba._helpPath
         let params:[String:Any] = [
             "bot_id" : SharedPreference.shared.currentUserId // "6bd2ecb6-958e-4bb5-905a-51bb6350490a"
         ]
@@ -234,10 +235,11 @@ class BotConnector: NSObject {
         request(url, method: method, parameters: parameters ,encoding: encoding , headers: nil ).responseData { (response) in
             switch response.result{
             case .success(let data):
-                prettyPrintedRespons(data: data, name: URL(string: url)?.lastPathComponent ?? "request")
+                let statusCode = response.response?.statusCode ?? 0
+                prettyPrintedResponse(url: url, statusCode:statusCode,method:method.rawValue,data: data, name: URL(string: url)?.lastPathComponent ?? "request")
                 do {
                     let response = try JSONDecoder().decode(T.self, from: data)
-                    log("ios","ios")
+                    //log("ios","ios")
                     completion(.success(response))
                 }catch{
                     log(String(data: data , encoding: .utf8) ?? "",NetworkError.encodingError.localizedDescription)
@@ -246,12 +248,14 @@ class BotConnector: NSObject {
             case .failure(let err):
                 log("",err.localizedDescription)
                 completion(.failure(err))
+                
             }
         }
     }
     
     enum LoggingTag:String {
         case messaging = "MESSAGING"
+        case lastMessage = "GET_LAST_MESSAGE"
         case upload  = "UPLOAD_FILES"
         case voice  = "VOICE"
         case ratingQuestions = "GET_RATING_QUESTIONS"
@@ -298,8 +302,8 @@ Email:
                 "SDKVersion":Labiba.version
             ]
             let data = try! JSONEncoder().encode(body)
-            prettyPrintedRespons(data: data)
-            let url =  "\(Labiba._basePath)/api/Mobile/LogAPI"//Labiba._loggingPath
+            prettyPrintedResponse(data: data)
+            let url =  "\(Labiba._basePath)\(Labiba._loggingServicePath)"//Labiba._loggingPath
             DispatchQueue.global(qos: .background).async {
                 request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: nil).responseData { (response) in
                     print ( "log api " ,response.response?.statusCode ?? "0")
@@ -334,6 +338,11 @@ fileprivate func createEncodingBlock(completion: @escaping (String?) -> Void) ->
         {
         
         case .success(let request, _, _):
+//            request.response { (data) in
+//                if let data = data.data{
+//                    print(String(data: data, encoding: .utf8))
+//                }
+//            }
             request.responseSwiftyJSON(completionHandler: { (res) in
                 
                 switch res.result

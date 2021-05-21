@@ -139,6 +139,8 @@
 // choices
 "Pick date and time" = "إختر التاريخ والوقت";
 "Pick date" = "إختر التاريخ";
+"camera" = "كاميرا" ;
+"gallery" = "ألبوم الصور" ;
 "scan" = "مسح";
 "Pick time" = "إختر الوقت" ;
 "Select Location" = "إختر الموقع" ;

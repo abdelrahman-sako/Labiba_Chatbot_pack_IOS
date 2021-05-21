@@ -152,8 +152,8 @@ public class SplashScreenWithImgeVC: SplashVC {
    
     
     func startConversation( langCode:Language)  {
-        Labiba.initialize(RecipientIdAR: "d0b8e34a-26ba-4ed6-a2af-4412b55ef442",RecipientIdEng: "f52d9469-df4b-4e8b-adaa-e46047636b48" ,language:langCode )
-//        Labiba.initialize(RecipientIdAR: "73b2c037-a112-460f-975b-c2d7412c0b7f",RecipientIdEng: "69bda09a-b448-4866-b327-2bbd0f3ac5e6" ,language:langCode )//test
+       // Labiba.initialize(RecipientIdAR: "d0b8e34a-26ba-4ed6-a2af-4412b55ef442",RecipientIdEng: "f52d9469-df4b-4e8b-adaa-e46047636b48" ,language:langCode )
+        Labiba.initialize(RecipientIdAR: "73b2c037-a112-460f-975b-c2d7412c0b7f",RecipientIdEng: "69bda09a-b448-4866-b327-2bbd0f3ac5e6" ,language:langCode )//test
         LabibaThemes.setNatHealth_Theme()
         self.navigationController?.pushViewController(ConversationViewController.create(), animated: true )
       // self.navigationController?.pushViewController(Labiba.createVoiceExperienceConversation(), animated: true )

@@ -15,7 +15,7 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
     override func viewDidLoad() {
         //OCR or LIVENESS
         //AR or EN
-        delegate?.createPost?(onView: self.view, ["post":"{\"Role\":\"OCR\",\"BotSessionID\": \"botSessionID\",\"PhoneNumber\": \"07788663666\",\"BotID\":\"0aa6d142-1ec1-497a-9915-4aefb42f7e51\",\"Language\": \"AR\"}"], completionHandler: { (status, data) in
+        delegate?.createPost?(onView: self.view, ["post":"{\"Role\":\"LIVENESS\",\"BotSessionID\": \"botSessionID\",\"PhoneNumber\": \"07788663666\",\"BotID\":\"0aa6d142-1ec1-497a-9915-4aefb42f7e51\",\"Language\": \"AR\"}"], completionHandler: { (status, data) in
             if status {
                 var object:[String:Any] = ["status":"success"] // "status":"success" added for BOJ
                 if let data = data {
@@ -29,8 +29,15 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
             self.botConnector.sendMessage("get started")
         })
 //        return
+        if #available(iOS 13.0, *) {
+            NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIScene.willEnterForegroundNotification, object: nil)
+        } else {
+            NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIApplication.willEnterForegroundNotification, object: nil)
+        }
     }
-    
+    @objc func willResignActive(_ notification: Notification) {
+        botConnector.resumeConnection()
+    }
     
     var botConnector:BotConnector = LabibaRestfulBotConnector.shared
     var delegate:LabibaDelegate?
@@ -79,8 +86,7 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
             case .calendar:
                 DatePickerViewController.present(withDelegate: self, mode: .date)
             case .camera:
-                break
-            //ImageSelector.shared.launch(onView: self, source: .camera, allowEditing: true)
+               ImageSelector.shared.launch(onView: self, source: .camera, allowEditing: true)
             case .gallery:
                 ImageSelector.shared.launch(onView: self, source: .photoLibrary, allowEditing: true)
             case .menu:
@@ -336,6 +342,7 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
         delegate?.liveChatTransfer?(onView: self.view, transferMessage: message)
     }
     func botConnectorDidRecieveTypingActivity(_ botConnector: BotConnector) {}
+    func botConnectorRemoveTypingActivity(_ botConnector: BotConnector) {}
 }
 
 

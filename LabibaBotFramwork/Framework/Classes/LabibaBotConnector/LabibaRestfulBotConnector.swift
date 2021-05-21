@@ -14,6 +14,7 @@ class LabibaRestfulBotConnector:BotConnector{
     var baseURL = "\(Labiba._basePath)\(Labiba._messagingServicePath)"
     var attachmentPayload:PayloadModel?
     let sessionManager:SessionManager
+    var isTherePendingRequest:Bool = false
     static let shared = LabibaRestfulBotConnector()
     override private init() {
         let configuration = URLSessionConfiguration.default
@@ -74,6 +75,7 @@ class LabibaRestfulBotConnector:BotConnector{
         let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
             self.log(url: self.baseURL, tag: .messaging, method: .post, parameter: parameters.description, response: respons,exception: exception)
         }
+        isTherePendingRequest = true
         currentRequest =  sessionManager.request(baseURL, method: .post, parameters: parameters, encoding: JSONEncoding.default , headers: ["Content-Type":"application/json"]).responseData { (response) in
             self.loader.dismiss()
             if let err = response.error{
@@ -83,22 +85,76 @@ class LabibaRestfulBotConnector:BotConnector{
             let jsonDecoder = JSONDecoder()
             switch response.result{
             case .success(let data):
+               
                 do {
                    // let model = try jsonDecoder.decode([LabibaModel].self, from: self.readExampleData())
                    let model = try jsonDecoder.decode([LabibaModel].self, from: data)
-                    self.prettyPrintedRespons(data: data)
+                    prettyPrintedResponse(url: self.baseURL, statusCode: response.response?.statusCode ?? 0, method: "post", data: data, name: "Messaging")
                     self.parseResponse(response: model)
                 } catch  {
+                    self.delegate?.botConnectorRemoveTypingActivity(self)
                     log(String(data: data, encoding: .utf8) ?? "",error.localizedDescription)
                     print(error.localizedDescription)
                 }
             case .failure(let err ):
+                self.delegate?.botConnectorRemoveTypingActivity(self)
                 log("",err.localizedDescription)
                 print(err.localizedDescription)
             }
+            self.isTherePendingRequest = false
         }
         
     }
+    
+    func getLastBotResponse()  {
+        let params:[String:String] = [
+            "RecepientID" :Labiba._pageId,
+            "SenderID":Labiba._senderId
+        ]
+        let url = "\(Labiba._basePath)/api/getLastBotResponse"
+        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
+            self.log(url: url, tag: .lastMessage, method: .post, parameter: params.description, response: respons,exception: exception)
+        }
+        isTherePendingRequest = true
+        currentRequest =  sessionManager.request(url, method: .post, parameters: params, encoding: JSONEncoding.default , headers: ["Content-Type":"application/json"]).responseData { (response) in
+            self.loader.dismiss()
+            if let err = response.error{
+                print(err.localizedDescription)
+                return
+            }
+            let jsonDecoder = JSONDecoder()
+            switch response.result{
+            case .success(let data):
+                
+                do {
+                    let model = try jsonDecoder.decode(LastBotResponseModel.self, from: data)
+                    prettyPrintedResponse(url: url, statusCode: response.response?.statusCode ?? 0, method: "post", data: data, name: "Last Bot Message")
+                    if let labibaModel = model.lastBotResponse {
+                        self.parseResponse(response: labibaModel)
+                        
+                    }
+                } catch  {
+                    self.delegate?.botConnectorRemoveTypingActivity(self)
+                    log(String(data: data, encoding: .utf8) ?? "",error.localizedDescription)
+                    print(error.localizedDescription)
+                }
+            case .failure(let err ):
+                self.delegate?.botConnectorRemoveTypingActivity(self)
+                log("",err.localizedDescription)
+                print(err.localizedDescription)
+            }
+            self.isTherePendingRequest = false
+        }
+    }
+    override func resumeConnection() {
+        if isTherePendingRequest {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                self.getLastBotResponse()
+            }
+           
+        }
+    }
+    
     
     func readExampleData() -> Data {
         if let path = Labiba.bundle.url(forResource: "JsonExample", withExtension: "json") {
@@ -120,20 +176,20 @@ class LabibaRestfulBotConnector:BotConnector{
         return Data()
     }
     
-    func prettyPrintedRespons(data:Data)  {
-        print("\n***********************************  RESPONSE  ***********************************\n")
-        do {
-            let jsonObjectModel = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-            let prettyModel = try JSONSerialization.data(withJSONObject: jsonObjectModel, options: .prettyPrinted)
-            
-            print(String(data: prettyModel, encoding: .utf8)!)
-            
-        } catch  {
-            print("error in \(#function) \n \(error.localizedDescription)")
-        }
-        print("\n*********************************** END RESPONSE ***********************************\n")
-        
-    }
+//    func prettyPrintedRespons(data:Data)  {
+//        print("\n***********************************1  RESPONSE  ***********************************\n")
+//        do {
+//            let jsonObjectModel = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+//            let prettyModel = try JSONSerialization.data(withJSONObject: jsonObjectModel, options: .prettyPrinted)
+//
+//            print(String(data: prettyModel, encoding: .utf8)!)
+//
+//        } catch  {
+//            print("error in \(#function) \n \(error.localizedDescription)")
+//        }
+//        print("\n*********************************** END RESPONSE ***********************************\n")
+//
+//    }
     
     
     override func sendLocation(_ location: CLLocationCoordinate2D) {
@@ -148,6 +204,10 @@ class LabibaRestfulBotConnector:BotConnector{
    
    
     func parseResponse(response:[LabibaModel])  {
+        if response.isEmpty {
+            delegate?.botConnectorRemoveTypingActivity(self)
+            return
+        }
         mainLoop: for model in response {
             var cancelCard = false
             
@@ -163,8 +223,9 @@ class LabibaRestfulBotConnector:BotConnector{
                 delegate?.botConnector(self, didRequestLiveChatTransferWithMessage: "livechat.transfer.once")
             }
             message?.text = message?.text?.replacingOccurrences(of: "livechat.transfer:", with: "").replacingOccurrences(of: "livechat.transfer.once:", with: "")// I know that it doesn't make sense, but this is how they asked me to work, they said that this is Hussam fault  :( :(
-            // dialog.message = message?.text
-            //            message?.text = "مَا هُوَ رَقْمُ الْعَمِيلِ الخَاْصِّ بِكْ !@:@<speak> <s> <emphasis level='strong'> أهلَوْ سَهْلَ </emphasis> </s> <break strength='strong'/> أنا بووجيْ مسؤولِتْ حْسابَكْ لِجْدِيدِهْ <break strength='strong'/> <s> كِيـفْ بَأْدَرْ أَساعْدَكِلْيُومْ؟ </s> </speak>"
+//            dialog.message = message?.text
+//                        message?.text = "مَا هُوَ رَقْمُ الْعَمِيلِ الخَاْصِّ بِكْ !@:@<speak> <s> <emphasis level='strong'> أهلَوْ سَهْلَ </emphasis> </s> <break strength='strong'/> أنا بووجيْ مسؤولِتْ حْسابَكْ لِجْدِيدِهْ <break strength='strong'/> <s> كِيـفْ بَأْدَرْ أَساعْدَكِلْيُومْ؟ </s> </speak>"
+         //   message?.text = "مرحبا، انا مساعدك الإفتراضي من يلو. يرجى اختيار اللغة:\u{200f}"
             if let messages = message?.text?.components(separatedBy: "@:@"){
                 if messages.count > 0 {
                     dialog.message = messages[0]
@@ -225,7 +286,7 @@ class LabibaRestfulBotConnector:BotConnector{
                                 case .location :
                                     dialog.requestLocation = true
                                     fallthrough
-                                case .dateAndTime ,.date ,.time , .location ,.QRCode:
+                                case .dateAndTime ,.date ,.time , .location ,.QRCode,.camera,.image,.gallery:
                                     dialogChoice.title = contentType.title
                                     dialogChoice.action = contentType.action
                                     dialog.choices = [dialogChoice]

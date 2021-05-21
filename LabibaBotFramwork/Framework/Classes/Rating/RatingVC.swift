@@ -96,7 +96,8 @@ class RatingVC: RatingBaseVC {
                 }
             }
         }else{
-           exit(0)
+            kill(getpid(), SIGKILL)
+           //exit(0)
         }
 
     }

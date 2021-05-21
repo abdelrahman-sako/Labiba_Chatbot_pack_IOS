@@ -442,7 +442,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                     }
                     
                 }else{
-                    exit(0)
+                    kill(getpid(), SIGKILL)
+                    //exit(0)
                 }
                 return
             }
@@ -721,6 +722,12 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         self.showTyping = true
         self.reloadTable()
     }
+    override func botConnectorRemoveTypingActivity(_ botConnector: BotConnector)
+    {
+        self.showTyping = false
+        self.reloadTable()
+    }
+    
     
     override func botConnector(_ botConnector: BotConnector, didRecieveActivity dialog: ConversationDialog)
     {

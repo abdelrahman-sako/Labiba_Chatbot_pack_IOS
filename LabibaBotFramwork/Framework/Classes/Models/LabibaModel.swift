@@ -7,6 +7,10 @@
 //
 
 import Foundation
+class LastBotResponseModel:Codable{
+    var result:String?
+    var lastBotResponse:[LabibaModel]?
+}
 class LabibaModel:Codable {
     var recipient:RecipientModel?
     var messaging_type:String?

@@ -191,15 +191,7 @@ class VoiceAssistantView: UIView {
     }
     @IBAction func attachmentAction(_ sender: UIButton) {
         let topVC = getTheMostTopViewController()
-        let documentPicker = UIDocumentPickerViewController(documentTypes: [
-            kUTTypePlainText,
-           // kUTTypeAudio,
-          //  kUTTypeMovie,
-          //  kUTTypeCompositeContent,
-           // kUTTypeImage,
-         //   kUTTypeVideo,
-            kUTTypePDF
-            ].map({ $0 as String }), in: .import)
+        let documentPicker = UIDocumentPickerViewController(documentTypes:  Labiba.VoiceAssistantView.attachmentTypes.map({ $0 as String }), in: .import)
         documentPicker.delegate = self
         topVC?.present(documentPicker, animated: true, completion: nil)
     }

@@ -87,17 +87,30 @@ func showToast(message : String , inView view :UIView)
     })
 }
 
-func prettyPrintedRespons(data:Data,name:String = "")  {
+func prettyPrintedResponse(url:String = "",statusCode:Int = 0,method:String = "",data:Data,name:String = "")  {
     print("\n***********************************  \(name) RESPONSE  ***********************************\n")
-    do {
-        if let jsonObjectModel = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] {
-            let prettyModel = try JSONSerialization.data(withJSONObject: jsonObjectModel, options: .prettyPrinted)
-            print(String(data: prettyModel, encoding: .utf8)!)
-        }
-    } catch  {
-        print("error in \(#function) \n \(error.localizedDescription)")
+    print("URL:    \(url)")
+    print("Method: \(method)")
+    print("Code:   \(statusCode)")
+    let successBlock:(_ jsonObject:Any) throws ->Void =  {jsonObject in
+        let prettyModel = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
+        print(String(data: prettyModel, encoding: .utf8)!)
+    }
+    let errorBlock:(_ error:String)->Void =  { error in
+        print("error in \(#function) \n \(error)")
         print(String(data: data, encoding: .utf8))
     }
+    do {
+      
+        if let jsonObjectModel = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] {
+            try successBlock(jsonObjectModel)
+        }else if let jsonObjectModel = try JSONSerialization.jsonObject(with: data, options: []) as? [[String:AnyObject]]{
+            try successBlock(jsonObjectModel)
+        }else{
+            errorBlock("model can't be serialized")
+        }
+    } catch  {
+        errorBlock(error.localizedDescription)
+    }
     print("\n*********************************** END \(name) RESPONSE ***********************************\n")
-    
 }

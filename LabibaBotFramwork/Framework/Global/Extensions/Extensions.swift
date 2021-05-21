@@ -675,7 +675,14 @@ extension UIImage
    
     ///
 }
-
+extension URL{
+    func isImage() -> Bool {
+        let imageFormats = ["jpg", "jpeg", "png", "gif"]
+        let ext = self.pathExtension
+        return imageFormats.contains(ext)
+    }
+    
+}
 extension Double
 {
     func formatted(_ fractions: Int) -> String?

@@ -41,7 +41,7 @@ enum BubbleSource
             }else
             {
             checkHyperLink(text:newValue)
-            let text = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
+            var text = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
 //               let text = """
 //                        <p style="color:blue"> Saturday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM <br><br> Sunday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM <br><br> Monday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM <br><br> <strong>Tuesday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM</strong> <br><br> Wednesday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM <br><br> Thursday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM <br><br> Friday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM <br><br></p>
 //                       """
@@ -63,6 +63,7 @@ enum BubbleSource
                 {
                     fontSize = Labiba.BotChatBubble.fontsize
                     let lang = text.detectedLangauge()
+                    if lang == "ar" {text = "\(text)\u{200f}".replacingOccurrences(of: "\n", with: "\u{200f}\n")}// this is right to left unicode (zero width) to handle puncuation marks at the end of the sentences
                     let boldFont =  applyBotFont(textLang: Language(rawValue: lang ?? "") ?? .ar ,bold:true, size: fontSize )
                     let regularFont =  applyBotFont(textLang: Language(rawValue: lang ?? "") ?? .ar , size: fontSize)
                     self.textLabel.attributedText = text.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba.BotChatBubble.textColor)

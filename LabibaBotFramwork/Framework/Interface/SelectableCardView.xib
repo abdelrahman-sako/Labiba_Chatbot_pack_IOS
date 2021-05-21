@@ -107,12 +107,12 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmp-aS-Lx3">
-                                    <rect key="frame" x="92.5" y="1" width="80" height="34"/>
+                                    <rect key="frame" x="90" y="1" width="85" height="34"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Qff-wM-rM9"/>
                                     </constraints>
-                                    <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                    <inset key="contentEdgeInsets" minX="13" minY="0.0" maxX="13" maxY="0.0"/>
                                     <state key="normal" title="Button 1"/>
                                     <connections>
                                         <action selector="selectButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="hUn-r7-h7M"/>
@@ -160,8 +160,9 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOc-1w-4mt">
-                                    <rect key="frame" x="5" y="1" width="255" height="34"/>
+                                    <rect key="frame" x="90" y="1" width="85" height="34"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="contentEdgeInsets" minX="13" minY="0.0" maxX="13" maxY="0.0"/>
                                     <state key="normal" title="Button 2"/>
                                     <connections>
                                         <action selector="selectButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="pzg-YX-hvA"/>
@@ -172,9 +173,8 @@
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="ZOc-1w-4mt" secondAttribute="bottom" id="CqJ-XX-1by"/>
                                 <constraint firstItem="PD9-Ie-MWb" firstAttribute="top" secondItem="ob1-WO-pbf" secondAttribute="top" id="FwJ-M3-XZk"/>
-                                <constraint firstItem="ZOc-1w-4mt" firstAttribute="leading" secondItem="ob1-WO-pbf" secondAttribute="leading" constant="5" id="RkJ-qR-yA1"/>
                                 <constraint firstAttribute="height" constant="35" id="TmN-ga-Gcs"/>
-                                <constraint firstAttribute="trailing" secondItem="ZOc-1w-4mt" secondAttribute="trailing" constant="5" id="jl6-NI-Qlz"/>
+                                <constraint firstItem="ZOc-1w-4mt" firstAttribute="centerX" secondItem="ob1-WO-pbf" secondAttribute="centerX" id="f5Z-OC-OfE"/>
                                 <constraint firstAttribute="height" constant="55" id="uEh-xh-jXH"/>
                                 <constraint firstItem="ZOc-1w-4mt" firstAttribute="top" secondItem="PD9-Ie-MWb" secondAttribute="bottom" id="zPP-nK-ay0"/>
                             </constraints>
@@ -206,8 +206,9 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agc-PA-yfY">
-                                    <rect key="frame" x="5" y="1" width="255" height="34"/>
+                                    <rect key="frame" x="90" y="1" width="85" height="34"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="contentEdgeInsets" minX="13" minY="0.0" maxX="13" maxY="0.0"/>
                                     <state key="normal" title="Button 3"/>
                                     <connections>
                                         <action selector="selectButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="tJ6-V3-orC"/>
@@ -216,10 +217,9 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="Agc-PA-yfY" secondAttribute="trailing" constant="5" id="4Kr-zW-ihw"/>
                                 <constraint firstItem="Agc-PA-yfY" firstAttribute="top" secondItem="klD-kZ-icU" secondAttribute="bottom" id="4wL-ho-pjd"/>
+                                <constraint firstItem="Agc-PA-yfY" firstAttribute="centerX" secondItem="VnY-I3-pKf" secondAttribute="centerX" id="5zc-z9-Liu"/>
                                 <constraint firstAttribute="bottom" secondItem="Agc-PA-yfY" secondAttribute="bottom" id="7QL-wN-mOt"/>
-                                <constraint firstItem="Agc-PA-yfY" firstAttribute="leading" secondItem="VnY-I3-pKf" secondAttribute="leading" constant="5" id="Zh0-Sp-BU6"/>
                                 <constraint firstItem="klD-kZ-icU" firstAttribute="top" secondItem="VnY-I3-pKf" secondAttribute="top" id="bBl-z4-9P4"/>
                                 <constraint firstAttribute="height" constant="55" id="c0j-pF-5fw"/>
                                 <constraint firstAttribute="height" constant="35" id="xX9-fX-0al"/>
@@ -245,7 +245,9 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="PD9-Ie-MWb" firstAttribute="leading" secondItem="l4T-HC-LJc" secondAttribute="leading" id="8sv-hT-ngA"/>
+                        <constraint firstItem="ZOc-1w-4mt" firstAttribute="width" secondItem="wmp-aS-Lx3" secondAttribute="width" id="a6h-s0-Lbf"/>
                         <constraint firstItem="klD-kZ-icU" firstAttribute="trailing" secondItem="l4T-HC-LJc" secondAttribute="trailing" id="atn-8z-XB9"/>
+                        <constraint firstItem="Agc-PA-yfY" firstAttribute="width" secondItem="wmp-aS-Lx3" secondAttribute="width" id="t6Y-BJ-FRt"/>
                         <constraint firstItem="klD-kZ-icU" firstAttribute="leading" secondItem="l4T-HC-LJc" secondAttribute="leading" id="wgr-Uk-xvK"/>
                         <constraint firstItem="PD9-Ie-MWb" firstAttribute="trailing" secondItem="l4T-HC-LJc" secondAttribute="trailing" id="x6r-QG-LyH"/>
                     </constraints>
@@ -297,6 +299,7 @@
                 <outlet property="bottomGradientView" destination="7PZ-8I-eie" id="x1P-KN-Xet"/>
                 <outlet property="buttonBordersLeadingCons" destination="alg-m3-Kqz" id="Qtd-Jr-Oxg"/>
                 <outlet property="buttonBordersTrailingCons" destination="pS6-Vz-nlf" id="hly-A3-EZZ"/>
+                <outlet property="buttonsStackView" destination="PWz-Iv-0aB" id="OHP-3u-5Xy"/>
                 <outlet property="descriptionLabel" destination="QT3-r4-wbf" id="n2H-kW-8mt"/>
                 <outlet property="imageHightCons" destination="Xd0-Nr-oc2" id="EFy-cA-4hJ"/>
                 <outlet property="imageView" destination="fmW-cD-SQd" id="jfl-Qv-dXR"/>
@@ -309,9 +312,9 @@
                 <outletCollection property="buttonContainerViews" destination="7hm-Ng-fFK" collectionClass="NSMutableArray" id="AgA-ba-tYW"/>
                 <outletCollection property="buttonContainerViews" destination="ob1-WO-pbf" collectionClass="NSMutableArray" id="iiH-mz-UcR"/>
                 <outletCollection property="buttonContainerViews" destination="VnY-I3-pKf" collectionClass="NSMutableArray" id="rvz-23-NdP"/>
-                <outletCollection property="buttons" destination="wmp-aS-Lx3" collectionClass="NSMutableArray" id="jxv-nD-11u"/>
-                <outletCollection property="buttons" destination="ZOc-1w-4mt" collectionClass="NSMutableArray" id="mJz-z3-6ST"/>
-                <outletCollection property="buttons" destination="Agc-PA-yfY" collectionClass="NSMutableArray" id="tcj-Lh-UOD"/>
+                <outletCollection property="buttons" destination="wmp-aS-Lx3" collectionClass="NSMutableArray" id="fiF-9d-p2A"/>
+                <outletCollection property="buttons" destination="ZOc-1w-4mt" collectionClass="NSMutableArray" id="Z8r-13-YGX"/>
+                <outletCollection property="buttons" destination="Agc-PA-yfY" collectionClass="NSMutableArray" id="vPk-Lb-jdC"/>
             </connections>
             <point key="canvasLocation" x="-219.56521739130437" y="2.34375"/>
         </view>

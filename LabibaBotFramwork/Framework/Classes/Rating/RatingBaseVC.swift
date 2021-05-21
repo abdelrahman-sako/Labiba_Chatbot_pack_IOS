@@ -65,7 +65,8 @@ class RatingBaseVC: UIViewController {
                                       message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK".localForChosnLangCodeBB, style: .default, handler: { _ in
             if result{
-                exit(0)
+                kill(getpid(), SIGKILL)
+               //exit(0)
             }
         })
         alert.addAction(okAction)

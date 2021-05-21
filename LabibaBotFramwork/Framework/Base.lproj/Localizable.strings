@@ -139,6 +139,8 @@
 // choices
 "Pick date and time" = "Pick date and time";
 "Pick date" = "Pick date" ;
+"camera" = "Camera" ;
+"gallery" = "Gallery" ;
 "scan" = "Scan";
 "Pick time" = "Pick time" ;
 "Select Location" = "Select Location" ;
