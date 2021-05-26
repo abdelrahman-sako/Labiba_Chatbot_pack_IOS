@@ -17,6 +17,18 @@ public class LabibaBotChatBubble {
     public var textAlignment:NSTextAlignment?
     public var alpha:CGFloat = 1
     public var cornerRadius:CGFloat = 10
+    public var cornerMaskPin:LabibaCornerPin = .none{
+        didSet{
+            switch cornerMaskPin {
+            case .up:
+                cornerMask = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner]
+            case .down:
+                cornerMask = [.layerMaxXMaxYCorner,.layerMinXMinYCorner,.layerMaxXMinYCorner]
+            case .none:
+                cornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
+            }
+        }
+    }
     public var cornerMask: CACornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
     public var shadow:LabibaShadowModel = LabibaShadowModel(shadowColor: UIColor.clear.cgColor, shadowOffset: .zero, shadowRadius: 0, shadowOpacity: 0)
     public var avatar:UIImage?

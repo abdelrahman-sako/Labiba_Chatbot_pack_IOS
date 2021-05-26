@@ -31,21 +31,35 @@ public class BotBubble: BubbleView {
         //bubble.layer.cornerRadius = Labiba._botBubbleCorner
         bubble.layer.cornerRadius = Labiba.BotChatBubble.cornerRadius
         if SharedPreference.shared.botLangCode == .ar {
-//            if  !Labiba._botBubbleCornerMask.contains(.layerMinXMinYCorner){
-//                Labiba._botBubbleCornerMask.insert(.layerMinXMinYCorner)
-//                Labiba._botBubbleCornerMask.remove(.layerMaxXMinYCorner)
-            if  !Labiba.BotChatBubble.cornerMask.contains(.layerMinXMinYCorner){
+            switch Labiba.BotChatBubble.cornerMaskPin {
+            case .up:
                 Labiba.BotChatBubble.cornerMask.insert(.layerMinXMinYCorner)
                 Labiba.BotChatBubble.cornerMask.remove(.layerMaxXMinYCorner)
+            case .down:
+                Labiba.BotChatBubble.cornerMask.insert(.layerMinXMaxYCorner)
+                Labiba.BotChatBubble.cornerMask.remove(.layerMaxXMaxYCorner)
+            case .none:
+                break
             }
+//            if  !Labiba.BotChatBubble.cornerMask.contains(.layerMinXMinYCorner){
+//                Labiba.BotChatBubble.cornerMask.insert(.layerMinXMinYCorner)
+//                Labiba.BotChatBubble.cornerMask.remove(.layerMaxXMinYCorner)
+//            }
         }else{
-//            if  !Labiba._botBubbleCornerMask.contains(.layerMaxXMinYCorner){
-//                Labiba._botBubbleCornerMask.insert(.layerMaxXMinYCorner)
-//                Labiba._botBubbleCornerMask.remove(.layerMinXMinYCorner)
-                if  !Labiba.BotChatBubble.cornerMask.contains(.layerMaxXMinYCorner){
-                    Labiba.BotChatBubble.cornerMask.insert(.layerMaxXMinYCorner)
-                    Labiba.BotChatBubble.cornerMask.remove(.layerMinXMinYCorner)
+            switch Labiba.BotChatBubble.cornerMaskPin {
+            case .up:
+                Labiba.BotChatBubble.cornerMask.remove(.layerMinXMinYCorner)
+                Labiba.BotChatBubble.cornerMask.insert(.layerMaxXMinYCorner)
+            case .down:
+                Labiba.BotChatBubble.cornerMask.remove(.layerMinXMaxYCorner)
+                Labiba.BotChatBubble.cornerMask.insert(.layerMaxXMaxYCorner)
+            case .none:
+                break
             }
+//                if  !Labiba.BotChatBubble.cornerMask.contains(.layerMaxXMinYCorner){
+//                    Labiba.BotChatBubble.cornerMask.insert(.layerMaxXMinYCorner)
+//                    Labiba.BotChatBubble.cornerMask.remove(.layerMinXMinYCorner)
+//            }
         }
       //  bubble.layer.maskedCorners = Labiba._botBubbleCornerMask
         bubble.layer.maskedCorners = Labiba.BotChatBubble.cornerMask

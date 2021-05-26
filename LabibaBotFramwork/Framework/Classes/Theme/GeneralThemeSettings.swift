@@ -8,6 +8,11 @@
 
 import Foundation
 import UIKit
+public enum LabibaCornerPin{
+    case up
+    case down
+    case none
+}
 
 public enum LabibaFontWeight{
     case regular

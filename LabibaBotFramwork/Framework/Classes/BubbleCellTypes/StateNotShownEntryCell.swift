@@ -424,8 +424,11 @@ class ChoiceButton: UIButton
     {
         self.choice = choice
         super.init(frame: CGRect(x: 0, y: 0, width: 1, height: 35))
-        
-        self.layer.cornerRadius =  Labiba.ChoiceView.cornerRadius
+        if Labiba.ChoiceView.cornerRadius < self.bounds.height/2{
+            self.layer.cornerRadius =  Labiba.ChoiceView.cornerRadius
+        }else{
+            self.layer.cornerRadius =  self.bounds.height/2
+        }
         self.layer.masksToBounds = true
         self.layer.borderColor = Labiba.ChoiceView.borderColor.cgColor
         self.layer.borderWidth = 1.0

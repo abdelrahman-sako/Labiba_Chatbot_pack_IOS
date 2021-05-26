@@ -16,6 +16,18 @@ public class LabibaUserChatBubble {
     public var fontsize:CGFloat = 13 // no wight since bubble font deped on the HTML style
     public var alpha:CGFloat = 1
     public var cornerRadius:CGFloat = 10
+    public var cornerMaskPin:LabibaCornerPin = .none{
+        didSet{
+            switch cornerMaskPin {
+            case .up:
+                cornerMask = [.layerMinXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
+            case .down:
+                cornerMask = [.layerMinXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner]
+            case .none:
+                cornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
+            }
+        }
+    }
     public var cornerMask: CACornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
     public var avatar:UIImage?
     

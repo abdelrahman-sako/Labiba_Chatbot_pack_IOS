@@ -105,6 +105,8 @@ class BotConnector: NSObject {
                             "payload": ["url": imgUrl]
                         ]
                         ])
+                }else{
+                    self.sendMessage("Failure")
                 }
             }
         }
@@ -127,6 +129,8 @@ class BotConnector: NSObject {
                             "payload": ["url": fileURL]
                         ]
                     ])
+                }else{
+                    self.sendMessage("Failure")
                 }
             }
         }
@@ -338,11 +342,11 @@ fileprivate func createEncodingBlock(completion: @escaping (String?) -> Void) ->
         {
         
         case .success(let request, _, _):
-//            request.response { (data) in
-//                if let data = data.data{
-//                    print(String(data: data, encoding: .utf8))
-//                }
-//            }
+            request.response { (data) in
+                if let data = data.data{
+                    print(String(data: data, encoding: .utf8))
+                }
+            }
             request.responseSwiftyJSON(completionHandler: { (res) in
                 
                 switch res.result
