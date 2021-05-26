@@ -21,6 +21,9 @@ enum BubbleSource
     var considersAvatar:Bool = true
     
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var bubbleContainer: UIView!
+    @IBOutlet weak var timestampLbl: UILabel!
+  
     
     var posY:CGFloat = 0
     var maxWidth:CGFloat = 0
@@ -29,22 +32,29 @@ enum BubbleSource
     var doSetMessage:String {
         
         set {
-            //let text = Emoticonizer.emoticonizeString(aString: newValue.trimmingCharacters(in: .whitespacesAndNewlines))
+            if let timestamp = currentDialog?.timestamp {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = Labiba.BotChatBubble.timestamp.formate
+                timestampLbl.text = "\(source == .incoming ? "Bot" : "You") - \(dateFormatter.string(from: timestamp))"
+                timestampLbl.isHidden  = false
+                if SharedPreference.shared.botLangCode == .ar{
+                    timestampLbl.textAlignment = source == .incoming  ? .right : .left
+                }else {
+                    timestampLbl.textAlignment = source == .incoming  ? .left : .right
+                }
+            }else {
+                timestampLbl.isHidden  = true
+            }
             if let frame = currentDialog?.frame {
                 self.frame = frame
                 self.textLabel.attributedText = currentDialog?.attributedMessage
-               // let lang = currentDialog?.langCode
                 self.textLabel.textAlignment = currentDialog?.alignment ?? .natural// (lang ?? "ar" ) == "ar" ? .right : .left
-               // self.textLabel.font = applyBotFont(textLang: Language(rawValue: lang ?? ""),size: 13)
                 addLinkGesture()
                
             }else
             {
             checkHyperLink(text:newValue)
             var text = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
-//               let text = """
-//                        <p style="color:blue"> Saturday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM <br><br> Sunday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM <br><br> Monday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM <br><br> <strong>Tuesday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM</strong> <br><br> Wednesday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM <br><br> Thursday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM <br><br> Friday <br> اوقات الدوام: 09:00:00 AM - 11:00:00 PM <br><br></p>
-//                       """
             print("TrackSteps Bubble " + text)
             print("TrackSteps ########################################")
             /////////////////////////////////////html
@@ -165,6 +175,7 @@ enum BubbleSource
         }
         //
         height  = height < 44 ? 44 : height
+        height = currentDialog?.timestamp != nil ? height + 20 : height
         self.frame = CGRect(x: BubbleXPosition, y: self.posY, width: width + 20 , height: height )
         currentDialog?.frame = self.frame
         //self.frame = CGRect(x: BubbleXPosition, y: self.posY, width: BubbleWidth, height: height )

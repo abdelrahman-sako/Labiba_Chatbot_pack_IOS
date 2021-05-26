@@ -80,7 +80,7 @@ class MediaStreamResponseRenderer: ResponseRenderer
             if !audio.created {                                                      ///////test performance
                 audio.party = display.dialog.party
                 let dateFormatter = DateFormatter()
-                audio.dateLabel.text = dateFormatter.string(from: display.dialog.timestamp)
+                audio.dateLabel.text = dateFormatter.string(from: display.dialog.timestamp ?? Date())
             }
             mediaView = audio
         }

@@ -1,27 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" id="sZf-R7-Gle" customClass="UserBubble" customModule="LabibaBotFramwork" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="350" height="70"/>
+            <rect key="frame" x="0.0" y="0.0" width="350" height="97"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi Natali" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zX-dB-CYe">
-                    <rect key="frame" x="10" y="0.0" width="330" height="71"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="edz-zY-U6G">
+                    <rect key="frame" x="0.0" y="0.0" width="350" height="97"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPy-w6-Kuz">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="77"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Natali" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zX-dB-CYe">
+                                    <rect key="frame" x="10" y="4" width="330" height="69"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="5zX-dB-CYe" secondAttribute="trailing" constant="10" id="3nk-oe-jLj"/>
+                                <constraint firstItem="5zX-dB-CYe" firstAttribute="leading" secondItem="uPy-w6-Kuz" secondAttribute="leading" constant="10" id="Qlk-T2-bmu"/>
+                                <constraint firstItem="5zX-dB-CYe" firstAttribute="top" secondItem="uPy-w6-Kuz" secondAttribute="top" constant="4" id="gUa-cK-6o7"/>
+                                <constraint firstAttribute="bottom" secondItem="5zX-dB-CYe" secondAttribute="bottom" constant="4" id="tfH-h2-FmO"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdH-B1-DQz">
+                            <rect key="frame" x="0.0" y="77" width="350" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="dSO-uU-wHp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
-            <color key="backgroundColor" red="0.031372549020000001" green="0.37254901959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="edz-zY-U6G" secondAttribute="bottom" id="UIE-0o-eae"/>
+                <constraint firstItem="edz-zY-U6G" firstAttribute="leading" secondItem="sZf-R7-Gle" secondAttribute="leading" id="bAK-fT-5Fr"/>
+                <constraint firstAttribute="trailing" secondItem="edz-zY-U6G" secondAttribute="trailing" id="nlD-dC-ZNF"/>
+                <constraint firstItem="edz-zY-U6G" firstAttribute="top" secondItem="sZf-R7-Gle" secondAttribute="top" id="pPQ-mO-w0P"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
@@ -30,9 +62,16 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="bubbleContainer" destination="uPy-w6-Kuz" id="dw9-pO-ZDl"/>
                 <outlet property="textLabel" destination="5zX-dB-CYe" id="YzV-C4-eH1"/>
+                <outlet property="timestampLbl" destination="XdH-B1-DQz" id="bXe-03-hhZ"/>
             </connections>
-            <point key="canvasLocation" x="24" y="-184.40779610194903"/>
+            <point key="canvasLocation" x="24" y="-172.26386806596702"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

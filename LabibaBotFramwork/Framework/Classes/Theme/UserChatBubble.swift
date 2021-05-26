@@ -31,4 +31,6 @@ public class LabibaUserChatBubble {
     public var cornerMask: CACornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
     public var avatar:UIImage?
     
+    public var timestamp:(fontSize:CGFloat,color:UIColor,formate:String) = (9,.gray,"h:mm a")
+    
 }

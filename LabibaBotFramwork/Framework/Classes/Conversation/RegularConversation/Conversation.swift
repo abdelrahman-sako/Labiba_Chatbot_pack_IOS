@@ -26,7 +26,7 @@ class ConversationDialog
 
     private(set) var party: ConversationParty
 
-    init(by party: ConversationParty, time: Date)
+    init(by party: ConversationParty, time: Date?)
     {
         self.party = party
         self.timestamp = time
@@ -48,7 +48,8 @@ class ConversationDialog
     var attributedMessage: NSAttributedString?
     var alignment:NSTextAlignment?
     var link:URL?
-    var timestamp: Date
+    var timestamp: Date?
+    var timestampString: String?
     //
     var frame:CGRect?
     var langCode:String?

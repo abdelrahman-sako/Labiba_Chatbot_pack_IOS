@@ -208,14 +208,19 @@ class LabibaRestfulBotConnector:BotConnector{
             delegate?.botConnectorRemoveTypingActivity(self)
             return
         }
-        mainLoop: for model in response {
+        mainLoop: for (index,model) in response.enumerated() {
             var cancelCard = false
             
             guard  let msgType = model.messaging_type , msgType == "RESPONSE" else {
                 return
             }
-            
-            let dialog = ConversationDialog(by: .bot, time: Date())
+            var timestamp:Date? = Date()
+            if response.count > index+1 {
+                if !(response[index+1].message?.text?.isEmpty  ?? true){
+                    timestamp = nil
+                }
+            }
+            let dialog = ConversationDialog(by: .bot, time: timestamp)
             let message = model.message
             if message?.text?.contains("livechat.transfer")  ?? false {
                 delegate?.botConnector(self, didRequestLiveChatTransferWithMessage: "livechat.transfer")

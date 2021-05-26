@@ -32,7 +32,7 @@ class UserBubble: BubbleView
         //bubble.textLabel.textColor = Labiba._userBubbleTextColor
         bubble.textLabel.textColor = Labiba.UserChatBubble.textColor
         // bubble.layer.cornerRadius = Labiba._userBubbleCorner
-        bubble.layer.cornerRadius = Labiba.UserChatBubble.cornerRadius
+        bubble.bubbleContainer.layer.cornerRadius = Labiba.UserChatBubble.cornerRadius
         if SharedPreference.shared.botLangCode == .ar {
             switch Labiba.UserChatBubble.cornerMaskPin {
             case .up:
@@ -64,10 +64,12 @@ class UserBubble: BubbleView
 //                Labiba.UserChatBubble.cornerMask.remove(.layerMaxXMinYCorner)
 //            }
         }
-        // bubble.layer.maskedCorners = Labiba._userBubbleCornerMask
-        bubble.layer.maskedCorners = Labiba.UserChatBubble.cornerMask
-        //bubble.alpha = Labiba._userBubbleAlpha
-        bubble.alpha = Labiba.UserChatBubble.alpha
+        bubble.bubbleContainer.layer.maskedCorners = Labiba.UserChatBubble.cornerMask
+        bubble.bubbleContainer.alpha = Labiba.UserChatBubble.alpha
+        
+        bubble.timestampLbl.textColor = Labiba.UserChatBubble.timestamp.color
+        bubble.timestampLbl.font = applyBotFont(size: Labiba.UserChatBubble.timestamp.fontSize)
+        
         //        if let grad = Labiba._userBubbleBackgroundGradient
 //        {
 //
@@ -86,13 +88,13 @@ class UserBubble: BubbleView
 //        }
         switch Labiba.UserChatBubble.background {
         case .solid(color: let color):
-            bubble.backgroundColor = color
+            bubble.bubbleContainer.backgroundColor = color
         case .gradient(gradientSpecs: let gradientSpec):
             let gview = GradientView(frame: bubble.bounds)
             gview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             gview.setGradient(gradientSpec)
             gview.isUserInteractionEnabled = false
-            bubble.insertSubview(gview, at: 0)
+            bubble.bubbleContainer.insertSubview(gview, at: 0)
         }
 
         return bubble

@@ -12,24 +12,20 @@ let BotBubbleColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 
 public class BotBubble: BubbleView {
     
+   
     override class func createBubble(withWidth width:CGFloat) -> BubbleView {
        
         let bubble = UIView.loadFromNibNamedFromDefaultBundle("BotBubble") as! BotBubble
         bubble.maxWidth = width
-       // bubble.considersAvatar = Labiba._botAvatar != nil
         bubble.considersAvatar = Labiba.BotChatBubble.avatar != nil
         
-//        bubble.layer.shadowColor = Labiba._botBubbleShadow.shadowColor
-//        bubble.layer.shadowOffset = Labiba._botBubbleShadow.shadowOffset
-//        bubble.layer.shadowRadius = Labiba._botBubbleShadow.shadowRadius
-//        bubble.layer.shadowOpacity = Labiba._botBubbleShadow.shadowOpacity
-        bubble.layer.shadowColor = Labiba.BotChatBubble.shadow.shadowColor
-        bubble.layer.shadowOffset = Labiba.BotChatBubble.shadow.shadowOffset
-        bubble.layer.shadowRadius = Labiba.BotChatBubble.shadow.shadowRadius
-        bubble.layer.shadowOpacity = Labiba.BotChatBubble.shadow.shadowOpacity
+        bubble.bubbleContainer.layer.shadowColor = Labiba.BotChatBubble.shadow.shadowColor
+        bubble.bubbleContainer.layer.shadowOffset = Labiba.BotChatBubble.shadow.shadowOffset
+        bubble.bubbleContainer.layer.shadowRadius = Labiba.BotChatBubble.shadow.shadowRadius
+        bubble.bubbleContainer.layer.shadowOpacity = Labiba.BotChatBubble.shadow.shadowOpacity
         
         //bubble.layer.cornerRadius = Labiba._botBubbleCorner
-        bubble.layer.cornerRadius = Labiba.BotChatBubble.cornerRadius
+        bubble.bubbleContainer.layer.cornerRadius = Labiba.BotChatBubble.cornerRadius
         if SharedPreference.shared.botLangCode == .ar {
             switch Labiba.BotChatBubble.cornerMaskPin {
             case .up:
@@ -61,15 +57,16 @@ public class BotBubble: BubbleView {
 //                    Labiba.BotChatBubble.cornerMask.remove(.layerMinXMinYCorner)
 //            }
         }
-      //  bubble.layer.maskedCorners = Labiba._botBubbleCornerMask
-        bubble.layer.maskedCorners = Labiba.BotChatBubble.cornerMask
-      //  bubble.roundCorners(corners: [.allCorners], radius: 20)
-        bubble.layer.masksToBounds = false
+        bubble.bubbleContainer.layer.maskedCorners = Labiba.BotChatBubble.cornerMask
+        bubble.bubbleContainer.layer.masksToBounds = false
         bubble.source = .incoming
-       // bubble.textLabel.textColor = Labiba._botBubbleTextColor
         bubble.textLabel.textColor = Labiba.BotChatBubble.textColor
-       // bubble.alpha = Labiba._botBubbleAlpha
-        bubble.alpha = Labiba.BotChatBubble.alpha
+        bubble.bubbleContainer.alpha = Labiba.BotChatBubble.alpha
+        
+        bubble.timestampLbl.textColor = Labiba.BotChatBubble.timestamp.color
+        bubble.timestampLbl.font = applyBotFont(size: Labiba.BotChatBubble.timestamp.fontSize)
+        
+         
 //        if let grad = Labiba._botBubbleBackgroundGradient {
 //
 //            let gview = GradientView(frame: bubble.bounds)
@@ -90,13 +87,13 @@ public class BotBubble: BubbleView {
 //        }
         switch Labiba.BotChatBubble.background {
         case .solid(color: let color):
-            bubble.backgroundColor = color
+            bubble.bubbleContainer.backgroundColor = color
         case .gradient(gradientSpecs: let grad):
             let gview = GradientView(frame: bubble.bounds)
             gview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             gview.setGradient(grad)
             gview.isUserInteractionEnabled = false
-            bubble.insertSubview(gview, at: 0)
+            bubble.bubbleContainer.insertSubview(gview, at: 0)
         }
         
         return bubble
