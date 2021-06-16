@@ -33,6 +33,7 @@ class RatingSheetVC: RatingBaseVC {
             self.containerView.backgroundColor = color
         case .gradient(gradientSpecs: let grad):
             self.containerView.applyGradient(colours: grad.colors, locations: nil)
+        case .image(image: _):break
         }
         ratingTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         containerView.layer.cornerRadius  = 15

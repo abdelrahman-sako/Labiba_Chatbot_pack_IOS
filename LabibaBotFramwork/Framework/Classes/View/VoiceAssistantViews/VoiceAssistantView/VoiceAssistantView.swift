@@ -85,6 +85,7 @@ class VoiceAssistantView: UIView {
             self.backgroundView.backgroundColor = color
         case .gradient(gradientSpecs: let grad):
             self.applyGradient(colours:grad.colors, locations: nil)
+        case .image(image: _):break
         }
         
         

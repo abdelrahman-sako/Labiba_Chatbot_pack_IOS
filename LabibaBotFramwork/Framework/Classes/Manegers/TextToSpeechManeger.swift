@@ -58,9 +58,12 @@ class TextToSpeechManeger:NSObject{
     
     func append(dialog:ConversationDialog)  {
         
-        if !Labiba.EnableTextToSpeech { return }
+        guard let message = dialog.message, !message.isEmpty, Labiba.EnableTextToSpeech   else {
+            return
+        }
+        //if !Labiba.EnableTextToSpeech   { return }
         
-        var filteredText = dialog.message ?? " "
+        var filteredText = message//dialog.message ?? " "
         //        filteredText = filteredText.withoutHtmlTags
         filteredText.removeHtmlTags()
       

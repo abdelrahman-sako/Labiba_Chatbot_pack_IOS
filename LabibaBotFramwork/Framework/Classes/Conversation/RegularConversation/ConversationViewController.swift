@@ -365,16 +365,27 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     
     func chatBackgroundColor()  {
-        if let bgImage = Labiba._ChatMainBackgroundImage {
-            self.bacgroundImage.image = bgImage
-        }else if let grad = Labiba._ChatMainBackgroundGradient{
+        switch Labiba.BackgroundView.background {
+        case .solid(color: let color):
+            self.backgroundView.backgroundColor = color
+        case .gradient(gradientSpecs: let grad):
             backgroundView.applyGradient(colours: grad.colors, locations: nil)
             if let backgroundColor = grad.viewBackgroundColor {
                 self.backgroundView.backgroundColor = backgroundColor
             }
-        }else if let bgColor = Labiba._ChatMainBackgroundColor {
-            self.backgroundView.backgroundColor = bgColor
+        case .image(image: let image):
+            self.bacgroundImage.image = image
         }
+//        if let bgImage = Labiba._ChatMainBackgroundImage {
+//            self.bacgroundImage.image = bgImage
+//        }else if let grad = Labiba._ChatMainBackgroundGradient{
+//            backgroundView.applyGradient(colours: grad.colors, locations: nil)
+//            if let backgroundColor = grad.viewBackgroundColor {
+//                self.backgroundView.backgroundColor = backgroundColor
+//            }
+//        }else if let bgColor = Labiba._ChatMainBackgroundColor {
+//            self.backgroundView.backgroundColor = bgColor
+//        }
     }
  //MARK:Back and Closing Actions
     @IBAction func backButtonAction(_ sender: UIButton) {
@@ -737,7 +748,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             addInterationDialog(currentBotType:Labiba.Bot_Type)
         }
         
-        if dialog.requestLocation {
+        if dialog.requestLocation && Labiba.backgroundLocationUpdate{
             LocationService.shared.checkLocationAccess(from: self, authorized: {
                 LocationService.shared.delegate = self
                 LocationService.shared.updateLocation()

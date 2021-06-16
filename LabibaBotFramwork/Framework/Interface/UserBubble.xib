@@ -56,11 +56,6 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                    <integer key="value" value="10"/>
-                </userDefinedRuntimeAttribute>
-            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="bubbleContainer" destination="uPy-w6-Kuz" id="dw9-pO-ZDl"/>
                 <outlet property="textLabel" destination="5zX-dB-CYe" id="YzV-C4-eH1"/>

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name LabibaBotFramwork
 import AVFoundation
 import AVKit
@@ -26,8 +26,8 @@ public enum GenericActivityFormat : Swift.Int {
   case attraction
   case resturant
   case hotel
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -43,8 +43,8 @@ public enum GenericActivityFormat : Swift.Int {
   public var details: LabibaBotFramwork.GenericActivityDetails
   @objc required public init?(coder aDecoder: Foundation.NSCoder)
   @objc public func encode(with aCoder: Foundation.NSCoder)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class GenericActivityReview : ObjectiveC.NSObject, Foundation.NSCoding {
   public var name: Swift.String
@@ -52,16 +52,16 @@ public enum GenericActivityFormat : Swift.Int {
   public var comment: Swift.String
   @objc required public init?(coder aDecoder: Foundation.NSCoder)
   @objc public func encode(with aCoder: Foundation.NSCoder)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class GenericActivityFeature : ObjectiveC.NSObject, Foundation.NSCoding {
   public var label: Swift.String
   public var iconUrl: Swift.String
   @objc required public init?(coder aDecoder: Foundation.NSCoder)
   @objc public func encode(with aCoder: Foundation.NSCoder)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class GenericActivityDetails : ObjectiveC.NSObject, Foundation.NSCoding {
   public var cuisine: [Swift.String]
@@ -101,8 +101,8 @@ public enum GenericActivityFormat : Swift.Int {
   public var image: UIKit.UIImage?
   @objc required public init?(coder aDecoder: Foundation.NSCoder)
   @objc public func encode(with aCoder: Foundation.NSCoder)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public func parseGenericActivitysData(_ dataList: [[Swift.String : Swift.AnyObject]]) -> [LabibaBotFramwork.GenericActivity]?
 public struct GoogleVoice {
@@ -112,10 +112,10 @@ public struct GoogleVoice {
     case fullScreen
     case sheet
     public static func == (a: LabibaBotFramwork.LabibaRatingForm.RatingStyle, b: LabibaBotFramwork.LabibaRatingForm.RatingStyle) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public var style: LabibaBotFramwork.LabibaRatingForm.RatingStyle
   public var background: LabibaBotFramwork.LabibaBackground
@@ -143,13 +143,13 @@ public enum Language : Swift.String, Swift.CaseIterable {
   case de
   case ru
   case zh
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
-  public var rawValue: Swift.String {
+  public typealias AllCases = [LabibaBotFramwork.Language]
+  public typealias RawValue = Swift.String
+  public static var allCases: [LabibaBotFramwork.Language] {
     get
   }
-  public typealias AllCases = [LabibaBotFramwork.Language]
-  public static var allCases: [LabibaBotFramwork.Language] {
+  public var rawValue: Swift.String {
     get
   }
 }
@@ -162,18 +162,18 @@ public enum Language : Swift.String, Swift.CaseIterable {
   @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
   public func show()
   public func dismiss()
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
 }
 public enum CornerLocation {
   case `default`
   case inside
   case outside
   public static func == (a: LabibaBotFramwork.CornerLocation, b: LabibaBotFramwork.CornerLocation) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @_hasMissingDesignatedInitializers public class LabibaChoiceView {
   public var backgroundColor: UIKit.UIColor
@@ -190,9 +190,9 @@ public enum CornerLocation {
     @objc get
   }
   @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class LabibaBotChatBubble {
   public var typingIndicatorColor: UIKit.UIColor
@@ -202,9 +202,13 @@ public enum CornerLocation {
   public var textAlignment: UIKit.NSTextAlignment?
   public var alpha: CoreGraphics.CGFloat
   public var cornerRadius: CoreGraphics.CGFloat
-  public var cornerMask: QuartzCore.CACornerMask
+  public var cornerMaskPin: LabibaBotFramwork.LabibaCornerPin {
+    get
+    set
+  }
   public var shadow: LabibaBotFramwork.LabibaShadowModel
   public var avatar: UIKit.UIImage?
+  public var timestamp: (fontSize: CoreGraphics.CGFloat, color: UIKit.UIColor, formate: Swift.String)
   @objc deinit
 }
 public func imageNamed(_ name: Swift.String) -> UIKit.UIImage
@@ -244,9 +248,9 @@ public func imageNamed(_ name: Swift.String) -> UIKit.UIImage
   public func flibView()
   public func setTintColor()
   @objc override dynamic public func updateConstraints()
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ScanView : UIKit.UIView {
   public var scanAnimationStyle: LabibaBotFramwork.ScanAnimationStyle {
@@ -328,9 +332,9 @@ public protocol DateRangeViewControllerDelegate : AnyObject {
 @objc @_inheritsConvenienceInitializers public class DateRangeViewController : UIKit.UIViewController {
   public class func present(withDelegate delegate: LabibaBotFramwork.DateRangeViewControllerDelegate?, mode: UIKit.UIDatePicker.Mode = .dateAndTime, initialDate: Foundation.Date? = nil, maximumDate: Foundation.Date? = nil, userData: Any? = nil)
   @objc override dynamic public func viewDidLoad()
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 extension UIDevice {
   public static let modelName: Swift.String
@@ -341,8 +345,12 @@ extension UIDevice {
   public var fontsize: CoreGraphics.CGFloat
   public var alpha: CoreGraphics.CGFloat
   public var cornerRadius: CoreGraphics.CGFloat
-  public var cornerMask: QuartzCore.CACornerMask
+  public var cornerMaskPin: LabibaBotFramwork.LabibaCornerPin {
+    get
+    set
+  }
   public var avatar: UIKit.UIImage?
+  public var timestamp: (fontSize: CoreGraphics.CGFloat, color: UIKit.UIColor, formate: Swift.String)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class SplashVC : UIKit.UIViewController {
@@ -356,9 +364,9 @@ extension UIDevice {
   @objc override dynamic public func viewDidLoad()
   @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
   @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 extension AVMetadataObject.ObjectType {
   public static let upca: AVFoundation.AVMetadataObject.ObjectType
@@ -376,9 +384,9 @@ public protocol RadiusViewControllerDelegate : AnyObject {
   @objc override dynamic public func viewDidLoad()
   @objc public func mapView(_ mapView: MapKit.MKMapView, rendererFor overlay: MapKit.MKOverlay) -> MapKit.MKOverlayRenderer
   @objc public func mapView(_ mapView: MapKit.MKMapView, viewFor annotation: MapKit.MKAnnotation) -> MapKit.MKAnnotationView?
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class LabibaVoiceAssistantView {
   public var background: LabibaBotFramwork.LabibaBackground
@@ -434,25 +442,36 @@ public class LiveChatModel {
   }
   @objc override dynamic public func viewDidLoad()
   @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 extension ScannerVC : LabibaBotFramwork.HeaderViewControllerDelegate {
   public func didClickedCloseButton()
+}
+public enum LabibaCornerPin {
+  case up
+  case down
+  case none
+  public static func == (a: LabibaBotFramwork.LabibaCornerPin, b: LabibaBotFramwork.LabibaCornerPin) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public enum LabibaFontWeight {
   case regular
   case bold
   public static func == (a: LabibaBotFramwork.LabibaFontWeight, b: LabibaBotFramwork.LabibaFontWeight) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum LabibaBackground {
   case solid(color: UIKit.UIColor)
   case gradient(gradientSpecs: LabibaBotFramwork.Labiba.GradientSpecs)
+  case image(image: UIKit.UIImage)
 }
 public class LabibaShadowModel {
   public init(shadowColor: CoreGraphics.CGColor, shadowOffset: CoreGraphics.CGSize, shadowRadius: CoreGraphics.CGFloat, shadowOpacity: Swift.Float)
@@ -487,10 +506,10 @@ public enum TorchMode {
   case on
   case off
   public static func == (a: LabibaBotFramwork.TorchMode, b: LabibaBotFramwork.TorchMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @_hasMissingDesignatedInitializers public class LabibaMenuCardView {
   public var backgroundColor: UIKit.UIColor
@@ -508,9 +527,9 @@ public protocol DatePickerViewControllerDelegate : AnyObject {
 @objc @_inheritsConvenienceInitializers public class DatePickerViewController : UIKit.UIViewController {
   public class func present(withDelegate delegate: LabibaBotFramwork.DatePickerViewControllerDelegate?, mode: UIKit.UIDatePicker.Mode = .dateAndTime, initialDate: Foundation.Date? = nil, maximumDate: Foundation.Date? = nil, userData: Any? = nil)
   @objc override dynamic public func viewDidLoad()
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 final public class ActivityData {
   public init(size: CoreGraphics.CGSize? = nil, message: Swift.String? = nil, messageFont: UIKit.UIFont? = nil, messageSpacing: CoreGraphics.CGFloat? = nil, type: LabibaBotFramwork.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil, displayTimeThreshold: Swift.Int? = nil, minimumDisplayTime: Swift.Int? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil)
@@ -536,8 +555,8 @@ public enum BotType : Swift.Int {
   case voiceAndKeyboard
   case voiceToVoice
   case visualizer
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -568,6 +587,7 @@ public enum BotType : Swift.Int {
   public static func setEnableAutoListening(enable: Swift.Bool)
   public static func setListeningDuration(Duration: Swift.Double)
   public static func setHintsArray(hints: [Swift.String])
+  public static var hasBubbleTimestamp: Swift.Bool
   public static func setMargin(left: CoreGraphics.CGFloat, right: CoreGraphics.CGFloat)
   public static func setStatusBarColor(color: UIKit.UIColor)
   public static func setStatusBarStyle(style: UIKit.UIStatusBarStyle)
@@ -578,15 +598,15 @@ public enum BotType : Swift.Int {
   public static func setHeaderBackground(color: UIKit.UIColor)
   public static func setCustomHeaderView(_ view: LabibaBotFramwork.LabibaChatHeaderView, withHeight height: CoreGraphics.CGFloat = 90)
   public static func setLogo(_ image: UIKit.UIImage?)
-  public static func setChatMainBackground(color: UIKit.UIColor)
-  public static func setChatMainBackground(gradient: LabibaBotFramwork.Labiba.GradientSpecs)
-  public static func setChatMainBackground(image: UIKit.UIImage?)
+  public static let BackgroundView: LabibaBotFramwork.LabibaBackgroundView
+  public static var timeoutIntervalForRequest: Swift.Double
   public static let MenuCardView: LabibaBotFramwork.LabibaMenuCardView
   public static let CarousalCardView: LabibaBotFramwork.LabibaCarousalCardView
   public static let UserInputView: LabibaBotFramwork.LabibaUserInputView
   public static let VoiceAssistantView: LabibaBotFramwork.LabibaVoiceAssistantView
   public static let ChoiceView: LabibaBotFramwork.LabibaChoiceView
   public static let MapView: LabibaBotFramwork.LabibaMapView
+  public static var backgroundLocationUpdate: Swift.Bool
   public static let attachmentThemeModel: LabibaBotFramwork.LabibaAttachmentThemeModel
   public static let UserChatBubble: LabibaBotFramwork.LabibaUserChatBubble
   public static let BotChatBubble: LabibaBotFramwork.LabibaBotChatBubble
@@ -608,8 +628,8 @@ public enum BotType : Swift.Int {
     @objc override dynamic public init()
     @objc deinit
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public protocol LabibaDelegate {
   @objc optional func createPost(onView view: UIKit.UIView, _ data: Swift.Dictionary<Swift.String, Any>, completionHandler: @escaping (Swift.Bool, [Swift.String : Any]?) -> Swift.Void)
@@ -626,14 +646,14 @@ public var ipadMargin: CoreGraphics.CGFloat {
   @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
   @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class BubbleView : UIKit.UIView {
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 public protocol HeaderViewControllerDelegate : AnyObject {
   func didClickedCloseButton()
@@ -662,6 +682,7 @@ extension HeaderVC : UIKit.UINavigationBarDelegate {
   public var textColor: UIKit.UIColor
   public var hintColor: UIKit.UIColor
   public var sendButton: (tintColor: UIKit.UIColor, backgroundColor: UIKit.UIColor)
+  public var attachmentButton: (icon: UIKit.UIImage, tintColor: UIKit.UIColor, isHidden: Swift.Bool)
   @objc deinit
 }
 public protocol NVActivityIndicatorViewable {
@@ -721,12 +742,12 @@ public enum NVActivityIndicatorType : Swift.CaseIterable {
   case ballScaleMultiple
   case ballSpinFadeLoader
   public static func == (a: LabibaBotFramwork.NVActivityIndicatorType, b: LabibaBotFramwork.NVActivityIndicatorType) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
   public func hash(into hasher: inout Swift.Hasher)
   public typealias AllCases = [LabibaBotFramwork.NVActivityIndicatorType]
   public static var allCases: [LabibaBotFramwork.NVActivityIndicatorType] {
+    get
+  }
+  public var hashValue: Swift.Int {
     get
   }
 }
@@ -777,14 +798,18 @@ extension UIColor {
   convenience public init(red: Swift.Int, green: Swift.Int, blue: Swift.Int, a: Swift.Int = 0xFF)
   convenience public init(argb: Swift.Int)
 }
+@_hasMissingDesignatedInitializers public class LabibaBackgroundView {
+  public var background: LabibaBotFramwork.LabibaBackground
+  @objc deinit
+}
 public enum ScanAnimationStyle {
   case `default`
   case grid
   public static func == (a: LabibaBotFramwork.ScanAnimationStyle, b: LabibaBotFramwork.ScanAnimationStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public class LabibaConfig {
   public init()
@@ -800,10 +825,10 @@ extension LabibaConfig : LabibaBotFramwork.LabibaDelegate {
     case language
     case help
     public static func == (a: LabibaBotFramwork.LabibaChatHeaderView.SettingType, b: LabibaBotFramwork.LabibaChatHeaderView.SettingType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   @objc @IBOutlet weak public var closeButton: UIKit.UIButton!
   @objc @IBOutlet weak public var backButton: UIKit.UIButton!
@@ -814,9 +839,9 @@ extension LabibaConfig : LabibaBotFramwork.LabibaDelegate {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class BotBubble : LabibaBotFramwork.BubbleView {
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class BankOfJoSplashVC : LabibaBotFramwork.SplashVC {
   override public static func create() -> LabibaBotFramwork.BankOfJoSplashVC
@@ -825,9 +850,9 @@ extension LabibaConfig : LabibaBotFramwork.LabibaDelegate {
     @objc get
   }
   @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class SplashScreenWithStaticImage : LabibaBotFramwork.SplashVC {
   override public static func create() -> LabibaBotFramwork.SplashScreenWithStaticImage
@@ -835,18 +860,18 @@ extension LabibaConfig : LabibaBotFramwork.LabibaDelegate {
   @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
   @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 public enum LabibaFont {
   case DINNextLTW23
   case TheSans
   public static func == (a: LabibaBotFramwork.LabibaFont, b: LabibaBotFramwork.LabibaFont) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @objc public enum ScreenType : Swift.Int {
   case iPhone3_5
@@ -861,8 +886,8 @@ public enum LabibaFont {
   case iPad12_9
   case ipad
   case unknown
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -885,6 +910,8 @@ extension LabibaBotFramwork.Language : Swift.Hashable {}
 extension LabibaBotFramwork.Language : Swift.RawRepresentable {}
 extension LabibaBotFramwork.CornerLocation : Swift.Equatable {}
 extension LabibaBotFramwork.CornerLocation : Swift.Hashable {}
+extension LabibaBotFramwork.LabibaCornerPin : Swift.Equatable {}
+extension LabibaBotFramwork.LabibaCornerPin : Swift.Hashable {}
 extension LabibaBotFramwork.LabibaFontWeight : Swift.Equatable {}
 extension LabibaBotFramwork.LabibaFontWeight : Swift.Hashable {}
 extension LabibaBotFramwork.TorchMode : Swift.Equatable {}

@@ -94,6 +94,7 @@ public class BotBubble: BubbleView {
             gview.setGradient(grad)
             gview.isUserInteractionEnabled = false
             bubble.bubbleContainer.insertSubview(gview, at: 0)
+        case .image(image: _):break
         }
         
         return bubble

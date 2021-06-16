@@ -22,6 +22,7 @@ public enum LabibaFontWeight{
 public enum LabibaBackground {
     case solid (color:UIColor)
     case gradient (gradientSpecs:Labiba.GradientSpecs)
+    case image (image:UIImage)
 }
 
 public class LabibaShadowModel {

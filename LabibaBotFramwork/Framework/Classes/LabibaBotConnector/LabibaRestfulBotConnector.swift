@@ -18,7 +18,7 @@ class LabibaRestfulBotConnector:BotConnector{
     static let shared = LabibaRestfulBotConnector()
     override private init() {
         let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 60
+        configuration.timeoutIntervalForRequest = Labiba.timeoutIntervalForRequest
         sessionManager = SessionManager(configuration: configuration)
     }
     override func sendMessage(_ message: String? = nil, payload: String? = nil, withAttachments attachments: [[String : Any]]? = nil, withEntities entities: [[String : Any]]? = nil) {
@@ -236,7 +236,9 @@ class LabibaRestfulBotConnector:BotConnector{
                     dialog.message = messages[0]
                 }
                 if messages.count > 1 {
-                    dialog.SSML = messages[1]
+                    if !messages[1].isEmpty {
+                        dialog.SSML = messages[1]
+                    }
                 }
             }else{
                 dialog.message = message?.text

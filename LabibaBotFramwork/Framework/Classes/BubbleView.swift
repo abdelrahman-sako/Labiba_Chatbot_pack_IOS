@@ -32,17 +32,21 @@ enum BubbleSource
     var doSetMessage:String {
         
         set {
-            if let timestamp = currentDialog?.timestamp {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = Labiba.BotChatBubble.timestamp.formate
-                timestampLbl.text = "\(source == .incoming ? "Bot" : "You") - \(dateFormatter.string(from: timestamp))"
-                timestampLbl.isHidden  = false
-                if SharedPreference.shared.botLangCode == .ar{
-                    timestampLbl.textAlignment = source == .incoming  ? .right : .left
+            if Labiba.hasBubbleTimestamp {
+                if let timestamp = currentDialog?.timestamp {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = source == .incoming ? Labiba.BotChatBubble.timestamp.formate : Labiba.UserChatBubble.timestamp.formate
+                    timestampLbl.text = "\(source == .incoming ? "Bot" : "You") - \(dateFormatter.string(from: timestamp))"
+                    timestampLbl.isHidden  = false
+                    if SharedPreference.shared.botLangCode == .ar{
+                        timestampLbl.textAlignment = source == .incoming  ? .right : .left
+                    }else {
+                        timestampLbl.textAlignment = source == .incoming  ? .left : .right
+                    }
                 }else {
-                    timestampLbl.textAlignment = source == .incoming  ? .left : .right
+                    timestampLbl.isHidden  = true
                 }
-            }else {
+            }else{
                 timestampLbl.isHidden  = true
             }
             if let frame = currentDialog?.frame {
@@ -73,7 +77,7 @@ enum BubbleSource
                 {
                     fontSize = Labiba.BotChatBubble.fontsize
                     let lang = text.detectedLangauge()
-                    if lang == "ar" {text = "\(text)\u{200f}".replacingOccurrences(of: "\n", with: "\u{200f}\n")}// this is right to left unicode (zero width) to handle puncuation marks at the end of the sentences
+                    if lang == "ar" {text.addArabicAlignment()}
                     let boldFont =  applyBotFont(textLang: Language(rawValue: lang ?? "") ?? .ar ,bold:true, size: fontSize )
                     let regularFont =  applyBotFont(textLang: Language(rawValue: lang ?? "") ?? .ar , size: fontSize)
                     self.textLabel.attributedText = text.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba.BotChatBubble.textColor)
@@ -175,7 +179,7 @@ enum BubbleSource
         }
         //
         height  = height < 44 ? 44 : height
-        height = currentDialog?.timestamp != nil ? height + 20 : height
+        height = (currentDialog?.timestamp != nil && Labiba.hasBubbleTimestamp ) ? height + 20 : height
         self.frame = CGRect(x: BubbleXPosition, y: self.posY, width: width + 20 , height: height )
         currentDialog?.frame = self.frame
         //self.frame = CGRect(x: BubbleXPosition, y: self.posY, width: BubbleWidth, height: height )

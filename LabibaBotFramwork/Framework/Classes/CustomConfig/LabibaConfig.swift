@@ -56,21 +56,23 @@ public class LabibaConfig {
         LabibaThemes.isThemeApplied = true
         Labiba.setBotType(botType: .visualizer)
 
-        Labiba.setChatMainBackground(image:  Image(named: "BOJ_bg") ) // important note : UIImage will read the image from the main project target not from Labiba target
-
+        //Labiba.setChatMainBackground(image:  Image(named: "BOJ_bg") ) // important note : UIImage will read the image from the main project target not from Labiba target
+        Labiba.BackgroundView.background = .image(image: Image(named: "BOJ_bg")! )
         Labiba.setLogo(UIImage(named: ""))
 
         
         Labiba.UserChatBubble.background = .solid(color:  UIColor.black.withAlphaComponent(0.1))
         Labiba.UserChatBubble.textColor = UIColor(argb: 0xffffffff)
         Labiba.UserChatBubble.cornerRadius = 23
-        Labiba.UserChatBubble.cornerMask = [.layerMinXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
+        Labiba.UserChatBubble.cornerMaskPin = .up
+        //Labiba.UserChatBubble.cornerMask = [.layerMinXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
 
         Labiba.BotChatBubble.typingIndicatorColor = UIColor(argb: 0xffffffff)
         Labiba.BotChatBubble.background = .solid(color: UIColor.white.withAlphaComponent(0.2))
         Labiba.BotChatBubble.textColor =  UIColor(argb: 0xffffffff)
         Labiba.BotChatBubble.cornerRadius = 23
-        Labiba.BotChatBubble.cornerMask =  [.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner]
+        Labiba.BotChatBubble.cornerMaskPin = .up
+        //Labiba.BotChatBubble.cornerMask =  [.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner]
         
         
         Labiba.setMargin(left: 20, right: 20)

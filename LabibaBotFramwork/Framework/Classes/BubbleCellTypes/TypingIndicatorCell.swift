@@ -102,6 +102,7 @@ class TypingIndicatorCell: EntryViewCell
             gview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             gview.setGradient(grad)
             loadingIndicator.insertSubview(gview, at: 0)
+        case .image(image: _):break
         }
     }
 }

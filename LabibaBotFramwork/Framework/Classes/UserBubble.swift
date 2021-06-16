@@ -15,6 +15,8 @@ var UserBubbleColor:UIColor {
         return color
     case .gradient(gradientSpecs: let grad):
         return grad.colors[0]
+    case .image(image: _):
+        return .white
     }
 }
 
@@ -95,6 +97,7 @@ class UserBubble: BubbleView
             gview.setGradient(gradientSpec)
             gview.isUserInteractionEnabled = false
             bubble.bubbleContainer.insertSubview(gview, at: 0)
+        case .image(image: _):break
         }
 
         return bubble

@@ -28,7 +28,7 @@ func Image(named: String) -> UIImage?
     
     func userTextInput(_ dialog: UserTextInputNoLocal, didSubmitText text: String)
     func userTextInput(_ dialog: UserTextInputNoLocal, didSubmitImage image: UIImage)
-     func userTextInput(_ dialog: UserTextInputNoLocal, didSubmitFile Url: URL)
+    func userTextInput(_ dialog: UserTextInputNoLocal, didSubmitFile Url: URL)
     func userTextInput(_ dialog: UserTextInputNoLocal, didSubmitLocation location: CLLocationCoordinate2D)
     func userTextInput(_ dialog: UserTextInputNoLocal, didSubmitVoice voice: String)
     func UserTextType(TextType: UITextView)
@@ -117,8 +117,9 @@ class UserTextInputNoLocal: UIView, UITextViewDelegate, LocationSelectViewContro
         
         
       
-      //  requestAttachmentButton.tintColor = Labiba._UserInputColors.tintColor
-        requestAttachmentButton.tintColor = Labiba.UserInputView.tintColor
+        requestAttachmentButton.tintColor = Labiba.UserInputView.attachmentButton.tintColor
+        requestAttachmentButton.setImage(Labiba.UserInputView.attachmentButton.icon, for: .normal)
+        requestAttachmentButton.isHidden = Labiba.UserInputView.attachmentButton.isHidden
 //        self.micButton.tintColor = Labiba._UserInputColors.tintColor
         self.micButton.tintColor = Labiba.UserInputView.tintColor
         self.container.applyDarkShadow(opacity: 0.2, offset: CGSize(width: 1, height: 1), radius: 2)
@@ -144,7 +145,7 @@ class UserTextInputNoLocal: UIView, UITextViewDelegate, LocationSelectViewContro
     @IBAction func requestAttachment(_ sender: Any) {
         
         AttachmentsMenuViewController.present(withDelegate: self )
-        animateAttachmentButton(withImageName: "baseline_cancel_black_24pt")
+        animateAttachmentButton(withImage: Image(named: "baseline_cancel_black_24pt"))
         //requestAttachmentButton.setImage(Image(named: "baseline_cancel_black_24pt"), for: .normal)
     }
     
@@ -204,14 +205,14 @@ class UserTextInputNoLocal: UIView, UITextViewDelegate, LocationSelectViewContro
     
     func dismissAttachmentsMenu() {
        // requestAttachmentButton.setImage(Image(named: "ic_more_vert_black_24pt"), for: .normal)
-        animateAttachmentButton(withImageName: "ic_more_vert_black_24pt")
+        animateAttachmentButton(withImage: Labiba.UserInputView.attachmentButton.icon)
     }
     
-    func animateAttachmentButton(withImageName image:String)  {
+    func animateAttachmentButton(withImage image:UIImage?)  {
         UIView.animate(withDuration: 0.15, animations: {
             self.requestAttachmentButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         }) { (result) in
-            self.requestAttachmentButton.setImage(Image(named: image), for: .normal)
+            self.requestAttachmentButton.setImage(image, for: .normal)
             UIView.animate(withDuration: 0.15, animations: {
                  self.requestAttachmentButton.transform = CGAffineTransform(scaleX: 1, y: 1)
             })

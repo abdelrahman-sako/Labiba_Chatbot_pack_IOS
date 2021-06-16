@@ -135,6 +135,7 @@
 		37EF9ABF2313E83100FF49B3 /* DynamicGIF.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EF9ABE2313E83100FF49B3 /* DynamicGIF.xib */; };
 		37F003D0233388E900A1AC17 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B42954F622DDDBD2002DE3E9 /* ProximaNova-Light.otf */; };
 		37F003DE2333B57600A1AC17 /* SplashScreenWithStaticImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F003DD2333B57600A1AC17 /* SplashScreenWithStaticImage.swift */; };
+		520DEE6F265F83F500B538A5 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DEE6E265F83F500B538A5 /* BackgroundView.swift */; };
 		5214229425AC965400B78AB0 /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214229325AC965300B78AB0 /* ChoiceView.swift */; };
 		5214229825AC9B7800B78AB0 /* LabibaMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214229725AC9B7800B78AB0 /* LabibaMapView.swift */; };
 		5214489B258647B90099BF38 /* Rating.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5214489A258647B90099BF38 /* Rating.storyboard */; };
@@ -462,6 +463,7 @@
 		37EF9ABC2313E82100FF49B3 /* DynamicGIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicGIF.swift; sourceTree = "<group>"; };
 		37EF9ABE2313E83100FF49B3 /* DynamicGIF.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicGIF.xib; sourceTree = "<group>"; };
 		37F003DD2333B57600A1AC17 /* SplashScreenWithStaticImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenWithStaticImage.swift; sourceTree = "<group>"; };
+		520DEE6E265F83F500B538A5 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		5214229325AC965300B78AB0 /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
 		5214229725AC9B7800B78AB0 /* LabibaMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaMapView.swift; sourceTree = "<group>"; };
 		5214489A258647B90099BF38 /* Rating.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rating.storyboard; sourceTree = "<group>"; };
@@ -1101,6 +1103,7 @@
 				52C5A6E525AF052C00FDAB6B /* UserInputView.swift */,
 				52F51A0225B053DD002C03BB /* LabibaVoiceAssistantView.swift */,
 				52F51A1725B07E7F002C03BB /* AttachmentCardView.swift */,
+				520DEE6E265F83F500B538A5 /* BackgroundView.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -2059,6 +2062,7 @@
 				B429553722DDDBD2002DE3E9 /* Extensions.swift in Sources */,
 				52DE30712462D6A000DAF3E7 /* TaskDelegate.swift in Sources */,
 				52DE8E16248CEB880067F5EC /* Array.swift in Sources */,
+				520DEE6F265F83F500B538A5 /* BackgroundView.swift in Sources */,
 				B429551A22DDDBD2002DE3E9 /* ScanAnimationStyle.swift in Sources */,
 				371E27DE24AA0A86003A4150 /* LabibaConfig.swift in Sources */,
 				B429554522DDDBD2002DE3E9 /* MediaStreamer.swift in Sources */,

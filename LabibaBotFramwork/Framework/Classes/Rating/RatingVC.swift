@@ -32,6 +32,7 @@ class RatingVC: RatingBaseVC {
             self.view.backgroundColor = color
         case .gradient(gradientSpecs: let grad):
             self.view.applyGradient(colours: grad.colors, locations: nil)
+        case .image(image: _):break
         }
         ratingTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tapGesture.addTarget(self, action: #selector(didTap(_:)))

@@ -70,14 +70,22 @@ class VoiceExperienceVC: BaseConversationVC {
     }
     
     func applayChatBackgroundColor()  {
-        if let grad = Labiba._ChatMainBackgroundGradient
-        {
+        switch Labiba.BackgroundView.background {
+        case .solid(color: let color):
+            self.view.backgroundColor = color
+        case .gradient(gradientSpecs: let grad):
             self.view.applyDynamicGradient(colors: grad.colors, locations: grad.locations as [NSNumber], startPoint: CGPoint(x: 0, y: 0), endPoint:  CGPoint(x: 0, y: 1))
+        case .image(image: _):
+            break
         }
-        else if let bgColor = Labiba._ChatMainBackgroundColor
-        {
-            self.view.backgroundColor = bgColor
-        }
+//        if let grad = Labiba._ChatMainBackgroundGradient
+//        {
+//            self.view.applyDynamicGradient(colors: grad.colors, locations: grad.locations as [NSNumber], startPoint: CGPoint(x: 0, y: 0), endPoint:  CGPoint(x: 0, y: 1))
+//        }
+//        else if let bgColor = Labiba._ChatMainBackgroundColor
+//        {
+//            self.view.backgroundColor = bgColor
+//        }
     }
     
     func addArrangedSubviews()  {

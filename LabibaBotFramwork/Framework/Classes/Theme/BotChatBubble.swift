@@ -29,7 +29,7 @@ public class LabibaBotChatBubble {
             }
         }
     }
-    public var cornerMask: CACornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
+    var cornerMask: CACornerMask = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner ,.layerMinXMaxYCorner ,.layerMinXMinYCorner]
     public var shadow:LabibaShadowModel = LabibaShadowModel(shadowColor: UIColor.clear.cgColor, shadowOffset: .zero, shadowRadius: 0, shadowOpacity: 0)
     public var avatar:UIImage?
     
