@@ -95,7 +95,8 @@ public class SplashScreenVC: SplashVC {
     
     @IBAction func start(_ sender: UIButton) {
         let id =  idTextField.text ?? ""
-        Labiba.initialize(RecipientIdAR: id,RecipientIdEng: id,language: sender.tag == 0 ? .ar : .en)
+        Labiba.initialize(RecipientIdAR: id,RecipientIdEng: id )
+        Labiba.setBotLanguage(LangCode: sender.tag == 0 ? .ar : .en)
 //        Labiba.setRefreshToken(refreshtoken: "resfresh")// this must call befor setUserParams untile pushViewController
         Labiba.setUserParams(first_name: "Abed", last_name: "Qasem", profile_pic: "test", gender: "male", location: "3.33343344,39.444322211", country: "jordan", username: "abed", email: "aaa@gmail.com", token: "wdwdwdw3893389hc83uchbc8kocjncj990")
         LabibaThemes.setLabibaTheme()

@@ -65,6 +65,7 @@ class ConversationDialog
     var content_type: String?
     var inAnimations:[CABasicAnimation]?
     var outAnimations:[CABasicAnimation]?
+    var voiceUrl:String?
 }
 
 class DialogCards

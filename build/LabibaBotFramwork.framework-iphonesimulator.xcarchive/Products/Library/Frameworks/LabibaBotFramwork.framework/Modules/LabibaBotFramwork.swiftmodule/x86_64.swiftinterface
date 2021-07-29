@@ -566,7 +566,7 @@ public enum BotType : Swift.Int {
   public static let labibaThemes: LabibaBotFramwork.LabibaThemes
   public static var _WithRatingVC: Swift.Bool
   public static var isLoggingEnabled: Swift.Bool
-  public static func initialize(RecipientIdAR: Swift.String, RecipientIdEng: Swift.String, language: LabibaBotFramwork.Language = .ar)
+  public static func initialize(RecipientIdAR: Swift.String, RecipientIdEng: Swift.String)
   public static func setDelegate(delegate: LabibaBotFramwork.LabibaDelegate)
   public static func setSenderId(_ senderId: Swift.String)
   public static func set_basePath(_ path: Swift.String)

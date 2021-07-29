@@ -61,12 +61,11 @@ public enum BotType:Int {
 
      // MARK:- Main Settings
     
-    public static func initialize(RecipientIdAR: String,RecipientIdEng: String , language:Language = .ar)
+    public static func initialize(RecipientIdAR: String,RecipientIdEng: String)
     {
        // registerFonts()
-        print(Bundle.main.bundleIdentifier)
         SharedPreference.shared.setUserIDs(ar: RecipientIdAR, en: RecipientIdEng)
-        setBotLanguage(LangCode: language)
+        //setBotLanguage(LangCode: language)
         self._pageId = SharedPreference.shared.currentUserId
        
         LocationService.shared.updateLocation()

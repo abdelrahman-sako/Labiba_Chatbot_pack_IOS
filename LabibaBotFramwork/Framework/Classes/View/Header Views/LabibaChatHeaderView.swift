@@ -39,7 +39,8 @@ open class LabibaChatHeaderView: UIView
                                         object: nil)
         
         
-        Labiba.initialize(RecipientIdAR: SharedPreference.shared.getUserIDs().ar,RecipientIdEng: SharedPreference.shared.getUserIDs().en ,language: SharedPreference.shared.botLangCode) // initialize requered to resend the prefferals each time the languge changed
+        Labiba.initialize(RecipientIdAR: SharedPreference.shared.getUserIDs().ar,RecipientIdEng: SharedPreference.shared.getUserIDs().en) // initialize requered to resend the prefferals each time the languge changed
+        Labiba.setBotLanguage(LangCode: SharedPreference.shared.botLangCode)
         let  vc = Labiba.createConversation()
         
         

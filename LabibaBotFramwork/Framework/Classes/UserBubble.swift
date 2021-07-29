@@ -99,7 +99,7 @@ class UserBubble: BubbleView
             bubble.bubbleContainer.insertSubview(gview, at: 0)
         case .image(image: _):break
         }
-
+        
         return bubble
     }
 }

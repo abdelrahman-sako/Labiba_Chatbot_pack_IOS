@@ -24,21 +24,21 @@ public class LabibaConfig {
     public func BOJConnect(language:String ,customerID:String,trxnlimit:Int,callback:(()->Void)?){
         self.callback = callback
         //MARK: initialization
-      // Labiba.initialize(RecipientIdAR:"5bfcd0bf-cb9a-4034-96ff-7c67000df2d3",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// bot builder IDs
-        Labiba.initialize(RecipientIdAR:"b553e8c1-d9d9-409e-b5b4-573a63506dce",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// // BOJ builder IDs
+       Labiba.initialize(RecipientIdAR:"5bfcd0bf-cb9a-4034-96ff-7c67000df2d3",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// bot builder IDs
+//        Labiba.initialize(RecipientIdAR:"b553e8c1-d9d9-409e-b5b4-573a63506dce",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// // BOJ builder IDs
 //
         Labiba.setBotLanguage(LangCode: language == "Arabic" ? .ar : .en)
         Labiba.createCustomReferral(object: ["Customer ID":customerID,"trxnlimit":trxnlimit])
 
 
         //MARK: Theme
-//        Labiba.setDelegate(delegate: self)
-//        Labiba.set_basePath("https://boji.bankofjordan.com.jo")
-//        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
-//
-//        Labiba.set_voiceBasePath("https://boji.bankofjordan.com.jo")
-//        Labiba.set_voiceServicePath("/api/VoiceAPI/VoiceClip")
-//        Labiba.set_loggingServicePath("/api/MobileAPI/FetchHelpPage")
+        Labiba.setDelegate(delegate: self)
+        Labiba.set_basePath("https://boji.bankofjordan.com.jo")
+        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
+
+        Labiba.set_voiceBasePath("https://boji.bankofjordan.com.jo")
+        Labiba.set_voiceServicePath("/api/VoiceAPI/VoiceClip")
+        Labiba.set_loggingServicePath("/api/MobileAPI/FetchHelpPage")
         
         // UAT server
 //        Labiba.set_basePath("http://10.121.1.8")

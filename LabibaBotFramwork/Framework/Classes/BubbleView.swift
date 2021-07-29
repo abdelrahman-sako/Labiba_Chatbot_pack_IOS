@@ -23,7 +23,13 @@ enum BubbleSource
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var bubbleContainer: UIView!
     @IBOutlet weak var timestampLbl: UILabel!
-  
+    public override  func accessibilityElementDidBecomeFocused() {
+        guard let urlString = currentDialog?.voiceUrl, let url = URL(string: urlString)  else {
+            return
+        }
+        TextToSpeechManeger.Shared.downloadFileFromURL(url:url )
+    }
+   
     
     var posY:CGFloat = 0
     var maxWidth:CGFloat = 0
@@ -53,6 +59,8 @@ enum BubbleSource
                 self.frame = frame
                 self.textLabel.attributedText = currentDialog?.attributedMessage
                 self.textLabel.textAlignment = currentDialog?.alignment ?? .natural// (lang ?? "ar" ) == "ar" ? .right : .left
+                self.isAccessibilityElement = true
+                self.accessibilityLabel = "رسالة منك \(currentDialog?.attributedMessage?.string) "
                 addLinkGesture()
                
             }else
@@ -64,6 +72,8 @@ enum BubbleSource
             /////////////////////////////////////html
             
                 self._message = text
+                self.isAccessibilityElement = true
+                self.accessibilityLabel = "رسالة منك \(_message) "
                 var fontSize:CGFloat = 13
                 if(source != .incoming)
                 {

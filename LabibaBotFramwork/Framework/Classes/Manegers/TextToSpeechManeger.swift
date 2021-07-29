@@ -26,6 +26,7 @@ class TextToSpeechManeger:NSObject{
     static let Shared = TextToSpeechManeger()
     var botConnector:BotConnector = LabibaRestfulBotConnector.shared
     
+    private var ToDeletDialogs:[ConversationDialog] = []
     private override init(){
         super.init()
         addStopTTSObserver()
@@ -38,6 +39,8 @@ class TextToSpeechManeger:NSObject{
             switch result{
             case .success(let url):
                 if let url = URL(string: url){
+                    self.ToDeletDialogs.first?.voiceUrl = url.absoluteString
+                    self.ToDeletDialogs.removeFirst()
                     self.downloadFileFromURL(url: url)
                 }
             case .failure(_):
@@ -57,7 +60,7 @@ class TextToSpeechManeger:NSObject{
     
     
     func append(dialog:ConversationDialog)  {
-        
+        ToDeletDialogs.append(dialog)
         guard let message = dialog.message, !message.isEmpty, Labiba.EnableTextToSpeech   else {
             return
         }
