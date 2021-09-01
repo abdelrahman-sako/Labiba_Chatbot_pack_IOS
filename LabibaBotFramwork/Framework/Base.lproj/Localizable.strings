@@ -146,6 +146,7 @@
 "Select Location" = "Select Location" ;
 // popups
 "thanksForYourRating" = "Thank you for the rating";
+"chatwithHuman" = "Human Agent";
 // NatHealth
 "I’m Natalie" = "\"Hi, I’m Natalie!\"";
 "Please tap the mic icon" = "Please tap the mic icon below to ask me a question.";

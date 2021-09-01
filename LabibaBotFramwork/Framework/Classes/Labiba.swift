@@ -221,8 +221,8 @@ public enum BotType:Int {
         self.font = (regAR,boldAR ,regEN,boldEN)
     }
     
-    
-    
+    // MARK:- Human Agent Transfer
+    public static let HumanAgent = HumanAgentSettings() 
     
     
     // MARK:- [Text to Speech] And [Speech to Text] Settings
@@ -488,8 +488,7 @@ public enum BotType:Int {
     }
 
     public typealias ConversationCloseHandler = () -> Void
-//    public typealias ِExternalTaskCompletionHandler = () -> Void
-//
+    
     public static func createConversation(closable: Bool = true, onClose: ConversationCloseHandler? = nil) -> UIViewController
     {
 

@@ -16,6 +16,7 @@ protocol BotConnectorDelegate:class {
     
     func botConnector(_ botConnector:BotConnector, didRecieveActivity activity:ConversationDialog) -> Void
     func botConnector(_ botConnector:BotConnector, didRequestLiveChatTransferWithMessage message:String) -> Void
+    func botConnector(_ botConnector:BotConnector, didRequestHumanAgent message:String) -> Void
     func botConnectorDidRecieveTypingActivity(_ botConnector:BotConnector) -> Void
     func botConnectorRemoveTypingActivity(_ botConnector:BotConnector) -> Void
 }
@@ -63,6 +64,7 @@ class BotConnector: NSObject {
     //MARK: Non implemented methodes
     func configureInternetReachability() -> Void {}
     func startConversation() -> Void {}
+    func sendGetStarted() -> Void {}
     func reconnectConversation() -> Void {}
     func resumeConnection() {}
     func close() -> Void {

@@ -55,8 +55,36 @@ class QuickReplyPayloadModel:Codable{
 }
 
 class AttachmentModel:Codable {
-    var payload:PayloadModel?
+    //var payload:PayloadModel?
+    var payload:PayloadValue?
     var type:String?
+}
+enum PayloadValue: Codable {
+    case string(String)
+    case payloadModel(PayloadModel)
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if let x = try? container.decode(String.self) {
+            self = .string(x)
+            return
+        }
+        if let x = try? container.decode(PayloadModel.self) {
+            self = .payloadModel(x)
+            return
+        }
+        throw DecodingError.typeMismatch(PayloadValue.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for MyValue"))
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .string(let x):
+            try container.encode(x)
+        case .payloadModel(let x):
+            try container.encode(x)
+        }
+    }
 }
 
 class PayloadModel:Codable{

@@ -155,6 +155,7 @@
 		526FD85225010E0C004B2408 /* QuickChoicesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FD85125010E0C004B2408 /* QuickChoicesHeaderView.swift */; };
 		527260DF2518B9F2002130BA /* AttachmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527260DE2518B9F2002130BA /* AttachmentView.xib */; };
 		527260E12518BB1A002130BA /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527260E02518BB1A002130BA /* AttachmentView.swift */; };
+		527E985626C53A6D00DA69E6 /* HumanAgentSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527E985526C53A6D00DA69E6 /* HumanAgentSettings.swift */; };
 		5281A65224502E09001605E8 /* WepPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281A65124502E09001605E8 /* WepPageViewController.swift */; };
 		5281F41A25C8058F005D39CD /* HelpExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F41925C8058F005D39CD /* HelpExpandableView.swift */; };
 		5281F41E25C805A7005D39CD /* HelpExpandableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5281F41D25C805A7005D39CD /* HelpExpandableView.xib */; };
@@ -483,6 +484,7 @@
 		526FD85125010E0C004B2408 /* QuickChoicesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickChoicesHeaderView.swift; sourceTree = "<group>"; };
 		527260DE2518B9F2002130BA /* AttachmentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachmentView.xib; sourceTree = "<group>"; };
 		527260E02518BB1A002130BA /* AttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentView.swift; sourceTree = "<group>"; };
+		527E985526C53A6D00DA69E6 /* HumanAgentSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAgentSettings.swift; sourceTree = "<group>"; };
 		5281A65124502E09001605E8 /* WepPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WepPageViewController.swift; sourceTree = "<group>"; };
 		5281F41925C8058F005D39CD /* HelpExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpExpandableView.swift; sourceTree = "<group>"; };
 		5281F41D25C805A7005D39CD /* HelpExpandableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpExpandableView.xib; sourceTree = "<group>"; };
@@ -1089,7 +1091,7 @@
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
-		522D1657256E9C2C002758D5 /* Theme */ = {
+		522D1657256E9C2C002758D5 /* Theme and Settings */ = {
 			isa = PBXGroup;
 			children = (
 				522D165C256E9C9E002758D5 /* GeneralThemeSettings.swift */,
@@ -1104,8 +1106,9 @@
 				52F51A0225B053DD002C03BB /* LabibaVoiceAssistantView.swift */,
 				52F51A1725B07E7F002C03BB /* AttachmentCardView.swift */,
 				520DEE6E265F83F500B538A5 /* BackgroundView.swift */,
+				527E985526C53A6D00DA69E6 /* HumanAgentSettings.swift */,
 			);
-			path = Theme;
+			path = "Theme and Settings";
 			sourceTree = "<group>";
 		};
 		526FD84C250100A2004B2408 /* HeaderQuickChoiceCell */ = {
@@ -1496,13 +1499,13 @@
 				B42954E522DDDBD2002DE3E9 /* MediaStreamer.swift */,
 				37D03CC2231D108C00D9F013 /* LabibaThemes.swift */,
 				B42954E722DDDBD2002DE3E9 /* Labiba.swift */,
-				522D1657256E9C2C002758D5 /* Theme */,
+				522D1657256E9C2C002758D5 /* Theme and Settings */,
 				52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */,
 				371E27DC24AA0A57003A4150 /* CustomConfig */,
+				B42954EB22DDDBD2002DE3E9 /* LoadingIndicator.swift */,
 				B42954E822DDDBD2002DE3E9 /* AudioView.swift */,
 				B42954E922DDDBD2002DE3E9 /* ResponseRenderer.swift */,
 				B42954EA22DDDBD2002DE3E9 /* GradientView.swift */,
-				B42954EB22DDDBD2002DE3E9 /* LoadingIndicator.swift */,
 				37B5326523CC562F001D2BDF /* LabibaBotConnector */,
 				B42954EC22DDDBD2002DE3E9 /* Conversation */,
 				521448A225864DFC0099BF38 /* Rating */,
@@ -1920,6 +1923,7 @@
 				B429553222DDDBD2002DE3E9 /* MapView.swift in Sources */,
 				52C0A06C25878D3B004D7AAA /* RatingSatrsLightCell.swift in Sources */,
 				3782D9A523BA1369006A79D4 /* SRLog.m in Sources */,
+				527E985626C53A6D00DA69E6 /* HumanAgentSettings.swift in Sources */,
 				B429554822DDDBD2002DE3E9 /* AudioView.swift in Sources */,
 				52DE8E19248CEB880067F5EC /* Animator.swift in Sources */,
 				3782D99623BA1369006A79D4 /* SRRunLoopThread.m in Sources */,

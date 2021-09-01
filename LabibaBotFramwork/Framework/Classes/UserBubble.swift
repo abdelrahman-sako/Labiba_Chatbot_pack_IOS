@@ -35,6 +35,18 @@ class UserBubble: BubbleView
         bubble.textLabel.textColor = Labiba.UserChatBubble.textColor
         // bubble.layer.cornerRadius = Labiba._userBubbleCorner
         bubble.bubbleContainer.layer.cornerRadius = Labiba.UserChatBubble.cornerRadius
+        switch Labiba.UserChatBubble.background {
+        case .solid(color: let color):
+            bubble.bubbleContainer.backgroundColor = color
+        case .gradient(gradientSpecs: let gradientSpec):
+            let gview = GradientView(frame: bubble.bounds)
+            gview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            gview.setGradient(gradientSpec)
+            gview.isUserInteractionEnabled = false
+            bubble.bubbleContainer.insertSubview(gview, at: 0)
+            bubble.bubbleContainer.clipsToBounds = true
+        case .image(image: _):break
+        }
         if SharedPreference.shared.botLangCode == .ar {
             switch Labiba.UserChatBubble.cornerMaskPin {
             case .up:
@@ -88,17 +100,7 @@ class UserBubble: BubbleView
 //
 //            bubble.backgroundColor =  Labiba._userBubbleBackgroundColor
 //        }
-        switch Labiba.UserChatBubble.background {
-        case .solid(color: let color):
-            bubble.bubbleContainer.backgroundColor = color
-        case .gradient(gradientSpecs: let gradientSpec):
-            let gview = GradientView(frame: bubble.bounds)
-            gview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            gview.setGradient(gradientSpec)
-            gview.isUserInteractionEnabled = false
-            bubble.bubbleContainer.insertSubview(gview, at: 0)
-        case .image(image: _):break
-        }
+   
         
         return bubble
     }

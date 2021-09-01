@@ -68,8 +68,13 @@ class LabibaRestfulBotConnector:BotConnector{
     
     override func startConversation() {
         showLoadingIndicator()
-        self.sendMessage("CONVERSATION-RELOAD", withAttachments: nil, withEntities: nil)
+        self.sendMessage("CONVERSATION-RELOAD")
     }
+    
+    override func sendGetStarted() {
+        self.sendMessage("get started")
+    }
+    
     
     func sendData(parameters:[String:Any])  {
         let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
@@ -223,12 +228,15 @@ class LabibaRestfulBotConnector:BotConnector{
             }
             let dialog = ConversationDialog(by: .bot, time: timestamp)
             let message = model.message
-            if message?.text?.contains("livechat.transfer")  ?? false {
+           // message?.text = "livechat.transfer:\(message?.text ?? "")"
+            if message?.text?.contains("livechat.transfer:")  ?? false {
                 delegate?.botConnector(self, didRequestLiveChatTransferWithMessage: "livechat.transfer")
-            }else  if message?.text?.contains("livechat.transfer.once")  ?? false{
+                message?.text = message?.text?.replacingOccurrences(of: "livechat.transfer:", with: "")
+            }else  if message?.text?.contains("livechat.transfer.once:")  ?? false{
                 delegate?.botConnector(self, didRequestLiveChatTransferWithMessage: "livechat.transfer.once")
+                message?.text = message?.text?.replacingOccurrences(of: "livechat.transfer.once:", with: "")
             }
-            message?.text = message?.text?.replacingOccurrences(of: "livechat.transfer:", with: "").replacingOccurrences(of: "livechat.transfer.once:", with: "")// I know that it doesn't make sense, but this is how they asked me to work, they said that this is Hussam fault  :( :(
+          //  message?.text = message?.text?.replacingOccurrences(of: "livechat.transfer:", with: "").replacingOccurrences(of: "livechat.transfer.once:", with: "")// I know that it doesn't make sense, but this is how they asked me to work, they said that this is Hussam fault  :( :(
 //            dialog.message = message?.text
 //                        message?.text = "مَا هُوَ رَقْمُ الْعَمِيلِ الخَاْصِّ بِكْ !@:@<speak> <s> <emphasis level='strong'> أهلَوْ سَهْلَ </emphasis> </s> <break strength='strong'/> أنا بووجيْ مسؤولِتْ حْسابَكْ لِجْدِيدِهْ <break strength='strong'/> <s> كِيـفْ بَأْدَرْ أَساعْدَكِلْيُومْ؟ </s> </speak>"
          //   message?.text = "مرحبا، انا مساعدك الإفتراضي من يلو. يرجى اختيار اللغة:\u{200f}"
@@ -351,61 +359,86 @@ class LabibaRestfulBotConnector:BotConnector{
                             return dialogChoice
                     }
                 }
-            } else if let attachType = attach?.type{
-                NotificationCenter.default.post(name: Constants.NotificationNames.ChangeInputToVoiceAssistantType,
-                                                object: nil)
-                if attachType == "template", let payload = message?.attachment?.payload, let elements = payload.elements
-                {
-                    
-                    let dialogChoice = DialogChoice(title: "Click to choose".local)
-                    dialogChoice.action = DialogChoiceAction.menu
-                    dialog.choices = [dialogChoice]
-                    self.attachmentPayload = payload
-                    
-                    dialog.cards = DialogCards(presentation: .menu)
-                    
-                    dialog.cards?.items = elements.map({ (elm) -> DialogCard in
-                        let card = DialogCard(title: elm.title ?? "")
-                        card.imageUrl = elm.image_url
-                        // card.subtitle = elm["subtitle"].string
-                        if let buttons = elm.buttons {
-                            card.buttons = buttons.map({ (btn) -> DialogCardButton in
-                                let title = btn.title ?? ""
-                                let type = AttachmentElementButtonType(rawValue: btn.type ?? "")
-                                switch type {
-                                case .some(let type):
-                                    switch type {
-                                    case .postback ,.phoneNumber , .email , .createPost:
-                                        return DialogCardButton(title: title, payload: btn.payload ,type: type)
+            } else {
+                if let payload = message?.attachment?.payload {
+                    switch payload {
+                    case .string(let message):
+                        switch message {
+                        case "goRealtime":
+                            delegate?.botConnector(self, didRequestHumanAgent: message)
+                            print("redirect to human agent with message: ",message)
+                        case "redirectToStart":
+                            DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now()+0.5, execute: {
+                                DispatchQueue.main.async {
+                                    self.sendGetStarted()
+                                }
+                            })
+                                
+                           
+                        default:
+                            break
+                        }
+                        
+                    case .payloadModel(let  payload):
+                        if let attachType = attach?.type{
+                            NotificationCenter.default.post(name: Constants.NotificationNames.ChangeInputToVoiceAssistantType,
+                                                            object: nil)
+                            if attachType == "template", let elements = payload.elements
+                            {
+                                
+                                
+                                let dialogChoice = DialogChoice(title: "Click to choose".local)
+                                dialogChoice.action = DialogChoiceAction.menu
+                                dialog.choices = [dialogChoice]
+                                self.attachmentPayload = payload
+                                
+                                dialog.cards = DialogCards(presentation: .menu)
+                                
+                                dialog.cards?.items = elements.map({ (elm) -> DialogCard in
+                                    let card = DialogCard(title: elm.title ?? "")
+                                    card.imageUrl = elm.image_url
+                                    // card.subtitle = elm["subtitle"].string
+                                    if let buttons = elm.buttons {
+                                        card.buttons = buttons.map({ (btn) -> DialogCardButton in
+                                            let title = btn.title ?? ""
+                                            let type = AttachmentElementButtonType(rawValue: btn.type ?? "")
+                                            switch type {
+                                            case .some(let type):
+                                                switch type {
+                                                case .postback ,.phoneNumber , .email , .createPost:
+                                                    return DialogCardButton(title: title, payload: btn.payload ,type: type)
+                                                }
+                                            case .none:
+                                                return DialogCardButton(title: title, url: btn.url)
+                                            }
+                                            
+                                        })
                                     }
-                                case .none:
-                                    return DialogCardButton(title: title, url: btn.url)
+                                    return card
+                                })
+                                ShowDialog()
+                                cancelCard = true
+                            } else if let attachUrl = payload.url {
+                                switch attachType
+                                {
+                                case "audio":
+                                    dialog.media = DialogMedia(type: .Audio)
+                                case "video":
+                                    dialog.media = DialogMedia(type: .Video)
+                                default:
+                                    dialog.media = DialogMedia(type: .Photo)
                                 }
                                 
-                            })
+                                dialog.media?.url = attachUrl
+                            }
                         }
-                        return card
-                    })
-                    ShowDialog()
-                    cancelCard = true
-                } else if let attachUrl = attach?.payload?.url {
-                    switch attachType
-                    {
-                    case "audio":
-                        dialog.media = DialogMedia(type: .Audio)
-                    case "video":
-                        dialog.media = DialogMedia(type: .Video)
-                    default:
-                        dialog.media = DialogMedia(type: .Photo)
                     }
-                    
-                    dialog.media?.url = attachUrl
+                }else{
+                    NotificationCenter.default.post(name: Constants.NotificationNames.ChangeTextViewKeyboardType,
+                                                    object: "Enable")
                 }
-            }else{
-                NotificationCenter.default.post(name: Constants.NotificationNames.ChangeTextViewKeyboardType,
-                                                object: "Enable")
+                
             }
-            
             
             if (!cancelCard)
             {

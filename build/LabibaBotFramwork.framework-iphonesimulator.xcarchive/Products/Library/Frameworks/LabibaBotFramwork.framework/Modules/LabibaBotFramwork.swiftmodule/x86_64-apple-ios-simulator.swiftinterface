@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name LabibaBotFramwork
 import AVFoundation
 import AVKit
@@ -339,6 +339,21 @@ public protocol DateRangeViewControllerDelegate : AnyObject {
 extension UIDevice {
   public static let modelName: Swift.String
 }
+@_hasMissingDesignatedInitializers public class HumanAgentSettings {
+  public enum type {
+    case inLabiba
+    case outLabiba
+    public static func == (a: LabibaBotFramwork.HumanAgentSettings.type, b: LabibaBotFramwork.HumanAgentSettings.type) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var url: Swift.String
+  public var type: LabibaBotFramwork.HumanAgentSettings.type
+  public var counter: Swift.UInt8
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class LabibaUserChatBubble {
   public var background: LabibaBotFramwork.LabibaBackground
   public var textColor: UIKit.UIColor
@@ -581,6 +596,7 @@ public enum BotType : Swift.Int {
   public static func setLastMessageLangCode(_ text: Swift.String)
   public static func setBotType(botType: LabibaBotFramwork.BotType)
   public static func setFont(regAR: Swift.String, boldAR: Swift.String, regEN: Swift.String, boldEN: Swift.String)
+  public static let HumanAgent: LabibaBotFramwork.HumanAgentSettings
   public static func setVoiceAssistanteRate(ARrate: Swift.Float, ENRate: Swift.Float)
   public static func setVoiceMan(ar: Swift.String?, en: Swift.String?)
   public static func setEnableTextToSpeech(enable: Swift.Bool)
@@ -651,6 +667,7 @@ public var ipadMargin: CoreGraphics.CGFloat {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class BubbleView : UIKit.UIView {
+  @objc override dynamic public func accessibilityElementDidBecomeFocused()
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -910,6 +927,8 @@ extension LabibaBotFramwork.Language : Swift.Hashable {}
 extension LabibaBotFramwork.Language : Swift.RawRepresentable {}
 extension LabibaBotFramwork.CornerLocation : Swift.Equatable {}
 extension LabibaBotFramwork.CornerLocation : Swift.Hashable {}
+extension LabibaBotFramwork.HumanAgentSettings.type : Swift.Equatable {}
+extension LabibaBotFramwork.HumanAgentSettings.type : Swift.Hashable {}
 extension LabibaBotFramwork.LabibaCornerPin : Swift.Equatable {}
 extension LabibaBotFramwork.LabibaCornerPin : Swift.Hashable {}
 extension LabibaBotFramwork.LabibaFontWeight : Swift.Equatable {}

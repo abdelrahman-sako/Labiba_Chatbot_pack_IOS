@@ -220,7 +220,8 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
                         Labiba.createCustomReferral(object: ["status":"fail"])
             
                     }
-                    self.botConnector.sendMessage("get started")
+                    //self.botConnector.sendMessage("get started")
+                    self.botConnector.sendGetStarted()
                 })
             }else{
                 self.botConnector.sendMessage(payload: payload)
@@ -338,8 +339,26 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
     //MARK:-   BotConnectorDelegate implementation
 
     func botConnector(_ botConnector: BotConnector, didRecieveActivity activity: ConversationDialog) {}
+    var transferCounter:UInt8 = 0
     func botConnector(_ botConnector: BotConnector, didRequestLiveChatTransferWithMessage message: String) {
-        delegate?.liveChatTransfer?(onView: self.view, transferMessage: message)
+       // delegate?.liveChatTransfer?(onView: self.view, transferMessage: message)
+        if Labiba.HumanAgent.type == .inLabiba {
+            if transferCounter == Labiba.HumanAgent.counter || message == "livechat.transfer.once"  {
+                WebPageViewController.launchWithUrl(url: Labiba.HumanAgent.getUrl(), title: "chatwithHuman".localForChosnLangCodeBB,isZoomDisabled: true)
+                transferCounter = 0
+                return
+            }
+            transferCounter += 1
+        }else{
+            delegate?.liveChatTransfer?(onView: self.view, transferMessage: message)
+        }
+    }
+    func botConnector(_ botConnector: BotConnector, didRequestHumanAgent message: String) {
+        if Labiba.HumanAgent.type == .inLabiba {
+            WebPageViewController.launchWithUrl(url: Labiba.HumanAgent.getUrl(), title: "chatwithHuman".localForChosnLangCodeBB,isZoomDisabled: true)
+        }else{
+            delegate?.liveChatTransfer?(onView: self.view, transferMessage: message)
+        }
     }
     func botConnectorDidRecieveTypingActivity(_ botConnector: BotConnector) {}
     func botConnectorRemoveTypingActivity(_ botConnector: BotConnector) {}
