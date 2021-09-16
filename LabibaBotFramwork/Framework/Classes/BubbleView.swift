@@ -20,7 +20,7 @@ enum BubbleSource
     
     var considersAvatar:Bool = true
     
-    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var textLabel: KGCopyableLabel!
     @IBOutlet weak var bubbleContainer: UIView!
     @IBOutlet weak var timestampLbl: UILabel!
     public override  func accessibilityElementDidBecomeFocused() {
@@ -212,4 +212,110 @@ enum BubbleSource
     
   
     
+}
+
+
+
+class KGCopyableLabel: UILabel {
+//    override init(frame: CGRect) {
+//           super.init(frame: frame)
+//           self.sharedInit()
+//       }
+//
+//       required init?(coder aDecoder: NSCoder) {
+//           super.init(coder: aDecoder)
+//           self.sharedInit()
+//       }
+//
+//       func sharedInit() {
+//           self.isUserInteractionEnabled = true
+//           let gesture = UILongPressGestureRecognizer(target: self, action: #selector(self.showMenu))
+//           self.addGestureRecognizer(gesture)
+//       }
+//
+//       @objc func showMenu(_ recognizer: UILongPressGestureRecognizer) {
+//           self.becomeFirstResponder()
+//
+//           let menu = UIMenuController.shared
+//
+//           let locationOfTouchInLabel = recognizer.location(in: self)
+//
+//           if !menu.isMenuVisible {
+//               var rect = bounds
+//               rect.origin = locationOfTouchInLabel
+//               rect.size = CGSize(width: 1, height: 1)
+//
+//            if #available(iOS 13.0, *) {
+//                menu.showMenu(from: self, rect: rect)
+//            } else {
+//                // Fallback on earlier versions
+//            }
+//           }
+//       }
+//
+//       override func copy(_ sender: Any?) {
+//           let board = UIPasteboard.general
+//
+//           board.string = text
+//
+//           let menu = UIMenuController.shared
+//
+//           menu.setMenuVisible(false, animated: true)
+//       }
+//
+//       override var canBecomeFirstResponder: Bool {
+//           return true
+//       }
+//
+//       override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+//           return action == #selector(UIResponderStandardEditActions.copy)
+//       }
+    override public var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    func setup() {
+        isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(showCopyMenu(sender:)))
+        gesture.numberOfTapsRequired = 2
+                                            
+        addGestureRecognizer(gesture)
+    }
+
+    override func copy(_ sender: Any?) {
+        UIPasteboard.general.string = text
+        if #available(iOS 13.0, *) {
+            UIMenuController.shared.hideMenu()
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+
+    @objc func showCopyMenu(sender: Any?) {
+        becomeFirstResponder()
+        let menu = UIMenuController.shared
+        if !menu.isMenuVisible {
+            if #available(iOS 13.0, *) {
+                menu.showMenu(from: self, rect: bounds)
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+    }
+
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return (action == #selector(copy(_:)))
+    }
 }

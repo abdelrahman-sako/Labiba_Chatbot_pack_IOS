@@ -31,7 +31,7 @@ public class SplashScreenWithStaticImage: SplashVC {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        LabibaThemes.setSharja_Theme()
+        //LabibaThemes.setSharja_Theme()
         self.view.layoutIfNeeded()
         self.navigationController?.isNavigationBarHidden = true
         let gTColor2 = UIColor(argb: 0xff00a6dd)
@@ -92,10 +92,6 @@ public class SplashScreenWithStaticImage: SplashVC {
         
     }
     override public func viewDidAppear(_ animated: Bool) {
-        
-        //Labiba.initialize(RecipientIdAR: id,RecipientIdEng: id)
-        LabibaThemes.setSharja_Theme()
-        
     }
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -104,27 +100,27 @@ public class SplashScreenWithStaticImage: SplashVC {
    
     
     func startConversation(lang:Language)  {
-      Labiba.initialize(RecipientIdAR: "0de26564-1d53-4c87-87b1-60fd6235e1c3",RecipientIdEng: "283c3d0e-550f-4221-87f7-27adaf401ad6" )
+        Labiba.initialize(RecipientIdAR: "0de26564-1d53-4c87-87b1-60fd6235e1c3",RecipientIdEng: "283c3d0e-550f-4221-87f7-27adaf401ad6" )
         Labiba.setBotLanguage(LangCode: lang)
-             SharedPreference.shared.setUserIDs(ar: "0de26564-1d53-4c87-87b1-60fd6235e1c3", en: "283c3d0e-550f-4221-87f7-27adaf401ad6" ,de:  "bb74141b-099e-497f-adde-990b7836a829", ru:  "0f22a778-09e8-4ae6-8218-6357b1c67157" ,zh:  "453bf578-5226-4cb0-b012-c4bddc0c143a")
-             LabibaThemes.setSharja_Theme()
-             self.navigationController?.pushViewController(ConversationViewController.create(), animated: true )
+        switch SharedPreference.shared.botLangCode  {
+        case .ar:
+            Labiba.setBotType(botType: .voiceAndKeyboard)
+        default:
+            Labiba.setBotType(botType: .keyboardWithTTS)
+        }
+        (Labiba._customHeaderView as? GreetingHeaderView)?.resetUIs() // to handle start language issue in header
+        SharedPreference.shared.setUserIDs(ar: "0de26564-1d53-4c87-87b1-60fd6235e1c3", en: "283c3d0e-550f-4221-87f7-27adaf401ad6" ,de:  "bb74141b-099e-497f-adde-990b7836a829", ru:  "0f22a778-09e8-4ae6-8218-6357b1c67157" ,zh:  "453bf578-5226-4cb0-b012-c4bddc0c143a")
+        //             LabibaThemes.setSharja_Theme()
+        self.navigationController?.pushViewController(ConversationViewController.create(), animated: true )
     }
     
     
     @IBAction func start(_ sender: UIButton) {
-        
-        let langCoge:Language = sender.tag == 0 ? .ar : .en
-       // startConversation(lang: langCoge)
         langAction()
-//        Labiba.initialize(RecipientIdAR: "0de26564-1d53-4c87-87b1-60fd6235e1c3",RecipientIdEng: "283c3d0e-550f-4221-87f7-27adaf401ad6" ,language: langCoge)
-//        SharedPreference.shared.setUserIDs(ar: "0de26564-1d53-4c87-87b1-60fd6235e1c3", en: "283c3d0e-550f-4221-87f7-27adaf401ad6" ,de:  "283c3d0e-550f-4221-87f7-27adaf401ad6", ru:  "283c3d0e-550f-4221-87f7-27adaf401ad6" ,zh:  "283c3d0e-550f-4221-87f7-27adaf401ad6")
-//        LabibaThemes.setSharja_Theme()
-//        self.navigationController?.pushViewController(ConversationViewController.create(), animated: true )
-        
     }
     
     func langAction() {
+     
         var style:UIAlertController.Style = .alert
         switch UIScreen.current {
         case .iPhone3_5 , .iPhone4_0 ,.iPhone4_7 ,.iPhone5_5 ,.iPhone5_8 ,.iPhone6_1 ,.iPhone6_5:

@@ -25,7 +25,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wN8-9v-GSF">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="141"/>
                             <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نيذنيبة" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="IDd-fY-I9c">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نيذنيبة" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="IDd-fY-I9c" customClass="KGCopyableLabel" customModule="LabibaBotFramwork" customModuleProvider="target">
                                     <rect key="frame" x="10" y="4" width="330" height="132"/>
                                     <fontDescription key="fontDescription" name="TheSans-Bold" family="TheSans" pointSize="17"/>
                                     <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="bubbleContainer" destination="wN8-9v-GSF" id="4L8-Dm-ldO"/>
-                <outlet property="textLabel" destination="IDd-fY-I9c" id="M1Z-JP-bZY"/>
+                <outlet property="textLabel" destination="IDd-fY-I9c" id="Arp-9b-cRM"/>
                 <outlet property="timestampLbl" destination="NTw-gb-5Oh" id="106-Jo-GuO"/>
             </connections>
             <point key="canvasLocation" x="24" y="-143.47826086956522"/>

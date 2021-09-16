@@ -419,6 +419,10 @@ public enum BotType:Int {
     {
         return UIStoryboard(name: "Rating", bundle: bundle)
     }
+    static var prechatFormStoryboard: UIStoryboard
+    {
+        return UIStoryboard(name: "PrechatForm", bundle: bundle)
+    }
     
     static var voiceExperienceStoryboard: UIStoryboard
     {
@@ -498,12 +502,17 @@ public enum BotType:Int {
             fatalError(SENDER_ERROR)
         }
 
-        let convVC = ConversationViewController.create()
-        convVC.delegate = Labiba.delegate
-        convVC.isClosable = closable
-        convVC.closeHandler = onClose
+//        let convVC = ConversationViewController.create()
+//        convVC.delegate = Labiba.delegate
+//        convVC.isClosable = closable
+//        convVC.closeHandler = onClose
+//        
+//        return convVC
         
-        return convVC
+        let prechatVC = Labiba.prechatFormStoryboard.instantiateViewController(withIdentifier: "PrechatFormVC") as! PrechatFormVC
+        prechatVC.modalPresentationStyle = .fullScreen
+        prechatVC.modalTransitionStyle = .crossDissolve
+        return prechatVC
     }
     
     public static func createVoiceExperienceConversation( onClose: ConversationCloseHandler? = nil) -> UIViewController

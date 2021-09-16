@@ -26,7 +26,7 @@ class IASplashVC: SplashVC {
         override func viewDidLoad() {
             super.viewDidLoad()
              self.navigationController?.isNavigationBarHidden = true
-            Labiba.setFont(regAR: "DINNextLTW23-Regular", boldAR: "DINNextLTW23-Bold", regEN: "DINNextLTW23-Regular", boldEN: "DINNextLTW23-Bold")
+            Labiba.setFont(regAR: "Cairo-Regular", boldAR: "Cairo-Bold", regEN: "Cairo-Regular", boldEN: "Cairo-Bold")
             let gTColor2 = UIColor(argb: 0xffE33D49)
             let gCColor2 = UIColor(argb: 0xffFEA18B)
             self.view.applyGradient(colours: [gTColor2,gCColor2 ], locations: nil)

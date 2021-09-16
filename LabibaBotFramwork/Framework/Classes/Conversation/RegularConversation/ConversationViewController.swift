@@ -713,7 +713,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 }
                 else
                 {
-                    self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+                    if index.row == self.displayedDialogs.count - 1{
+                        self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+                    }
                     
                 }
             }
@@ -1006,26 +1008,6 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
                 let lastIndex = IndexPath(row: self.displayedDialogs.count - 1, section: 0)
                 self.tableView.scrollToRow(at: lastIndex, at: .none, animated: false)
             }
-            
-//            let offset = tableView.contentOffset.y
-//            let currentTopInset = offset < 0 ? -offset : 0
-//            let gap = tableView.frame.height - currentTopInset - tableView.contentSize.height
-//
-//            if gap > 0 && gap < keyboardSize.height {
-//                UIView.animate(withDuration: 0.3) {
-//                    self.tableView.transform = CGAffineTransform(translationX: 0, y: -(keyboardSize.height + UserTextInputNoLocal.HEIGHT + 15 - gap  ))
-//                }
-//            }else if gap < 0{
-//                UIView.animate(withDuration: 0.3) {
-//                    switch UIScreen.current{
-//                    case .iPhone5_8 ,.iPhone6_1 ,.iPhone6_5:
-//                        self.tableView.transform = CGAffineTransform(translationX: 0, y: -(keyboardSize.height - 35))
-//                    default:
-//                         self.tableView.transform = CGAffineTransform(translationX: 0, y: -(keyboardSize.height - 5))
-//                    }
-//
-//                }
-//            }
         }
        
     }

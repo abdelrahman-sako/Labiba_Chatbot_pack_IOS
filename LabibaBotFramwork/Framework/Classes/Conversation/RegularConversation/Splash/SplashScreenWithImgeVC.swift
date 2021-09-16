@@ -39,7 +39,7 @@ public class SplashScreenWithImgeVC: SplashVC {
         super.viewDidLoad()
         self.view.layoutIfNeeded()
         self.navigationController?.isNavigationBarHidden = true
-        Labiba.setFont(regAR: "TheSans-Plain", boldAR: "TheSans-Bold", regEN: "AvantGarde-Medium", boldEN: "AvantGarde-Bold")
+       // Labiba.setFont(regAR: "TheSans-Plain", boldAR: "TheSans-Bold", regEN: "AvantGarde-Medium", boldEN: "AvantGarde-Bold")
         let gTColor2 = UIColor(argb: 0xff5488B8)
         let gEColor2 = UIColor(argb: 0xff6FC1EB)
         self.view.applyGradient(colours: [gTColor2,gEColor2 ], locations: nil)
@@ -140,10 +140,8 @@ public class SplashScreenWithImgeVC: SplashVC {
      
     }
     override public func viewDidAppear(_ animated: Bool) {
-       LabibaThemes.setNatHealth_Theme()
+      // LabibaThemes.setNatHealth_Theme()
        // Labiba.initialize(RecipientIdAR: id,RecipientIdEng: id)
-        
-        
     }
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -155,7 +153,7 @@ public class SplashScreenWithImgeVC: SplashVC {
        // Labiba.initialize(RecipientIdAR: "d0b8e34a-26ba-4ed6-a2af-4412b55ef442",RecipientIdEng: "f52d9469-df4b-4e8b-adaa-e46047636b48" ,language:langCode )
         Labiba.initialize(RecipientIdAR: "73b2c037-a112-460f-975b-c2d7412c0b7f",RecipientIdEng: "69bda09a-b448-4866-b327-2bbd0f3ac5e6")//test
         Labiba.setBotLanguage(LangCode: langCode)
-        LabibaThemes.setNatHealth_Theme()
+       // LabibaThemes.setNatHealth_Theme()
         self.navigationController?.pushViewController(ConversationViewController.create(), animated: true )
       // self.navigationController?.pushViewController(Labiba.createVoiceExperienceConversation(), animated: true )
     }

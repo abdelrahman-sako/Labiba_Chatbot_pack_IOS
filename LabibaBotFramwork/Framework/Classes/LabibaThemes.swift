@@ -59,7 +59,7 @@ import UIKit
         Labiba.ChoiceView.tintColor = UIColor(argb: 0x95ffffff)
         Labiba.ChoiceView.borderColor =  UIColor(argb: 0x95ffffff)
         
-        Labiba.setFont(regAR: "TheSans-Plain", boldAR: "TheSans-Bold", regEN: "AvantGarde-Medium", boldEN: "AvantGarde-Bold")
+        Labiba.setFont(regAR: "Cairo-Regular", boldAR: "Cairo-Bold", regEN: "Cairo-Regular", boldEN: "Cairo-Bold")
     }
     
     public static func setVoiceDefaultTheme()
@@ -188,7 +188,7 @@ import UIKit
         Labiba.ChoiceView.tintColor = UIColor(argb: 0x95ffffff)
         Labiba.ChoiceView.borderColor =  UIColor(argb: 0x95ffffff)
         
-        Labiba.setFont(regAR: "TheSans-Plain", boldAR: "TheSans-Bold", regEN: "AvantGarde-Medium", boldEN: "AvantGarde-Bold")
+        Labiba.setFont(regAR: "Cairo-Regular", boldAR: "Cairo-Bold", regEN: "Cairo-Regular", boldEN: "Cairo-Bold")
        // Labiba.setMicButtondAlpha(alpha: 0.8)
         Labiba.VoiceAssistantView.micButton.alpha = 0.8
         Labiba.setVoiceAssistanteRate(ARrate: 0.9, ENRate: 0.9)
@@ -256,173 +256,173 @@ import UIKit
        // Labiba.setMicButtondAlpha(alpha: 0.8)
     }
     
-     static func  setNatHealth_Theme() {
-        LabibaThemes.isThemeApplied = true
-        Labiba.setBotType(botType: .voiceAndKeyboard)
-        let gTColor1 = UIColor(argb: 0xff5488B8)
-        let gCColor1 = UIColor(argb: 0xff5488B8)
-        let gEColor1 = UIColor(argb: 0x005488B8)
-        //Labiba.setHeaderBackground(gradient: Labiba.GradientSpecs.init(colors: [gTColor1 ,gCColor1 , gEColor1], locations: [0 ,0.85,1], start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) , viewBackgroundColor: .clear)) // Toolbar
-        
-        Labiba.setStatusBarColor(color: gTColor1) // Statusbar
-        let gTColor2 = UIColor(argb: 0xff5488B8)
-        let gEColor2 = UIColor(argb: 0xff6FC1EB)
-        Labiba.BackgroundView.background = .gradient(gradientSpecs: Labiba.GradientSpecs.init(colors: [gTColor2  , gEColor2], locations: [0 ,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
-        Labiba.UserChatBubble.background = .solid(color:  UIColor(argb: 0x803a5b76))
-        Labiba.UserChatBubble.textColor = UIColor(argb: 0xffffffff)
-        
-        
-        Labiba.BotChatBubble.background = .solid(color: UIColor(argb: 0x10ffffff))
-        Labiba.BotChatBubble.textColor = UIColor(argb: 0xffffffff)
-        Labiba.BotChatBubble.textAlignment = .justified
-        Labiba.BotChatBubble.typingIndicatorColor = UIColor(argb: 0xffffffff)
-        
-        
-        Labiba.VoiceAssistantView.micButton.backgroundColor =  UIColor(argb: 0x904670A2)
-        Labiba.VoiceAssistantView.micButton.tintColor =  UIColor(argb: 0xffffffff)
-        
-        
-        Labiba.MenuCardView.backgroundColor = UIColor(argb: 0x00ffffff)
-        Labiba.MenuCardView.clearNonSelectedItems = false
-        Labiba.MenuCardView.textColor =  UIColor(argb: 0xffffffff)
-        Labiba.MenuCardView.fontSize = 12
-        
-        Labiba.CarousalCardView.backgroundColor = UIColor(argb: 0xaa292929)
-        Labiba.CarousalCardView.titleColor = UIColor(argb: 0xffffffff)
-        Labiba.CarousalCardView.subtitleColor = UIColor(argb: 0xffffffff)
-        Labiba.CarousalCardView.buttonTitleColor = UIColor(argb: 0xffffffff)
-        
-        
-        
-        Labiba.ChoiceView.backgroundColor = .clear
-        Labiba.ChoiceView.tintColor = UIColor(argb: 0xffffffff)
-        Labiba.ChoiceView.borderColor =  UIColor(argb: 0xffffffff)
-        
-        Labiba.UserInputView.sendButton.backgroundColor = UIColor(argb: 0xff005569)
-        Labiba.UserInputView.sendButton.tintColor = UIColor(argb: 0xffffffff)
-        Labiba.UserInputView.backgroundColor = .white
-        Labiba.UserInputView.tintColor = UIColor(argb: 0xff4670A2)
-        Labiba.UserInputView.textColor = .black
-        Labiba.UserInputView.hintColor = .gray
-        
-        Labiba.attachmentThemeModel.menu.background = UIColor(argb: 0xff4670A2)
-        Labiba.attachmentThemeModel.menu.tint = UIColor(argb: 0xffffffff)
-       
-        Labiba.VoiceAssistantView.background = .gradient(gradientSpecs: Labiba.GradientSpecs.init(colors: [UIColor(argb:   0x000069aa)  , UIColor(argb:  0xff0069aa)], locations: [0 ,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
-        
-        
-        
-      
-        let header = QuickChoicesHeaderView.create( centerImage:  UIImage(named: "natali"))
-        Labiba.setCustomHeaderView(header, withHeight: 260)
-        
-        Labiba._WithRatingVC = true
-        Labiba.setFont(regAR: "TheSans-Plain", boldAR: "TheSans-Bold", regEN: "AvantGarde-Medium", boldEN: "AvantGarde-Bold")
-        Labiba.setVoiceAssistanteRate(ARrate: 0.9, ENRate: 0.9)
-    }
+//     static func  setNatHealth_Theme() {
+//        LabibaThemes.isThemeApplied = true
+//        Labiba.setBotType(botType: .voiceAndKeyboard)
+//        let gTColor1 = UIColor(argb: 0xff5488B8)
+//        let gCColor1 = UIColor(argb: 0xff5488B8)
+//        let gEColor1 = UIColor(argb: 0x005488B8)
+//        //Labiba.setHeaderBackground(gradient: Labiba.GradientSpecs.init(colors: [gTColor1 ,gCColor1 , gEColor1], locations: [0 ,0.85,1], start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) , viewBackgroundColor: .clear)) // Toolbar
+//        
+//        Labiba.setStatusBarColor(color: gTColor1) // Statusbar
+//        let gTColor2 = UIColor(argb: 0xff5488B8)
+//        let gEColor2 = UIColor(argb: 0xff6FC1EB)
+//        Labiba.BackgroundView.background = .gradient(gradientSpecs: Labiba.GradientSpecs.init(colors: [gTColor2  , gEColor2], locations: [0 ,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
+//        Labiba.UserChatBubble.background = .solid(color:  UIColor(argb: 0x803a5b76))
+//        Labiba.UserChatBubble.textColor = UIColor(argb: 0xffffffff)
+//        
+//        
+//        Labiba.BotChatBubble.background = .solid(color: UIColor(argb: 0x10ffffff))
+//        Labiba.BotChatBubble.textColor = UIColor(argb: 0xffffffff)
+//        Labiba.BotChatBubble.textAlignment = .justified
+//        Labiba.BotChatBubble.typingIndicatorColor = UIColor(argb: 0xffffffff)
+//        
+//        
+//        Labiba.VoiceAssistantView.micButton.backgroundColor =  UIColor(argb: 0x904670A2)
+//        Labiba.VoiceAssistantView.micButton.tintColor =  UIColor(argb: 0xffffffff)
+//        
+//        
+//        Labiba.MenuCardView.backgroundColor = UIColor(argb: 0x00ffffff)
+//        Labiba.MenuCardView.clearNonSelectedItems = false
+//        Labiba.MenuCardView.textColor =  UIColor(argb: 0xffffffff)
+//        Labiba.MenuCardView.fontSize = 12
+//        
+//        Labiba.CarousalCardView.backgroundColor = UIColor(argb: 0xaa292929)
+//        Labiba.CarousalCardView.titleColor = UIColor(argb: 0xffffffff)
+//        Labiba.CarousalCardView.subtitleColor = UIColor(argb: 0xffffffff)
+//        Labiba.CarousalCardView.buttonTitleColor = UIColor(argb: 0xffffffff)
+//        
+//        
+//        
+//        Labiba.ChoiceView.backgroundColor = .clear
+//        Labiba.ChoiceView.tintColor = UIColor(argb: 0xffffffff)
+//        Labiba.ChoiceView.borderColor =  UIColor(argb: 0xffffffff)
+//        
+//        Labiba.UserInputView.sendButton.backgroundColor = UIColor(argb: 0xff005569)
+//        Labiba.UserInputView.sendButton.tintColor = UIColor(argb: 0xffffffff)
+//        Labiba.UserInputView.backgroundColor = .white
+//        Labiba.UserInputView.tintColor = UIColor(argb: 0xff4670A2)
+//        Labiba.UserInputView.textColor = .black
+//        Labiba.UserInputView.hintColor = .gray
+//        
+//        Labiba.attachmentThemeModel.menu.background = UIColor(argb: 0xff4670A2)
+//        Labiba.attachmentThemeModel.menu.tint = UIColor(argb: 0xffffffff)
+//       
+//        Labiba.VoiceAssistantView.background = .gradient(gradientSpecs: Labiba.GradientSpecs.init(colors: [UIColor(argb:   0x000069aa)  , UIColor(argb:  0xff0069aa)], locations: [0 ,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
+//        
+//        
+//        
+//      
+//        let header = QuickChoicesHeaderView.create( centerImage:  UIImage(named: "natali"))
+//        Labiba.setCustomHeaderView(header, withHeight: 260)
+//        
+//        Labiba._WithRatingVC = true
+//        Labiba.setFont(regAR: "TheSans-Plain", boldAR: "TheSans-Bold", regEN: "AvantGarde-Medium", boldEN: "AvantGarde-Bold")
+//        Labiba.setVoiceAssistanteRate(ARrate: 0.9, ENRate: 0.9)
+//    }
     
-    public static func  setSharja_Theme() {
-        LabibaThemes.isThemeApplied = true
-//        Labiba.Bot_Type = .voiceAndKeyboard
-//        Labiba.Temporary_Bot_Type = .voiceAndKeyboard
-        
-        switch SharedPreference.shared.botLangCode  {
-        case .ar:
-            Labiba.setBotType(botType: .voiceAndKeyboard)
-        default:
-            Labiba.setBotType(botType: .keyboardWithTTS)
-        }
-//        Blue: #0069aa
-//        Light Blue: #00a6dd
-        
-        let gTColor1 = UIColor(argb: 0xff00a6dd)
-        let gCColor1 = UIColor(argb: 0xff00a6dd)
-        let gEColor1 = UIColor(argb: 0x0000a6dd)
-        Labiba.setHeaderBackground(gradient: Labiba.GradientSpecs.init(colors: [gTColor1 ,gCColor1 , gEColor1], locations: [0 ,0.85,1], start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) , viewBackgroundColor: .clear)) // Toolbar
-        
-        Labiba.setStatusBarColor(color:  gTColor1) // Statusbar
-        let gTColor2 = UIColor(argb:0xff00a6dd)
-         let gCColor2 = UIColor(argb:0xff00a6dd)
-        let gEColor2 = UIColor(argb:0xff0069aa)
-//        Labiba.setChatMainBackground(gradient: Labiba.GradientSpecs.init(colors: [gTColor2 , gCColor2 , gEColor2], locations: [0 ,0.5,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
-        Labiba.BackgroundView.background = .gradient(gradientSpecs: Labiba.GradientSpecs.init(colors: [gTColor2 , gCColor2 , gEColor2], locations: [0 ,0.5,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
-//        Labiba.setUserBubbleBackground(color:  UIColor(argb: 0x803a5b76))
-//        Labiba.setUserBubbleTextColor( color : UIColor(argb: 0xffffffff))
-        Labiba.UserChatBubble.background = .solid(color:  UIColor(argb: 0x803a5b76))
-        Labiba.UserChatBubble.textColor = UIColor(argb: 0xffffffff)
-        
-        
-//        Labiba.setBotBubbleBackground(color: UIColor(argb: 0x50ffffff))
-//        Labiba.setBotBubbleText(color: UIColor(argb: 0xffffffff))
-//        Labiba.setTypingIndicatorColor(color: UIColor(argb: 0xffffffff))
-        
-        Labiba.BotChatBubble.background = .solid(color: UIColor(argb: 0x50ffffff))
-        Labiba.BotChatBubble.textColor = UIColor(argb: 0xffffffff)
-        Labiba.BotChatBubble.typingIndicatorColor = UIColor(argb: 0xffffffff)
-        
-       // Labiba.setMicButtonColors(background: UIColor(argb: 0xee0069aa), tint: UIColor(argb: 0xeeffffff))
-        Labiba.VoiceAssistantView.micButton.backgroundColor = UIColor(argb: 0xee0069aa)
-        Labiba.VoiceAssistantView.micButton.tintColor = UIColor(argb: 0xeeffffff)
-        
-        Labiba.MenuCardView.backgroundColor = UIColor(argb: 0xffffffff)
-        Labiba.MenuCardView.textColor = UIColor(argb: 0xff7ab125)
-        
-       //Labiba.setMenuCardsCollectionColor(color: .clear)
-       // Labiba.setMenuCardSetup(color: UIColor(argb: 0xffffffff))
-        // Labiba.setMenuCardText(color:  UIColor(argb: 0xff7ab125), fontSize: 11)
-        Labiba.CarousalCardView.backgroundColor = UIColor(argb: 0xaa292929)
-        Labiba.CarousalCardView.titleColor = UIColor(argb: 0xffffffff)
-        Labiba.CarousalCardView.subtitleColor = UIColor(argb: 0xffffffff)
-        Labiba.CarousalCardView.buttonTitleColor = UIColor(argb: 0xffffffff)
-        
-//        Labiba.setCarousalCardColor(backgroundColor: UIColor(argb: 0xaa292929))
-//        Labiba._CarousalCardTitleColor = UIColor(argb: 0xffffffff)
-//        Labiba._CarousalCardSubtitleColor = UIColor(argb: 0xffffffff)
-//        Labiba._CarousalCardButtonTitleColor = UIColor(argb: 0xffffffff)
-        
-        
-        
-       // Labiba.setChoicesButtonColors(background: .clear, tint: UIColor(argb: 0xffffffff), borderColor:  UIColor(argb: 0xffffffff))
-        Labiba.ChoiceView.backgroundColor = .clear
-        Labiba.ChoiceView.tintColor = UIColor(argb: 0xffffffff)
-        Labiba.ChoiceView.borderColor =  UIColor(argb: 0xffffffff)
-        
-      //  Labiba.setSendButtonColors(background: UIColor(argb: 0xff005569), tint: UIColor(argb: 0xffffffff))
-        Labiba.UserInputView.sendButton.backgroundColor = UIColor(argb: 0xff005569)
-        Labiba.UserInputView.sendButton.tintColor = UIColor(argb: 0xffffffff)
-        
-        // Labiba.setUserInputColors(background: .white, tintColor: UIColor(argb: 0xff4670A2), textColor: .black, hintColor: .gray)
-        Labiba.UserInputView.backgroundColor = .white
-        Labiba.UserInputView.tintColor = UIColor(argb: 0xff4670A2)
-        Labiba.UserInputView.textColor = .black
-        Labiba.UserInputView.hintColor = .gray
-        
-        //Labiba.setAttachmentMenuColors(background: UIColor(argb: 0xff4670A2), tint: UIColor(argb: 0xffffffff))
-        Labiba.attachmentThemeModel.menu.background = UIColor(argb: 0xff4670A2)
-        Labiba.attachmentThemeModel.menu.tint = UIColor(argb: 0xffffffff)
-//         Labiba.setBottomBackground(gradient: Labiba.GradientSpecs.init(colors: [UIColor(argb:   0x000069aa)  , UIColor(argb:  0xff0069aa)], locations: [0 ,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
-        Labiba.VoiceAssistantView.background = .gradient(gradientSpecs:  Labiba.GradientSpecs.init(colors: [UIColor(argb:   0x000069aa)  , UIColor(argb:  0xff0069aa)], locations: [0 ,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
-        
-        let bodyAndTitles = ["en_title":"\"Hi, I’m Fatima!\"",
-                             "ar_title":"\"مرحبا، أنا فاطمة\"" ,
-                             "de_title": "\"Hi, ich bin Fatima!\"" ,
-                             "ru_title": "\"Привет, я Фатима!\"" ,
-                             "zh_title":"\"嗨，我是法蒂瑪!\"",
-                             "en_body":"Type in what you are looking for",
-                             "ar_body":"الرجاء الضغط على زر الميكرفون لكي تتحدث معي أو كتابة ما تبحث عنه"  ,
-                             "de_body":"Geben Sie ein, was Sie suchen",
-                             "ru_body":"Введите то, что ищете",
-                             "zh_body":"输入你要找的东西。" ]
-        let header = GreetingHeaderView.create(withAction: false, appLogoImgURl: "https://botbuilder.labiba.ai/maker/files/87c7f1da-fcdf-45f5-bd4c-63bce290e9fe.png",centerImageURL:  "https://botbuilder.labiba.ai/maker/files/d818657b-91f5-4b38-ae93-e65f5e240004.png",bodyAndTitle: bodyAndTitles)
-        Labiba.setCustomHeaderView(header, withHeight: 210)
-        Labiba.setVoiceAssistanteRate(ARrate: 0.9, ENRate: 0.9)
-       // Labiba.setFont(font: .DINNextLTW23)
-        Labiba.setFont(regAR: "DINNextLTW23-Regular", boldAR: "DINNextLTW23-Bold", regEN: "DINNextLTW23-Regular", boldEN: "DINNextLTW23-Bold")
-        //Labiba.setDefaultLocation(latitude: 25.322327, longitude: 55.513641)
-        Labiba.MapView.defaultLocation = ( 25.322327, 55.513641)
-        // Labiba.setMicButtondAlpha(alpha: 0.8)
-    }
-   
+//    public static func  setSharja_Theme() {
+//        LabibaThemes.isThemeApplied = true
+////        Labiba.Bot_Type = .voiceAndKeyboard
+////        Labiba.Temporary_Bot_Type = .voiceAndKeyboard
+//        
+//        switch SharedPreference.shared.botLangCode  {
+//        case .ar:
+//            Labiba.setBotType(botType: .voiceAndKeyboard)
+//        default:
+//            Labiba.setBotType(botType: .keyboardWithTTS)
+//        }
+////        Blue: #0069aa
+////        Light Blue: #00a6dd
+//        
+//        let gTColor1 = UIColor(argb: 0xff00a6dd)
+//        let gCColor1 = UIColor(argb: 0xff00a6dd)
+//        let gEColor1 = UIColor(argb: 0x0000a6dd)
+//        Labiba.setHeaderBackground(gradient: Labiba.GradientSpecs.init(colors: [gTColor1 ,gCColor1 , gEColor1], locations: [0 ,0.85,1], start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) , viewBackgroundColor: .clear)) // Toolbar
+//        
+//        Labiba.setStatusBarColor(color:  gTColor1) // Statusbar
+//        let gTColor2 = UIColor(argb:0xff00a6dd)
+//         let gCColor2 = UIColor(argb:0xff00a6dd)
+//        let gEColor2 = UIColor(argb:0xff0069aa)
+////        Labiba.setChatMainBackground(gradient: Labiba.GradientSpecs.init(colors: [gTColor2 , gCColor2 , gEColor2], locations: [0 ,0.5,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
+//        Labiba.BackgroundView.background = .gradient(gradientSpecs: Labiba.GradientSpecs.init(colors: [gTColor2 , gCColor2 , gEColor2], locations: [0 ,0.5,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
+////        Labiba.setUserBubbleBackground(color:  UIColor(argb: 0x803a5b76))
+////        Labiba.setUserBubbleTextColor( color : UIColor(argb: 0xffffffff))
+//        Labiba.UserChatBubble.background = .solid(color:  UIColor(argb: 0x803a5b76))
+//        Labiba.UserChatBubble.textColor = UIColor(argb: 0xffffffff)
+//        
+//        
+////        Labiba.setBotBubbleBackground(color: UIColor(argb: 0x50ffffff))
+////        Labiba.setBotBubbleText(color: UIColor(argb: 0xffffffff))
+////        Labiba.setTypingIndicatorColor(color: UIColor(argb: 0xffffffff))
+//        
+//        Labiba.BotChatBubble.background = .solid(color: UIColor(argb: 0x50ffffff))
+//        Labiba.BotChatBubble.textColor = UIColor(argb: 0xffffffff)
+//        Labiba.BotChatBubble.typingIndicatorColor = UIColor(argb: 0xffffffff)
+//        
+//       // Labiba.setMicButtonColors(background: UIColor(argb: 0xee0069aa), tint: UIColor(argb: 0xeeffffff))
+//        Labiba.VoiceAssistantView.micButton.backgroundColor = UIColor(argb: 0xee0069aa)
+//        Labiba.VoiceAssistantView.micButton.tintColor = UIColor(argb: 0xeeffffff)
+//        
+//        Labiba.MenuCardView.backgroundColor = UIColor(argb: 0xffffffff)
+//        Labiba.MenuCardView.textColor = UIColor(argb: 0xff7ab125)
+//        
+//       //Labiba.setMenuCardsCollectionColor(color: .clear)
+//       // Labiba.setMenuCardSetup(color: UIColor(argb: 0xffffffff))
+//        // Labiba.setMenuCardText(color:  UIColor(argb: 0xff7ab125), fontSize: 11)
+//        Labiba.CarousalCardView.backgroundColor = UIColor(argb: 0xaa292929)
+//        Labiba.CarousalCardView.titleColor = UIColor(argb: 0xffffffff)
+//        Labiba.CarousalCardView.subtitleColor = UIColor(argb: 0xffffffff)
+//        Labiba.CarousalCardView.buttonTitleColor = UIColor(argb: 0xffffffff)
+//        
+////        Labiba.setCarousalCardColor(backgroundColor: UIColor(argb: 0xaa292929))
+////        Labiba._CarousalCardTitleColor = UIColor(argb: 0xffffffff)
+////        Labiba._CarousalCardSubtitleColor = UIColor(argb: 0xffffffff)
+////        Labiba._CarousalCardButtonTitleColor = UIColor(argb: 0xffffffff)
+//        
+//        
+//        
+//       // Labiba.setChoicesButtonColors(background: .clear, tint: UIColor(argb: 0xffffffff), borderColor:  UIColor(argb: 0xffffffff))
+//        Labiba.ChoiceView.backgroundColor = .clear
+//        Labiba.ChoiceView.tintColor = UIColor(argb: 0xffffffff)
+//        Labiba.ChoiceView.borderColor =  UIColor(argb: 0xffffffff)
+//        
+//      //  Labiba.setSendButtonColors(background: UIColor(argb: 0xff005569), tint: UIColor(argb: 0xffffffff))
+//        Labiba.UserInputView.sendButton.backgroundColor = UIColor(argb: 0xff005569)
+//        Labiba.UserInputView.sendButton.tintColor = UIColor(argb: 0xffffffff)
+//        
+//        // Labiba.setUserInputColors(background: .white, tintColor: UIColor(argb: 0xff4670A2), textColor: .black, hintColor: .gray)
+//        Labiba.UserInputView.backgroundColor = .white
+//        Labiba.UserInputView.tintColor = UIColor(argb: 0xff4670A2)
+//        Labiba.UserInputView.textColor = .black
+//        Labiba.UserInputView.hintColor = .gray
+//        
+//        //Labiba.setAttachmentMenuColors(background: UIColor(argb: 0xff4670A2), tint: UIColor(argb: 0xffffffff))
+//        Labiba.attachmentThemeModel.menu.background = UIColor(argb: 0xff4670A2)
+//        Labiba.attachmentThemeModel.menu.tint = UIColor(argb: 0xffffffff)
+////         Labiba.setBottomBackground(gradient: Labiba.GradientSpecs.init(colors: [UIColor(argb:   0x000069aa)  , UIColor(argb:  0xff0069aa)], locations: [0 ,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
+//        Labiba.VoiceAssistantView.background = .gradient(gradientSpecs:  Labiba.GradientSpecs.init(colors: [UIColor(argb:   0x000069aa)  , UIColor(argb:  0xff0069aa)], locations: [0 ,1],  start: CGPoint.init(x: 0, y: 0), end: CGPoint.init(x: 0, y: 1) ))
+//        
+//        let bodyAndTitles = ["en_title":"\"Hi, I’m Fatima!\"",
+//                             "ar_title":"\"مرحبا، أنا فاطمة\"" ,
+//                             "de_title": "\"Hi, ich bin Fatima!\"" ,
+//                             "ru_title": "\"Привет, я Фатима!\"" ,
+//                             "zh_title":"\"嗨，我是法蒂瑪!\"",
+//                             "en_body":"Type in what you are looking for",
+//                             "ar_body":"الرجاء الضغط على زر الميكرفون لكي تتحدث معي أو كتابة ما تبحث عنه"  ,
+//                             "de_body":"Geben Sie ein, was Sie suchen",
+//                             "ru_body":"Введите то, что ищете",
+//                             "zh_body":"输入你要找的东西。" ]
+//        let header = GreetingHeaderView.create(withAction: false, appLogoImgURl: "https://botbuilder.labiba.ai/maker/files/87c7f1da-fcdf-45f5-bd4c-63bce290e9fe.png",centerImageURL:  "https://botbuilder.labiba.ai/maker/files/d818657b-91f5-4b38-ae93-e65f5e240004.png",bodyAndTitle: bodyAndTitles)
+//        Labiba.setCustomHeaderView(header, withHeight: 210)
+//        Labiba.setVoiceAssistanteRate(ARrate: 0.9, ENRate: 0.9)
+//       // Labiba.setFont(font: .DINNextLTW23)
+//        Labiba.setFont(regAR: "DINNextLTW23-Regular", boldAR: "DINNextLTW23-Bold", regEN: "DINNextLTW23-Regular", boldEN: "DINNextLTW23-Bold")
+//        //Labiba.setDefaultLocation(latitude: 25.322327, longitude: 55.513641)
+//        Labiba.MapView.defaultLocation = ( 25.322327, 55.513641)
+//        // Labiba.setMicButtondAlpha(alpha: 0.8)
+//    }
+//   
     
     
     
@@ -496,7 +496,7 @@ import UIKit
         Labiba.attachmentThemeModel.menu.background = UIColor(argb: 0xff4670A2)
         Labiba.attachmentThemeModel.menu.tint = UIColor(argb: 0xffffffff)
             
-            Labiba.setFont(regAR: "DINNextLTW23-Regular", boldAR: "DINNextLTW23-Bold", regEN: "DINNextLTW23-Regular", boldEN: "DINNextLTW23-Bold")
+        Labiba.setFont(regAR: "Cairo-Regular", boldAR: "Cairo-Bold", regEN: "Cairo-Regular", boldEN: "Cairo-Bold")
             Labiba.setVoiceAssistanteRate(ARrate: 1.3, ENRate: 1.1)
             //Labiba.setDefaultLocation(latitude: 25.322327, longitude: 55.513641)
         Labiba.MapView.defaultLocation = ( 25.322327, 55.513641)

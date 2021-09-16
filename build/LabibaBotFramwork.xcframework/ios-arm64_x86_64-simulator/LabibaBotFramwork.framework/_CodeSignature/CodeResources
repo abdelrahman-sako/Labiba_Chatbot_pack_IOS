@@ -10,15 +10,15 @@
 		</data>
 		<key>AttachmentView.nib</key>
 		<data>
-		DM8oXFWGmRsO+VpHB1yh5MP2A6o=
+		bS+8lGhUGD3yU0BsLR9N0WAzLkE=
 		</data>
 		<key>AudioRecorderView.nib</key>
 		<data>
-		9D9Vovm2O0G7NmQYjmf7c8K39Ug=
+		OfCxAXoU0VZntncQ56J9qyNVFr0=
 		</data>
 		<key>AudioView.nib</key>
 		<data>
-		Y+zPIHRi4esbvM5cVAiTbt4zfmE=
+		I0Oxvlocne/Bnz93sxIfgZ74tIs=
 		</data>
 		<key>Base.lproj/Localizable.strings</key>
 		<data>
@@ -26,51 +26,51 @@
 		</data>
 		<key>BotBubble.nib</key>
 		<data>
-		acJk7SpLO/g8z26p3sOfmF91vpE=
+		R0ii+IffOcJZoCG6YpWbE/x5amo=
 		</data>
 		<key>CustomCollectionViewCell.nib</key>
 		<data>
-		+MLTM82QVR5agWeIE9lVBmWUk1s=
+		8CrbsNwqIvROMIRhvO5D/eTY/9w=
 		</data>
 		<key>CustomCollectionViewCellNoImage.nib</key>
 		<data>
-		i3XOQVqiEAc6p3OrLEzK9MSMHrU=
+		m8BdZR/IlSZUhyVRACI335qNBHc=
 		</data>
 		<key>CustomMapPicker.nib</key>
 		<data>
-		w5aJ4Wr2z7HyOly0748V1HiJURw=
+		pbqMjsMTXNdHYuGEpA2wlbfzpYU=
 		</data>
 		<key>CustomTableViewCell.nib</key>
 		<data>
-		3Ef6oa3aJQqWDl40pzk1Yzi97BI=
+		qo7G/GAO9kcqsOkbuJLhZ4rVP5M=
 		</data>
 		<key>DynamicGIF.nib</key>
 		<data>
-		dHhWaalrovAtn4Fdta8xRGzQ9Xg=
+		/S54si3fq6qPYq462Sv9BG/GVDQ=
 		</data>
 		<key>FloatingBubblesVisualizer.nib</key>
 		<data>
-		wR8BZiTvrLaPrU1U7/RHm8RrHDE=
+		m8uOO3xvWxYRlUWGCHmc3KTwPVY=
 		</data>
 		<key>GreetingHeaderView.nib</key>
 		<data>
-		olpPx6Q5MAA0+OTcoNdRhUlNJw4=
+		eVRVotidhg+Eu7PJ+WCi00eqh/A=
 		</data>
 		<key>HeaderQuickChoiceCell.nib/objects-12.3+.nib</key>
 		<data>
-		lvPfrq4aIgAipgi15l9pZVRH31U=
+		JG/h90XwiiJS3834zySIIFdWvQM=
 		</data>
 		<key>HeaderQuickChoiceCell.nib/runtime.nib</key>
 		<data>
-		UFoDmW3Mk90XMFjdiPn0B5wzyko=
+		Ldi/XGbOSyzoV7CYCTE+VkI5cSQ=
 		</data>
 		<key>HeaderVC.nib</key>
 		<data>
-		ilRuWzrCTWhtk7dxUuB/Lqw0NN8=
+		OmhRM8ooif6c0se8bPslEF3Fq+0=
 		</data>
 		<key>Headers/LabibaBotFramwork-Swift.h</key>
 		<data>
-		U9wKUjrGohYPq3YbWGR1ivFDU+M=
+		sjIXFhoSM5M3GtOUhRG1xXssLYg=
 		</data>
 		<key>Headers/LabibaBotFramwork.h</key>
 		<data>
@@ -82,27 +82,19 @@
 		</data>
 		<key>HelpExpandableView.nib</key>
 		<data>
-		w23/fJeOzyFh3+uPzsBk+nRNmAo=
+		53SQdG02XIIbZCPzLJv/UZwm3+Y=
 		</data>
 		<key>HelpPopupVC.nib</key>
 		<data>
-		1SPPdHm0l8pt0sUKuO2tWgUeGVM=
+		F3jm/5v3yPYzZ7QPzEgkvor51s0=
 		</data>
 		<key>HintsView.nib</key>
 		<data>
-		SxGj9QRssacGWP1sWguUmwxWQHA=
+		EqRPGzSH5XV4w8wqj7TUpqn24dk=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9aVJFtE9iQfoi33wDBTFUcOPG7w=
-		</data>
-		<key>JANNALT-BOLD.TTF</key>
-		<data>
-		JjylyMxXeDTBIRswaHWJTdItjEU=
-		</data>
-		<key>JANNALT-REGULAR.TTF</key>
-		<data>
-		TEkuP3rJDciSMcoYtRMYrLLfr3k=
+		QHvQw1PzpAqrPv03Qci7Nf9Z1U8=
 		</data>
 		<key>JsonExample.json</key>
 		<data>
@@ -110,191 +102,191 @@
 		</data>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/objects-12.3+.nib</key>
 		<data>
-		MdyuEc75VGxHrS0Rog80yRpvBvc=
+		9hzyXN56K9iQlEPgKAPXQ13IoKw=
 		</data>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/runtime.nib</key>
 		<data>
-		kXZlFH96sHBsAivWkE6Qa6UKyaM=
+		x22NR3Awz+C8MghH0JGpEYWiJdw=
 		</data>
 		<key>Labiba.storyboardc/21L-TP-ZZH-view-EIa-Hs-D8H.nib/objects-12.3+.nib</key>
 		<data>
-		n3SW4anSDTTgBwAY59u3jKqDO2Y=
+		HewsXzVp0v8/b+tLAB9XMGR7ueA=
 		</data>
 		<key>Labiba.storyboardc/21L-TP-ZZH-view-EIa-Hs-D8H.nib/runtime.nib</key>
 		<data>
-		Rjw0pU1OKoXkACugnxk4P6Q6AVU=
+		zNTlNgeC44loIsLE6D31EsAPAa0=
 		</data>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/objects-12.3+.nib</key>
 		<data>
-		5rCQXdHyW6v+IzhhYWF6sSo+zTg=
+		8YyMYvCoaGX1TqdavWVRBSJrfxA=
 		</data>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/runtime.nib</key>
 		<data>
-		ZYDGqD8fmEMKhmX5DPDKGjFncsI=
+		TBCh7BfnqOPFpTM7yBW9PKgh470=
 		</data>
 		<key>Labiba.storyboardc/287-7P-3Rf-view-ZiX-qL-lWW.nib/objects-12.3+.nib</key>
 		<data>
-		3ygj41skkbNKVQ1gkHKFqLphNuk=
+		UNSBsTmBqArhSznk0+thji2CmKs=
 		</data>
 		<key>Labiba.storyboardc/287-7P-3Rf-view-ZiX-qL-lWW.nib/runtime.nib</key>
 		<data>
-		EEt5xmgEVf/gDoKBGW/m9lmNCaU=
+		ZJ7nxsEDBMQO68nSSsmVhi4KipU=
 		</data>
 		<key>Labiba.storyboardc/2Em-15-PQC-view-ebT-ec-Tcz.nib/objects-12.3+.nib</key>
 		<data>
-		P9l0WgbvahZYqqQ+jpEPKK+xQCk=
+		kcs7aVrp+bx2RrDzqhNbu8jFqfI=
 		</data>
 		<key>Labiba.storyboardc/2Em-15-PQC-view-ebT-ec-Tcz.nib/runtime.nib</key>
 		<data>
-		NTHNxjxLdH3z87hXQwXfZt3Qvac=
+		i+IZk4EVw6M5slmDETpk8HDynz4=
 		</data>
 		<key>Labiba.storyboardc/Info.plist</key>
 		<data>
-		RpvXrB7rB8kzM/q+dujazYJoYFw=
+		Jqy3y06TTGfTKL767i5/Q2WLdaY=
 		</data>
 		<key>Labiba.storyboardc/Q3B-vE-Z0p-view-AmB-So-STK.nib/objects-12.3+.nib</key>
 		<data>
-		PNkSy7OagiguRoVIb6aTT5U2/bw=
+		9vH0jlg8ot9IxpbhiFBaJEvp+YI=
 		</data>
 		<key>Labiba.storyboardc/Q3B-vE-Z0p-view-AmB-So-STK.nib/runtime.nib</key>
 		<data>
-		TG34Yh6f2B2ECweCxLK9kLvCKMI=
+		Uz9t4yOQv4EjfC2yfd+6msP86Sg=
 		</data>
 		<key>Labiba.storyboardc/Sss-8X-BXp-view-2yv-Y7-ZaW.nib/objects-12.3+.nib</key>
 		<data>
-		Z4Tz+tOOd0e6/xSMZrXSSPvfUcM=
+		UdxcNRyif2hR2e08JDmmuReL5Ys=
 		</data>
 		<key>Labiba.storyboardc/Sss-8X-BXp-view-2yv-Y7-ZaW.nib/runtime.nib</key>
 		<data>
-		F906OUA6NAjMxKxg4xY84UZOXpo=
+		tB/DFyVptRLqTP1lDFLWTJdqsGI=
 		</data>
 		<key>Labiba.storyboardc/VGX-3C-1Ob-view-MXZ-Ck-qVl.nib/objects-12.3+.nib</key>
 		<data>
-		4YfJpWiZkExmgYC1aX/RCY9HDME=
+		0zcd+3pYaXJyxLqGYV0xAaFR9ao=
 		</data>
 		<key>Labiba.storyboardc/VGX-3C-1Ob-view-MXZ-Ck-qVl.nib/runtime.nib</key>
 		<data>
-		TWIisYqHJe0vfGK5+SNQ45rE3Ek=
+		aJMcrvTRFk1vv3gRbCi9rkULZZA=
 		</data>
 		<key>Labiba.storyboardc/VmH-2t-GMi-view-wrs-Vb-9s1.nib/objects-12.3+.nib</key>
 		<data>
-		A7WEMrui1mikPQLBDzC6gN11Gaw=
+		Nkg2E95qMmGUD8PMkYoVlSBpMGo=
 		</data>
 		<key>Labiba.storyboardc/VmH-2t-GMi-view-wrs-Vb-9s1.nib/runtime.nib</key>
 		<data>
-		TiSF6oWZ4zQY3abj81xtL396uCY=
+		EMGlHwpCuwUvjxNZCxCpHpAwI5Q=
 		</data>
 		<key>Labiba.storyboardc/WebPageViewController.nib/objects-12.3+.nib</key>
 		<data>
-		pgxL5NqvlkFu5qvzE3yd2VURixM=
+		hYS8KwuwQnRKBSYp02K2XEw+vaQ=
 		</data>
 		<key>Labiba.storyboardc/WebPageViewController.nib/runtime.nib</key>
 		<data>
-		YvuJ4t2eftZ6lIvV45gcDw518cc=
+		BN4W6quXfKZ6SEqXZpppR65Jt84=
 		</data>
 		<key>Labiba.storyboardc/Xft-wE-dLK-view-PdA-Jf-zi5.nib/objects-12.3+.nib</key>
 		<data>
-		UDBlNWAAUwcoJWzEVoP7Nk0VCv4=
+		uiG19QT/ArkCCWlsNeSScAXjXJ8=
 		</data>
 		<key>Labiba.storyboardc/Xft-wE-dLK-view-PdA-Jf-zi5.nib/runtime.nib</key>
 		<data>
-		YZU0jb+G+s0FgQ6HmlrwFwzQblI=
+		rzyOc3TiSMRtrCHmaNlIeFrAM+0=
 		</data>
 		<key>Labiba.storyboardc/aK4-0X-fka-view-ehp-9T-3X1.nib/objects-12.3+.nib</key>
 		<data>
-		uVhSDnANpzZl/0+7ptx1sQ4W7go=
+		Ff3qovG7yX031O1yHz2f0R21/kA=
 		</data>
 		<key>Labiba.storyboardc/aK4-0X-fka-view-ehp-9T-3X1.nib/runtime.nib</key>
 		<data>
-		wNU3O1Fkma1qGmDHg9dR4DkvJxk=
+		u5O/qFEls7Fflo6/BD3wPa+6GQE=
 		</data>
 		<key>Labiba.storyboardc/attachMenuVC.nib/objects-12.3+.nib</key>
 		<data>
-		ytlt5zXeTrV/WeDW8itTlMU6tAw=
+		8EFQJeozKhfbgNV7JRDvngFz+9I=
 		</data>
 		<key>Labiba.storyboardc/attachMenuVC.nib/runtime.nib</key>
 		<data>
-		tbi2fyKLr7BOw9UBuq1G6LtQ29Y=
+		D4nhLfmwKozB4m6nPJUSRB+7jXA=
 		</data>
 		<key>Labiba.storyboardc/cardsVC.nib/objects-12.3+.nib</key>
 		<data>
-		YTQwUkC4XnYY9DqIcJvStoaBd7g=
+		ytYNyHIlShaPEL6RnmO3Ft3iEyA=
 		</data>
 		<key>Labiba.storyboardc/cardsVC.nib/runtime.nib</key>
 		<data>
-		FU5vnfGGm3GhU+kaZCEgdepACUM=
+		43x3/DNfeq2PYvxDfPzO3GgTIug=
 		</data>
 		<key>Labiba.storyboardc/conversationVC.nib/objects-12.3+.nib</key>
 		<data>
-		5BdhKILH4P1ATxhu70v7KABItFU=
+		srsrMUaTYnFwkXMPOHm9a9+1WSM=
 		</data>
 		<key>Labiba.storyboardc/conversationVC.nib/runtime.nib</key>
 		<data>
-		PxzOe5iUKESzTONtRt2JaakflQg=
+		famzZZoZqVWyxjoGEJEnqygPBhc=
 		</data>
 		<key>Labiba.storyboardc/customMapPicker.nib/objects-12.3+.nib</key>
 		<data>
-		BMM8axrsKTLDHRX7jcE877fsjrg=
+		tw7yp77Jvjh4OARQguQ6c1B46eI=
 		</data>
 		<key>Labiba.storyboardc/customMapPicker.nib/runtime.nib</key>
 		<data>
-		nWZh6uBU3YMILF6yY8vqrF4rgUU=
+		KA+LHFsllhpyzOHF2F4N8uChUsw=
 		</data>
 		<key>Labiba.storyboardc/datePickerVC.nib/objects-12.3+.nib</key>
 		<data>
-		UG5o2XHTpP6FlMpK9TV0vWX9uiY=
+		Jy2tRuDYBAZOUReQyngffOq1mz8=
 		</data>
 		<key>Labiba.storyboardc/datePickerVC.nib/runtime.nib</key>
 		<data>
-		LuYfBBkKixTqOhDf9Lf+VGST2B8=
+		9d1GXY/RFKAbQLfXcZIpqe2a8Y8=
 		</data>
 		<key>Labiba.storyboardc/dateRangeVC.nib/objects-12.3+.nib</key>
 		<data>
-		i1Qs+0Phl+dZ535buj5gM9D4a/Y=
+		eM1QmjLOtYg2jPCpItMYz7gnH3k=
 		</data>
 		<key>Labiba.storyboardc/dateRangeVC.nib/runtime.nib</key>
 		<data>
-		SBu/ZB0LeGUePFxhgVK8pvQrrvQ=
+		uDUodhyq6gel4VxcHarH2K1bOUA=
 		</data>
 		<key>Labiba.storyboardc/locationSelectVC.nib/objects-12.3+.nib</key>
 		<data>
-		0M/3bOZMcW7oRsNAM64TUz4sVcY=
+		03mFRo4dKKwLbEJH80feX7IcUho=
 		</data>
 		<key>Labiba.storyboardc/locationSelectVC.nib/runtime.nib</key>
 		<data>
-		jQBNldTliw4ugk9NH+iQEsP8zZE=
+		9ldaOV1GsGTURGmePiyG1E+A2Yo=
 		</data>
 		<key>Labiba.storyboardc/locationVC.nib/objects-12.3+.nib</key>
 		<data>
-		0T+HM8uhrXNog+XHa0GCxiZxwu0=
+		NAhTi0Ty3hjcXPGJSsNDjGBhuJ0=
 		</data>
 		<key>Labiba.storyboardc/locationVC.nib/runtime.nib</key>
 		<data>
-		FEGmsgfqbTDgaElmTf3tigaH9WU=
+		tRqo1jWVWoaAZVYZvAOLIFFcrBY=
 		</data>
 		<key>Labiba.storyboardc/photoVC.nib/objects-12.3+.nib</key>
 		<data>
-		epwWDhPWrWUdsCkmIDWQ0OVOWJw=
+		9Oyau5f7Fe/bza1rJOEoLpIUDrg=
 		</data>
 		<key>Labiba.storyboardc/photoVC.nib/runtime.nib</key>
 		<data>
-		i0rhmIKzpcmprC9TnSMsIerUZ9s=
+		YPCLEU5hGcYhkMgVhOOuUsjBAhs=
 		</data>
 		<key>Labiba.storyboardc/radiusVC.nib/objects-12.3+.nib</key>
 		<data>
-		loolImP6rvg4IYmGgIwrRuS2yjk=
+		hD6CjND6ORUsUukhxUZuDexzJPw=
 		</data>
 		<key>Labiba.storyboardc/radiusVC.nib/runtime.nib</key>
 		<data>
-		hEvElMSzbgY3gv/PzFuZVO3s1Bo=
+		4YNfLkVxz4/yLEbeuGqP2OccDJE=
 		</data>
 		<key>Labiba.storyboardc/videoVC.nib/objects-12.3+.nib</key>
 		<data>
-		kRbyd4ubBK0VaUshYbbjNQZ/A9U=
+		l7S+cj/ZGKjtz6tQPnoohpJry0A=
 		</data>
 		<key>Labiba.storyboardc/videoVC.nib/runtime.nib</key>
 		<data>
-		3ASSf+FNEXwp3HPb5d3TkeFROFg=
+		XyXCLUnJ6hpHd14JOaY/4U4EdSo=
 		</data>
 		<key>LabibaVoiceExperience.storyboardc/Info.plist</key>
 		<data>
@@ -302,27 +294,27 @@
 		</data>
 		<key>LabibaVoiceExperience.storyboardc/VoiceExperienceVC.nib</key>
 		<data>
-		MYgo8MkUnm4yqIYcLL1jsNyFLn4=
+		79jwQ+ACOxaF4ytCKxyCSWNWLFc=
 		</data>
 		<key>LabibaVoiceExperience.storyboardc/dzc-VA-Y6M-view-S0p-gY-j1i.nib</key>
 		<data>
-		25mhJXUL7BZ6rWv2BISZTqv/YTw=
+		5e18dbEIkoaUXi9H1R/WI/QYtBs=
 		</data>
 		<key>MapPerviewView.nib</key>
 		<data>
-		GAN3k44XgChdJKgGhCfK6DM+914=
+		vCsRMPQJhQHw393KPNqIfJeNrJg=
 		</data>
 		<key>MapView.nib</key>
 		<data>
-		Foh3SIYOi13WUUk8PTJDTbOywnk=
+		yszUQAnS94E4+JFXinT+ubBW/jA=
 		</data>
 		<key>MediaView.nib</key>
 		<data>
-		9yhpSetkRUEhUE7tpMju6g7WVLc=
+		VP5HLm6yvhVUBvmzpRb/0bUP/iQ=
 		</data>
 		<key>MessageView.nib</key>
 		<data>
-		c8kK0tj9Si9w6KX5+jsDPMYRB9I=
+		y2MKHC+muJHxSF6TIScgUAwGbv8=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -330,11 +322,11 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		dYP48R3bwHW2nQMZ0NKm87GrPzk=
+		PMy0ivyNoeztciWcWeCHy5eGBHI=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		XNnLza8+6J8cbmUwaN8XSisq5Ek=
+		FqRSajuZmsgB+u7phZckNq9JM98=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -342,11 +334,11 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		dYP48R3bwHW2nQMZ0NKm87GrPzk=
+		PMy0ivyNoeztciWcWeCHy5eGBHI=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		XNnLza8+6J8cbmUwaN8XSisq5Ek=
+		FqRSajuZmsgB+u7phZckNq9JM98=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -354,11 +346,11 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		EnmPgUa6LLpSBmjUFMaFnoxICZc=
+		/6NLxmZbWkT3LmQokTX5ZxhkLic=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		KHoCBmPQhZm7WaoUtRikxAtQSLA=
+		DUVavJcz+xupkBxVTh1X26IJepQ=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -366,11 +358,11 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		EnmPgUa6LLpSBmjUFMaFnoxICZc=
+		/6NLxmZbWkT3LmQokTX5ZxhkLic=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		KHoCBmPQhZm7WaoUtRikxAtQSLA=
+		DUVavJcz+xupkBxVTh1X26IJepQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -378,47 +370,31 @@
 		</data>
 		<key>MovableAlias.nib</key>
 		<data>
-		NfxiWOjJWm/R2Syfa5Q7hGOcv+M=
-		</data>
-		<key>Natalie-Ar-Bubble-talk.gif</key>
-		<data>
-		pzrOgm/s5TwJxAViZ0kJNcNyDts=
+		qiBwEl5Ex4+eJmYq5lclIH0BoNc=
 		</data>
 		<key>PhotoView.nib</key>
 		<data>
-		VkF9cxtkqB2xR2kLtB6BI3ELlLs=
+		ckLEHCBXnkD8uqixJnEbyWCQC8k=
 		</data>
-		<key>ProximaNova-Black.otf</key>
+		<key>PrechatForm.storyboardc/Info.plist</key>
 		<data>
-		JQDsAZIBvmr9krCc8yQ6G/zpOek=
+		ab6B3UVSrRLsIxVim+5LWCGMrEc=
 		</data>
-		<key>ProximaNova-Bold.otf</key>
+		<key>PrechatForm.storyboardc/PrechatFormVC.nib</key>
 		<data>
-		RHjXfpnene2l5CcxFkXxOPv+Pts=
+		1F+w+HcNUB6pBllCtkWmhLoBXBY=
 		</data>
-		<key>ProximaNova-Extrabold.otf</key>
+		<key>PrechatForm.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib</key>
 		<data>
-		UUJhM5UArwi5qBcb12XrkaV7qh8=
-		</data>
-		<key>ProximaNova-Light.otf</key>
-		<data>
-		BbnYv1kekYL6JDRjaHl/Wl/zQd8=
-		</data>
-		<key>ProximaNova-Regular.otf</key>
-		<data>
-		5BpeUj8DvoubkAJCKlLk6HQcpGI=
-		</data>
-		<key>ProximaNova-Semibold.otf</key>
-		<data>
-		H77QcRgNNg8B54Zyr/7qagolb7w=
+		O4yiUgAOZuvq6xd0VjSKlB2GsjY=
 		</data>
 		<key>QuickChoicesHeaderView.nib</key>
 		<data>
-		BcvYUx38XqgrhpZVVtH/SBs7zF0=
+		E2y0EoRqUruciWanQzPtTGxeyLo=
 		</data>
 		<key>RadioButtonsRatingCell.nib</key>
 		<data>
-		TxMuWWEk7mvUm6NeHZeXtvIcCL0=
+		1Do4wDoZcyXQBuQT/izsu1XUWps=
 		</data>
 		<key>Rating.storyboardc/Info.plist</key>
 		<data>
@@ -426,135 +402,135 @@
 		</data>
 		<key>Rating.storyboardc/RatingSheetVC.nib</key>
 		<data>
-		a2uaRzaUofNIGQo0J0s+V+eME18=
+		zCjABDCLwIJDH+MXXomBHGY9WDI=
 		</data>
 		<key>Rating.storyboardc/RatingVC.nib</key>
 		<data>
-		Ht1aONgl+KJyWda7vK/b8foE3gY=
+		3V9BY0UCATnns+wMB7UNs9Ay3HU=
 		</data>
 		<key>Rating.storyboardc/jUL-l6-WYo-view-TxG-j2-PWr.nib</key>
 		<data>
-		QEExkeMaR49QgCv2FzI++VSO2Bs=
+		ZreNhXj5uVEuFAabCEk1jDCZacE=
 		</data>
 		<key>Rating.storyboardc/lgN-YM-B6e-view-CPQ-d9-tSH.nib</key>
 		<data>
-		bbwMyw4KfsLwKiZl9r8bkDkm6OY=
+		70qEVbMx9oAqCPpnN5dgwIrCM7E=
 		</data>
 		<key>RatingSatrsLightCell.nib</key>
 		<data>
-		XTZxuQHO/8NVvqLQp3tLOQ727K8=
+		GE1fqv60sInw+xL0NE3EVcVsSQ8=
 		</data>
 		<key>RatingStarsRatingCell.nib</key>
 		<data>
-		CPm8QWZIC+Dz9Mra30cmLK9CzFQ=
+		uRyA/Su3+LyOCmIW4SdqBEb2Q8M=
 		</data>
 		<key>ResponseBubble.nib</key>
 		<data>
-		N/U9WRE3SsJnos2QgP5FhMIjYIg=
+		j9Ka4J07c2HDCpb2/pZgf+/cJ5U=
 		</data>
 		<key>ScrollViewCellView.nib</key>
 		<data>
-		kf5p1yf6PxkaA374PtiTp66TPBo=
+		5EVRb7q0T4pkuTZlvOzRm9O08CA=
 		</data>
 		<key>SelectableCardView.nib</key>
 		<data>
-		W/XIfi4ln6n4SaIpF2nbUVTTNwQ=
+		XNBEH4N75FiY/AoRNq6j+chj7v8=
 		</data>
 		<key>SelectableCollectionCellView.nib</key>
 		<data>
-		Bt7VD+fRp5Ro+903OayIe/ZlDUc=
+		7tDwLaP56gkmJtYpRgI3CmoDYMQ=
 		</data>
 		<key>SplashScreen.storyboardc/BankOfJoSplashVC.nib</key>
 		<data>
-		a53shhS6qS88jcs9aQMh9jaREjI=
+		tl9Y3l9Xoo4HFFQAJzi6i0DPzEQ=
 		</data>
 		<key>SplashScreen.storyboardc/C66-pe-Vei-view-pne-9g-Hnq.nib</key>
 		<data>
-		ikJLqTEN+n6e4RQSV014fgbYloI=
+		wF42QjZfvzT4fXQqDRf6QpY+lhE=
 		</data>
 		<key>SplashScreen.storyboardc/IASplashVC.nib</key>
 		<data>
-		2/zC7iD7gIg36ga987vGpKkQsqA=
+		DB3tMqBTJ+UqR0vI/s8nkUred6k=
 		</data>
 		<key>SplashScreen.storyboardc/Info.plist</key>
 		<data>
-		GusQyEakoeS3rA9GEzhyH6/uJhg=
+		Hz+HqHqlPVGZ7NZCqixQ1HFNkT8=
 		</data>
 		<key>SplashScreen.storyboardc/SplashScreenVC.nib</key>
 		<data>
-		j0MqR986RN527GrjxegTWIYBqVw=
+		g0xcCIEVI3kb0DLM91X7S2Spv/w=
 		</data>
 		<key>SplashScreen.storyboardc/SplashScreenWithImgeVC.nib</key>
 		<data>
-		7ZXG40q9UgyEDEX6wECg/SwYhZ8=
+		06GYAYeAMIta0Rp9v2jOrJ1aT78=
 		</data>
 		<key>SplashScreen.storyboardc/SplashScreenWithStaticImage.nib</key>
 		<data>
-		tnYqz7VieX2fOxZzAClyXq7bGtA=
+		vV/bmzGiTsdPXmNYHylnSXI2yzQ=
 		</data>
 		<key>SplashScreen.storyboardc/StanderdSplashVC.nib</key>
 		<data>
-		ASSrjMVIdODtYk+jrxdHNHjQ1LI=
+		42DhTl2g5EErve++rWdbnAG10Qc=
 		</data>
 		<key>SplashScreen.storyboardc/V0b-7M-Sn2-view-Lyg-IE-FCW.nib</key>
 		<data>
-		yOuVfXdaDewMENV7PF9EUuR7PmU=
+		ExS5aOLzsRbikh0yHKnX15cmDNY=
 		</data>
 		<key>SplashScreen.storyboardc/aW9-Qs-nJQ-view-dbn-sb-a62.nib</key>
 		<data>
-		xmtyy9ll7UlOa16reaQBnRJTDLo=
+		y08gQ/Ur5ZHvVeOb9L367w3Wkpk=
 		</data>
 		<key>SplashScreen.storyboardc/eVX-aO-bpJ-view-L00-94-fL1.nib</key>
 		<data>
-		QR8HGbfICE/+d182Dr4Vhr0nEMU=
+		tvsQ1VpL7aEtgF0/v1d/KbPYMQw=
 		</data>
 		<key>SplashScreen.storyboardc/exf-Dh-bfD-view-ILN-dT-bVw.nib</key>
 		<data>
-		KyvNEP39kjmoSPzMwigGZYYZFEU=
+		ubddngFRKOILvWJPhfjqJf5NrPQ=
 		</data>
 		<key>SplashScreen.storyboardc/jMY-PT-WSS-view-vaz-ET-biK.nib</key>
 		<data>
-		3Kf4RUsRLEtAmVayYA1GNxnfujM=
+		xT2gwmEo+YqICQyZdK/snWCbUf4=
 		</data>
 		<key>SubmitRatingCell.nib</key>
 		<data>
-		WRWK5WQCFOXfQYDZcAOZ1ToTee0=
+		AwZcvm9Qy0msnThtCCHd1pfmV5Y=
 		</data>
 		<key>SubmitRatingLightCell.nib</key>
 		<data>
-		g1AM1EhMxTdqf5o3BhWBoplWFz4=
+		oIsdQuyt74BOFljz/fVJfCHtFHk=
 		</data>
 		<key>TextFiledRatingCell.nib</key>
 		<data>
-		9ROJQZ1IiFjW07s9qsz6PaiW8js=
+		N7QN0800CCA2OQmM7T/GU06p7zg=
 		</data>
 		<key>UserBubble.nib</key>
 		<data>
-		993YOPftqGFeHHS2+fLkZoZT1w0=
+		DKF9eI88FVvGkuL4SUDsmxtDXYs=
 		</data>
 		<key>UserTextInput.nib</key>
 		<data>
-		a0lCRPaFNd/DieA21cyoobEF3Mo=
+		jBDlnxxf1LMQL0XqsfiSylxG6RU=
 		</data>
 		<key>UserTextInputNoLocal.nib</key>
 		<data>
-		VWIznd7KMcpzSwk78XTREmfwueA=
+		QBLw/IAj3Uh5qlBOqemHAZUubCk=
 		</data>
 		<key>VisualizerVoiceAssistantView.nib</key>
 		<data>
-		B7kCha6zxpbVLU/YfJP9trq3odo=
+		laxyJHLA5F52ChR1XwO+L8Vbgi8=
 		</data>
 		<key>VoiceAssistantView.nib</key>
 		<data>
-		4UR3CBnzkVFnjMeiurrrgpn8dqw=
+		f1vkOGi58elv/NPc3b5/ESv8lxo=
 		</data>
 		<key>VoiceExperienceView.nib</key>
 		<data>
-		s2Ci9cfI4jvjdfZIFMjgaaoSW5g=
+		SjcLW6wd6NyrFMBGrtK4ET20n3I=
 		</data>
 		<key>WriteCommentRatingCell.nib</key>
 		<data>
-		GIlkHPZaOoNLn57edPqJMIVvj4c=
+		XWw6t9Dm5+pe+z1v4hmUkrYc9fA=
 		</data>
 		<key>ar.lproj/Localizable.strings</key>
 		<dict>
@@ -582,18 +558,6 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>din_next_arabic_bold.ttf</key>
-		<data>
-		VVfDzObF7p2sxT7vLeDgsNYSRUU=
-		</data>
-		<key>din_next_arabic_light.ttf</key>
-		<data>
-		rnySTRLnpdGVN7RajmOuiKG1I/0=
-		</data>
-		<key>din_next_arabic_regular.ttf</key>
-		<data>
-		G41ma3Sj1fX0B7bLzWEHec9Fh1c=
-		</data>
 		<key>ru.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
@@ -626,21 +590,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ywsVaRN5w9Yew7NbtcCft/2+pVKqgd/zfB64Bo83v6o=
+			yQi9rbqEaw+G5UojVkRB1SRHfGl4Gy8bveipCGuF0ZY=
 			</data>
 		</dict>
 		<key>AudioRecorderView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			F7fdF5szgH7Ah8nBk6ItinUeg56RHcsOMQOg2Vq6Ex8=
+			nBQcgQnrhIz3r/Yfveyr8FLAa34qioItHNTwtYNPeSc=
 			</data>
 		</dict>
 		<key>AudioView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+rFUBPpjyhCojMCQxh9lfBaTTzLgKzBs5gR379Tqb3w=
+			rMSvZElwdWap7Toz0P1ZYYDzYSBNLwAFrLROjfBOhy0=
 			</data>
 		</dict>
 		<key>Base.lproj/Localizable.strings</key>
@@ -654,84 +618,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			te9V+dtBh0++hF5o6MR+SKh63jhaPq4AJ8aAkmX9mRE=
+			X85f5Xj/1Hppb12Zie91Vj21/YBbNLNWPe9n4g+c8NU=
 			</data>
 		</dict>
 		<key>CustomCollectionViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SjFp23IHQHOprmefJ32edpXnPCSI6lNNp4o/Jkux/wU=
+			ohvC0eymwy3HUDPz6imP44mfKaqG9mQPlCe6/h4YiDo=
 			</data>
 		</dict>
 		<key>CustomCollectionViewCellNoImage.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			W1YQFqWxAlW4rVv/jq9OI2imgCNJXshnKUmrWZLxRm0=
+			YyUrAiNus8Q4xO12tY7Myij5ISuTL3h6ZhRJVEB9ILU=
 			</data>
 		</dict>
 		<key>CustomMapPicker.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fVSeFraZk657ohKsa73Ga+yw5g6iSfA+Hz6FcTUV3DY=
+			jmk4TmZXLvdOVxk7Z5Hm0Lwf7yvdepxmPpPhQMn4vBQ=
 			</data>
 		</dict>
 		<key>CustomTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rTXt/gg18Q4N7+59aof2OOsD6BWBi58bDASdRd9euVg=
+			Jp8sx09qw87fnTiKZTocfaLBaxWNjSaQudHNsYffcOQ=
 			</data>
 		</dict>
 		<key>DynamicGIF.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LSCX6lQJRlcTziU38PQKj3zBLF0zu/V82HZqPbtzlvk=
+			6b3Mna6ZF7eQhzfNBBL+kvXNOQEV0LiZIh+J7hz5E08=
 			</data>
 		</dict>
 		<key>FloatingBubblesVisualizer.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			daPpAZuXXi/VMteH2WDmMnuCHfV2MaswnGxedJD8J/c=
+			lHHl0sFW2X8MJX7CEjdqsYHYvWShFZQruWGyOMRdkPE=
 			</data>
 		</dict>
 		<key>GreetingHeaderView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XzeS1b9FgFDzVBvpqd6aMjRenABJfD7QPpqLSjopoow=
+			2ivovVF4eUgPqJkKDhkH7HGAKVU6rzuMLEDbdRR7nvY=
 			</data>
 		</dict>
 		<key>HeaderQuickChoiceCell.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			W1F2b49/lnCA5V/UVRwpQdLgoc+KrC2pvywiV1D+CLw=
+			TrupkghOZTMUmDcxrtQEu/RT/sY2obhkD2aSVtcRFME=
 			</data>
 		</dict>
 		<key>HeaderQuickChoiceCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YwcbV+SRUF11JM0UMKBxLw8cSlAyNCge7rmKSNX7Dl8=
+			v494FSYJCBWGFs9dPfhwUwqhirZDHC2Yhms7NyEbCU0=
 			</data>
 		</dict>
 		<key>HeaderVC.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			D+89L53WYWeZPyZbMC1fmQAOZFFZcUvVcba39PfAaA0=
+			0N3dy+kChsyIRjoN4P/1c9vzXH1zZECdPkLGpMfPZBM=
 			</data>
 		</dict>
 		<key>Headers/LabibaBotFramwork-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BYTCeyaMg5Qzxwg1QwB87EmFHxDZhIF++jFME87wGUg=
+			6i+PDQFCw9V4p1vJfbyeNkCIlXRkFQM5UTqh5CtclTc=
 			</data>
 		</dict>
 		<key>Headers/LabibaBotFramwork.h</key>
@@ -752,35 +716,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9B0a8emAQkWeB/t+CgWfoupOiO6jgnhAzwvB3/p47BY=
+			YNQNtz5Jygf0fVY2IaqFBUlgcfNtZNnsixWk7YbrgFE=
 			</data>
 		</dict>
 		<key>HelpPopupVC.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QUjOVM5f5Hy9YFjkbnxjY5ZLkKFqkF8GvYcCesDvY00=
+			vw9LhtsJ+07APD6cRoRhuqgsnqxobgSxrgWCd49q11E=
 			</data>
 		</dict>
 		<key>HintsView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UtS4iZ/iQ/7Eo/4/MOdhHNpZZYxGvlcl67IMbagB6pE=
-			</data>
-		</dict>
-		<key>JANNALT-BOLD.TTF</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ngR4Pt9KHytxxNjpv9FPcL086alpiLy8CGCq9ml1HnE=
-			</data>
-		</dict>
-		<key>JANNALT-REGULAR.TTF</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			KiNhen8OcIMrziZS/zi13rDPHqwfthzsmUN8i7eZyEc=
+			ph9mVskta/RsIuOih3LuMM3LX55VMTX9bVmXBVc93pI=
 			</data>
 		</dict>
 		<key>JsonExample.json</key>
@@ -794,329 +744,329 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YBd8wEG147v1rNYN8Bur1iBqXzA9TcJk7p9PvWyT/q0=
+			qyfRvUlB/+Xvq1iO9zUw9vucV3aeALAR79eKKYCzEMg=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5EluriKuu8ZRtWhusDlDYiJf2vmsmMFlqObPkjEdJwU=
+			RypktYhHea3IMLnummEie8kW2lCvA0tXqQE6ubhGFSU=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/21L-TP-ZZH-view-EIa-Hs-D8H.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iALGcG8SbUa8Z60hgMS1eUPw0Xs1PmUIjOc0gxTYvzM=
+			oSyACi1jfT9kyi3KbDAj8wIC4fmzou90eiZo+IjqyJY=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/21L-TP-ZZH-view-EIa-Hs-D8H.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RIVj1597I7fCOHui/Au8Z9wfjpiXnR1hRgwp9fpXsr8=
+			83tYcZmMitXmGouLereFCFJ3Oeb22k3T1+wGNGy9LKA=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FCq9cjNxPk3KGtg2H3k614x2Qm29L6Kf3Fr3w2UXSl0=
+			YJ/zwyIbg9wY2R9hCA7S7eMGbJxIOK/7fFu6703uZP8=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+CJXz+XxMaIDRIFfvEW/JzfkZACL43SQsuhrpEHBQLI=
+			hgaS8hY/3PhRhmAQyHroA+sb7rD5Xqb+ihWlAoQrOCw=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/287-7P-3Rf-view-ZiX-qL-lWW.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GKMN2nVc1yJlVtOzTizqCH0e/GlqDvXF3+tRRZJ/n+8=
+			n6t768wz2CJwjVm0MNWKHNVknjdahloKmRt+vUQNTk8=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/287-7P-3Rf-view-ZiX-qL-lWW.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5wk9KQe5s+e6S0+aEDDNKmXcE0DGKwONXmb2w/Xwts4=
+			aZrN9B2Byealy60Rny0604ESgJ3qq+Qoo0fCKpYOzqY=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/2Em-15-PQC-view-ebT-ec-Tcz.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sXC3s2o6lGuE+IEFmC9ZEy3DNTIZdaOSqhdrQ0ubWy4=
+			TRBL06zkrzTno6NY+UQstU+fLAqmRRJokqaB+UaVuTQ=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/2Em-15-PQC-view-ebT-ec-Tcz.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9GEGAh58XSfWsjwuMolT22z44iMObrfWzsb8Ja7jHMU=
+			JoHD9l/ZT0JrvsffHcBnWryigp6rKuq0Zyi8/lrx/3g=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NmULXdO9Aaus1pq0GyAyCgta0tdVhLoUGlCEISXL+LI=
+			bGxthq1hng+XfgXYUryOWaBFa30qzfCAzG3w/uyGwDY=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/Q3B-vE-Z0p-view-AmB-So-STK.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1Dvgr2Gu+mbOEeuOowH1ocBP3V/GeALOLOhtXYZ0Oew=
+			spitfHNT8DOiylK8p0BpVoO0vSL3aUACMP95dulMrSI=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/Q3B-vE-Z0p-view-AmB-So-STK.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qVIKviwQ8VOx2sYCZP1N/lJzCt5QxMUp1wdQl+W9TXk=
+			AnqntEF4GmuR/J+tTRQX1/wsepI3oE1F+yfCDRb0l9A=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/Sss-8X-BXp-view-2yv-Y7-ZaW.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lb+9f3LY5qaEaWx/FO0iTqM9Ou2VkLZlI0HBPdYNnLc=
+			Po0sD+JgY+rzNApubhzkbOa484d84PcwCfIL/ej1yCQ=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/Sss-8X-BXp-view-2yv-Y7-ZaW.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/wFS+Ax7+ryELPYqlkmBJ+4p44JYnqChMKFf7z5NkoE=
+			VP7VMpLIMys2VDiLOVx9+WgR9Q5Let2jia6DRz4rMs0=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/VGX-3C-1Ob-view-MXZ-Ck-qVl.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fAXQaW20DBXxds8o4cosYo+FWpZqTjmfH8+x+YY5Hgc=
+			+jfetQg78AaWPzeBhdCczpbwf0HZIKIDaTjqAGO4Gys=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/VGX-3C-1Ob-view-MXZ-Ck-qVl.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2mi3v8PLLzs2j3F3D9o5paWVoI67e4Yq9vG6CuI8lOc=
+			RVlXQlk2uv+5xPgyoVB6OvcxYwNml3hZtZzp1Mxm6e4=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/VmH-2t-GMi-view-wrs-Vb-9s1.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8tKPO4OrFtrP6bD5k8wS3a3rGJaqOATpZSDKDFekclM=
+			8uft6309WxK7oP+mMX5U0qP6QgInitg/mdv0EwXAdpI=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/VmH-2t-GMi-view-wrs-Vb-9s1.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iaPxN4iMG5OB2+m086Ak8V8xsr/ndinKpr6OapUj+y0=
+			TxpjG8Lo5jMAAlF8pGWJeLR17mroyZPNoRq9yaULm64=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/WebPageViewController.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			t6miy2UnoC0zU56v6JzgnLqnFJ571FdF9NRqkRM15Kk=
+			Juwhinfb6bGld88hIABbPax7+tsQRCLzRSwRJljPSZw=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/WebPageViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zd+Fi5YcbeovATrap0hNNOXCfyR2KAMVcV9F4vWdAe8=
+			NCGyg2+959PrQGRWWoXpshgaQPpLYVa+fbPH9KOMwMQ=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/Xft-wE-dLK-view-PdA-Jf-zi5.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l2XV7mAWLxWERV2bVqAeWqs8uyWLekM6B9NOHaq3vB4=
+			diijPmtroh/6jokuQ1dhWr0CPfqpijmB9n5eNlMIYgQ=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/Xft-wE-dLK-view-PdA-Jf-zi5.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			A4pTF9XjqjKb/wl1BePzG8Hs1FLIGgpwTB7GzV+3ofs=
+			xEHZgsztkJwlWoJGi17GtCj8+GUki2m9Og73ujdIJnQ=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/aK4-0X-fka-view-ehp-9T-3X1.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sFAwWtsy/nhBf2/XsO7GScnMlYND2n6T5JG0HUyCWts=
+			8gVSMN1cuOCQ8RGgu28L+3+Wl+F9cd/jEt65I53DeeE=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/aK4-0X-fka-view-ehp-9T-3X1.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AWiho/PgcVZMAj2+w15mQe7D7wIUyDjpwtQEsvi/rpc=
+			kl49ca1xm6T4U+ZLWqpuiAdN0Mm8U2kP3iD3Mcq8l0w=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/attachMenuVC.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			N/SmpP7RSVOrWeb9hRaTfdvJRCjwInta1370El8qz70=
+			RBSctjDEoLLlUUHNebwdEk9+W7seh0tjmd8vNWXqVMw=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/attachMenuVC.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nKUJTkg0LJvM9NUV9ppVfPS2Ll9pOYLKbRAP5JJOfCI=
+			K6mKf8fkl24m5p0IoKSZ/OireD2tBIHc8JG8q8xOUvI=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/cardsVC.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7xWNJhGfR8cXvhc8Dl1nSfAQ/Gsq1Uw3wf9YFubPawg=
+			uKUshOnsL3ILte+rSRSq1FRKIuEpIPVscAyJxtBUiaY=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/cardsVC.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vyqdwutXW4Br21gaAm0lvTtOxvuNAtpy2dmzlsUSny0=
+			WHdBmrn/DmD9ERSW1DAQjxVu4yAr26C5Le3zjjhM5/E=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/conversationVC.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			D2mTMttL8gk4DXg4uZgke4JsK2mSf4RQQ8DFJ6yWD1I=
+			XyGsQLCf7NJsoqTk2z6ibQ/RwtaoylT8LWuHkAEtZ/w=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/conversationVC.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B3Y7RHZ7bDdVws5jodMPetGi9DlnqRjSXNQMh0b2FvQ=
+			AjkWI2ew6W3Z0lWTXHWRKa8STTL61WbEp60owAWxe+E=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/customMapPicker.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3yKeJT0F7NhFLWDW4z/dr9GvKBm4ufvTHpSLfGFq2Gg=
+			yYzLIQZvsZ4ZKEWi6NlyXr2SkFD9OucgBXgcVM/GG+M=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/customMapPicker.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			c2cQItQPkdE7D5wqxNsy8gzDyKv26T86jVrpbW4Y0bg=
+			wixm6MWOw42vyv6irmGoEgCj7NPWjOp5S4Ltb4RyRx0=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/datePickerVC.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kkcGl2SHvHXQmuNkA8J+LXfsp6ybyGQXsrMz8hGDkjY=
+			qsypE/+o5BocvmtJxc+qItwDkYEXsYIEd5mLYbL8w1s=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/datePickerVC.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nmW2c+egogS+kMzv2Hiu5tfD5gfA0/8pT2evnkwtxRo=
+			sEE/5vlW8sEQLsPPgPg3iUSIwgdIodirh6PybzWg0/k=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/dateRangeVC.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EtowSpwYG4vc3VA8ttS4TGYeGiG5splx1z5bfldnFuQ=
+			ZMVTxm9IHxEhd68S6GGbzL1LRkQmVgLszSMv6DBxLCY=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/dateRangeVC.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			39JnfSrDv39A4skdYtIG+Iz4eYBnEN0uOwTWJ6Ic50E=
+			QuBR5iij65NoorT7gLVYGtOdoSDtmbxtdA/pOKVp24A=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/locationSelectVC.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yjSDeUjMOH8H5SIpclXzPWlGBQJU54KUb5/dlvHxTZQ=
+			6UMAsj6Ze8hQHd3i91d5Fb9ga+pNu2Ub2UURANijt0c=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/locationSelectVC.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V+F31DvYunxibe4ljC42Xz6rfOFHVD/N0jGAS19H6kU=
+			J6BqhmMolQIu6RbANpQ+WGFYkLQIkkXg+eh1Z1pypI0=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/locationVC.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8conpFdeHhS8B8OOM4UgsLaQ6zLUS6pSPAVTMIxnu2A=
+			3POC7euBmVxQDsmWZYx28IA5mkLXJ4g1e7yK0YDZSiA=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/locationVC.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			a7az++Z1L3Fg01jg7sBIUFql8vy07zQuMCF54HNDUgs=
+			/qbY130CjV1beNX/FYNboTqOvRJizMUKl+8SzaQqL6o=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/photoVC.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MEXtLybaFzLaLepWG0qcbkLX8RKYZOT742o9Sgnehgo=
+			vV/mfiZ8R4rao7L+Qo3l3iCsScOi+8vnfovqw6+Ep2c=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/photoVC.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YBzThLv0VDmRXYmqqLJ96dUBAI4QZ4WFG6nC/7XUNxQ=
+			qWRx4NKtC6DqhVjRURyfxqbOo1m1uIpl1bPgUcSuSUk=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/radiusVC.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l7zTJaTiYxtuIoPys7WLUeFDDQD65B2WVm4TDZ3HUU8=
+			Fo4q4bmDAIQdiriJa1TEygBEuttDKe0pRDugXVTv22o=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/radiusVC.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/fCZ/VeLTBWV5ajInZWvpZ77qoSY08dKsaFgfS5FJU4=
+			sRtIFGr6fZU6AuDX3PPSmtivahExODpGG877RMRkbk4=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/videoVC.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q7U7F26o+0jQhcOi0/EOlykevcdfkjX2IaIKdBdYr3M=
+			VhDM7euZcI8gIq9DHpgQcDhd0joR3hmxPe3paebphcg=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/videoVC.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IgVXGvz9Da9FBETm9wPI/Qc6kkedhdmjkFcOUCz/PLc=
+			lHQN1XlQgMRsC8fUPOfTE6IakKNCBJD5LX9YhEjumjc=
 			</data>
 		</dict>
 		<key>LabibaVoiceExperience.storyboardc/Info.plist</key>
@@ -1130,42 +1080,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wiqmlUvPUqH/TzX8zm07TTOmVRh0NeJ8K+wQrgILm9E=
+			kIRYtZsnvEMK8MOj+57jPYYUp6xCXPBkPr3sJAt124o=
 			</data>
 		</dict>
 		<key>LabibaVoiceExperience.storyboardc/dzc-VA-Y6M-view-S0p-gY-j1i.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NJuf4D3PT2Q4wXXBH1liuw/1UvQykSioK9m083TqN2U=
+			OE0h98U3IO+2dtkmLJ57Xwhg1JZY5NtmHWvsIfp+tfA=
 			</data>
 		</dict>
 		<key>MapPerviewView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qd83PxPjRCSLnK/7umrpEBGyXptGaBl9058VVU8DDGg=
+			9kog6nAIfFPwU1dIHwNmRnEi6a5EtDDf7M6w+2eWE8s=
 			</data>
 		</dict>
 		<key>MapView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nNXUqNhKYaENGjvnoSZmaGmyVsm5wkywCPEqbUXM3zY=
+			MYQpdW+NrMCdDd2ZCyhS3yxrIFt75tfYMRqmvC8zlUA=
 			</data>
 		</dict>
 		<key>MediaView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			G3SJfccoKFtxnJ42lUSfoR/3Erg4AUWPD8fwEcS5Eko=
+			aDLHG0vOkYg/4b6STOlC+yCYDYy/lhhttEKy1rg9dTo=
 			</data>
 		</dict>
 		<key>MessageView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			on7LCE6Rei5WXMBg/0JY/8ERr/ZMAaXFGGhvXSFV2I8=
+			6bsNUWYBphP5IOjSMD0c2QUYrS9b10vFmWdBBu4xBI0=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -1179,14 +1129,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AFTUm8xVUvvFz2I1JziyIkRDqceOoGrPGda05HztGSo=
+			zMfDvp+FH78Y0rDp9QqhyQasI/vRkBgdVPLie71mIsQ=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vlt1nykPBqv+KqIjaQ5J0yOR/J1HOdAPmqqUfYZNkMY=
+			EDOWbAI4DyF7MP4xFBCILwG8o3E1OFRsJI6Vf/1YUis=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftdoc</key>
@@ -1200,14 +1150,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AFTUm8xVUvvFz2I1JziyIkRDqceOoGrPGda05HztGSo=
+			zMfDvp+FH78Y0rDp9QqhyQasI/vRkBgdVPLie71mIsQ=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vlt1nykPBqv+KqIjaQ5J0yOR/J1HOdAPmqqUfYZNkMY=
+			EDOWbAI4DyF7MP4xFBCILwG8o3E1OFRsJI6Vf/1YUis=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -1221,14 +1171,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zq/XtuGPcViXMLQu2SPN4FziPMklXO80DJm8tUgcZPg=
+			HrScK1PXrPXU5/WQRTAK5rTq+U+NtXowWkAw5hiJNns=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vS7r7TgDvPr9L/JeAigbEBSO+RPHuvEaPUim80FDS1Q=
+			oUhFZQ/6Gldy2tLVT+yAOOSGeBsgSG2i99abAxpPx9A=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftdoc</key>
@@ -1242,14 +1192,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zq/XtuGPcViXMLQu2SPN4FziPMklXO80DJm8tUgcZPg=
+			HrScK1PXrPXU5/WQRTAK5rTq+U+NtXowWkAw5hiJNns=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vS7r7TgDvPr9L/JeAigbEBSO+RPHuvEaPUim80FDS1Q=
+			oUhFZQ/6Gldy2tLVT+yAOOSGeBsgSG2i99abAxpPx9A=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1263,77 +1213,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LyxTPtEe1seGSBp40fz/Yfy8bljw6E+0Re9cQyqXuto=
-			</data>
-		</dict>
-		<key>Natalie-Ar-Bubble-talk.gif</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			cxvGUW+LVAHC1ybqnvJ611RIkf7l9Jq7OGWm4MGfoAU=
+			qZIK1Fszm/vw49tyAyYepGivLuDQmt5eWbgV+wDg3lY=
 			</data>
 		</dict>
 		<key>PhotoView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CotAU6ffgn/bWP2TW90RbOSHlPG+3oScZxZcpSEr838=
+			hU02g2x/CBOocaMkF7zORWFxFS0S+nySoJeoOI2loVU=
 			</data>
 		</dict>
-		<key>ProximaNova-Black.otf</key>
+		<key>PrechatForm.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			d6/hU5nQI0VhZeh6CHUgrzz8sHI57HRxGRuePQHwCDI=
+			MUo2SOvvm4FSANJIzhOk9CmS3JWWT7Vb1WDJ13hJXto=
 			</data>
 		</dict>
-		<key>ProximaNova-Bold.otf</key>
+		<key>PrechatForm.storyboardc/PrechatFormVC.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uegaR67NPQVEWud19I0Is95GsgOfHSKaWKh74ZTjJ+w=
+			09QnKV2apyZDTbdOHOTcXn2ril2sdm2dKqrM2vcTNp4=
 			</data>
 		</dict>
-		<key>ProximaNova-Extrabold.otf</key>
+		<key>PrechatForm.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pvP7RGJtIz1pIOSD90xUmqjlF7HQM1GQdzhMHiQ+Bp4=
-			</data>
-		</dict>
-		<key>ProximaNova-Light.otf</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			D3dmDgal9hpFxNvatRFyI1fPKef1uhss8JdVCv2w7SA=
-			</data>
-		</dict>
-		<key>ProximaNova-Regular.otf</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			K4D75SHgfk6E61LnB7Nkw+bAXFfkgydtxLO+k6l5S6k=
-			</data>
-		</dict>
-		<key>ProximaNova-Semibold.otf</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			nn/y8nn4xJfWh9EkjRfnqMGXhNlFaYxLyPkWj+njUcs=
+			4p6CihefiCJH1pzqkdsagWzR6nUvVtzBWB4TK3bB/24=
 			</data>
 		</dict>
 		<key>QuickChoicesHeaderView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ghJmun4V+Rk51is8UWoJiPDN2E87noslAgj54sNw+50=
+			yJ5y3csk4sZUc7IOKFYiM6/0SWvhMCi20wSTZgCA+H4=
 			</data>
 		</dict>
 		<key>RadioButtonsRatingCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			d3It4+llxFMDn0JEpHD182mfqYEbUDi7W5pKFD+lXDQ=
+			mioEoGfudBU0aSQY2pdspRr93XRc5fPzS/XFQ9pl5yM=
 			</data>
 		</dict>
 		<key>Rating.storyboardc/Info.plist</key>
@@ -1347,231 +1269,231 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NANiycpK11/S88X8q72mbktyWdvi+ZvaY8Zv2WyoKzs=
+			YyCDtElor6+9PK/kiajC7/gFK//EdKwyehq2yQUBfjY=
 			</data>
 		</dict>
 		<key>Rating.storyboardc/RatingVC.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mQPdildUN7FDKJ2GFxQxNxq200e5JDidl3+H2/ZdHMM=
+			0P8SFS8Z+GgD+tnEM/JoV3Y9U1cZzj7g2yCt3dWmklc=
 			</data>
 		</dict>
 		<key>Rating.storyboardc/jUL-l6-WYo-view-TxG-j2-PWr.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pDRPUFG3EGO/mLNE4/v+C8P4NF1vg+rb4ihikbUWZfI=
+			LtcTcB/3TdnEbrBBMWFSoNXX45ytg28VHHj1nyUK920=
 			</data>
 		</dict>
 		<key>Rating.storyboardc/lgN-YM-B6e-view-CPQ-d9-tSH.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4HGQJyL85rGkS3u83/L9s/6YtZFllGXzVMWrhmcs82w=
+			ewxcC1z+Jfp3Mjl8wuje4b5yTsKTQz+0cuIyTGc0fuY=
 			</data>
 		</dict>
 		<key>RatingSatrsLightCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ER81li7RzIn5oE7i1R+jc4Hfo5So4kuCXmre5p+sjco=
+			b/C+MzXvmd8NeHAl2FpO1hBYyYPGbbRuAqxU9IAVYBI=
 			</data>
 		</dict>
 		<key>RatingStarsRatingCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UzFQThPvTgoiHE8H/llTbGB+Uz+vilhC1zpSAmfaz7k=
+			2Gzb/fZn/IBxrgUAinTDJuNasw/zKgPtrkHbttc08lg=
 			</data>
 		</dict>
 		<key>ResponseBubble.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			A0C2NX8aP+lnpU4qAv3k3vcGGPgS3X61UCT8BQ71620=
+			21U2X2iAgJ8dUU6c3mqi9pPIAtzWL8h5FzLCPEkVsgs=
 			</data>
 		</dict>
 		<key>ScrollViewCellView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6FXsLSMsof592kAeOhNnZIDZ+fLXljxnoQ0dJ7ZK+gg=
+			+tuQaK8BrNdBfdzDOFSM4xw5h0oHL9fKi7OQYQp2Ljs=
 			</data>
 		</dict>
 		<key>SelectableCardView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u65douKLoFM2EryPi0avqcKb9Qb/Nxo/AjDxd+ar1Uk=
+			OfwYSYCsWG8K38sHDxsEkdn9LGEJ+gHgtpZpjtnpPg8=
 			</data>
 		</dict>
 		<key>SelectableCollectionCellView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Jv14Ihmi/wiqdhl+kxqTRFyECrhjpJd1ok47c3z/n5c=
+			j+6S4wyXVtP5D+bM+0sLO/NILvAdcA+CUkH5n7ZOt8U=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/BankOfJoSplashVC.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xtToVaQHc+/iE1ILvViq/O5pdfn13qUyD7J8RRUwqoc=
+			96ksqtVnY/AMurpLsb9xI4fel0sbs4ydRsXLUIWHR2U=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/C66-pe-Vei-view-pne-9g-Hnq.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tw4zdrfuUL4jX/bGloN1CxS5YjL/az+Ca5rG/YbEXfQ=
+			bnfmz3F65ydj6gRTB5GYjc5UGMn4yG6earIYnGjY+5k=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/IASplashVC.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u4QjH+H2S1B7f8QcGXK562295SDEc+h5AxEe21bugHo=
+			RZ8lVGp4uXPKLXRLTBZn/79MXSCkPE1wj6KUHu0ruyI=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yfEYdFfP+lViVJp6LwvS24+hYhSATic5c2DIgzGMymg=
+			INNtS9P5Ey5lo3WIGmHQAvswfIBy/YDfgiKC/NQmJi0=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/SplashScreenVC.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/4BYdB6+FPKLyD10J8F/BCxS5sIFvbPH66b3KjNM8hs=
+			vCl43PbAXTI+5g/ovIONbPyr4BQapKpyKV5BhFLMSrY=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/SplashScreenWithImgeVC.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PPFJbfxIqo2TjIe82JvJnK3MCWttt2PeD9t7fC6x6MQ=
+			OIYGvpLLfmqUCyjCVs4qkJRiD5p+DL5YM1cPT82DJNI=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/SplashScreenWithStaticImage.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			p0H8i8GiRgZXjwnuhfUwzdXcsM9ZqBLe7uC8d3DkMzw=
+			JpgeMU3OZkorLpowEJwJbbCiEHm1ZnPSLg34etkumcU=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/StanderdSplashVC.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZJzTEHlgrzvRZEMdemUwJO91SOxnI9sWn5s6JcrpXa4=
+			NPMXdtk4dq18tOBRXQO4KPHgR6VZaPZK47adBRyXvM0=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/V0b-7M-Sn2-view-Lyg-IE-FCW.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			y1L3v8aQPAWr4Z64JlC75zvFpj+0NFcBo1BeVzbt1Ho=
+			BtfMxILk8g/mauIYwJBOOVOImbwk2OVkoNaaXPVLk3E=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/aW9-Qs-nJQ-view-dbn-sb-a62.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			J/1nbjhrL5nCWRkvvkSGQqQkIsL6KSWRCv/w3HJ8C8Q=
+			6SIDChbQCia8ZE9LeatT7tE07R1tskTVeEfwGyVaf1Y=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/eVX-aO-bpJ-view-L00-94-fL1.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			78KmwYseMI4c9GbZKtucETK9tT8iotZ/kb3yw7KK0dk=
+			5BNY30SIKjY/kGIVJ3Dq/cyU4LQHiSn9E8XH3wkAhG4=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/exf-Dh-bfD-view-ILN-dT-bVw.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Nr8jMGLuZ5u98fMZKoueNjX0o4DmZ0VA5NZjKsu/lDU=
+			GaYkfr3RCiLf6FTlsdfuZhvDYAvQtOZReups1g3Y6uw=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/jMY-PT-WSS-view-vaz-ET-biK.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yo/ifEf7EIfEipdVvPb6diqbJfAS53s/UvpyMKMAOEo=
+			Ywy2oM/wRH7Bd366LBKQNgeVi86FzImnX6IGG/wZjk4=
 			</data>
 		</dict>
 		<key>SubmitRatingCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wzbIT14VBbSmnLFAu9pkQqCy2R87yNgenf2ONCIz280=
+			nOup71zhmN6Z9trSqn0X1/Sp5s8umf5Kwz1ANNZmhfM=
 			</data>
 		</dict>
 		<key>SubmitRatingLightCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xqhGyxU4v5pwHMijpBbg3KNP+EKIBmWCET2IldJjktE=
+			svkdJhJvZ8jK2eNNg9Pk8HrXQ+mGsvjU1dr9QMgQNNM=
 			</data>
 		</dict>
 		<key>TextFiledRatingCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OkTThr0CF/yp8Yh1bIv67tGisXXp8cxgNfF2jl99gDc=
+			G21hxb6cf0v27j8v4y7yPzY8jd5oAKWs2GNC2aANVMs=
 			</data>
 		</dict>
 		<key>UserBubble.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Mn6LYG693OU91NHaJmvu2Yo4SS0luPhYCYaoT4ANH18=
+			08Uyv+QxF7STFYItd3jarItqGNn8pPnM4QfM68kCOR0=
 			</data>
 		</dict>
 		<key>UserTextInput.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3JupqZjmMreEykV2Rcg7gWDhlmtYaHv6dgF0PvuksJg=
+			1bYuNqVnAKijfOayVweJ3rykLUCQXm2REnDGZM70Eeg=
 			</data>
 		</dict>
 		<key>UserTextInputNoLocal.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HABE21ng1Yh/i1TYEtPIXuQjPFKOHaYqNgZ7oz38ek0=
+			3nDqNImKsuEh++l+Kg+rV+6In2aGmIojnVo6/L9AiOI=
 			</data>
 		</dict>
 		<key>VisualizerVoiceAssistantView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L1IIxrCqFUr8GOv8ACea7SfVZtgZ51pKbbsdBlJf6bM=
+			AshaIQEjrCnr4P4wPAZda9fbCBczJejAmIVSen0wlUk=
 			</data>
 		</dict>
 		<key>VoiceAssistantView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			szU5v2tkaWZTLGarILyzBZX1UBrsjwDwmZIrpSqEKoY=
+			gVXY2stTDgvV9ZpKeZeuL3uAIBd6IiHhzb/j2itbo3c=
 			</data>
 		</dict>
 		<key>VoiceExperienceView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uGKBkVQp8/ZeGLUt3VKDsfn9KTosQYdTd2cXRxz7Y50=
+			7Aen1TmVYOScWkkwBQWJlS4vcEdEkWPSomi6wYFSKis=
 			</data>
 		</dict>
 		<key>WriteCommentRatingCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lorbspFA7eIETM7KaxW/HsmjLjfmpBQmSfoVs7/piPc=
+			O3Uq2cP6vpdQMIQHB44p2mUNC6Mdm1x85Q6CeJVV5YM=
 			</data>
 		</dict>
 		<key>ar.lproj/Localizable.strings</key>
@@ -1605,27 +1527,6 @@
 			</data>
 			<key>optional</key>
 			<true/>
-		</dict>
-		<key>din_next_arabic_bold.ttf</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			4IjPbN4pBbgVQQ4PzgE09uWUbGvZrYlFKk4KhVJs2DM=
-			</data>
-		</dict>
-		<key>din_next_arabic_light.ttf</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			qjM+PJ5EDQW5N1nqVtUkTLjXiKIMy6B9A+Pe03ATr08=
-			</data>
-		</dict>
-		<key>din_next_arabic_regular.ttf</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			xnnvAOCzI+5/unl0rLoL/f9u0npshcFDOCopOwIHkog=
-			</data>
 		</dict>
 		<key>ru.lproj/Localizable.strings</key>
 		<dict>

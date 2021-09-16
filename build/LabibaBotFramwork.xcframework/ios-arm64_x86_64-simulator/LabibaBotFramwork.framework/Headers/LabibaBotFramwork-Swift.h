@@ -463,6 +463,39 @@ SWIFT_CLASS("_TtC17LabibaBotFramwork23NVActivityIndicatorView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+
+SWIFT_CLASS("_TtC17LabibaBotFramwork22QuickChoicesHeaderView")
+@interface QuickChoicesHeaderView : LabibaChatHeaderView
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified centerImageView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified centerImageTopCons;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified centerImageWidthCons;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified homeButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified settingButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified vedioCallButton;
+@property (nonatomic, weak) IBOutlet UIStackView * _Null_unspecified leftStack;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified leftStackLeadingCons;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified leftStackTopCons;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified leftStackHightCons;
+@property (nonatomic, weak) IBOutlet UIStackView * _Null_unspecified rightStack;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified righStackTrailingCons;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified righStackTopCons;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified righStackHightCons;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified muteButton;
+- (void)awakeFromNib;
+- (void)updateConstraints;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UICollectionView;
+@class NSIndexPath;
+@class UICollectionViewCell;
+
+@interface QuickChoicesHeaderView (SWIFT_EXTENSION(LabibaBotFramwork)) <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class MKMapView;
 @protocol MKOverlay;
 @class MKOverlayRenderer;
@@ -1101,6 +1134,39 @@ SWIFT_CLASS("_TtC17LabibaBotFramwork23NVActivityIndicatorView")
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 @property (nonatomic) CGRect bounds;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC17LabibaBotFramwork22QuickChoicesHeaderView")
+@interface QuickChoicesHeaderView : LabibaChatHeaderView
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified centerImageView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified centerImageTopCons;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified centerImageWidthCons;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified homeButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified settingButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified vedioCallButton;
+@property (nonatomic, weak) IBOutlet UIStackView * _Null_unspecified leftStack;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified leftStackLeadingCons;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified leftStackTopCons;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified leftStackHightCons;
+@property (nonatomic, weak) IBOutlet UIStackView * _Null_unspecified rightStack;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified righStackTrailingCons;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified righStackTopCons;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified righStackHightCons;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified muteButton;
+- (void)awakeFromNib;
+- (void)updateConstraints;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UICollectionView;
+@class NSIndexPath;
+@class UICollectionViewCell;
+
+@interface QuickChoicesHeaderView (SWIFT_EXTENSION(LabibaBotFramwork)) <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class MKMapView;

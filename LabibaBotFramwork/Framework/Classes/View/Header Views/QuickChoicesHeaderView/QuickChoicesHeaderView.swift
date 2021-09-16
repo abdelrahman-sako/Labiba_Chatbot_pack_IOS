@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuickChoicesHeaderView: LabibaChatHeaderView {
+public class QuickChoicesHeaderView: LabibaChatHeaderView {
     public static func create(centerImageURL:String? = nil ,centerImage:UIImage? = nil  ,backgroundImgURL:String? = nil) -> QuickChoicesHeaderView
        {
            let view = UIView.loadFromNibNamedFromDefaultBundle("QuickChoicesHeaderView") as! QuickChoicesHeaderView
@@ -180,11 +180,11 @@ class QuickChoicesHeaderView: LabibaChatHeaderView {
 }
 
 extension QuickChoicesHeaderView:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout  {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return choices.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HeaderQuickChoiceCell", for: indexPath) as! HeaderQuickChoiceCell
      if indexPath.row == 0 {
             cell.imageContainer.isHidden = false

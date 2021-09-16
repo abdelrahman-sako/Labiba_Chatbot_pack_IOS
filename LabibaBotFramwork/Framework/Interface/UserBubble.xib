@@ -20,7 +20,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPy-w6-Kuz">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="77"/>
                             <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Natali" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zX-dB-CYe">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Natali" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zX-dB-CYe" customClass="KGCopyableLabel" customModule="LabibaBotFramwork" customModuleProvider="target">
                                     <rect key="frame" x="10" y="4" width="330" height="69"/>
                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,7 +58,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="bubbleContainer" destination="uPy-w6-Kuz" id="dw9-pO-ZDl"/>
-                <outlet property="textLabel" destination="5zX-dB-CYe" id="YzV-C4-eH1"/>
+                <outlet property="textLabel" destination="5zX-dB-CYe" id="wce-od-Lnr"/>
                 <outlet property="timestampLbl" destination="XdH-B1-DQz" id="bXe-03-hhZ"/>
             </connections>
             <point key="canvasLocation" x="24" y="-172.26386806596702"/>

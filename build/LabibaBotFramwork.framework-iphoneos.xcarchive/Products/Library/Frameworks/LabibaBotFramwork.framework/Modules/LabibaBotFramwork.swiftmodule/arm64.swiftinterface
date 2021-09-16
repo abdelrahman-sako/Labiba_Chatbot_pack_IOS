@@ -212,6 +212,40 @@ public enum CornerLocation {
   @objc deinit
 }
 public func imageNamed(_ name: Swift.String) -> UIKit.UIImage
+@objc @_inheritsConvenienceInitializers public class QuickChoicesHeaderView : LabibaBotFramwork.LabibaChatHeaderView {
+  public static func create(centerImageURL: Swift.String? = nil, centerImage: UIKit.UIImage? = nil, backgroundImgURL: Swift.String? = nil) -> LabibaBotFramwork.QuickChoicesHeaderView
+  @objc @IBOutlet weak public var centerImageView: UIKit.UIImageView!
+  @objc @IBOutlet weak public var centerImageTopCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var centerImageWidthCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var homeButton: UIKit.UIButton!
+  @objc @IBOutlet weak public var settingButton: UIKit.UIButton!
+  @objc @IBOutlet weak public var vedioCallButton: UIKit.UIButton!
+  @objc @IBOutlet weak public var leftStack: UIKit.UIStackView!
+  @objc @IBOutlet weak public var leftStackLeadingCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var leftStackTopCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var leftStackHightCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var rightStack: UIKit.UIStackView!
+  @objc @IBOutlet weak public var righStackTrailingCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var righStackTopCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var righStackHightCons: UIKit.NSLayoutConstraint!
+  @objc @IBOutlet weak public var muteButton: UIKit.UIButton!
+  public var volumUpImage: UIKit.UIImage? {
+    get
+    set
+  }
+  public var volumOffImage: UIKit.UIImage?
+  @objc override dynamic public func awakeFromNib()
+  public func flibView()
+  public func setTintColor()
+  @objc override dynamic public func updateConstraints()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension QuickChoicesHeaderView : UIKit.UICollectionViewDelegate, UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegateFlowLayout {
+  @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+}
 @objc @_inheritsConvenienceInitializers public class GreetingHeaderView : LabibaBotFramwork.LabibaChatHeaderView {
   public static func create(withAction: Swift.Bool = true, appLogoImgURl: Swift.String? = nil, centerImageURL: Swift.String? = nil, centerImage: UIKit.UIImage? = nil, backgroundImgURL: Swift.String? = nil, backgroundImg: UIKit.UIImage? = nil, bodyAndTitle: [Swift.String : Swift.String]) -> LabibaBotFramwork.GreetingHeaderView
   @objc @IBOutlet weak public var centerImageView: UIKit.UIImageView!
@@ -512,7 +546,6 @@ public class LabibaShadowModel {
   public static func setVoiceDefaultTheme()
   public static func setLabibaTheme()
   public static func setBSF_Theme()
-  public static func setSharja_Theme()
   public static func set_IA_Theme()
   public static func setBahrainCredit_Theme()
   @objc deinit

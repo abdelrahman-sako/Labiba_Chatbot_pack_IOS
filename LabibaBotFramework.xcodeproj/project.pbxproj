@@ -23,7 +23,6 @@
 /* Begin PBXBuildFile section */
 		370196EA24CDA5DE0003266B /* VedioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370196E924CDA5DE0003266B /* VedioPlayerView.swift */; };
 		37030D7023F2AB5400BF8ED3 /* FontDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */; };
-		3703A36F23321B45002AF867 /* Natalie-Ar-Bubble-talk.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3703A36E23321B44002AF867 /* Natalie-Ar-Bubble-talk.gif */; };
 		370874282326528C00E0C52C /* GreetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370874272326528C00E0C52C /* GreetingHeaderView.swift */; };
 		3708742A232652A600E0C52C /* GreetingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37087429232652A600E0C52C /* GreetingHeaderView.xib */; };
 		3708742F2326803300E0C52C /* SplashScreenWithImgeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3708742E2326803300E0C52C /* SplashScreenWithImgeVC.swift */; };
@@ -32,9 +31,6 @@
 		371ADD7522FC1EDF00AB68FB /* SplashScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371ADD7422FC1EDF00AB68FB /* SplashScreenVC.swift */; };
 		371ADD7722FC221D00AB68FB /* GradientAnimationManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371ADD7622FC221D00AB68FB /* GradientAnimationManeger.swift */; };
 		371C951423374C780045D4E2 /* CommonGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C951323374C780045D4E2 /* CommonGlobals.swift */; };
-		371C95242337B0F70045D4E2 /* din_next_arabic_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 371C95212337B0F60045D4E2 /* din_next_arabic_light.ttf */; };
-		371C95252337B0F70045D4E2 /* din_next_arabic_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 371C95222337B0F70045D4E2 /* din_next_arabic_regular.ttf */; };
-		371C95262337B0F70045D4E2 /* din_next_arabic_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 371C95232337B0F70045D4E2 /* din_next_arabic_bold.ttf */; };
 		371E27DE24AA0A86003A4150 /* LabibaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E27DD24AA0A86003A4150 /* LabibaConfig.swift */; };
 		372BB4C124B1E151003A8297 /* VisualizerVoiceAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372BB4C024B1E151003A8297 /* VisualizerVoiceAssistantView.swift */; };
 		372BB4C324B1E1CD003A8297 /* VoiceAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372BB4C224B1E1CD003A8297 /* VoiceAssistant.swift */; };
@@ -133,7 +129,6 @@
 		37EF394C22EF17B8004D1C85 /* SwiftyWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF394B22EF17B8004D1C85 /* SwiftyWaveView.swift */; };
 		37EF9ABD2313E82100FF49B3 /* DynamicGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF9ABC2313E82100FF49B3 /* DynamicGIF.swift */; };
 		37EF9ABF2313E83100FF49B3 /* DynamicGIF.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EF9ABE2313E83100FF49B3 /* DynamicGIF.xib */; };
-		37F003D0233388E900A1AC17 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B42954F622DDDBD2002DE3E9 /* ProximaNova-Light.otf */; };
 		37F003DE2333B57600A1AC17 /* SplashScreenWithStaticImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F003DD2333B57600A1AC17 /* SplashScreenWithStaticImage.swift */; };
 		520DEE6F265F83F500B538A5 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DEE6E265F83F500B538A5 /* BackgroundView.swift */; };
 		5214229425AC965400B78AB0 /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214229325AC965300B78AB0 /* ChoiceView.swift */; };
@@ -166,6 +161,13 @@
 		528AE9682520A73C008AF72E /* Array+gcd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528AE9632520A73C008AF72E /* Array+gcd.swift */; };
 		528AE9692520A73C008AF72E /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528AE9642520A73C008AF72E /* GifView.swift */; };
 		5296E22B25EF9F63001FB31C /* UIDeviceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5296E22A25EF9F63001FB31C /* UIDeviceExt.swift */; };
+		529C67F926F3154E00FB8591 /* PrechatForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529C67F826F3154E00FB8591 /* PrechatForm.storyboard */; };
+		529C67FC26F318D900FB8591 /* PrechatFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C67FB26F318D900FB8591 /* PrechatFormVC.swift */; };
+		529C681126F3475E00FB8591 /* PrechatFormFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C680F26F3475E00FB8591 /* PrechatFormFieldCell.swift */; };
+		529C681226F3475E00FB8591 /* PrechatFormFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529C681026F3475E00FB8591 /* PrechatFormFieldCell.xib */; };
+		529C681826F3694700FB8591 /* PrechatFormHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C681626F3694700FB8591 /* PrechatFormHeaderCell.swift */; };
+		529C681926F3694700FB8591 /* PrechatFormHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529C681726F3694700FB8591 /* PrechatFormHeaderCell.xib */; };
+		529C681B26F3855D00FB8591 /* PrechatFormThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C681A26F3855D00FB8591 /* PrechatFormThemeModel.swift */; };
 		52B6B38325B6FA3E0051ABCE /* HelpPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6B38125B6FA3E0051ABCE /* HelpPopupVC.swift */; };
 		52B6B38425B6FA3E0051ABCE /* HelpPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B6B38225B6FA3E0051ABCE /* HelpPopupVC.xib */; };
 		52BF2F45247130FE00820B37 /* BaseConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BF2F44247130FE00820B37 /* BaseConversationVC.swift */; };
@@ -332,21 +334,13 @@
 		B429555122DDDBD2002DE3E9 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42954F222DDDBD2002DE3E9 /* LocationService.swift */; };
 		B429555222DDDBD2002DE3E9 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42954F322DDDBD2002DE3E9 /* VideoPlayerViewController.swift */; };
 		B429555322DDDBD2002DE3E9 /* RadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42954F422DDDBD2002DE3E9 /* RadiusViewController.swift */; };
-		B429555522DDDBD2002DE3E9 /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B42954F722DDDBD2002DE3E9 /* ProximaNova-Semibold.otf */; };
-		B429555622DDDBD2002DE3E9 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B42954F822DDDBD2002DE3E9 /* ProximaNova-Bold.otf */; };
-		B429555722DDDBD2002DE3E9 /* JANNALT-BOLD.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B42954F922DDDBD2002DE3E9 /* JANNALT-BOLD.TTF */; };
-		B429555822DDDBD2002DE3E9 /* ProximaNova-Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B42954FA22DDDBD2002DE3E9 /* ProximaNova-Extrabold.otf */; };
-		B429555922DDDBD2002DE3E9 /* JANNALT-REGULAR.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B42954FB22DDDBD2002DE3E9 /* JANNALT-REGULAR.TTF */; };
 		B429555A22DDDBD2002DE3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */; };
-		B429555B22DDDBD2002DE3E9 /* ProximaNova-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B42954FD22DDDBD2002DE3E9 /* ProximaNova-Black.otf */; };
-		B429555C22DDDBD2002DE3E9 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B42954FE22DDDBD2002DE3E9 /* ProximaNova-Regular.otf */; };
 		B462725122DEF4C20070E044 /* AttachmentsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		370196E924CDA5DE0003266B /* VedioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VedioPlayerView.swift; sourceTree = "<group>"; };
 		37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDownloader.swift; sourceTree = "<group>"; };
-		3703A36E23321B44002AF867 /* Natalie-Ar-Bubble-talk.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Natalie-Ar-Bubble-talk.gif"; sourceTree = "<group>"; };
 		370874272326528C00E0C52C /* GreetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingHeaderView.swift; sourceTree = "<group>"; };
 		37087429232652A600E0C52C /* GreetingHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GreetingHeaderView.xib; sourceTree = "<group>"; };
 		3708742E2326803300E0C52C /* SplashScreenWithImgeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenWithImgeVC.swift; sourceTree = "<group>"; };
@@ -355,9 +349,6 @@
 		371ADD7422FC1EDF00AB68FB /* SplashScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenVC.swift; sourceTree = "<group>"; };
 		371ADD7622FC221D00AB68FB /* GradientAnimationManeger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientAnimationManeger.swift; sourceTree = "<group>"; };
 		371C951323374C780045D4E2 /* CommonGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonGlobals.swift; sourceTree = "<group>"; };
-		371C95212337B0F60045D4E2 /* din_next_arabic_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = din_next_arabic_light.ttf; sourceTree = "<group>"; };
-		371C95222337B0F70045D4E2 /* din_next_arabic_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = din_next_arabic_regular.ttf; sourceTree = "<group>"; };
-		371C95232337B0F70045D4E2 /* din_next_arabic_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = din_next_arabic_bold.ttf; sourceTree = "<group>"; };
 		371E27DD24AA0A86003A4150 /* LabibaConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaConfig.swift; sourceTree = "<group>"; };
 		372BB4C024B1E151003A8297 /* VisualizerVoiceAssistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerVoiceAssistantView.swift; sourceTree = "<group>"; };
 		372BB4C224B1E1CD003A8297 /* VoiceAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAssistant.swift; sourceTree = "<group>"; };
@@ -443,10 +434,6 @@
 		37A1483624B5A7EF0025954D /* cairo-_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cairo-_bold.ttf"; sourceTree = "<group>"; };
 		37A1484424B5C6B90025954D /* FloatingBubblesVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingBubblesVisualizer.swift; sourceTree = "<group>"; };
 		37A1484524B5C6B90025954D /* FloatingBubblesVisualizer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloatingBubblesVisualizer.xib; sourceTree = "<group>"; };
-		37B255B22349E6C000BFE2E7 /* TheSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TheSans-Bold.otf"; sourceTree = "<group>"; };
-		37B255B32349E6C000BFE2E7 /* TheSans-Plain.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "TheSans-Plain.otf"; path = "../../../../NatHealth/Fonts/Fonts/AR/TheSans-Plain.otf"; sourceTree = "<group>"; };
-		37B255B42349E6DA00BFE2E7 /* ITC Avant Garde Gothic Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITC Avant Garde Gothic Bold.otf"; sourceTree = "<group>"; };
-		37B255B52349E6DA00BFE2E7 /* ITC Avant Garde Gothic Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITC Avant Garde Gothic Medium.otf"; sourceTree = "<group>"; };
 		37B5326323CC5623001D2BDF /* LabibaBotConnectorJC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaBotConnectorJC.swift; sourceTree = "<group>"; };
 		37B96197230D34E70093647C /* DeleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteView.swift; sourceTree = "<group>"; };
 		37B96199230D3BE90093647C /* SettingVariabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVariabels.swift; sourceTree = "<group>"; };
@@ -495,6 +482,13 @@
 		528AE9632520A73C008AF72E /* Array+gcd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+gcd.swift"; sourceTree = "<group>"; };
 		528AE9642520A73C008AF72E /* GifView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
 		5296E22A25EF9F63001FB31C /* UIDeviceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExt.swift; sourceTree = "<group>"; };
+		529C67F826F3154E00FB8591 /* PrechatForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrechatForm.storyboard; sourceTree = "<group>"; };
+		529C67FB26F318D900FB8591 /* PrechatFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrechatFormVC.swift; sourceTree = "<group>"; };
+		529C680F26F3475E00FB8591 /* PrechatFormFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrechatFormFieldCell.swift; sourceTree = "<group>"; };
+		529C681026F3475E00FB8591 /* PrechatFormFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrechatFormFieldCell.xib; sourceTree = "<group>"; };
+		529C681626F3694700FB8591 /* PrechatFormHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrechatFormHeaderCell.swift; sourceTree = "<group>"; };
+		529C681726F3694700FB8591 /* PrechatFormHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrechatFormHeaderCell.xib; sourceTree = "<group>"; };
+		529C681A26F3855D00FB8591 /* PrechatFormThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrechatFormThemeModel.swift; sourceTree = "<group>"; };
 		52B6B38125B6FA3E0051ABCE /* HelpPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPopupVC.swift; sourceTree = "<group>"; };
 		52B6B38225B6FA3E0051ABCE /* HelpPopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpPopupVC.xib; sourceTree = "<group>"; };
 		52BF2F44247130FE00820B37 /* BaseConversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseConversationVC.swift; sourceTree = "<group>"; };
@@ -663,15 +657,7 @@
 		B42954F222DDDBD2002DE3E9 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		B42954F322DDDBD2002DE3E9 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		B42954F422DDDBD2002DE3E9 /* RadiusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusViewController.swift; sourceTree = "<group>"; };
-		B42954F622DDDBD2002DE3E9 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
-		B42954F722DDDBD2002DE3E9 /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
-		B42954F822DDDBD2002DE3E9 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
-		B42954F922DDDBD2002DE3E9 /* JANNALT-BOLD.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JANNALT-BOLD.TTF"; sourceTree = "<group>"; };
-		B42954FA22DDDBD2002DE3E9 /* ProximaNova-Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Extrabold.otf"; sourceTree = "<group>"; };
-		B42954FB22DDDBD2002DE3E9 /* JANNALT-REGULAR.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JANNALT-REGULAR.TTF"; sourceTree = "<group>"; };
 		B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B42954FD22DDDBD2002DE3E9 /* ProximaNova-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Black.otf"; sourceTree = "<group>"; };
-		B42954FE22DDDBD2002DE3E9 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		B42954FF22DDDBD2002DE3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1107,6 +1093,7 @@
 				52F51A1725B07E7F002C03BB /* AttachmentCardView.swift */,
 				520DEE6E265F83F500B538A5 /* BackgroundView.swift */,
 				527E985526C53A6D00DA69E6 /* HumanAgentSettings.swift */,
+				529C681A26F3855D00FB8591 /* PrechatFormThemeModel.swift */,
 			);
 			path = "Theme and Settings";
 			sourceTree = "<group>";
@@ -1148,6 +1135,42 @@
 				5296E22A25EF9F63001FB31C /* UIDeviceExt.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		529C67FA26F3189300FB8591 /* PrechatForm */ = {
+			isa = PBXGroup;
+			children = (
+				529C680D26F346AD00FB8591 /* Cells */,
+				529C67FB26F318D900FB8591 /* PrechatFormVC.swift */,
+			);
+			path = PrechatForm;
+			sourceTree = "<group>";
+		};
+		529C680D26F346AD00FB8591 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				529C681526F3691800FB8591 /* PrechatFormHeaderCell */,
+				529C680E26F3471300FB8591 /* PrechatFormFieldCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		529C680E26F3471300FB8591 /* PrechatFormFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				529C680F26F3475E00FB8591 /* PrechatFormFieldCell.swift */,
+				529C681026F3475E00FB8591 /* PrechatFormFieldCell.xib */,
+			);
+			path = PrechatFormFieldCell;
+			sourceTree = "<group>";
+		};
+		529C681526F3691800FB8591 /* PrechatFormHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				529C681626F3694700FB8591 /* PrechatFormHeaderCell.swift */,
+				529C681726F3694700FB8591 /* PrechatFormHeaderCell.xib */,
+			);
+			path = PrechatFormHeaderCell;
 			sourceTree = "<group>";
 		};
 		52A8A91F2600BA9E00B7FAB7 /* old socket */ = {
@@ -1457,6 +1480,7 @@
 				3798705A23253DEC00CC968F /* HintsView.xib */,
 				3731DA9B2342283700FDFC42 /* ScrollViewCellView.xib */,
 				527260DE2518B9F2002130BA /* AttachmentView.xib */,
+				529C67F826F3154E00FB8591 /* PrechatForm.storyboard */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -1509,6 +1533,7 @@
 				37B5326523CC562F001D2BDF /* LabibaBotConnector */,
 				B42954EC22DDDBD2002DE3E9 /* Conversation */,
 				521448A225864DFC0099BF38 /* Rating */,
+				529C67FA26F3189300FB8591 /* PrechatForm */,
 				B42954F022DDDBD2002DE3E9 /* PhotoViewController.swift */,
 				B42954F122DDDBD2002DE3E9 /* Emoticonizer.swift */,
 				B42954F222DDDBD2002DE3E9 /* LocationService.swift */,
@@ -1630,23 +1655,7 @@
 			children = (
 				37A1483524B5A7EE0025954D /* cairo_regular.ttf */,
 				37A1483624B5A7EF0025954D /* cairo-_bold.ttf */,
-				37B255B42349E6DA00BFE2E7 /* ITC Avant Garde Gothic Bold.otf */,
-				37B255B52349E6DA00BFE2E7 /* ITC Avant Garde Gothic Medium.otf */,
-				37B255B22349E6C000BFE2E7 /* TheSans-Bold.otf */,
-				37B255B32349E6C000BFE2E7 /* TheSans-Plain.otf */,
-				371C95232337B0F70045D4E2 /* din_next_arabic_bold.ttf */,
-				371C95212337B0F60045D4E2 /* din_next_arabic_light.ttf */,
-				371C95222337B0F70045D4E2 /* din_next_arabic_regular.ttf */,
-				B42954FD22DDDBD2002DE3E9 /* ProximaNova-Black.otf */,
-				B42954FE22DDDBD2002DE3E9 /* ProximaNova-Regular.otf */,
-				B42954F622DDDBD2002DE3E9 /* ProximaNova-Light.otf */,
-				B42954F722DDDBD2002DE3E9 /* ProximaNova-Semibold.otf */,
-				B42954F822DDDBD2002DE3E9 /* ProximaNova-Bold.otf */,
-				B42954F922DDDBD2002DE3E9 /* JANNALT-BOLD.TTF */,
-				B42954FA22DDDBD2002DE3E9 /* ProximaNova-Extrabold.otf */,
-				B42954FB22DDDBD2002DE3E9 /* JANNALT-REGULAR.TTF */,
 				B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */,
-				3703A36E23321B44002AF867 /* Natalie-Ar-Bubble-talk.gif */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1756,23 +1765,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3703A36F23321B45002AF867 /* Natalie-Ar-Bubble-talk.gif in Resources */,
 				B429550122DDDBD2002DE3E9 /* SelectableCardView.xib in Resources */,
 				52B6B38425B6FA3E0051ABCE /* HelpPopupVC.xib in Resources */,
 				52FC5CEF24D00A7300C7B7CF /* MapPerviewView.xib in Resources */,
 				527260DF2518B9F2002130BA /* AttachmentView.xib in Resources */,
 				B429550722DDDBD2002DE3E9 /* MovableAlias.xib in Resources */,
-				B429555722DDDBD2002DE3E9 /* JANNALT-BOLD.TTF in Resources */,
 				52C16E69251B838E0026D20D /* JsonExample.json in Resources */,
 				3731DA9C2342283700FDFC42 /* ScrollViewCellView.xib in Resources */,
-				371C95252337B0F70045D4E2 /* din_next_arabic_regular.ttf in Resources */,
 				B429550022DDDBD2002DE3E9 /* Localizable.strings in Resources */,
 				B429554322DDDBD2002DE3E9 /* CustomCollectionViewCell.xib in Resources */,
 				B429550222DDDBD2002DE3E9 /* Labiba.storyboard in Resources */,
-				B429555822DDDBD2002DE3E9 /* ProximaNova-Extrabold.otf in Resources */,
-				B429555522DDDBD2002DE3E9 /* ProximaNova-Semibold.otf in Resources */,
+				529C681926F3694700FB8591 /* PrechatFormHeaderCell.xib in Resources */,
 				B429550822DDDBD2002DE3E9 /* MediaView.xib in Resources */,
-				37F003D0233388E900A1AC17 /* ProximaNova-Light.otf in Resources */,
 				52BF2F552471330500820B37 /* VoiceExperienceView.xib in Resources */,
 				52C0A06D25878D3B004D7AAA /* RatingSatrsLightCell.xib in Resources */,
 				B429550922DDDBD2002DE3E9 /* CustomMapPicker.xib in Resources */,
@@ -1783,8 +1787,6 @@
 				37CC251E234B73D400168766 /* WriteCommentRatingCell.xib in Resources */,
 				372BB4C524B1E1F7003A8297 /* VisualizerVoiceAssistantView.xib in Resources */,
 				B429550622DDDBD2002DE3E9 /* UserBubble.xib in Resources */,
-				371C95262337B0F70045D4E2 /* din_next_arabic_bold.ttf in Resources */,
-				B429555922DDDBD2002DE3E9 /* JANNALT-REGULAR.TTF in Resources */,
 				B429550422DDDBD2002DE3E9 /* UserTextInput.xib in Resources */,
 				5214489B258647B90099BF38 /* Rating.storyboard in Resources */,
 				B429550C22DDDBD2002DE3E9 /* UserTextInputNoLocal.xib in Resources */,
@@ -1795,11 +1797,11 @@
 				52E49F9C2487DA6B00476FF6 /* TextFiledRatingCell.xib in Resources */,
 				3793986D234C5DE500396E42 /* RadioButtonsRatingCell.xib in Resources */,
 				37CC2513234B43E500168766 /* RatingStarsRatingCell.xib in Resources */,
-				371C95242337B0F70045D4E2 /* din_next_arabic_light.ttf in Resources */,
 				B429553E22DDDBD2002DE3E9 /* CustomTableViewCell.xib in Resources */,
 				37A1484724B5C6B90025954D /* FloatingBubblesVisualizer.xib in Resources */,
 				371ADD7322FC1DCF00AB68FB /* SplashScreen.storyboard in Resources */,
 				52C0A0962588AFEF004D7AAA /* SubmitRatingLightCell.xib in Resources */,
+				529C681226F3475E00FB8591 /* PrechatFormFieldCell.xib in Resources */,
 				5281F41E25C805A7005D39CD /* HelpExpandableView.xib in Resources */,
 				37A1483824B5A7EF0025954D /* cairo-_bold.ttf in Resources */,
 				3708742A232652A600E0C52C /* GreetingHeaderView.xib in Resources */,
@@ -1808,14 +1810,12 @@
 				B429550E22DDDBD2002DE3E9 /* SelectableCollectionCellView.xib in Resources */,
 				526FD850250100FD004B2408 /* HeaderQuickChoiceCell.xib in Resources */,
 				37939874234C85DF00396E42 /* SubmitRatingCell.xib in Resources */,
-				B429555622DDDBD2002DE3E9 /* ProximaNova-Bold.otf in Resources */,
 				37C4631A22F1BC5B004EAC7E /* VoiceAssistantView.xib in Resources */,
 				37EF9ABF2313E83100FF49B3 /* DynamicGIF.xib in Resources */,
 				B429550F22DDDBD2002DE3E9 /* ResponseBubble.xib in Resources */,
 				B429555A22DDDBD2002DE3E9 /* Assets.xcassets in Resources */,
 				526FD84B2500FECD004B2408 /* QuickChoicesHeaderView.xib in Resources */,
-				B429555C22DDDBD2002DE3E9 /* ProximaNova-Regular.otf in Resources */,
-				B429555B22DDDBD2002DE3E9 /* ProximaNova-Black.otf in Resources */,
+				529C67F926F3154E00FB8591 /* PrechatForm.storyboard in Resources */,
 				B429550D22DDDBD2002DE3E9 /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1964,6 +1964,7 @@
 				52DE30762462D6A000DAF3E7 /* Notifications.swift in Sources */,
 				B429552122DDDBD2002DE3E9 /* PhotoView.swift in Sources */,
 				37460D9A230A7AC1002748CE /* ReferralModel.swift in Sources */,
+				529C681126F3475E00FB8591 /* PrechatFormFieldCell.swift in Sources */,
 				B429555022DDDBD2002DE3E9 /* Emoticonizer.swift in Sources */,
 				B429551622DDDBD2002DE3E9 /* Platform.swift in Sources */,
 				52FC5CF124D00A9000C7B7CF /* MapPerviewView.swift in Sources */,
@@ -2050,6 +2051,8 @@
 				526FD84F250100FD004B2408 /* HeaderQuickChoiceCell.swift in Sources */,
 				52DE8E18248CEB880067F5EC /* FrameStore.swift in Sources */,
 				B429553A22DDDBD2002DE3E9 /* UserBubble.swift in Sources */,
+				529C67FC26F318D900FB8591 /* PrechatFormVC.swift in Sources */,
+				529C681826F3694700FB8591 /* PrechatFormHeaderCell.swift in Sources */,
 				528AE9662520A73C008AF72E /* UIImageView+gif.swift in Sources */,
 				3782D9A923BA1369006A79D4 /* SRError.m in Sources */,
 				B429551C22DDDBD2002DE3E9 /* CameraVC.swift in Sources */,
@@ -2089,6 +2092,7 @@
 				37B9619A230D3BE90093647C /* SettingVariabels.swift in Sources */,
 				52C6DBAE24694849005CFE27 /* ImageCache.swift in Sources */,
 				52C6DBA924694849005CFE27 /* UIImageView+AlamofireImage.swift in Sources */,
+				529C681B26F3855D00FB8591 /* PrechatFormThemeModel.swift in Sources */,
 				528AE9672520A73C008AF72E /* Thread+extension.swift in Sources */,
 				B429551422DDDBD2002DE3E9 /* ScanAnimation.swift in Sources */,
 				52DE8DC7248CB9C60067F5EC /* IQBarButtonItem.swift in Sources */,
