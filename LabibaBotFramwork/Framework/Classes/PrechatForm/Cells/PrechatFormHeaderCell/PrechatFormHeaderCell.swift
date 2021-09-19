@@ -11,11 +11,17 @@ import UIKit
 class PrechatFormHeaderCell: UITableViewCell {
 
     @IBOutlet weak var imageview: UIImageView!
+    @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var closeBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleLbl.font = applyBotFont(size: 22)
+        titleLbl.font = applyBotFont(size: 19)
+        titleLbl.textColor = Labiba.PrechatForm.header.titleColor
+        imageContainer.isHidden = Labiba.PrechatForm.header.image == nil
+        imageview.image = Labiba.PrechatForm.header.image
         
+        contentView.applyHierarchicalSemantics(flipImage: false)
     }
 
     

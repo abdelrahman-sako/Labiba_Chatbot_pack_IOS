@@ -245,6 +245,8 @@
 		52E49F9C2487DA6B00476FF6 /* TextFiledRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E49F9A2487DA6B00476FF6 /* TextFiledRatingCell.xib */; };
 		52F51A0325B053DD002C03BB /* LabibaVoiceAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F51A0225B053DD002C03BB /* LabibaVoiceAssistantView.swift */; };
 		52F51A1825B07E7F002C03BB /* AttachmentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F51A1725B07E7F002C03BB /* AttachmentCardView.swift */; };
+		52F6ECB526F7264600B38518 /* PrechatFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6ECB426F7264600B38518 /* PrechatFormModel.swift */; };
+		52F6ECB726F7363000B38518 /* JsonExample1.json in Resources */ = {isa = PBXBuildFile; fileRef = 52F6ECB626F733B700B38518 /* JsonExample1.json */; };
 		52FC5CEF24D00A7300C7B7CF /* MapPerviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FC5CEE24D00A7300C7B7CF /* MapPerviewView.xib */; };
 		52FC5CF124D00A9000C7B7CF /* MapPerviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF024D00A9000C7B7CF /* MapPerviewView.swift */; };
 		52FC5CF624D0262F00C7B7CF /* LabibaVoiceExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */; };
@@ -566,6 +568,8 @@
 		52E49F9A2487DA6B00476FF6 /* TextFiledRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFiledRatingCell.xib; sourceTree = "<group>"; };
 		52F51A0225B053DD002C03BB /* LabibaVoiceAssistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaVoiceAssistantView.swift; sourceTree = "<group>"; };
 		52F51A1725B07E7F002C03BB /* AttachmentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentCardView.swift; sourceTree = "<group>"; };
+		52F6ECB426F7264600B38518 /* PrechatFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrechatFormModel.swift; sourceTree = "<group>"; };
+		52F6ECB626F733B700B38518 /* JsonExample1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonExample1.json; sourceTree = "<group>"; };
 		52FC5CEE24D00A7300C7B7CF /* MapPerviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapPerviewView.xib; sourceTree = "<group>"; };
 		52FC5CF024D00A9000C7B7CF /* MapPerviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPerviewView.swift; sourceTree = "<group>"; };
 		52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaVoiceExperience.swift; sourceTree = "<group>"; };
@@ -758,6 +762,7 @@
 				3732461323CDA6C8004F87F7 /* LiveChatModel.swift */,
 				374A3FF523E85F0800C99766 /* TextToSpeechModel.swift */,
 				52FFB72325D271D300CFB629 /* HelpPageModel.swift */,
+				52F6ECB426F7264600B38518 /* PrechatFormModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1142,6 +1147,7 @@
 			children = (
 				529C680D26F346AD00FB8591 /* Cells */,
 				529C67FB26F318D900FB8591 /* PrechatFormVC.swift */,
+				52F6ECB626F733B700B38518 /* JsonExample1.json */,
 			);
 			path = PrechatForm;
 			sourceTree = "<group>";
@@ -1765,6 +1771,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F6ECB726F7363000B38518 /* JsonExample1.json in Resources */,
 				B429550122DDDBD2002DE3E9 /* SelectableCardView.xib in Resources */,
 				52B6B38425B6FA3E0051ABCE /* HelpPopupVC.xib in Resources */,
 				52FC5CEF24D00A7300C7B7CF /* MapPerviewView.xib in Resources */,
@@ -2037,6 +2044,7 @@
 				3782D94F23B9F511006A79D4 /* NVActivityIndicatorViewable.swift in Sources */,
 				5214229825AC9B7800B78AB0 /* LabibaMapView.swift in Sources */,
 				3782D9AE23BA1369006A79D4 /* SRIOConsumer.m in Sources */,
+				52F6ECB526F7264600B38518 /* PrechatFormModel.swift in Sources */,
 				B429553122DDDBD2002DE3E9 /* LbLanguage.swift in Sources */,
 				B429551122DDDBD2002DE3E9 /* Constants.swift in Sources */,
 				5281F42425C83CE4005D39CD /* PushNotificationConfig.swift in Sources */,

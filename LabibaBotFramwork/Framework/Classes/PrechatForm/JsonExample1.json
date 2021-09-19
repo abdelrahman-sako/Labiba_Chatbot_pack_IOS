@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Your Name",
+    "parameterName": "user_name",
+    "isOptional": false,
+    "type": "text"
+  },
+  {
+    "title": "Your Email",
+    "parameterName": "user_email",
+    "isOptional": false,
+    "type": "email"
+  },
+  {
+    "title": "Your Phone",
+    "parameterName": "user_phone",
+    "isOptional": false,
+    "type": "phone"
+  },
+  {
+    "title": "Your Building Nu,ber",
+    "parameterName": "building_email",
+    "isOptional": true,
+    "type": "text"
+  }
+]

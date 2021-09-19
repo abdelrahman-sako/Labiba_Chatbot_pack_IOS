@@ -10,10 +10,9 @@ import Foundation
 public class PrechatFormThemeModel {
     
     public var backgroundColor:UIColor = .white
-    public var headerTitleColor:UIColor =  .black
-    public var headerImage:UIImage? =  nil
-    public var field:(titleColor:UIColor,textColor:UIColor) = (UIColor(argb: 0xffD1D2D2),.black)
-    public var button:(tintColor:UIColor,backgroundColor:UIColor) = (.white,UIColor(argb: 0xffF7CE46))
+    public var header:(image:UIImage?,titleColor:UIColor) =  (nil, .black)
+    public var field:(titleColor:UIColor,textColor:UIColor,backgroundColor:UIColor,borderColor:UIColor) = (UIColor(argb: 0xff979898),.black,UIColor(argb: 0xffF8F9F8),UIColor(argb: 0xffD1D2D2))
+    public var button:(titleColor:UIColor,backgroundColor:UIColor) = (.white,UIColor(argb: 0xFFFFCC02))
     
     
 }

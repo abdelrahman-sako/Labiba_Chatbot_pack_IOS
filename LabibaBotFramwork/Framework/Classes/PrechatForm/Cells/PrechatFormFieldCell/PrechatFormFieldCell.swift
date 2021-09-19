@@ -13,20 +13,55 @@ class PrechatFormFieldCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tfContainerView: UIView!
+    
+    weak var prechatModel: PrechatFormModel?
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         tfContainerView.layer.cornerRadius = 10
         tfContainerView.layer.borderWidth = 1
-        tfContainerView.layer.borderColor = UIColor(argb: 0xffD1D2D2).cgColor
-        titleLbl.font = applyBotFont(size: 17)
-        textField.font = applyBotFont(size: 15)
+        tfContainerView.layer.borderColor = Labiba.PrechatForm.field.borderColor.cgColor
+        tfContainerView.backgroundColor = Labiba.PrechatForm.field.backgroundColor
+
+        titleLbl.font = applyBotFont(size: 16)
+        titleLbl.textColor = Labiba.PrechatForm.field.titleColor
+        
+        textField.delegate = self
+        textField.font = applyBotFont(size: 14)
+        textField.textColor = Labiba.PrechatForm.field.textColor
+        
         contentView.applyHierarchicalSemantics()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func updateCell()  {
+        titleLbl.text = prechatModel?.title ?? "Title"
+        textField.text = prechatModel?.fieldValue ?? ""
+        if let type =  prechatModel?.getType()  {
+            switch type {
+            case .email:
+                textField.keyboardType = .emailAddress
+            case .phone:
+                textField.keyboardType = .phonePad
+            case .number:
+                textField.keyboardType = .numberPad
+            case .text:
+                textField.keyboardType = .default
+            }
+        }
+       
+    }
+    
+}
+
+extension PrechatFormFieldCell:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        prechatModel?.fieldValue = textField.text ?? ""
+    }
 }

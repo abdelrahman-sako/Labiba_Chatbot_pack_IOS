@@ -85,11 +85,11 @@ extension UIView
              self.semanticContentAttribute = .forceRightToLeft
         }
     }
-    func applyHierarchicalSemantics() {
+    func applyHierarchicalSemantics(flipImage:Bool = true) {
         self.applySemanticAccordingToBotLang()
         for subview in self.subviews {
             if subview.semanticContentAttribute == .unspecified {
-                subview.applyHierarchicalSemantics()
+                subview.applyHierarchicalSemantics(flipImage:flipImage)
             }
             if let textFiled = subview as? UITextField {
                 if textFiled.textAlignment == .natural {
@@ -99,7 +99,7 @@ extension UIView
                 if label.textAlignment == .natural {
                     label.applyAlignmentAccordingToOnboardingLang()
                 }
-            }else if let imageView = subview as? UIImageView {
+            }else if flipImage, let imageView = subview as? UIImageView {
                 imageView.transform = CGAffineTransform(scaleX: SharedPreference.shared.botLangCode == .ar ? -1 : 1, y: 1)
             }
         }
