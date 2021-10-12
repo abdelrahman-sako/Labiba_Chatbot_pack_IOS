@@ -167,3 +167,11 @@
 
 //Rating form
 "sharRating" = "شاركنا رأيك!";
+
+// prechat form
+"fillFields" = "الرجاء تعبئة جميع الحقول المطلوبة";
+"validEmail" = "الرجاء ادخال بريد الكتروني صحيح";
+"validPhone" = "الرجاء ادخال رقم هاتف صحيح";
+"PersonalData" = "البيانات الشخصية";
+"chatNow" = "ابدأالدردشة";
+"optional" = "-اختياري";

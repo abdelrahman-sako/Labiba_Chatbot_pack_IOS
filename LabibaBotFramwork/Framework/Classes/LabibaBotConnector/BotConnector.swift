@@ -30,6 +30,7 @@ protocol BotConnectorInterface:class {
 enum NetworkError: String, Error {
     case badURL
     case encodingError = "Encoding error"
+    case empty = "Empty"
 }
 extension NetworkError: LocalizedError {
     public var errorDescription: String? {
@@ -38,6 +39,8 @@ extension NetworkError: LocalizedError {
             return "unvalid url"
         case .encodingError:
             return "response could not be decoded"
+        case .empty:
+            return "Response is empty"
         }
     }
 }
@@ -232,50 +235,56 @@ class BotConnector: NSObject {
         }
     }
     
-    func getPrechatForm(completion: @escaping (Result<[PrechatFormModel]>) -> Void) {
-        let path = "path"
+    func getPrechatForm(completion: @escaping (Result<[PrechatFormModel.Item]>) -> Void) {
+        let path = "\(Labiba._basePath)\(Labiba._prechatFormServicePath)"
         let params:[String:Any] = [
-            "bot_id" : SharedPreference.shared.currentUserId // "6bd2ecb6-958e-4bb5-905a-51bb6350490a"
+            "bot_id" : SharedPreference.shared.currentUserId 
         ]
         showLoadingIndicator()
-        
-        func readExampleData() -> Data {
-            if let path = Labiba.bundle.url(forResource: "JsonExample1", withExtension: "json") {
-                do {
-                    let data = try Data(contentsOf: path, options: .mappedIfSafe)
-                    return data
-                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                    if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,Any>]
-                    {
-                        print(jsonArray) // use the json here
-                    } else {
-                        print("bad json")
-                    }
-                } catch {
-                    print(error)
-                }
-            }
-            
-            return Data()
-        }
-        let jsonDecoder = JSONDecoder()
-        do {
-            let model = try jsonDecoder.decode([PrechatFormModel].self, from: readExampleData())
-            completion(.success(model))
-            self.loader.dismiss()
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-//        LabibaRequest([PrechatFormModel].self, url: path, method: .get, parameters: params, encoding: URLEncoding.default, logTag: .prechatForm) { (result) in
-//            switch result {
-//            case .success(let model):
-//                completion(.success(model))
-//            case .failure(let err):
-//                completion(.failure(err))
+//
+//        func readExampleData() -> Data {
+//            if let path = Labiba.bundle.url(forResource: "JsonExample1", withExtension: "json") {
+//                do {
+//                    let data = try Data(contentsOf: path, options: .mappedIfSafe)
+//                    return data
+//                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+//                    if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,Any>]
+//                    {
+//                        print(jsonArray) // use the json here
+//                    } else {
+//                        print("bad json")
+//                    }
+//                } catch {
+//                    print(error)
+//                }
 //            }
+//
+//            return Data()
+//        }
+//        let jsonDecoder = JSONDecoder()
+//        do {
+//            let model = try jsonDecoder.decode([PrechatFormModel].self, from: readExampleData())
+//            completion(.success(model[0].Data ?? []))
+//            self.loader.dismiss()
+//        } catch {
+//            completion(.failure(error))
+//            print(error.localizedDescription)
 //            self.loader.dismiss()
 //        }
+        
+        LabibaRequest([PrechatFormModel].self, url: path, method: .get, parameters: params, encoding: URLEncoding.default, logTag: .prechatForm) { (result) in
+            switch result {
+            case .success(let model):
+                if model.count > 0 {
+                completion(.success(model[0].Data ?? []))
+                }else {
+                    completion(.failure(NetworkError.empty))
+                }
+            case .failure(let err):
+                completion(.failure(err))
+            }
+            self.loader.dismiss()
+        }
     }
     
     func LabibaRequest<T:Codable>(_:T.Type,url:String,method:HTTPMethod,parameters: Parameters? = nil,encoding: ParameterEncoding = URLEncoding.default,logTag:LoggingTag? = nil, completion: @escaping (Result<T>)->Void) {

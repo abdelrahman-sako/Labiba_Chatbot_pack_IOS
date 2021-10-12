@@ -13,8 +13,9 @@ class PrechatFormFieldCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tfContainerView: UIView!
+    @IBOutlet weak var optionalLbl: UILabel!
     
-    weak var prechatModel: PrechatFormModel?
+    weak var prechatModel: PrechatFormModel.Item?
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,6 +31,8 @@ class PrechatFormFieldCell: UITableViewCell {
         textField.font = applyBotFont(size: 14)
         textField.textColor = Labiba.PrechatForm.field.textColor
         
+        optionalLbl.text = "optional".localForChosnLangCodeBB
+        optionalLbl.font = applyBotFont(size: 16)
         contentView.applyHierarchicalSemantics()
     }
 
@@ -40,6 +43,7 @@ class PrechatFormFieldCell: UITableViewCell {
     func updateCell()  {
         titleLbl.text = prechatModel?.title ?? "Title"
         textField.text = prechatModel?.fieldValue ?? ""
+        optionalLbl.isHidden = !(prechatModel?.isOptional ?? false)
         if let type =  prechatModel?.getType()  {
             switch type {
             case .email:

@@ -39,6 +39,11 @@ class SpeechToTextManager {
     
     private init() {
         addObservers()
+        if #available(iOS 13, *) {
+            print("supported locals: ",speechRecognizer?.supportsOnDeviceRecognition.description)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     deinit {

@@ -82,6 +82,7 @@ class LabibaRestfulBotConnector:BotConnector{
         }
         isTherePendingRequest = true
         currentRequest =  sessionManager.request(baseURL, method: .post, parameters: parameters, encoding: JSONEncoding.default , headers: ["Content-Type":"application/json"]).responseData { (response) in
+            print(response.metrics)
             self.loader.dismiss()
             if let err = response.error{
                 print(err.localizedDescription)

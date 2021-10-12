@@ -34,6 +34,7 @@ public enum BotType:Int {
     static var _voiceServicePath = "/translate/texttospeech"
     static var _loggingServicePath = "/api/MobileAPI/MobileLogging"
     static var _helpServicePath = "/api/MobileAPI/FetchHelpPage"
+    static var _prechatFormServicePath = "/api/PreChatFrom/FetchPreChatFrom"
    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
    
@@ -128,6 +129,10 @@ public enum BotType:Int {
     public static func set_loggingServicePath(_ path: String)
     {
         self._loggingServicePath = path
+    }
+    public static func set_prechatFormServicePath(_ path: String)
+    {
+        self._prechatFormServicePath = path
     }
     
     
@@ -504,13 +509,22 @@ public enum BotType:Int {
             fatalError(SENDER_ERROR)
         }
 
-//        let convVC = ConversationViewController.create()
-//        convVC.delegate = Labiba.delegate
-//        convVC.isClosable = closable
-//        convVC.closeHandler = onClose
-//        
-//        return convVC
+        let convVC = ConversationViewController.create()
+        convVC.delegate = Labiba.delegate
+        convVC.isClosable = closable
+        convVC.closeHandler = onClose
         
+        return convVC
+    }
+    
+    public static func createConversationWithPrechatForm(closable: Bool = true, onClose: ConversationCloseHandler? = nil) -> UIViewController
+    {
+
+        guard self._senderId != nil
+        else
+        {
+            fatalError(SENDER_ERROR)
+        }
         let prechatVC = Labiba.prechatFormStoryboard.instantiateViewController(withIdentifier: "PrechatFormVC") as! PrechatFormVC
         prechatVC.modalPresentationStyle = .fullScreen
         prechatVC.modalTransitionStyle = .crossDissolve

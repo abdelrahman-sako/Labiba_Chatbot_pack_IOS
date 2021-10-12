@@ -164,3 +164,11 @@
 
 //Rating form
 "sharRating" = "Share Your Rating";
+
+// prechat form
+"fillFields" = "Please fill all required fields";
+"validEmail" = "Please enter a valid email";
+"validPhone" = "Please enter a valid phone number";
+"PersonalData" = "Your personal data";
+"chatNow" = "Chat now";
+"optional" = "-optional";

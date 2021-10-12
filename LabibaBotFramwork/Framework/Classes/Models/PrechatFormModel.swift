@@ -9,34 +9,38 @@
 import Foundation
 class PrechatFormModel:Codable{
     
-    var title:String?
-    var parameterName:String?
-    var isOptional:Bool
-    var type:String?
+    var Data:[Item]?
     
-    //local vars
-    var fieldValue:String? = ""
-    
-    
-    enum FieldType {
-        case email
-        case phone
-        case number
-        case text
-    }
-    
-    func getType() -> FieldType {
-        switch type {
-        case "email":
-            return .email
-        case "phone":
-            return .phone
-        case "number":
-            return .number
-        case "text":
-            return .text
-        default:
-            return .text
+    class Item:Codable{
+        var title:String?
+        var parameterName:String?
+        var isOptional:Bool
+        var type:String?
+        
+        //local vars
+        var fieldValue:String? = ""
+        
+        
+        enum FieldType {
+            case email
+            case phone
+            case number
+            case text
+        }
+        
+        func getType() -> FieldType {
+            switch type {
+            case "email":
+                return .email
+            case "phone":
+                return .phone
+            case "number":
+                return .number
+            case "text":
+                return .text
+            default:
+                return .text
+            }
         }
     }
 }

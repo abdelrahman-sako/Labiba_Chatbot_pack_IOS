@@ -38,7 +38,7 @@ public class LabibaConfig {
 
         Labiba.set_voiceBasePath("https://boji.bankofjordan.com.jo")
         Labiba.set_voiceServicePath("/api/VoiceAPI/VoiceClip")
-        Labiba.set_loggingServicePath("/api/MobileAPI/FetchHelpPage")
+        Labiba.set_loggingServicePath("/api/Mobile/LogAPI")
         
         // UAT server
 //        Labiba.set_basePath("http://10.121.1.8")

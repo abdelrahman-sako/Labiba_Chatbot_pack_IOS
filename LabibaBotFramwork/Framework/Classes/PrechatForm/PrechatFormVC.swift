@@ -20,7 +20,7 @@ class PrechatFormVC: UIViewController {
     @IBOutlet weak var startChatBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    var prechatFormArray:[PrechatFormModel]?
+    var prechatFormArray:[PrechatFormModel.Item]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +46,8 @@ class PrechatFormVC: UIViewController {
         startChatBtn.backgroundColor = Labiba.PrechatForm.button.backgroundColor
 
         startChatBtn.setTitleColor(Labiba.PrechatForm.button.titleColor, for: .normal)
+        startChatBtn.setTitle("chatNow".localForChosnLangCodeBB, for: .normal)
+        startChatBtn.titleLabel?.font = applyBotFont(size: 16)
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -64,19 +66,57 @@ class PrechatFormVC: UIViewController {
                 self?.prechatFormArray = model
                 self?.tableView.reloadData()
             case .failure(let err):
-                showErrorMessage(err.localizedDescription)
+                showErrorMessage(err.localizedDescription) { [weak self] in
+                    self?.dismissAction()
+                }
             }
         }
     }
     
-    @IBAction func startChatAction(_ sender: UIButton) {
-        var vcs = self.navigationController?.viewControllers ?? []
-        if vcs.count  > 1{
-            vcs.removeLast()
+    func fieldValidation() -> Bool {
+        for item in prechatFormArray ?? [] {
+            if !item.isOptional {
+                if (item.fieldValue?.isEmpty ?? true) {
+                   showErrorMessage("fillFields".localForChosnLangCodeBB)
+                    return false
+                }
+                switch item.getType() {
+                case .email:
+                    if !(item.fieldValue ?? "").isValidEmail(){
+                        showErrorMessage("validEmail".localForChosnLangCodeBB)
+                        return false
+                    }
+                case .phone:
+                    if (item.fieldValue ?? "").count < 5{
+                        showErrorMessage("validPhone".localForChosnLangCodeBB)
+                        return false
+                    }
+                case .number:
+                    break
+                case .text:
+                    break
+                }
+            }
         }
-        vcs.append(ConversationViewController.create())
-        self.navigationController?.setViewControllers(vcs, animated: true)
+        return true
     }
+    
+    @IBAction func startChatAction(_ sender: UIButton) {
+        if fieldValidation() {
+            var parameters:[String:String] = [:]
+            for item in prechatFormArray ?? [] {
+                parameters[item.parameterName ?? ""] = (item.fieldValue ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+            }
+            Labiba.setUserParams(customParameters: parameters)
+            var vcs = self.navigationController?.viewControllers ?? []
+            if vcs.count  > 1{
+                vcs.removeLast()
+            }
+            vcs.append(ConversationViewController.create())
+            self.navigationController?.setViewControllers(vcs, animated: true)
+        }
+    }
+    
     @objc func dismissAction(){
         self.navigationController?.popViewController(animated: true)
     }

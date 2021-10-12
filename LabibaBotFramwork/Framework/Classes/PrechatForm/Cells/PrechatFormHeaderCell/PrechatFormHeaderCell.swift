@@ -18,6 +18,7 @@ class PrechatFormHeaderCell: UITableViewCell {
         super.awakeFromNib()
         titleLbl.font = applyBotFont(size: 19)
         titleLbl.textColor = Labiba.PrechatForm.header.titleColor
+        titleLbl.text = "PersonalData".localForChosnLangCodeBB
         imageContainer.isHidden = Labiba.PrechatForm.header.image == nil
         imageview.image = Labiba.PrechatForm.header.image
         

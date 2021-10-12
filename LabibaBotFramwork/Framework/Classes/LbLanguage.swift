@@ -11,7 +11,7 @@ import Foundation
 func localString(_ key: String) -> String
 {
 
-    return key.local
+    return key.localForChosnLangCodeBB
 }
 
 extension String

@@ -693,6 +693,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         if (lastIndex >= 0)
         {
             let index = IndexPath(row: lastIndex, section: 0)
+            guard index.row == (self.displayedDialogs.count - 1) else {
+                return
+            }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1)
             {
                 if(self.displayedDialogs.count > lastIndex)
@@ -713,9 +716,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 }
                 else
                 {
-                    if index.row == self.displayedDialogs.count - 1{
+                   
                         self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
-                    }
+                    
                     
                 }
             }

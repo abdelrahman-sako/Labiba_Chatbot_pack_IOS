@@ -622,6 +622,7 @@ public enum BotType : Swift.Int {
   public static func set_voiceBasePath(_ path: Swift.String)
   public static func set_voiceServicePath(_ path: Swift.String)
   public static func set_loggingServicePath(_ path: Swift.String)
+  public static func set_prechatFormServicePath(_ path: Swift.String)
   public static var _ReferralSource: Swift.String
   public static func setUserParams(first_name: Swift.String? = nil, last_name: Swift.String? = nil, profile_pic: Swift.String? = nil, gender: Swift.String? = nil, location: Swift.String? = nil, country: Swift.String? = nil, username: Swift.String? = nil, email: Swift.String? = nil, token: Swift.String? = nil, customParameters: [Swift.String : Swift.String]? = nil)
   public static func setRefreshToken(refreshtoken: Swift.String)
@@ -660,9 +661,11 @@ public enum BotType : Swift.Int {
   public static let UserChatBubble: LabibaBotFramwork.LabibaUserChatBubble
   public static let BotChatBubble: LabibaBotFramwork.LabibaBotChatBubble
   public static let RatingForm: LabibaBotFramwork.LabibaRatingForm
+  public static let PrechatForm: LabibaBotFramwork.PrechatFormThemeModel
   public static func startConversation(onView vc: UIKit.UIViewController? = nil, animated: Swift.Bool = true, onClose: LabibaBotFramwork.Labiba.ConversationCloseHandler? = nil)
   public typealias ConversationCloseHandler = () -> Swift.Void
   public static func createConversation(closable: Swift.Bool = true, onClose: LabibaBotFramwork.Labiba.ConversationCloseHandler? = nil) -> UIKit.UIViewController
+  public static func createConversationWithPrechatForm(closable: Swift.Bool = true, onClose: LabibaBotFramwork.Labiba.ConversationCloseHandler? = nil) -> UIKit.UIViewController
   public static func createVoiceExperienceConversation(onClose: LabibaBotFramwork.Labiba.ConversationCloseHandler? = nil) -> UIKit.UIViewController
   public static func createSplash<vc>(vc: vc.Type) -> UIKit.UIViewController where vc : LabibaBotFramwork.SplashVC
   public static func showMovableAlias(corner: UIKit.UIRectCorner, margin: CoreGraphics.CGFloat = 15, animated: Swift.Bool)
@@ -912,6 +915,13 @@ extension LabibaConfig : LabibaBotFramwork.LabibaDelegate {
   @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PrechatFormThemeModel {
+  public var backgroundColor: UIKit.UIColor
+  public var header: (image: UIKit.UIImage?, titleColor: UIKit.UIColor)
+  public var field: (titleColor: UIKit.UIColor, textColor: UIKit.UIColor, backgroundColor: UIKit.UIColor, borderColor: UIKit.UIColor)
+  public var button: (titleColor: UIKit.UIColor, backgroundColor: UIKit.UIColor)
   @objc deinit
 }
 public enum LabibaFont {
