@@ -31,6 +31,7 @@ enum NetworkError: String, Error {
     case badURL
     case encodingError = "Encoding error"
     case empty = "Empty"
+    case unAuthorized = "401"
 }
 extension NetworkError: LocalizedError {
     public var errorDescription: String? {
@@ -41,6 +42,8 @@ extension NetworkError: LocalizedError {
             return "response could not be decoded"
         case .empty:
             return "Response is empty"
+        case .unAuthorized:
+            return "Authorization has been denied"
         }
     }
 }
@@ -53,7 +56,8 @@ class BotConnector: NSObject {
 
   //  private let LabibaUploadPath = "\(Labiba._basePath)/maker/FileUploader.ashx"
     fileprivate var LabibaUploadPath:String {
-        return "\(Labiba._basePath)/WebBotConversation/UploadHomeReport?id=\(SharedPreference.shared.currentUserId)"
+//        return "\(Labiba._basePath)/WebBotConversation/UploadHomeReport?id=\(SharedPreference.shared.currentUserId)"
+        return "\(Labiba._uploadUrl)?id=\(SharedPreference.shared.currentUserId)"
     }
     var userId:String = "2314"
     var conversationId:String!
@@ -78,14 +82,30 @@ class BotConnector: NSObject {
     func fetchHistory() -> Void {}
     
     func sendMessage(_ message:String? = nil, payload:String? = nil, withAttachments attachments:[[String:Any]]? = nil, withEntities entities:[[String:Any]]? = nil) -> Void {}
-//    func sendPhoto(_ photo:UIImage ) {}
     func sendPhoto(_ photo: UIImage, withChoiceActionToken token:String) {}
     func sendLocation(_ location:CLLocationCoordinate2D ) -> Void {}
     func sendVoice(_ voiceLocalPath:String, completion:@escaping (String?) -> Void) -> Void {}
     func ShowDialog(){}
     
+    //MARK: Initializer
     
-     //MARK: Implemented methodes
+    var sessionManager:SessionManager?
+    override init() {
+        super.init()
+        sessionManagerConfiguration()
+    }
+    
+    func sessionManagerConfiguration(token:String = SharedPreference.shared.jwtToken.token ?? "")  {
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = Labiba.timeoutIntervalForRequest
+        if UpdateTokenModel.isTokenRequeird(){
+            configuration.httpAdditionalHeaders = ["Authorization":"Bearer \(token)"]
+        }
+        sessionManager = SessionManager(configuration: configuration)
+    }
+    
+    
+    //MARK: Implemented methodes
     
     
     func showLoadingIndicator() {
@@ -116,6 +136,8 @@ class BotConnector: NSObject {
             }
         }
     }
+    
+    
     func sendFile(_ url: URL) {
         if let data = try? Data(contentsOf: url)
         {
@@ -219,7 +241,7 @@ class BotConnector: NSObject {
     }
     
     func getHelpPageData(completion: @escaping (Result<HelpPageModel>) -> Void){
-        let path = "\(Labiba._basePath)\(Labiba._helpServicePath)"//Labiba._helpPath
+        let path = Labiba._helpUrl//"\(Labiba._basePath)\(Labiba._helpServicePath)"
         let params:[String:Any] = [
             "bot_id" : SharedPreference.shared.currentUserId // "6bd2ecb6-958e-4bb5-905a-51bb6350490a"
         ]
@@ -241,37 +263,6 @@ class BotConnector: NSObject {
             "bot_id" : SharedPreference.shared.currentUserId 
         ]
         showLoadingIndicator()
-//
-//        func readExampleData() -> Data {
-//            if let path = Labiba.bundle.url(forResource: "JsonExample1", withExtension: "json") {
-//                do {
-//                    let data = try Data(contentsOf: path, options: .mappedIfSafe)
-//                    return data
-//                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-//                    if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,Any>]
-//                    {
-//                        print(jsonArray) // use the json here
-//                    } else {
-//                        print("bad json")
-//                    }
-//                } catch {
-//                    print(error)
-//                }
-//            }
-//
-//            return Data()
-//        }
-//        let jsonDecoder = JSONDecoder()
-//        do {
-//            let model = try jsonDecoder.decode([PrechatFormModel].self, from: readExampleData())
-//            completion(.success(model[0].Data ?? []))
-//            self.loader.dismiss()
-//        } catch {
-//            completion(.failure(error))
-//            print(error.localizedDescription)
-//            self.loader.dismiss()
-//        }
-        
         LabibaRequest([PrechatFormModel].self, url: path, method: .get, parameters: params, encoding: URLEncoding.default, logTag: .prechatForm) { (result) in
             switch result {
             case .success(let model):
@@ -287,13 +278,45 @@ class BotConnector: NSObject {
         }
     }
     
-    func LabibaRequest<T:Codable>(_:T.Type,url:String,method:HTTPMethod,parameters: Parameters? = nil,encoding: ParameterEncoding = URLEncoding.default,logTag:LoggingTag? = nil, completion: @escaping (Result<T>)->Void) {
+    func updateToken(completion: @escaping ()->Void)  {
+        let path = Labiba._updateTokenUrl
+        let params:[String:Any] = [
+            "Username":Labiba.jwtAuthParamerters.username,
+            "Password":Labiba.jwtAuthParamerters.password
+        ]
+        DispatchQueue.global(qos: .background).sync { [weak self] in // sync to update expired token befor the next request
+            LabibaRequest(UpdateTokenModel.self, url: path, method: .post, parameters: params, encoding: JSONEncoding.default, logTag: .upadateToken) { result in
+                switch result {
+                case .success(let model):
+                    UpdateTokenModel.saveToken(token: model.token)
+                    self?.sessionManagerConfiguration(token: model.token ?? "")
+                    print("token updated")
+                case .failure(_):
+                    break
+                }
+                completion()
+            }
+        }
+    }
+    func LabibaRequest<T:Codable>(_ model:T.Type,url:String,method:HTTPMethod,parameters: Parameters? = nil,encoding: ParameterEncoding = URLEncoding.default,logTag:LoggingTag? = nil, completion: @escaping (Result<T>)->Void) {
+       
+        if UpdateTokenModel.isTokenRequeird(){
+            if !UpdateTokenModel.isTokenValid() && logTag != .upadateToken {
+                updateToken(completion: { [weak self] in
+                    self?.LabibaRequest(model, url: url, method: method,parameters: parameters,encoding:encoding,logTag:logTag,completion:completion)
+                    
+                })
+                return
+            }
+        }
+        
         let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
             if let logTag = logTag {
                 self.log(url: url, tag: logTag, method: method, parameter: parameters?.description ?? "", response: respons,exception: exception)
             }
         }
-        request(url, method: method, parameters: parameters ,encoding: encoding , headers: nil ).responseData { (response) in
+        currentRequest = sessionManager?.request(url, method: method, parameters: parameters ,encoding: encoding , headers: nil ).responseData { (response) in
+            print(response.metrics)
             switch response.result{
             case .success(let data):
                 let statusCode = response.response?.statusCode ?? 0
@@ -304,14 +327,14 @@ class BotConnector: NSObject {
                     completion(.success(response))
                 }catch{
                     log(String(data: data , encoding: .utf8) ?? "",NetworkError.encodingError.localizedDescription)
-                    completion(.failure(NetworkError.encodingError))
+                    completion(.failure( NetworkError(rawValue: "\(statusCode)") ?? .encodingError))
                 }
             case .failure(let err):
                 log("",err.localizedDescription)
                 completion(.failure(err))
-                
             }
         }
+        
     }
     
     enum LoggingTag:String {
@@ -323,6 +346,7 @@ class BotConnector: NSObject {
         case ratingSubmit = "SUBMIT_RATING"
         case help = "HELP"
         case prechatForm = "PRECHAT_FORM"
+        case upadateToken = "UPDATE_TOKEN"
     }
     
     func log(url:String,headers:String? = nil,tag:LoggingTag,method:HTTPMethod,parameter:String ,response:String,exception:String? = nil) {

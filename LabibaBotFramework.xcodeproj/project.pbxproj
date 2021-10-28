@@ -168,6 +168,7 @@
 		529C681826F3694700FB8591 /* PrechatFormHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C681626F3694700FB8591 /* PrechatFormHeaderCell.swift */; };
 		529C681926F3694700FB8591 /* PrechatFormHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529C681726F3694700FB8591 /* PrechatFormHeaderCell.xib */; };
 		529C681B26F3855D00FB8591 /* PrechatFormThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C681A26F3855D00FB8591 /* PrechatFormThemeModel.swift */; };
+		52AA90E32717FDDB00D6EA60 /* UpdateTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA90E22717FDDB00D6EA60 /* UpdateTokenModel.swift */; };
 		52B6B38325B6FA3E0051ABCE /* HelpPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6B38125B6FA3E0051ABCE /* HelpPopupVC.swift */; };
 		52B6B38425B6FA3E0051ABCE /* HelpPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B6B38225B6FA3E0051ABCE /* HelpPopupVC.xib */; };
 		52BF2F45247130FE00820B37 /* BaseConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BF2F44247130FE00820B37 /* BaseConversationVC.swift */; };
@@ -491,6 +492,7 @@
 		529C681626F3694700FB8591 /* PrechatFormHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrechatFormHeaderCell.swift; sourceTree = "<group>"; };
 		529C681726F3694700FB8591 /* PrechatFormHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrechatFormHeaderCell.xib; sourceTree = "<group>"; };
 		529C681A26F3855D00FB8591 /* PrechatFormThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrechatFormThemeModel.swift; sourceTree = "<group>"; };
+		52AA90E22717FDDB00D6EA60 /* UpdateTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenModel.swift; sourceTree = "<group>"; };
 		52B6B38125B6FA3E0051ABCE /* HelpPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPopupVC.swift; sourceTree = "<group>"; };
 		52B6B38225B6FA3E0051ABCE /* HelpPopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpPopupVC.xib; sourceTree = "<group>"; };
 		52BF2F44247130FE00820B37 /* BaseConversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseConversationVC.swift; sourceTree = "<group>"; };
@@ -763,6 +765,7 @@
 				374A3FF523E85F0800C99766 /* TextToSpeechModel.swift */,
 				52FFB72325D271D300CFB629 /* HelpPageModel.swift */,
 				52F6ECB426F7264600B38518 /* PrechatFormModel.swift */,
+				52AA90E22717FDDB00D6EA60 /* UpdateTokenModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1918,6 +1921,7 @@
 				B429552822DDDBD2002DE3E9 /* StateOnHoldEntryCell.swift in Sources */,
 				522D1640256E41FB002758D5 /* RatingVC.swift in Sources */,
 				521C0086244C2E2700961B54 /* LabibaRestfulBotConnector.swift in Sources */,
+				52AA90E32717FDDB00D6EA60 /* UpdateTokenModel.swift in Sources */,
 				37EF9ABD2313E82100FF49B3 /* DynamicGIF.swift in Sources */,
 				B429553922DDDBD2002DE3E9 /* DateRangeViewController.swift in Sources */,
 				52DE307A2462D6A000DAF3E7 /* Alamofire.swift in Sources */,

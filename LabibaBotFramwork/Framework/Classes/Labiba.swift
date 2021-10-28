@@ -33,8 +33,10 @@ public enum BotType:Int {
     static var _voiceBasePath = "https://voice.labibabot.com"
     static var _voiceServicePath = "/translate/texttospeech"
     static var _loggingServicePath = "/api/MobileAPI/MobileLogging"
-    static var _helpServicePath = "/api/MobileAPI/FetchHelpPage"
     static var _prechatFormServicePath = "/api/PreChatFrom/FetchPreChatFrom"
+    static var _uploadUrl = "https://botbuilder.labiba.ai/WebBotConversation/UploadHomeReport"
+    static var _helpUrl = "https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage"
+    static var _updateTokenUrl = "http://api.labiba.ai/api/Auth/Login"
    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
    
@@ -64,9 +66,7 @@ public enum BotType:Int {
     
     public static func initialize(RecipientIdAR: String,RecipientIdEng: String)
     {
-       // registerFonts()
         SharedPreference.shared.setUserIDs(ar: RecipientIdAR, en: RecipientIdEng)
-        //setBotLanguage(LangCode: language)
         self._pageId = SharedPreference.shared.currentUserId
        
         LocationService.shared.updateLocation()
@@ -130,10 +130,27 @@ public enum BotType:Int {
     {
         self._loggingServicePath = path
     }
+    
+    public static func set_uploadUrl(_ path: String)
+    {
+        self._uploadUrl = path
+    }
+    
+    public static func set_helpUrl(_ path: String)
+    {
+        self._helpUrl = path
+    }
+    
     public static func set_prechatFormServicePath(_ path: String)
     {
         self._prechatFormServicePath = path
     }
+    
+    public static func set_updateTokenUrl(_ path: String)
+    {
+        self._updateTokenUrl = path
+    }
+    
     
     
 //    public static func set_helpPath(_ path: String)
@@ -185,10 +202,11 @@ public enum BotType:Int {
         _Referral = ReferralModel(ref: model.customRefModel(object: object)).modelAsDic()
     }
     
-    
-    
-    
-    
+    // MARK:- JWT Token
+    static var jwtAuthParamerters:(username:String,password:String) = ("","")
+    public static func setJWTAuthParameters(username:String, password:String) {
+        jwtAuthParamerters = (username,password)
+    }
     // MARK:- Language Settings
     
     static var _LastMessageLangCode = "en"

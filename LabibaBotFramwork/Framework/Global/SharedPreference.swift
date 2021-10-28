@@ -18,13 +18,14 @@ public enum Language:String ,CaseIterable{
 class SharedPreference {
     
     
-    let token = "refreshToken"
-    let langCode = "langCode"
-    let userIdAR = "userIdAR"
-    let userIdEN = "userIdEN"
-    let userIdDE = "userIdDE"
-    let userIdRU = "userIdRU"
-    let userIdZH = "userIdZH"
+    private let TOKEN = "TOKEN"
+    private let JWT_TOKEN = "JWTTOKEN"
+    private let langCode = "langCode"
+    private let userIdAR = "userIdAR"
+    private let userIdEN = "userIdEN"
+    private let userIdDE = "userIdDE"
+    private let userIdRU = "userIdRU"
+    private let userIdZH = "userIdZH"
     
     //let userIdAR = "userIdAR"
     
@@ -37,10 +38,20 @@ class SharedPreference {
     
     var refreshToken:String?{
         set{
-            standered.set(newValue, forKey: token)
+            standered.set(newValue, forKey: TOKEN)
         }
         get{
-            return standered.string(forKey: token)
+            return standered.string(forKey: TOKEN)
+        }
+    }
+    
+    var jwtToken:(date:String?,token:String?){
+        set{
+            standered.set(newValue.date, forKey: "\(JWT_TOKEN)DATE")
+            standered.set(newValue.token, forKey: "\(JWT_TOKEN)VALUE")
+        }
+        get{
+            return (standered.string(forKey: "\(JWT_TOKEN)DATE"),standered.string(forKey: "\(JWT_TOKEN)VALUE"))
         }
     }
     

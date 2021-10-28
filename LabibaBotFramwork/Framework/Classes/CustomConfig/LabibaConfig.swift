@@ -24,22 +24,27 @@ public class LabibaConfig {
     public func BOJConnect(language:String ,customerID:String,trxnlimit:Int,callback:(()->Void)?){
         self.callback = callback
         //MARK: initialization
-       Labiba.initialize(RecipientIdAR:"5bfcd0bf-cb9a-4034-96ff-7c67000df2d3",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// bot builder IDs
-//        Labiba.initialize(RecipientIdAR:"b553e8c1-d9d9-409e-b5b4-573a63506dce",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// // BOJ builder IDs
+ //      Labiba.initialize(RecipientIdAR:"5bfcd0bf-cb9a-4034-96ff-7c67000df2d3",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// production IDs
+//     Labiba.initialize(RecipientIdAR:"b553e8c1-d9d9-409e-b5b4-573a63506dce",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// // UAT IDs
 //
+       // Labiba.initialize(RecipientIdAR:"6b55690c-8ed5-40e9-8872-5cbd1f124345",RecipientIdEng: "6b55690c-8ed5-40e9-8872-5cbd1f124345")// 
+        
         Labiba.setBotLanguage(LangCode: language == "Arabic" ? .ar : .en)
         Labiba.createCustomReferral(object: ["Customer ID":customerID,"trxnlimit":trxnlimit])
 
 
         //MARK: Theme
         Labiba.setDelegate(delegate: self)
-        Labiba.set_basePath("https://boji.bankofjordan.com.jo")
-        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
-
-        Labiba.set_voiceBasePath("https://boji.bankofjordan.com.jo")
-        Labiba.set_voiceServicePath("/api/VoiceAPI/VoiceClip")
-        Labiba.set_loggingServicePath("/api/Mobile/LogAPI")
-        
+        // poduction server
+//        Labiba.set_basePath("https://boji.bankofjordan.com.jo")
+//        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
+//        Labiba.set_voiceBasePath("https://boji.bankofjordan.com.jo")
+//        Labiba.set_voiceServicePath("/api/VoiceAPI/VoiceClip")
+//        Labiba.set_loggingServicePath("/api/Mobile/LogAPI")
+//        Labiba.set_helpUrl("https://boji.bankofjordan.com.jo/api/MobileAPI/FetchHelpPage")
+//        Labiba.set_updateTokenUrl("http://api.labiba.ai/api/Auth/Login")
+//        Labiba.setJWTAuthParameters(username: "labibaBoj", password:"8HU6n0v9cswZCKt91UemV1NXZSyw685L")
+      
         // UAT server
 //        Labiba.set_basePath("http://10.121.1.8")
 //        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
@@ -52,6 +57,8 @@ public class LabibaConfig {
 //        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
 //        Labiba.set_voiceBasePath("https://bojibot.bankofjordan.com.jo")
 //        Labiba.set_voiceServicePath("/api/VoiceAPI/VoiceClip")
+        
+        // Labiba.set_basePath("http://api.labiba.ai")
         
         LabibaThemes.isThemeApplied = true
         Labiba.setBotType(botType: .visualizer)

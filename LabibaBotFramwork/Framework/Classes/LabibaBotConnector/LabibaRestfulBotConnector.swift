@@ -13,14 +13,14 @@ class LabibaRestfulBotConnector:BotConnector{
     
     var baseURL = "\(Labiba._basePath)\(Labiba._messagingServicePath)"
     var attachmentPayload:PayloadModel?
-    let sessionManager:SessionManager
+    //let sessionManager:SessionManager
     var isTherePendingRequest:Bool = false
     static let shared = LabibaRestfulBotConnector()
-    override private init() {
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = Labiba.timeoutIntervalForRequest
-        sessionManager = SessionManager(configuration: configuration)
-    }
+//    override private init() {
+//        let configuration = URLSessionConfiguration.default
+//        configuration.timeoutIntervalForRequest = Labiba.timeoutIntervalForRequest
+//        sessionManager = SessionManager(configuration: configuration)
+//    }
     override func sendMessage(_ message: String? = nil, payload: String? = nil, withAttachments attachments: [[String : Any]]? = nil, withEntities entities: [[String : Any]]? = nil) {
         let pageId = Labiba._pageId;
         let senderId = Labiba._senderId;
@@ -77,38 +77,50 @@ class LabibaRestfulBotConnector:BotConnector{
     
     
     func sendData(parameters:[String:Any])  {
-        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
-            self.log(url: self.baseURL, tag: .messaging, method: .post, parameter: parameters.description, response: respons,exception: exception)
-        }
+//        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
+//            self.log(url: self.baseURL, tag: .messaging, method: .post, parameter: parameters.description, response: respons,exception: exception)
+//        }
+//        isTherePendingRequest = true
+//        currentRequest =  sessionManager.request(baseURL, method: .post, parameters: parameters, encoding: JSONEncoding.default , headers: ["Content-Type":"application/json"]).responseData { (response) in
+//            self.loader.dismiss()
+//            if let err = response.error{
+//                print(err.localizedDescription)
+//                return
+//            }
+//            let jsonDecoder = JSONDecoder()
+//            switch response.result{
+//            case .success(let data):
+//
+//                do {
+//                   // let model = try jsonDecoder.decode([LabibaModel].self, from: self.readExampleData())
+//                   let model = try jsonDecoder.decode([LabibaModel].self, from: data)
+//                    prettyPrintedResponse(url: self.baseURL, statusCode: response.response?.statusCode ?? 0, method: "post", data: data, name: "Messaging")
+//                    self.parseResponse(response: model)
+//                } catch  {
+//                    self.delegate?.botConnectorRemoveTypingActivity(self)
+//                    log(String(data: data, encoding: .utf8) ?? "",error.localizedDescription)
+//                    print(error.localizedDescription)
+//                }
+//            case .failure(let err ):
+//                self.delegate?.botConnectorRemoveTypingActivity(self)
+//                log("",err.localizedDescription)
+//                print(err.localizedDescription)
+//            }
+//            self.isTherePendingRequest = false
+//        }
         isTherePendingRequest = true
-        currentRequest =  sessionManager.request(baseURL, method: .post, parameters: parameters, encoding: JSONEncoding.default , headers: ["Content-Type":"application/json"]).responseData { (response) in
-            print(response.metrics)
+        LabibaRequest([LabibaModel].self, url: baseURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, logTag: .messaging, completion: { response in
             self.loader.dismiss()
-            if let err = response.error{
+            switch response {
+            case .success(let model):
+                self.parseResponse(response: model)
+            case .failure(let err):
                 print(err.localizedDescription)
-                return
-            }
-            let jsonDecoder = JSONDecoder()
-            switch response.result{
-            case .success(let data):
-               
-                do {
-                   // let model = try jsonDecoder.decode([LabibaModel].self, from: self.readExampleData())
-                   let model = try jsonDecoder.decode([LabibaModel].self, from: data)
-                    prettyPrintedResponse(url: self.baseURL, statusCode: response.response?.statusCode ?? 0, method: "post", data: data, name: "Messaging")
-                    self.parseResponse(response: model)
-                } catch  {
-                    self.delegate?.botConnectorRemoveTypingActivity(self)
-                    log(String(data: data, encoding: .utf8) ?? "",error.localizedDescription)
-                    print(error.localizedDescription)
-                }
-            case .failure(let err ):
+                showErrorMessage(err.localizedDescription)
                 self.delegate?.botConnectorRemoveTypingActivity(self)
-                log("",err.localizedDescription)
-                print(err.localizedDescription)
             }
             self.isTherePendingRequest = false
-        }
+        })
         
     }
     
@@ -118,40 +130,57 @@ class LabibaRestfulBotConnector:BotConnector{
             "SenderID":Labiba._senderId
         ]
         let url = "\(Labiba._basePath)/api/getLastBotResponse"
-        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
-            self.log(url: url, tag: .lastMessage, method: .post, parameter: params.description, response: respons,exception: exception)
-        }
+//        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
+//            self.log(url: url, tag: .lastMessage, method: .post, parameter: params.description, response: respons,exception: exception)
+//        }
+//        isTherePendingRequest = true
+//        currentRequest =  sessionManager.request(url, method: .post, parameters: params, encoding: JSONEncoding.default , headers: ["Content-Type":"application/json"]).responseData { (response) in
+//            self.loader.dismiss()
+//            if let err = response.error{
+//                print(err.localizedDescription)
+//                return
+//            }
+//            let jsonDecoder = JSONDecoder()
+//            switch response.result{
+//            case .success(let data):
+//
+//                do {
+//                    let model = try jsonDecoder.decode(LastBotResponseModel.self, from: data)
+//                    prettyPrintedResponse(url: url, statusCode: response.response?.statusCode ?? 0, method: "post", data: data, name: "Last Bot Message")
+//                    if let labibaModel = model.lastBotResponse {
+//                        self.parseResponse(response: labibaModel)
+//
+//                    }
+//                } catch  {
+//                    self.delegate?.botConnectorRemoveTypingActivity(self)
+//                    log(String(data: data, encoding: .utf8) ?? "",error.localizedDescription)
+//                    print(error.localizedDescription)
+//                }
+//            case .failure(let err ):
+//                self.delegate?.botConnectorRemoveTypingActivity(self)
+//                log("",err.localizedDescription)
+//                print(err.localizedDescription)
+//            }
+//            self.isTherePendingRequest = false
+//        }
+        
         isTherePendingRequest = true
-        currentRequest =  sessionManager.request(url, method: .post, parameters: params, encoding: JSONEncoding.default , headers: ["Content-Type":"application/json"]).responseData { (response) in
+        self.delegate?.botConnectorDidRecieveTypingActivity(self)
+        LabibaRequest(LastBotResponseModel.self, url: url, method: .post, parameters: params, encoding: JSONEncoding.default, logTag: .lastMessage, completion: { response in
             self.loader.dismiss()
-            if let err = response.error{
-                print(err.localizedDescription)
-                return
-            }
-            let jsonDecoder = JSONDecoder()
-            switch response.result{
-            case .success(let data):
-                
-                do {
-                    let model = try jsonDecoder.decode(LastBotResponseModel.self, from: data)
-                    prettyPrintedResponse(url: url, statusCode: response.response?.statusCode ?? 0, method: "post", data: data, name: "Last Bot Message")
-                    if let labibaModel = model.lastBotResponse {
-                        self.parseResponse(response: labibaModel)
-                        
-                    }
-                } catch  {
-                    self.delegate?.botConnectorRemoveTypingActivity(self)
-                    log(String(data: data, encoding: .utf8) ?? "",error.localizedDescription)
-                    print(error.localizedDescription)
+            switch response {
+            case .success(let model):
+                if let labibaModel = model.lastBotResponse {
+                    self.parseResponse(response: labibaModel)
                 }
-            case .failure(let err ):
-                self.delegate?.botConnectorRemoveTypingActivity(self)
-                log("",err.localizedDescription)
+            case .failure(let err):
                 print(err.localizedDescription)
+                self.delegate?.botConnectorRemoveTypingActivity(self)
             }
             self.isTherePendingRequest = false
-        }
+        })
     }
+    
     override func resumeConnection() {
         if isTherePendingRequest {
             currentRequest?.cancel()
