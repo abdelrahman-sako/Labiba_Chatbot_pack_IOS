@@ -42,7 +42,7 @@ public var ipadMargin:CGFloat {
 //    }
 //}// sharja
 
- func applyBotFont(textLang:Language? = nil  ,bold:Bool = false,size:CGFloat = 17)->UIFont{
+ func applyBotFont(textLang:LabibaLanguage? = nil  ,bold:Bool = false,size:CGFloat = 17)->UIFont{
     let langCode = textLang ?? SharedPreference.shared.botLangCode
      let ipadIncrease = ipadFactor * 9
     var font:UIFont?

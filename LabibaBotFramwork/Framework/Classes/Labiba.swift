@@ -211,10 +211,12 @@ public enum BotType:Int {
     
     static var _LastMessageLangCode = "en"
     
-    public static func setBotLanguage(LangCode:Language){
+    public static func setBotLanguage(LangCode:LabibaLanguage){
         SharedPreference.shared.botLangCode = LangCode
         self._pageId = SharedPreference.shared.currentUserId
     }
+    
+    
     
     public static func setLastMessageLangCode(_ text: String)
     {
@@ -556,7 +558,8 @@ public enum BotType:Int {
         {
             fatalError(SENDER_ERROR)
         }
-        let VoiceConvVC = VoiceExperienceVC.create()
+       // let VoiceConvVC = VoiceExperienceVC.create()
+        let VoiceConvVC = PresentationVC.create()
         VoiceConvVC.delegate = Labiba.delegate
         VoiceConvVC.closeHandler = onClose
         return VoiceConvVC

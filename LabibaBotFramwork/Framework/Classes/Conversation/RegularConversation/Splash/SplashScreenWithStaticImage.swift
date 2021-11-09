@@ -99,7 +99,7 @@ public class SplashScreenWithStaticImage: SplashVC {
     }
    
     
-    func startConversation(lang:Language)  {
+    func startConversation(lang:LabibaLanguage)  {
         Labiba.initialize(RecipientIdAR: "0de26564-1d53-4c87-87b1-60fd6235e1c3",RecipientIdEng: "283c3d0e-550f-4221-87f7-27adaf401ad6" )
         Labiba.setBotLanguage(LangCode: lang)
         switch SharedPreference.shared.botLangCode  {

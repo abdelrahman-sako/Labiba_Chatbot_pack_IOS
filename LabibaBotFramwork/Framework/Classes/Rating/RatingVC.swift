@@ -131,7 +131,8 @@ extension RatingVC: UITableViewDelegate , UITableViewDataSource {
             switch  RatingCellType(rawValue: (question.type) ?? "1"){
             case .comment:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "WriteCommentRatingCell", for: indexPath) as! WriteCommentRatingCell
-                
+                KeyboardFieldsHandler.shared.insertField(field: cell.commentTextView)
+                cell.commentTextView.addKeyboardToolBar(leftButtons:  [], rightButtons:  [.cancel], toolBarDelegate: self)
                 cell.titleLbl.text = question.question ?? ""
                 cell.questionModel = question
                 cell.selectionStyle = .none
@@ -154,6 +155,8 @@ extension RatingVC: UITableViewDelegate , UITableViewDataSource {
                 return cell
             case .textField:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TextFiledRatingCell", for: indexPath) as! TextFiledRatingCell
+                KeyboardFieldsHandler.shared.insertField(field: cell.phoneTextField)
+                cell.phoneTextField.addKeyboardToolBar(leftButtons:  [], rightButtons:  [.cancel], toolBarDelegate: self)
                 cell.titleLbl.text = question.question ?? ""
                 cell.questionModel = question
                 cell.phoneTextField.keyboardType = .phonePad
@@ -184,3 +187,5 @@ extension RatingVC: UITableViewDelegate , UITableViewDataSource {
     
     
 }
+
+

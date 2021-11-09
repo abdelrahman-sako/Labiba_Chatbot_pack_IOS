@@ -172,3 +172,7 @@
 "PersonalData" = "Your personal data";
 "chatNow" = "Chat now";
 "optional" = "-optional";
+
+// keyboard tool bar
+"doneAction" = "Done";
+"cancelAction" = "cancel";

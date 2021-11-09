@@ -435,7 +435,6 @@ SWIFT_PROTOCOL("_TtP17LabibaBotFramwork14LabibaDelegate_")
 
 
 
-
 @class UIColor;
 
 /// Activity indicator view with nice animations
@@ -645,17 +644,11 @@ SWIFT_CLASS("_TtC17LabibaBotFramwork14SwiftyWaveView")
 
 
 
-
-
 @interface UIScreen (SWIFT_EXTENSION(LabibaBotFramwork))
 /// Gets the iPhone / iPad screen type for the currently running device
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) enum ScreenType current;)
 + (enum ScreenType)current SWIFT_WARN_UNUSED_RESULT;
 @end
-
-
-
-
 
 
 
@@ -1108,7 +1101,6 @@ SWIFT_PROTOCOL("_TtP17LabibaBotFramwork14LabibaDelegate_")
 
 
 
-
 @class UIColor;
 
 /// Activity indicator view with nice animations
@@ -1318,17 +1310,11 @@ SWIFT_CLASS("_TtC17LabibaBotFramwork14SwiftyWaveView")
 
 
 
-
-
 @interface UIScreen (SWIFT_EXTENSION(LabibaBotFramwork))
 /// Gets the iPhone / iPad screen type for the currently running device
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) enum ScreenType current;)
 + (enum ScreenType)current SWIFT_WARN_UNUSED_RESULT;
 @end
-
-
-
-
 
 
 

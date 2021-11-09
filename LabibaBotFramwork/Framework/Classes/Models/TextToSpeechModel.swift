@@ -10,10 +10,10 @@ import Foundation
 
 public struct GoogleVoice{
     
-    private var voiceLang: Language
+    private var voiceLang: LabibaLanguage
     private var name: String?
     private var lang: String?
-    init(voiceLang :Language ) {
+    init(voiceLang :LabibaLanguage ) {
         self.voiceLang = voiceLang
         switch voiceLang {
         case .ar:

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public enum Language:String ,CaseIterable{
+public enum LabibaLanguage:String ,CaseIterable{
     case ar =  "ar"
     case en = "en"
     case de  = "de"// german
@@ -55,12 +55,12 @@ class SharedPreference {
         }
     }
     
-    var botLangCode:Language{
+    var botLangCode:LabibaLanguage{
         get{
             if let lang = standered.string(forKey: langCode) {
-                return Language(rawValue:lang) ?? .en
+                return LabibaLanguage(rawValue:lang) ?? .en
             }
-            return Language.en
+            return LabibaLanguage.en
         }
         
         set {

@@ -24,7 +24,7 @@ public class SplashScreenWithImgeVC: SplashVC {
     var animatedGIFView:GifView = GifView(frame: .zero)
     var id:String = ""
     //
-    var langCode:Language = SharedPreference.shared.botLangCode // this for nathealth untill arabic designe become available
+    var langCode:LabibaLanguage = SharedPreference.shared.botLangCode // this for nathealth untill arabic designe become available
     //
     public override static func create() -> SplashScreenWithImgeVC
     {
@@ -110,10 +110,7 @@ public class SplashScreenWithImgeVC: SplashVC {
                     
                 })
             }
-      //  }
-       //
-      //  SharedPreference.shared.botLangCode = langCode // this for nathealth untill arabic designe become available
-        //
+        
         if  SharedPreference.shared.currentUserId != "" {
             buttonsStackView.isHidden = true
             Timer.scheduledTimer(withTimeInterval: 3, repeats: false) {[weak self] (t) in
@@ -123,44 +120,22 @@ public class SplashScreenWithImgeVC: SplashVC {
         }
     }
     
- 
-        
-       //id  = "d0b8e34a-26ba-4ed6-a2af-4412b55ef442" // natHealth
-        
-        
-        
-   
-    
-
-    
-    override public func viewWillAppear(_ animated: Bool) {
-      //  UIApplication.statusBarBackgroundColor = .clear
-        NotificationCenter.default.post(name: Constants.NotificationNames.StopTextToSpeech,
-                                        object: nil)
-     
-    }
-    override public func viewDidAppear(_ animated: Bool) {
-      // LabibaThemes.setNatHealth_Theme()
-       // Labiba.initialize(RecipientIdAR: id,RecipientIdEng: id)
-    }
-    
-    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-   
-    
-    func startConversation( langCode:Language)  {
-      // Labiba.initialize(RecipientIdAR: "d0b8e34a-26ba-4ed6-a2af-4412b55ef442",RecipientIdEng: "f52d9469-df4b-4e8b-adaa-e46047636b48")
-       Labiba.initialize(RecipientIdAR: "73b2c037-a112-460f-975b-c2d7412c0b7f",RecipientIdEng: "69bda09a-b448-4866-b327-2bbd0f3ac5e6")//test
+    func startConversation( langCode:LabibaLanguage)  {
         Labiba.setBotLanguage(LangCode: langCode)
+         Labiba.initialize(RecipientIdAR: "d0b8e34a-26ba-4ed6-a2af-4412b55ef442",RecipientIdEng: "f52d9469-df4b-4e8b-adaa-e46047636b48")
+        // Labiba.initialize(RecipientIdAR: "73b2c037-a112-460f-975b-c2d7412c0b7f",RecipientIdEng: "69bda09a-b448-4866-b327-2bbd0f3ac5e6")//test
        // LabibaThemes.setNatHealth_Theme()
+        
+        // Unfortunately, i must add the following tow lines here for fist run when user choose the language from the splash screen
+        let header = QuickChoicesHeaderView.create( centerImage:  UIImage(named: "natali"))
+        Labiba.setCustomHeaderView(header, withHeight: 260)
+        
         self.navigationController?.pushViewController(ConversationViewController.create(), animated: true )
-      // self.navigationController?.pushViewController(Labiba.createVoiceExperienceConversation(), animated: true )
     }
     
     
     @IBAction func start(_ sender: UIButton) {
-        let langCode:Language = sender.tag == 0 ? .ar : .en
+        let langCode:LabibaLanguage = sender.tag == 0 ? .ar : .en
         startConversation( langCode:langCode)
     }
     

@@ -63,8 +63,8 @@ class MessageView: VoiceExperienceBaseView{
         }
         let lang = Labiba._LastMessageLangCode
         
-        let boldFont =  applyBotFont(textLang: Language(rawValue: lang ) ?? .ar ,bold:true, size: fontSize )
-        let regularFont =  applyBotFont(textLang: Language(rawValue: lang ) ?? .ar , size: fontSize)
+        let boldFont =  applyBotFont(textLang: LabibaLanguage(rawValue: lang ) ?? .ar ,bold:true, size: fontSize )
+        let regularFont =  applyBotFont(textLang: LabibaLanguage(rawValue: lang ) ?? .ar , size: fontSize)
 //        self.messageLbl.attributedText = filteredMessage.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba._botBubbleTextColor)
         self.messageLbl.attributedText = filteredMessage.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba.BotChatBubble.textColor)
         setAlignment()

@@ -175,3 +175,7 @@
 "PersonalData" = "البيانات الشخصية";
 "chatNow" = "ابدأالدردشة";
 "optional" = "-اختياري";
+
+// keyboard tool bar
+"doneAction" = "تم";
+"cancelAction" = "انهاء";

@@ -34,7 +34,7 @@ class TextToSpeechManeger:NSObject{
     
     func getURL(for model:TTSMessageModel) {//-> URL? {
         let message = model.message.replacingOccurrences(of: "\"", with: "")
-        let TTS_Model = TextToSpeechModel(text: message, googleVoice: GoogleVoice(voiceLang: Language(rawValue:model.langCode) ?? .ar), clientid: "0",isSSML: model.isSSML)
+        let TTS_Model = TextToSpeechModel(text: message, googleVoice: GoogleVoice(voiceLang: LabibaLanguage(rawValue:model.langCode) ?? .ar), clientid: "0",isSSML: model.isSSML)
         botConnector.textToSpeech(model: TTS_Model) { (result) in
             switch result{
             case .success(let url):

@@ -79,7 +79,7 @@ enum BubbleSource
                 {
                     fontSize = Labiba.UserChatBubble.fontsize
                     let lang = text.detectedLangauge()
-                    let attribute = [NSAttributedString.Key.font :applyBotFont(textLang: Language(rawValue: lang ?? "") ?? .ar,size: fontSize),NSAttributedString.Key.foregroundColor:Labiba.UserChatBubble.textColor]
+                    let attribute = [NSAttributedString.Key.font :applyBotFont(textLang: LabibaLanguage(rawValue: lang ?? "") ?? .ar,size: fontSize),NSAttributedString.Key.foregroundColor:Labiba.UserChatBubble.textColor]
                     let attributedText = NSAttributedString(string: text, attributes: attribute )
                     self.textLabel.attributedText = attributedText
                 }
@@ -88,8 +88,8 @@ enum BubbleSource
                     fontSize = Labiba.BotChatBubble.fontsize
                     let lang = text.detectedLangauge()
                     if lang == "ar" {text.addArabicAlignment()}
-                    let boldFont =  applyBotFont(textLang: Language(rawValue: lang ?? "") ?? .ar ,bold:true, size: fontSize )
-                    let regularFont =  applyBotFont(textLang: Language(rawValue: lang ?? "") ?? .ar , size: fontSize)
+                    let boldFont =  applyBotFont(textLang: LabibaLanguage(rawValue: lang ?? "") ?? .ar ,bold:true, size: fontSize )
+                    let regularFont =  applyBotFont(textLang: LabibaLanguage(rawValue: lang ?? "") ?? .ar , size: fontSize)
                     self.textLabel.attributedText = text.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba.BotChatBubble.textColor)
                 }
                 
@@ -114,7 +114,7 @@ enum BubbleSource
                 currentDialog?.attributedMessage = textLabel.attributedText
                 currentDialog?.message = textLabel.text
                 currentDialog?.langCode = lang
-                self.adjustForContent(text:textLabel.attributedText , lang: Language(rawValue: lang ?? "") ?? .ar, fontSize: fontSize)
+                self.adjustForContent(text:textLabel.attributedText , lang: LabibaLanguage(rawValue: lang ?? "") ?? .ar, fontSize: fontSize)
                 
             }
         }
@@ -155,7 +155,7 @@ enum BubbleSource
     
     var source:BubbleSource = .incoming
     
-    func adjustForContent(text:NSAttributedString? ,lang:Language,fontSize:CGFloat) -> Void
+    func adjustForContent(text:NSAttributedString? ,lang:LabibaLanguage,fontSize:CGFloat) -> Void
     {
         let margin = self.source == .incoming ? Labiba._Margin.left:Labiba._Margin.right
         var _bubbleMargin = self.considersAvatar ? BubbleMargin : BubbleMargin - AvatarWidth

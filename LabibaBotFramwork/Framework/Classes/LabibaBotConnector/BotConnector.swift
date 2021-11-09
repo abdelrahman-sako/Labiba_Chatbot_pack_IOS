@@ -316,7 +316,6 @@ class BotConnector: NSObject {
             }
         }
         currentRequest = sessionManager?.request(url, method: method, parameters: parameters ,encoding: encoding , headers: nil ).responseData { (response) in
-            print(response.metrics)
             switch response.result{
             case .success(let data):
                 let statusCode = response.response?.statusCode ?? 0

@@ -24,8 +24,8 @@ class PrechatFormVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        IQKeyboardManager.shared.enable =  true
-        IQKeyboardManager.shared.enableAutoToolbar = true
+//        IQKeyboardManager.shared.enable =  trueL
+//        IQKeyboardManager.shared.enableAutoToolbar = trueL
         uiSetup()
         cellRegistration()
         getDate()
@@ -33,8 +33,8 @@ class PrechatFormVC: UIViewController {
    
     override func viewDidDisappear(_ animated: Bool) {
         print("viewWillDisappear")
-        IQKeyboardManager.shared.enable =  false
-        IQKeyboardManager.shared.enableAutoToolbar = false
+//        IQKeyboardManager.shared.enable =  falseL
+//        IQKeyboardManager.shared.enableAutoToolbar = falseL
     }
     
     func uiSetup()  {
@@ -138,6 +138,8 @@ extension PrechatFormVC:UITableViewDelegate, UITableViewDataSource{
         let formIndex = indexPath.row - 1
         let form = prechatFormArray?[formIndex]
         let cell = tableView.dequeueReusableCell(withIdentifier: "PrechatFormFieldCell") as! PrechatFormFieldCell
+        KeyboardFieldsHandler.shared.insertField(field: cell.textField)
+        cell.textField.addKeyboardToolBar(leftButtons:  [], rightButtons:  [.cancel], toolBarDelegate: self)
         cell.prechatModel = form
         cell.updateCell()
         cell.selectionStyle = .none
@@ -153,3 +155,12 @@ extension PrechatFormVC:UITableViewDelegate, UITableViewDataSource{
     
 }
 
+
+extension PrechatFormVC: KeyboardToolbarDelegate {
+    func keyboardToolbar(button: UIBarButtonItem, type: KeyboardToolbarButton, isInputAccessoryViewOfTextField textField: UITextField) {
+        textField.endEditing(true)
+    }
+    
+    func keyboardToolbar(button: UIBarButtonItem, type: KeyboardToolbarButton, isInputAccessoryViewOfTextView textView: UITextView) {
+    }
+}

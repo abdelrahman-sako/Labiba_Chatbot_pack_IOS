@@ -265,7 +265,7 @@ extension String
        let firstIndex = lang.firstIndex(of: "-") ?? lang.endIndex
        let langCode = String( lang[lang.startIndex..<firstIndex])
      
-       return Language(rawValue: langCode)?.rawValue ?? "en"
+       return LabibaLanguage(rawValue: langCode)?.rawValue ?? "en"
        
         
         
