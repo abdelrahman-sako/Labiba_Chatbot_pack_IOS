@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 let bundle = Bundle(for: HeaderVC.self)
 
 let screenWidth = UIScreen.main.bounds.width
