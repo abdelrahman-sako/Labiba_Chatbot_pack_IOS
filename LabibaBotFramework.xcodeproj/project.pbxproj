@@ -2916,6 +2916,7 @@
 					"\"WebKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.imagine.LabibaBotFramework;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -2992,6 +2993,7 @@
 					"\"WebKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.imagine.LabibaBotFramework;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
