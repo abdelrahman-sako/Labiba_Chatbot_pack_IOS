@@ -92,7 +92,6 @@ class TextToSpeechManeger:NSObject{
         }
         TTS_Models_Array.append(messageModel)
         playNextAudio()
-        //  NotificationCenter.default.addObserver(self, selector: <#T##Selector#>, name: UIEvent.rem, object: <#T##Any?#>)
         
         
     }
