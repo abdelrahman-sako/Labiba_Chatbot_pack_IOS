@@ -291,10 +291,11 @@ class BotConnector: NSObject {
                     UpdateTokenModel.saveToken(token: model.token)
                     self?.sessionManagerConfiguration(token: model.token ?? "")
                     print("token updated")
-                case .failure(_):
-                    break
+                    completion()
+                case .failure(let err):
+                    showErrorMessage(err.localizedDescription)
                 }
-                completion()
+                
             }
         }
     }
