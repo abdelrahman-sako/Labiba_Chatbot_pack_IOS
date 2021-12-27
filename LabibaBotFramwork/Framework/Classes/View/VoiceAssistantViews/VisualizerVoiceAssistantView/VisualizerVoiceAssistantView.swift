@@ -17,7 +17,7 @@ import Accelerate
 //}
 
 
-class VisualizerVoiceAssistantView: UIView {
+class VisualizerVoiceAssistantView: UserInput {
     
     static func create() ->VisualizerVoiceAssistantView {
         return Labiba.bundle.loadNibNamed("VisualizerVoiceAssistantView", owner: nil, options: nil)?.first as! VisualizerVoiceAssistantView
@@ -25,10 +25,10 @@ class VisualizerVoiceAssistantView: UIView {
     
     //MARK: User Input Outlets
     @IBOutlet weak var placeholderLbl: UILabel!
-    @IBOutlet weak var textView: UITextView!
+   // @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var userInputContainerView: UIView!
     @IBOutlet weak var sendImageView: UIImageView!
-    @IBOutlet weak var sendButton: UIButton!
+    //@IBOutlet weak var sendButton: UIButton!
     // constraint must  be a strong refrence because I'm setting them active and inactive
     @IBOutlet var userInputBottomConst: NSLayoutConstraint!
     @IBOutlet var userInputExpandedBottonConst: NSLayoutConstraint!
@@ -52,7 +52,7 @@ class VisualizerVoiceAssistantView: UIView {
             return 44
         }
     }
-    var MaximumCount = 2000
+    //var MaximumCount = 2000
     var orginalBottomMargin:CGFloat = 100
     let sendImage = LbLanguage.isArabic ? "ic_send" : "ic_send_r"
     
@@ -221,68 +221,68 @@ class VisualizerVoiceAssistantView: UIView {
         }
     }
     
-    @objc func ChangeKeyboardType(_ sender: Notification)
-      {
-          let txt = sender.object as? String ?? ""
-          textView.isUserInteractionEnabled = true
-          sendButton.isEnabled = true
-          MaximumCount = 2000
-          if txt == "N"
-          {
-              textView.keyboardType = .numberPad
-            //  MaximumCount = 15
-              return
-          }
-          else if txt == "N_CHAR"
-          {
-              textView.keyboardType = .default
-              return
-          }
-          else if txt == "N_CHAR_AR"
-          {
-              textView.keyboardType = .default
-              return
-          }
-          else if txt == "CHAR_AR"
-          {
-              textView.keyboardType = .default
-              return
-          }
-          else if txt == "CHAR"
-          {
-              textView.keyboardType = .default
-              return
-          }
-          else if txt == "user_phone_number"
-          {
-              textView.keyboardType = .phonePad
-             // MaximumCount = 15
-              return
-          }
-          else if txt == "NUMBER"
-          {
-              textView.keyboardType = .numberPad
-            //  MaximumCount = 15
-              return
-          }
-          else if txt == "user_email"
-          {
-              textView.keyboardType = .emailAddress
-              return
-          }
-          else if txt == "Disable"
-          {
-              textView.isUserInteractionEnabled = false
-              sendButton.isEnabled = false
-              return
-          }
-          else
-          {
-              textView.keyboardType = .default
-              return
-          }
-      }
-    
+//    @objc func ChangeKeyboardType(_ sender: Notification)
+//      {
+//          let txt = sender.object as? String ?? ""
+//          textView.isUserInteractionEnabled = true
+//          sendButton.isEnabled = true
+//          MaximumCount = 2000
+//          if txt == "N"
+//          {
+//              textView.keyboardType = .numberPad
+//            //  MaximumCount = 15
+//              return
+//          }
+//          else if txt == "N_CHAR"
+//          {
+//              textView.keyboardType = .default
+//              return
+//          }
+//          else if txt == "N_CHAR_AR"
+//          {
+//              textView.keyboardType = .default
+//              return
+//          }
+//          else if txt == "CHAR_AR"
+//          {
+//              textView.keyboardType = .default
+//              return
+//          }
+//          else if txt == "CHAR"
+//          {
+//              textView.keyboardType = .default
+//              return
+//          }
+//          else if txt == "user_phone_number"
+//          {
+//              textView.keyboardType = .phonePad
+//             // MaximumCount = 15
+//              return
+//          }
+//          else if txt == "NUMBER"
+//          {
+//              textView.keyboardType = .numberPad
+//            //  MaximumCount = 15
+//              return
+//          }
+//          else if txt == "user_email"
+//          {
+//              textView.keyboardType = .emailAddress
+//              return
+//          }
+//          else if txt == "Disable"
+//          {
+//              textView.isUserInteractionEnabled = false
+//              sendButton.isEnabled = false
+//              return
+//          }
+//          else
+//          {
+//              textView.keyboardType = .default
+//              return
+//          }
+//      }
+//    
     @objc func keyboardWillChangeFrame(notification: NSNotification){
         
        }

@@ -19,6 +19,7 @@ enum QuickReplyContentType:String {
     case userEmail = "user_email"
     case number = "NUMBER"
     case userPhoneNumber = "user_phone_number"
+    case otp = "one_time.code"
     case freeText = "free_text"
     case QRCode = "QR_CODE"
     
@@ -34,7 +35,7 @@ enum QuickReplyContentType:String {
             return "Select Location".localBasedOnLastMessage
         case .QRCode:
             return "scan".localBasedOnLastMessage
-        case .userEmail,.number ,.userPhoneNumber ,.freeText:
+        case .userEmail,.number ,.userPhoneNumber ,.freeText,.otp:
             return ""
         case .camera,.image:
             return "camera".localBasedOnLastMessage
@@ -56,7 +57,7 @@ enum QuickReplyContentType:String {
             return .location
         case .QRCode:
             return .QRCode
-        case .userEmail,.number ,.userPhoneNumber ,.freeText:
+        case .userEmail,.number ,.userPhoneNumber ,.freeText,.otp:
             return nil
         case .camera,.image:
             return .camera

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -107,22 +107,22 @@
                             <state key="normal" image="paperclip-solid"/>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="3Pd-Ml-Jwo"/>
-                                    <exclude reference="zmj-dR-uMt"/>
-                                    <exclude reference="Czc-aY-qVQ"/>
                                     <exclude reference="2Re-MW-CQ1"/>
+                                    <exclude reference="3Pd-Ml-Jwo"/>
+                                    <exclude reference="Czc-aY-qVQ"/>
+                                    <exclude reference="zmj-dR-uMt"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
                                 <mask key="constraints">
-                                    <include reference="3Pd-Ml-Jwo"/>
                                     <include reference="2Re-MW-CQ1"/>
+                                    <include reference="3Pd-Ml-Jwo"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=regular">
                                 <mask key="constraints">
-                                    <include reference="zmj-dR-uMt"/>
                                     <include reference="Czc-aY-qVQ"/>
+                                    <include reference="zmj-dR-uMt"/>
                                 </mask>
                             </variation>
                             <connections>
@@ -144,6 +144,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="agm-2z-BU3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6Bp-39-xuJ"/>
@@ -152,7 +153,6 @@
                 <constraint firstAttribute="bottom" secondItem="agm-2z-BU3" secondAttribute="bottom" id="VHz-xb-50j"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="attchmentButton" destination="edU-hI-mVI" id="IlI-Us-1lS"/>
                 <outlet property="backgroundView" destination="agm-2z-BU3" id="g2j-Bg-cVv"/>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -65,7 +66,7 @@
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tic-LP-KtW">
                                     <rect key="frame" x="20" y="5" width="494" height="34"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" systemColor="labelColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
@@ -83,14 +84,14 @@
                                         <constraint firstAttribute="width" constant="30" id="qsL-fv-mhq"/>
                                     </constraints>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOe-xC-Z7W">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOe-xC-Z7W">
                                     <rect key="frame" x="514" y="-3" width="50" height="47"/>
                                     <connections>
                                         <action selector="sendAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="vBZ-Ho-g9v"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Tic-LP-KtW" secondAttribute="bottom" constant="5" id="3EI-LF-233"/>
                                 <constraint firstItem="Go1-kS-gnH" firstAttribute="leading" secondItem="Tic-LP-KtW" secondAttribute="trailing" id="5eh-uQ-zWV"/>
@@ -123,6 +124,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="NcI-F5-LZl" secondAttribute="bottom" id="3nN-7d-64O"/>
@@ -131,15 +133,14 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NcI-F5-LZl" secondAttribute="trailing" id="mp9-MS-PX9"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="backgroundView" destination="NcI-F5-LZl" id="nmQ-Iw-Psj"/>
                 <outlet property="micButton" destination="ULk-Vk-fJh" id="QFT-Ws-b5v"/>
                 <outlet property="placeholderLbl" destination="olw-Or-mLT" id="52p-Sz-17M"/>
-                <outlet property="sendButton" destination="QOe-xC-Z7W" id="Cb8-Y6-qCG"/>
+                <outlet property="sendButton" destination="QOe-xC-Z7W" id="fed-Ai-fKb"/>
                 <outlet property="sendImageView" destination="Go1-kS-gnH" id="1D5-PC-ahs"/>
                 <outlet property="swiftyWavesView" destination="acR-YH-w0N" id="6tt-z7-INf"/>
-                <outlet property="textView" destination="Tic-LP-KtW" id="oJH-V6-Oaq"/>
+                <outlet property="textView" destination="Tic-LP-KtW" id="tZC-ef-rIx"/>
                 <outlet property="userInputBottomConst" destination="hPW-Ri-IIs" id="JiT-EE-jWB"/>
                 <outlet property="userInputContainerView" destination="cqe-E4-mBu" id="gDi-qx-vbY"/>
                 <outlet property="userInputExpandedBottonConst" destination="Hl7-A7-rBV" id="9tW-pA-esE"/>
@@ -151,5 +152,11 @@
     <resources>
         <image name="keyboard_icon" width="48" height="48"/>
         <image name="mic_icon_" width="60" height="72"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -117,6 +117,7 @@
 		37B96198230D34E70093647C /* DeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B96197230D34E70093647C /* DeleteView.swift */; };
 		37B9619A230D3BE90093647C /* SettingVariabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B96199230D3BE90093647C /* SettingVariabels.swift */; };
 		37B9619D230D3DEE0093647C /* BubbbleGestureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9619C230D3DEE0093647C /* BubbbleGestureHandler.swift */; };
+		37BBAEEF2779CF7C00BECA9A /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBAEEE2779CF7C00BECA9A /* UserInput.swift */; };
 		37BD1BC223CB5807005DBA67 /* LabibaModelEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD1BC123CB5807005DBA67 /* LabibaModelEnums.swift */; };
 		37C4631A22F1BC5B004EAC7E /* VoiceAssistantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C4631922F1BC5B004EAC7E /* VoiceAssistantView.xib */; };
 		37C4631C22F1BDEF004EAC7E /* VoiceAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C4631B22F1BDEF004EAC7E /* VoiceAssistantView.swift */; };
@@ -575,6 +576,7 @@
 		37B96197230D34E70093647C /* DeleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteView.swift; sourceTree = "<group>"; };
 		37B96199230D3BE90093647C /* SettingVariabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVariabels.swift; sourceTree = "<group>"; };
 		37B9619C230D3DEE0093647C /* BubbbleGestureHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbbleGestureHandler.swift; sourceTree = "<group>"; };
+		37BBAEEE2779CF7C00BECA9A /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
 		37BD1BC123CB5807005DBA67 /* LabibaModelEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaModelEnums.swift; sourceTree = "<group>"; };
 		37C4631922F1BC5B004EAC7E /* VoiceAssistantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceAssistantView.xib; sourceTree = "<group>"; };
 		37C4631B22F1BDEF004EAC7E /* VoiceAssistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAssistantView.swift; sourceTree = "<group>"; };
@@ -1623,6 +1625,9 @@
 				372BB4BC24B1DF6C003A8297 /* VoiceAssistantViews */,
 				52E434C52504CF1D00D077D3 /* Header Views */,
 				37A1484224B5C6A50025954D /* CustomViews */,
+				37BBAEEE2779CF7C00BECA9A /* UserInput.swift */,
+				B42954C022DDDBD2002DE3E9 /* UserTextInput.swift */,
+				B42954DB22DDDBD2002DE3E9 /* UserTextInputNoLocal.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1931,7 +1936,6 @@
 				B42954A922DDDBD2002DE3E9 /* Constants.swift */,
 				B42954BF22DDDBD2002DE3E9 /* PhotoView.swift */,
 				527260E02518BB1A002130BA /* AttachmentView.swift */,
-				B42954C022DDDBD2002DE3E9 /* UserTextInput.swift */,
 				B42954C122DDDBD2002DE3E9 /* BubbleCellTypes */,
 				B42954CC22DDDBD2002DE3E9 /* MediaView.swift */,
 				B42954CD22DDDBD2002DE3E9 /* LocationViewController.swift */,
@@ -1947,7 +1951,6 @@
 				B42954D822DDDBD2002DE3E9 /* DateRangeViewController.swift */,
 				B42954D922DDDBD2002DE3E9 /* UserBubble.swift */,
 				B42954DA22DDDBD2002DE3E9 /* CustomMapPicker.swift */,
-				B42954DB22DDDBD2002DE3E9 /* UserTextInputNoLocal.swift */,
 				37EF9ABC2313E82100FF49B3 /* DynamicGIF.swift */,
 				3798705C2325404C00CC968F /* HintsView.swift */,
 				B42954DC22DDDBD2002DE3E9 /* BubbleView.swift */,
@@ -2557,6 +2560,7 @@
 				5281A65224502E09001605E8 /* WepPageViewController.swift in Sources */,
 				52DE8DC2248CB9C60067F5EC /* IQNSArray+Sort.swift in Sources */,
 				52775675272EE12F00F8ADE0 /* PathNode.swift in Sources */,
+				37BBAEEF2779CF7C00BECA9A /* UserInput.swift in Sources */,
 				52C5A6E625AF052C00FDAB6B /* UserInputView.swift in Sources */,
 				52C6DBA824694849005CFE27 /* ImageFilter.swift in Sources */,
 				52C6DBAC24694849005CFE27 /* Image.swift in Sources */,

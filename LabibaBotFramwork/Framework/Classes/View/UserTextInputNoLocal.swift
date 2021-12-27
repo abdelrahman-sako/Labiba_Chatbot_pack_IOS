@@ -37,7 +37,7 @@ func Image(named: String) -> UIImage?
     func changeFromKeybordToVoiceType()
 }
 
-class UserTextInputNoLocal: UIView, UITextViewDelegate, LocationSelectViewControllerDelegate , AttachmentsMenuViewControllerDelegate, UIDocumentPickerDelegate
+class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewControllerDelegate , AttachmentsMenuViewControllerDelegate, UIDocumentPickerDelegate
 {
    
     
@@ -51,7 +51,7 @@ class UserTextInputNoLocal: UIView, UITextViewDelegate, LocationSelectViewContro
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet var sideMarginsCons: [NSLayoutConstraint]!
     
-    var MaximumCount = 2000
+  //  var MaximumCount = 2000
     weak var rootView = getTheMostTopView()
     
     
@@ -74,10 +74,10 @@ class UserTextInputNoLocal: UIView, UITextViewDelegate, LocationSelectViewContro
     
     var delegate: UserTextInputNoLocalDelegate?
     
-    @IBOutlet weak var textView: UITextView!
+   // @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var placeholderLabel: UILabel!
     
-    @IBOutlet weak var sendButton: UIButton!
+   // @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var container: UIView!
 
     override func awakeFromNib()
@@ -354,71 +354,68 @@ class UserTextInputNoLocal: UIView, UITextViewDelegate, LocationSelectViewContro
     
     private var isKeyboardVisible = false
     
-    @objc func ChangeKeyboardType(_ sender: Notification)
-    {
-        let txt = sender.object as? String ?? ""
-        textView.isUserInteractionEnabled = true
-        sendButton.isEnabled = true
-        MaximumCount = 2000
-        if txt == "N"
-        {
-            textView.keyboardType = .numberPad
-          //  MaximumCount = 15
-            return
-        }
-        else if txt == "N_CHAR"
-        {
-            textView.keyboardType = .default
-            return
-        }
-        else if txt == "N_CHAR_AR"
-        {
-            textView.keyboardType = .default
-            return
-        }
-        else if txt == "CHAR_AR"
-        {
-            textView.keyboardType = .default
-            return
-        }
-        else if txt == "CHAR"
-        {
-            textView.keyboardType = .default
-            return
-            //        } else if txt == "CALENDAR" {
-            //           DatePickerViewController.present(withDelegate: self, mode: .date)
-            //            return
-        }
-        else if txt == "user_phone_number"
-        {
-            textView.keyboardType = .phonePad
-           // MaximumCount = 15
-            return
-        }
-        else if txt == "NUMBER"
-        {
-            textView.keyboardType = .numberPad
-          //  MaximumCount = 15
-            return
-        }
-        else if txt == "user_email"
-        {
-            textView.keyboardType = .emailAddress
-            return
-        }
-        else if txt == "Disable"
-        {
-            textView.isUserInteractionEnabled = false
-            sendButton.isEnabled = false
-            return
-        }
-        else
-        {
-            textView.keyboardType = .default
-            return
-        }
-    }
-    
+//    @objc func ChangeKeyboardType(_ sender: Notification)
+//    {
+//        let txt = sender.object as? String ?? ""
+//        textView.isUserInteractionEnabled = true
+//        sendButton.isEnabled = true
+//        MaximumCount = 2000
+//        if txt == "N"
+//        {
+//            textView.keyboardType = .numberPad
+//          //  MaximumCount = 15
+//            return
+//        }
+//        else if txt == "N_CHAR"
+//        {
+//            textView.keyboardType = .default
+//            return
+//        }
+//        else if txt == "N_CHAR_AR"
+//        {
+//            textView.keyboardType = .default
+//            return
+//        }
+//        else if txt == "CHAR_AR"
+//        {
+//            textView.keyboardType = .default
+//            return
+//        }
+//        else if txt == "CHAR"
+//        {
+//            textView.keyboardType = .default
+//            return
+//        }
+//        else if txt == "user_phone_number"
+//        {
+//            textView.keyboardType = .phonePad
+//           // MaximumCount = 15
+//            return
+//        }
+//        else if txt == "NUMBER"
+//        {
+//            textView.keyboardType = .numberPad
+//          //  MaximumCount = 15
+//            return
+//        }
+//        else if txt == "user_email"
+//        {
+//            textView.keyboardType = .emailAddress
+//            return
+//        }
+//        else if txt == "Disable"
+//        {
+//            textView.isUserInteractionEnabled = false
+//            sendButton.isEnabled = false
+//            return
+//        }
+//        else
+//        {
+//            textView.keyboardType = .default
+//            return
+//        }
+//    }
+//
     //    func textView(_ textView: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     //    {
     //        let characterLimit = MaximumCount

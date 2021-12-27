@@ -30,11 +30,11 @@ import AVFoundation
     func UserTextType(TextType: UITextView)
 }
 
-class UserTextInput: UIView, UITextViewDelegate, LocationSelectViewControllerDelegate
+class UserTextInput: UserInput, UITextViewDelegate, LocationSelectViewControllerDelegate
 {
 
     @IBOutlet weak var gradientView: GradientView!
-    var MaximumCount = 2000
+   // var MaximumCount = 2000
     weak var mostTopView = getTheMostTopView()
 
 
@@ -48,10 +48,10 @@ class UserTextInput: UIView, UITextViewDelegate, LocationSelectViewControllerDel
 
     var delegate: UserTextInputDelegate?
 
-    @IBOutlet weak var textView: UITextView!
+   // @IBOutlet weak var textView: UITextView!
     var placeholderLabel: UILabel!
 
-    @IBOutlet weak var sendButton: UIButton!
+   // @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var container: UIView!
 
     override func awakeFromNib()
@@ -64,7 +64,7 @@ class UserTextInput: UIView, UITextViewDelegate, LocationSelectViewControllerDel
         self.frame = CGRect(x: 0, y: y, width: w, height: UserTextInput.HEIGHT)
 
 //        self.sendButton.tintColor = Labiba._UserInputColors.tintColor
-        self.sendButton.tintColor = Labiba.UserInputView.tintColor
+        sendButton.tintColor = Labiba.UserInputView.tintColor
 
         self.textView.delegate = self
         placeholderLabel = UILabel()
@@ -100,10 +100,10 @@ class UserTextInput: UIView, UITextViewDelegate, LocationSelectViewControllerDel
         self.gradientView.end = CGPoint(x: 0, y: 1)
 
         self.container.layer.cornerRadius = 22
-        self.sendButton.layer.cornerRadius = 22
+        sendButton.layer.cornerRadius = 22
 
         self.container.applyDarkShadow(opacity: 0.2, offset: CGSize(width: 1, height: 1), radius: 2)
-        self.sendButton.applyDarkShadow(opacity: 0.2, offset: CGSize(width: 1, height: 1), radius: 2)
+        sendButton.applyDarkShadow(opacity: 0.2, offset: CGSize(width: 1, height: 1), radius: 2)
 
     }
 
@@ -211,64 +211,64 @@ class UserTextInput: UIView, UITextViewDelegate, LocationSelectViewControllerDel
 
     private var isKeyboardVisible = false
 
-    @objc func ChangeKeyboardType(_ sender: Notification)
-    {
-        let txt = sender.object as? String ?? ""
-        textView.isUserInteractionEnabled = true
-        sendButton.isEnabled = true
-        MaximumCount = 2000
-        if txt == "N"
-        {
-            textView.keyboardType = .numberPad
-            MaximumCount = 15
-            return
-        }
-        else if txt == "N_CHAR"
-        {
-            textView.keyboardType = .default
-            return
-        }
-        else if txt == "N_CHAR_AR"
-        {
-            textView.keyboardType = .default
-            return
-        }
-        else if txt == "CHAR_AR"
-        {
-            textView.keyboardType = .default
-            return
-        }
-        else if txt == "CHAR"
-        {
-            textView.keyboardType = .default
-            return
-//        } else if txt == "CALENDAR" {
-//           DatePickerViewController.present(withDelegate: self, mode: .date)
+//    @objc func ChangeKeyboardType(_ sender: Notification)
+//    {
+//        let txt = sender.object as? String ?? ""
+//        textView.isUserInteractionEnabled = true
+//        sendButton.isEnabled = true
+//        MaximumCount = 2000
+//        if txt == "N"
+//        {
+//            textView.keyboardType = .numberPad
+//            MaximumCount = 15
 //            return
-        }
-        else if txt == "user_phone_number"
-        {
-            textView.keyboardType = .phonePad
-            MaximumCount = 15
-            return
-        }
-        else if txt == "user_email"
-        {
-            textView.keyboardType = .emailAddress
-            return
-        }
-        else if txt == "Disable"
-        {
-            textView.isUserInteractionEnabled = false
-            sendButton.isEnabled = false
-            return
-        }
-        else
-        {
-            textView.keyboardType = .default
-            return
-        }
-    }
+//        }
+//        else if txt == "N_CHAR"
+//        {
+//            textView.keyboardType = .default
+//            return
+//        }
+//        else if txt == "N_CHAR_AR"
+//        {
+//            textView.keyboardType = .default
+//            return
+//        }
+//        else if txt == "CHAR_AR"
+//        {
+//            textView.keyboardType = .default
+//            return
+//        }
+//        else if txt == "CHAR"
+//        {
+//            textView.keyboardType = .default
+//            return
+////        } else if txt == "CALENDAR" {
+////           DatePickerViewController.present(withDelegate: self, mode: .date)
+////            return
+//        }
+//        else if txt == "user_phone_number"
+//        {
+//            textView.keyboardType = .phonePad
+//            MaximumCount = 15
+//            return
+//        }
+//        else if txt == "user_email"
+//        {
+//            textView.keyboardType = .emailAddress
+//            return
+//        }
+//        else if txt == "Disable"
+//        {
+//            textView.isUserInteractionEnabled = false
+//            sendButton.isEnabled = false
+//            return
+//        }
+//        else
+//        {
+//            textView.keyboardType = .default
+//            return
+//        }
+//    }
 
 //    func textView(_ textView: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
 //    {

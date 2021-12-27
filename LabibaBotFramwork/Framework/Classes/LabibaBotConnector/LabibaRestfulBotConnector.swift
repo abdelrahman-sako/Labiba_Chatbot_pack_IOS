@@ -62,7 +62,7 @@ class LabibaRestfulBotConnector:BotConnector{
         sendData(parameters: msgLoad)
         self.delegate?.botConnectorDidRecieveTypingActivity(self)
         Labiba.resetReferral()
-        
+        NotificationCenter.default.post(name: Constants.NotificationNames.ChangeTextViewKeyboardType,object:nil) // to rest keyboard content type
     }
     
     
@@ -336,7 +336,7 @@ class LabibaRestfulBotConnector:BotConnector{
                                     dialogChoice.title = contentType.title
                                     dialogChoice.action = contentType.action
                                     dialog.choices = [dialogChoice]
-                                case .userEmail ,.number , .userPhoneNumber ,.freeText:
+                                case .userEmail ,.number , .userPhoneNumber ,.freeText,.otp:
                                     NotificationCenter.default.post(name: Constants.NotificationNames.ChangeInputToTextViewType,object: char)
                                     isKeyboardType = true
                                 }

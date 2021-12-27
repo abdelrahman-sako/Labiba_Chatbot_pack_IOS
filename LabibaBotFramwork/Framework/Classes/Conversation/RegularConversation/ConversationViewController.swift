@@ -326,12 +326,12 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                                                object: nil, queue: nil)
         { (notification) in
             let char = notification.object as? String ?? ""
-            if Labiba.Bot_Type == .voiceAssistance {
+           // if Labiba.Bot_Type == .voiceAssistance {
                self.addInterationDialog(currentBotType: .keyboardType)
                 Labiba.Temporary_Bot_Type = .keyboardType
                   NotificationCenter.default.post(name: Constants.NotificationNames.ChangeTextViewKeyboardType,
                                                  object: char)
-            }
+          //  }
         }
         
         NotificationCenter.default.addObserver(forName: Constants.NotificationNames.ChangeInputToVoiceAssistantType,
