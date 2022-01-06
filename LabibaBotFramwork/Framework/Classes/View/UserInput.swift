@@ -70,6 +70,11 @@ class UserInput:UIView {
             }
             return
         }
+        else if txt == "NUMBER"
+        {
+            textView.keyboardType = .numberPad
+            return
+        }
         else if txt == "Disable"
         {
             textView.isUserInteractionEnabled = false
