@@ -129,8 +129,9 @@ public class SplashScreenWithImgeVC: SplashVC {
         // Unfortunately, i must add the following tow lines here for fist run when user choose the language from the splash screen
         let header = QuickChoicesHeaderView.create( centerImage:  UIImage(named: "natali"))
         Labiba.setCustomHeaderView(header, withHeight: 260)
-        
-        self.navigationController?.pushViewController(ConversationViewController.create(), animated: true )
+        Labiba.delegate = self
+        Labiba.startConversation(onView: self,animated: true)
+       // self.navigationController?.pushViewController(ConversationViewController.create(), animated: true )
     }
     
     
@@ -141,5 +142,11 @@ public class SplashScreenWithImgeVC: SplashVC {
     
     @IBAction func pop(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension SplashScreenWithImgeVC:LabibaDelegate{
+    public func labibaWillClose() {
+        kill(getpid(), SIGKILL)
     }
 }

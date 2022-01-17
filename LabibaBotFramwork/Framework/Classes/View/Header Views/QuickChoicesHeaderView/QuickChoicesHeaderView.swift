@@ -101,7 +101,7 @@ public class QuickChoicesHeaderView: LabibaChatHeaderView {
        }
        
        
-       func resetUIs() {
+    func resetUIs() {
         if IsViewFliped {
             self.backGroundView.applyReversedSemanticAccordingToBotLang()
             self.leftStack.applyReversedSemanticAccordingToBotLang()
@@ -122,8 +122,11 @@ public class QuickChoicesHeaderView: LabibaChatHeaderView {
         choices = questions[0..<4].map({$0.localForChosnLangCodeMB})
         
         choicesCollectionView.transform = SharedPreference.shared.botLangCode == .ar ? CGAffineTransform(scaleX: -1, y: 1) : .identity
-        DispatchQueue.main.async {
-            self.choicesCollectionView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.choicesCollectionView.reloadData()
+            if (self?.choices.count ?? 0) > 0{
+                self?.choicesCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .right, animated: false)
+            }
         }
         
         layoutIfNeeded()
@@ -181,6 +184,7 @@ public class QuickChoicesHeaderView: LabibaChatHeaderView {
 
 extension QuickChoicesHeaderView:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout  {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       print( "counntddd ",choices.count)
         return choices.count
     }
     

@@ -60,7 +60,8 @@ class IASplashVC: SplashVC {
             let id = "9ccaab56-12c1-401c-a3df-beddf3845349"
             Labiba.initialize(RecipientIdAR: id,RecipientIdEng: id)
             LabibaThemes.set_IA_Theme()
-            self.navigationController?.pushViewController(Labiba.createConversation(), animated: true)
+           //self.navigationController?.pushViewController(Labiba.createConversation(), animated: true)
+            Labiba.startConversation(onView: self)
             
         }
     @IBAction func backButton(_ sender: Any) {

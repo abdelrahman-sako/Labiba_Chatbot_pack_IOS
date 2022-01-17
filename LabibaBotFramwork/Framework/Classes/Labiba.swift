@@ -499,45 +499,29 @@ public enum BotType:Int {
 
     private static let SENDER_ERROR = "You must first provide a unique senderId for your app user. Call Labiba.setSenderId(_ senderId:String) at some point in your application before calling this."
 
-    public static func startConversation(onView vc: UIViewController? = nil, animated: Bool = true, onClose: ConversationCloseHandler? = nil) -> Void
-    {
-
-        guard self._senderId != nil
-        else
-        {
-            fatalError(SENDER_ERROR)
-        }
-
-        if let topVC = vc ?? getTheMostTopViewController()
-        {
-           let nav = LabibaNavigationController(rootViewController: createConversation(onClose: onClose))
-            nav.modalPresentationStyle = .fullScreen
-            nav.modalTransitionStyle = .crossDissolve
-            UIApplication.shared.keyWindow?.rootViewController?.present(nav, animated: animated, completion: nil)
-           // topVC.present(createConversation(onClose: onClose), animated: animated, completion: nil)
-        }
+    static var navigationController:LabibaNavigationController?
+    static func createLabibaNavigation(rootViewController:UIViewController) ->LabibaNavigationController{
+        navigationController = LabibaNavigationController(rootViewController: rootViewController)
+        navigationController!.modalPresentationStyle = .fullScreen
+        navigationController!.modalTransitionStyle = .crossDissolve
+        return navigationController!
     }
-
-    public typealias ConversationCloseHandler = () -> Void
-    
-    public static func createConversation(closable: Bool = true, onClose: ConversationCloseHandler? = nil) -> UIViewController
+    public static func startConversation(onView vc: UIViewController, animated: Bool = true)
     {
-
+        
         guard self._senderId != nil
         else
         {
             fatalError(SENDER_ERROR)
         }
-
+        
         let convVC = ConversationViewController.create()
         convVC.delegate = Labiba.delegate
-        convVC.isClosable = closable
-        convVC.closeHandler = onClose
-        
-        return convVC
+        //convVC.closeHandler = onClose
+        //UIApplication.shared.keyWindow?.rootViewController?.present(nav, animated: animated, completion: nil)
+        vc.present(createLabibaNavigation(rootViewController: convVC), animated: animated, completion: nil)
     }
-    
-    public static func createConversationWithPrechatForm(closable: Bool = true, onClose: ConversationCloseHandler? = nil) -> UIViewController
+    public static func startConversationWithPrechatForm(onView vc: UIViewController, animated: Bool = true)
     {
 
         guard self._senderId != nil
@@ -548,10 +532,39 @@ public enum BotType:Int {
         let prechatVC = Labiba.prechatFormStoryboard.instantiateViewController(withIdentifier: "PrechatFormVC") as! PrechatFormVC
         prechatVC.modalPresentationStyle = .fullScreen
         prechatVC.modalTransitionStyle = .crossDissolve
-        return prechatVC
+        vc.present(createLabibaNavigation(rootViewController: prechatVC), animated: animated, completion: nil)
+    }
+
+    static func dismiss(tiggerDelegate:Bool = true,compeletion:(()->Void)? = nil ){
+        if tiggerDelegate{Labiba.delegate?.labibaWillClose?()}
+        LabibaRestfulBotConnector.shared.close()
+        navigationController?.dismiss(animated: true, completion: {
+            compeletion?()
+            if tiggerDelegate{Labiba.delegate?.labibaDidClose?()}
+        })
     }
     
-    public static func createVoiceExperienceConversation( onClose: ConversationCloseHandler? = nil) -> UIViewController
+//    static func createConversation(closable: Bool = true, onClose: ConversationCloseHandler? = nil) -> UIViewController
+//    { // this is should not be public
+//
+//        guard self._senderId != nil
+//        else
+//        {
+//            fatalError(SENDER_ERROR)
+//        }
+//
+//        let convVC = ConversationViewController.create()
+//        convVC.delegate = Labiba.delegate
+//        convVC.isClosable = closable
+//        convVC.closeHandler = onClose
+//
+//        return convVC
+//    }
+
+    
+  
+    
+    public static func createVoiceExperienceConversation( ) -> UIViewController
     {
         guard self._senderId != nil
             else
@@ -561,8 +574,14 @@ public enum BotType:Int {
        // let VoiceConvVC = VoiceExperienceVC.create()
         let VoiceConvVC = PresentationVC.create()
         VoiceConvVC.delegate = Labiba.delegate
-        VoiceConvVC.closeHandler = onClose
+       // VoiceConvVC.closeHandler = onClose
         return VoiceConvVC
+    }
+    
+    public static func createWatchConnectivity() -> UIViewController
+    {
+        let convVC = WatchConnectivityViewController.create()
+        return convVC
     }
     
 
@@ -646,16 +665,41 @@ public enum BotType:Int {
     @objc optional func createPost(onView view:UIView,_ data:Dictionary<String, Any> , completionHandler:@escaping(_ status:Bool , _ data:[String:Any]?)->Void)
     @objc optional func liveChatTransfer(onView view:UIView, transferMessage:String)
     @objc optional func labibaWillClose()
+    @objc optional func labibaDidClose()
 }
 
 class LabibaNavigationController:UINavigationController {
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-            return .portrait
-       
+        return .portrait
+        
     }
     override open var shouldAutorotate: Bool {
-          return false
-      }
+        return false
+    }
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        addTransitionAnimation()
+        super.pushViewController(viewController, animated: false)
+    }
+    
+    override func popViewController(animated: Bool) -> UIViewController? {
+        addTransitionAnimation()
+        return super.popViewController(animated: animated)
+    }
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        addTransitionAnimation()
+        super.dismiss(animated: flag, completion: completion)
+    }
+    func addTransitionAnimation(){
+        let transition:CATransition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.fade
+        transition.subtype = CATransitionSubtype.fromRight
+        view.layer.add(transition, forKey: kCATransition)
+    }
+    
 }
 
 

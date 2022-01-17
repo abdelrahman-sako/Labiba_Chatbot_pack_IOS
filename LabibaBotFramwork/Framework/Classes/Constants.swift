@@ -26,6 +26,8 @@ struct Constants {
         static let ShowHideDynamicGIF = NSNotification.Name(rawValue: "ShowHideDynamicGIF")
         static let CardSelectionAbility = NSNotification.Name(rawValue: "CardSelectionAbility")
         static let languageChanged = NSNotification.Name(rawValue: "languageChanged")
+        static let activationDidComplete = NSNotification.Name("ActivationDidComplete")
+        static let reachabilityDidChange = NSNotification.Name("ReachabilityDidChange")
     }
     
     static var content_type:String{

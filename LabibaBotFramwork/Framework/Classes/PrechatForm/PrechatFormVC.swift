@@ -108,17 +108,18 @@ class PrechatFormVC: UIViewController {
                 parameters[item.parameterName ?? ""] = (item.fieldValue ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
             }
             Labiba.setUserParams(customParameters: parameters)
-            var vcs = self.navigationController?.viewControllers ?? []
-            if vcs.count  > 1{
-                vcs.removeLast()
-            }
-            vcs.append(ConversationViewController.create())
-            self.navigationController?.setViewControllers(vcs, animated: true)
+//            var vcs = self.navigationController?.viewControllers ?? []
+//            if vcs.count  > 1{
+//                vcs.removeLast()
+//            }
+//            vcs.append(ConversationViewController.create())
+//            self.navigationController?.setViewControllers(vcs, animated: true)
+            Labiba.navigationController?.pushViewController(ConversationViewController.create(), animated: true)
         }
     }
     
     @objc func dismissAction(){
-        self.navigationController?.popViewController(animated: true)
+        Labiba.dismiss()
     }
     
 }

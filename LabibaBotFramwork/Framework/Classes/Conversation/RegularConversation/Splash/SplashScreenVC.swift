@@ -101,7 +101,8 @@ public class SplashScreenVC: SplashVC {
         Labiba.setUserParams(first_name: "Abed", last_name: "Qasem", profile_pic: "test", gender: "male", location: "3.33343344,39.444322211", country: "jordan", username: "abed", email: "aaa@gmail.com", token: "wdwdwdw3893389hc83uchbc8kocjncj990")
         LabibaThemes.setLabibaTheme()
     Labiba.setVoiceAssistanteRate(ARrate: arSlider.value, ENRate: enSlider.value)
-        self.navigationController?.pushViewController(Labiba.createConversation(), animated: true)
+        Labiba.startConversation(onView: self)
+       // self.navigationController?.pushViewController(Labiba.createConversation(), animated: true)
     }
     
     @IBAction func showBubble(_ sender: Any) {

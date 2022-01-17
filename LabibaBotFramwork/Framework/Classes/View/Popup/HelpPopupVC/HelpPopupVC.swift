@@ -16,7 +16,8 @@ class HelpPopupVC: UIViewController {
         vc.modalTransitionStyle = .crossDissolve
         let topVC = getTheMostTopViewController() as? ConversationViewController
         vc.delegate = topVC
-        topVC?.present(vc, animated: true, completion: nil)
+       // topVC?.present(vc, animated: true, completion: nil)
+        Labiba.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBOutlet weak var discreptionContainerView: UIView!
@@ -112,7 +113,8 @@ class HelpPopupVC: UIViewController {
     }
 
     @IBAction func dismissAction(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+        //self.dismiss(animated: true, completion: nil)
     }
     
     

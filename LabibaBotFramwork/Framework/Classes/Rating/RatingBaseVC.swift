@@ -52,7 +52,7 @@ class RatingBaseVC: UIViewController {
                     self?.questions = model[0].questions ?? []
                     self?.ratingTableView.reloadData()
                 }else{
-                    self?.showAlert(result: true, message: "Empty questions array")
+                    self?.showAlert(result: true, message: "error-msg".localForChosnLangCodeBB)
                 }
             case .failure(let err):
                 self?.showAlert(result: true, message: err.localizedDescription)
@@ -65,8 +65,9 @@ class RatingBaseVC: UIViewController {
                                       message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK".localForChosnLangCodeBB, style: .default, handler: { _ in
             if result{
-                kill(getpid(), SIGKILL)
+               // kill(getpid(), SIGKILL)
                //exit(0)
+                Labiba.dismiss()
             }
         })
         alert.addAction(okAction)

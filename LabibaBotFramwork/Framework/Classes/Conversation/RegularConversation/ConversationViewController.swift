@@ -57,7 +57,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     var botFrame:CGRect!
     var gradientView:UIView?
     var isClosable:Bool = true
-    var closeHandler:Labiba.ConversationCloseHandler?
+   // var closeHandler:Labiba.ConversationCloseHandler?
   //  var externalTaskCompletionHandler:Labiba.ِExternalTaskCompletionHandler?
     var showTyping:Bool = false
     var displayedDialogs:[EntryDisplay] = []
@@ -213,11 +213,11 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
 //        voiceTypeDialog?.speechToTextManager.removerObservers()
         //voiceTypeDialog.removeFromSuperview()
 
-           if self.isClosed
-           {
-               self.closeHandler?()
-               self.closeHandler = nil
-           }
+//           if self.isClosed
+//           {
+//               self.closeHandler?()
+//               self.closeHandler = nil
+//           }
        }
     deinit {
         print("ConversationViewController deinitialized")
@@ -426,18 +426,21 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         //botConnector.delegate = nil // to ensure that the text to speech will not work if the response return after chat shut down
        // TextToSpeechManeger.Shared.stop()
        // self.clearDisplays()
-        botConnector.close()
+//        botConnector.close()
+//        delegate?.labibaWillClose?()
+//        Labiba.navigationController?.dismiss(animated: true, completion: nil)
+        Labiba.dismiss()
         UIApplication.shared.setStatusBarColor(color: .clear)
-        if let navVC = self.navigationController {
-            navVC.popViewController(animated: self.animatesClosing)
-        } else {
-            self.dismiss(animated: self.animatesClosing, completion: nil)
-        }
+//        if let navVC = self.navigationController {
+//            navVC.popViewController(animated: self.animatesClosing)
+//        } else {
+//            self.dismiss(animated: self.animatesClosing, completion: nil)
+//        }
     }
     
     func labibaHeaderViewDidRequestClosing()
     {
-        delegate?.labibaWillClose?()
+       
         if Labiba._WithRatingVC {
                 if canLunchRating {
                     self.view.endEditing(true)
@@ -453,7 +456,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                     }
                     
                 }else{
-                    kill(getpid(), SIGKILL)
+                   // kill(getpid(), SIGKILL)
+                    backAction()
                     //exit(0)
                 }
                 return

@@ -13,8 +13,10 @@ class RatingVC: RatingBaseVC {
         let ratingVC = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingVC") as! RatingBaseVC
         ratingVC.modalPresentationStyle = .fullScreen
         ratingVC.modalTransitionStyle = .crossDissolve
+        
         ratingVC.delegate = delegate
-        vc.present(ratingVC, animated: true, completion: nil)
+//        vc.present(ratingVC, animated: true, completion: nil)
+        Labiba.navigationController?.pushViewController(ratingVC, animated: true)
     }
     
     @IBOutlet var tapGesture: UITapGestureRecognizer!
@@ -97,8 +99,12 @@ class RatingVC: RatingBaseVC {
                 }
             }
         }else{
-            kill(getpid(), SIGKILL)
+         //   kill(getpid(), SIGKILL)
            //exit(0)
+//            Labiba.navigationController?.dismiss(animated: true, completion: {
+//                Labiba.delegate?.labibaWillClose?()
+//            })
+            Labiba.dismiss()
         }
 
     }

@@ -35,7 +35,7 @@ public class BankOfJoSplashVC: SplashVC {
     }
     
     @IBAction func pushChatVC(_ sender: UIButton) {
-        self.navigationController?.pushViewController(Labiba.createConversation(), animated: false) // nathealth
+        // self.navigationController?.pushViewController(Labiba.createConversation(), animated: false) // nathealth
     }
     
     

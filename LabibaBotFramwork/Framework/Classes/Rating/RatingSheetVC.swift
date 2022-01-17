@@ -15,7 +15,8 @@ class RatingSheetVC: RatingBaseVC {
         ratingVC.modalPresentationStyle = .overCurrentContext
         ratingVC.modalTransitionStyle = .crossDissolve
         ratingVC.delegate = delegate
-        vc.present(ratingVC, animated: true, completion: nil)
+        Labiba.navigationController?.pushViewController(ratingVC, animated: true)
+       // vc.present(ratingVC, animated: true, completion: nil)
     }
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var tapGesture: UITapGestureRecognizer!
@@ -59,7 +60,8 @@ class RatingSheetVC: RatingBaseVC {
     }
     
     @IBAction func dismissAcion(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        Labiba.dismiss()
+     //   self.dismiss(animated: true, completion: nil)
     }
     
     @objc func submitRate(_ button:UIButton){

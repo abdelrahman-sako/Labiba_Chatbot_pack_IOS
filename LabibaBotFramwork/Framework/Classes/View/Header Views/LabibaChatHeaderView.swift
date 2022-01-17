@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@objc protocol LabibaChatHeaderViewDelegate: class
+@objc protocol LabibaChatHeaderViewDelegate: AnyObject
 {
     
     func labibaHeaderViewDidRequestClosing()
@@ -31,6 +31,8 @@ open class LabibaChatHeaderView: UIView
     weak var delegate: LabibaChatHeaderViewDelegate?
     public var settingType:SettingType = .language
     func restartApplication () {
+        
+           
         NotificationCenter.default.post(name: Constants.NotificationNames.StopTextToSpeech,
                                         object: nil)
         NotificationCenter.default.post(name: Constants.NotificationNames.StopSpeechToText,
@@ -41,37 +43,45 @@ open class LabibaChatHeaderView: UIView
         
         Labiba.initialize(RecipientIdAR: SharedPreference.shared.getUserIDs().ar,RecipientIdEng: SharedPreference.shared.getUserIDs().en) // initialize requered to resend the prefferals each time the languge changed
         Labiba.setBotLanguage(LangCode: SharedPreference.shared.botLangCode)
-        let  vc = Labiba.createConversation()
+        
+        Labiba.dismiss(tiggerDelegate: false) {
+            guard let topVC = UIApplication.shared.topMostViewController else{return}
+            Labiba.startConversation(onView:  topVC)
+        }
+       // let  vc = Labiba.createConversation()
         
         
-        guard
-            let window = UIApplication.shared.keyWindow,
-            let rootViewController = window.rootViewController
-            else {
-                return
-        }
-        var navCtrl = UINavigationController()
-        if let viewControllers = UIApplication.shared.topMostViewController?.navigationController?.viewControllers , let _ = viewControllers.last as? ConversationViewController{
-            var newVCs = viewControllers // this is neccessary for back action
-            newVCs.removeLast()
-            newVCs.append(vc)
-            navCtrl.setViewControllers(newVCs, animated: false)
-        }else{
-            UIApplication.shared.topMostViewController?.dismiss(animated: true, completion: {
-                vc.modalPresentationStyle = .fullScreen
-                
-                UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
-            })
-            return
-            //navCtrl = UINavigationController(rootViewController: vc)
-        }
-        navCtrl.view.frame = rootViewController.view.frame
-        navCtrl.view.layoutIfNeeded()
-        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft, animations: {
-            window.rootViewController = navCtrl
-        },completion: { complete in
-            Labiba.setStatusBarColor(color: Labiba._StatusBarColor)
-        })
+//        guard
+//            let window = UIApplication.shared.keyWindow,
+//            let rootViewController = window.rootViewController
+//            else {
+//                return
+//        }
+       // var navCtrl = UINavigationController()
+//       
+//        if let viewControllers = UIApplication.shared.topMostViewController?.navigationController?.viewControllers , let _ = viewControllers.last as? ConversationViewController{
+//            var newVCs = viewControllers // this is neccessary for back action
+//            newVCs.removeLast()
+//            newVCs.append(vc)
+//            navCtrl.setViewControllers(newVCs, animated: false)
+//        }else{
+//            UIApplication.shared.topMostViewController?.dismiss(animated: true, completion: {
+//                vc.modalPresentationStyle = .fullScreen
+//
+//                UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
+//            })
+//            return
+//            //navCtrl = UINavigationController(rootViewController: vc)
+//        }
+//        navCtrl.view.frame = rootViewController.view.frame
+//        navCtrl.view.layoutIfNeeded()
+        //UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft, animations: {
+       
+            
+           // window.rootViewController = navCtrl
+//        },completion: { complete in
+//            Labiba.setStatusBarColor(color: Labiba._StatusBarColor)
+//        })
         
     }
     

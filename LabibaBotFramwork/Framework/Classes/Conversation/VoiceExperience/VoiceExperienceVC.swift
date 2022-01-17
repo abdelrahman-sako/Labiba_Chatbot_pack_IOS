@@ -21,7 +21,7 @@ class VoiceExperienceVC: BaseConversationVC {
     @IBOutlet weak var reusableStackView: UIStackView!
     
   
-    var closeHandler:Labiba.ConversationCloseHandler?
+//    var closeHandler:Labiba.ConversationCloseHandler?
     var stepsToBeDisplayed = [ConversationDialog]()
     var isDialogCurrentlyDisplayed:Bool = false
 //    override var displayDialog2: (ConversationDialog) -> Void = {conversation in

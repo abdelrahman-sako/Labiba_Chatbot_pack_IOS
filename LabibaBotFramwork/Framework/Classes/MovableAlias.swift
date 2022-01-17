@@ -101,7 +101,7 @@ class MovableAlias: UIView
 
         self.imageView.image = Labiba._BubbleChatImage
         getTheMostTopViewController().view.addSubview(self)
-        convVC = (Labiba.createConversation() as! ConversationViewController)
+        convVC = ConversationViewController.create()
         var af = self.frame
         af.origin = position
 
@@ -173,7 +173,7 @@ class MovableAlias: UIView
                     return
                 }
                 topVC.addChild(convVC)
-                convVC.closeHandler = self.conversationViewDidDismiss
+             //   convVC.closeHandler = self.conversationViewDidDismiss
                 convVC.animatesClosing = false
                 //                topVC.present(convVC, animated: false, completion: nil)
                 convVC.view.frame = self.vcContainerView.bounds

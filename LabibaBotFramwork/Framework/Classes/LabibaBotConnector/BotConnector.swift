@@ -284,7 +284,7 @@ class BotConnector: NSObject {
             "Username":Labiba.jwtAuthParamerters.username,
             "Password":Labiba.jwtAuthParamerters.password
         ]
-        DispatchQueue.global(qos: .background).sync { [weak self] in // sync to update expired token befor the next request
+        DispatchQueue.global(qos: .background).sync { [weak self] in
             LabibaRequest(UpdateTokenModel.self, url: path, method: .post, parameters: params, encoding: JSONEncoding.default, logTag: .upadateToken) { result in
                 switch result {
                 case .success(let model):

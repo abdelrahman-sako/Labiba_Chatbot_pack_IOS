@@ -147,6 +147,8 @@
 		522D165D256E9C9E002758D5 /* GeneralThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D165C256E9C9E002758D5 /* GeneralThemeSettings.swift */; };
 		5237BD37272A9344006C8632 /* KeyboardFieldsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237BD36272A9344006C8632 /* KeyboardFieldsHandler.swift */; };
 		5237BD39272A9365006C8632 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237BD38272A9365006C8632 /* KeyboardToolbar.swift */; };
+		52487BBA278F1C8300964441 /* WatchConnectivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52487BB9278F1C8300964441 /* WatchConnectivity.storyboard */; };
+		52487BBC278F1CDA00964441 /* WatchConnectivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52487BBB278F1CDA00964441 /* WatchConnectivityViewController.swift */; };
 		526FD84B2500FECD004B2408 /* QuickChoicesHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526FD84A2500FECD004B2408 /* QuickChoicesHeaderView.xib */; };
 		526FD84F250100FD004B2408 /* HeaderQuickChoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FD84D250100FD004B2408 /* HeaderQuickChoiceCell.swift */; };
 		526FD850250100FD004B2408 /* HeaderQuickChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526FD84E250100FD004B2408 /* HeaderQuickChoiceCell.xib */; };
@@ -606,6 +608,8 @@
 		522D165C256E9C9E002758D5 /* GeneralThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralThemeSettings.swift; sourceTree = "<group>"; };
 		5237BD36272A9344006C8632 /* KeyboardFieldsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardFieldsHandler.swift; sourceTree = "<group>"; };
 		5237BD38272A9365006C8632 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
+		52487BB9278F1C8300964441 /* WatchConnectivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WatchConnectivity.storyboard; sourceTree = "<group>"; };
+		52487BBB278F1CDA00964441 /* WatchConnectivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnectivityViewController.swift; sourceTree = "<group>"; };
 		526FD84A2500FECD004B2408 /* QuickChoicesHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickChoicesHeaderView.xib; sourceTree = "<group>"; };
 		526FD84D250100FD004B2408 /* HeaderQuickChoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderQuickChoiceCell.swift; sourceTree = "<group>"; };
 		526FD84E250100FD004B2408 /* HeaderQuickChoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderQuickChoiceCell.xib; sourceTree = "<group>"; };
@@ -1897,6 +1901,7 @@
 		B429549722DDDBD2002DE3E9 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				52487BB9278F1C8300964441 /* WatchConnectivity.storyboard */,
 				B429549822DDDBD2002DE3E9 /* SelectableCardView.xib */,
 				B429549922DDDBD2002DE3E9 /* Labiba.storyboard */,
 				5214489A258647B90099BF38 /* Rating.storyboard */,
@@ -1931,6 +1936,7 @@
 				37460D98230A7A42002748CE /* Models */,
 				52288811246193FE0030F27E /* ImportedLibraries */,
 				37EF394922EF1777004D1C85 /* Manegers */,
+				52487BBB278F1CDA00964441 /* WatchConnectivityViewController.swift */,
 				B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */,
 				B42954A822DDDBD2002DE3E9 /* LocationSelectViewController.swift */,
 				B42954A922DDDBD2002DE3E9 /* Constants.swift */,
@@ -2256,6 +2262,7 @@
 				37C4631A22F1BC5B004EAC7E /* VoiceAssistantView.xib in Resources */,
 				37EF9ABF2313E83100FF49B3 /* DynamicGIF.xib in Resources */,
 				B429550F22DDDBD2002DE3E9 /* ResponseBubble.xib in Resources */,
+				52487BBA278F1C8300964441 /* WatchConnectivity.storyboard in Resources */,
 				B429555A22DDDBD2002DE3E9 /* Assets.xcassets in Resources */,
 				526FD84B2500FECD004B2408 /* QuickChoicesHeaderView.xib in Resources */,
 				529C67F926F3154E00FB8591 /* PrechatForm.storyboard in Resources */,
@@ -2350,6 +2357,7 @@
 				52DE8E1C248CEB880067F5EC /* GIFImageView.swift in Sources */,
 				526FD85225010E0C004B2408 /* QuickChoicesHeaderView.swift in Sources */,
 				52775643272EE12F00F8ADE0 /* ShapeLayerModel.swift in Sources */,
+				52487BBC278F1CDA00964441 /* WatchConnectivityViewController.swift in Sources */,
 				3782D99F23BA1369006A79D4 /* SRMutex.m in Sources */,
 				37B5326423CC5623001D2BDF /* LabibaBotConnectorJC.swift in Sources */,
 				372BB4C124B1E151003A8297 /* VisualizerVoiceAssistantView.swift in Sources */,

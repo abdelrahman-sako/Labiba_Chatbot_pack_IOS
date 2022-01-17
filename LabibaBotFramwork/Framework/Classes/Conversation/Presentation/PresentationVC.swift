@@ -17,7 +17,7 @@ class PresentationVC:  BaseConversationVC{
         return Labiba.voiceExperienceStoryboard.instantiateViewController(withIdentifier: "PresentationVC") as! PresentationVC
     }
     
-    var closeHandler:Labiba.ConversationCloseHandler?
+  //  var closeHandler:Labiba.ConversationCloseHandler?
     var voiceAssistantView = VoiceAssistantView.create()
     private var animationView: AnimationView?
     

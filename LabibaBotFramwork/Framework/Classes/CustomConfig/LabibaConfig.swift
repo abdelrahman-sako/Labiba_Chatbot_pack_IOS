@@ -166,15 +166,24 @@ public class LabibaConfig {
 
 
         //*************
-        let vc = Labiba.createConversation()
-        vc.modalPresentationStyle = .fullScreen
-        self.conversationVC = vc as? ConversationViewController
-        //*************
+//        let vc = Labiba.createConversation()
+//        vc.modalPresentationStyle = .fullScreen
+//        self.conversationVC = vc as? ConversationViewController
+//        //*************
+//
+//
+//       UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
 
-
-       UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
-
+        if let vc = UIApplication.shared.keyWindow?.rootViewController {
+            Labiba.startConversation(onView: vc)
+        }
         //UIApplication.shared.topMostViewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    public func startWatchConnection(){
+        let vc = Labiba.createWatchConnectivity()
+        vc.modalPresentationStyle = .fullScreen
+        UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
     }
 }
 
