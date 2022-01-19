@@ -13,11 +13,13 @@ class UserInput:UIView {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     
+    @IBOutlet weak var textField: UITextField!
     var MaximumCount = 2000
     
     @objc func ChangeKeyboardType(_ sender: Notification)
     {
         let txt = sender.object as? String ?? ""
+        textView.isHidden = false
         textView.isUserInteractionEnabled = true
         textView.textContentType = nil
         sendButton.isEnabled = true
@@ -62,11 +64,13 @@ class UserInput:UIView {
             textView.keyboardType = .emailAddress
             return
         }
-        else if txt == "one_time_code"
+        else if txt == "OTP"
         {
-            textView.keyboardType = .numberPad
+            textView.isHidden = true
+            textField.isHidden = false
+            textField.keyboardType = .numberPad
             if #available(iOS 12.0, *) {
-                textView.textContentType = .oneTimeCode
+                textField.textContentType = .oneTimeCode
             }
             return
         }

@@ -337,7 +337,9 @@ class LabibaRestfulBotConnector:BotConnector{
                                     dialogChoice.action = contentType.action
                                     dialog.choices = [dialogChoice]
                                 case .userEmail ,.number , .userPhoneNumber ,.freeText,.otp:
-                                    NotificationCenter.default.post(name: Constants.NotificationNames.ChangeInputToTextViewType,object: char)
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                        NotificationCenter.default.post(name: Constants.NotificationNames.ChangeInputToTextViewType,object: char)
+                                    }
                                     isKeyboardType = true
                                 }
                             case .none:

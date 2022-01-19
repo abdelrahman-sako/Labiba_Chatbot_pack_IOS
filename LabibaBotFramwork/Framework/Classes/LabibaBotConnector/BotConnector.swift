@@ -75,7 +75,7 @@ class BotConnector: NSObject {
     func reconnectConversation() -> Void {}
     func resumeConnection() {}
     func close() -> Void {
-        print("Request \"\(currentRequest?.request?.url?.absoluteString ?? "")\" was canceld")
+       // print("Request \"\(currentRequest?.request?.url?.absoluteString ?? "")\" was canceld")
         currentRequest?.cancel()
     }
     

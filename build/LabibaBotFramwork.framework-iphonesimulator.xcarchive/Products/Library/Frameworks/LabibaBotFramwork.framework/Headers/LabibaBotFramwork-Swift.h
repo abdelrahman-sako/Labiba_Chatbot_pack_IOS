@@ -572,6 +572,7 @@ SWIFT_PROTOCOL("_TtP17LabibaBotFramwork14LabibaDelegate_")
 - (void)createPostOnView:(UIView * _Nonnull)view :(NSDictionary<NSString *, id> * _Nonnull)data completionHandler:(void (^ _Nonnull)(BOOL, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 - (void)liveChatTransferOnView:(UIView * _Nonnull)view transferMessage:(NSString * _Nonnull)transferMessage;
 - (void)labibaWillClose;
+- (void)labibaDidClose;
 @end
 
 
@@ -722,6 +723,11 @@ SWIFT_CLASS("_TtC17LabibaBotFramwork22SplashScreenWithImgeVC")
 - (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface SplashScreenWithImgeVC (SWIFT_EXTENSION(LabibaBotFramwork)) <LabibaDelegate>
+- (void)labibaWillClose;
 @end
 
 
@@ -1376,6 +1382,7 @@ SWIFT_PROTOCOL("_TtP17LabibaBotFramwork14LabibaDelegate_")
 - (void)createPostOnView:(UIView * _Nonnull)view :(NSDictionary<NSString *, id> * _Nonnull)data completionHandler:(void (^ _Nonnull)(BOOL, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 - (void)liveChatTransferOnView:(UIView * _Nonnull)view transferMessage:(NSString * _Nonnull)transferMessage;
 - (void)labibaWillClose;
+- (void)labibaDidClose;
 @end
 
 
@@ -1526,6 +1533,11 @@ SWIFT_CLASS("_TtC17LabibaBotFramwork22SplashScreenWithImgeVC")
 - (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface SplashScreenWithImgeVC (SWIFT_EXTENSION(LabibaBotFramwork)) <LabibaDelegate>
+- (void)labibaWillClose;
 @end
 
 

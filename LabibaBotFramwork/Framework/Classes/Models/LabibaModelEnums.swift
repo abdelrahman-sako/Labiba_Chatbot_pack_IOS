@@ -19,7 +19,7 @@ enum QuickReplyContentType:String {
     case userEmail = "user_email"
     case number = "NUMBER"
     case userPhoneNumber = "user_phone_number"
-    case otp = "one_time.code"
+    case otp = "OTP"
     case freeText = "free_text"
     case QRCode = "QR_CODE"
     

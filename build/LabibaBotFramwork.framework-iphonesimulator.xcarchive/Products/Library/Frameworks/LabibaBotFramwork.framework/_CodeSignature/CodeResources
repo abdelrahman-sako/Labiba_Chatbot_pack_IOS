@@ -70,7 +70,7 @@
 		</data>
 		<key>Headers/LabibaBotFramwork-Swift.h</key>
 		<data>
-		R4RTD9PSitdXUkkd1xOx5FULFfg=
+		mBYU5AhTJfmmNkjs2Yp5zUM2Cv0=
 		</data>
 		<key>Headers/LabibaBotFramwork.h</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/objects-12.3+.nib</key>
 		<data>
-		GIK2fSqW2tQRxsSzsUA2fxfs4+4=
+		fBQXM8zsX7k3+kQXRVVP26MiJno=
 		</data>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/objects-14.0+.nib</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/runtime.nib</key>
 		<data>
-		6AdvfQt2bL2Swx9ZvztSNkcH9a8=
+		gEE0MOC45pzagYS9CBdrAtvDbz8=
 		</data>
 		<key>Labiba.storyboardc/21L-TP-ZZH-view-EIa-Hs-D8H.nib/objects-12.3+.nib</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/objects-12.3+.nib</key>
 		<data>
-		FV8a7V9inTHkMVcaq9Kff4ugnSs=
+		F78qCRShq6VYRlxBT8hdO95LR/Y=
 		</data>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/objects-14.0+.nib</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/runtime.nib</key>
 		<data>
-		lqumSsDIJDO9rSCybkYSQX0HwM8=
+		euTkgU2dUsol5DwbEm61qysYxTg=
 		</data>
 		<key>Labiba.storyboardc/287-7P-3Rf-view-ZiX-qL-lWW.nib/objects-12.3+.nib</key>
 		<data>
@@ -426,11 +426,11 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		eqvmN4BaafTw84pYR7dxaOuxkqo=
+		uwD7kAEA01uOG1gdseh3gnvsQYM=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		SuYm+oMvG8Ui5KMlrVxN+gVwSzY=
+		l5nnIEdTB7lvEk4QA/D+sQ5xkXI=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -438,11 +438,11 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		eqvmN4BaafTw84pYR7dxaOuxkqo=
+		uwD7kAEA01uOG1gdseh3gnvsQYM=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		SuYm+oMvG8Ui5KMlrVxN+gVwSzY=
+		l5nnIEdTB7lvEk4QA/D+sQ5xkXI=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -450,11 +450,11 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Wv+54NXo7bba4JfowB+wvp8+a7w=
+		7WUg4GwONEnzq2zR+nEU137J18w=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		I8TvwxvD9SOORD5IRqjWKqsChvI=
+		pXUIDzINehWTAsNXbnmTYEI4wEU=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -462,11 +462,11 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		Wv+54NXo7bba4JfowB+wvp8+a7w=
+		7WUg4GwONEnzq2zR+nEU137J18w=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		I8TvwxvD9SOORD5IRqjWKqsChvI=
+		pXUIDzINehWTAsNXbnmTYEI4wEU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -639,6 +639,30 @@
 		<key>VoiceExperienceView.nib</key>
 		<data>
 		r0jcfrkG92Uo3MNfkxwSqinBuok=
+		</data>
+		<key>WatchConnectivity.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
+		<data>
+		VNUUkW/RR1LW/1EDhTHisV1Sp8Q=
+		</data>
+		<key>WatchConnectivity.storyboardc/Info.plist</key>
+		<data>
+		/xmu/erxFGFgU5EwB1+5jIL7/t0=
+		</data>
+		<key>WatchConnectivity.storyboardc/ScheduleWatchNotificationVC.nib</key>
+		<data>
+		EXx5cnO7XsQiiwYxGePuJBcn2KM=
+		</data>
+		<key>WatchConnectivity.storyboardc/UINavigationController-tVe-bW-Lzj.nib</key>
+		<data>
+		wiS8iMF1FjzSFq9q1fYpfOV7nEw=
+		</data>
+		<key>WatchConnectivity.storyboardc/WatchConnectivityViewController.nib</key>
+		<data>
+		8OkCxDdZ4bWl33M/QiBz6xtI3PA=
+		</data>
+		<key>WatchConnectivity.storyboardc/cP2-KQ-IQZ-view-yBy-ny-jlv.nib</key>
+		<data>
+		SNaEUYgIMBg5sY/OLir1koW3WlE=
 		</data>
 		<key>WriteCommentRatingCell.nib</key>
 		<data>
@@ -823,7 +847,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vl/g11t83TsdXkwKFPZg8TqsHBvPOAwIVSCfiPNT0Cg=
+			GI0GbWz+7ZUCg1ZonsXWbApbPcrMdihMnNUlnI8bdHY=
 			</data>
 		</dict>
 		<key>Headers/LabibaBotFramwork.h</key>
@@ -879,7 +903,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Fj9j1aLUHBT4BnrMiofmuFBRw/kqo/snJP+yzFMPPT4=
+			tnBtcFdOu2NRquJ7YBulTxClvlszIgpOcE65wBFF4OM=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/objects-14.0+.nib</key>
@@ -893,7 +917,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xvpjmtlzNw5zmlUZie4DK1hZxxZgKaxMu95qQCudDPs=
+			oC2r2fQq1Yy5qjYixDM3o+3FyRBZc3UZxULf9EZY3cQ=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/21L-TP-ZZH-view-EIa-Hs-D8H.nib/objects-12.3+.nib</key>
@@ -921,7 +945,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JFXAqaZCPtJLiK/97sZtFigqhJcWzO3y6bTy3gS5BsY=
+			FDziUg4+NkrgFurt4iM2RlYBtVRfYa8gb7wBybxcmZI=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/objects-14.0+.nib</key>
@@ -935,7 +959,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			81jNCrlQK322OZQ9aa8VtLxlOUvnrvnP6G1B/dUnUFQ=
+			JLmmXveLDdhHdqmnBciwQ6k8Onp5NjTdpamCjLQv/js=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/287-7P-3Rf-view-ZiX-qL-lWW.nib/objects-12.3+.nib</key>
@@ -1439,14 +1463,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			j0u00Xttwma3GLYwnyxHpNVdoGslzaPGZNgWyvpM/Go=
+			rev4VcYbr7r3ohsSWN4rF9sYxoS8ljp8z6CG4x6PXTE=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Yxur3xICjthWpIIhOhoivHdLi3MDFY6QL2g62cHraKM=
+			yIxd2/O440VmxxUN4AYiG7SBGdLft7oEOPYU0TdEf4Y=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftdoc</key>
@@ -1460,14 +1484,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			j0u00Xttwma3GLYwnyxHpNVdoGslzaPGZNgWyvpM/Go=
+			rev4VcYbr7r3ohsSWN4rF9sYxoS8ljp8z6CG4x6PXTE=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Yxur3xICjthWpIIhOhoivHdLi3MDFY6QL2g62cHraKM=
+			yIxd2/O440VmxxUN4AYiG7SBGdLft7oEOPYU0TdEf4Y=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -1481,14 +1505,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lD2sbEnId6GPpx3yZ62niZyjsyxvIsG7OGapl/yUfOs=
+			V7PMPNMPGZ2SskCs1DHI4GRXJTSKl1fJIq2WrKaFho8=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fZWyAlNqeXurwGB1BikwIjwhJVIlVa4EBUrUhci7Sk8=
+			1+03aIyYnEmDP783jft2flu82KCtBaV19+kYi5MBj9o=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftdoc</key>
@@ -1502,14 +1526,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lD2sbEnId6GPpx3yZ62niZyjsyxvIsG7OGapl/yUfOs=
+			V7PMPNMPGZ2SskCs1DHI4GRXJTSKl1fJIq2WrKaFho8=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fZWyAlNqeXurwGB1BikwIjwhJVIlVa4EBUrUhci7Sk8=
+			1+03aIyYnEmDP783jft2flu82KCtBaV19+kYi5MBj9o=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1811,6 +1835,48 @@
 			<key>hash2</key>
 			<data>
 			YbZXCQGR/hACO4R/QC7oaYWBx91DJfhhpNbvbrfW4D8=
+			</data>
+		</dict>
+		<key>WatchConnectivity.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yDCR8wqy9EDfYlSEwyjQ6uYgZYCSATdPFrwauS76uB8=
+			</data>
+		</dict>
+		<key>WatchConnectivity.storyboardc/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QtvCV7/M1wNPhRYLmOH7xBvYWz3X/Qs4qWoTAnnbROs=
+			</data>
+		</dict>
+		<key>WatchConnectivity.storyboardc/ScheduleWatchNotificationVC.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3RTkxhMx0FJW0fvBo/fOI0XIWdQd8/LvInMSOvVdvV8=
+			</data>
+		</dict>
+		<key>WatchConnectivity.storyboardc/UINavigationController-tVe-bW-Lzj.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FeZMt0fV4YfMu/g4IqeXpqxlfqne9xvg+hnBc2IKjJ4=
+			</data>
+		</dict>
+		<key>WatchConnectivity.storyboardc/WatchConnectivityViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VBRET1bCljTUMRhEG9hjHCaUQiS9il2imkTC1BeGmdg=
+			</data>
+		</dict>
+		<key>WatchConnectivity.storyboardc/cP2-KQ-IQZ-view-yBy-ny-jlv.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lKXS2pTExhJ7DsgZtOwMCTYFdvlLQ1mgfyxyqqGpa5I=
 			</data>
 		</dict>
 		<key>WriteCommentRatingCell.nib</key>

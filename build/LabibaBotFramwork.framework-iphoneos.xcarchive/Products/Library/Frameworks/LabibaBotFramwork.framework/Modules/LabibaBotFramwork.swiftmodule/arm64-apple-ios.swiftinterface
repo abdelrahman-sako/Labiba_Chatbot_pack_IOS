@@ -21,6 +21,7 @@ import Speech
 import Swift
 import SystemConfiguration
 import UIKit
+import WatchConnectivity
 import WebKit
 import _Concurrency
 public protocol AnimationImageProvider {
@@ -1054,11 +1055,10 @@ public enum BotType : Swift.Int {
   public static let BotChatBubble: LabibaBotFramwork.LabibaBotChatBubble
   public static let RatingForm: LabibaBotFramwork.LabibaRatingForm
   public static let PrechatForm: LabibaBotFramwork.PrechatFormThemeModel
-  public static func startConversation(onView vc: UIKit.UIViewController? = nil, animated: Swift.Bool = true, onClose: LabibaBotFramwork.Labiba.ConversationCloseHandler? = nil)
-  public typealias ConversationCloseHandler = () -> Swift.Void
-  public static func createConversation(closable: Swift.Bool = true, onClose: LabibaBotFramwork.Labiba.ConversationCloseHandler? = nil) -> UIKit.UIViewController
-  public static func createConversationWithPrechatForm(closable: Swift.Bool = true, onClose: LabibaBotFramwork.Labiba.ConversationCloseHandler? = nil) -> UIKit.UIViewController
-  public static func createVoiceExperienceConversation(onClose: LabibaBotFramwork.Labiba.ConversationCloseHandler? = nil) -> UIKit.UIViewController
+  public static func startConversation(onView vc: UIKit.UIViewController, animated: Swift.Bool = true)
+  public static func startConversationWithPrechatForm(onView vc: UIKit.UIViewController, animated: Swift.Bool = true)
+  public static func createVoiceExperienceConversation() -> UIKit.UIViewController
+  public static func createWatchConnectivity() -> UIKit.UIViewController
   public static func createSplash<vc>(vc: vc.Type) -> UIKit.UIViewController where vc : LabibaBotFramwork.SplashVC
   public static func showMovableAlias(corner: UIKit.UIRectCorner, margin: CoreGraphics.CGFloat = 15, animated: Swift.Bool)
   public static func showMovableAlias(position: CoreGraphics.CGPoint, animated: Swift.Bool)
@@ -1078,6 +1078,7 @@ public enum BotType : Swift.Int {
   @objc optional func createPost(onView view: UIKit.UIView, _ data: Swift.Dictionary<Swift.String, Any>, completionHandler: @escaping (_ status: Swift.Bool, _ data: [Swift.String : Any]?) -> Swift.Void)
   @objc optional func liveChatTransfer(onView view: UIKit.UIView, transferMessage: Swift.String)
   @objc optional func labibaWillClose()
+  @objc optional func labibaDidClose()
 }
 public class FilepathImageProvider : LabibaBotFramwork.AnimationImageProvider {
   public init(filepath: Swift.String)
@@ -1095,6 +1096,9 @@ public var ipadMargin: CoreGraphics.CGFloat {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+extension LabibaBotFramwork.SplashScreenWithImgeVC : LabibaBotFramwork.LabibaDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func labibaWillClose()
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class AnimatedButton : LabibaBotFramwork.AnimatedControl {
   @_Concurrency.MainActor(unsafe) final public func setPlayRange(fromProgress: LabibaBotFramwork.AnimationProgressTime, toProgress: LabibaBotFramwork.AnimationProgressTime, event: UIKit.UIControl.Event)
@@ -1359,6 +1363,7 @@ public enum ScanAnimationStyle {
 public class LabibaConfig {
   public init()
   public func BOJConnect(language: Swift.String, customerID: Swift.String, trxnlimit: Swift.Int, callback: (() -> Swift.Void)?)
+  public func startWatchConnection()
   @objc deinit
 }
 extension LabibaBotFramwork.LabibaConfig : LabibaBotFramwork.LabibaDelegate {

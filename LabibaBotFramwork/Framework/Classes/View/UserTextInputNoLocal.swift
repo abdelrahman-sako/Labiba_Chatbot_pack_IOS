@@ -99,6 +99,7 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         
         container.backgroundColor = Labiba.UserInputView.backgroundColor
         textView.textColor = Labiba.UserInputView.textColor
+        textField.textColor = Labiba.UserInputView.textColor
         self.sendButton.tintColor = Labiba.UserInputView.sendButton.tintColor
         self.sendButton.backgroundColor = Labiba.UserInputView.sendButton.backgroundColor
         
@@ -110,6 +111,7 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         //self.textView.textAlignment = LbLanguage.isArabic ? .right : .left
         self.textView.font = applyBotFont(size: 13)
         self.textView.addSubview(placeholderLabel)
+        self.textField.font = applyBotFont(size: 13)
         
 //        placeholderLabel.textColor = Labiba._UserInputColors.hintColor//UIColor(white: 0, alpha: 0.3)
         placeholderLabel.textColor = Labiba.UserInputView.textColor
@@ -339,8 +341,11 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
                 self.placeholderLabel.alpha = 1
             })
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-               
-                self.textView.becomeFirstResponder()
+                if !self.textView.isHidden {
+                    self.textView.becomeFirstResponder()
+                }else{
+                    self.textField.becomeFirstResponder()
+                }
                 
             }
         }
@@ -514,12 +519,18 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
     
     @IBAction func submitButtonTapped(_ sender: AnyObject)
     {
-        
-        let text = self.textView.text ?? ""
-        self.textView.text = ""
-        self.resizeInputBox()
-        self.delegate?.userTextInput(self, didSubmitText: text)
-        self.textView.endEditing(true)
+        if  !self.textView.isHidden{
+            let text = self.textView.text ?? ""
+            self.textView.text = ""
+            self.resizeInputBox()
+            self.delegate?.userTextInput(self, didSubmitText: text)
+            self.textView.endEditing(true)
+        }else {
+            let text = self.textField.text ?? ""
+            self.textField.text = ""
+            self.delegate?.userTextInput(self, didSubmitText: text)
+            self.textField.endEditing(true)
+        }
         
     }
     

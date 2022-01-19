@@ -61,12 +61,17 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHR-x7-wbM">
                     <rect key="frame" x="8" y="5" width="446" height="55"/>
                     <subviews>
+                        <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9rx-Ll-or3">
+                            <rect key="frame" x="68" y="5" width="367" height="45"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h2n-4L-wgf">
                             <rect key="frame" x="68" y="5" width="367" height="45"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="one-time-code"/>
                         </textView>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6U-nl-yF6">
                             <rect key="frame" x="8" y="5" width="58" height="45"/>
@@ -160,13 +165,17 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="1Dh-ui-vEB">
                             <variation key="heightClass=regular-widthClass=regular" constant="70"/>
                         </constraint>
+                        <constraint firstItem="9rx-Ll-or3" firstAttribute="centerX" secondItem="h2n-4L-wgf" secondAttribute="centerX" id="4FW-Ff-cGI"/>
                         <constraint firstItem="kmh-ea-mxf" firstAttribute="leading" secondItem="S6U-nl-yF6" secondAttribute="trailing" constant="5" id="ApI-An-nPW"/>
                         <constraint firstItem="S6U-nl-yF6" firstAttribute="leading" secondItem="QHR-x7-wbM" secondAttribute="leading" constant="8" id="Ash-Ma-Ez7"/>
                         <constraint firstAttribute="height" constant="55" id="EIb-yd-bP6"/>
+                        <constraint firstItem="9rx-Ll-or3" firstAttribute="width" secondItem="h2n-4L-wgf" secondAttribute="width" id="KDQ-YL-70E"/>
                         <constraint firstAttribute="trailing" secondItem="h2n-4L-wgf" secondAttribute="trailing" constant="11" id="KS3-VX-E3J"/>
                         <constraint firstItem="h2n-4L-wgf" firstAttribute="leading" secondItem="S6U-nl-yF6" secondAttribute="trailing" constant="2" id="PDF-gI-a1x"/>
+                        <constraint firstItem="9rx-Ll-or3" firstAttribute="centerY" secondItem="h2n-4L-wgf" secondAttribute="centerY" id="Q2C-MO-Itl"/>
                         <constraint firstItem="kmh-ea-mxf" firstAttribute="centerY" secondItem="fq4-vY-bOF" secondAttribute="centerY" id="RAh-Xq-ycU"/>
                         <constraint firstAttribute="height" constant="44" id="ZFS-Hh-Hr0"/>
+                        <constraint firstItem="9rx-Ll-or3" firstAttribute="height" secondItem="h2n-4L-wgf" secondAttribute="height" id="cPc-81-hcY"/>
                         <constraint firstItem="h2n-4L-wgf" firstAttribute="top" secondItem="QHR-x7-wbM" secondAttribute="top" constant="5" id="vlK-Dw-uOy"/>
                         <constraint firstAttribute="bottom" secondItem="h2n-4L-wgf" secondAttribute="bottom" constant="5" id="x8Z-CV-fJb"/>
                     </constraints>
@@ -237,6 +246,7 @@
                 <outlet property="requestAttachmentButton" destination="fq4-vY-bOF" id="uam-Py-JYZ"/>
                 <outlet property="sendButton" destination="Fwh-1E-9nT" id="xLb-aT-fXX"/>
                 <outlet property="stackView" destination="S6U-nl-yF6" id="OeM-fQ-dCu"/>
+                <outlet property="textField" destination="9rx-Ll-or3" id="Q5Q-ct-X00"/>
                 <outlet property="textView" destination="h2n-4L-wgf" id="8rn-1m-X5R"/>
                 <outletCollection property="sideMarginsCons" destination="nlc-RL-Ygf" collectionClass="NSMutableArray" id="vz6-YM-AgD"/>
                 <outletCollection property="sideMarginsCons" destination="B4u-MN-vha" collectionClass="NSMutableArray" id="LY7-XS-Vo0"/>
