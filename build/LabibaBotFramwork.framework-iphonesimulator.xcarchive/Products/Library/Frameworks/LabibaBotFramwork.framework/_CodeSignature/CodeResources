@@ -22,7 +22,7 @@
 		</data>
 		<key>Base.lproj/Localizable.strings</key>
 		<data>
-		ZK7xJaPOcETX/ICoii0a1UWsYDo=
+		YzavxsFnW0bz02EUMSuYyqcarko=
 		</data>
 		<key>BotBubble.nib</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		KWgYb5JOEoXzY6yfwcw3A+zIioM=
+		85gzrcXEYArzgvoa0u+sFldm4EU=
 		</data>
 		<key>JsonExample.json</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/objects-12.3+.nib</key>
 		<data>
-		fBQXM8zsX7k3+kQXRVVP26MiJno=
+		3Ynwmnol4gs78tH6q1FCQTufsd8=
 		</data>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/objects-14.0+.nib</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/runtime.nib</key>
 		<data>
-		gEE0MOC45pzagYS9CBdrAtvDbz8=
+		ZGl1vYH4f4fWmp4BWgUFjiHcNoc=
 		</data>
 		<key>Labiba.storyboardc/21L-TP-ZZH-view-EIa-Hs-D8H.nib/objects-12.3+.nib</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/objects-12.3+.nib</key>
 		<data>
-		F78qCRShq6VYRlxBT8hdO95LR/Y=
+		NYzqHQCaXW7qgaWzZvWYMUhbhOE=
 		</data>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/objects-14.0+.nib</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/runtime.nib</key>
 		<data>
-		euTkgU2dUsol5DwbEm61qysYxTg=
+		JfIySsyA8VHaQO/xmrF9xA/gXAc=
 		</data>
 		<key>Labiba.storyboardc/287-7P-3Rf-view-ZiX-qL-lWW.nib/objects-12.3+.nib</key>
 		<data>
@@ -430,7 +430,7 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		l5nnIEdTB7lvEk4QA/D+sQ5xkXI=
+		RmsP9ueye5MMKwbNW5m1HwG+euk=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -442,7 +442,7 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		l5nnIEdTB7lvEk4QA/D+sQ5xkXI=
+		RmsP9ueye5MMKwbNW5m1HwG+euk=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -454,7 +454,7 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		pXUIDzINehWTAsNXbnmTYEI4wEU=
+		182xgi0YMAZ3NnGq3Cox9FtE9pM=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -466,7 +466,7 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		pXUIDzINehWTAsNXbnmTYEI4wEU=
+		182xgi0YMAZ3NnGq3Cox9FtE9pM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -586,7 +586,7 @@
 		</data>
 		<key>SplashScreen.storyboardc/V0b-7M-Sn2-view-Lyg-IE-FCW.nib</key>
 		<data>
-		frYk/sq/HAa+J1T1QZRMWFAwczk=
+		xbOGmj0L9o3zrJMr+TjNxYKGB+I=
 		</data>
 		<key>SplashScreen.storyboardc/aW9-Qs-nJQ-view-dbn-sb-a62.nib</key>
 		<data>
@@ -598,7 +598,7 @@
 		</data>
 		<key>SplashScreen.storyboardc/exf-Dh-bfD-view-ILN-dT-bVw.nib</key>
 		<data>
-		9A7+1izhlSEfuN8fmPhMO9jUxyY=
+		uSg6X5OpO9EQu0u5Erms8d4s6K8=
 		</data>
 		<key>SplashScreen.storyboardc/jMY-PT-WSS-view-vaz-ET-biK.nib</key>
 		<data>
@@ -626,7 +626,7 @@
 		</data>
 		<key>UserTextInputNoLocal.nib</key>
 		<data>
-		JyVj52O/r3jSkOYp2LDCaSbNSmQ=
+		Z0T372RiITRDVsss4W3Z8DKlxuQ=
 		</data>
 		<key>VisualizerVoiceAssistantView.nib</key>
 		<data>
@@ -672,7 +672,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ENMIAD0HeF3JdLh1yGYZmYvL3f8=
+			qOLaOSI6N3KnEVcuiv+0JWFnWu4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -763,7 +763,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			V/hFK3ReyBg9qR/l+6KO+WYs8Mk0wWo3fO7Y7FDudZ8=
+			6QzloMxGLtg5Mx6009tPMN3OyLZKfO0Kky4jvlz/cXc=
 			</data>
 		</dict>
 		<key>BotBubble.nib</key>
@@ -903,7 +903,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tnBtcFdOu2NRquJ7YBulTxClvlszIgpOcE65wBFF4OM=
+			90wIqtRvXCzXnAX80hNbgpKgA7tVOYT6ybHGXZLjg9A=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/objects-14.0+.nib</key>
@@ -917,7 +917,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oC2r2fQq1Yy5qjYixDM3o+3FyRBZc3UZxULf9EZY3cQ=
+			vxiNcrJJBeBEo4UVNKBOvR5wGHFv7w6pIXx4LagshE0=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/21L-TP-ZZH-view-EIa-Hs-D8H.nib/objects-12.3+.nib</key>
@@ -945,7 +945,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FDziUg4+NkrgFurt4iM2RlYBtVRfYa8gb7wBybxcmZI=
+			vTiLpJAS1dMgy3gawEnV/umh6CLrQxBFVnXl+6pc8Ms=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/objects-14.0+.nib</key>
@@ -959,7 +959,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JLmmXveLDdhHdqmnBciwQ6k8Onp5NjTdpamCjLQv/js=
+			Oio/b1uBfl2Ee7QyNC4YCMJIsH8J9xvKUmH8H4EkEA4=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/287-7P-3Rf-view-ZiX-qL-lWW.nib/objects-12.3+.nib</key>
@@ -1470,7 +1470,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yIxd2/O440VmxxUN4AYiG7SBGdLft7oEOPYU0TdEf4Y=
+			9McOs//f3rUsgEs0mHcvSGy5AOBORo7uA5mJR6lCXHw=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64.swiftdoc</key>
@@ -1491,7 +1491,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yIxd2/O440VmxxUN4AYiG7SBGdLft7oEOPYU0TdEf4Y=
+			9McOs//f3rUsgEs0mHcvSGy5AOBORo7uA5mJR6lCXHw=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -1512,7 +1512,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1+03aIyYnEmDP783jft2flu82KCtBaV19+kYi5MBj9o=
+			j9LxMA1f2UyD0kccY7O0+71txiyMs8Sge41DS6Xy7IY=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64.swiftdoc</key>
@@ -1533,7 +1533,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1+03aIyYnEmDP783jft2flu82KCtBaV19+kYi5MBj9o=
+			j9LxMA1f2UyD0kccY7O0+71txiyMs8Sge41DS6Xy7IY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1743,7 +1743,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9+Mp+ShGQzS9EiEtxTM2oPVEhJUvzxgzhLADlwfDGoA=
+			ISDqCQTCF+qY2OZPGGlvyctiQTfgoHv+F58FmUuW4kE=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/aW9-Qs-nJQ-view-dbn-sb-a62.nib</key>
@@ -1764,7 +1764,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BWlaO+15ldzCaTOPHsIq42hbcrLmuthPmywhfIulgmU=
+			/ZWynoLbOoImzfqGHm3WDNDRaLqjhiOmsbW20ywFGrU=
 			</data>
 		</dict>
 		<key>SplashScreen.storyboardc/jMY-PT-WSS-view-vaz-ET-biK.nib</key>
@@ -1813,7 +1813,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1euyAdiyXKC67LoWhxHXKDv8/ubfakK/66/PHQqhki4=
+			D+CLtuZgHRvtU7lv/r8Da/hk8U8LH37a2SegW/piBuI=
 			</data>
 		</dict>
 		<key>VisualizerVoiceAssistantView.nib</key>
@@ -1890,7 +1890,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HG795lB/f+9BqnOgb8hLiFqEVWn+Y0kA/w++jd+lMyM=
+			irvdf/Nm3YXLXz81tTmGdKUJFFvk4ldxNYIe/l6uAq0=
 			</data>
 			<key>optional</key>
 			<true/>

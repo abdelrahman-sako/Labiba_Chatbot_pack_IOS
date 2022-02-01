@@ -26,7 +26,7 @@
 // al: Alerts
 "al-call-message" = "هل أنت متأكد من أنك تريد الإتصال ؟";
 "al-feedback-placeholder" = "اكتب تعليقك هنا";
-"make_sure_siri_enabled" = "الرجاءالتأكد من تفعيل siri ";
+"make_sure_siri_enabled" = "يجب تفعيل \"سيري\" لاستخدام خاصية التحدث الصوتي";
 "make_sure_voice_recognition_enabled" = "الرجاء تفعيل خاصية التعرف على الصوت";
 "make_sure_mic_enabled" = "الرجاء تفعيل الميكروفون";
 "chang_language" = "تغيير اللغة";

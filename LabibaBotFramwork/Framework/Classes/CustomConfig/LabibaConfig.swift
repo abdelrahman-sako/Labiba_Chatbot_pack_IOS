@@ -22,6 +22,9 @@ public class LabibaConfig {
     var conversationVC:ConversationViewController?
     //*************
     public func BOJConnect(language:String ,customerID:String,trxnlimit:Int,callback:(()->Void)?){
+        guard checkURLs() else {
+            return
+        }
         self.callback = callback
         //MARK: initialization
  //      Labiba.initialize(RecipientIdAR:"5bfcd0bf-cb9a-4034-96ff-7c67000df2d3",RecipientIdEng: "45515613-1713-4031-bade-54ef60563547")// production IDs
@@ -59,6 +62,9 @@ public class LabibaConfig {
 //        Labiba.set_voiceServicePath("/api/VoiceAPI/VoiceClip")
         
         // Labiba.set_basePath("http://api.labiba.ai")
+        
+        
+        
         
         LabibaThemes.isThemeApplied = true
         Labiba.setBotType(botType: .visualizer)
@@ -184,6 +190,30 @@ public class LabibaConfig {
         let vc = Labiba.createWatchConnectivity()
         vc.modalPresentationStyle = .fullScreen
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
+    }
+    
+    func checkURLs()->Bool{
+        var message = ""
+        if Labiba._basePath.isEmpty {
+           message = "basePath"
+        }else if Labiba._messagingServicePath.isEmpty {
+            message = "messagingServicePath"
+        }else if Labiba._voiceBasePath.isEmpty {
+            message = "voiceBasePath"
+        }else if Labiba._voiceServicePath.isEmpty {
+            message = "voiceServicePath"
+        }else if Labiba._helpUrl.isEmpty {
+            message = "helpUrl"
+        }else if Labiba._updateTokenUrl.isEmpty {
+            message = "updateTokenUrl"
+        }
+        if message.isEmpty {
+            return true
+        }else {
+            showErrorMessage("Please set \"\(message)\" to proceed")
+            return false
+        }
+        
     }
 }
 

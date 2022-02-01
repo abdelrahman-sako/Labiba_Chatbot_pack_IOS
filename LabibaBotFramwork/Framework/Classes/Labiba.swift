@@ -27,16 +27,18 @@ public enum BotType:Int {
     
   //  static var _basePath = "ws://whatsapp.labibabot.com/api/mws"
    // static var _basePath = "ws://botbuilder.labiba.ai/api/mws"
-    static var _socketBasePath = "wss://botbuilder.labiba.ai/api/mws"
-    static var _basePath = "https://botbuilder.labiba.ai"
-    static var _messagingServicePath = "/api/MobileAPI/MessageHandler"
-    static var _voiceBasePath = "https://voice.labibabot.com"
-    static var _voiceServicePath = "/translate/texttospeech"
+   // static var _socketBasePath = "wss://botbuilder.labiba.ai/api/mws"
+    
+    static var _basePath = ""     //"https://botbuilder.labiba.ai"
+    static var _messagingServicePath = ""    //"/api/MobileAPI/MessageHandler"
+    static var _voiceBasePath = ""     //"https://voice.labibabot.com"
+    static var _voiceServicePath = ""      // "/translate/texttospeech"
     static var _loggingServicePath = "/api/MobileAPI/MobileLogging"
     static var _prechatFormServicePath = "/api/PreChatFrom/FetchPreChatFrom"
     static var _uploadUrl = "https://botbuilder.labiba.ai/WebBotConversation/UploadHomeReport"
-    static var _helpUrl = "https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage"
-    static var _updateTokenUrl = "http://api.labiba.ai/api/Auth/Login"
+    static var _helpUrl = ""   //"https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage"
+    static var _updateTokenUrl = ""   //"http://api.labiba.ai/api/Auth/Login"
+    
    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
    

@@ -68,7 +68,7 @@ class UserInput:UIView {
         {
             textView.isHidden = true
             textField.isHidden = false
-            textField.keyboardType = .numberPad
+            textField.keyboardType = .asciiCapableNumberPad
             if #available(iOS 12.0, *) {
                 textField.textContentType = .oneTimeCode
             }
@@ -76,7 +76,7 @@ class UserInput:UIView {
         }
         else if txt == "NUMBER"
         {
-            textView.keyboardType = .numberPad
+            textView.keyboardType = .asciiCapableNumberPad
             return
         }
         else if txt == "Disable"
