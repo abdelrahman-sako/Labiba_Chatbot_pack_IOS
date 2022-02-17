@@ -53,7 +53,8 @@ class SelectableCardView: UIView
         view.backgroundColor =  Labiba.CarousalCardView.backgroundColor
         view.alpha = Labiba.CarousalCardView.alpha
         view.bacgroundImage.layer.cornerRadius = Labiba.CarousalCardView.cornerRadius + 30*ipadFactor
-
+        view.imageView.layer.cornerRadius = Labiba.CarousalCardView.cornerRadius + 30*ipadFactor
+        view.imageView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         if let grad = Labiba.CarousalCardView.bottomGradient{
             view.bottomGradientView.applyGradient(colours: grad.colors, locations: nil)
             view.bottomGradientView.layer.cornerRadius = Labiba.CarousalCardView.cornerRadius + 30*ipadFactor
