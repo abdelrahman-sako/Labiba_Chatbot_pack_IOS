@@ -52,10 +52,11 @@ class SelectableCardView: UIView
         view.layer.borderColor = Labiba.CarousalCardView.border.color.cgColor
         view.backgroundColor =  Labiba.CarousalCardView.backgroundColor
         view.alpha = Labiba.CarousalCardView.alpha
-        
+        view.bacgroundImage.layer.cornerRadius = Labiba.CarousalCardView.cornerRadius + 30*ipadFactor
 
         if let grad = Labiba.CarousalCardView.bottomGradient{
             view.bottomGradientView.applyGradient(colours: grad.colors, locations: nil)
+            view.bottomGradientView.layer.cornerRadius = Labiba.CarousalCardView.cornerRadius + 30*ipadFactor
         }
         view.borders.forEach { (view) in
             view.backgroundColor = #colorLiteral(red: 0.9377940315, green: 0.930705514, blue: 0.9825816319, alpha: 1)
@@ -123,7 +124,7 @@ class SelectableCardView: UIView
                     self.bacgroundImage.image = image
                 }else{
                     self.imageView.image = image
-                    self.imageView.backgroundColor = Labiba.CarousalCardView.backgroundColor
+                    self.imageView.backgroundColor = .clear //Labiba.CarousalCardView.backgroundColor
                     self.imageView.contentMode = .scaleAspectFill
                 }
                 

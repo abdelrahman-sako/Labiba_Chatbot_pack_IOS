@@ -207,6 +207,9 @@ public class LabibaConfig {
         }else if Labiba._updateTokenUrl.isEmpty {
             message = "updateTokenUrl"
         }
+        else if Labiba._loggingServicePath.isEmpty {
+            message = "loggingServicePath"
+        }
         if message.isEmpty {
             return true
         }else {
