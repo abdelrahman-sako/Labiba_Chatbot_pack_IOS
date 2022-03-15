@@ -423,19 +423,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     func shutDownBotChat() -> Void {
-        //botConnector.delegate = nil // to ensure that the text to speech will not work if the response return after chat shut down
-       // TextToSpeechManeger.Shared.stop()
-       // self.clearDisplays()
-//        botConnector.close()
-//        delegate?.labibaWillClose?()
-//        Labiba.navigationController?.dismiss(animated: true, completion: nil)
         Labiba.dismiss()
         UIApplication.shared.setStatusBarColor(color: .clear)
-//        if let navVC = self.navigationController {
-//            navVC.popViewController(animated: self.animatesClosing)
-//        } else {
-//            self.dismiss(animated: self.animatesClosing, completion: nil)
-//        }
     }
     
     func labibaHeaderViewDidRequestClosing()

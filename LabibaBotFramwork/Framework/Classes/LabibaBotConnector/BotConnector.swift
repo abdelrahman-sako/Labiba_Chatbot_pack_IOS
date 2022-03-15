@@ -27,26 +27,31 @@ protocol BotConnectorInterface:class {
     func botConnectorDidRecieveTypingActivity(_ botConnector:BotConnector) -> Void
 }
 
-enum NetworkError: String, Error {
-    case badURL
-    case encodingError = "Encoding error"
-    case empty = "Empty"
-    case unAuthorized = "401"
-}
-extension NetworkError: LocalizedError {
-    public var errorDescription: String? {
-        switch self {
-        case .badURL:
-            return "unvalid url"
-        case .encodingError:
-            return "response could not be decoded"
-        case .empty:
-            return "Response is empty"
-        case .unAuthorized:
-            return "Authorization has been denied"
-        }
-    }
-}
+//enum NetworkError: String, Error {
+//    case badURL
+//    case encodingError = "Encoding error"
+//    case empty = "Empty"
+//    case unAuthorized = "401"
+//    case unknown = "Unknown"
+//}
+//extension NetworkError: LocalizedError {
+//    public var errorDescription: String? {
+//        switch self {
+//        case .badURL:
+//            return "invalid url"
+//        case .encodingError:
+//            return "Sorry, an unexpected error occurred. \nError code 102"
+//        case .empty:
+//            return "Sorry, an unexpected error occurred. \nError code 104"
+//        case .unAuthorized:
+//            return "Authorization denied, please try again later."
+//        case .unknown:
+//            return "Sorry, an unexpected error occurred. Error code 100"
+//        }
+//    }
+//
+//}
+
 class BotConnector: NSObject {
     
     var currentRequest: DataRequest?
@@ -74,10 +79,6 @@ class BotConnector: NSObject {
     func sendGetStarted() -> Void {}
     func reconnectConversation() -> Void {}
     func resumeConnection() {}
-    func close() -> Void {
-       // print("Request \"\(currentRequest?.request?.url?.absoluteString ?? "")\" was canceld")
-        currentRequest?.cancel()
-    }
     
     func fetchHistory() -> Void {}
     
@@ -90,9 +91,12 @@ class BotConnector: NSObject {
     //MARK: Initializer
     
     var sessionManager:SessionManager?
+    var opQueue:OperationQueue?
     override init() {
         super.init()
         sessionManagerConfiguration()
+        opQueue = OperationQueue()
+        opQueue?.maxConcurrentOperationCount = 1 // serial requests
     }
     
     func sessionManagerConfiguration(token:String = SharedPreference.shared.jwtToken.token ?? "")  {
@@ -104,6 +108,10 @@ class BotConnector: NSObject {
         sessionManager = SessionManager(configuration: configuration)
     }
     
+    func close() -> Void {
+        sessionManager?.session.getAllTasks(completionHandler: {$0.forEach({$0.cancel()})})
+        loader.dismiss()
+    }
     
     //MARK: Implemented methodes
     
@@ -211,12 +219,13 @@ class BotConnector: NSObject {
                     if  let result = model["response"] {
                         completion(.success(result))
                     }else{
-                        completion(.failure(NetworkError.encodingError))
+                        let error = LabibaError(code: .EncodingError, statusCode: 0)
+                        completion(.failure(error))
                     }
                 case .failure(let err):
                     completion(.failure(err))
                 }
-                self.loader.dismiss()
+               // self.loader.dismiss()
             }
         }catch let err{
             completion(.failure(err))
@@ -236,7 +245,7 @@ class BotConnector: NSObject {
             case .failure(let err):
                 completion(.failure(err))
             }
-            self.loader.dismiss()
+          //  self.loader.dismiss()
         }
     }
     
@@ -253,7 +262,7 @@ class BotConnector: NSObject {
             case .failure(let err):
                 completion(.failure(err))
             }
-            self.loader.dismiss()
+            //self.loader.dismiss()
         }
     }
     
@@ -269,12 +278,13 @@ class BotConnector: NSObject {
                 if model.count > 0 {
                 completion(.success(model[0].Data ?? []))
                 }else {
-                    completion(.failure(NetworkError.empty))
+                    let error = LabibaError(code: .EmptyResponse, statusCode: 0)
+                    completion(.failure(error))
                 }
             case .failure(let err):
                 completion(.failure(err))
             }
-            self.loader.dismiss()
+           // self.loader.dismiss()
         }
     }
     
@@ -311,29 +321,53 @@ class BotConnector: NSObject {
             }
         }
         
-        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
+        let log:(_ respons:String,_ exception:String?)->Void = { respons,exception in
             if let logTag = logTag {
-                self.log(url: url, tag: logTag, method: method, parameter: parameters?.description ?? "", response: respons,exception: exception)
+                let additionalHeaders = (self.sessionManager?.session.configuration.httpAdditionalHeaders as? [String:String] ?? [:]).description
+                self.log(url: url,headers: additionalHeaders,tag: logTag, method: method, parameter: parameters?.description ?? "", response: respons,exception: exception)
             }
         }
-        currentRequest = sessionManager?.request(url, method: method, parameters: parameters ,encoding: encoding , headers: nil ).responseData { (response) in
-            switch response.result{
-            case .success(let data):
+        opQueue?.addOperation({
+            self.currentRequest = self.sessionManager?.request(url, method: method, parameters: parameters ,encoding: encoding , headers: nil ).responseData { (response) in
+                
                 let statusCode = response.response?.statusCode ?? 0
-                prettyPrintedResponse(url: url, statusCode:statusCode,method:method.rawValue,data: data, name: URL(string: url)?.lastPathComponent ?? "request")
-                do {
-                    let response = try JSONDecoder().decode(T.self, from: data)
-                    //log("ios","ios")
-                    completion(.success(response))
-                }catch{
-                    log(String(data: data , encoding: .utf8) ?? "",NetworkError.encodingError.localizedDescription)
-                    completion(.failure( NetworkError(rawValue: "\(statusCode)") ?? .encodingError))
+                //print(response.response?.allHeaderFields)
+                switch response.result{
+                case .success(let data):
+                    
+                    prettyPrintedResponse(url: url, statusCode:statusCode,method:method.rawValue,data: data, name: URL(string: url)?.lastPathComponent ?? "request")
+                    let dataString = String(data: data , encoding: .utf8) ?? ""
+                    
+                    do {
+                        let response = try JSONDecoder().decode(T.self, from: data)
+                        if let array =  response as? Array<Any>,  array.isEmpty {
+                            //log(dataString, "\(NetworkError.empty.localizedDescription) \n status code = \(statusCode)")
+                            let error = LabibaError(code: .EmptyResponse, statusCode: statusCode)
+                            log(dataString, error.logDescription)
+                            completion(.failure(error))
+                        }else if Labiba.Logging.isSuccessLoggingEnabled {
+                            log(dataString, nil)
+                            completion(.success(response))
+                        }
+                        
+                    }catch{
+                        //let error = NetworkError(rawValue: "\(statusCode)") ?? .encodingError
+                        //log(dataString, "\(error.localizedDescription) \n\(err.localizedDescription)\n status code = \(statusCode)")
+                        let resposeHeaders = response.response?.allHeaderFields
+                        let error = LabibaError(statusCode: statusCode,headers: resposeHeaders) ?? LabibaError(code: .EncodingError, statusCode: statusCode,headers: resposeHeaders)
+                        log(dataString, error.logDescription)
+                        completion(.failure(error))
+                    }
+                    
+                case .failure(let err):
+                    let error = LabibaError(error: err, statusCode: statusCode)
+                    log("", error.logDescription)
+                    completion(.failure(error))
                 }
-            case .failure(let err):
-                log("",err.localizedDescription)
-                completion(.failure(err))
+                
+                self.loader.dismiss()
             }
-        }
+        })
         
     }
     
@@ -347,10 +381,18 @@ class BotConnector: NSObject {
         case help = "HELP"
         case prechatForm = "PRECHAT_FORM"
         case upadateToken = "UPDATE_TOKEN"
+        
+        var exception:String {
+            return rawValue + "_ERROR"
+        }
+        
+        var normal:String {
+            return rawValue
+        }
     }
     
     func log(url:String,headers:String? = nil,tag:LoggingTag,method:HTTPMethod,parameter:String ,response:String,exception:String? = nil) {
-        guard Labiba.isLoggingEnabled else {
+        guard Labiba.Logging.isEnabled else {
             return
         }
         UIDevice.current.isBatteryMonitoringEnabled = true
@@ -369,27 +411,32 @@ Headers:\(headers ?? "")
 Body: \(parameter)
 """
             let userDetails:String = """
-Name:
-PhoneNumber:
-Email:
+SenderID: \(Labiba._senderId ?? "")
+RecepientID: \(Labiba._pageId)
 """
             var filterdRespose = response
-            if response.range(of: "<[a-z][\\s\\S]*>", options: .regularExpression, range: nil, locale: nil) != nil {
-                filterdRespose = "HTML response"
+            if filterdRespose.range(of: "<[a-z][\\s\\S]*>", options: .regularExpression, range: nil, locale: nil) != nil
+                && exception != nil {
+                // exception != nil : this condition is to pass the ssml part in successful requests
+                //  romove  HTML tags in the following line because server may consider HTML as an attack code:403
+                filterdRespose = "HTML response" + filterdRespose.replacingOccurrences(of: "<", with: "").replacingOccurrences(of: ">", with: "")
             }
+       
+            
             let body:[String:String] = [
                 "Source":"IOS",
-                "Tag":tag.rawValue,
+                "Tag": exception == nil ? tag.normal : tag.exception ,
                 "DeviceDetails":deviceDetails,
                 "UserDetails":userDetails,
                 "Request":requestDetails,
                 "Response":filterdRespose,
-                "Exception":exception ?? "",
+                "Exception":exception ?? "Success",
                 "SDKVersion":Labiba.version
             ]
             let data = try! JSONEncoder().encode(body)
             prettyPrintedResponse(data: data)
-            let url =  "\(Labiba._basePath)\(Labiba._loggingServicePath)"//Labiba._loggingPath
+            //let url =  "\(Labiba._basePath)\(Labiba._loggingServicePath)"//Labiba._loggingPath
+            let url = "https://botbuilder.labiba.ai/api/MobileAPI/MobileLogging"
             DispatchQueue.global(qos: .background).async {
                 request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: nil).responseData { (response) in
                     print ( "log api " ,response.response?.statusCode ?? "0")

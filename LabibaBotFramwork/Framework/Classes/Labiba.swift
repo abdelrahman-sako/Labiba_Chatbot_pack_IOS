@@ -62,7 +62,7 @@ public enum BotType:Int {
     public static var liveChatModel:LiveChatModel?
     public static let labibaThemes = LabibaThemes()
     public  static var _WithRatingVC: Bool = false
-    public  static var isLoggingEnabled: Bool = false
+  //  public  static var isLoggingEnabled: Bool = false
 
      // MARK:- Main Settings
     
@@ -396,7 +396,7 @@ public enum BotType:Int {
     //MARK:- Requests setting
     public static var timeoutIntervalForRequest:TimeInterval = 60
     
-    
+    public static let Logging = LabibaLogging()
     
     //MARK:- Menu Card View UIConfiguration
     public static let MenuCardView = LabibaMenuCardView()

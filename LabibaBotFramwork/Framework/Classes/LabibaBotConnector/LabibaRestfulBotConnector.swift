@@ -67,7 +67,7 @@ class LabibaRestfulBotConnector:BotConnector{
     
     
     override func startConversation() {
-        showLoadingIndicator()
+       // showLoadingIndicator() 
         self.sendMessage("CONVERSATION-RELOAD")
     }
     
@@ -75,39 +75,7 @@ class LabibaRestfulBotConnector:BotConnector{
         self.sendMessage("get started")
     }
     
-    
     func sendData(parameters:[String:Any])  {
-//        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
-//            self.log(url: self.baseURL, tag: .messaging, method: .post, parameter: parameters.description, response: respons,exception: exception)
-//        }
-//        isTherePendingRequest = true
-//        currentRequest =  sessionManager.request(baseURL, method: .post, parameters: parameters, encoding: JSONEncoding.default , headers: ["Content-Type":"application/json"]).responseData { (response) in
-//            self.loader.dismiss()
-//            if let err = response.error{
-//                print(err.localizedDescription)
-//                return
-//            }
-//            let jsonDecoder = JSONDecoder()
-//            switch response.result{
-//            case .success(let data):
-//
-//                do {
-//                   // let model = try jsonDecoder.decode([LabibaModel].self, from: self.readExampleData())
-//                   let model = try jsonDecoder.decode([LabibaModel].self, from: data)
-//                    prettyPrintedResponse(url: self.baseURL, statusCode: response.response?.statusCode ?? 0, method: "post", data: data, name: "Messaging")
-//                    self.parseResponse(response: model)
-//                } catch  {
-//                    self.delegate?.botConnectorRemoveTypingActivity(self)
-//                    log(String(data: data, encoding: .utf8) ?? "",error.localizedDescription)
-//                    print(error.localizedDescription)
-//                }
-//            case .failure(let err ):
-//                self.delegate?.botConnectorRemoveTypingActivity(self)
-//                log("",err.localizedDescription)
-//                print(err.localizedDescription)
-//            }
-//            self.isTherePendingRequest = false
-//        }
         isTherePendingRequest = true
         LabibaRequest([LabibaModel].self, url: baseURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, logTag: .messaging, completion: { response in
             self.loader.dismiss()
@@ -130,42 +98,9 @@ class LabibaRestfulBotConnector:BotConnector{
             "SenderID":Labiba._senderId
         ]
         let url = "\(Labiba._basePath)/api/getLastBotResponse"
-//        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
-//            self.log(url: url, tag: .lastMessage, method: .post, parameter: params.description, response: respons,exception: exception)
-//        }
-//        isTherePendingRequest = true
-//        currentRequest =  sessionManager.request(url, method: .post, parameters: params, encoding: JSONEncoding.default , headers: ["Content-Type":"application/json"]).responseData { (response) in
-//            self.loader.dismiss()
-//            if let err = response.error{
-//                print(err.localizedDescription)
-//                return
-//            }
-//            let jsonDecoder = JSONDecoder()
-//            switch response.result{
-//            case .success(let data):
-//
-//                do {
-//                    let model = try jsonDecoder.decode(LastBotResponseModel.self, from: data)
-//                    prettyPrintedResponse(url: url, statusCode: response.response?.statusCode ?? 0, method: "post", data: data, name: "Last Bot Message")
-//                    if let labibaModel = model.lastBotResponse {
-//                        self.parseResponse(response: labibaModel)
-//
-//                    }
-//                } catch  {
-//                    self.delegate?.botConnectorRemoveTypingActivity(self)
-//                    log(String(data: data, encoding: .utf8) ?? "",error.localizedDescription)
-//                    print(error.localizedDescription)
-//                }
-//            case .failure(let err ):
-//                self.delegate?.botConnectorRemoveTypingActivity(self)
-//                log("",err.localizedDescription)
-//                print(err.localizedDescription)
-//            }
-//            self.isTherePendingRequest = false
-//        }
         
-        isTherePendingRequest = true
         self.delegate?.botConnectorDidRecieveTypingActivity(self)
+       
         LabibaRequest(LastBotResponseModel.self, url: url, method: .post, parameters: params, encoding: JSONEncoding.default, logTag: .lastMessage, completion: { response in
             self.loader.dismiss()
             switch response {
@@ -175,14 +110,15 @@ class LabibaRestfulBotConnector:BotConnector{
                 }
             case .failure(let err):
                 print(err.localizedDescription)
+                showErrorMessage(err.localizedDescription)
                 self.delegate?.botConnectorRemoveTypingActivity(self)
             }
-            self.isTherePendingRequest = false
         })
     }
     
     override func resumeConnection() {
         if isTherePendingRequest {
+            isTherePendingRequest = false
             currentRequest?.cancel()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                 self.getLastBotResponse()

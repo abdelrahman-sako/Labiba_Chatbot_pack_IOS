@@ -167,7 +167,8 @@ public class LabibaConfig {
         Labiba.setListeningDuration(Duration: 1.0)
         Labiba.setStatusBarStyle(style: .lightContent)
         Labiba.setEnableAutoListening(enable: true)
-        Labiba.isLoggingEnabled = true
+        Labiba.Logging.isEnabled = true
+        Labiba.Logging.isSuccessLoggingEnabled = true
        Labiba.setVoiceMan(ar: "ar-XA-Standard-D", en: "en-US-Wavenet-C")
 
 

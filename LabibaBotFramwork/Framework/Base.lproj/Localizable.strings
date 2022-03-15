@@ -26,7 +26,7 @@
 // al: Alerts
 "al-call-message" = "Are you sure you want to call?";
 "al-feedback-placeholder" = "Type your comment";
-"make_sure_siri_enabled" = "Please enable Siri to use the voice feature";
+"make_sure_siri_enabled" = "Please enable Siri to use the voice feature.";
 "make_sure_voice_recognition_enabled" = "Please enable voice recognition";
 "make_sure_mic_enabled" = "Please enable the microphone";
 "chang_language" = "Change language";
@@ -176,3 +176,23 @@
 // keyboard tool bar
 "doneAction" = "Done";
 "cancelAction" = "cancel";
+
+"authDenied" = "Authorization denied, please make sure you download the latest version of the app.";
+"noInternetCon" = "Please check your internet connection and try again.";
+"emptyResponseErr" = "Sorry, an unexpected error occurred. Error code 101.";
+"timeoutErr" = "Sorry, an unexpected error occurred. Error code 102.";
+"sslErr" = "Sorry, an unexpected error occurred. Error code 103.";
+"mappingErr" = "Sorry, an unexpected error occurred. Error code 104.";
+"checkConnectionErr" = "Please check your internet connection and try again.";
+"unknownErr" = "Please try again, an unexpected error occurred. Error code 108.";
+"urlErr" = "Please try again, an unexpected error occurred. Error code 109.";
+"serverNotReachableErr" = "Could not establish a connection. Error code 110.";
+"tooManyRedirects" = "Please try again, an unexpected error occurred. Error code 111.";
+"dataErr" = "Please try again, an unexpected error occurred. Error code 112";
+"fileErr" = "Please try again, an unexpected error occurred. Error code 113.";
+"callActiveErr" = "Please try again, an unexpected error occurred. Error code 114";
+"dataNotAllowedErr" = "Please try again, an unexpected error occurred. Error code 115.";
+"bgSessionError" = "Please try again, an unexpected error occurred. Error code 116.";
+
+
+

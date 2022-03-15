@@ -8,67 +8,72 @@
 
 import UIKit
 
-func showErrorMessage(_ message: String) -> Void
-{
+//func showErrorMessage(_ message: String) -> Void
+//{
+//
+//    DispatchQueue.main.async
+//    {
+//
+//        let alert = UIAlertController(title: localString("app-title"),
+//                message: message, preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: localString("OK"), style: .default, handler: { _ in })
+//
+//        alert.addAction(okAction)
+//        getTheMostTopViewController().present(alert, animated: true, completion: {})
+//    }
+//}
+//func showErrorMessage(title:String, message: String) -> Void
+//{
+//
+//    DispatchQueue.main.async
+//    {
+//
+//        let alert = UIAlertController(title: title,
+//                message: message, preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: localString("OK"), style: .default, handler: { _ in })
+//
+//        alert.addAction(okAction)
+//        getTheMostTopViewController().present(alert, animated: true, completion: {})
+//    }
+//}
 
-    DispatchQueue.main.async
-    {
-
-        let alert = UIAlertController(title: localString("app-title"),
-                message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: localString("OK"), style: .default, handler: { _ in })
-
-        alert.addAction(okAction)
-        getTheMostTopViewController().present(alert, animated: true, completion: {})
-    }
-}
-func showErrorMessage(title:String, message: String) -> Void
-{
-
-    DispatchQueue.main.async
-    {
-
-        let alert = UIAlertController(title: title,
-                message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: localString("OK"), style: .default, handler: { _ in })
-
-        alert.addAction(okAction)
-        getTheMostTopViewController().present(alert, animated: true, completion: {})
-    }
-}
-
-func showErrorMessage(_ message: String ,okHandelr:(()->Void)? = nil ) -> Void
+//func showErrorMessage(_ message: String ,okHandelr:(()->Void)? = nil ) -> Void
+//{
+//
+//    DispatchQueue.main.async
+//        {
+//
+//            let alert = UIAlertController(title: "app-title".localForChosnLangCodeBB,
+//                                          message: message, preferredStyle: .alert)
+//            let okAction = UIAlertAction(title:"OK".localForChosnLangCodeBB, style: .default, handler: { _ in
+//                okHandelr?()
+//            })
+//            alert.addAction(okAction)
+//            getTheMostTopViewController().present(alert, animated: true, completion: {})
+//    }
+//}
+func showErrorMessage(title:String = "app-title".localForChosnLangCodeBB , _ message: String ,okHandelr:(()->Void)? = nil , cancelHandler:(()->Void)? = nil) -> Void
 {
     
+    guard !message.isEmpty else {
+        print("empty popup canceld")
+        return
+    }
     DispatchQueue.main.async
         {
             
-            let alert = UIAlertController(title: "app-title".localForChosnLangCodeBB,
-                                          message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title:"OK".localForChosnLangCodeBB, style: .default, handler: { _ in
-                okHandelr?()
-            })
-            alert.addAction(okAction)
-            getTheMostTopViewController().present(alert, animated: true, completion: {})
-    }
-}
-func showErrorMessage(_ message: String ,okHandelr:(()->Void)? = nil , cancelHandler:(()->Void)? = nil) -> Void
-{
-    
-    DispatchQueue.main.async
-        {
-            
-            let alert = UIAlertController(title: "app-title".localForChosnLangCodeBB,
+            let alert = UIAlertController(title: "",
                                           message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK".localForChosnLangCodeBB, style: .default, handler: { _ in
                 okHandelr?()
             })
-            let cancelAction = UIAlertAction(title: "Cancel".localForChosnLangCodeBB, style: .default, handler: { _ in
-                cancelHandler?()
-            })
-            
             alert.addAction(okAction)
-            alert.addAction(cancelAction)
+            if cancelHandler != nil {
+                let cancelAction = UIAlertAction(title: "Cancel".localForChosnLangCodeBB, style: .default, handler: { _ in
+                    cancelHandler?()
+                })
+                alert.addAction(cancelAction)
+            }
             getTheMostTopViewController().present(alert, animated: true, completion: {})
     }
 }

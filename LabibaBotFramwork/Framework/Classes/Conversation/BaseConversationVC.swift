@@ -31,9 +31,18 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
 //        return
         if #available(iOS 13.0, *) {
             NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIScene.willEnterForegroundNotification, object: nil)
+            print("sdfslkfsldfjslf")
         } else {
             NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIApplication.willEnterForegroundNotification, object: nil)
         }
+    }
+    deinit {
+        if #available(iOS 13.0, *) {
+            NotificationCenter.default.removeObserver(self, name: UIScene.willEnterForegroundNotification, object: nil)
+        } else {
+            NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+        }
+        
     }
     @objc func willResignActive(_ notification: Notification) {
         botConnector.resumeConnection()

@@ -305,6 +305,7 @@
 		529C681826F3694700FB8591 /* PrechatFormHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C681626F3694700FB8591 /* PrechatFormHeaderCell.swift */; };
 		529C681926F3694700FB8591 /* PrechatFormHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529C681726F3694700FB8591 /* PrechatFormHeaderCell.xib */; };
 		529C681B26F3855D00FB8591 /* PrechatFormThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C681A26F3855D00FB8591 /* PrechatFormThemeModel.swift */; };
+		52A1030027DE175B0017A6D6 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A102FF27DE175B0017A6D6 /* Logging.swift */; };
 		52AA90E32717FDDB00D6EA60 /* UpdateTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA90E22717FDDB00D6EA60 /* UpdateTokenModel.swift */; };
 		52B6B38325B6FA3E0051ABCE /* HelpPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6B38125B6FA3E0051ABCE /* HelpPopupVC.swift */; };
 		52B6B38425B6FA3E0051ABCE /* HelpPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B6B38225B6FA3E0051ABCE /* HelpPopupVC.xib */; };
@@ -385,6 +386,7 @@
 		52F51A1825B07E7F002C03BB /* AttachmentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F51A1725B07E7F002C03BB /* AttachmentCardView.swift */; };
 		52F6ECB526F7264600B38518 /* PrechatFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6ECB426F7264600B38518 /* PrechatFormModel.swift */; };
 		52F6ECB726F7363000B38518 /* JsonExample1.json in Resources */ = {isa = PBXBuildFile; fileRef = 52F6ECB626F733B700B38518 /* JsonExample1.json */; };
+		52FC007027DF671B000D7DB7 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC006F27DF671B000D7DB7 /* ErrorHandler.swift */; };
 		52FC5CEF24D00A7300C7B7CF /* MapPerviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FC5CEE24D00A7300C7B7CF /* MapPerviewView.xib */; };
 		52FC5CF124D00A9000C7B7CF /* MapPerviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF024D00A9000C7B7CF /* MapPerviewView.swift */; };
 		52FC5CF624D0262F00C7B7CF /* LabibaVoiceExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */; };
@@ -766,6 +768,7 @@
 		529C681626F3694700FB8591 /* PrechatFormHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrechatFormHeaderCell.swift; sourceTree = "<group>"; };
 		529C681726F3694700FB8591 /* PrechatFormHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrechatFormHeaderCell.xib; sourceTree = "<group>"; };
 		529C681A26F3855D00FB8591 /* PrechatFormThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrechatFormThemeModel.swift; sourceTree = "<group>"; };
+		52A102FF27DE175B0017A6D6 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		52AA90E22717FDDB00D6EA60 /* UpdateTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenModel.swift; sourceTree = "<group>"; };
 		52B6B38125B6FA3E0051ABCE /* HelpPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPopupVC.swift; sourceTree = "<group>"; };
 		52B6B38225B6FA3E0051ABCE /* HelpPopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpPopupVC.xib; sourceTree = "<group>"; };
@@ -846,6 +849,7 @@
 		52F51A1725B07E7F002C03BB /* AttachmentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentCardView.swift; sourceTree = "<group>"; };
 		52F6ECB426F7264600B38518 /* PrechatFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrechatFormModel.swift; sourceTree = "<group>"; };
 		52F6ECB626F733B700B38518 /* JsonExample1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonExample1.json; sourceTree = "<group>"; };
+		52FC006F27DF671B000D7DB7 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		52FC5CEE24D00A7300C7B7CF /* MapPerviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapPerviewView.xib; sourceTree = "<group>"; };
 		52FC5CF024D00A9000C7B7CF /* MapPerviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPerviewView.swift; sourceTree = "<group>"; };
 		52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaVoiceExperience.swift; sourceTree = "<group>"; };
@@ -1256,6 +1260,7 @@
 			children = (
 				B42954BE22DDDBD2002DE3E9 /* BotConnector.swift */,
 				521C0085244C2E2700961B54 /* LabibaRestfulBotConnector.swift */,
+				52FC006F27DF671B000D7DB7 /* ErrorHandler.swift */,
 				52C16E63251B82BA0026D20D /* JsonExample.json */,
 				52A8A91F2600BA9E00B7FAB7 /* old socket */,
 			);
@@ -1378,6 +1383,7 @@
 				520DEE6E265F83F500B538A5 /* BackgroundView.swift */,
 				527E985526C53A6D00DA69E6 /* HumanAgentSettings.swift */,
 				529C681A26F3855D00FB8591 /* PrechatFormThemeModel.swift */,
+				52A102FF27DE175B0017A6D6 /* Logging.swift */,
 			);
 			path = "Theme and Settings";
 			sourceTree = "<group>";
@@ -2401,6 +2407,7 @@
 				3782D95123B9F511006A79D4 /* NVActivityIndicatorShape.swift in Sources */,
 				5277567B272EE12F00F8ADE0 /* GradientValueProvider.swift in Sources */,
 				B429553222DDDBD2002DE3E9 /* MapView.swift in Sources */,
+				52FC007027DF671B000D7DB7 /* ErrorHandler.swift in Sources */,
 				52C0A06C25878D3B004D7AAA /* RatingSatrsLightCell.swift in Sources */,
 				3782D9A523BA1369006A79D4 /* SRLog.m in Sources */,
 				527E985626C53A6D00DA69E6 /* HumanAgentSettings.swift in Sources */,
@@ -2471,6 +2478,7 @@
 				37460D9A230A7AC1002748CE /* ReferralModel.swift in Sources */,
 				529C681126F3475E00FB8591 /* PrechatFormFieldCell.swift in Sources */,
 				B429555022DDDBD2002DE3E9 /* Emoticonizer.swift in Sources */,
+				52A1030027DE175B0017A6D6 /* Logging.swift in Sources */,
 				B429551622DDDBD2002DE3E9 /* Platform.swift in Sources */,
 				52FC5CF124D00A9000C7B7CF /* MapPerviewView.swift in Sources */,
 				5281F41A25C8058F005D39CD /* HelpExpandableView.swift in Sources */,

@@ -99,7 +99,7 @@ class WatchConnectivityViewController: UIViewController {
             WCSession.default.sendMessage(["Customer ID":self.customerID,"trxnlimit":trxnlimitInteger], replyHandler: { dic in
                 DispatchQueue.main.async {self.activityIndicator.stopAnimating()}
                 if let respose = dic["status"] as? Bool {
-                    showErrorMessage(title: "Success", message: "Data has been successfully transferred to your watch")
+                    showErrorMessage(title: "Success", "Data has been successfully transferred to your watch")
                 }
             }, errorHandler: { error in
                 DispatchQueue.main.async {self.activityIndicator.stopAnimating()}

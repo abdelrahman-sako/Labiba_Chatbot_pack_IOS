@@ -35,7 +35,7 @@ class LiveChatHandler:NSObject {
         #if canImport(LiveChat)
         LiveChat.presentChat()
         #else
-        showErrorMessage(title: "LiveChat", message: "Live chat can't be imported")
+        showErrorMessage(title: "LiveChat", "Live chat can't be imported")
         #endif
     }
     
@@ -43,7 +43,7 @@ class LiveChatHandler:NSObject {
         #if canImport(LiveChat)
         LiveChat.dismissChat()
         #else
-        showErrorMessage(title: "LiveChat", message: "Live chat can't be imported")
+        showErrorMessage(title: "LiveChat", "Live chat can't be imported")
         #endif
         
     }
