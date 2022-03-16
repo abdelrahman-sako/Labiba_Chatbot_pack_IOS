@@ -135,7 +135,7 @@ class LabibaError:NSError{
         case NSURLErrorBackgroundSessionRequiresSharedContainer,NSURLErrorBackgroundSessionInUseByAnotherProcess,NSURLErrorBackgroundSessionWasDisconnected:
             return localString("bgSessionError")
         default:
-            return super.localizedDescription
+            return localString("unknownErr")
         }
     }
     

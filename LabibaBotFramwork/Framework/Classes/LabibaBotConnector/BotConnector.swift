@@ -435,8 +435,8 @@ RecepientID: \(Labiba._pageId)
             ]
             let data = try! JSONEncoder().encode(body)
             prettyPrintedResponse(data: data)
-            //let url =  "\(Labiba._basePath)\(Labiba._loggingServicePath)"//Labiba._loggingPath
-            let url = "https://botbuilder.labiba.ai/api/MobileAPI/MobileLogging"
+            let url =  "\(Labiba._basePath)\(Labiba._loggingServicePath)"//Labiba._loggingPath
+            //let url = "https://botbuilder.labiba.ai/api/MobileAPI/MobileLogging"
             DispatchQueue.global(qos: .background).async {
                 request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: nil).responseData { (response) in
                     print ( "log api " ,response.response?.statusCode ?? "0")
