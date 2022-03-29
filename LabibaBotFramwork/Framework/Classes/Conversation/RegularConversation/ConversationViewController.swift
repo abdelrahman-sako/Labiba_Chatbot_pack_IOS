@@ -720,10 +720,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     func reloadTable() -> Void
     {
-        DispatchQueue.main.async
-            {
-                self.tableView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.tableView.reloadData()
         }
+//        DispatchQueue.main.async
+//            {
+//                self.tableView.reloadData()
+//        }
     }
     
     override func botConnectorDidRecieveTypingActivity(_ botConnector: BotConnector)

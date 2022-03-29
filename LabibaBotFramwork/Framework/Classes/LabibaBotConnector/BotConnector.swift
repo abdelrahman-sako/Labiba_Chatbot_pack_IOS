@@ -345,8 +345,8 @@ class BotConnector: NSObject {
                             let error = LabibaError(code: .EmptyResponse, statusCode: statusCode)
                             log(dataString, error.logDescription)
                             completion(.failure(error))
-                        }else if Labiba.Logging.isSuccessLoggingEnabled {
-                            log(dataString, nil)
+                        }else{
+                            if Labiba.Logging.isSuccessLoggingEnabled { log(dataString, nil) }
                             completion(.success(response))
                         }
                         
