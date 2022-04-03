@@ -110,9 +110,10 @@ public class LabibaConfig {
         Labiba.CarousalCardView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         Labiba.CarousalCardView.cornerRadius = 14
         Labiba.CarousalCardView.titleFont = (18,.bold)
-        Labiba.CarousalCardView.buttonSeparatorLine = ( UIColor.white , 25)
+        Labiba.CarousalCardView.buttonSeparatorLine = ( .clear , 25)
         Labiba.CarousalCardView.border = (1,UIColor.white.withAlphaComponent(0.2))
         Labiba.CarousalCardView.buttonBorder = (1,UIColor.white.withAlphaComponent(0.6))
+        Labiba.CarousalCardView.buttonsSpacing = 10
         Labiba.CarousalCardView.buttonFont = (13,.regular)
         Labiba.CarousalCardView.buttonCornerRadius = 40
      //   Labiba.CarousalCardView.backgroundImageStyleEnabled = true
