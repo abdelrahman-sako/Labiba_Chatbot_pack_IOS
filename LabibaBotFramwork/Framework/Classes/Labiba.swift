@@ -333,6 +333,7 @@ public enum BotType:Int {
     public static var isVedioButtonHidden:Bool = true
 
     public static var _HeaderTintColor: UIColor = .white
+    public static var backButtonIcon: UIImage? = Image(named: "ps_back")
     static var _headerBackgroundGradient: GradientSpecs?
     static var _headerBackgroundColor: UIColor?
     static var _customHeaderView: LabibaChatHeaderView?
@@ -375,24 +376,7 @@ public enum BotType:Int {
     
     //MARK:- Main Background View UIConfiguration
     public static let BackgroundView = LabibaBackgroundView()
-//    static var _ChatMainBackgroundColor : UIColor?
-//    static var _ChatMainBackgroundGradient : GradientSpecs?
-//    static var _ChatMainBackgroundImage : UIImage?
-//    
-//    public static func setChatMainBackground(color: UIColor)
-//    {
-//        self._ChatMainBackgroundColor = color
-//    }
-//    
-//    public static func setChatMainBackground(gradient: GradientSpecs)
-//    {
-//        self._ChatMainBackgroundGradient = gradient
-//    }
-//    
-//    public static func setChatMainBackground(image: UIImage?)
-//    {
-//        self._ChatMainBackgroundImage = image
-//    }
+
     //MARK:- Requests setting
     public static var timeoutIntervalForRequest:TimeInterval = 60
     

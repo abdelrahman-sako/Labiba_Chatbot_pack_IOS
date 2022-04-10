@@ -41,14 +41,21 @@ enum BubbleSource
             if Labiba.hasBubbleTimestamp {
                 if let timestamp = currentDialog?.timestamp {
                     let dateFormatter = DateFormatter()
+                   
                     dateFormatter.dateFormat = source == .incoming ? Labiba.BotChatBubble.timestamp.formate : Labiba.UserChatBubble.timestamp.formate
-                    timestampLbl.text = "\(source == .incoming ? "Bot" : "You") - \(dateFormatter.string(from: timestamp))"
-                    timestampLbl.isHidden  = false
+                   
+                  
                     if SharedPreference.shared.botLangCode == .ar{
+                        dateFormatter.locale = Locale(identifier: "ar")
+                        timestampLbl.text = "\(source == .incoming ? "بوت" : "انت") - \(dateFormatter.string(from: timestamp))"
                         timestampLbl.textAlignment = source == .incoming  ? .right : .left
                     }else {
+                        dateFormatter.locale = Locale(identifier: "en")
+                        timestampLbl.text = "\(source == .incoming ? "Bot" : "You") - \(dateFormatter.string(from: timestamp))"
                         timestampLbl.textAlignment = source == .incoming  ? .left : .right
                     }
+                    
+                    timestampLbl.isHidden  = false
                 }else {
                     timestampLbl.isHidden  = true
                 }

@@ -127,6 +127,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
        // self.botConnector.configureInternetReachability()
         self.backButton.tintColor = Labiba._HeaderTintColor
         self.backButton.isHidden = Labiba._OpenFromBubble
+        self.backButton.setImage(Labiba.backButtonIcon, for: .normal)
         chatBackgroundColor()
         if let hview = Labiba._customHeaderView
         {
