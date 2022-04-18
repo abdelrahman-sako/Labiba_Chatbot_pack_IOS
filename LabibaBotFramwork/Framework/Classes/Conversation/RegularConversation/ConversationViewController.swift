@@ -168,11 +168,12 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             if let backgroundColor = grad.viewBackgroundColor {
                 self.headerView.backgroundColor = backgroundColor
             }
-            
+            headerView.applyHierarchicalSemantics(flipImage: true)
         }
         else if let bgColor = Labiba._headerBackgroundColor
         {
             self.headerView.backgroundColor = bgColor
+            headerView.applyHierarchicalSemantics(flipImage: true)
         }
         //
         //

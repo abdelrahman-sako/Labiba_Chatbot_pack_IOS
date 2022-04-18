@@ -32,8 +32,8 @@ public class DatePickerViewController: UIViewController
             datePickerVC.modalTransitionStyle = .crossDissolve
             datePickerVC.modalPresentationStyle = .overCurrentContext
             datePickerVC.delegate = delegate
-
-            viewC.present(datePickerVC, animated: true, completion: {})
+            Labiba.navigationController?.present(datePickerVC, animated: true, completion: nil)
+            //viewC.present(datePickerVC, animated: true, completion: {})
         }
         else
         {

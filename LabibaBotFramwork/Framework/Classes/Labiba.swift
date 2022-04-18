@@ -490,6 +490,11 @@ public enum BotType:Int {
         navigationController = LabibaNavigationController(rootViewController: rootViewController)
         navigationController!.modalPresentationStyle = .fullScreen
         navigationController!.modalTransitionStyle = .crossDissolve
+        if #available(iOS 13.0, *) {
+            navigationController?.overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
         return navigationController!
     }
     public static func startConversation(onView vc: UIViewController, animated: Bool = true)

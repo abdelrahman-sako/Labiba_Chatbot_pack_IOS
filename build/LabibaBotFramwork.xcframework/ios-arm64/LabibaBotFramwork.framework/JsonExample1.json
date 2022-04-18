@@ -1,0 +1,26 @@
+[
+    {
+        "_id": "6152c62409bcdb15f8d0254a",
+        "recepient_id": "b4775d34-262b-43c5-841f-3c23bfa8eb4e",
+        "Data": [
+            {
+                "title": "الاسم",
+                "parameterName": "UserFullName",
+                "isOptional": false,
+                "type": "text"
+            },
+            {
+                "title": "البريد الاكتروني",
+                "parameterName": "user_email",
+                "isOptional": false,
+                "type": "email"
+            },
+            {
+                "title": "رقم الهاتف",
+                "parameterName": "UserPhoneNumber",
+                "isOptional": false,
+                "type": "phone"
+            }
+        ]
+    }
+]
