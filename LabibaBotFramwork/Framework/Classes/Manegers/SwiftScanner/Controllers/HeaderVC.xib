@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderVC" customModule="SwiftScanner" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderVC" customModule="LabibaBotFramwork" customModuleProvider="target">
             <connections>
                 <outlet property="closeBtn" destination="Ru6-HQ-tTw" id="Fkc-ye-yGD"/>
                 <outlet property="navigationBar" destination="uTd-99-Q4U" id="oee-FQ-NHA"/>
@@ -24,11 +22,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTd-99-Q4U">
-                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <items>
                         <navigationItem title="扫一扫" id="YLZ-nZ-xbP">
-                            <barButtonItem key="leftBarButtonItem" image="icon_back" style="done" id="Ru6-HQ-tTw">
+                            <barButtonItem key="leftBarButtonItem" image="ic_close" style="done" id="Ru6-HQ-tTw">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="closeBtnClick:" destination="-1" id="UM0-d7-5RC"/>
@@ -38,6 +36,7 @@
                     </items>
                 </navigationBar>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="uTd-99-Q4U" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="mYr-YO-I7C"/>
@@ -47,11 +46,10 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="412" y="-95.802098950524751"/>
         </view>
     </objects>
     <resources>
-        <image name="icon_back" width="19" height="19"/>
+        <image name="ic_close" width="24" height="24"/>
     </resources>
 </document>

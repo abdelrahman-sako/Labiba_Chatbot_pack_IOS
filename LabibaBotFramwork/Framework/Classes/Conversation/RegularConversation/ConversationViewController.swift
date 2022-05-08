@@ -175,6 +175,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             self.headerView.backgroundColor = bgColor
             headerView.applyHierarchicalSemantics(flipImage: true)
         }
+        headerView.applyHierarchicalSemantics(flipImage: true)
         //
         //
      //  addInterationDialog(currentBotType:Labiba.Bot_Type)

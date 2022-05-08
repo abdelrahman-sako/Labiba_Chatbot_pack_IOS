@@ -188,7 +188,7 @@ import UIKit
         Labiba.ChoiceView.tintColor = UIColor(argb: 0x95ffffff)
         Labiba.ChoiceView.borderColor =  UIColor(argb: 0x95ffffff)
         
-        Labiba.setFont(regAR: "Cairo-Regular", boldAR: "Cairo-Bold", regEN: "Cairo-Regular", boldEN: "Cairo-Bold")
+        //Labiba.setFont(regAR: "Cairo-Regular", boldAR: "Cairo-Bold", regEN: "Cairo-Regular", boldEN: "Cairo-Bold")
        // Labiba.setMicButtondAlpha(alpha: 0.8)
         Labiba.VoiceAssistantView.micButton.alpha = 0.8
         Labiba.setVoiceAssistanteRate(ARrate: 0.9, ENRate: 0.9)

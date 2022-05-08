@@ -49,7 +49,9 @@ public class HeaderVC: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    public override func viewDidLoad() {
+        self.view.applyHierarchicalSemantics()
+    }
     
     public override func viewWillAppear(_ animated: Bool) {
         
