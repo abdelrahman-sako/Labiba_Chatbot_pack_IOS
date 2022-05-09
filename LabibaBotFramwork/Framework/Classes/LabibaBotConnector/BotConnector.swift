@@ -105,7 +105,13 @@ class BotConnector: NSObject {
         if UpdateTokenModel.isTokenRequeird(){
             configuration.httpAdditionalHeaders = ["Authorization":"Bearer \(token)"]
         }
-        sessionManager = SessionManager(configuration: configuration)
+        var serverTrustPolicies: [String: ServerTrustPolicy] = [:]
+        if Labiba.bypassSSLCertificateValidation, let url = URL(string: Labiba._basePath) {
+            serverTrustPolicies[url.host ?? ""] = .disableEvaluation
+        }
+        let servertrustManager = ServerTrustPolicyManager(policies: serverTrustPolicies)
+        sessionManager = SessionManager(configuration: configuration,serverTrustPolicyManager: servertrustManager)
+        
     }
     
     func close() -> Void {
@@ -351,8 +357,6 @@ class BotConnector: NSObject {
                         }
                         
                     }catch{
-                        //let error = NetworkError(rawValue: "\(statusCode)") ?? .encodingError
-                        //log(dataString, "\(error.localizedDescription) \n\(err.localizedDescription)\n status code = \(statusCode)")
                         let resposeHeaders = response.response?.allHeaderFields
                         let error = LabibaError(statusCode: statusCode,headers: resposeHeaders) ?? LabibaError(code: .EncodingError, statusCode: statusCode,headers: resposeHeaders)
                         log(dataString, error.logDescription)
@@ -438,7 +442,7 @@ RecepientID: \(Labiba._pageId)
             let url =  "\(Labiba._basePath)\(Labiba._loggingServicePath)"//Labiba._loggingPath
             //let url = "https://botbuilder.labiba.ai/api/MobileAPI/MobileLogging"
             DispatchQueue.global(qos: .background).async {
-                request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: nil).responseData { (response) in
+                self.sessionManager?.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: nil).responseData { (response) in
                     print ( "log api " ,response.response?.statusCode ?? "0")
                     if  response.error != nil {
                         return
@@ -528,3 +532,4 @@ extension BotConnector: URLSessionDelegate {
        completionHandler(.useCredential, urlCredential)
     }
 }
+

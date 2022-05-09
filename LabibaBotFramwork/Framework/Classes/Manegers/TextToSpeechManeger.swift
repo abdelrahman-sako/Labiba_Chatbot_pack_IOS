@@ -127,7 +127,8 @@ class TextToSpeechManeger:NSObject{
     func downloadFileFromURL(url:URL){
         
         var downloadTask:URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url  , completionHandler: {[weak self](url, response, err) in
+        let session = LabibaRestfulBotConnector.shared.sessionManager?.session ?? URLSession.shared
+        downloadTask = session.downloadTask(with: url  , completionHandler: {[weak self](url, response, err) in
             guard let url = url else{return}
           //  self?.data = try! Data(contentsOf: url)
             self?.play(url: url)

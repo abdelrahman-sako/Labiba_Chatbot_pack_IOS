@@ -379,6 +379,7 @@ public enum BotType:Int {
 
     //MARK:- Requests setting
     public static var timeoutIntervalForRequest:TimeInterval = 60
+    public static var bypassSSLCertificateValidation:Bool = false
     
     public static let Logging = LabibaLogging()
     
