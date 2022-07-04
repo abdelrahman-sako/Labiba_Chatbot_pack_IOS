@@ -49,17 +49,18 @@ class MediaStreamResponseRenderer: ResponseRenderer
        // let avatarWidth = Labiba._botAvatar == nil ? 0 : AvatarWidth + 5
         let avatarWidth = Labiba.BotChatBubble.avatar == nil ? 0 : AvatarWidth + 5
         let ty = display.height + 4
-        let w = (type == .Audio) ? 200 : view.frame.width - avatarWidth - 10//view.frame.width - BubbleMargin - AvatarWidth - 10 + 20
+        let w = (type == .Audio) ? 200 : view.frame.width - 3*(Labiba._Margin.left)
         let h = (type == .Audio) ? 60 : 0.60 * w//0.75 * w
 
         let px: CGFloat
         if display.dialog.party == .user
         {
-            px = LbLanguage.isArabic ? AvatarWidth + 5 : view.frame.width - w - AvatarWidth - 5
+            px = LbLanguage.isArabic ?  2*Labiba._Margin.left  : Labiba._Margin.right
         }
         else
         {
-            px = LbLanguage.isArabic ? view.frame.width - w - avatarWidth - 5 :  avatarWidth + 5
+            //px = LbLanguage.isArabic ? view.frame.width - w - avatarWidth - 5 :  avatarWidth + 5
+            px = LbLanguage.isArabic ? Labiba._Margin.left :  2*Labiba._Margin.right
         }
 
         let crect = CGRect(x: px, y: ty, width: w, height: h)

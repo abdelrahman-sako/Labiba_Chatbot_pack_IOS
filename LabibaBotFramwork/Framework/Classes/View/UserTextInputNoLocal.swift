@@ -155,20 +155,22 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         let topVC:UIViewController = getTheMostTopViewController()
         
         switch type {
-//        case .camera:
-//
-//            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//
-//                let imagePicker = UIImagePickerController()
-//                imagePicker.delegate = self
-//                imagePicker.sourceType = .camera
-//                imagePicker.allowsEditing = false
-//
-//                topVC.present(imagePicker, animated: true, completion: nil)
-//            } else {
-//
-//                showErrorMessage("camera-inaccessible".local)
-//            }
+        case .camera:
+
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = .camera
+                imagePicker.allowsEditing = false
+                //imagePicker.mediaTypes = [kUTTypeMovie as String,kUTTypeJPEG as String]
+                imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera) ?? []
+
+                topVC.present(imagePicker, animated: true, completion: nil)
+            } else {
+
+                showErrorMessage("camera-inaccessible".local)
+            }
             
         case .photoLibrary:
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
@@ -587,6 +589,8 @@ extension UserTextInputNoLocal: UIImagePickerControllerDelegate, UINavigationCon
             {
                 if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage  {
                     self.delegate?.userTextInput(self, didSubmitImage: image)
+                }else  if let videoURL =  info[UIImagePickerController.InfoKey.mediaURL] as? NSURL{
+                    self.delegate?.userTextInput(self, didSubmitFile: videoURL as URL)
                 }
         }
         picker.dismiss(animated: true, completion: nil)

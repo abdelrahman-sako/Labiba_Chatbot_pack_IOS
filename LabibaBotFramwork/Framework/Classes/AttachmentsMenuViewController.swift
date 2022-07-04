@@ -11,7 +11,7 @@
 import UIKit
 
 enum AttachmentType {
-   // case camera
+    case camera
     case photoLibrary
    // case voice
     case calendar
@@ -107,10 +107,10 @@ class AttachmentsMenuViewController: UIViewController {
         self.dismissWithType(.photoLibrary)
     }
     
-//    @IBAction func cameraSelected(_ sender: Any) {
-//        
-//        self.dismissWithType(.camera)
-//    }
+    @IBAction func cameraSelected(_ sender: Any) {
+        
+        self.dismissWithType(.camera)
+    }
     
     @IBAction func fileAttachmentSelected(_ sender: UIButton) {
         self.dismissWithType(.file)

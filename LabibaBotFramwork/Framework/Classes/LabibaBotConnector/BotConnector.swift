@@ -346,8 +346,8 @@ class BotConnector: NSObject {
                     
                     do {
                         let response = try JSONDecoder().decode(T.self, from: data)
-                        if let array =  response as? Array<Any>,  array.isEmpty {
-                            //log(dataString, "\(NetworkError.empty.localizedDescription) \n status code = \(statusCode)")
+                        if let array =  response as? Array<Any>,  array.isEmpty , !Labiba.isHumanAgentStarted {
+                            //isHumanAgentStarted  because it return empty string if human agent started and it is not error
                             let error = LabibaError(code: .EmptyResponse, statusCode: statusCode)
                             log(dataString, error.logDescription)
                             completion(.failure(error))

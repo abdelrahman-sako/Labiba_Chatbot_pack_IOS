@@ -1047,7 +1047,7 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         self.submitUserText(text)
     }
     func userTextInput(_ dialog: UserTextInputNoLocal, didSubmitFile Url: URL) {
-        
+        self.botConnector.sendFile(Url)
     }
     func userTextInput(_ dialog: UserTextInputNoLocal, didSubmitVoice voice: String) {
         

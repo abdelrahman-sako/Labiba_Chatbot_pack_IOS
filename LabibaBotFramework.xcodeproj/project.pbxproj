@@ -478,6 +478,8 @@
 		B429555322DDDBD2002DE3E9 /* RadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42954F422DDDBD2002DE3E9 /* RadiusViewController.swift */; };
 		B429555A22DDDBD2002DE3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */; };
 		B462725122DEF4C20070E044 /* AttachmentsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */; };
+		F9013BE328716DEC00DE2BA0 /* WebViewEventHumanAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */; };
+		F9D997CA2871D17700E676B0 /* HumanAgentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D997C92871D17700E676B0 /* HumanAgentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -944,6 +946,8 @@
 		B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B42954FF22DDDBD2002DE3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsMenuViewController.swift; sourceTree = "<group>"; };
+		F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEventHumanAgent.swift; sourceTree = "<group>"; };
+		F9D997C92871D17700E676B0 /* HumanAgentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAgentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1044,6 +1048,7 @@
 				52FFB72325D271D300CFB629 /* HelpPageModel.swift */,
 				52F6ECB426F7264600B38518 /* PrechatFormModel.swift */,
 				52AA90E22717FDDB00D6EA60 /* UpdateTokenModel.swift */,
+				F9D997C92871D17700E676B0 /* HumanAgentModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1983,6 +1988,7 @@
 				B42954EC22DDDBD2002DE3E9 /* Conversation */,
 				521448A225864DFC0099BF38 /* Rating */,
 				529C67FA26F3189300FB8591 /* PrechatForm */,
+				F9013BE128716D4900DE2BA0 /* HumanAgent */,
 				B42954F022DDDBD2002DE3E9 /* PhotoViewController.swift */,
 				B42954F122DDDBD2002DE3E9 /* Emoticonizer.swift */,
 				B42954F222DDDBD2002DE3E9 /* LocationService.swift */,
@@ -2108,6 +2114,14 @@
 				B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F9013BE128716D4900DE2BA0 /* HumanAgent */ = {
+			isa = PBXGroup;
+			children = (
+				F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */,
+			);
+			path = HumanAgent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2375,6 +2389,7 @@
 				3773C47E24BC88CC009A6E04 /* AudioVisualizerView.swift in Sources */,
 				5277568F272EE12F00F8ADE0 /* AnimationTime.swift in Sources */,
 				370874282326528C00E0C52C /* GreetingHeaderView.swift in Sources */,
+				F9D997CA2871D17700E676B0 /* HumanAgentModel.swift in Sources */,
 				B429551F22DDDBD2002DE3E9 /* ScanView.swift in Sources */,
 				522A169E2582291D008AAC17 /* CarousalCardView.swift in Sources */,
 				52BF2F50247131D600820B37 /* MessageView.swift in Sources */,
@@ -2530,6 +2545,7 @@
 				52C0A0952588AFEF004D7AAA /* SubmitRatingLightCell.swift in Sources */,
 				5277569A272EE12F00F8ADE0 /* ShapeContainerLayer.swift in Sources */,
 				37C4631C22F1BDEF004EAC7E /* VoiceAssistantView.swift in Sources */,
+				F9013BE328716DEC00DE2BA0 /* WebViewEventHumanAgent.swift in Sources */,
 				B429551922DDDBD2002DE3E9 /* TorchMode.swift in Sources */,
 				527756A3272EE12F00F8ADE0 /* MaskContainerLayer.swift in Sources */,
 				3782D99323BA1369006A79D4 /* SRProxyConnect.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SafariServices
 class AttachmentView: UIView, ReusableComponent {
     static var reuseId: String = "AttachmentView"
     
@@ -53,8 +53,15 @@ class AttachmentView: UIView, ReusableComponent {
         }
     }
     @IBAction func didClickCell(_ sender: UIButton) {
-      if let url = URL(string: url){
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//      if let url = URL(string: url){
+//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//        }
+        if let url = URL(string: url) {
+            let vc = SFSafariViewController(url: url)
+            Labiba.navigationController?.present(vc, animated: true)
         }
     }
 }
+
+
+

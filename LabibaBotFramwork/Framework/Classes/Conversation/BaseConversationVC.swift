@@ -31,7 +31,6 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
 //        return
         if #available(iOS 13.0, *) {
             NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIScene.willEnterForegroundNotification, object: nil)
-            print("sdfslkfsldfjslf")
         } else {
             NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIApplication.willEnterForegroundNotification, object: nil)
         }
@@ -50,6 +49,7 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
     
     var botConnector:BotConnector = LabibaRestfulBotConnector.shared
     var delegate:LabibaDelegate?
+    var humanAgent:WebViewEventHumanAgent?
     
     func displayDialog(_ dialog:ConversationDialog ) -> Void {}
     
@@ -350,22 +350,30 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
     func botConnector(_ botConnector: BotConnector, didRecieveActivity activity: ConversationDialog) {}
     var transferCounter:UInt8 = 0
     func botConnector(_ botConnector: BotConnector, didRequestLiveChatTransferWithMessage message: String) {
-       // delegate?.liveChatTransfer?(onView: self.view, transferMessage: message)
-        if Labiba.HumanAgent.type == .inLabiba {
+        switch Labiba.HumanAgent.type {
+        case .inChatbot:
+            humanAgent = WebViewEventHumanAgent()
+            humanAgent?.start()
+        case .inLabiba:
             if transferCounter == Labiba.HumanAgent.counter || message == "livechat.transfer.once"  {
                 WebPageViewController.launchWithUrl(url: Labiba.HumanAgent.getUrl(), title: "chatwithHuman".localForChosnLangCodeBB,isZoomDisabled: true)
                 transferCounter = 0
                 return
             }
             transferCounter += 1
-        }else{
+        case .outLabiba:
             delegate?.liveChatTransfer?(onView: self.view, transferMessage: message)
         }
     }
+    
     func botConnector(_ botConnector: BotConnector, didRequestHumanAgent message: String) {
-        if Labiba.HumanAgent.type == .inLabiba {
+        switch Labiba.HumanAgent.type {
+        case .inChatbot:
+            humanAgent = WebViewEventHumanAgent()
+            humanAgent?.start()
+        case .inLabiba:
             WebPageViewController.launchWithUrl(url: Labiba.HumanAgent.getUrl(), title: "chatwithHuman".localForChosnLangCodeBB,isZoomDisabled: true)
-        }else{
+        case .outLabiba:
             delegate?.liveChatTransfer?(onView: self.view, transferMessage: message)
         }
     }

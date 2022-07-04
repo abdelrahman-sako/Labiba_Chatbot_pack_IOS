@@ -176,7 +176,7 @@ class LabibaRestfulBotConnector:BotConnector{
    
    
     func parseResponse(response:[LabibaModel])  {
-        if response.isEmpty {
+        if response.isEmpty{
             delegate?.botConnectorRemoveTypingActivity(self)
             return
         }
@@ -192,6 +192,7 @@ class LabibaRestfulBotConnector:BotConnector{
                     timestamp = nil
                 }
             }
+           // delegate?.botConnector(self, didRequestHumanAgent: "request human agent")
             let dialog = ConversationDialog(by: .bot, time: timestamp)
             let message = model.message
            // message?.text = "livechat.transfer:\(message?.text ?? "")"
@@ -415,6 +416,22 @@ class LabibaRestfulBotConnector:BotConnector{
         }
     }
     
+    
+    func parsHumanAgentResponse(model:HumanAgentModel)  {
+        var timestamp:Date? = Date()
+        let dialog = ConversationDialog(by: .bot, time: timestamp)
+        guard model.result?.fulfillment?.count ?? 0 > 0 else {
+            return
+        }
+        if let response  = model.result?.fulfillment?[0] {
+            dialog.message = response.message
+            if let imageUrl =  response.imageUrl {
+                dialog.media = DialogMedia(type: .Photo)
+                dialog.media?.url = imageUrl
+            }
+            self.delegate?.botConnector(self, didRecieveActivity: dialog)
+        }
+    }
     
     override func ShowDialog()
     {

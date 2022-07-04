@@ -9,6 +9,7 @@
 import Foundation
 public class HumanAgentSettings{
     public enum type {
+        case inChatbot
         case inLabiba
         case outLabiba
     }
@@ -21,7 +22,7 @@ public class HumanAgentSettings{
     func getUrl()->String {
         return "\(url)?SessionID=\(Labiba._senderId ?? "")"
     }
-    
+ 
  
     
 }

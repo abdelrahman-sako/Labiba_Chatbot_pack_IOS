@@ -220,7 +220,7 @@ public enum BotType:Int {
     
     
     
-    public static func setLastMessageLangCode(_ text: String)
+     static func setLastMessageLangCode(_ text: String)
     {
         _LastMessageLangCode = text.detectedLangauge() ?? "en"
         print( _LastMessageLangCode)
@@ -250,7 +250,7 @@ public enum BotType:Int {
     
     // MARK:- Human Agent Transfer
     public static let HumanAgent = HumanAgentSettings() 
-    
+    static var isHumanAgentStarted:Bool = false
     
     // MARK:- [Text to Speech] And [Speech to Text] Settings
     
