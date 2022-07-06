@@ -315,7 +315,7 @@ class BotConnector: NSObject {
             }
         }
     }
-    func LabibaRequest<T:Codable>(_ model:T.Type,url:String,method:HTTPMethod,parameters: Parameters? = nil,encoding: ParameterEncoding = URLEncoding.default,logTag:LoggingTag? = nil, completion: @escaping (Result<T>)->Void) {
+    func LabibaRequest<T:Codable>(_ model:T.Type,url:String,method:HTTPMethod,parameters: Parameters? = nil,headers:[String:String]? = nil,encoding: ParameterEncoding = URLEncoding.default,logTag:LoggingTag? = nil, completion: @escaping (Result<T>)->Void) {
        
         if UpdateTokenModel.isTokenRequeird(){
             if !UpdateTokenModel.isTokenValid() && logTag != .upadateToken {
@@ -334,7 +334,7 @@ class BotConnector: NSObject {
             }
         }
         opQueue?.addOperation({
-            self.currentRequest = self.sessionManager?.request(url, method: method, parameters: parameters ,encoding: encoding , headers: nil ).responseData { (response) in
+            self.currentRequest = self.sessionManager?.request(url, method: method, parameters: parameters ,encoding: encoding , headers: headers).responseData { (response) in
                 
                 let statusCode = response.response?.statusCode ?? 0
                 //print(response.response?.allHeaderFields)

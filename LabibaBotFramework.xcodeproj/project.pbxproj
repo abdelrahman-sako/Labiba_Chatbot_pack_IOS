@@ -480,6 +480,7 @@
 		B462725122DEF4C20070E044 /* AttachmentsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */; };
 		F9013BE328716DEC00DE2BA0 /* WebViewEventHumanAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */; };
 		F9D997CA2871D17700E676B0 /* HumanAgentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D997C92871D17700E676B0 /* HumanAgentModel.swift */; };
+		F9D998062874747200E676B0 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = F9D998052874747200E676B0 /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -948,6 +949,7 @@
 		B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsMenuViewController.swift; sourceTree = "<group>"; };
 		F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEventHumanAgent.swift; sourceTree = "<group>"; };
 		F9D997C92871D17700E676B0 /* HumanAgentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAgentModel.swift; sourceTree = "<group>"; };
+		F9D998052874747200E676B0 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2120,6 +2122,7 @@
 			isa = PBXGroup;
 			children = (
 				F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */,
+				F9D998052874747200E676B0 /* index.html */,
 			);
 			path = HumanAgent;
 			sourceTree = "<group>";
@@ -2256,6 +2259,7 @@
 				372BB4C524B1E1F7003A8297 /* VisualizerVoiceAssistantView.xib in Resources */,
 				B429550622DDDBD2002DE3E9 /* UserBubble.xib in Resources */,
 				B429550422DDDBD2002DE3E9 /* UserTextInput.xib in Resources */,
+				F9D998062874747200E676B0 /* index.html in Resources */,
 				5214489B258647B90099BF38 /* Rating.storyboard in Resources */,
 				B429550C22DDDBD2002DE3E9 /* UserTextInputNoLocal.xib in Resources */,
 				B429550322DDDBD2002DE3E9 /* BotBubble.xib in Resources */,

@@ -49,7 +49,7 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
     
     var botConnector:BotConnector = LabibaRestfulBotConnector.shared
     var delegate:LabibaDelegate?
-    var humanAgent:WebViewEventHumanAgent?
+   // var humanAgent:WebViewEventHumanAgent?
     
     func displayDialog(_ dialog:ConversationDialog ) -> Void {}
     
@@ -352,8 +352,9 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
     func botConnector(_ botConnector: BotConnector, didRequestLiveChatTransferWithMessage message: String) {
         switch Labiba.HumanAgent.type {
         case .inChatbot:
-            humanAgent = WebViewEventHumanAgent()
-            humanAgent?.start()
+//            humanAgent = WebViewEventHumanAgent()
+//            humanAgent?.start()
+            WebViewEventHumanAgent.Shared.start()
         case .inLabiba:
             if transferCounter == Labiba.HumanAgent.counter || message == "livechat.transfer.once"  {
                 WebPageViewController.launchWithUrl(url: Labiba.HumanAgent.getUrl(), title: "chatwithHuman".localForChosnLangCodeBB,isZoomDisabled: true)
@@ -369,8 +370,9 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
     func botConnector(_ botConnector: BotConnector, didRequestHumanAgent message: String) {
         switch Labiba.HumanAgent.type {
         case .inChatbot:
-            humanAgent = WebViewEventHumanAgent()
-            humanAgent?.start()
+//            humanAgent = WebViewEventHumanAgent()
+//            humanAgent?.start()
+            WebViewEventHumanAgent.Shared.start()
         case .inLabiba:
             WebPageViewController.launchWithUrl(url: Labiba.HumanAgent.getUrl(), title: "chatwithHuman".localForChosnLangCodeBB,isZoomDisabled: true)
         case .outLabiba:
