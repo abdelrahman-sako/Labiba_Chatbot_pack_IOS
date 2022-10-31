@@ -43,15 +43,17 @@ enum BubbleSource
                     let dateFormatter = DateFormatter()
                    
                     dateFormatter.dateFormat = source == .incoming ? Labiba.BotChatBubble.timestamp.formate : Labiba.UserChatBubble.timestamp.formate
-                   
+                    let botName = Labiba.BotChatBubble.botName == nil ? "bot".localForChosnLangCodeBB : Labiba.BotChatBubble.botName!
+                    let userName = Labiba.UserChatBubble.userName == nil ? "you".localForChosnLangCodeBB : Labiba.UserChatBubble.userName!
+                    
                   
                     if SharedPreference.shared.botLangCode == .ar{
                         dateFormatter.locale = Locale(identifier: "ar")
-                        timestampLbl.text = "\(source == .incoming ? "بوت" : "انت") - \(dateFormatter.string(from: timestamp))"
+                        timestampLbl.text = "\(source == .incoming ? botName : userName) - \(dateFormatter.string(from: timestamp))"
                         timestampLbl.textAlignment = source == .incoming  ? .right : .left
                     }else {
                         dateFormatter.locale = Locale(identifier: "en")
-                        timestampLbl.text = "\(source == .incoming ? "Bot" : "You") - \(dateFormatter.string(from: timestamp))"
+                        timestampLbl.text = "\(source == .incoming ? botName : userName) - \(dateFormatter.string(from: timestamp))"
                         timestampLbl.textAlignment = source == .incoming  ? .left : .right
                     }
                     

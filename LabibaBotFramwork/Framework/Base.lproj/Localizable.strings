@@ -97,6 +97,8 @@
 "conv-load" = "Starting Conversation";
 "labiba" = "Labiba";
 "chatbot" = "ChatBot";
+"bot" = "Bot";
+"you" = "You";
 "uploading" = "Uploading";
 "loading" = "Loading";
 

@@ -22,7 +22,7 @@
 		</data>
 		<key>Base.lproj/Localizable.strings</key>
 		<data>
-		WThWjBeFDmj+m/K3g46zgXsaEG0=
+		JRj7PLftdu54MLUgIlOOCtlkDeg=
 		</data>
 		<key>BotBubble.nib</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Headers/LabibaBotFramwork-Swift.h</key>
 		<data>
-		A21ZKw3WLe+0afxk7T/kaRtuXCc=
+		jCQd0GkkRiEpsFS3dCkUx5lZHec=
 		</data>
 		<key>Headers/LabibaBotFramwork.h</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/objects-12.3+.nib</key>
 		<data>
-		if/tg9SnCA+pQZrjoMDTXOL4014=
+		vfnwg1C4p7wApGWwUxCK1ZSWLeg=
 		</data>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/objects-14.0+.nib</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/runtime.nib</key>
 		<data>
-		FVizVquyyb27FvbCjGGApnFtlx0=
+		+XRiKQ9AdlWveLgun8bLa6W9gAc=
 		</data>
 		<key>Labiba.storyboardc/21L-TP-ZZH-view-EIa-Hs-D8H.nib/objects-12.3+.nib</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/objects-12.3+.nib</key>
 		<data>
-		KJHQMUaegOw5yk3l6034i3MeZDw=
+		Fn1ZijJJNnHqOoP4NC2m1UGDZPg=
 		</data>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/objects-14.0+.nib</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/runtime.nib</key>
 		<data>
-		98fwv5cKZhspa0RW38gqZX0ZCmA=
+		5x1ByJ3SyL9YA586o52nMUesfSE=
 		</data>
 		<key>Labiba.storyboardc/287-7P-3Rf-view-ZiX-qL-lWW.nib/objects-12.3+.nib</key>
 		<data>
@@ -426,11 +426,11 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Dl4B+1ddCOb4sD5Psnhe8l0qsVg=
+		MjfJqPNWVB0vKL0nLFIMUeVH6mQ=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		+b2zGLl7KzZCxBAVwgy7NTxORD4=
+		nDcK2gcfS3dLVirx7mHiaepKmFw=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -438,11 +438,11 @@
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ZjY07jS/pYiTA3lE9BIf9QYyeb0=
+		iQWBCl/eDqkfEyx7l8W1Firmwnk=
 		</data>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		dOXkjlNJ1aPlEZM55PNlItRjejI=
+		94R8p6SExmuw7tCA3XTk+5/8RTs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -648,7 +648,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tBAn4PV6lNXMr0o1WIwPnu+Bf5I=
+			p4OmQloFUVl/oJwXDK/XlCtvipo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -670,6 +670,10 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>index.html</key>
+		<data>
+		QVgU6O+a3D4ARN6AaFb7L5hUR7Y=
+		</data>
 		<key>man.json</key>
 		<data>
 		WPtRep+euhLKWZGtpYYAWJbWzl4=
@@ -739,7 +743,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TOHBNv0A15YCcMPOohLNGdw9A8r2w/A/Qx/44IkwQ4s=
+			DLHXzXfRpdKyHSJ/hEQKMEH07hPcwZZSvDgBm9pMMm8=
 			</data>
 		</dict>
 		<key>BotBubble.nib</key>
@@ -823,7 +827,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6XcaNZu26fh8+Tc+2l31dIWJdBPA/9Bns+w44CEjbxE=
+			EFwWybFQNzABf9naDDkfuXV6MHRtI6glsEt+cMoQE+k=
 			</data>
 		</dict>
 		<key>Headers/LabibaBotFramwork.h</key>
@@ -879,7 +883,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2wGsQMm7pwFQRtf79kj118oVRiStjAo+i6OjDleWPd8=
+			9oEQi+Mq60fCCn66NJf8jGFJxAbkImE2idcGH9bPe7I=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/1we-Z6-Ott-view-zKx-J9-MPw.nib/objects-14.0+.nib</key>
@@ -893,7 +897,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bzEvqMgmIaa1KLoBnEmYqMrjaF84Wnt1MMya7oGXtTo=
+			ZqkaJojjqm8mpdezmHzfQPQon7JKCXWHUKeLnYL/8hs=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/21L-TP-ZZH-view-EIa-Hs-D8H.nib/objects-12.3+.nib</key>
@@ -921,7 +925,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8r8KOK/Um4hyZGkb2yeHepm0EovtZTTCCrZ/G7cUJ30=
+			dO9kSXMRFIWaC9kwkILgmTHevS4LUBcA7AAoHlRWdhg=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/24a-fl-dKv-view-27S-Rg-sIo.nib/objects-14.0+.nib</key>
@@ -935,7 +939,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+GVBnKXxmpAgpqt3Doa1wwx1SpMsIE58Fn6e3GGZjmM=
+			zuNGU4Poz7LdtnWMlptcXz7umYNTQW2GJXyggf0Djlo=
 			</data>
 		</dict>
 		<key>Labiba.storyboardc/287-7P-3Rf-view-ZiX-qL-lWW.nib/objects-12.3+.nib</key>
@@ -1439,14 +1443,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			J3jJWxCscqWdmixytGD2lCZCJH6DlX2TX6veJcyskQ8=
+			n8lCzhGa2lymCyl1tOu9DwSlAhq4OwoNUVbnws97Swo=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R7DoSeDBYM9Mcl3aKcco8euRgk2pL8Iz59npLgpLIWA=
+			iRcNRqQRFz2b5k025qIhajw6nf7hMN0f+5IQNxRQDtk=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -1460,14 +1464,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			A87JMdfOWO1A13IrUvxKJB2n7p/sst/LOB91tGqofIs=
+			UDH7r6bj8lvQSsLD/LvDfBX54JPgI79bDcFcMlXnPhk=
 			</data>
 		</dict>
 		<key>Modules/LabibaBotFramwork.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YJOT9sj30GVl576aDyWTaXS8iym4FIV5nLBqhCaM/x4=
+			JMAkn+zQCHzTch3bTngKzX6V6UN6kNuRGS6AHo5Q48c=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1824,7 +1828,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YXiIc3nsm0yyKR9keMDsrQlkXJpqIUoZc6TvCcCjX5Q=
+			qRj3D5+FoJhfESFHYxX6E/3WTq4zqw4QbfXQk+cdUdY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1851,6 +1855,13 @@
 			</data>
 			<key>optional</key>
 			<true/>
+		</dict>
+		<key>index.html</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hj/COvSvKLfyOPsow0uLQbf0IpORe++4vGEXAV51hFU=
+			</data>
 		</dict>
 		<key>man.json</key>
 		<dict>

@@ -279,6 +279,7 @@ public enum CornerLocation {
   public var shadow: LabibaBotFramwork.LabibaShadowModel
   public var avatar: UIKit.UIImage?
   public var timestamp: (fontSize: CoreGraphics.CGFloat, color: UIKit.UIColor, formate: Swift.String)
+  public var botName: Swift.String?
   @objc deinit
 }
 public func imageNamed(_ name: Swift.String) -> UIKit.UIImage
@@ -625,6 +626,7 @@ final public class GradientValueProvider : LabibaBotFramwork.AnyValueProvider {
 }
 @_hasMissingDesignatedInitializers public class HumanAgentSettings {
   public enum type {
+    case inChatbot
     case inLabiba
     case outLabiba
     public static func == (a: LabibaBotFramwork.HumanAgentSettings.type, b: LabibaBotFramwork.HumanAgentSettings.type) -> Swift.Bool
@@ -655,6 +657,7 @@ public class BundleImageProvider : LabibaBotFramwork.AnimationImageProvider {
   }
   public var avatar: UIKit.UIImage?
   public var timestamp: (fontSize: CoreGraphics.CGFloat, color: UIKit.UIColor, formate: Swift.String)
+  public var userName: Swift.String?
   @objc deinit
 }
 final public class SizeValueProvider : LabibaBotFramwork.AnyValueProvider {
@@ -914,9 +917,6 @@ infix operator +- : DefaultPrecedence
   public static var isThemeApplied: Swift.Bool
   public static func setVoiceDefaultTheme()
   public static func setLabibaTheme()
-  public static func setBSF_Theme()
-  public static func set_IA_Theme()
-  public static func setBahrainCredit_Theme()
   @objc deinit
 }
 public enum TorchMode {
@@ -1034,6 +1034,7 @@ public enum BotType : Swift.Int {
   public static func setEnableAutoListening(enable: Swift.Bool)
   public static func setListeningDuration(Duration: Swift.Double)
   public static func setHintsArray(hints: [Swift.String])
+  public static func applyDefaultTheme()
   public static var hasBubbleTimestamp: Swift.Bool
   public static func setMargin(left: CoreGraphics.CGFloat, right: CoreGraphics.CGFloat)
   public static func setStatusBarColor(color: UIKit.UIColor)
@@ -1083,6 +1084,7 @@ public enum BotType : Swift.Int {
 }
 @objc public protocol LabibaDelegate {
   @objc optional func createPost(onView view: UIKit.UIView, _ data: Swift.Dictionary<Swift.String, Any>, completionHandler: @escaping (_ status: Swift.Bool, _ data: [Swift.String : Any]?) -> Swift.Void)
+  @objc optional func labibaDataUpdate(payload: Swift.String)
   @objc optional func liveChatTransfer(onView view: UIKit.UIView, transferMessage: Swift.String)
   @objc optional func labibaWillClose()
   @objc optional func labibaDidClose()

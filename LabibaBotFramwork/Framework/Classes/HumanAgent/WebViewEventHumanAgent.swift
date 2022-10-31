@@ -11,11 +11,11 @@ import WebKit
 
 class WebViewEventHumanAgent:NSObject {
     let webView:WKWebView = WKWebView()
-    
     static let Shared = WebViewEventHumanAgent()
    private override init() {
         super.init()
         webView.navigationDelegate = self
+    
         addJavaScripListner()
         addAppWillTerminateListener()
     }
@@ -23,6 +23,7 @@ class WebViewEventHumanAgent:NSObject {
    private  func addJavaScripListner()  {
         let handler = "sakoHandler"
         webView.configuration.userContentController.add(self, name: handler)
+       webView.configuration.userContentController.add(self, name: "error")
     }
     
     private func addAppWillTerminateListener(){
@@ -49,6 +50,11 @@ class WebViewEventHumanAgent:NSObject {
             Labiba.isHumanAgentStarted = true
             let request = URLRequest(url: url)
             webView.load(request)
+            guard let topVC = UIApplication.shared.topMostViewController else{return}
+            topVC.view.addSubview(webView)
+            webView.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
+            webView.alpha = 0
+            //webView.isHidden = true
         }
         
     }
@@ -56,16 +62,9 @@ class WebViewEventHumanAgent:NSObject {
     func end() {
         
         if let url = Labiba.bundle.url(forResource: "index", withExtension: "html") {
-          //  if let url = URL(string: url){
                 let request = URLRequest(url: url)
                 webView.load(request)
-          //  }
         }
-//        if let url = URL(string: "https://www.google.com"){
-//            Labiba.isHumanAgentStarted = false
-//            let request = URLRequest(url: url)
-//            webView.load(request)
-//        }
     }
     
     func forceEnd(completionHandler:(()->Void)? = nil) {
@@ -93,8 +92,26 @@ extension WebViewEventHumanAgent: WKNavigationDelegate {
         print("human agent finish loading ")
     }
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        print("human agent faile to load with error \(error.localizedDescription)")
+        print("human agent failed to load with error\(error.localizedDescription)")
+      //  showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
     }
+//    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+//        print("human agent failed to load with error\(error.localizedDescription)")
+//        showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
+//    }
+//    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+//        print("human agent failed to load with error\(error.localizedDescription)")
+//        showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
+//    }
+//    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse,
+//                 decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+//
+//        if let response = navigationResponse.response as? HTTPURLResponse {
+//            print("status code: ", response.statusCode)
+//            showErrorMessage("status code: \(response.statusCode)")
+//        }
+//        decisionHandler(.allow)
+//    }
 }
 
 extension WebViewEventHumanAgent: WKScriptMessageHandler {

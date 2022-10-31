@@ -298,6 +298,9 @@ public enum BotType:Int {
   
     //MARK:- ******************THEME SETTING******************
     
+    public static func applyDefaultTheme() {
+        LabibaThemes.setLabibaTheme()
+    }
      //MARK:- General Theme UIConfiguration
     public static var hasBubbleTimestamp:Bool = false
     static var _Margin : (left:CGFloat,right:CGFloat) = (0,0)
@@ -656,6 +659,8 @@ public enum BotType:Int {
 
 @objc public protocol LabibaDelegate {
     @objc optional func createPost(onView view:UIView,_ data:Dictionary<String, Any> , completionHandler:@escaping(_ status:Bool , _ data:[String:Any]?)->Void)
+    @objc optional func labibaDataUpdate(payload:String)
+    
     @objc optional func liveChatTransfer(onView view:UIView, transferMessage:String)
     @objc optional func labibaWillClose()
     @objc optional func labibaDidClose()

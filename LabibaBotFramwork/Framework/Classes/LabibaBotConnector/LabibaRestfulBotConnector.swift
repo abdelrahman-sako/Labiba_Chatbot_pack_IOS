@@ -332,21 +332,25 @@ class LabibaRestfulBotConnector:BotConnector{
                 if let payload = message?.attachment?.payload {
                     switch payload {
                     case .string(let message):
-                        switch message {
-                        case "goRealtime":
-                            delegate?.botConnector(self, didRequestHumanAgent: message)
-                            print("redirect to human agent with message: ",message)
-                        case "redirectToStart":
-                            DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now()+0.5, execute: {
-                                DispatchQueue.main.async {
-                                    self.sendGetStarted()
-                                }
-                            })
-                                
-                           
-                        default:
-                            break
+                        if let attachType = attach?.type, attachType == "backPropagation"{
+                                Labiba.delegate?.labibaDataUpdate?(payload: message)
+                            return
+                        }else{
+                            switch message {
+                            case "goRealtime":
+                                delegate?.botConnector(self, didRequestHumanAgent: message)
+                                print("redirect to human agent with message: ",message)
+                            case "redirectToStart":
+                                DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now()+0.5, execute: {
+                                    DispatchQueue.main.async {
+                                        self.sendGetStarted()
+                                    }
+                                })
+                            default:
+                                break
+                            }
                         }
+                       
                         
                     case .payloadModel(let  payload):
                         if let attachType = attach?.type{

@@ -577,6 +577,7 @@ SWIFT_PROTOCOL("_TtP17LabibaBotFramwork14LabibaDelegate_")
 @protocol LabibaDelegate
 @optional
 - (void)createPostOnView:(UIView * _Nonnull)view :(NSDictionary<NSString *, id> * _Nonnull)data completionHandler:(void (^ _Nonnull)(BOOL, NSDictionary<NSString *, id> * _Nullable))completionHandler;
+- (void)labibaDataUpdateWithPayload:(NSString * _Nonnull)payload;
 - (void)liveChatTransferOnView:(UIView * _Nonnull)view transferMessage:(NSString * _Nonnull)transferMessage;
 - (void)labibaWillClose;
 - (void)labibaDidClose;
@@ -1394,6 +1395,7 @@ SWIFT_PROTOCOL("_TtP17LabibaBotFramwork14LabibaDelegate_")
 @protocol LabibaDelegate
 @optional
 - (void)createPostOnView:(UIView * _Nonnull)view :(NSDictionary<NSString *, id> * _Nonnull)data completionHandler:(void (^ _Nonnull)(BOOL, NSDictionary<NSString *, id> * _Nullable))completionHandler;
+- (void)labibaDataUpdateWithPayload:(NSString * _Nonnull)payload;
 - (void)liveChatTransferOnView:(UIView * _Nonnull)view transferMessage:(NSString * _Nonnull)transferMessage;
 - (void)labibaWillClose;
 - (void)labibaDidClose;

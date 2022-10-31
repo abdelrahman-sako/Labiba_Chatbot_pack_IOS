@@ -196,7 +196,7 @@ import UIKit
         
     }
     
-    public static func  setBSF_Theme() {
+     static func  setBSF_Theme() {
         LabibaThemes.isThemeApplied = true
 //        Labiba.Bot_Type = .keyboardType
 //        Labiba.Temporary_Bot_Type = .keyboardType
@@ -426,7 +426,7 @@ import UIKit
     
     
     
-      public static func  set_IA_Theme() {
+       static func  set_IA_Theme() {
         LabibaThemes.isThemeApplied = true
             Labiba.setBotType(botType: .voiceAndKeyboard)
             let gTColor1 = UIColor(argb: 0xffE33D49)
@@ -504,7 +504,7 @@ import UIKit
             // Labiba.setMicButtondAlpha(alpha: 0.8)
         }
     
-    public static func  setBahrainCredit_Theme() {
+     static func  setBahrainCredit_Theme() {
 
         LabibaThemes.isThemeApplied = true
         Labiba.setBotType(botType: .voiceAndKeyboard)
