@@ -1,5 +1,5 @@
 //
-//  test.swift
+//  SubmitRatingResponseModel.swift
 //  LabibaBotFramwork
 //
 //  Created by Abdulrahman Qasem on 20/11/2022.
@@ -7,8 +7,6 @@
 //
 
 import Foundation
-class test{
-    func Osama(){
-        
-    }
+class SubmitRatingResponseModel:Codable {
+    var response:Bool?
 }

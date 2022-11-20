@@ -67,7 +67,7 @@ class HelpPopupVC: UIViewController {
     }
     
     func getData()  {
-        LabibaRestfulBotConnector.shared.getHelpPageData { (result) in
+        DataSource.shared.getHelpPageData { result in
             switch result {
             case .success(let model):
                 self.descTitleLbl.text = model.Title ?? ""
@@ -80,6 +80,19 @@ class HelpPopupVC: UIViewController {
                 }
             }
         }
+//        LabibaRestfulBotConnector.shared.getHelpPageData { (result) in
+//            switch result {
+//            case .success(let model):
+//                self.descTitleLbl.text = model.Title ?? ""
+//                self.descLbl.attributedText = model.Description?.htmlAttributedString(regularFont: applyBotFont(size: 14), boldFont: applyBotFont(bold:true,size: 14), color: UIColor(red: 1, green: 1, blue: 1, alpha: 0.7))
+//                self.descLbl.applyAlignmentAccordingToOnboardingLang()
+//                self.addItems(items: model.ExpandableItems ?? [])
+//            case .failure(let err):
+//                self.dismiss(animated: true) {
+//                    showErrorMessage(err.localizedDescription)
+//                }
+//            }
+//        }
     }
     
     func addScrollViewMask()  {

@@ -35,10 +35,10 @@ class TextToSpeechManeger:NSObject{
     func getURL(for model:TTSMessageModel) {//-> URL? {
         let message = model.message.replacingOccurrences(of: "\"", with: "")
         let TTS_Model = TextToSpeechModel(text: message, googleVoice: GoogleVoice(voiceLang: LabibaLanguage(rawValue:model.langCode) ?? .ar), clientid: "0",isSSML: model.isSSML)
-        botConnector.textToSpeech(model: TTS_Model) { (result) in
+        DataSource.shared.textToSpeech(model: TTS_Model) { result in
             switch result{
-            case .success(let url):
-                if let url = URL(string: url){
+            case .success(let model):
+                if let url = URL(string: model.file ?? ""){
                     self.ToDeletDialogs.first?.voiceUrl = url.absoluteString
                     self.ToDeletDialogs.removeFirst()
                     self.downloadFileFromURL(url: url)
@@ -51,6 +51,22 @@ class TextToSpeechManeger:NSObject{
                 self.playNextAudio()
             }
         }
+//        botConnector.textToSpeech(model: TTS_Model) { (result) in
+//            switch result{
+//            case .success(let url):
+//                if let url = URL(string: url){
+//                    self.ToDeletDialogs.first?.voiceUrl = url.absoluteString
+//                    self.ToDeletDialogs.removeFirst()
+//                    self.downloadFileFromURL(url: url)
+//                }
+//            case .failure(_):
+//                self.isPlaying = false
+//                if self.TTS_Models_Array.count > 0 {
+//                    self.TTS_Models_Array.remove(at: 0)
+//                }
+//                self.playNextAudio()
+//            }
+//        }
         
         //        let url  = URL(string: "https://translate.google.com/translate_tts?ie=UTF-8&tl=\( model.langCode)&client=tw-ob&q=\(model.message)".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)
         //self.downloadFileFromURL(url: url)
