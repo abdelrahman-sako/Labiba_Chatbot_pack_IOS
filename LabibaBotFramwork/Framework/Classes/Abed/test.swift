@@ -7,4 +7,8 @@
 //
 
 import Foundation
-class test{}
+class test{
+    func Osama(){
+        
+    }
+}
