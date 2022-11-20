@@ -9,7 +9,7 @@
 import Foundation
 //import Alamofire
 import CoreLocation
-class LabibaRestfulBotConnector:BotConnector{
+class LabibaRestfulBotConnector:BotConnector{ //
     
     var baseURL = "\(Labiba._basePath)\(Labiba._messagingServicePath)"
     var attachmentPayload:PayloadModel?
