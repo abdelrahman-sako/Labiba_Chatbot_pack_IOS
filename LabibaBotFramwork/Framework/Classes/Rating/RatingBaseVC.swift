@@ -45,11 +45,11 @@ class RatingBaseVC: UIViewController {
     }
     
     func getQuestions()  {
-        botConnector.getRatingQuestions { [weak self](result) in
+        DataSource.shared.getRatingQuestions { [weak self](result) in
             switch result {
-            case .success(let model):
-                if model.count > 0 {
-                    self?.questions = model[0].questions ?? []
+            case .success(let questions):
+                if questions.count > 0 {
+                    self?.questions = questions[0].questions ?? []
                     self?.ratingTableView.reloadData()
                 }else{
                     self?.showAlert(result: true, message: "error-msg".localForChosnLangCodeBB)
@@ -58,6 +58,19 @@ class RatingBaseVC: UIViewController {
                 self?.showAlert(result: true, message: err.localizedDescription)
             }
         }
+//        botConnector.getRatingQuestions { [weak self](result) in
+//            switch result {
+//            case .success(let model):
+//                if model.count > 0 {
+//                    self?.questions = model[0].questions ?? []
+//                    self?.ratingTableView.reloadData()
+//                }else{
+//                    self?.showAlert(result: true, message: "error-msg".localForChosnLangCodeBB)
+//                }
+//            case .failure(let err):
+//                self?.showAlert(result: true, message: err.localizedDescription)
+//            }
+//        }
     }
     
     func showAlert(result:Bool , message:String) {

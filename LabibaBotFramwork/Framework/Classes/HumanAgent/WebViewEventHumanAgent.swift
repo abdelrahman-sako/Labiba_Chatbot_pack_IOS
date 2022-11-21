@@ -76,9 +76,9 @@ class WebViewEventHumanAgent:NSObject {
             DispatchQueue.global(qos: .background).async {
 //                request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseData { response in
 //                }
-                LabibaRestfulBotConnector.shared.LabibaRequest([String].self, url: url, method: .post,headers: nil) { result in
-                    completionHandler?()
-                }
+//                LabibaRestfulBotConnector.shared.LabibaRequest([String].self, url: url, method: .post,headers: nil) { result in
+//                    completionHandler?()
+//                }
             }
             print("The task has started")
             

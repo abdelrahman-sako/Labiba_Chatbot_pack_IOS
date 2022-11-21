@@ -92,19 +92,33 @@ class RatingSheetVC: RatingBaseVC {
             let ratingModel = SubmitRatingModel(recepient_id: SharedPreference.shared.currentUserId,
                                                 questions: questions.map({$0.submitModel()}),
                                           sender_id: Labiba._senderId)
-            botConnector.submitRating(ratingModel: ratingModel) { (result) in
+            
+            DataSource.shared.submitRating(ratingModel: ratingModel) { result in
                 switch result{
-                case .success(let result):
-                    if result {
-                    self.showAlert(result: result, message: "thanksForYourRating".localForChosnLangCodeBB)
+                case .success(let model):
+                    if model.response ?? false {
+                        self.showAlert(result: true, message: "thanksForYourRating".localForChosnLangCodeBB)
                     }else{
-                     self.showAlert(result: result, message: "error-msg".localForChosnLangCodeBB)
+                        self.showAlert(result: false, message: "error-msg".localForChosnLangCodeBB)
                     }
                 case .failure(let err):
                     self.showAlert(result: false, message: err.localizedDescription)
-                   // showToast(message: "failure", inView: self.view)
                 }
             }
+            
+//            botConnector.submitRating(ratingModel: ratingModel) { (result) in
+//                switch result{
+//                case .success(let result):
+//                    if result {
+//                    self.showAlert(result: result, message: "thanksForYourRating".localForChosnLangCodeBB)
+//                    }else{
+//                     self.showAlert(result: result, message: "error-msg".localForChosnLangCodeBB)
+//                    }
+//                case .failure(let err):
+//                    self.showAlert(result: false, message: err.localizedDescription)
+//                   // showToast(message: "failure", inView: self.view)
+//                }
+//            }
         }else{
             kill(getpid(), SIGKILL)
            //exit(0)

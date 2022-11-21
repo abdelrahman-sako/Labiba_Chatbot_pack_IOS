@@ -189,191 +189,191 @@ class BotConnector: NSObject {
         }, to: LabibaUploadPath, encodingCompletion: createEncodingBlock(completion: completion))
     }
   
-    func textToSpeech(model:TextToSpeechModel, completion: @escaping (Result<String>) -> Void){
-        let path = "\(Labiba._voiceBasePath)\(Labiba._voiceServicePath)"
-        
-        let params:[String:Any] = [
-            "text":model.text,
-            // "text":model.testText(),
-            "voicename" : model.googleVoice.voicename,
-            "clientid" : model.clientid,
-            "language" : model.googleVoice.language,
-            "isSSML":"\(model.isSSML)"
-        ]
-        LabibaRequest([String:String].self,url: path, method: .post, parameters: params, encoding: URLEncoding(), logTag: .voice) { (result) in
-            switch result {
-            case .success(let model):
-                completion(.success(model["file"] ?? ""))
-            case .failure(let err):
-                completion(.failure(err))
-            }
-        }
-    }
+//    func textToSpeech(model:TextToSpeechModel, completion: @escaping (Result<String>) -> Void){
+//        let path = "\(Labiba._voiceBasePath)\(Labiba._voiceServicePath)"
+//        
+//        let params:[String:Any] = [
+//            "text":model.text,
+//            // "text":model.testText(),
+//            "voicename" : model.googleVoice.voicename,
+//            "clientid" : model.clientid,
+//            "language" : model.googleVoice.language,
+//            "isSSML":"\(model.isSSML)"
+//        ]
+//        LabibaRequest([String:String].self,url: path, method: .post, parameters: params, encoding: URLEncoding(), logTag: .voice) { (result) in
+//            switch result {
+//            case .success(let model):
+//                completion(.success(model["file"] ?? ""))
+//            case .failure(let err):
+//                completion(.failure(err))
+//            }
+//        }
+//    }
     
-    func submitRating(ratingModel:SubmitRatingModel, completion: @escaping (Result<Bool>) -> Void){
-        let path = "\(Labiba._basePath)/api/ratingform/submit"//Labiba._submitRatingPath
-        guard let data = try? JSONEncoder().encode(ratingModel)  else {
-            return
-        }
-        do {
-            let params = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
-            prettyPrintedResponse(data: data, name: "Submit Rating Form")
-            showLoadingIndicator()
-            LabibaRequest([String:Bool].self, url: path, method: .post, parameters: params, encoding:JSONEncoding.default , logTag: .ratingSubmit) { (result) in
-                switch result {
-                case .success(let model):
-                    if  let result = model["response"] {
-                        completion(.success(result))
-                    }else{
-                        let error = LabibaError(code: .EncodingError, statusCode: 0)
-                        completion(.failure(error))
-                    }
-                case .failure(let err):
-                    completion(.failure(err))
-                }
-               // self.loader.dismiss()
-            }
-        }catch let err{
-            completion(.failure(err))
-        }
-    }
+//    func submitRating(ratingModel:SubmitRatingModel, completion: @escaping (Result<Bool>) -> Void){
+//        let path = "\(Labiba._basePath)/api/ratingform/submit"//Labiba._submitRatingPath
+//        guard let data = try? JSONEncoder().encode(ratingModel)  else {
+//            return
+//        }
+//        do {
+//            let params = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
+//            prettyPrintedResponse(data: data, name: "Submit Rating Form")
+//            showLoadingIndicator()
+//            LabibaRequest([String:Bool].self, url: path, method: .post, parameters: params, encoding:JSONEncoding.default , logTag: .ratingSubmit) { (result) in
+//                switch result {
+//                case .success(let model):
+//                    if  let result = model["response"] {
+//                        completion(.success(result))
+//                    }else{
+//                        let error = LabibaError(code: .EncodingError, statusCode: 0)
+//                        completion(.failure(error))
+//                    }
+//                case .failure(let err):
+//                    completion(.failure(err))
+//                }
+//               // self.loader.dismiss()
+//            }
+//        }catch let err{
+//            completion(.failure(err))
+//        }
+//    }
     
-    func getRatingQuestions(completion: @escaping (Result<[GetRatingFormQuestionsModel]>) -> Void){
-        let path = "\(Labiba._basePath)/api/MobileAPI/FetchQuestions"//Labiba._ratingQuestionsPath
-        let params:[String:Any] = [
-            "bot_id" : SharedPreference.shared.currentUserId// "d0b8e34a-26ba-4ed6-a2af-4412b55ef442"
-        ]
-        showLoadingIndicator()
-        LabibaRequest([GetRatingFormQuestionsModel].self, url: path, method: .get, parameters: params, encoding: URLEncoding.default, logTag: .ratingQuestions) { (result) in
-            switch result {
-            case .success(let model):
-                completion(.success(model))
-            case .failure(let err):
-                completion(.failure(err))
-            }
-          //  self.loader.dismiss()
-        }
-    }
+//    func getRatingQuestions(completion: @escaping (Result<[GetRatingFormQuestionsModel]>) -> Void){
+//        let path = "\(Labiba._basePath)/api/MobileAPI/FetchQuestions"//Labiba._ratingQuestionsPath
+//        let params:[String:Any] = [
+//            "bot_id" : SharedPreference.shared.currentUserId// "d0b8e34a-26ba-4ed6-a2af-4412b55ef442"
+//        ]
+//        showLoadingIndicator()
+//        LabibaRequest([GetRatingFormQuestionsModel].self, url: path, method: .get, parameters: params, encoding: URLEncoding.default, logTag: .ratingQuestions) { (result) in
+//            switch result {
+//            case .success(let model):
+//                completion(.success(model))
+//            case .failure(let err):
+//                completion(.failure(err))
+//            }
+//          //  self.loader.dismiss()
+//        }
+//    }
     
-    func getHelpPageData(completion: @escaping (Result<HelpPageModel>) -> Void){
-        let path = Labiba._helpUrl//"\(Labiba._basePath)\(Labiba._helpServicePath)"
-        let params:[String:Any] = [
-            "bot_id" : SharedPreference.shared.currentUserId // "6bd2ecb6-958e-4bb5-905a-51bb6350490a"
-        ]
-        showLoadingIndicator()
-        LabibaRequest(HelpPageModel.self, url: path, method: .get, parameters: params, encoding: URLEncoding.default, logTag: .help) { (result) in
-            switch result {
-            case .success(let model):
-                completion(.success(model))
-            case .failure(let err):
-                completion(.failure(err))
-            }
-            //self.loader.dismiss()
-        }
-    }
+//    func getHelpPageData(completion: @escaping (Result<HelpPageModel>) -> Void){
+//        let path = Labiba._helpUrl//"\(Labiba._basePath)\(Labiba._helpServicePath)"
+//        let params:[String:Any] = [
+//            "bot_id" : SharedPreference.shared.currentUserId // "6bd2ecb6-958e-4bb5-905a-51bb6350490a"
+//        ]
+//        showLoadingIndicator()
+//        LabibaRequest(HelpPageModel.self, url: path, method: .get, parameters: params, encoding: URLEncoding.default, logTag: .help) { (result) in
+//            switch result {
+//            case .success(let model):
+//                completion(.success(model))
+//            case .failure(let err):
+//                completion(.failure(err))
+//            }
+//            //self.loader.dismiss()
+//        }
+//    }
+//    
+//    func getPrechatForm(completion: @escaping (Result<[PrechatFormModel.Item]>) -> Void) {
+//        let path = "\(Labiba._basePath)\(Labiba._prechatFormServicePath)"
+//        let params:[String:Any] = [
+//            "bot_id" : SharedPreference.shared.currentUserId
+//        ]
+//        showLoadingIndicator()
+//        LabibaRequest([PrechatFormModel].self, url: path, method: .get, parameters: params, encoding: URLEncoding.default, logTag: .prechatForm) { (result) in
+//            switch result {
+//            case .success(let model):
+//                if model.count > 0 {
+//                completion(.success(model[0].Data ?? []))
+//                }else {
+//                    let error = LabibaError(code: .EmptyResponse, statusCode: 0)
+//                    completion(.failure(error))
+//                }
+//            case .failure(let err):
+//                completion(.failure(err))
+//            }
+//           // self.loader.dismiss()
+//        }
+//    }
     
-    func getPrechatForm(completion: @escaping (Result<[PrechatFormModel.Item]>) -> Void) {
-        let path = "\(Labiba._basePath)\(Labiba._prechatFormServicePath)"
-        let params:[String:Any] = [
-            "bot_id" : SharedPreference.shared.currentUserId 
-        ]
-        showLoadingIndicator()
-        LabibaRequest([PrechatFormModel].self, url: path, method: .get, parameters: params, encoding: URLEncoding.default, logTag: .prechatForm) { (result) in
-            switch result {
-            case .success(let model):
-                if model.count > 0 {
-                completion(.success(model[0].Data ?? []))
-                }else {
-                    let error = LabibaError(code: .EmptyResponse, statusCode: 0)
-                    completion(.failure(error))
-                }
-            case .failure(let err):
-                completion(.failure(err))
-            }
-           // self.loader.dismiss()
-        }
-    }
-    
-    func updateToken(completion: @escaping ()->Void)  {
-        let path = Labiba._updateTokenUrl
-        let params:[String:Any] = [
-            "Username":Labiba.jwtAuthParamerters.username,
-            "Password":Labiba.jwtAuthParamerters.password
-        ]
-        DispatchQueue.global(qos: .background).sync { [weak self] in
-            LabibaRequest(UpdateTokenModel.self, url: path, method: .post, parameters: params, encoding: JSONEncoding.default, logTag: .upadateToken) { result in
-                switch result {
-                case .success(let model):
-                    UpdateTokenModel.saveToken(token: model.token)
-                    self?.sessionManagerConfiguration(token: model.token ?? "")
-                    print("token updated")
-                    completion()
-                case .failure(let err):
-                    showErrorMessage(err.localizedDescription)
-                }
-                
-            }
-        }
-    }
-    func LabibaRequest<T:Codable>(_ model:T.Type,url:String,method:HTTPMethod,parameters: Parameters? = nil,headers:[String:String]? = nil,encoding: ParameterEncoding = URLEncoding.default,logTag:LoggingTag? = nil, completion: @escaping (Result<T>)->Void) {
-       
-        if UpdateTokenModel.isTokenRequeird(){
-            if !UpdateTokenModel.isTokenValid() && logTag != .upadateToken {
-                updateToken(completion: { [weak self] in
-                    self?.LabibaRequest(model, url: url, method: method,parameters: parameters,encoding:encoding,logTag:logTag,completion:completion)
-                    
-                })
-                return
-            }
-        }
-        
-        let log:(_ respons:String,_ exception:String?)->Void = { respons,exception in
-            if let logTag = logTag {
-                let additionalHeaders = (self.sessionManager?.session.configuration.httpAdditionalHeaders as? [String:String] ?? [:]).description
-                self.log(url: url,headers: additionalHeaders,tag: logTag, method: method, parameter: parameters?.description ?? "", response: respons,exception: exception)
-            }
-        }
-        opQueue?.addOperation({
-            self.currentRequest = self.sessionManager?.request(url, method: method, parameters: parameters ,encoding: encoding , headers: headers).responseData { (response) in
-                
-                let statusCode = response.response?.statusCode ?? 0
-                //print(response.response?.allHeaderFields)
-                switch response.result{
-                case .success(let data):
-                    
-                    prettyPrintedResponse(url: url, statusCode:statusCode,method:method.rawValue,data: data, name: URL(string: url)?.lastPathComponent ?? "request")
-                    let dataString = String(data: data , encoding: .utf8) ?? ""
-                    
-                    do {
-                        let response = try JSONDecoder().decode(T.self, from: data)
-                        if let array =  response as? Array<Any>,  array.isEmpty , !Labiba.isHumanAgentStarted {
-                            //isHumanAgentStarted  because it return empty string if human agent started and it is not error
-                            let error = LabibaError(code: .EmptyResponse, statusCode: statusCode)
-                            log(dataString, error.logDescription)
-                            completion(.failure(error))
-                        }else{
-                            if Labiba.Logging.isSuccessLoggingEnabled { log(dataString, nil) }
-                            completion(.success(response))
-                        }
-                        
-                    }catch{
-                        let resposeHeaders = response.response?.allHeaderFields
-                        let error = LabibaError(statusCode: statusCode,headers: resposeHeaders) ?? LabibaError(code: .EncodingError, statusCode: statusCode,headers: resposeHeaders)
-                        log(dataString, error.logDescription)
-                        completion(.failure(error))
-                    }
-                    
-                case .failure(let err):
-                    let error = LabibaError(error: err, statusCode: statusCode)
-                    log("", error.logDescription)
-                    completion(.failure(error))
-                }
-                
-                self.loader.dismiss()
-            }
-        })
-        
-    }
+//    func updateToken(completion: @escaping ()->Void)  {
+//        let path = Labiba._updateTokenUrl
+//        let params:[String:Any] = [
+//            "Username":Labiba.jwtAuthParamerters.username,
+//            "Password":Labiba.jwtAuthParamerters.password
+//        ]
+//        DispatchQueue.global(qos: .background).sync { [weak self] in
+//            LabibaRequest(UpdateTokenModel.self, url: path, method: .post, parameters: params, encoding: JSONEncoding.default, logTag: .upadateToken) { result in
+//                switch result {
+//                case .success(let model):
+//                    UpdateTokenModel.saveToken(token: model.token)
+//                    self?.sessionManagerConfiguration(token: model.token ?? "")
+//                    print("token updated")
+//                    completion()
+//                case .failure(let err):
+//                    showErrorMessage(err.localizedDescription)
+//                }
+//
+//            }
+//        }
+//    }
+//    func LabibaRequest<T:Codable>(_ model:T.Type,url:String,method:HTTPMethod,parameters: Parameters? = nil,headers:[String:String]? = nil,encoding: ParameterEncoding = URLEncoding.default,logTag:LoggingTag? = nil, completion: @escaping (Result<T>)->Void) {
+//
+//        if UpdateTokenModel.isTokenRequeird(){
+//            if !UpdateTokenModel.isTokenValid() && logTag != .upadateToken {
+//                updateToken(completion: { [weak self] in
+//                    self?.LabibaRequest(model, url: url, method: method,parameters: parameters,encoding:encoding,logTag:logTag,completion:completion)
+//
+//                })
+//                return
+//            }
+//        }
+//
+//        let log:(_ respons:String,_ exception:String?)->Void = { respons,exception in
+//            if let logTag = logTag {
+//                let additionalHeaders = (self.sessionManager?.session.configuration.httpAdditionalHeaders as? [String:String] ?? [:]).description
+//                self.log(url: url,headers: additionalHeaders,tag: logTag, method: method, parameter: parameters?.description ?? "", response: respons,exception: exception)
+//            }
+//        }
+//        opQueue?.addOperation({
+//            self.currentRequest = self.sessionManager?.request(url, method: method, parameters: parameters ,encoding: encoding , headers: headers).responseData { (response) in
+//
+//                let statusCode = response.response?.statusCode ?? 0
+//                //print(response.response?.allHeaderFields)
+//                switch response.result{
+//                case .success(let data):
+//
+//                    prettyPrintedResponse(url: url, statusCode:statusCode,method:method.rawValue,data: data, name: URL(string: url)?.lastPathComponent ?? "request")
+//                    let dataString = String(data: data , encoding: .utf8) ?? ""
+//
+//                    do {
+//                        let response = try JSONDecoder().decode(T.self, from: data)
+//                        if let array =  response as? Array<Any>,  array.isEmpty , !Labiba.isHumanAgentStarted {
+//                            //isHumanAgentStarted  because it return empty string if human agent started and it is not error
+//                            let error = LabibaError(code: .EmptyResponse, statusCode: statusCode)
+//                            log(dataString, error.logDescription)
+//                            completion(.failure(error))
+//                        }else{
+//                            if Labiba.Logging.isSuccessLoggingEnabled { log(dataString, nil) }
+//                            completion(.success(response))
+//                        }
+//
+//                    }catch{
+//                        let resposeHeaders = response.response?.allHeaderFields
+//                        let error = LabibaError(statusCode: statusCode,headers: resposeHeaders) ?? LabibaError(code: .EncodingError, statusCode: statusCode,headers: resposeHeaders)
+//                        log(dataString, error.logDescription)
+//                        completion(.failure(error))
+//                    }
+//
+//                case .failure(let err):
+//                    let error = LabibaError(error: err, statusCode: statusCode)
+//                    log("", error.logDescription)
+//                    completion(.failure(error))
+//                }
+//
+//                self.loader.dismiss()
+//            }
+//        })
+//
+//    }
     
     enum LoggingTag:String {
         case messaging = "MESSAGING"

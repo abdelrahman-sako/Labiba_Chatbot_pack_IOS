@@ -60,17 +60,34 @@ class PrechatFormVC: UIViewController {
     }
     
     func getDate() {
-        LabibaRestfulBotConnector.shared.getPrechatForm {[weak self] result in
+        DataSource.shared.getPrechatForm {[weak self] result in
             switch result {
             case .success(let model):
-                self?.prechatFormArray = model
-                self?.tableView.reloadData()
-            case .failure(let err):
-                showErrorMessage(err.localizedDescription) { [weak self] in
-                    self?.dismissAction()
+                if model.count > 0 {
+                    self?.prechatFormArray = model[0].Data ?? []
+                    self?.tableView.reloadData()
+                }else {
+                    showErrorMessage(ErrorModel.generalError().message, cancelHandler:  { [weak self] in
+                        self?.dismissAction()
+                    })
                 }
+            case .failure(let err):
+                showErrorMessage(err.localizedDescription, cancelHandler:  { [weak self] in
+                    self?.dismissAction()
+                })
             }
         }
+//        LabibaRestfulBotConnector.shared.getPrechatForm {[weak self] result in
+//            switch result {
+//            case .success(let model):
+//                self?.prechatFormArray = model
+//                self?.tableView.reloadData()
+//            case .failure(let err):
+//                showErrorMessage(err.localizedDescription) { [weak self] in
+//                    self?.dismissAction()
+//                }
+//            }
+//        }
     }
     
     func fieldValidation() -> Bool {

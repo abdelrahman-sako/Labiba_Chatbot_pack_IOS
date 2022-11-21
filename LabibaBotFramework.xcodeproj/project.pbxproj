@@ -479,7 +479,17 @@
 		B429555A22DDDBD2002DE3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */; };
 		B462725122DEF4C20070E044 /* AttachmentsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */; };
 		F9013BE328716DEC00DE2BA0 /* WebViewEventHumanAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */; };
-		F9D200F5292A21E80024FE48 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D200F4292A21E80024FE48 /* test.swift */; };
+		F9D20105292A289A0024FE48 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D200F7292A289A0024FE48 /* LocalDataSource.swift */; };
+		F9D20106292A289A0024FE48 /* RemoteContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D200F8292A289A0024FE48 /* RemoteContext.swift */; };
+		F9D2010A292A289A0024FE48 /* ApiEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D200FD292A289A0024FE48 /* ApiEndPoints.swift */; };
+		F9D2010B292A289A0024FE48 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D200FE292A289A0024FE48 /* RemoteDataSource.swift */; };
+		F9D2010C292A289A0024FE48 /* DataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D20100292A289A0024FE48 /* DataSourceProtocol.swift */; };
+		F9D2010D292A289A0024FE48 /* LocalDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D20101292A289A0024FE48 /* LocalDataSourceProtocol.swift */; };
+		F9D2010E292A289A0024FE48 /* RemoteDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D20102292A289A0024FE48 /* RemoteDataSourceProtocol.swift */; };
+		F9D2010F292A289A0024FE48 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D20103292A289A0024FE48 /* DataSource.swift */; };
+		F9D20114292A488D0024FE48 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D20113292A488D0024FE48 /* EncodableExtension.swift */; };
+		F9D20116292A4A5D0024FE48 /* SubmitRatingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D20115292A4A5D0024FE48 /* SubmitRatingResponseModel.swift */; };
+		F9D20122292A68150024FE48 /* TextToSpeachResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D20121292A68150024FE48 /* TextToSpeachResponseModel.swift */; };
 		F9D997CA2871D17700E676B0 /* HumanAgentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D997C92871D17700E676B0 /* HumanAgentModel.swift */; };
 		F9D998062874747200E676B0 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = F9D998052874747200E676B0 /* index.html */; };
 /* End PBXBuildFile section */
@@ -949,7 +959,17 @@
 		B42954FF22DDDBD2002DE3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsMenuViewController.swift; sourceTree = "<group>"; };
 		F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEventHumanAgent.swift; sourceTree = "<group>"; };
-		F9D200F4292A21E80024FE48 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		F9D200F7292A289A0024FE48 /* LocalDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		F9D200F8292A289A0024FE48 /* RemoteContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteContext.swift; sourceTree = "<group>"; };
+		F9D200FD292A289A0024FE48 /* ApiEndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEndPoints.swift; sourceTree = "<group>"; };
+		F9D200FE292A289A0024FE48 /* RemoteDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		F9D20100292A289A0024FE48 /* DataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
+		F9D20101292A289A0024FE48 /* LocalDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataSourceProtocol.swift; sourceTree = "<group>"; };
+		F9D20102292A289A0024FE48 /* RemoteDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceProtocol.swift; sourceTree = "<group>"; };
+		F9D20103292A289A0024FE48 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		F9D20113292A488D0024FE48 /* EncodableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
+		F9D20115292A4A5D0024FE48 /* SubmitRatingResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitRatingResponseModel.swift; sourceTree = "<group>"; };
+		F9D20121292A68150024FE48 /* TextToSpeachResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeachResponseModel.swift; sourceTree = "<group>"; };
 		F9D997C92871D17700E676B0 /* HumanAgentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanAgentModel.swift; sourceTree = "<group>"; };
 		F9D998052874747200E676B0 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1053,6 +1073,8 @@
 				52F6ECB426F7264600B38518 /* PrechatFormModel.swift */,
 				52AA90E22717FDDB00D6EA60 /* UpdateTokenModel.swift */,
 				F9D997C92871D17700E676B0 /* HumanAgentModel.swift */,
+				F9D20115292A4A5D0024FE48 /* SubmitRatingResponseModel.swift */,
+				F9D20121292A68150024FE48 /* TextToSpeachResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1586,6 +1608,7 @@
 			isa = PBXGroup;
 			children = (
 				B42954D622DDDBD2002DE3E9 /* Extensions.swift */,
+				F9D20113292A488D0024FE48 /* EncodableExtension.swift */,
 				5296E22A25EF9F63001FB31C /* UIDeviceExt.swift */,
 			);
 			path = Extensions;
@@ -1947,7 +1970,7 @@
 		B42954A722DDDBD2002DE3E9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F9D200F3292A1EAF0024FE48 /* Abed */,
+				F9D200F3292A1EAF0024FE48 /* Data */,
 				52B6B37E25B6F8C40051ABCE /* View */,
 				37460D98230A7A42002748CE /* Models */,
 				52288811246193FE0030F27E /* ImportedLibraries */,
@@ -2130,12 +2153,43 @@
 			path = HumanAgent;
 			sourceTree = "<group>";
 		};
-		F9D200F3292A1EAF0024FE48 /* Abed */ = {
+		F9D200F3292A1EAF0024FE48 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F9D200F4292A21E80024FE48 /* test.swift */,
+				F9D200F8292A289A0024FE48 /* RemoteContext.swift */,
+				F9D20103292A289A0024FE48 /* DataSource.swift */,
+				F9D200FF292A289A0024FE48 /* Data Source Protocols */,
+				F9D200FB292A289A0024FE48 /* Remote Repository */,
+				F9D200F6292A289A0024FE48 /* Local Repository */,
 			);
-			path = Abed;
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F9D200F6292A289A0024FE48 /* Local Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F9D200F7292A289A0024FE48 /* LocalDataSource.swift */,
+			);
+			path = "Local Repository";
+			sourceTree = "<group>";
+		};
+		F9D200FB292A289A0024FE48 /* Remote Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F9D200FD292A289A0024FE48 /* ApiEndPoints.swift */,
+				F9D200FE292A289A0024FE48 /* RemoteDataSource.swift */,
+			);
+			path = "Remote Repository";
+			sourceTree = "<group>";
+		};
+		F9D200FF292A289A0024FE48 /* Data Source Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F9D20100292A289A0024FE48 /* DataSourceProtocol.swift */,
+				F9D20101292A289A0024FE48 /* LocalDataSourceProtocol.swift */,
+				F9D20102292A289A0024FE48 /* RemoteDataSourceProtocol.swift */,
+			);
+			path = "Data Source Protocols";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2395,9 +2449,11 @@
 				52487BBC278F1CDA00964441 /* WatchConnectivityViewController.swift in Sources */,
 				3782D99F23BA1369006A79D4 /* SRMutex.m in Sources */,
 				37B5326423CC5623001D2BDF /* LabibaBotConnectorJC.swift in Sources */,
+				F9D20122292A68150024FE48 /* TextToSpeachResponseModel.swift in Sources */,
 				372BB4C124B1E151003A8297 /* VisualizerVoiceAssistantView.swift in Sources */,
 				B429552422DDDBD2002DE3E9 /* CardViewCell.swift in Sources */,
 				52DE30812462D6A000DAF3E7 /* ResponseSerialization.swift in Sources */,
+				F9D2010D292A289A0024FE48 /* LocalDataSourceProtocol.swift in Sources */,
 				52775650272EE12F00F8ADE0 /* AnimationContainer.swift in Sources */,
 				3782D99023BA1369006A79D4 /* SRSecurityPolicy.m in Sources */,
 				B429552B22DDDBD2002DE3E9 /* StateShownEntryCell.swift in Sources */,
@@ -2482,6 +2538,7 @@
 				52775641272EE12F00F8ADE0 /* KeypathSearchable.swift in Sources */,
 				37B9619D230D3DEE0093647C /* BubbbleGestureHandler.swift in Sources */,
 				521448A8258651D20099BF38 /* RatingBaseVC.swift in Sources */,
+				F9D20116292A4A5D0024FE48 /* SubmitRatingResponseModel.swift in Sources */,
 				52C6DBA624694849005CFE27 /* ImageDownloader.swift in Sources */,
 				B429553F22DDDBD2002DE3E9 /* CustomCollectionViewCellNoImage.swift in Sources */,
 				3782D99823BA1369006A79D4 /* SRPinningSecurityPolicy.m in Sources */,
@@ -2493,12 +2550,14 @@
 				528AE9652520A73C008AF72E /* Math.swift in Sources */,
 				52DE8E17248CEB880067F5EC /* CGSize.swift in Sources */,
 				52DE8E1E248CEB880067F5EC /* ImageSourceHelpers.swift in Sources */,
+				F9D2010F292A289A0024FE48 /* DataSource.swift in Sources */,
 				52775698272EE12F00F8ADE0 /* LottieView.swift in Sources */,
 				52DE8DD0248CB9C60067F5EC /* IQToolbar.swift in Sources */,
 				52775634272EE12F00F8ADE0 /* AnimationKeypath.swift in Sources */,
 				52775652272EE12F00F8ADE0 /* PreCompositionLayer.swift in Sources */,
 				3798705D2325404C00CC968F /* HintsView.swift in Sources */,
 				B429554122DDDBD2002DE3E9 /* CustomTableViewCell.swift in Sources */,
+				F9D20105292A289A0024FE48 /* LocalDataSource.swift in Sources */,
 				52775677272EE12F00F8ADE0 /* LayerDebugging.swift in Sources */,
 				5277567A272EE12F00F8ADE0 /* ColorExtension.swift in Sources */,
 				371ADD7522FC1EDF00AB68FB /* SplashScreenVC.swift in Sources */,
@@ -2541,8 +2600,10 @@
 				52775646272EE12F00F8ADE0 /* RectNode.swift in Sources */,
 				B429551E22DDDBD2002DE3E9 /* ScannerVC.swift in Sources */,
 				522D165D256E9C9E002758D5 /* GeneralThemeSettings.swift in Sources */,
+				F9D2010A292A289A0024FE48 /* ApiEndPoints.swift in Sources */,
 				52DE30742462D6A000DAF3E7 /* ServerTrustPolicy.swift in Sources */,
 				52775688272EE12F00F8ADE0 /* StrokeNode.swift in Sources */,
+				F9D20106292A289A0024FE48 /* RemoteContext.swift in Sources */,
 				B429553322DDDBD2002DE3E9 /* DataExtensions.swift in Sources */,
 				B429552322DDDBD2002DE3E9 /* SelectableCardView.swift in Sources */,
 				3782D9AC23BA1369006A79D4 /* SRSIMDHelpers.m in Sources */,
@@ -2560,6 +2621,7 @@
 				52C0A0952588AFEF004D7AAA /* SubmitRatingLightCell.swift in Sources */,
 				5277569A272EE12F00F8ADE0 /* ShapeContainerLayer.swift in Sources */,
 				37C4631C22F1BDEF004EAC7E /* VoiceAssistantView.swift in Sources */,
+				F9D2010E292A289A0024FE48 /* RemoteDataSourceProtocol.swift in Sources */,
 				F9013BE328716DEC00DE2BA0 /* WebViewEventHumanAgent.swift in Sources */,
 				B429551922DDDBD2002DE3E9 /* TorchMode.swift in Sources */,
 				527756A3272EE12F00F8ADE0 /* MaskContainerLayer.swift in Sources */,
@@ -2604,6 +2666,7 @@
 				371378EF22F86B6500ED8299 /* TextToSpeechManeger.swift in Sources */,
 				37CC2512234B43E500168766 /* RatingStarsRatingCell.swift in Sources */,
 				B429551B22DDDBD2002DE3E9 /* HeaderVC.swift in Sources */,
+				F9D20114292A488D0024FE48 /* EncodableExtension.swift in Sources */,
 				5281A65224502E09001605E8 /* WepPageViewController.swift in Sources */,
 				52DE8DC2248CB9C60067F5EC /* IQNSArray+Sort.swift in Sources */,
 				52775675272EE12F00F8ADE0 /* PathNode.swift in Sources */,
@@ -2614,7 +2677,6 @@
 				52DE8DD1248CB9C60067F5EC /* IQPreviousNextView.swift in Sources */,
 				52C6DBA724694849005CFE27 /* UIButton+AlamofireImage.swift in Sources */,
 				52FC5CF624D0262F00C7B7CF /* LabibaVoiceExperience.swift in Sources */,
-				F9D200F5292A21E80024FE48 /* test.swift in Sources */,
 				52DE30732462D6A000DAF3E7 /* Response.swift in Sources */,
 				52775681272EE12F00F8ADE0 /* RenderNode.swift in Sources */,
 				3782D94F23B9F511006A79D4 /* NVActivityIndicatorViewable.swift in Sources */,
@@ -2672,6 +2734,7 @@
 				B429551A22DDDBD2002DE3E9 /* ScanAnimationStyle.swift in Sources */,
 				371E27DE24AA0A86003A4150 /* LabibaConfig.swift in Sources */,
 				52775658272EE12F00F8ADE0 /* AnyValueContainer.swift in Sources */,
+				F9D2010B292A289A0024FE48 /* RemoteDataSource.swift in Sources */,
 				B429554522DDDBD2002DE3E9 /* MediaStreamer.swift in Sources */,
 				52775644272EE12F00F8ADE0 /* Rectangle.swift in Sources */,
 				52BF2F45247130FE00820B37 /* BaseConversationVC.swift in Sources */,
@@ -2695,6 +2758,7 @@
 				B429552F22DDDBD2002DE3E9 /* BotBubble.swift in Sources */,
 				37379708240BAA310036C74D /* BankOfJoSplashVC.swift in Sources */,
 				52775680272EE12F00F8ADE0 /* Group.swift in Sources */,
+				F9D2010C292A289A0024FE48 /* DataSourceProtocol.swift in Sources */,
 				3782D9B623BA1369006A79D4 /* NSURLRequest+SRWebSocket.m in Sources */,
 				52BF2F4E247131D600820B37 /* VoiceExperienceVC.swift in Sources */,
 				52775638272EE12F00F8ADE0 /* KeyframeExtensions.swift in Sources */,
