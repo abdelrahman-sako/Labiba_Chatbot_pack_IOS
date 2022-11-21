@@ -9,6 +9,7 @@
 import Foundation
 final class DataSource: DataSourceProtocol{
    
+   
  
   
    
@@ -29,6 +30,10 @@ final class DataSource: DataSourceProtocol{
   
     
     //MARK: - Remote Database
+    func messageHandler(model: [String : Any], handler: @escaping Handler<[LabibaModel]>) {
+        remoteDataSource.messageHandler(model: model, handler: handler)
+    }
+    
     func submitRating(ratingModel: SubmitRatingModel, handler: @escaping Handler<SubmitRatingResponseModel>) {
         remoteDataSource.submitRating(ratingModel: ratingModel, handler: handler)
     }

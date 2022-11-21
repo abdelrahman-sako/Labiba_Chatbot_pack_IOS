@@ -77,9 +77,9 @@ class LabibaRestfulBotConnector:BotConnector{ //
     
     func sendData(parameters:[String:Any])  {
         isTherePendingRequest = true
-        LabibaRequest([LabibaModel].self, url: baseURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, logTag: .messaging, completion: { response in
+        DataSource.shared.messageHandler(model: parameters) { result in
             self.loader.dismiss()
-            switch response {
+            switch result {
             case .success(let model):
                 self.parseResponse(response: model)
             case .failure(let err):
@@ -88,7 +88,19 @@ class LabibaRestfulBotConnector:BotConnector{ //
                 self.delegate?.botConnectorRemoveTypingActivity(self)
             }
             self.isTherePendingRequest = false
-        })
+        }
+//        LabibaRequest([LabibaModel].self, url: baseURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, logTag: .messaging, completion: { response in
+//            self.loader.dismiss()
+//            switch response {
+//            case .success(let model):
+//                self.parseResponse(response: model)
+//            case .failure(let err):
+//                print(err.localizedDescription)
+//                showErrorMessage(err.localizedDescription)
+//                self.delegate?.botConnectorRemoveTypingActivity(self)
+//            }
+//            self.isTherePendingRequest = false
+//        })
         
     }
     

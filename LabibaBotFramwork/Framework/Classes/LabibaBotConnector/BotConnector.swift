@@ -191,7 +191,7 @@ class BotConnector: NSObject {
   
 //    func textToSpeech(model:TextToSpeechModel, completion: @escaping (Result<String>) -> Void){
 //        let path = "\(Labiba._voiceBasePath)\(Labiba._voiceServicePath)"
-//        
+//
 //        let params:[String:Any] = [
 //            "text":model.text,
 //            // "text":model.testText(),

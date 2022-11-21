@@ -9,10 +9,22 @@
 import Foundation
 
 class RemoteDataSource:RemoteDataSourceProtocol{
-   
-  
     
-   
+    
+    
+    func messageHandler(model: [String : Any], handler: @escaping Handler<[LabibaModel]>) {
+        let url = "\(Labiba._basePath)\(Labiba._messagingServicePath)"
+        let endPoint = EndPoint(url: url, httpMethod: .post,headers: ["Content-Type":ContentType.json.rawValue])
+        let params = model
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
+            switch  result {
+            case .success(let data):
+                self.parser(data: data, model: [LabibaModel].self, handler: handler)
+            case .failure(let error):
+                handler(.failure(error))
+            }
+        }
+    }
     
     func getRatingQuestions(handler: @escaping Handler<[GetRatingFormQuestionsModel]>) {
         let url = "\(Labiba._basePath)/api/MobileAPI/FetchQuestions"
@@ -20,7 +32,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         let params:[String:Any] = [
             "bot_id" : SharedPreference.shared.currentUserId
         ]
-        remoteContext.request(endPoint: endPoint, parameters: params) { result in
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: [GetRatingFormQuestionsModel].self, handler: handler)
@@ -35,7 +47,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         let endPoint = EndPoint(url: url, httpMethod: .post)
         let params = ratingModel.dictionary
         
-        remoteContext.request(endPoint: endPoint, parameters: params) { result in
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: SubmitRatingResponseModel.self, handler: handler)
@@ -53,7 +65,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             "bot_id" : SharedPreference.shared.currentUserId
         ]
         
-        remoteContext.request(endPoint: endPoint, parameters: params) { result in
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: HelpPageModel.self, handler: handler)
@@ -71,7 +83,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             "bot_id" : SharedPreference.shared.currentUserId
         ]
         
-        remoteContext.request(endPoint: endPoint, parameters: params) { result in
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: [PrechatFormModel].self, handler: handler)
@@ -92,7 +104,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             "isSSML":"\(model.isSSML)"
         ]
         
-        remoteContext.request(endPoint: endPoint, parameters: params) { result in
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: TextToSpeachResponseModel.self, handler: handler)
@@ -100,15 +112,16 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 handler(.failure(error))
             }
         }
+        
     }
     
+   
     
+   
+    //MARK: - Parsers
     
-  
-   //MARK: - Parsers
-
     private func parser<T:Decodable>(data:Data,model:T.Type, handler: @escaping Handler<T>) {
-       
+        
         let decoder =  JSONDecoder()
         do {
             let model = try decoder.decode(T.self, from: data)
@@ -117,11 +130,6 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             handler(.failure(ErrorModel(message: error.localizedDescription)))
         }
     }
-    
-    func printResponse(url:String = "",statusCode:Int = 0,method:String = "",data:Data,name:String = "")  {
-        prettyPrintedResponse(url: url, statusCode:statusCode,method:method,data: data, name: URL(string: url)?.lastPathComponent ?? "request")
-    }
-
   
     //MARK: - Properties
     lazy var remoteContext = RemoteContext()

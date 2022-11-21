@@ -47,8 +47,23 @@ final class RemoteContext {
         sessionManager = SessionManager(configuration: configuration,serverTrustPolicyManager: servertrustManager)
     }
     
+    /// check  token  and update it if it's required, then continue with the normal request flow
+    ///
+    /// - Parameters:
+    ///   - endPoint: Endpoint
+    ///   - parameters: [String: Any], Optional
+    ///   - completion: A callback function invoked when the operation is completed.
     
-    
+    func withTokenRequest(endPoint: EndPointProtocol, parameters:Parameters?, completion: @escaping Handler<Data>) {
+        checkToken { result in
+            switch result {
+            case .success(_):
+                self.request(endPoint: endPoint, parameters: parameters, completion: completion)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
     
     /// Creates an HTTP request to a given endpoint address
     ///
@@ -308,6 +323,48 @@ final class RemoteContext {
         }
     }
     
+    //MARK: - Update Token
+    private func checkToken(handler: @escaping Handler<Bool>){
+        if UpdateTokenModel.isTokenRequeird() && !UpdateTokenModel.isTokenValid()  {
+            updateToken { result  in
+                switch result {
+                case .success(let model):
+                    UpdateTokenModel.saveToken(token: model.token)
+                    self.sessionManagerConfiguration(token: model.token ?? "")
+                    print("token updated")
+                    handler(.success(true))
+                case .failure(let error):
+                    handler(.failure(error))
+                }
+            }
+        }else {
+            handler(.success(true))
+        }
+    }
+    
+    private func updateToken(handler: @escaping Handler<UpdateTokenModel>) {
+        let url =   Labiba._updateTokenUrl
+        let endPoint = EndPoint(url: url, httpMethod: .post)
+        let params:[String:Any] = [
+            "Username":Labiba.jwtAuthParamerters.username,
+            "Password":Labiba.jwtAuthParamerters.password
+        ]
+        request(endPoint: endPoint, parameters: params) { result in
+            switch  result {
+            case .success(let data):
+                let decoder =  JSONDecoder()
+                do {
+                    let model = try decoder.decode(UpdateTokenModel.self, from: data)
+                    handler(.success(model))
+                } catch {
+                    handler(.failure(ErrorModel(message: error.localizedDescription)))
+                }
+            case .failure(let error):
+                handler(.failure(error))
+            }
+        }
+    }
+   
 }
 
 
