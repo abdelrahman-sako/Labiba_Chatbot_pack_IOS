@@ -19,7 +19,7 @@ class RatingBaseVC: UIViewController {
     @IBOutlet weak var ratingTableView: UITableView!
     
     var questions:[RatingQuestionModel] = []
-    var botConnector:BotConnector = LabibaRestfulBotConnector.shared
+    var botConnector:BotConnector = BotConnector.shared
     var delegate:SubViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -45,7 +45,9 @@ class RatingBaseVC: UIViewController {
     }
     
     func getQuestions()  {
+        CircularGradientLoadingIndicator.show()
         DataSource.shared.getRatingQuestions { [weak self](result) in
+            CircularGradientLoadingIndicator.dismiss()
             switch result {
             case .success(let questions):
                 if questions.count > 0 {

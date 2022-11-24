@@ -532,7 +532,8 @@ public enum BotType:Int {
 
     static func dismiss(tiggerDelegate:Bool = true,compeletion:(()->Void)? = nil ){
         if tiggerDelegate{Labiba.delegate?.labibaWillClose?()}
-        LabibaRestfulBotConnector.shared.close()
+        //LabibaRestfulBotConnector.shared.close()
+        DataSource.shared.close()
         WebViewEventHumanAgent.Shared.forceEnd()
         navigationController?.dismiss(animated: true, completion: {
             compeletion?()

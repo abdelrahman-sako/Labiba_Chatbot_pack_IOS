@@ -12,6 +12,7 @@ import ContactsUI
 class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsViewControllerDelegate, LabibaChatHeaderViewDelegate, CustomMapPickerDelegate
 {
     
+    
     override func collectionView(dialogIndex: Int,selectedCardIndex: Int, selectedCellDialogCardButton: DialogCardButton?, didTappedInTableview TableCell: CustomTableViewCell) {
         if let _ = selectedCellDialogCardButton?.payload
         {
@@ -477,7 +478,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
      @IBAction func dismissConversation(_ sender: AnyObject) {
          
          self.isClosed = true
-         self.botConnector.close()
+//         self.botConnector.close()
+         DataSource.shared.close()
          self.shutDownBotChat()
      }
      
@@ -798,7 +800,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     // MARK:ImageSelectorDelegate
     override func imageSelectorDidSelectImage(_ image: UIImage, fromSource source: UIImagePickerController.SourceType)
     {
-        self.botConnector.sendPhoto(image )
+        super.botConnector.sendPhoto(image)
         self.currentChoiceToken = nil
         
         let dialog = ConversationDialog(by: .user, time: Date())

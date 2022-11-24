@@ -47,8 +47,23 @@ final class RemoteContext {
         sessionManager = SessionManager(configuration: configuration,serverTrustPolicyManager: servertrustManager)
     }
     
+    /// check  token  and update it if it's required, then continue with the normal request flow
+    ///
+    /// - Parameters:
+    ///   - endPoint: Endpoint
+    ///   - parameters: [String: Any], Optional
+    ///   - completion: A callback function invoked when the operation is completed.
     
-    
+    func withTokenRequest(endPoint: EndPointProtocol, parameters:Parameters?, completion: @escaping Handler<Data>) {
+        checkToken { result in
+            switch result {
+            case .success(_):
+                self.request(endPoint: endPoint, parameters: parameters, completion: completion)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
     
     /// Creates an HTTP request to a given endpoint address
     ///
@@ -105,35 +120,37 @@ final class RemoteContext {
     }
     
     
-   /*
-    func multipartRequest(endPoint: EndPointProtocol, params:Parameters?, multipartName: String?, uploadFiles: [Data]?,encoding:String.Encoding? = nil, completion: @escaping Handler<Any>){
-        let relativePath = baseURL + endPoint.address
-        let url = URL(string: relativePath)!
+   
+    func multipartRequest(endPoint: EndPointProtocol, params:Parameters?, multipartName: String?, uploadFiles: [Data]?,encoding:String.Encoding? = nil,mimeType:String,fileName:String, completion: @escaping Handler<Data>){
+        let urlRequest = buildURlRequestArray(endPoint: endPoint, params: params)
+//        let relativePath = buildURlRequestArray(endPoint: endPoint, params: params)
+       // let url = URL(string: relativePath)!
 
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = endPoint.httpMethod.rawValue
+        //var urlRequest = URLRequest(url: url)
+        //urlRequest.httpMethod = endPoint.httpMethod.rawValue
 
-        if let headers = endPoint.headers {
-            headers.keys.forEach({ (key) in
-                urlRequest.setValue(headers[key]!, forHTTPHeaderField: key )
-            })
-        }
+//        if let headers = endPoint.headers {
+//            headers.keys.forEach({ (key) in
+//                urlRequest.setValue(headers[key]!, forHTTPHeaderField: key )
+//            })
+//        }
 
-        sessionManager.upload(multipartFormData: {(multipartFormData) in
-            if let params = params{
-                for (key,value) in params {
-                    multipartFormData.append((value as! String).data(using: .utf8)!, withName: key)
-                }
-            }
-
-            if let files = uploadFiles, let name = multipartName{
-                for file in files{
-                    multipartFormData.append(file, withName: "image", fileName: "file.fileName", mimeType: "")
-                }
-            }
-        }, to: urlRequest as! URLConvertible).responseData { result in
-            
-        }
+//        sessionManager.upload(multipartFormData: {(multipartFormData) in
+//            if let params = params{
+//                for (key,value) in params {
+//                    multipartFormData.append((value as! String).data(using: .utf8)!, withName: key)
+//                }
+//            }
+//
+//            if let files = uploadFiles, let name = multipartName{
+//                for file in files{
+//                    multipartFormData.append(file, withName: "image", fileName: "file.fileName", mimeType: "")
+//                }
+//            }
+//        }, to: urlRequest as! URLConvertible, encodingCompletion:nil )
+//        .responseData { result in
+//
+//        }
         sessionManager.upload(multipartFormData: { (multipartFormData) in
             if let params = params{
                 for (key,value) in params {
@@ -143,7 +160,7 @@ final class RemoteContext {
 
             if let files = uploadFiles, let name = multipartName{
                 for file in files{
-                    multipartFormData.append(file, withName: "image", fileName: file.fileName, mimeType: file.mimeType)
+                    multipartFormData.append(file, withName: "image", fileName: fileName, mimeType: mimeType)
                 }
             }
         }, with: urlRequest) { (result) in
@@ -154,33 +171,33 @@ final class RemoteContext {
                 upload.validate().responseData(completionHandler: { [weak self] (dataResponse) in
                     switch dataResponse.result {
                     case .success:
-                        if progress {
-                            progressView.hideProgress()
-                        }
+//                        if progress {
+//                            progressView.hideProgress()
+//                        }
                         if let wsData = dataResponse.data {
                              completion(.success(wsData))
                         }else{
                             completion(.failure(ErrorModel(message: "No Data")))
                         }
                     case .failure(let responseError as NSError):
-                        if progress {
-                            progressView.hideProgress()
-                        }
+//                        if progress {
+//                            progressView.hideProgress()
+//                        }
                         
                         let error = self?.buildError(response: dataResponse, responseError: responseError)
                         completion(.failure(error!))
                     }
                 })
             case .failure(let responseError as NSError):
-                if progress {
-                    progressView.hideProgress()
-                }
+//                if progress {
+//                    progressView.hideProgress()
+//                }
                 completion(.failure(ErrorModel(message: responseError.localizedDescription)))
             }
         }
     }
     
-    */
+    
     
     /// Helper method to send an Http request to a given Endpoint.
     ///
@@ -308,6 +325,52 @@ final class RemoteContext {
         }
     }
     
+    //MARK: - Update Token
+    private func checkToken(handler: @escaping Handler<Bool>){
+        if UpdateTokenModel.isTokenRequeird() && !UpdateTokenModel.isTokenValid()  {
+            updateToken { result  in
+                switch result {
+                case .success(let model):
+                    UpdateTokenModel.saveToken(token: model.token)
+                    self.sessionManagerConfiguration(token: model.token ?? "")
+                    print("token updated")
+                    handler(.success(true))
+                case .failure(let error):
+                    handler(.failure(error))
+                }
+            }
+        }else {
+            handler(.success(true))
+        }
+    }
+    
+    private func updateToken(handler: @escaping Handler<UpdateTokenModel>) {
+        let url =   Labiba._updateTokenUrl
+        let endPoint = EndPoint(url: url, httpMethod: .post)
+        let params:[String:Any] = [
+            "Username":Labiba.jwtAuthParamerters.username,
+            "Password":Labiba.jwtAuthParamerters.password
+        ]
+        request(endPoint: endPoint, parameters: params) { result in
+            switch  result {
+            case .success(let data):
+                let decoder =  JSONDecoder()
+                do {
+                    let model = try decoder.decode(UpdateTokenModel.self, from: data)
+                    handler(.success(model))
+                } catch {
+                    handler(.failure(ErrorModel(message: error.localizedDescription)))
+                }
+            case .failure(let error):
+                handler(.failure(error))
+            }
+        }
+    }
+    
+    func close()  {
+        sessionManager?.session.getAllTasks(completionHandler: {$0.forEach({$0.cancel()})})
+    }
+   
 }
 
 

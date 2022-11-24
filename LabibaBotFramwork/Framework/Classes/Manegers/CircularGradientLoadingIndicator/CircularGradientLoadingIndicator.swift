@@ -12,7 +12,7 @@ public class CircularGradientLoadingIndicator: UIView {
     private var width:CGFloat = 80
     lazy var loaderView:UIView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: width, height: width)))
     var containerView:UIView?
-    
+    static let shared = CircularGradientLoadingIndicator()
     let loaderLabel = UILabel()
     public var LoadingText:String = "Loading..."{
         didSet{
@@ -33,7 +33,7 @@ public class CircularGradientLoadingIndicator: UIView {
     
     private static var isShown = false
     
-    public init(){
+    private init(){
        
         let topSpace:CGFloat = 10
         let sideSpaces:CGFloat = 50
@@ -116,17 +116,17 @@ public class CircularGradientLoadingIndicator: UIView {
 //        layer.add(animation, forKey: "strokeStart")
 //    }
     
-   public func show()  {
+   static func show()  {
         if let rootVC = UIApplication.shared.keyWindow//?.rootViewController
         {
          
             
-            if !self.isDescendant(of: rootVC){
+            if !shared.isDescendant(of: rootVC){
                     CircularGradientLoadingIndicator.isShown = true
-                    rootVC.addSubview(self)
-                    containerView?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-                    UIView.animate(withDuration: 0.1) { [weak self] in
-                        self?.containerView?.transform = CGAffineTransform.identity
+                    rootVC.addSubview(shared)
+                shared.containerView?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                    UIView.animate(withDuration: 0.1) {
+                        shared.containerView?.transform = CGAffineTransform.identity
                     }
                 
             }
@@ -137,9 +137,9 @@ public class CircularGradientLoadingIndicator: UIView {
         }
     }
     
-   public func dismiss()  {
-        self.removeFromSuperview()
-        CircularGradientLoadingIndicator.isShown = false
+   static func dismiss()  {
+        shared.removeFromSuperview()
+        isShown = false
     }
     
     func addLoaderLabel()  {

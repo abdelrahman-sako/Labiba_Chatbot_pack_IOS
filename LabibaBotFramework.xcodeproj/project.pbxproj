@@ -392,6 +392,7 @@
 		52FC5CF624D0262F00C7B7CF /* LabibaVoiceExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */; };
 		52FC5CF824D02EA500C7B7CF /* VoiceExperienceBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF724D02EA500C7B7CF /* VoiceExperienceBaseView.swift */; };
 		52FFB72425D271D300CFB629 /* HelpPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFB72325D271D300CFB629 /* HelpPageModel.swift */; };
+		75EA910C292F5CCC00A0F352 /* EncryptionManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA910B292F5CCC00A0F352 /* EncryptionManeger.swift */; };
 		B429548222DDD9D1002DE3E9 /* LabibaBotFramwork.h in Headers */ = {isa = PBXBuildFile; fileRef = B429548022DDD9D1002DE3E9 /* LabibaBotFramwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B429550022DDDBD2002DE3E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B429549522DDDBD2002DE3E9 /* Localizable.strings */; };
 		B429550122DDDBD2002DE3E9 /* SelectableCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B429549822DDDBD2002DE3E9 /* SelectableCardView.xib */; };
@@ -869,6 +870,7 @@
 		52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaVoiceExperience.swift; sourceTree = "<group>"; };
 		52FC5CF724D02EA500C7B7CF /* VoiceExperienceBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceExperienceBaseView.swift; sourceTree = "<group>"; };
 		52FFB72325D271D300CFB629 /* HelpPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageModel.swift; sourceTree = "<group>"; };
+		75EA910B292F5CCC00A0F352 /* EncryptionManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManeger.swift; sourceTree = "<group>"; };
 		B429547D22DDD9D1002DE3E9 /* LabibaBotFramwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LabibaBotFramwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B429548022DDD9D1002DE3E9 /* LabibaBotFramwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabibaBotFramwork.h; sourceTree = "<group>"; };
 		B429548122DDD9D1002DE3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1352,6 +1354,7 @@
 				52BF2F582471336600820B37 /* SpeechToTextManager.swift */,
 				371ADD7622FC221D00AB68FB /* GradientAnimationManeger.swift */,
 				3772B5252339E9F100262298 /* Reachability.swift */,
+				75EA910B292F5CCC00A0F352 /* EncryptionManeger.swift */,
 			);
 			path = Manegers;
 			sourceTree = "<group>";
@@ -2448,6 +2451,7 @@
 				52775643272EE12F00F8ADE0 /* ShapeLayerModel.swift in Sources */,
 				52487BBC278F1CDA00964441 /* WatchConnectivityViewController.swift in Sources */,
 				3782D99F23BA1369006A79D4 /* SRMutex.m in Sources */,
+				75EA910C292F5CCC00A0F352 /* EncryptionManeger.swift in Sources */,
 				37B5326423CC5623001D2BDF /* LabibaBotConnectorJC.swift in Sources */,
 				F9D20122292A68150024FE48 /* TextToSpeachResponseModel.swift in Sources */,
 				372BB4C124B1E151003A8297 /* VisualizerVoiceAssistantView.swift in Sources */,
@@ -2974,7 +2978,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = LT6MNHQ4GW;
+				DEVELOPMENT_TEAM = LPNND34373;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3052,7 +3056,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = LT6MNHQ4GW;
+				DEVELOPMENT_TEAM = LPNND34373;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

@@ -67,7 +67,11 @@ class HelpPopupVC: UIViewController {
     }
     
     func getData()  {
+        CircularGradientLoadingIndicator.show()
+
         DataSource.shared.getHelpPageData { result in
+            CircularGradientLoadingIndicator.dismiss()
+
             switch result {
             case .success(let model):
                 self.descTitleLbl.text = model.Title ?? ""

@@ -60,7 +60,11 @@ class PrechatFormVC: UIViewController {
     }
     
     func getDate() {
+        CircularGradientLoadingIndicator.show()
+
         DataSource.shared.getPrechatForm {[weak self] result in
+            CircularGradientLoadingIndicator.dismiss()
+
             switch result {
             case .success(let model):
                 if model.count > 0 {

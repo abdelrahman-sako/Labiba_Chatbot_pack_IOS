@@ -9,6 +9,7 @@
 import Foundation
 
 protocol RemoteDataSourceProtocol {
+    func messageHandler(model:[String:Any],handler: @escaping Handler<[LabibaModel]>)
     func getRatingQuestions(handler: @escaping Handler<[GetRatingFormQuestionsModel]>)
     func submitRating(ratingModel:SubmitRatingModel,handler: @escaping Handler<SubmitRatingResponseModel>)
     func getHelpPageData(handler: @escaping Handler<HelpPageModel>)
@@ -17,7 +18,12 @@ protocol RemoteDataSourceProtocol {
     func closeConversation(handler: @escaping Handler<[String]>)
     func updateToken(handler: @escaping Handler<UpdateTokenModel>)
     func getLastBotResponse(handler: @escaping Handler<LastBotResponseModel>)
+    func sendData(_ photo: Data,handler: @escaping Handler<String>)
     
     
+    
+    
+    func close()
+
 }
 

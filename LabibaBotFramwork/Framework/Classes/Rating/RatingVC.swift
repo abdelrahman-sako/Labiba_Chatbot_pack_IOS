@@ -85,8 +85,11 @@ class RatingVC: RatingBaseVC {
             let ratingModel = SubmitRatingModel(recepient_id: SharedPreference.shared.currentUserId,
                                                 questions: questions.map({$0.submitModel()}),
                                           sender_id: Labiba._senderId)
-            
+            CircularGradientLoadingIndicator.show()
+
             DataSource.shared.submitRating(ratingModel: ratingModel) { result in
+                CircularGradientLoadingIndicator.dismiss()
+
                 switch result{
                 case .success(let model):
                     if model.response ?? false {

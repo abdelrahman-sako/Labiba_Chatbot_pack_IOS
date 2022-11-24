@@ -9,6 +9,14 @@
 import Foundation
 final class DataSource: DataSourceProtocol{
     
+    
+   
+    
+   
+    
+   
+  
+    
    
     //MARK: Shared Instance
     static var shared: DataSourceProtocol = DataSource()
@@ -24,6 +32,10 @@ final class DataSource: DataSourceProtocol{
   
     
     //MARK: - Remote Database
+    func messageHandler(model: [String : Any], handler: @escaping Handler<[LabibaModel]>) {
+        remoteDataSource.messageHandler(model: model, handler: handler)
+    }
+    
     func submitRating(ratingModel: SubmitRatingModel, handler: @escaping Handler<SubmitRatingResponseModel>) {
         remoteDataSource.submitRating(ratingModel: ratingModel, handler: handler)
     }
@@ -59,6 +71,19 @@ final class DataSource: DataSourceProtocol{
     func getLastBotResponse(handler: @escaping Handler<LastBotResponseModel>) {
         remoteDataSource.getLastBotResponse(handler: handler)
     }
+    func sendData(_ data: Data, handler: @escaping Handler<String>) {
+        remoteDataSource.sendData(data, handler: handler)
+    }
+    
+    func close() {
+        remoteDataSource.close()
+    }
+//    func sendPhoto(_ photo: UIImage, handler: @escaping Handler<String>) {
+//        remoteDataSource.sendPhoto(photo, handler: handler)
+//    }
+//    func sendFile(_ url: URL, handler: @escaping Handler<String>) {
+//        remoteDataSource.sendFile(url, handler: handler)
+//    }
 }
 
 

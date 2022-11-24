@@ -12,7 +12,7 @@ import UIKit
 import CoreLocation
 
 //ssxxxxxx
-protocol BotConnectorDelegate:class {
+protocol BotConnectorDelegate:AnyObject {
     
     func botConnector(_ botConnector:BotConnector, didRecieveActivity activity:ConversationDialog) -> Void
     func botConnector(_ botConnector:BotConnector, didRequestLiveChatTransferWithMessage message:String) -> Void
@@ -21,10 +21,20 @@ protocol BotConnectorDelegate:class {
     func botConnectorRemoveTypingActivity(_ botConnector:BotConnector) -> Void
 }
 
-protocol BotConnectorInterface:class {
+protocol BotConnectorInterface:AnyObject {
     
     func botConnector(_ botConnector:BotConnector, didRecieveActivity activity:ConversationDialog) -> Void
     func botConnectorDidRecieveTypingActivity(_ botConnector:BotConnector) -> Void
+}
+
+protocol MessageAnalyizerDelegate:AnyObject {
+    
+    func botConnector( didRecieveActivity activity:ConversationDialog) -> Void
+    func botConnector( didRequestLiveChatTransferWithMessage message:String) -> Void
+    func botConnector( didRequestHumanAgent message:String) -> Void
+    func botConnectorDidRecieveTypingActivity() -> Void
+    func botConnectorRemoveTypingActivity() -> Void
+    func sendGetStarted()
 }
 
 //enum NetworkError: String, Error {
@@ -53,10 +63,14 @@ protocol BotConnectorInterface:class {
 //}
 
 class BotConnector: NSObject {
+   
+    
+    
     
     var currentRequest: DataRequest?
 
-    var loader = CircularGradientLoadingIndicator()
+    static let shared = BotConnector()
+   // var loader = CircularGradientLoadingIndicator()
     
 
   //  private let LabibaUploadPath = "\(Labiba._basePath)/maker/FileUploader.ashx"
@@ -74,80 +88,183 @@ class BotConnector: NSObject {
     var clientId:String!
     var scenarioId:String!
     //MARK: Non implemented methodes
-    func configureInternetReachability() -> Void {}
-    func startConversation() -> Void {}
-    func sendGetStarted() -> Void {}
-    func reconnectConversation() -> Void {}
-    func resumeConnection() {}
+//    func configureInternetReachability() -> Void {}
+//    func startConversation() -> Void {}
+//    func sendGetStarted() -> Void {}
+//    func reconnectConversation() -> Void {}
+//    func resumeConnection() {}
+//
+//    func fetchHistory() -> Void {}
     
-    func fetchHistory() -> Void {}
-    
-    func sendMessage(_ message:String? = nil, payload:String? = nil, withAttachments attachments:[[String:Any]]? = nil, withEntities entities:[[String:Any]]? = nil) -> Void {}
-    func sendPhoto(_ photo: UIImage, withChoiceActionToken token:String) {}
-    func sendLocation(_ location:CLLocationCoordinate2D ) -> Void {}
+//    func sendMessage(_ message:String? = nil, payload:String? = nil, withAttachments attachments:[[String:Any]]? = nil, withEntities entities:[[String:Any]]? = nil) -> Void {}
+    //func sendPhoto(_ photo: UIImage, withChoiceActionToken token:String) {}
+//    func sendLocation(_ location:CLLocationCoordinate2D ) -> Void {}
     func sendVoice(_ voiceLocalPath:String, completion:@escaping (String?) -> Void) -> Void {}
-    func ShowDialog(){}
+//    func ShowDialog(){}
     
     //MARK: Initializer
-    
+    var messageAnalyizer:LabibaRestfulBotConnector!
     var sessionManager:SessionManager?
     var opQueue:OperationQueue?
-    override init() {
+    private override init() {
         super.init()
-        sessionManagerConfiguration()
-        opQueue = OperationQueue()
-        opQueue?.maxConcurrentOperationCount = 1 // serial requests
-    }
-    
-    func sessionManagerConfiguration(token:String = SharedPreference.shared.jwtToken.token ?? "")  {
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = Labiba.timeoutIntervalForRequest
-        if UpdateTokenModel.isTokenRequeird(){
-            configuration.httpAdditionalHeaders = ["Authorization":"Bearer \(token)"]
-        }
-        var serverTrustPolicies: [String: ServerTrustPolicy] = [:]
-        if Labiba.bypassSSLCertificateValidation, let url = URL(string: Labiba._basePath) {
-            serverTrustPolicies[url.host ?? ""] = .disableEvaluation
-        }
-        let servertrustManager = ServerTrustPolicyManager(policies: serverTrustPolicies)
-        sessionManager = SessionManager(configuration: configuration,serverTrustPolicyManager: servertrustManager)
+//        sessionManagerConfiguration()
+//        opQueue = OperationQueue()
+//        opQueue?.maxConcurrentOperationCount = 1 // serial requests
+        messageAnalyizer = LabibaRestfulBotConnector()
+        messageAnalyizer.delegate = self
         
     }
     
-    func close() -> Void {
-        sessionManager?.session.getAllTasks(completionHandler: {$0.forEach({$0.cancel()})})
-        loader.dismiss()
+//    func sessionManagerConfiguration(token:String = SharedPreference.shared.jwtToken.token ?? "")  {
+//        let configuration = URLSessionConfiguration.default
+//        configuration.timeoutIntervalForRequest = Labiba.timeoutIntervalForRequest
+//        if UpdateTokenModel.isTokenRequeird(){
+//            configuration.httpAdditionalHeaders = ["Authorization":"Bearer \(token)"]
+//        }
+//        var serverTrustPolicies: [String: ServerTrustPolicy] = [:]
+//        if Labiba.bypassSSLCertificateValidation, let url = URL(string: Labiba._basePath) {
+//            serverTrustPolicies[url.host ?? ""] = .disableEvaluation
+//        }
+//        let servertrustManager = ServerTrustPolicyManager(policies: serverTrustPolicies)
+//        sessionManager = SessionManager(configuration: configuration,serverTrustPolicyManager: servertrustManager)
+//        
+//    }
+    
+//    func close() -> Void {
+//        sessionManager?.session.getAllTasks(completionHandler: {$0.forEach({$0.cancel()})})
+//        //loader.dismiss()
+//    }
+    
+    var baseURL = "\(Labiba._basePath)\(Labiba._messagingServicePath)"
+  
+    //let sessionManager:SessionManager
+    var isTherePendingRequest:Bool = false
+    //static let shared = LabibaRestfulBotConnector()
+    //    override private init() {
+    //        let configuration = URLSessionConfiguration.default
+    //        configuration.timeoutIntervalForRequest = Labiba.timeoutIntervalForRequest
+    //        sessionManager = SessionManager(configuration: configuration)
+    //    }
+     func sendMessage(_ message: String? = nil, payload: String? = nil, withAttachments attachments: [[String : Any]]? = nil, withEntities entities: [[String : Any]]? = nil) {
+        let pageId = Labiba._pageId;
+        let senderId = Labiba._senderId;
+        let time = Int(Date().timeIntervalSince1970 * 1000)
+        let null = NSNull()
+        var filteredMessage = message
+        filteredMessage?.removeHiddenCharacters() // there is a hidden chars produced by Speech framework
+        let msgLoad: [String: Any] = [
+            "object": "page",
+            "entry": [[
+                "id": "221231835260127",
+                "time": time,
+                "messaging": [[
+                    "Id": "00000000-0000-0000-0000-000000000000",
+                    "sender": ["id": senderId],
+                    "recipient": ["id": pageId],
+                    "referral": Labiba._Referral,
+                    "timestamp": time,
+                    "message": (filteredMessage == nil && attachments == nil) ? null as Any : [
+                        "mid": null,
+                        "text": filteredMessage ?? null,
+                        "messaging_type": null,
+                        "attachments": (attachments ?? null) as Any
+                    ] as [String: Any],
+                    "postback": [
+                        "payload": payload ?? null,
+                        "referral": null
+                    ] as [String: Any]
+                ]]
+            ]]
+        ]
+        print("\n***********************************  PARAMETERS  *********************************** \n")
+        if let data = try? JSONSerialization.data(withJSONObject: msgLoad, options: .prettyPrinted)
+        {
+            print(String(data: data, encoding: .utf8)!)
+        }
+        print("\n*********************************** END PARAMETERS ***********************************\n")
+        
+        sendData(parameters: msgLoad)
+        self.delegate?.botConnectorDidRecieveTypingActivity(self)
+        Labiba.resetReferral()
+        NotificationCenter.default.post(name: Constants.NotificationNames.ChangeTextViewKeyboardType,object:nil) // to rest keyboard content type
     }
     
-    //MARK: Implemented methodes
     
-    
-    func showLoadingIndicator() {
-        loader.LoadingText = "\("loading".localForChosnLangCodeBB) ..."
-        loader.show()
+     func startConversation() {
+        // showLoadingIndicator()
+        self.sendMessage("CONVERSATION-RELOAD")
     }
-     func sendPhoto(_ photo: UIImage)
+    
+     
+    
+    func sendData(parameters:[String:Any])  {
+        isTherePendingRequest = true
+        DataSource.shared.messageHandler(model: parameters) { result in
+            //self.loader.dismiss()
+            switch result {
+            case .success(let model):
+                self.messageAnalyizer.parseResponse(response: model)
+            case .failure(let err):
+                print(err.localizedDescription)
+                showErrorMessage(err.localizedDescription)
+                self.delegate?.botConnectorRemoveTypingActivity(self)
+            }
+            self.isTherePendingRequest = false
+        }
+        
+        
+      
+        //        LabibaRequest([LabibaModel].self, url: baseURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, logTag: .messaging, completion: { response in
+        //            self.loader.dismiss()
+        //            switch response {
+        //            case .success(let model):
+        //                self.parseResponse(response: model)
+        //            case .failure(let err):
+        //                print(err.localizedDescription)
+        //                showErrorMessage(err.localizedDescription)
+        //                self.delegate?.botConnectorRemoveTypingActivity(self)
+        //            }
+        //            self.isTherePendingRequest = false
+        //        })
+        
+    }
+    func sendPhoto(_ photo: UIImage)
     {
         if let data = photo.jpegData(compressionQuality: 0.8)
         {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.delegate?.botConnectorDidRecieveTypingActivity(self)
             }
-            uploadDataToLabiba(filename: "photo.jpg", data: data,mimetype: "image/jpeg")
-            { (url) in
-                
-                if let imgUrl = url
-                {
-                    self.sendMessage(withAttachments: [
-                        [
-                            "type": "image",
-                            "payload": ["url": imgUrl]
-                        ]
+            DataSource.shared.sendData(data) { result in
+                switch result {
+                case .success(let model):
+                    if let fileURL = URL(string: model)
+                    {
+                        let dialog = ConversationDialog(by: .user, time: Date())
+                        dialog.attachment = AttachmentCard(link: model)
+                        self.delegate?.botConnector(self, didRecieveActivity: dialog)
+                        self.sendMessage(withAttachments: [
+                            [
+                                "type": fileURL.isImage() ?  "image":"file",
+                                "payload": ["url": fileURL]
+                            ]
                         ])
-                }else{
-                    self.sendMessage("Failure")
+                    }else{
+                        self.sendMessage("Failure")
+                    }
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    showErrorMessage(err.localizedDescription)
+                    self.delegate?.botConnectorRemoveTypingActivity(self)
                 }
             }
+            
+            //            uploadDataToLabiba(filename: "photo.jpg", data: data,mimetype: "image/jpeg")
+            //            { (url) in
+            //
+            //
+            //            }
         }
     }
     
@@ -156,42 +273,172 @@ class BotConnector: NSObject {
         if let data = try? Data(contentsOf: url)
         {
             self.delegate?.botConnectorDidRecieveTypingActivity(self)
-            uploadDataToLabiba(filename: url.lastPathComponent, data: data, mimetype: url.mimeType)
-            { (fileURL) in
-              
-                if let fileURL = fileURL
-                {
-                    let dialog = ConversationDialog(by: .user, time: Date())
-                    dialog.attachment = AttachmentCard(link: fileURL)
-                    self.delegate?.botConnector(self, didRecieveActivity: dialog)
-                    self.sendMessage(withAttachments: [
-                        [
-                            "type": url.isImage() ?  "image":"file",
-                            "payload": ["url": fileURL]
-                        ]
-                    ])
-                }else{
-                    self.sendMessage("Failure")
+            
+            DataSource.shared.sendData(data) { result in
+                
+                switch result {
+                case .success(let model):
+                    if let fileURL = URL(string: model)
+                    {
+                        let dialog = ConversationDialog(by: .user, time: Date())
+                        dialog.attachment = AttachmentCard(link: model)
+                        self.delegate?.botConnector(self, didRecieveActivity: dialog)
+                        self.sendMessage(withAttachments: [
+                            [
+                                "type": fileURL.isImage() ?  "image":"file",
+                                "payload": ["url": fileURL]
+                            ]
+                        ])
+                    }else{
+                        self.sendMessage("Failure")
+                    }
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    showErrorMessage(err.localizedDescription)
+                    self.delegate?.botConnectorRemoveTypingActivity(self)
                 }
+                
+            }
+            //            uploadDataToLabiba(filename: url.lastPathComponent, data: data, mimetype: url.mimeType)
+            //            { (fileURL) in
+            //
+            //
+            //            }
+        }
+    }
+    
+    func getLastBotResponse()  {
+        //        let params:[String:String] = [
+        //            "RecepientID" :Labiba._pageId,
+        //            "SenderID":Labiba._senderId
+        //        ]
+        //        let url = "\(Labiba._basePath)/api/getLastBotResponse"
+        
+        self.delegate?.botConnectorDidRecieveTypingActivity(self)
+        
+        //        LabibaRequest(LastBotResponseModel.self, url: url, method: .post, parameters: params, encoding: JSONEncoding.default, logTag: .lastMessage, completion: { response in
+        //            self.loader.dismiss()
+        //            switch response {
+        //            case .success(let model):
+        //                if let labibaModel = model.lastBotResponse {
+        //                    self.parseResponse(response: labibaModel)
+        //                }
+        //            case .failure(let err):
+        //                print(err.localizedDescription)
+        //                showErrorMessage(err.localizedDescription)
+        //                self.delegate?.botConnectorRemoveTypingActivity(self)
+        //            }
+        //        })
+        DataSource.shared.getLastBotResponse { response in
+            //self.loader.dismiss()
+            switch response {
+            case .success(let model):
+                if let labibaModel = model.lastBotResponse {
+                    self.messageAnalyizer.parseResponse(response: labibaModel)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+                showErrorMessage(err.localizedDescription)
+                self.delegate?.botConnectorRemoveTypingActivity(self)
             }
         }
     }
-
     
-    func uploadDataToLabiba(filename: String, data: Data,mimetype:String, completion: @escaping (String?) -> Void) -> Void
-    {
-      // let LabibaUploadPath = "https://botbuilder.labiba.ai/WebBotConversation/UploadHomeReport?id=\(SharedPreference.shared.currentUserId)" // we add this since the old one produce 500 due to a viruse as nour said
-        
-        upload(multipartFormData: { (formData) in
+     func resumeConnection() {
+        if isTherePendingRequest {
+            isTherePendingRequest = false
+            currentRequest?.cancel()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                self.getLastBotResponse()
+            }
             
-            formData.append(data, withName: "Filedata", fileName: filename, mimeType: mimetype)
-            
-        }, to: LabibaUploadPath, encodingCompletion: createEncodingBlock(completion: completion))
+        }
     }
+    
+     func sendLocation(_ location: CLLocationCoordinate2D) {
+        let attachment =
+        [["payload":["coordinates":[
+            "lat":location.latitude ,
+            "long" :location.longitude]],
+          "type":"location"]]
+        self.sendMessage(withAttachments :attachment)
+    }
+    //MARK: Implemented methodes
+    
+    func ShowDialog(){
+        messageAnalyizer.ShowDialog()
+    }
+//    func showLoadingIndicator() {
+//        loader.LoadingText = "\("loading".localForChosnLangCodeBB) ..."
+//        loader.show()
+//    }
+//     func sendPhoto(_ photo: UIImage)
+//    {
+//        if let data = photo.jpegData(compressionQuality: 0.8)
+//        {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//                self.delegate?.botConnectorDidRecieveTypingActivity(self)
+//            }
+//            uploadDataToLabiba(filename: "photo.jpg", data: data,mimetype: "image/jpeg")
+//            { (url) in
+//
+//                if let imgUrl = url
+//                {
+//                    self.sendMessage(withAttachments: [
+//                        [
+//                            "type": "image",
+//                            "payload": ["url": imgUrl]
+//                        ]
+//                        ])
+//                }else{
+//                    self.sendMessage("Failure")
+//                }
+//            }
+//        }
+//    }
+//
+//
+//    func sendFile(_ url: URL) {
+//        if let data = try? Data(contentsOf: url)
+//        {
+//            self.delegate?.botConnectorDidRecieveTypingActivity(self)
+//            uploadDataToLabiba(filename: url.lastPathComponent, data: data, mimetype: url.mimeType)
+//            { (fileURL) in
+//
+//                if let fileURL = fileURL
+//                {
+//                    let dialog = ConversationDialog(by: .user, time: Date())
+//                    dialog.attachment = AttachmentCard(link: fileURL)
+//                    self.delegate?.botConnector(self, didRecieveActivity: dialog)
+//                    self.sendMessage(withAttachments: [
+//                        [
+//                            "type": url.isImage() ?  "image":"file",
+//                            "payload": ["url": fileURL]
+//                        ]
+//                    ])
+//                }else{
+//                    self.sendMessage("Failure")
+//                }
+//            }
+//        }
+//    }
+//
+//
+//
+//    func uploadDataToLabiba(filename: String, data: Data,mimetype:String, completion: @escaping (String?) -> Void) -> Void
+//    {
+//      // let LabibaUploadPath = "https://botbuilder.labiba.ai/WebBotConversation/UploadHomeReport?id=\(SharedPreference.shared.currentUserId)" // we add this since the old one produce 500 due to a viruse as nour said
+//
+//        upload(multipartFormData: { (formData) in
+//
+//            formData.append(data, withName: "Filedata", fileName: filename, mimeType: mimetype)
+//
+//        }, to: LabibaUploadPath, encodingCompletion: createEncodingBlock(completion: completion))
+//    }
   
 //    func textToSpeech(model:TextToSpeechModel, completion: @escaping (Result<String>) -> Void){
 //        let path = "\(Labiba._voiceBasePath)\(Labiba._voiceServicePath)"
-//        
+//
 //        let params:[String:Any] = [
 //            "text":model.text,
 //            // "text":model.testText(),
@@ -468,7 +715,7 @@ fileprivate func createEncodingBlock(completion: @escaping (String?) -> Void) ->
     
     let encodeCompletion: EncodingCompletionBlock = { (encodeRes) in
         let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
-            let botConnector = BotConnector()
+            let botConnector = BotConnector.shared
             botConnector.log(url: botConnector.LabibaUploadPath, tag: BotConnector.LoggingTag.upload, method: .post, parameter: "", response: respons,exception: exception)
         }
         switch encodeRes
@@ -533,3 +780,27 @@ extension BotConnector: URLSessionDelegate {
     }
 }
 
+extension BotConnector : MessageAnalyizerDelegate {
+    func botConnector(didRecieveActivity activity: ConversationDialog) {
+        delegate?.botConnector(self, didRecieveActivity: activity)
+    }
+    
+    func botConnector(didRequestLiveChatTransferWithMessage message: String) {
+        delegate?.botConnector(self, didRequestLiveChatTransferWithMessage: message)
+    }
+    
+    func botConnector(didRequestHumanAgent message: String) {
+        delegate?.botConnector(self, didRequestHumanAgent: message)
+    }
+    
+    func botConnectorDidRecieveTypingActivity() {
+        delegate?.botConnectorRemoveTypingActivity(self)
+    }
+    
+    func botConnectorRemoveTypingActivity() {
+        delegate?.botConnectorRemoveTypingActivity(self)
+    }
+    func sendGetStarted() {
+       self.sendMessage("get started")
+   }
+}

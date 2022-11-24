@@ -24,7 +24,7 @@ class TextToSpeechManeger:NSObject{
     private let audioSession =  AVAudioSession.sharedInstance()
     var delegate:TextToSpeechDelegate?
     static let Shared = TextToSpeechManeger()
-    var botConnector:BotConnector = LabibaRestfulBotConnector.shared
+    var botConnector:BotConnector = BotConnector.shared
     
     private var ToDeletDialogs:[ConversationDialog] = []
     private override init(){
@@ -143,7 +143,7 @@ class TextToSpeechManeger:NSObject{
     func downloadFileFromURL(url:URL){
         
         var downloadTask:URLSessionDownloadTask
-        let session = LabibaRestfulBotConnector.shared.sessionManager?.session ?? URLSession.shared
+        let session = BotConnector.shared.sessionManager?.session ?? URLSession.shared
         downloadTask = session.downloadTask(with: url  , completionHandler: {[weak self](url, response, err) in
             guard let url = url else{return}
           //  self?.data = try! Data(contentsOf: url)
