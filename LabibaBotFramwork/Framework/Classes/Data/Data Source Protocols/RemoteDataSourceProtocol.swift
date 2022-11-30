@@ -16,11 +16,10 @@ protocol RemoteDataSourceProtocol {
     func getPrechatForm(handler: @escaping Handler<[PrechatFormModel]>)
     func textToSpeech(model:TextToSpeechModel,handler: @escaping Handler<TextToSpeachResponseModel>)
     func closeConversation(handler: @escaping Handler<[String]>)
-    func updateToken(handler: @escaping Handler<UpdateTokenModel>)
+    //func updateToken(handler: @escaping Handler<UpdateTokenModel>)
     func getLastBotResponse(handler: @escaping Handler<LastBotResponseModel>)
-    func sendData(_ photo: Data,handler: @escaping Handler<String>)
-    
-    
+    func uploadData(model: UploadDataModel,handler: @escaping Handler<UploadDataResponseModel>)
+   
     
     
     func close()

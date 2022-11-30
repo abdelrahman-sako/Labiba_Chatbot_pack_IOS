@@ -27,41 +27,6 @@ protocol BotConnectorInterface:AnyObject {
     func botConnectorDidRecieveTypingActivity(_ botConnector:BotConnector) -> Void
 }
 
-protocol MessageAnalyizerDelegate:AnyObject {
-    
-    func botConnector( didRecieveActivity activity:ConversationDialog) -> Void
-    func botConnector( didRequestLiveChatTransferWithMessage message:String) -> Void
-    func botConnector( didRequestHumanAgent message:String) -> Void
-    func botConnectorDidRecieveTypingActivity() -> Void
-    func botConnectorRemoveTypingActivity() -> Void
-    func sendGetStarted()
-}
-
-//enum NetworkError: String, Error {
-//    case badURL
-//    case encodingError = "Encoding error"
-//    case empty = "Empty"
-//    case unAuthorized = "401"
-//    case unknown = "Unknown"
-//}
-//extension NetworkError: LocalizedError {
-//    public var errorDescription: String? {
-//        switch self {
-//        case .badURL:
-//            return "invalid url"
-//        case .encodingError:
-//            return "Sorry, an unexpected error occurred. \nError code 102"
-//        case .empty:
-//            return "Sorry, an unexpected error occurred. \nError code 104"
-//        case .unAuthorized:
-//            return "Authorization denied, please try again later."
-//        case .unknown:
-//            return "Sorry, an unexpected error occurred. Error code 100"
-//        }
-//    }
-//
-//}
-
 class BotConnector: NSObject {
    
     
@@ -108,44 +73,18 @@ class BotConnector: NSObject {
     var opQueue:OperationQueue?
     private override init() {
         super.init()
-//        sessionManagerConfiguration()
-//        opQueue = OperationQueue()
-//        opQueue?.maxConcurrentOperationCount = 1 // serial requests
+
         messageAnalyizer = LabibaRestfulBotConnector()
         messageAnalyizer.delegate = self
         
     }
     
-//    func sessionManagerConfiguration(token:String = SharedPreference.shared.jwtToken.token ?? "")  {
-//        let configuration = URLSessionConfiguration.default
-//        configuration.timeoutIntervalForRequest = Labiba.timeoutIntervalForRequest
-//        if UpdateTokenModel.isTokenRequeird(){
-//            configuration.httpAdditionalHeaders = ["Authorization":"Bearer \(token)"]
-//        }
-//        var serverTrustPolicies: [String: ServerTrustPolicy] = [:]
-//        if Labiba.bypassSSLCertificateValidation, let url = URL(string: Labiba._basePath) {
-//            serverTrustPolicies[url.host ?? ""] = .disableEvaluation
-//        }
-//        let servertrustManager = ServerTrustPolicyManager(policies: serverTrustPolicies)
-//        sessionManager = SessionManager(configuration: configuration,serverTrustPolicyManager: servertrustManager)
-//        
-//    }
-    
-//    func close() -> Void {
-//        sessionManager?.session.getAllTasks(completionHandler: {$0.forEach({$0.cancel()})})
-//        //loader.dismiss()
-//    }
-    
+
     var baseURL = "\(Labiba._basePath)\(Labiba._messagingServicePath)"
   
-    //let sessionManager:SessionManager
+
     var isTherePendingRequest:Bool = false
-    //static let shared = LabibaRestfulBotConnector()
-    //    override private init() {
-    //        let configuration = URLSessionConfiguration.default
-    //        configuration.timeoutIntervalForRequest = Labiba.timeoutIntervalForRequest
-    //        sessionManager = SessionManager(configuration: configuration)
-    //    }
+   
      func sendMessage(_ message: String? = nil, payload: String? = nil, withAttachments attachments: [[String : Any]]? = nil, withEntities entities: [[String : Any]]? = nil) {
         let pageId = Labiba._pageId;
         let senderId = Labiba._senderId;
@@ -229,6 +168,7 @@ class BotConnector: NSObject {
         //        })
         
     }
+    
     func sendPhoto(_ photo: UIImage)
     {
         if let data = photo.jpegData(compressionQuality: 0.8)
@@ -236,21 +176,18 @@ class BotConnector: NSObject {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.delegate?.botConnectorDidRecieveTypingActivity(self)
             }
-            DataSource.shared.sendData(data) { result in
+            let model = UploadDataModel(data: data, fileName: "photo.jpg", mimeType: "image/jpeg")
+            DataSource.shared.uploadData(model: model) { result in
                 switch result {
                 case .success(let model):
-                    if let fileURL = URL(string: model)
-                    {
-                        let dialog = ConversationDialog(by: .user, time: Date())
-                        dialog.attachment = AttachmentCard(link: model)
-                        self.delegate?.botConnector(self, didRecieveActivity: dialog)
-                        self.sendMessage(withAttachments: [
-                            [
-                                "type": fileURL.isImage() ?  "image":"file",
-                                "payload": ["url": fileURL]
-                            ]
-                        ])
-                    }else{
+                    if (model.urls?.count ?? 0) > 0, let link = model.urls?[0] {
+                            self.sendMessage(withAttachments: [
+                                [
+                                    "type": "image",
+                                    "payload": ["url": link]
+                                ]
+                            ])
+                    }else {
                         self.sendMessage("Failure")
                     }
                 case .failure(let err):
@@ -259,12 +196,6 @@ class BotConnector: NSObject {
                     self.delegate?.botConnectorRemoveTypingActivity(self)
                 }
             }
-            
-            //            uploadDataToLabiba(filename: "photo.jpg", data: data,mimetype: "image/jpeg")
-            //            { (url) in
-            //
-            //
-            //            }
         }
     }
     
@@ -273,23 +204,23 @@ class BotConnector: NSObject {
         if let data = try? Data(contentsOf: url)
         {
             self.delegate?.botConnectorDidRecieveTypingActivity(self)
-            
-            DataSource.shared.sendData(data) { result in
-                
+            let model = UploadDataModel(data: data, fileName: url.lastPathComponent, mimeType: url.mimeType)
+            DataSource.shared.uploadData(model: model){ result in
                 switch result {
                 case .success(let model):
-                    if let fileURL = URL(string: model)
-                    {
-                        let dialog = ConversationDialog(by: .user, time: Date())
-                        dialog.attachment = AttachmentCard(link: model)
-                        self.delegate?.botConnector(self, didRecieveActivity: dialog)
-                        self.sendMessage(withAttachments: [
-                            [
-                                "type": fileURL.isImage() ?  "image":"file",
-                                "payload": ["url": fileURL]
-                            ]
-                        ])
-                    }else{
+                    if (model.urls?.count ?? 0) > 0, let link = model.urls?[0] {
+                        if let fileURL = URL(string: link) {
+                            let dialog = ConversationDialog(by: .user, time: Date())
+                            dialog.attachment = AttachmentCard(link: link)
+                            self.delegate?.botConnector(self, didRecieveActivity: dialog)
+                            self.sendMessage(withAttachments: [
+                                [
+                                    "type": fileURL.isImage() ?  "image":"file",
+                                    "payload": ["url": link]
+                                ]
+                            ])
+                        }
+                    }else {
                         self.sendMessage("Failure")
                     }
                 case .failure(let err):
@@ -299,11 +230,6 @@ class BotConnector: NSObject {
                 }
                 
             }
-            //            uploadDataToLabiba(filename: url.lastPathComponent, data: data, mimetype: url.mimeType)
-            //            { (fileURL) in
-            //
-            //
-            //            }
         }
     }
     
@@ -396,7 +322,7 @@ class BotConnector: NSObject {
 //            }
 //        }
 //    }
-//
+
 //
 //    func sendFile(_ url: URL) {
 //        if let data = try? Data(contentsOf: url)
@@ -709,61 +635,61 @@ RecepientID: \(Labiba._pageId)
 
 
 
-fileprivate typealias EncodingCompletionBlock = (SessionManager.MultipartFormDataEncodingResult) -> Void
-fileprivate func createEncodingBlock(completion: @escaping (String?) -> Void) -> EncodingCompletionBlock
-{
-    
-    let encodeCompletion: EncodingCompletionBlock = { (encodeRes) in
-        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
-            let botConnector = BotConnector.shared
-            botConnector.log(url: botConnector.LabibaUploadPath, tag: BotConnector.LoggingTag.upload, method: .post, parameter: "", response: respons,exception: exception)
-        }
-        switch encodeRes
-        {
-        
-        case .success(let request, _, _):
-            request.response { (data) in
-                if let data = data.data{
-                    print(String(data: data, encoding: .utf8))
-                }
-            }
-            request.responseSwiftyJSON(completionHandler: { (res) in
-                
-                switch res.result
-                {
-                
-                case .success(let json):
-                    
-                    // var url = json["url"].string
-                    // if url != nil && url!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-                    // {
-                    //     url = nil
-                    // }
-                    
-                    let urls = json["urls"].array
-                    if urls?.count ?? 0 > 0 {
-                        if let url = urls![0].string, !url.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                            completion(url)
-                            return
-                        }
-                    }
-                    completion(nil)
-                    
-                case .failure:
-                    log("","upload fail")
-                    completion(nil)
-                }
-                
-            })
-            
-        case .failure:
-            log("","upload fail")
-            completion(nil)
-        }
-    }
-    
-    return encodeCompletion
-}
+//fileprivate typealias EncodingCompletionBlock = (SessionManager.MultipartFormDataEncodingResult) -> Void
+//fileprivate func createEncodingBlock(completion: @escaping (String?) -> Void) -> EncodingCompletionBlock
+//{
+//    
+//    let encodeCompletion: EncodingCompletionBlock = { (encodeRes) in
+//        let log:(_ respons:String,_ exception:String)->Void = { respons,exception in
+//            let botConnector = BotConnector.shared
+//            botConnector.log(url: botConnector.LabibaUploadPath, tag: BotConnector.LoggingTag.upload, method: .post, parameter: "", response: respons,exception: exception)
+//        }
+//        switch encodeRes
+//        {
+//        
+//        case .success(let request, _, _):
+//            request.response { (data) in
+//                if let data = data.data{
+//                    print(String(data: data, encoding: .utf8))
+//                }
+//            }
+//            request.responseSwiftyJSON(completionHandler: { (res) in
+//                
+//                switch res.result
+//                {
+//                
+//                case .success(let json):
+//                    
+//                    // var url = json["url"].string
+//                    // if url != nil && url!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+//                    // {
+//                    //     url = nil
+//                    // }
+//                    
+//                    let urls = json["urls"].array
+//                    if urls?.count ?? 0 > 0 {
+//                        if let url = urls![0].string, !url.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+//                            completion(url)
+//                            return
+//                        }
+//                    }
+//                    completion(nil)
+//                    
+//                case .failure:
+//                    log("","upload fail")
+//                    completion(nil)
+//                }
+//                
+//            })
+//            
+//        case .failure:
+//            log("","upload fail")
+//            completion(nil)
+//        }
+//    }
+//    
+//    return encodeCompletion
+//}
 
 extension BotConnector:LocationServiceDelegate {
     func locationService(_ service: LocationService, didReceiveLocation location: CLLocationCoordinate2D) {

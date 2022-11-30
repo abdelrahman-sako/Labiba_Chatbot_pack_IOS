@@ -123,75 +123,36 @@ final class RemoteContext {
    
     func multipartRequest(endPoint: EndPointProtocol, params:Parameters?, multipartName: String?, uploadFiles: [Data]?,encoding:String.Encoding? = nil,mimeType:String,fileName:String, completion: @escaping Handler<Data>){
         let urlRequest = buildURlRequestArray(endPoint: endPoint, params: params)
-//        let relativePath = buildURlRequestArray(endPoint: endPoint, params: params)
-       // let url = URL(string: relativePath)!
-
-        //var urlRequest = URLRequest(url: url)
-        //urlRequest.httpMethod = endPoint.httpMethod.rawValue
-
-//        if let headers = endPoint.headers {
-//            headers.keys.forEach({ (key) in
-//                urlRequest.setValue(headers[key]!, forHTTPHeaderField: key )
-//            })
-//        }
-
-//        sessionManager.upload(multipartFormData: {(multipartFormData) in
-//            if let params = params{
-//                for (key,value) in params {
-//                    multipartFormData.append((value as! String).data(using: .utf8)!, withName: key)
-//                }
-//            }
-//
-//            if let files = uploadFiles, let name = multipartName{
-//                for file in files{
-//                    multipartFormData.append(file, withName: "image", fileName: "file.fileName", mimeType: "")
-//                }
-//            }
-//        }, to: urlRequest as! URLConvertible, encodingCompletion:nil )
-//        .responseData { result in
-//
-//        }
         sessionManager.upload(multipartFormData: { (multipartFormData) in
             if let params = params{
                 for (key,value) in params {
                     multipartFormData.append((value as! String).data(using: .utf8)!, withName: key)
                 }
             }
-
             if let files = uploadFiles, let name = multipartName{
                 for file in files{
-                    multipartFormData.append(file, withName: "image", fileName: fileName, mimeType: mimeType)
+                    multipartFormData.append(file, withName: "Filedata", fileName: fileName, mimeType: mimeType)
                 }
             }
         }, with: urlRequest) { (result) in
-
+            
             switch result {
             case .success(let upload, _, _):
-               
+                
                 upload.validate().responseData(completionHandler: { [weak self] (dataResponse) in
                     switch dataResponse.result {
                     case .success:
-//                        if progress {
-//                            progressView.hideProgress()
-//                        }
                         if let wsData = dataResponse.data {
-                             completion(.success(wsData))
+                            completion(.success(wsData))
                         }else{
                             completion(.failure(ErrorModel(message: "No Data")))
                         }
                     case .failure(let responseError as NSError):
-//                        if progress {
-//                            progressView.hideProgress()
-//                        }
-                        
                         let error = self?.buildError(response: dataResponse, responseError: responseError)
                         completion(.failure(error!))
                     }
                 })
             case .failure(let responseError as NSError):
-//                if progress {
-//                    progressView.hideProgress()
-//                }
                 completion(.failure(ErrorModel(message: responseError.localizedDescription)))
             }
         }
@@ -279,7 +240,7 @@ final class RemoteContext {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = endPoint.httpMethod.rawValue
-        urlRequest.timeoutInterval = 30
+        urlRequest.timeoutInterval = Labiba.timeoutIntervalForRequest
         if let headers = endPoint.headers {
             headers.keys.forEach({ (key) in
                 urlRequest.setValue(headers[key]!, forHTTPHeaderField: key )

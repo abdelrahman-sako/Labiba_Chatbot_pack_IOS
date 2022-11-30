@@ -480,6 +480,8 @@
 		B429555A22DDDBD2002DE3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */; };
 		B462725122DEF4C20070E044 /* AttachmentsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */; };
 		F9013BE328716DEC00DE2BA0 /* WebViewEventHumanAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */; };
+		F96C538B293778210038440A /* UploadDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C538A293778210038440A /* UploadDataResponseModel.swift */; };
+		F96C538D29377D760038440A /* UploadDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C538C29377D760038440A /* UploadDataModel.swift */; };
 		F9D20105292A289A0024FE48 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D200F7292A289A0024FE48 /* LocalDataSource.swift */; };
 		F9D20106292A289A0024FE48 /* RemoteContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D200F8292A289A0024FE48 /* RemoteContext.swift */; };
 		F9D2010A292A289A0024FE48 /* ApiEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D200FD292A289A0024FE48 /* ApiEndPoints.swift */; };
@@ -961,6 +963,8 @@
 		B42954FF22DDDBD2002DE3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsMenuViewController.swift; sourceTree = "<group>"; };
 		F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEventHumanAgent.swift; sourceTree = "<group>"; };
+		F96C538A293778210038440A /* UploadDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataResponseModel.swift; sourceTree = "<group>"; };
+		F96C538C29377D760038440A /* UploadDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataModel.swift; sourceTree = "<group>"; };
 		F9D200F7292A289A0024FE48 /* LocalDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		F9D200F8292A289A0024FE48 /* RemoteContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteContext.swift; sourceTree = "<group>"; };
 		F9D200FD292A289A0024FE48 /* ApiEndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEndPoints.swift; sourceTree = "<group>"; };
@@ -1077,6 +1081,8 @@
 				F9D997C92871D17700E676B0 /* HumanAgentModel.swift */,
 				F9D20115292A4A5D0024FE48 /* SubmitRatingResponseModel.swift */,
 				F9D20121292A68150024FE48 /* TextToSpeachResponseModel.swift */,
+				F96C538A293778210038440A /* UploadDataResponseModel.swift */,
+				F96C538C29377D760038440A /* UploadDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2559,6 +2565,7 @@
 				52DE8DD0248CB9C60067F5EC /* IQToolbar.swift in Sources */,
 				52775634272EE12F00F8ADE0 /* AnimationKeypath.swift in Sources */,
 				52775652272EE12F00F8ADE0 /* PreCompositionLayer.swift in Sources */,
+				F96C538B293778210038440A /* UploadDataResponseModel.swift in Sources */,
 				3798705D2325404C00CC968F /* HintsView.swift in Sources */,
 				B429554122DDDBD2002DE3E9 /* CustomTableViewCell.swift in Sources */,
 				F9D20105292A289A0024FE48 /* LocalDataSource.swift in Sources */,
@@ -2744,6 +2751,7 @@
 				52BF2F45247130FE00820B37 /* BaseConversationVC.swift in Sources */,
 				52DE8DC9248CB9C60067F5EC /* IQKeyboardManager.swift in Sources */,
 				52DE8DCC248CB9C60067F5EC /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				F96C538D29377D760038440A /* UploadDataModel.swift in Sources */,
 				52775668272EE12F00F8ADE0 /* TrimPathNode.swift in Sources */,
 				52775630272EE12F00F8ADE0 /* SingleValueProvider.swift in Sources */,
 				5237BD37272A9344006C8632 /* KeyboardFieldsHandler.swift in Sources */,
@@ -2978,7 +2986,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = LPNND34373;
+				DEVELOPMENT_TEAM = LT6MNHQ4GW;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3056,7 +3064,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = LPNND34373;
+				DEVELOPMENT_TEAM = LT6MNHQ4GW;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

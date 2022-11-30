@@ -9,6 +9,17 @@
 import Foundation
 //import Alamofire
 import CoreLocation
+
+protocol MessageAnalyizerDelegate:AnyObject {
+    
+    func botConnector( didRecieveActivity activity:ConversationDialog) -> Void
+    func botConnector( didRequestLiveChatTransferWithMessage message:String) -> Void
+    func botConnector( didRequestHumanAgent message:String) -> Void
+    func botConnectorDidRecieveTypingActivity() -> Void
+    func botConnectorRemoveTypingActivity() -> Void
+    func sendGetStarted()
+}
+
 class LabibaRestfulBotConnector{ //
     
     var attachmentPayload:PayloadModel?
@@ -33,26 +44,6 @@ class LabibaRestfulBotConnector{ //
         
         return Data()
     }
-    
-    //    func prettyPrintedRespons(data:Data)  {
-    //        print("\n***********************************1  RESPONSE  ***********************************\n")
-    //        do {
-    //            let jsonObjectModel = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-    //            let prettyModel = try JSONSerialization.data(withJSONObject: jsonObjectModel, options: .prettyPrinted)
-    //
-    //            print(String(data: prettyModel, encoding: .utf8)!)
-    //
-    //        } catch  {
-    //            print("error in \(#function) \n \(error.localizedDescription)")
-    //        }
-    //        print("\n*********************************** END RESPONSE ***********************************\n")
-    //
-    //    }
-    
-    
-   
-    
-    
     
     func parseResponse(response:[LabibaModel])  {
         if response.isEmpty{

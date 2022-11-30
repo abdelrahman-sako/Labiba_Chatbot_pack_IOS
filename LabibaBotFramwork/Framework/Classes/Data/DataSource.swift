@@ -60,9 +60,9 @@ final class DataSource: DataSourceProtocol{
         remoteDataSource.closeConversation(handler: handler)
     }
     
-    func updateToken(handler: @escaping Handler<UpdateTokenModel>) {
-        remoteDataSource.updateToken(handler: handler)
-    }
+//    func updateToken(handler: @escaping Handler<UpdateTokenModel>) {
+//        remoteDataSource.updateToken(handler: handler)
+//    }
     
     //MARK: - Local Database
     func getRecentOriginCities(handler: @escaping Handler<[LabibaModel]>) {
@@ -71,9 +71,17 @@ final class DataSource: DataSourceProtocol{
     func getLastBotResponse(handler: @escaping Handler<LastBotResponseModel>) {
         remoteDataSource.getLastBotResponse(handler: handler)
     }
-    func sendData(_ data: Data, handler: @escaping Handler<String>) {
-        remoteDataSource.sendData(data, handler: handler)
+    func uploadData(model: UploadDataModel, handler: @escaping Handler<UploadDataResponseModel>) {
+        remoteDataSource.uploadData(model: model, handler: handler)
     }
+//    func sendData(_ data: Data, handler: @escaping Handler<UploadDataResponseModel>) {
+//        remoteDataSource.sendData(data, handler: handler)
+//    }
+//    func sendPhoto(_ data: Data, handler: @escaping Handler<UploadDataResponseModel>) {
+//        remoteDataSource.sendPhoto(data, handler: handler)
+//    }
+    
+    
     
     func close() {
         remoteDataSource.close()

@@ -9,48 +9,19 @@
 import Foundation
 
 class RemoteDataSource:RemoteDataSourceProtocol{
-   
-    
-    
-    func sendData(_ data: Data, handler: @escaping Handler<String>) {
-        let url = "\(Labiba._basePath)/api/getLastBotResponse"
+    func uploadData(model: UploadDataModel, handler: @escaping Handler<UploadDataResponseModel>) {
+        let url = "\(Labiba._uploadUrl)?id=\(SharedPreference.shared.currentUserId)"
         let endPoint = EndPoint(url: url, httpMethod: .post)
-        remoteContext.multipartRequest(endPoint: endPoint, params: nil, multipartName: "", uploadFiles: [data], mimeType: "",fileName: "") { result in
+        remoteContext.multipartRequest(endPoint: endPoint, params: nil, multipartName: "", uploadFiles: [model.data], mimeType: model.mimeType,fileName: model.fileName) { result in
             switch  result {
             case .success(let body):
-                self.parser(data: body, model: String.self, handler: handler)
+                self.parser(data: body, model: UploadDataResponseModel.self, handler: handler)
             case .failure(let error):
                 handler(.failure(error))
             }
         }
     }
-    
-    
-//    func sendData(_ photo: Data, handler: @escaping Handler<String>) {
-//        let url = "\(Labiba._basePath)/api/getLastBotResponse"
-//        let endPoint = EndPoint(url: url, httpMethod: .post)
-//    }
-//
-//
-//
-//
-    func sendPhoto(_ photo: UIImage, handler: @escaping Handler<String>) {
-        let url = "\(Labiba._basePath)/api/getLastBotResponse"
-        let endPoint = EndPoint(url: url, httpMethod: .post)
-        if let image = photo.jpegData(compressionQuality: 0.8)
-        {
-            remoteContext.multipartRequest(endPoint: endPoint, params: nil, multipartName: "", uploadFiles: [image], mimeType: "",fileName: "") { result in
-                switch  result {
-                case .success(let data):
-                    handler(.success(data as! String))
-                  //  self.parser(data: data, model: String.self, handler: handler)
-                case .failure(let error):
-                    handler(.failure(error))
-                }
-            }
-        }
 
-    }
     
     
     func getLastBotResponse(handler: @escaping Handler<LastBotResponseModel>) {
@@ -61,7 +32,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             "RecepientID" :Labiba._pageId,
             "SenderID":Labiba._senderId
         ]
-        remoteContext.request(endPoint: endPoint, parameters: params) { result in
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: LastBotResponseModel.self, handler: handler)
@@ -88,22 +59,22 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         }
     }
     
-    func updateToken(handler: @escaping Handler<UpdateTokenModel>) {
-        let url = "\(Labiba._basePath)/api/Auth/Login"
-        let endPoint = EndPoint(url: url, httpMethod: .post)
-        let params:[String:Any] = [
-            "Username":Labiba.jwtAuthParamerters.username,
-            "Password":Labiba.jwtAuthParamerters.password
-        ]
-        remoteContext.request(endPoint: endPoint, parameters: params) { result in
-            switch  result {
-            case .success(let data):
-                self.parser(data: data, model: UpdateTokenModel.self, handler: handler)
-            case .failure(let error):
-                handler(.failure(error))
-            }
-        }
-    }
+//    func updateToken(handler: @escaping Handler<UpdateTokenModel>) {
+//        let url = "\(Labiba._basePath)/api/Auth/Login"
+//        let endPoint = EndPoint(url: url, httpMethod: .post)
+//        let params:[String:Any] = [
+//            "Username":Labiba.jwtAuthParamerters.username,
+//            "Password":Labiba.jwtAuthParamerters.password
+//        ]
+//        remoteContext.request(endPoint: endPoint, parameters: params) { result in
+//            switch  result {
+//            case .success(let data):
+//                self.parser(data: data, model: UpdateTokenModel.self, handler: handler)
+//            case .failure(let error):
+//                handler(.failure(error))
+//            }
+//        }
+//    }
     
     func messageHandler(model: [String : Any], handler: @escaping Handler<[LabibaModel]>) {
         let url = "\(Labiba._basePath)\(Labiba._messagingServicePath)"
@@ -206,8 +177,13 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 handler(.failure(error))
             }
         }
+    }
+    
+    private func log(){
         
     }
+    
+    
     
     //MARK: - Close All Session Tasks
 
