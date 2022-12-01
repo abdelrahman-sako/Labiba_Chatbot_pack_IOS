@@ -8,6 +8,7 @@
 
 import Foundation
 final class DataSource: DataSourceProtocol{
+  
     
     
    
@@ -73,6 +74,9 @@ final class DataSource: DataSourceProtocol{
     }
     func uploadData(model: UploadDataModel, handler: @escaping Handler<UploadDataResponseModel>) {
         remoteDataSource.uploadData(model: model, handler: handler)
+    }
+    func sendLog(model: LoggingModel, handler: @escaping Handler<Bool>) {
+        remoteDataSource.sendLog(model: model, handler: handler)
     }
 //    func sendData(_ data: Data, handler: @escaping Handler<UploadDataResponseModel>) {
 //        remoteDataSource.sendData(data, handler: handler)

@@ -9,6 +9,7 @@
 import Foundation
 
 class RemoteDataSource:RemoteDataSourceProtocol{
+  
     func uploadData(model: UploadDataModel, handler: @escaping Handler<UploadDataResponseModel>) {
         let url = "\(Labiba._uploadUrl)?id=\(SharedPreference.shared.currentUserId)"
         let endPoint = EndPoint(url: url, httpMethod: .post)
@@ -18,6 +19,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 self.parser(data: body, model: UploadDataResponseModel.self, handler: handler)
             case .failure(let error):
                 handler(.failure(error))
+                Logging.shared.log(url: url, tag: .upload, method: .post, parameter: "", response: error.response,exception: error.logDescription)
             }
         }
     }
@@ -38,6 +40,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 self.parser(data: data, model: LastBotResponseModel.self, handler: handler)
             case .failure(let error):
                 handler(.failure(error))
+                Logging.shared.log(url: url, tag: .lastMessage, method: .get, parameter: params.description, response: error.response,exception: error.logDescription)
             }
         }
     }
@@ -86,6 +89,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 self.parser(data: data, model: [LabibaModel].self, handler: handler)
             case .failure(let error):
                 handler(.failure(error))
+                Logging.shared.log(url: url, tag: .messaging, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
             }
         }
     }
@@ -102,6 +106,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 self.parser(data: data, model: [GetRatingFormQuestionsModel].self, handler: handler)
             case .failure(let error):
                 handler(.failure(error))
+                Logging.shared.log(url: url, tag: .ratingQuestions, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
             }
         }
     }
@@ -118,6 +123,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 self.parser(data: data, model: SubmitRatingResponseModel.self, handler: handler)
             case .failure(let error):
                 handler(.failure(error))
+                Logging.shared.log(url: url, tag: .ratingSubmit, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
             }
         }
     }
@@ -136,6 +142,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 self.parser(data: data, model: HelpPageModel.self, handler: handler)
             case .failure(let error):
                 handler(.failure(error))
+                Logging.shared.log(url: url, tag: .help, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
             }
         }
     }
@@ -154,6 +161,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 self.parser(data: data, model: [PrechatFormModel].self, handler: handler)
             case .failure(let error):
                 handler(.failure(error))
+                Logging.shared.log(url: url, tag: .prechatForm, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
             }
         }
     }
@@ -175,13 +183,26 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 self.parser(data: data, model: TextToSpeachResponseModel.self, handler: handler)
             case .failure(let error):
                 handler(.failure(error))
+                Logging.shared.log(url: url, tag: .voice, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
             }
         }
     }
     
-    private func log(){
-        
+    func sendLog(model: LoggingModel, handler: @escaping Handler<Bool>) {
+        let url =  "\(Labiba._basePath)\(Labiba._loggingServicePath)"
+        let endPoint = EndPoint(url: url, httpMethod: .post)
+        let params = model.dictionary
+        remoteContext.request(endPoint: endPoint, parameters: params) { result in
+            switch result {
+            case .success(_):
+                print("log success")
+            case .failure(let error):
+                print("log faild with error: \(error.localizedDescription)")
+            }
+        }
     }
+    
+    
     
     
     
@@ -202,7 +223,8 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             let model = try decoder.decode(T.self, from: data)
             handler(.success(model))
         } catch {
-            handler(.failure(ErrorModel(message: error.localizedDescription)))
+          //  handler(.failure(ErrorModel(message: error.localizedDescription)))
+            handler(.failure(LabibaError(error: error, statusCode: 200)))
         }
     }
   

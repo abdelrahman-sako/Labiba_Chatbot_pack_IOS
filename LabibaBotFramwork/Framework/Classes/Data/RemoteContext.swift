@@ -78,13 +78,16 @@ final class RemoteContext {
             switch result{
             case .success(let response):
                 guard let wsResponse = response as? DataResponse<Data> else{
-                    completion(.failure(ErrorModel.generalError()))
+                    let error = LabibaError(code: .Unknown, statusCode: 0)
+                    completion(.failure(error))
                     return
                 }
                 if let wsData = wsResponse.data {
                     completion(.success(wsData))
                 }else {
-                    completion(.failure(ErrorModel(message: "No Data")))
+                    let headers =  wsResponse.response?.allHeaderFields
+                    let error =  LabibaError(statusCode: wsResponse.response?.statusCode ?? 0, headers:headers) ?? LabibaError(code: .Unknown, statusCode: wsResponse.response?.statusCode ?? 0,headers: headers)
+                    completion(.failure(error))
                 }
             case .failure(let error):
                 completion(.failure(error))
@@ -145,7 +148,11 @@ final class RemoteContext {
                         if let wsData = dataResponse.data {
                             completion(.success(wsData))
                         }else{
-                            completion(.failure(ErrorModel(message: "No Data")))
+                            
+                            let error = LabibaError(code: .EmptyResponse,
+                                                    statusCode: dataResponse.response?.statusCode ?? 0,
+                                                    headers: dataResponse.response?.allHeaderFields,response: "")
+                            completion(.failure(error))
                         }
                     case .failure(let responseError as NSError):
                         let error = self?.buildError(response: dataResponse, responseError: responseError)
@@ -153,7 +160,8 @@ final class RemoteContext {
                     }
                 })
             case .failure(let responseError as NSError):
-                completion(.failure(ErrorModel(message: responseError.localizedDescription)))
+                let error = LabibaError(error: responseError, statusCode: responseError.code)
+                completion(.failure(error))
             }
         }
     }
@@ -253,27 +261,30 @@ final class RemoteContext {
         return try! encoding.encode(urlRequest, with: params)
     }
     
-    func buildError(response:  DataResponse<Data>, responseError: NSError?) -> ErrorModel?{
+    func buildError(response:  DataResponse<Data>, responseError: NSError?) -> LabibaError?{
         guard let data = response.data else {
-            var networkError:String = "Unknown Error"
-            let errorComponents = response.error?.localizedDescription.split(separator: ":") ?? []
-            if  errorComponents.count > 1 {
-                networkError = String(errorComponents[1])
-            }else if errorComponents.count > 0{
-                networkError = ""
-            }
-            return ErrorModel(message: networkError)
+//            var networkError:String = "Unknown Error"
+//            let errorComponents = response.error?.localizedDescription.split(separator: ":") ?? []
+//            if  errorComponents.count > 1 {
+//                networkError = String(errorComponents[1])
+//            }else if errorComponents.count > 0{
+//                networkError = ""
+//            }
+//            return ErrorModel(message: networkError)
+            return LabibaError(statusCode: response.response?.statusCode ?? 0, headers: response.response?.allHeaderFields)
         }
-        let decoder = JSONDecoder()
-        do {
-            let errorModel = try decoder.decode(ResponseModel<String>.self, from: data)
-            let error = ErrorModel(message: errorModel.ErrorMessage ?? "unKnown Error")
-            error.ErrorCode = String(response.response?.statusCode ?? 0)//errorModel.ErrorCode
-            return error
-        }catch{
-            let error:ErrorModel = ErrorModel(message: error.localizedDescription)
-            return error
-        }
+        let dataString = String(data: data, encoding: .utf8) ?? ""
+        return LabibaError(statusCode: response.response?.statusCode ?? 0, headers: response.response?.allHeaderFields,response: dataString)
+//        let decoder = JSONDecoder()
+//        do {
+//            let errorModel = try decoder.decode(ResponseModel<String>.self, from: data)
+//            let error = ErrorModel(message: errorModel.ErrorMessage ?? "unKnown Error")
+//            error.ErrorCode = String(response.response?.statusCode ?? 0)//errorModel.ErrorCode
+//            return error
+//        }catch{
+//            let error:ErrorModel = ErrorModel(message: error.localizedDescription)
+//            return error
+//        }
     }
     
     private func printResponse(reqestUrl: URLRequestConvertible,responseData:DataResponse<Data>)  {
@@ -320,7 +331,9 @@ final class RemoteContext {
                     let model = try decoder.decode(UpdateTokenModel.self, from: data)
                     handler(.success(model))
                 } catch {
-                    handler(.failure(ErrorModel(message: error.localizedDescription)))
+                    let dataString = String(data: data, encoding: .utf8) ?? ""
+                   let error =  LabibaError(code: .EncodingError, statusCode: 200,response: dataString)
+                    handler(.failure(error))
                 }
             case .failure(let error):
                 handler(.failure(error))

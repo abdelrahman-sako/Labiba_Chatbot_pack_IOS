@@ -132,7 +132,10 @@ class BotConnector: NSObject {
     
      func startConversation() {
         // showLoadingIndicator()
-        self.sendMessage("CONVERSATION-RELOAD")
+         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+             CircularGradientLoadingIndicator.show()
+         }
+         self.sendMessage("CONVERSATION-RELOAD")
     }
     
      
@@ -140,7 +143,7 @@ class BotConnector: NSObject {
     func sendData(parameters:[String:Any])  {
         isTherePendingRequest = true
         DataSource.shared.messageHandler(model: parameters) { result in
-            //self.loader.dismiss()
+            CircularGradientLoadingIndicator.dismiss()
             switch result {
             case .success(let model):
                 self.messageAnalyizer.parseResponse(response: model)
@@ -488,65 +491,65 @@ class BotConnector: NSObject {
 //            }
 //        }
 //    }
-//    func LabibaRequest<T:Codable>(_ model:T.Type,url:String,method:HTTPMethod,parameters: Parameters? = nil,headers:[String:String]? = nil,encoding: ParameterEncoding = URLEncoding.default,logTag:LoggingTag? = nil, completion: @escaping (Result<T>)->Void) {
-//
-//        if UpdateTokenModel.isTokenRequeird(){
-//            if !UpdateTokenModel.isTokenValid() && logTag != .upadateToken {
-//                updateToken(completion: { [weak self] in
-//                    self?.LabibaRequest(model, url: url, method: method,parameters: parameters,encoding:encoding,logTag:logTag,completion:completion)
-//
-//                })
-//                return
-//            }
-//        }
-//
-//        let log:(_ respons:String,_ exception:String?)->Void = { respons,exception in
-//            if let logTag = logTag {
-//                let additionalHeaders = (self.sessionManager?.session.configuration.httpAdditionalHeaders as? [String:String] ?? [:]).description
-//                self.log(url: url,headers: additionalHeaders,tag: logTag, method: method, parameter: parameters?.description ?? "", response: respons,exception: exception)
-//            }
-//        }
-//        opQueue?.addOperation({
-//            self.currentRequest = self.sessionManager?.request(url, method: method, parameters: parameters ,encoding: encoding , headers: headers).responseData { (response) in
-//
-//                let statusCode = response.response?.statusCode ?? 0
-//                //print(response.response?.allHeaderFields)
-//                switch response.result{
-//                case .success(let data):
-//
-//                    prettyPrintedResponse(url: url, statusCode:statusCode,method:method.rawValue,data: data, name: URL(string: url)?.lastPathComponent ?? "request")
-//                    let dataString = String(data: data , encoding: .utf8) ?? ""
-//
-//                    do {
-//                        let response = try JSONDecoder().decode(T.self, from: data)
-//                        if let array =  response as? Array<Any>,  array.isEmpty , !Labiba.isHumanAgentStarted {
-//                            //isHumanAgentStarted  because it return empty string if human agent started and it is not error
-//                            let error = LabibaError(code: .EmptyResponse, statusCode: statusCode)
-//                            log(dataString, error.logDescription)
-//                            completion(.failure(error))
-//                        }else{
-//                            if Labiba.Logging.isSuccessLoggingEnabled { log(dataString, nil) }
-//                            completion(.success(response))
-//                        }
-//
-//                    }catch{
-//                        let resposeHeaders = response.response?.allHeaderFields
-//                        let error = LabibaError(statusCode: statusCode,headers: resposeHeaders) ?? LabibaError(code: .EncodingError, statusCode: statusCode,headers: resposeHeaders)
-//                        log(dataString, error.logDescription)
-//                        completion(.failure(error))
-//                    }
-//
-//                case .failure(let err):
-//                    let error = LabibaError(error: err, statusCode: statusCode)
-//                    log("", error.logDescription)
-//                    completion(.failure(error))
-//                }
-//
-//                self.loader.dismiss()
-//            }
-//        })
-//
-//    }
+    func LabibaRequest<T:Codable>(_ model:T.Type,url:String,method:HTTPMethod,parameters: Parameters? = nil,headers:[String:String]? = nil,encoding: ParameterEncoding = URLEncoding.default,logTag:LoggingTag? = nil, completion: @escaping (Result<T>)->Void) {
+
+        if UpdateTokenModel.isTokenRequeird(){
+            if !UpdateTokenModel.isTokenValid() && logTag != .upadateToken {
+                updateToken(completion: { [weak self] in
+                    self?.LabibaRequest(model, url: url, method: method,parameters: parameters,encoding:encoding,logTag:logTag,completion:completion)
+
+                })
+                return
+            }
+        }
+
+        let log:(_ respons:String,_ exception:String?)->Void = { respons,exception in
+            if let logTag = logTag {
+                let additionalHeaders = (self.sessionManager?.session.configuration.httpAdditionalHeaders as? [String:String] ?? [:]).description
+                self.log(url: url,headers: additionalHeaders,tag: logTag, method: method, parameter: parameters?.description ?? "", response: respons,exception: exception)
+            }
+        }
+        opQueue?.addOperation({
+            self.currentRequest = self.sessionManager?.request(url, method: method, parameters: parameters ,encoding: encoding , headers: headers).responseData { (response) in
+
+                let statusCode = response.response?.statusCode ?? 0
+                //print(response.response?.allHeaderFields)
+                switch response.result{
+                case .success(let data):
+
+                    prettyPrintedResponse(url: url, statusCode:statusCode,method:method.rawValue,data: data, name: URL(string: url)?.lastPathComponent ?? "request")
+                    let dataString = String(data: data , encoding: .utf8) ?? ""
+
+                    do {
+                        let response = try JSONDecoder().decode(T.self, from: data)
+                        if let array =  response as? Array<Any>,  array.isEmpty , !Labiba.isHumanAgentStarted {
+                            //isHumanAgentStarted  because it return empty string if human agent started and it is not error
+                            let error = LabibaError(code: .EmptyResponse, statusCode: statusCode)
+                            log(dataString, error.logDescription)
+                            completion(.failure(error))
+                        }else{
+                            if Labiba.Logging.isSuccessLoggingEnabled { log(dataString, nil) }
+                            completion(.success(response))
+                        }
+
+                    }catch{
+                        let resposeHeaders = response.response?.allHeaderFields
+                        let error = LabibaError(statusCode: statusCode,headers: resposeHeaders) ?? LabibaError(code: .EncodingError, statusCode: statusCode,headers: resposeHeaders)
+                        log(dataString, error.logDescription)
+                        completion(.failure(error))
+                    }
+
+                case .failure(let err):
+                    let error = LabibaError(error: err, statusCode: statusCode)
+                    log("", error.logDescription)
+                    completion(.failure(error))
+                }
+
+                self.loader.dismiss()
+            }
+        })
+
+    }
     
     enum LoggingTag:String {
         case messaging = "MESSAGING"

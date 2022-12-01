@@ -305,7 +305,7 @@
 		529C681826F3694700FB8591 /* PrechatFormHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C681626F3694700FB8591 /* PrechatFormHeaderCell.swift */; };
 		529C681926F3694700FB8591 /* PrechatFormHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529C681726F3694700FB8591 /* PrechatFormHeaderCell.xib */; };
 		529C681B26F3855D00FB8591 /* PrechatFormThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C681A26F3855D00FB8591 /* PrechatFormThemeModel.swift */; };
-		52A1030027DE175B0017A6D6 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A102FF27DE175B0017A6D6 /* Logging.swift */; };
+		52A1030027DE175B0017A6D6 /* LabibaLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A102FF27DE175B0017A6D6 /* LabibaLogging.swift */; };
 		52AA90E32717FDDB00D6EA60 /* UpdateTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA90E22717FDDB00D6EA60 /* UpdateTokenModel.swift */; };
 		52B6B38325B6FA3E0051ABCE /* HelpPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6B38125B6FA3E0051ABCE /* HelpPopupVC.swift */; };
 		52B6B38425B6FA3E0051ABCE /* HelpPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B6B38225B6FA3E0051ABCE /* HelpPopupVC.xib */; };
@@ -482,6 +482,8 @@
 		F9013BE328716DEC00DE2BA0 /* WebViewEventHumanAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */; };
 		F96C538B293778210038440A /* UploadDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C538A293778210038440A /* UploadDataResponseModel.swift */; };
 		F96C538D29377D760038440A /* UploadDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C538C29377D760038440A /* UploadDataModel.swift */; };
+		F96C5390293894F50038440A /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C538F293894F50038440A /* Logging.swift */; };
+		F96C5392293895B80038440A /* LoggingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C5391293895B80038440A /* LoggingModel.swift */; };
 		F9D20105292A289A0024FE48 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D200F7292A289A0024FE48 /* LocalDataSource.swift */; };
 		F9D20106292A289A0024FE48 /* RemoteContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D200F8292A289A0024FE48 /* RemoteContext.swift */; };
 		F9D2010A292A289A0024FE48 /* ApiEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D200FD292A289A0024FE48 /* ApiEndPoints.swift */; };
@@ -785,7 +787,7 @@
 		529C681626F3694700FB8591 /* PrechatFormHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrechatFormHeaderCell.swift; sourceTree = "<group>"; };
 		529C681726F3694700FB8591 /* PrechatFormHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrechatFormHeaderCell.xib; sourceTree = "<group>"; };
 		529C681A26F3855D00FB8591 /* PrechatFormThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrechatFormThemeModel.swift; sourceTree = "<group>"; };
-		52A102FF27DE175B0017A6D6 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		52A102FF27DE175B0017A6D6 /* LabibaLogging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaLogging.swift; sourceTree = "<group>"; };
 		52AA90E22717FDDB00D6EA60 /* UpdateTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenModel.swift; sourceTree = "<group>"; };
 		52B6B38125B6FA3E0051ABCE /* HelpPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPopupVC.swift; sourceTree = "<group>"; };
 		52B6B38225B6FA3E0051ABCE /* HelpPopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpPopupVC.xib; sourceTree = "<group>"; };
@@ -965,6 +967,8 @@
 		F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEventHumanAgent.swift; sourceTree = "<group>"; };
 		F96C538A293778210038440A /* UploadDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataResponseModel.swift; sourceTree = "<group>"; };
 		F96C538C29377D760038440A /* UploadDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataModel.swift; sourceTree = "<group>"; };
+		F96C538F293894F50038440A /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		F96C5391293895B80038440A /* LoggingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingModel.swift; sourceTree = "<group>"; };
 		F9D200F7292A289A0024FE48 /* LocalDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		F9D200F8292A289A0024FE48 /* RemoteContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteContext.swift; sourceTree = "<group>"; };
 		F9D200FD292A289A0024FE48 /* ApiEndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEndPoints.swift; sourceTree = "<group>"; };
@@ -1083,6 +1087,7 @@
 				F9D20121292A68150024FE48 /* TextToSpeachResponseModel.swift */,
 				F96C538A293778210038440A /* UploadDataResponseModel.swift */,
 				F96C538C29377D760038440A /* UploadDataModel.swift */,
+				F96C5391293895B80038440A /* LoggingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1423,7 +1428,7 @@
 				520DEE6E265F83F500B538A5 /* BackgroundView.swift */,
 				527E985526C53A6D00DA69E6 /* HumanAgentSettings.swift */,
 				529C681A26F3855D00FB8591 /* PrechatFormThemeModel.swift */,
-				52A102FF27DE175B0017A6D6 /* Logging.swift */,
+				52A102FF27DE175B0017A6D6 /* LabibaLogging.swift */,
 			);
 			path = "Theme and Settings";
 			sourceTree = "<group>";
@@ -2167,6 +2172,7 @@
 			children = (
 				F9D200F8292A289A0024FE48 /* RemoteContext.swift */,
 				F9D20103292A289A0024FE48 /* DataSource.swift */,
+				F96C538F293894F50038440A /* Logging.swift */,
 				F9D200FF292A289A0024FE48 /* Data Source Protocols */,
 				F9D200FB292A289A0024FE48 /* Remote Repository */,
 				F9D200F6292A289A0024FE48 /* Local Repository */,
@@ -2578,7 +2584,7 @@
 				37460D9A230A7AC1002748CE /* ReferralModel.swift in Sources */,
 				529C681126F3475E00FB8591 /* PrechatFormFieldCell.swift in Sources */,
 				B429555022DDDBD2002DE3E9 /* Emoticonizer.swift in Sources */,
-				52A1030027DE175B0017A6D6 /* Logging.swift in Sources */,
+				52A1030027DE175B0017A6D6 /* LabibaLogging.swift in Sources */,
 				B429551622DDDBD2002DE3E9 /* Platform.swift in Sources */,
 				52FC5CF124D00A9000C7B7CF /* MapPerviewView.swift in Sources */,
 				5281F41A25C8058F005D39CD /* HelpExpandableView.swift in Sources */,
@@ -2779,6 +2785,7 @@
 				52DE307C2462D6A000DAF3E7 /* Request.swift in Sources */,
 				37F003DE2333B57600A1AC17 /* SplashScreenWithStaticImage.swift in Sources */,
 				52C0A07B2587A846004D7AAA /* RatingCell.swift in Sources */,
+				F96C5390293894F50038440A /* Logging.swift in Sources */,
 				5277565A272EE12F00F8ADE0 /* FloatValueProvider.swift in Sources */,
 				37B9619A230D3BE90093647C /* SettingVariabels.swift in Sources */,
 				52C6DBAE24694849005CFE27 /* ImageCache.swift in Sources */,
@@ -2787,6 +2794,7 @@
 				5277568B272EE12F00F8ADE0 /* Star.swift in Sources */,
 				52C6DBA924694849005CFE27 /* UIImageView+AlamofireImage.swift in Sources */,
 				529C681B26F3855D00FB8591 /* PrechatFormThemeModel.swift in Sources */,
+				F96C5392293895B80038440A /* LoggingModel.swift in Sources */,
 				5277569C272EE12F00F8ADE0 /* SolidCompositionLayer.swift in Sources */,
 				528AE9672520A73C008AF72E /* Thread+extension.swift in Sources */,
 				52775682272EE12F00F8ADE0 /* CompositionLayer.swift in Sources */,

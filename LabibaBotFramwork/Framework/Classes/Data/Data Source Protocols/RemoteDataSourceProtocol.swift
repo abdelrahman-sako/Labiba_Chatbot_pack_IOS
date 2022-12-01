@@ -19,7 +19,7 @@ protocol RemoteDataSourceProtocol {
     //func updateToken(handler: @escaping Handler<UpdateTokenModel>)
     func getLastBotResponse(handler: @escaping Handler<LastBotResponseModel>)
     func uploadData(model: UploadDataModel,handler: @escaping Handler<UploadDataResponseModel>)
-   
+    func sendLog(model: LoggingModel, handler: @escaping Handler<Bool>)
     
     
     func close()

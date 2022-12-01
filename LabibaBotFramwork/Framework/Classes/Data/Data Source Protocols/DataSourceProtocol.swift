@@ -7,7 +7,7 @@
 
 import Foundation
 //import KeychainSwift
-typealias Handler<T> = (Result<T>) -> Void
+typealias Handler<T> = (Swift.Result<T, LabibaError>) -> Void
 
 protocol DataSourceProtocol:RemoteDataSourceProtocol,LocalDataSourceProtocol {
 }
