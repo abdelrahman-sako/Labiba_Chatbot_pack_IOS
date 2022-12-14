@@ -77,7 +77,8 @@ public class SplashScreenWithStaticImage: SplashVC {
             case .ar:
                 Labiba.setBotType(botType: .voiceAndKeyboard)
             default:
-                Labiba.setBotType(botType: .keyboardWithTTS)
+                //.setBotType(botType: .keyboardWithTTS)
+                Labiba.setBotType(botType: .voiceAndKeyboard)
             }
         }
     }
@@ -111,7 +112,8 @@ public class SplashScreenWithStaticImage: SplashVC {
         (Labiba._customHeaderView as? GreetingHeaderView)?.resetUIs() // to handle start language issue in header
         SharedPreference.shared.setUserIDs(ar: "0de26564-1d53-4c87-87b1-60fd6235e1c3", en: "283c3d0e-550f-4221-87f7-27adaf401ad6" ,de:  "bb74141b-099e-497f-adde-990b7836a829", ru:  "0f22a778-09e8-4ae6-8218-6357b1c67157" ,zh:  "453bf578-5226-4cb0-b012-c4bddc0c143a")
         //             LabibaThemes.setSharja_Theme()
-        self.navigationController?.pushViewController(ConversationViewController.create(), animated: true )
+        Labiba.startConversation(onView: self)
+        //self.navigationController?.pushViewController(ConversationViewController.create(), animated: true )
     }
     
     
