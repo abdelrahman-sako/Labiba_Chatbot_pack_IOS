@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name LabibaBotFramwork
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import AVKit
 import Accelerate
@@ -25,6 +26,7 @@ import UIKit
 import WatchConnectivity
 import WebKit
 import _Concurrency
+import _StringProcessing
 public protocol AnimationImageProvider {
   func imageForAsset(asset: LabibaBotFramwork.ImageAsset) -> CoreGraphics.CGImage?
 }
@@ -125,13 +127,13 @@ public struct GoogleVoice {
   public var titleColor: UIKit.UIColor
   public var titleFont: UIKit.UIFont
   public var questionsColor: UIKit.UIColor
-  public var questionsFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
+  public var questionsFont: (size: CoreFoundation.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
   public var fullStarTintColor: UIKit.UIColor
   public var emptyStarTintColor: UIKit.UIColor
   public var starsContainerBorderColor: UIKit.UIColor
   public var commentContainerColor: UIKit.UIColor
-  public var commentContainerCornerRadius: CoreGraphics.CGFloat
-  public var commentFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
+  public var commentContainerCornerRadius: CoreFoundation.CGFloat
+  public var commentFont: (size: CoreFoundation.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
   public var commentColor: UIKit.UIColor
   public var mobileNumContainerColor: UIKit.UIColor
   public var mobileNumFont: UIKit.UIFont
@@ -161,24 +163,24 @@ public enum LabibaLanguage : Swift.String, Swift.CaseIterable {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) final public class CompatibleAnimationView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @objc @_Concurrency.MainActor(unsafe) final public var compatibleAnimation: LabibaBotFramwork.CompatibleAnimation? {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) final public var loopAnimationCount: CoreGraphics.CGFloat {
+  @objc @_Concurrency.MainActor(unsafe) final public var loopAnimationCount: CoreFoundation.CGFloat {
     @objc get
     @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override final public var contentMode: UIKit.UIView.ContentMode {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
+    @objc get
+    @objc set
   }
   @objc @_Concurrency.MainActor(unsafe) final public var shouldRasterizeWhenIdle: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) final public var currentProgress: CoreGraphics.CGFloat {
+  @objc @_Concurrency.MainActor(unsafe) final public var currentProgress: CoreFoundation.CGFloat {
     @objc get
     @objc set
   }
@@ -186,17 +188,17 @@ public enum LabibaLanguage : Swift.String, Swift.CaseIterable {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) final public var currentFrame: CoreGraphics.CGFloat {
+  @objc @_Concurrency.MainActor(unsafe) final public var currentFrame: CoreFoundation.CGFloat {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) final public var realtimeAnimationFrame: CoreGraphics.CGFloat {
+  @objc @_Concurrency.MainActor(unsafe) final public var realtimeAnimationFrame: CoreFoundation.CGFloat {
     @objc get
   }
-  @objc @_Concurrency.MainActor(unsafe) final public var realtimeAnimationProgress: CoreGraphics.CGFloat {
+  @objc @_Concurrency.MainActor(unsafe) final public var realtimeAnimationProgress: CoreFoundation.CGFloat {
     @objc get
   }
-  @objc @_Concurrency.MainActor(unsafe) final public var animationSpeed: CoreGraphics.CGFloat {
+  @objc @_Concurrency.MainActor(unsafe) final public var animationSpeed: CoreFoundation.CGFloat {
     @objc get
     @objc set
   }
@@ -206,22 +208,22 @@ public enum LabibaLanguage : Swift.String, Swift.CaseIterable {
   }
   @objc @_Concurrency.MainActor(unsafe) final public func play()
   @objc @_Concurrency.MainActor(unsafe) final public func play(completion: ((Swift.Bool) -> Swift.Void)?)
-  @objc @_Concurrency.MainActor(unsafe) final public func play(fromProgress: CoreGraphics.CGFloat, toProgress: CoreGraphics.CGFloat, completion: ((Swift.Bool) -> Swift.Void)? = nil)
-  @objc @_Concurrency.MainActor(unsafe) final public func play(fromFrame: CoreGraphics.CGFloat, toFrame: CoreGraphics.CGFloat, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor(unsafe) final public func play(fromProgress: CoreFoundation.CGFloat, toProgress: CoreFoundation.CGFloat, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor(unsafe) final public func play(fromFrame: CoreFoundation.CGFloat, toFrame: CoreFoundation.CGFloat, completion: ((Swift.Bool) -> Swift.Void)? = nil)
   @objc @_Concurrency.MainActor(unsafe) final public func play(fromMarker: Swift.String, toMarker: Swift.String, completion: ((Swift.Bool) -> Swift.Void)? = nil)
   @objc @_Concurrency.MainActor(unsafe) final public func stop()
   @objc @_Concurrency.MainActor(unsafe) final public func pause()
   @objc @_Concurrency.MainActor(unsafe) final public func reloadImages()
   @objc @_Concurrency.MainActor(unsafe) final public func forceDisplayUpdate()
-  @objc @_Concurrency.MainActor(unsafe) final public func getValue(for keypath: LabibaBotFramwork.CompatibleAnimationKeypath, atFrame: CoreGraphics.CGFloat) -> Any?
+  @objc @_Concurrency.MainActor(unsafe) final public func getValue(for keypath: LabibaBotFramwork.CompatibleAnimationKeypath, atFrame: CoreFoundation.CGFloat) -> Any?
   @objc @_Concurrency.MainActor(unsafe) final public func logHierarchyKeypaths()
   @objc @_Concurrency.MainActor(unsafe) final public func setColorValue(_ color: UIKit.UIColor, forKeypath keypath: LabibaBotFramwork.CompatibleAnimationKeypath)
-  @objc @_Concurrency.MainActor(unsafe) final public func getColorValue(for keypath: LabibaBotFramwork.CompatibleAnimationKeypath, atFrame: CoreGraphics.CGFloat) -> UIKit.UIColor?
+  @objc @_Concurrency.MainActor(unsafe) final public func getColorValue(for keypath: LabibaBotFramwork.CompatibleAnimationKeypath, atFrame: CoreFoundation.CGFloat) -> UIKit.UIColor?
   @objc @_Concurrency.MainActor(unsafe) final public func addSubview(_ subview: LabibaBotFramwork.AnimationSubview, forLayerAt keypath: LabibaBotFramwork.CompatibleAnimationKeypath)
-  @objc @_Concurrency.MainActor(unsafe) final public func convert(rect: CoreGraphics.CGRect, toLayerAt keypath: LabibaBotFramwork.CompatibleAnimationKeypath?) -> CoreGraphics.CGRect
-  @objc @_Concurrency.MainActor(unsafe) final public func convert(point: CoreGraphics.CGPoint, toLayerAt keypath: LabibaBotFramwork.CompatibleAnimationKeypath?) -> CoreGraphics.CGPoint
-  @objc @_Concurrency.MainActor(unsafe) final public func progressTime(forMarker named: Swift.String) -> CoreGraphics.CGFloat
-  @objc @_Concurrency.MainActor(unsafe) final public func frameTime(forMarker named: Swift.String) -> CoreGraphics.CGFloat
+  @objc @_Concurrency.MainActor(unsafe) final public func convert(rect: CoreFoundation.CGRect, toLayerAt keypath: LabibaBotFramwork.CompatibleAnimationKeypath?) -> CoreFoundation.CGRect
+  @objc @_Concurrency.MainActor(unsafe) final public func convert(point: CoreFoundation.CGPoint, toLayerAt keypath: LabibaBotFramwork.CompatibleAnimationKeypath?) -> CoreFoundation.CGPoint
+  @objc @_Concurrency.MainActor(unsafe) final public func progressTime(forMarker named: Swift.String) -> CoreFoundation.CGFloat
+  @objc @_Concurrency.MainActor(unsafe) final public func frameTime(forMarker named: Swift.String) -> CoreFoundation.CGFloat
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class CircularGradientLoadingIndicator : UIKit.UIView {
@@ -229,8 +231,8 @@ public enum LabibaLanguage : Swift.String, Swift.CaseIterable {
     get
     set
   }
-  @objc dynamic public init()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) public func show()
   @_Concurrency.MainActor(unsafe) public func dismiss()
   @objc deinit
@@ -248,16 +250,16 @@ public enum CornerLocation {
 @_hasMissingDesignatedInitializers public class LabibaChoiceView {
   public var backgroundColor: UIKit.UIColor
   public var tintColor: UIKit.UIColor
-  public var font: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
+  public var font: (size: CoreFoundation.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
   public var borderColor: UIKit.UIColor
-  public var cornerRadius: CoreGraphics.CGFloat
+  public var cornerRadius: CoreFoundation.CGFloat
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class StanderdSplashVC : LabibaBotFramwork.SplashVC {
   @_Concurrency.MainActor(unsafe) override public static func create() -> LabibaBotFramwork.StanderdSplashVC
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @_Concurrency.MainActor(unsafe) @objc get
+    @objc get
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
@@ -268,17 +270,17 @@ public enum CornerLocation {
   public var typingIndicatorColor: UIKit.UIColor
   public var background: LabibaBotFramwork.LabibaBackground
   public var textColor: UIKit.UIColor
-  public var fontsize: CoreGraphics.CGFloat
+  public var fontsize: CoreFoundation.CGFloat
   public var textAlignment: UIKit.NSTextAlignment?
-  public var alpha: CoreGraphics.CGFloat
-  public var cornerRadius: CoreGraphics.CGFloat
+  public var alpha: CoreFoundation.CGFloat
+  public var cornerRadius: CoreFoundation.CGFloat
   public var cornerMaskPin: LabibaBotFramwork.LabibaCornerPin {
     get
     set
   }
   public var shadow: LabibaBotFramwork.LabibaShadowModel
   public var avatar: UIKit.UIImage?
-  public var timestamp: (fontSize: CoreGraphics.CGFloat, color: UIKit.UIColor, formate: Swift.String)
+  public var timestamp: (fontSize: CoreFoundation.CGFloat, color: UIKit.UIColor, formate: Swift.String)
   public var botName: Swift.String?
   @objc deinit
 }
@@ -305,11 +307,11 @@ public func imageNamed(_ name: Swift.String) -> UIKit.UIImage
     set
   }
   @_Concurrency.MainActor(unsafe) public var volumOffImage: UIKit.UIImage?
-  @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func awakeFromNib()
   @_Concurrency.MainActor(unsafe) public func flibView()
   @_Concurrency.MainActor(unsafe) public func setTintColor()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func updateConstraints()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
@@ -317,8 +319,8 @@ extension LabibaBotFramwork.QuickChoicesHeaderView : UIKit.UICollectionViewDeleg
   @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
   @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
 }
-public typealias AnimationFrameTime = CoreGraphics.CGFloat
-public typealias AnimationProgressTime = CoreGraphics.CGFloat
+public typealias AnimationFrameTime = CoreFoundation.CGFloat
+public typealias AnimationProgressTime = CoreFoundation.CGFloat
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class GreetingHeaderView : LabibaBotFramwork.LabibaChatHeaderView {
   @_Concurrency.MainActor(unsafe) public static func create(withAction: Swift.Bool = true, appLogoImgURl: Swift.String? = nil, centerImageURL: Swift.String? = nil, centerImage: UIKit.UIImage? = nil, backgroundImgURL: Swift.String? = nil, backgroundImg: UIKit.UIImage? = nil, bodyAndTitle: [Swift.String : Swift.String]) -> LabibaBotFramwork.GreetingHeaderView
   @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var centerImageView: UIKit.UIImageView!
@@ -350,12 +352,12 @@ public typealias AnimationProgressTime = CoreGraphics.CGFloat
     get
     set
   }
-  @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func awakeFromNib()
   @_Concurrency.MainActor(unsafe) public func resetUIs()
   @_Concurrency.MainActor(unsafe) public func flibView()
   @_Concurrency.MainActor(unsafe) public func setTintColor()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func updateConstraints()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
@@ -372,7 +374,7 @@ public typealias AnimationProgressTime = CoreGraphics.CGFloat
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var borderLineWidth: CoreGraphics.CGFloat {
+  @_Concurrency.MainActor(unsafe) public var borderLineWidth: CoreFoundation.CGFloat {
     get
     set
   }
@@ -380,15 +382,15 @@ public typealias AnimationProgressTime = CoreGraphics.CGFloat
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var cornerWidth: CoreGraphics.CGFloat {
+  @_Concurrency.MainActor(unsafe) public var cornerWidth: CoreFoundation.CGFloat {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var backgroundAlpha: CoreGraphics.CGFloat {
+  @_Concurrency.MainActor(unsafe) public var backgroundAlpha: CoreFoundation.CGFloat {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var scanBorderWidthRadio: CoreGraphics.CGFloat {
+  @_Concurrency.MainActor(unsafe) public var scanBorderWidthRadio: CoreFoundation.CGFloat {
     get
     set
   }
@@ -396,15 +398,15 @@ public typealias AnimationProgressTime = CoreGraphics.CGFloat
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class LabibaCarousalCardView {
   public var backgroundColor: UIKit.UIColor
-  public var border: (width: CoreGraphics.CGFloat, color: UIKit.UIColor)
-  public var alpha: CoreGraphics.CGFloat
-  public var cornerRadius: CoreGraphics.CGFloat
+  public var border: (width: CoreFoundation.CGFloat, color: UIKit.UIColor)
+  public var alpha: CoreFoundation.CGFloat
+  public var cornerRadius: CoreFoundation.CGFloat
   public var tintColor: UIKit.UIColor
   public var backgroundImageStyleEnabled: Swift.Bool
   public var bottomGradient: LabibaBotFramwork.Labiba.GradientSpecs? {
@@ -412,15 +414,15 @@ public typealias AnimationProgressTime = CoreGraphics.CGFloat
     set
   }
   public var titleColor: UIKit.UIColor
-  public var titleFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
+  public var titleFont: (size: CoreFoundation.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
   public var subtitleColor: UIKit.UIColor
-  public var subtitleFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
-  public var buttonsSpacing: CoreGraphics.CGFloat
+  public var subtitleFont: (size: CoreFoundation.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
+  public var buttonsSpacing: CoreFoundation.CGFloat
   public var buttonTitleColor: UIKit.UIColor
-  public var buttonFont: (size: CoreGraphics.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
-  public var buttonBorder: (width: CoreGraphics.CGFloat, color: UIKit.UIColor)
-  public var buttonSeparatorLine: (color: UIKit.UIColor, inset: CoreGraphics.CGFloat)
-  public var buttonCornerRadius: CoreGraphics.CGFloat
+  public var buttonFont: (size: CoreFoundation.CGFloat, weight: LabibaBotFramwork.LabibaFontWeight)
+  public var buttonBorder: (width: CoreFoundation.CGFloat, color: UIKit.UIColor)
+  public var buttonSeparatorLine: (color: UIKit.UIColor, inset: CoreFoundation.CGFloat)
+  public var buttonCornerRadius: CoreFoundation.CGFloat
   public var shadow: LabibaBotFramwork.LabibaShadowModel
   public var button1: (backgroundColor: UIKit.UIColor, titleColor: UIKit.UIColor)?
   public var button2: (backgroundColor: UIKit.UIColor, titleColor: UIKit.UIColor)?
@@ -468,33 +470,33 @@ public protocol DateRangeViewControllerDelegate : AnyObject {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var animationSpeed: CoreGraphics.CGFloat {
+  @_Concurrency.MainActor(unsafe) public var animationSpeed: CoreFoundation.CGFloat {
     get
     set
   }
   @_Concurrency.MainActor(unsafe) public func setLayer(named: Swift.String, forState: UIKit.UIControl.State)
   @_Concurrency.MainActor(unsafe) public func setValueProvider(_ valueProvider: LabibaBotFramwork.AnyValueProvider, keypath: LabibaBotFramwork.AnimationKeypath)
   @_Concurrency.MainActor(unsafe) public init(animation: LabibaBotFramwork.Animation)
-  @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init()
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var isEnabled: Swift.Bool {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
+    @objc get
+    @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var isSelected: Swift.Bool {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
+    @objc get
+    @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var isHighlighted: Swift.Bool {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
+    @objc get
+    @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func continueTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func cancelTracking(with event: UIKit.UIEvent?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreGraphics.CGSize {
-    @_Concurrency.MainActor(unsafe) @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
   }
   @_Concurrency.MainActor(unsafe) open func animationDidSet()
   @objc deinit
@@ -566,7 +568,7 @@ extension LabibaBotFramwork.LottieLoopMode : Swift.Equatable {
   @_Concurrency.MainActor(unsafe) final public var realtimeAnimationProgress: LabibaBotFramwork.AnimationProgressTime {
     get
   }
-  @_Concurrency.MainActor(unsafe) final public var animationSpeed: CoreGraphics.CGFloat {
+  @_Concurrency.MainActor(unsafe) final public var animationSpeed: CoreFoundation.CGFloat {
     get
     set
   }
@@ -574,7 +576,7 @@ extension LabibaBotFramwork.LottieLoopMode : Swift.Equatable {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) final public var viewportFrame: CoreGraphics.CGRect? {
+  @_Concurrency.MainActor(unsafe) final public var viewportFrame: CoreFoundation.CGRect? {
     get
     set
   }
@@ -590,23 +592,23 @@ extension LabibaBotFramwork.LottieLoopMode : Swift.Equatable {
   @_Concurrency.MainActor(unsafe) final public func getValue(for keypath: LabibaBotFramwork.AnimationKeypath, atFrame: LabibaBotFramwork.AnimationFrameTime?) -> Any?
   @_Concurrency.MainActor(unsafe) final public func logHierarchyKeypaths()
   @_Concurrency.MainActor(unsafe) final public func addSubview(_ subview: LabibaBotFramwork.AnimationSubview, forLayerAt keypath: LabibaBotFramwork.AnimationKeypath)
-  @_Concurrency.MainActor(unsafe) final public func convert(_ rect: CoreGraphics.CGRect, toLayerAt keypath: LabibaBotFramwork.AnimationKeypath?) -> CoreGraphics.CGRect?
-  @_Concurrency.MainActor(unsafe) final public func convert(_ point: CoreGraphics.CGPoint, toLayerAt keypath: LabibaBotFramwork.AnimationKeypath?) -> CoreGraphics.CGPoint?
+  @_Concurrency.MainActor(unsafe) final public func convert(_ rect: CoreFoundation.CGRect, toLayerAt keypath: LabibaBotFramwork.AnimationKeypath?) -> CoreFoundation.CGRect?
+  @_Concurrency.MainActor(unsafe) final public func convert(_ point: CoreFoundation.CGPoint, toLayerAt keypath: LabibaBotFramwork.AnimationKeypath?) -> CoreFoundation.CGPoint?
   @_Concurrency.MainActor(unsafe) final public func setNodeIsEnabled(isEnabled: Swift.Bool, keypath: LabibaBotFramwork.AnimationKeypath)
   @_Concurrency.MainActor(unsafe) final public func progressTime(forMarker named: Swift.String) -> LabibaBotFramwork.AnimationProgressTime?
   @_Concurrency.MainActor(unsafe) final public func frameTime(forMarker named: Swift.String) -> LabibaBotFramwork.AnimationFrameTime?
   @_Concurrency.MainActor(unsafe) public init(animation: LabibaBotFramwork.Animation?, imageProvider: LabibaBotFramwork.AnimationImageProvider? = nil, textProvider: LabibaBotFramwork.AnimationTextProvider = DefaultTextProvider())
-  @objc dynamic public init()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreGraphics.CGSize {
-    @_Concurrency.MainActor(unsafe) @objc get
+  @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
   }
   @objc deinit
 }
 final public class GradientValueProvider : LabibaBotFramwork.AnyValueProvider {
-  public typealias ColorsValueBlock = (CoreGraphics.CGFloat) -> [LabibaBotFramwork.Color]
-  public typealias ColorLocationsBlock = (CoreGraphics.CGFloat) -> [Swift.Double]
+  public typealias ColorsValueBlock = (CoreFoundation.CGFloat) -> [LabibaBotFramwork.Color]
+  public typealias ColorLocationsBlock = (CoreFoundation.CGFloat) -> [Swift.Double]
   final public var colors: [LabibaBotFramwork.Color] {
     get
     set
@@ -620,8 +622,8 @@ final public class GradientValueProvider : LabibaBotFramwork.AnyValueProvider {
   final public var valueType: Any.Type {
     get
   }
-  final public func hasUpdate(frame: CoreGraphics.CGFloat) -> Swift.Bool
-  final public func value(frame: CoreGraphics.CGFloat) -> Any
+  final public func hasUpdate(frame: CoreFoundation.CGFloat) -> Swift.Bool
+  final public func value(frame: CoreFoundation.CGFloat) -> Any
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class HumanAgentSettings {
@@ -648,31 +650,31 @@ public class BundleImageProvider : LabibaBotFramwork.AnimationImageProvider {
 @_hasMissingDesignatedInitializers public class LabibaUserChatBubble {
   public var background: LabibaBotFramwork.LabibaBackground
   public var textColor: UIKit.UIColor
-  public var fontsize: CoreGraphics.CGFloat
-  public var alpha: CoreGraphics.CGFloat
-  public var cornerRadius: CoreGraphics.CGFloat
+  public var fontsize: CoreFoundation.CGFloat
+  public var alpha: CoreFoundation.CGFloat
+  public var cornerRadius: CoreFoundation.CGFloat
   public var cornerMaskPin: LabibaBotFramwork.LabibaCornerPin {
     get
     set
   }
   public var avatar: UIKit.UIImage?
-  public var timestamp: (fontSize: CoreGraphics.CGFloat, color: UIKit.UIColor, formate: Swift.String)
+  public var timestamp: (fontSize: CoreFoundation.CGFloat, color: UIKit.UIColor, formate: Swift.String)
   public var userName: Swift.String?
   @objc deinit
 }
 final public class SizeValueProvider : LabibaBotFramwork.AnyValueProvider {
-  public typealias SizeValueBlock = (CoreGraphics.CGFloat) -> CoreGraphics.CGSize
-  final public var size: CoreGraphics.CGSize {
+  public typealias SizeValueBlock = (CoreFoundation.CGFloat) -> CoreFoundation.CGSize
+  final public var size: CoreFoundation.CGSize {
     get
     set
   }
   public init(block: @escaping LabibaBotFramwork.SizeValueProvider.SizeValueBlock)
-  public init(_ size: CoreGraphics.CGSize)
+  public init(_ size: CoreFoundation.CGSize)
   final public var valueType: Any.Type {
     get
   }
-  final public func hasUpdate(frame: CoreGraphics.CGFloat) -> Swift.Bool
-  final public func value(frame: CoreGraphics.CGFloat) -> Any
+  final public func hasUpdate(frame: CoreFoundation.CGFloat) -> Swift.Bool
+  final public func value(frame: CoreFoundation.CGFloat) -> Any
   @objc deinit
 }
 public enum ColorFormatDenominator {
@@ -695,11 +697,11 @@ public struct Color {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class LottieView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func didMoveToWindow()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var contentMode: UIKit.UIView.ContentMode {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
+    @objc get
+    @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
@@ -747,7 +749,7 @@ extension AVFoundation.AVMetadataObject.ObjectType {
   public static var metadata: [AVFoundation.AVMetadataObject.ObjectType]
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class AnimationSubview : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
@@ -769,7 +771,7 @@ public protocol RadiusViewControllerDelegate : AnyObject {
 }
 @_hasMissingDesignatedInitializers public class LabibaVoiceAssistantView {
   public var background: LabibaBotFramwork.LabibaBackground
-  public var micButton: (icon: UIKit.UIImage, tintColor: UIKit.UIColor, backgroundColor: UIKit.UIColor, alpha: CoreGraphics.CGFloat)
+  public var micButton: (icon: UIKit.UIImage, tintColor: UIKit.UIColor, backgroundColor: UIKit.UIColor, alpha: CoreFoundation.CGFloat)
   public var keyboardButton: (icon: UIKit.UIImage, tintColor: UIKit.UIColor)
   public var attachmentButton: (icon: UIKit.UIImage, tintColor: UIKit.UIColor, isHidden: Swift.Bool)
   public var waveColor: UIKit.UIColor
@@ -812,10 +814,10 @@ extension LabibaBotFramwork.Animation {
   final public var duration: Foundation.TimeInterval {
     get
   }
-  final public var bounds: CoreGraphics.CGRect {
+  final public var bounds: CoreFoundation.CGRect {
     get
   }
-  final public var size: CoreGraphics.CGSize {
+  final public var size: CoreFoundation.CGSize {
     get
   }
 }
@@ -852,8 +854,8 @@ extension LabibaBotFramwork.Animation {
   }
   @_Concurrency.MainActor(unsafe) public var successBlock: ((Swift.String) -> ())?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var title: Swift.String? {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
+    @objc get
+    @objc set
   }
   @_Concurrency.MainActor(unsafe) public var closeImage: UIKit.UIImage? {
     get
@@ -893,18 +895,18 @@ public enum LabibaBackground {
   case image(image: UIKit.UIImage)
 }
 public class LabibaShadowModel {
-  public init(shadowColor: CoreGraphics.CGColor, shadowOffset: CoreGraphics.CGSize, shadowRadius: CoreGraphics.CGFloat, shadowOpacity: Swift.Float)
+  public init(shadowColor: CoreGraphics.CGColor, shadowOffset: CoreFoundation.CGSize, shadowRadius: CoreFoundation.CGFloat, shadowOpacity: Swift.Float)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class SwiftyWaveView : UIKit.UIView {
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var speed: CoreGraphics.CGFloat
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var amplitude: CoreGraphics.CGFloat
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var speed: CoreFoundation.CGFloat
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var amplitude: CoreFoundation.CGFloat
   @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var frequency: Swift.Int
   @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var colors: [UIKit.UIColor]
   @_Concurrency.MainActor(unsafe) public var animating: Swift.Bool {
     get
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
   @_Concurrency.MainActor(unsafe) public func start()
@@ -936,8 +938,8 @@ public protocol AnimationCacheProvider {
 @_hasMissingDesignatedInitializers public class LabibaMenuCardView {
   public var backgroundColor: UIKit.UIColor
   public var textColor: UIKit.UIColor
-  public var fontSize: CoreGraphics.CGFloat
-  public var alpha: CoreGraphics.CGFloat
+  public var fontSize: CoreFoundation.CGFloat
+  public var alpha: CoreFoundation.CGFloat
   public var collectionColor: UIKit.UIColor
   public var clearNonSelectedItems: Swift.Bool
   @objc deinit
@@ -960,22 +962,22 @@ public struct Vector3D {
   public init(x: Swift.Double, y: Swift.Double, z: Swift.Double)
 }
 final public class PointValueProvider : LabibaBotFramwork.AnyValueProvider {
-  public typealias PointValueBlock = (CoreGraphics.CGFloat) -> CoreGraphics.CGPoint
-  final public var point: CoreGraphics.CGPoint {
+  public typealias PointValueBlock = (CoreFoundation.CGFloat) -> CoreFoundation.CGPoint
+  final public var point: CoreFoundation.CGPoint {
     get
     set
   }
   public init(block: @escaping LabibaBotFramwork.PointValueProvider.PointValueBlock)
-  public init(_ point: CoreGraphics.CGPoint)
+  public init(_ point: CoreFoundation.CGPoint)
   final public var valueType: Any.Type {
     get
   }
-  final public func hasUpdate(frame: CoreGraphics.CGFloat) -> Swift.Bool
-  final public func value(frame: CoreGraphics.CGFloat) -> Any
+  final public func hasUpdate(frame: CoreFoundation.CGFloat) -> Swift.Bool
+  final public func value(frame: CoreFoundation.CGFloat) -> Any
   @objc deinit
 }
 final public class ActivityData {
-  public init(size: CoreGraphics.CGSize? = nil, message: Swift.String? = nil, messageFont: UIKit.UIFont? = nil, messageSpacing: CoreGraphics.CGFloat? = nil, type: LabibaBotFramwork.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil, displayTimeThreshold: Swift.Int? = nil, minimumDisplayTime: Swift.Int? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil)
+  public init(size: CoreFoundation.CGSize? = nil, message: Swift.String? = nil, messageFont: UIKit.UIFont? = nil, messageSpacing: CoreFoundation.CGFloat? = nil, type: LabibaBotFramwork.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreFoundation.CGFloat? = nil, displayTimeThreshold: Swift.Int? = nil, minimumDisplayTime: Swift.Int? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class NVActivityIndicatorPresenter {
@@ -1036,7 +1038,7 @@ public enum BotType : Swift.Int {
   public static func setHintsArray(hints: [Swift.String])
   public static func applyDefaultTheme()
   public static var hasBubbleTimestamp: Swift.Bool
-  public static func setMargin(left: CoreGraphics.CGFloat, right: CoreGraphics.CGFloat)
+  public static func setMargin(left: CoreFoundation.CGFloat, right: CoreFoundation.CGFloat)
   public static func setStatusBarColor(color: UIKit.UIColor)
   public static func setStatusBarStyle(style: UIKit.UIStatusBarStyle)
   public static var isMuteButtonHidden: Swift.Bool
@@ -1045,7 +1047,7 @@ public enum BotType : Swift.Int {
   public static var backButtonIcon: UIKit.UIImage?
   public static func setHeaderBackground(gradient: LabibaBotFramwork.Labiba.GradientSpecs)
   public static func setHeaderBackground(color: UIKit.UIColor)
-  public static func setCustomHeaderView(_ view: LabibaBotFramwork.LabibaChatHeaderView, withHeight height: CoreGraphics.CGFloat = 90)
+  public static func setCustomHeaderView(_ view: LabibaBotFramwork.LabibaChatHeaderView, withHeight height: CoreFoundation.CGFloat = 90)
   public static func setLogo(_ image: UIKit.UIImage?)
   public static let BackgroundView: LabibaBotFramwork.LabibaBackgroundView
   public static var timeoutIntervalForRequest: Swift.Double
@@ -1068,15 +1070,15 @@ public enum BotType : Swift.Int {
   public static func createVoiceExperienceConversation() -> UIKit.UIViewController
   public static func createWatchConnectivity() -> UIKit.UIViewController
   public static func createSplash<vc>(vc: vc.Type) -> UIKit.UIViewController where vc : LabibaBotFramwork.SplashVC
-  public static func showMovableAlias(corner: UIKit.UIRectCorner, margin: CoreGraphics.CGFloat = 15, animated: Swift.Bool)
-  public static func showMovableAlias(position: CoreGraphics.CGPoint, animated: Swift.Bool)
+  public static func showMovableAlias(corner: UIKit.UIRectCorner, margin: CoreFoundation.CGFloat = 15, animated: Swift.Bool)
+  public static func showMovableAlias(position: CoreFoundation.CGPoint, animated: Swift.Bool)
   @objc public class GradientSpecs : ObjectiveC.NSObject {
     public var colors: [UIKit.UIColor]
-    public var locations: [CoreGraphics.CGFloat]
-    public var start: CoreGraphics.CGPoint
-    public var end: CoreGraphics.CGPoint
+    public var locations: [CoreFoundation.CGFloat]
+    public var start: CoreFoundation.CGPoint
+    public var end: CoreFoundation.CGPoint
     public var viewBackgroundColor: UIKit.UIColor?
-    public init(colors: [UIKit.UIColor], locations: [CoreGraphics.CGFloat], start: CoreGraphics.CGPoint, end: CoreGraphics.CGPoint, viewBackgroundColor: UIKit.UIColor? = nil)
+    public init(colors: [UIKit.UIColor], locations: [CoreFoundation.CGFloat], start: CoreFoundation.CGPoint, end: CoreFoundation.CGPoint, viewBackgroundColor: UIKit.UIColor? = nil)
     @objc deinit
   }
   @objc override dynamic public init()
@@ -1095,8 +1097,8 @@ public class FilepathImageProvider : LabibaBotFramwork.AnimationImageProvider {
   public func imageForAsset(asset: LabibaBotFramwork.ImageAsset) -> CoreGraphics.CGImage?
   @objc deinit
 }
-public var ipadFactor: CoreGraphics.CGFloat
-public var ipadMargin: CoreGraphics.CGFloat {
+public var ipadFactor: CoreFoundation.CGFloat
+public var ipadMargin: CoreFoundation.CGFloat {
   get
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class SplashScreenWithImgeVC : LabibaBotFramwork.SplashVC {
@@ -1113,15 +1115,15 @@ extension LabibaBotFramwork.SplashScreenWithImgeVC : LabibaBotFramwork.LabibaDel
   @_Concurrency.MainActor(unsafe) final public func setPlayRange(fromProgress: LabibaBotFramwork.AnimationProgressTime, toProgress: LabibaBotFramwork.AnimationProgressTime, event: UIKit.UIControl.Event)
   @_Concurrency.MainActor(unsafe) final public func setPlayRange(fromMarker fromName: Swift.String, toMarker toName: Swift.String, event: UIKit.UIControl.Event)
   @_Concurrency.MainActor(unsafe) override public init(animation: LabibaBotFramwork.Animation)
-  @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override final public func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
   @_Concurrency.MainActor(unsafe) @objc override final public func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class BubbleView : UIKit.UIView {
-  @objc override dynamic public func accessibilityElementDidBecomeFocused()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func accessibilityElementDidBecomeFocused()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
@@ -1145,8 +1147,8 @@ public protocol HeaderViewControllerDelegate : AnyObject {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class HeaderVC : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var title: Swift.String? {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
+    @objc get
+    @objc set
   }
   @_Concurrency.MainActor(unsafe) public var closeImage: UIKit.UIImage {
     get
@@ -1177,11 +1179,11 @@ extension LabibaBotFramwork.NVActivityIndicatorViewable where Self : UIKit.UIVie
   public var isAnimating: Swift.Bool {
     get
   }
-  public func startAnimating(_ size: CoreGraphics.CGSize? = nil, message: Swift.String? = nil, messageFont: UIKit.UIFont? = nil, type: LabibaBotFramwork.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil, displayTimeThreshold: Swift.Int? = nil, minimumDisplayTime: Swift.Int? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil, fadeInAnimation: LabibaBotFramwork.FadeInAnimation? = NVActivityIndicatorView.DEFAULT_FADE_IN_ANIMATION)
+  public func startAnimating(_ size: CoreFoundation.CGSize? = nil, message: Swift.String? = nil, messageFont: UIKit.UIFont? = nil, type: LabibaBotFramwork.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreFoundation.CGFloat? = nil, displayTimeThreshold: Swift.Int? = nil, minimumDisplayTime: Swift.Int? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil, fadeInAnimation: LabibaBotFramwork.FadeInAnimation? = NVActivityIndicatorView.DEFAULT_FADE_IN_ANIMATION)
   public func stopAnimating(_ fadeOutAnimation: LabibaBotFramwork.FadeOutAnimation? = NVActivityIndicatorView.DEFAULT_FADE_OUT_ANIMATION)
 }
 @_hasMissingDesignatedInitializers public class LabibaMapView {
-  public var cornerRadius: CoreGraphics.CGFloat
+  public var cornerRadius: CoreFoundation.CGFloat
   public var defaultLocation: (latitude: Swift.Double, longitude: Swift.Double)
   @objc deinit
 }
@@ -1248,7 +1250,7 @@ public enum BlendMode : Swift.Int, Swift.Codable {
   }
 }
 final public class ColorValueProvider : LabibaBotFramwork.AnyValueProvider {
-  public typealias ColorValueBlock = (CoreGraphics.CGFloat) -> LabibaBotFramwork.Color
+  public typealias ColorValueBlock = (CoreFoundation.CGFloat) -> LabibaBotFramwork.Color
   final public var color: LabibaBotFramwork.Color {
     get
     set
@@ -1258,14 +1260,14 @@ final public class ColorValueProvider : LabibaBotFramwork.AnyValueProvider {
   final public var valueType: Any.Type {
     get
   }
-  final public func hasUpdate(frame: CoreGraphics.CGFloat) -> Swift.Bool
-  final public func value(frame: CoreGraphics.CGFloat) -> Any
+  final public func hasUpdate(frame: CoreFoundation.CGFloat) -> Swift.Bool
+  final public func value(frame: CoreFoundation.CGFloat) -> Any
   @objc deinit
 }
 extension UIKit.UIImage {
   public func changeColor(_ color: UIKit.UIColor) -> UIKit.UIImage
-  public class func generateQRCode(_ text: Swift.String, _ width: CoreGraphics.CGFloat, _ fillImage: UIKit.UIImage? = nil, _ color: UIKit.UIColor? = nil) -> UIKit.UIImage?
-  public class func generateCode128(_ text: Swift.String, _ size: CoreGraphics.CGSize, _ color: UIKit.UIColor? = nil) -> UIKit.UIImage?
+  public class func generateQRCode(_ text: Swift.String, _ width: CoreFoundation.CGFloat, _ fillImage: UIKit.UIImage? = nil, _ color: UIKit.UIColor? = nil) -> UIKit.UIImage?
+  public class func generateCode128(_ text: Swift.String, _ size: CoreFoundation.CGSize, _ color: UIKit.UIColor? = nil) -> UIKit.UIImage?
 }
 public class Asset : Swift.Codable {
   required public init(from decoder: Swift.Decoder) throws
@@ -1312,19 +1314,19 @@ public typealias FadeOutAnimation = (UIKit.UIView, @escaping () -> Swift.Void) -
   @_Concurrency.MainActor(unsafe) public static var DEFAULT_TYPE: LabibaBotFramwork.NVActivityIndicatorType
   @_Concurrency.MainActor(unsafe) public static var DEFAULT_COLOR: UIKit.UIColor
   @_Concurrency.MainActor(unsafe) public static var DEFAULT_TEXT_COLOR: UIKit.UIColor
-  @_Concurrency.MainActor(unsafe) public static var DEFAULT_PADDING: CoreGraphics.CGFloat
-  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_SIZE: CoreGraphics.CGSize
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_PADDING: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_SIZE: CoreFoundation.CGSize
   @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_DISPLAY_TIME_THRESHOLD: Swift.Int
   @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MINIMUM_DISPLAY_TIME: Swift.Int
   @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MESSAGE: Swift.String?
-  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MESSAGE_SPACING: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MESSAGE_SPACING: CoreFoundation.CGFloat
   @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MESSAGE_FONT: UIKit.UIFont
   @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_BACKGROUND_COLOR: UIKit.UIColor
   @_Concurrency.MainActor(unsafe) public static var DEFAULT_FADE_IN_ANIMATION: (_ view: UIKit.UIView) -> Swift.Void
   @_Concurrency.MainActor(unsafe) public static var DEFAULT_FADE_OUT_ANIMATION: (_ view: UIKit.UIView, _ complete: @escaping () -> Swift.Void) -> Swift.Void
   @_Concurrency.MainActor(unsafe) final public var type: LabibaBotFramwork.NVActivityIndicatorType
   @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var color: UIKit.UIColor
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var padding: CoreGraphics.CGFloat
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var padding: CoreFoundation.CGFloat
   @available(*, deprecated)
   @_Concurrency.MainActor(unsafe) final public var animating: Swift.Bool {
     get
@@ -1333,13 +1335,13 @@ public typealias FadeOutAnimation = (UIKit.UIView, @escaping () -> Swift.Void) -
     get
   }
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) public init(frame: CoreGraphics.CGRect, type: LabibaBotFramwork.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil)
-  @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreGraphics.CGSize {
-    @_Concurrency.MainActor(unsafe) @objc get
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreFoundation.CGRect, type: LabibaBotFramwork.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreFoundation.CGFloat? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
   }
-  @_Concurrency.MainActor(unsafe) @objc override final public var bounds: CoreGraphics.CGRect {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
+  @_Concurrency.MainActor(unsafe) @objc override final public var bounds: CoreFoundation.CGRect {
+    @objc get
+    @objc set
   }
   @_Concurrency.MainActor(unsafe) final public func startAnimating()
   @_Concurrency.MainActor(unsafe) final public func stopAnimating()
@@ -1394,7 +1396,7 @@ extension LabibaBotFramwork.LabibaConfig : LabibaBotFramwork.LabibaDelegate {
   @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var backButton: UIKit.UIButton!
   @_Concurrency.MainActor(unsafe) public var settingType: LabibaBotFramwork.LabibaChatHeaderView.SettingType
   @_Concurrency.MainActor(unsafe) public func closeChat()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
@@ -1421,14 +1423,14 @@ public protocol AnyValueProvider {
   @_Concurrency.MainActor(unsafe) final public func setIsOn(_ isOn: Swift.Bool, animated: Swift.Bool, shouldFireHaptics: Swift.Bool = true)
   @_Concurrency.MainActor(unsafe) final public func setProgressForState(fromProgress: LabibaBotFramwork.AnimationProgressTime, toProgress: LabibaBotFramwork.AnimationProgressTime, forOnState: Swift.Bool)
   @_Concurrency.MainActor(unsafe) override public init(animation: LabibaBotFramwork.Animation)
-  @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override final public func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
   @_Concurrency.MainActor(unsafe) override final public func animationDidSet()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class BotBubble : LabibaBotFramwork.BubbleView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
@@ -1436,7 +1438,7 @@ public protocol AnyValueProvider {
   @_Concurrency.MainActor(unsafe) override public static func create() -> LabibaBotFramwork.BankOfJoSplashVC
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @_Concurrency.MainActor(unsafe) @objc get
+    @objc get
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
@@ -1454,18 +1456,18 @@ public protocol AnyValueProvider {
   @objc deinit
 }
 final public class FloatValueProvider : LabibaBotFramwork.AnyValueProvider {
-  public typealias CGFloatValueBlock = (CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
-  final public var float: CoreGraphics.CGFloat {
+  public typealias CGFloatValueBlock = (CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
+  final public var float: CoreFoundation.CGFloat {
     get
     set
   }
   public init(block: @escaping LabibaBotFramwork.FloatValueProvider.CGFloatValueBlock)
-  public init(_ float: CoreGraphics.CGFloat)
+  public init(_ float: CoreFoundation.CGFloat)
   final public var valueType: Any.Type {
     get
   }
-  final public func hasUpdate(frame: CoreGraphics.CGFloat) -> Swift.Bool
-  final public func value(frame: CoreGraphics.CGFloat) -> Any
+  final public func hasUpdate(frame: CoreFoundation.CGFloat) -> Swift.Bool
+  final public func value(frame: CoreFoundation.CGFloat) -> Any
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class PrechatFormThemeModel {
@@ -1493,10 +1495,10 @@ extension LabibaBotFramwork.Vector3D : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
 }
 extension LabibaBotFramwork.Vector3D {
-  public var pointValue: CoreGraphics.CGPoint {
+  public var pointValue: CoreFoundation.CGPoint {
     get
   }
-  public var sizeValue: CoreGraphics.CGSize {
+  public var sizeValue: CoreFoundation.CGSize {
     get
   }
 }

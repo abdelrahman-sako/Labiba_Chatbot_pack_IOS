@@ -6,6 +6,6 @@ framework module LabibaBotFramwork {
 }
 
 module LabibaBotFramwork.Swift {
-    header "LabibaBotFramwork-Swift.h"
-    requires objc
+  header "LabibaBotFramwork-Swift.h"
+  requires objc
 }

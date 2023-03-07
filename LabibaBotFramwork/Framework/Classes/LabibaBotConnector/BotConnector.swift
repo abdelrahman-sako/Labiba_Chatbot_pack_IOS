@@ -200,6 +200,7 @@ class BotConnector: NSObject {
             "language" : model.googleVoice.language,
             "isSSML":"\(model.isSSML)"
         ]
+        print(params.description)
         LabibaRequest([String:String].self,url: path, method: .post, parameters: params, encoding: URLEncoding(), logTag: .voice) { (result) in
             switch result {
             case .success(let model):
