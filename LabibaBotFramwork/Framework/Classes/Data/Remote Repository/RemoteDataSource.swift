@@ -9,14 +9,17 @@
 import Foundation
 
 class RemoteDataSource:RemoteDataSourceProtocol{
+   
   
     func uploadData(model: UploadDataModel, handler: @escaping Handler<UploadDataResponseModel>) {
         let url = "\(Labiba._uploadUrl)?id=\(SharedPreference.shared.currentUserId)"
         let endPoint = EndPoint(url: url, httpMethod: .post)
         remoteContext.multipartRequest(endPoint: endPoint, params: nil, multipartName: "", uploadFiles: [model.data], mimeType: model.mimeType,fileName: model.fileName) { result in
             switch  result {
-            case .success(let body):
-                self.parser(data: body, model: UploadDataResponseModel.self, handler: handler)
+            case .success(let data):
+                self.parser(data: data, model: UploadDataResponseModel.self, handler: handler)
+                let dataString = String(data: data, encoding: .utf8) ?? ""
+                Logging.shared.logSuccessCase(url: url, tag: .upload, method: .post, parameter: "", response: dataString)
             case .failure(let error):
                 handler(.failure(error))
                 Logging.shared.log(url: url, tag: .upload, method: .post, parameter: "", response: error.response,exception: error.logDescription)
@@ -38,6 +41,8 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: LastBotResponseModel.self, handler: handler)
+                let dataString = String(data: data, encoding: .utf8) ?? ""
+                Logging.shared.logSuccessCase(url: url, tag: .lastMessage, method: .get, parameter: params.description, response: dataString)
             case .failure(let error):
                 handler(.failure(error))
                 Logging.shared.log(url: url, tag: .lastMessage, method: .get, parameter: params.description, response: error.response,exception: error.logDescription)
@@ -87,6 +92,8 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: [LabibaModel].self, handler: handler)
+                let dataString = String(data: data, encoding: .utf8) ?? ""
+                Logging.shared.logSuccessCase(url: url, tag: .messaging, method: .post, parameter: params.description, response: dataString)
             case .failure(let error):
                 handler(.failure(error))
                 Logging.shared.log(url: url, tag: .messaging, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
@@ -104,6 +111,8 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: [GetRatingFormQuestionsModel].self, handler: handler)
+                let dataString = String(data: data, encoding: .utf8) ?? ""
+                Logging.shared.logSuccessCase(url: url, tag: .ratingQuestions, method: .post, parameter: params.description, response: dataString)
             case .failure(let error):
                 handler(.failure(error))
                 Logging.shared.log(url: url, tag: .ratingQuestions, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
@@ -119,8 +128,9 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
             switch  result {
             case .success(let data):
-               
                 self.parser(data: data, model: SubmitRatingResponseModel.self, handler: handler)
+                let dataString = String(data: data, encoding: .utf8) ?? ""
+                Logging.shared.logSuccessCase(url: url, tag: .ratingSubmit, method: .post, parameter: params.description, response: dataString)
             case .failure(let error):
                 handler(.failure(error))
                 Logging.shared.log(url: url, tag: .ratingSubmit, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
@@ -140,6 +150,8 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: HelpPageModel.self, handler: handler)
+                let dataString = String(data: data, encoding: .utf8) ?? ""
+                Logging.shared.logSuccessCase(url: url, tag: .help, method: .post, parameter: params.description, response: dataString)
             case .failure(let error):
                 handler(.failure(error))
                 Logging.shared.log(url: url, tag: .help, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
@@ -159,6 +171,8 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: [PrechatFormModel].self, handler: handler)
+                let dataString = String(data: data, encoding: .utf8) ?? ""
+                Logging.shared.logSuccessCase(url: url, tag: .prechatForm, method: .post, parameter: params.description, response: dataString)
             case .failure(let error):
                 handler(.failure(error))
                 Logging.shared.log(url: url, tag: .prechatForm, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
@@ -181,6 +195,8 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: TextToSpeachResponseModel.self, handler: handler)
+                let dataString = String(data: data, encoding: .utf8) ?? ""
+                Logging.shared.logSuccessCase(url: url, tag: .voice, method: .post, parameter: params.description, response: dataString)
             case .failure(let error):
                 handler(.failure(error))
                 Logging.shared.log(url: url, tag: .voice, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
@@ -198,6 +214,19 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 print("log success")
             case .failure(let error):
                 print("log faild with error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func downloadFile(fileURL: URL, handler: @escaping Handler<URL>) {
+        remoteContext.downLoad(url: fileURL) { result in
+            switch result {
+            case .success(let url):
+                handler(.success(url))
+                Logging.shared.logSuccessCase(url:  fileURL.absoluteString, tag: .downloadVoiceClip, method: .get, parameter: "No Parameters", response: url.absoluteString)
+            case .failure(let error):
+                handler(.failure(error))
+                Logging.shared.log(url: fileURL.absoluteString, tag: .downloadVoiceClip, method: .get, parameter: "No Parameters", response: error.response,exception: error.logDescription)
             }
         }
     }

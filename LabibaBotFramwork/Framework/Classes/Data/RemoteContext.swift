@@ -55,6 +55,7 @@ final class RemoteContext {
     ///   - completion: A callback function invoked when the operation is completed.
     
     func withTokenRequest(endPoint: EndPointProtocol, parameters:Parameters?, completion: @escaping Handler<Data>) {
+        // this should be changed since we can make alamofire wait untill certain request response return
         checkToken { result in
             switch result {
             case .success(_):
@@ -122,7 +123,26 @@ final class RemoteContext {
 
     }
     
-    
+    func downLoad(url: URL,completion: @escaping Handler<URL>){
+        var downloadTask:URLSessionDownloadTask
+        downloadTask = sessionManager.session.downloadTask(with: url  , completionHandler: {(url, response, err) in
+            if let error = err {
+                let labibaError = LabibaError(error: error, statusCode: 0)
+                completion(.failure(labibaError))
+                return
+            }
+            
+            if let url = url {
+                completion(.success(url))
+                
+            }else{
+                let labibaError = LabibaError(code: .Unknown, statusCode: 0)
+                completion(.failure(labibaError))
+            }
+        })
+        
+        downloadTask.resume()
+    }
    
     func multipartRequest(endPoint: EndPointProtocol, params:Parameters?, multipartName: String?, uploadFiles: [Data]?,encoding:String.Encoding? = nil,mimeType:String,fileName:String, completion: @escaping Handler<Data>){
         let urlRequest = buildURlRequestArray(endPoint: endPoint, params: params)
@@ -175,14 +195,14 @@ final class RemoteContext {
     ///   - parameters: Http request parameter as [String: Any], optional.
     ///   - completion: A callback function
     private func sendRequest (reqestUrl: URLRequestConvertible, completion: @escaping Handler<Any> ) {
-        sessionManager.request(reqestUrl).validate().responseData { [weak self](response) in
-            self?.printResponse(reqestUrl: reqestUrl, responseData: response)
+        sessionManager.request(reqestUrl).validate().responseData { (response) in
+            self.printResponse(reqestUrl: reqestUrl, responseData: response)
             switch response.result {
             case .success:
                 completion(.success(response))
             case .failure(let responseError as NSError):
-                let error = self?.buildError(response: response, responseError: responseError)
-                completion(.failure(error!))
+                let error = self.buildError(response: response, responseError: responseError)
+                completion(.failure(error))
             }
         }//End sessionManager.request
         
@@ -261,30 +281,19 @@ final class RemoteContext {
         return try! encoding.encode(urlRequest, with: params)
     }
     
-    func buildError(response:  DataResponse<Data>, responseError: NSError?) -> LabibaError?{
+    func buildError(response:  DataResponse<Data>, responseError: NSError?) -> LabibaError{
+       
+        let defaultCodeError = LabibaError(code: .Unknown, statusCode:  response.response?.statusCode ?? 0)
+        let defaultError = LabibaError(statusCode: response.response?.statusCode ?? 0, headers: response.response?.allHeaderFields) ?? defaultCodeError
         guard let data = response.data else {
-//            var networkError:String = "Unknown Error"
-//            let errorComponents = response.error?.localizedDescription.split(separator: ":") ?? []
-//            if  errorComponents.count > 1 {
-//                networkError = String(errorComponents[1])
-//            }else if errorComponents.count > 0{
-//                networkError = ""
-//            }
-//            return ErrorModel(message: networkError)
-            return LabibaError(statusCode: response.response?.statusCode ?? 0, headers: response.response?.allHeaderFields)
+            return defaultError
         }
         let dataString = String(data: data, encoding: .utf8) ?? ""
-        return LabibaError(statusCode: response.response?.statusCode ?? 0, headers: response.response?.allHeaderFields,response: dataString)
-//        let decoder = JSONDecoder()
-//        do {
-//            let errorModel = try decoder.decode(ResponseModel<String>.self, from: data)
-//            let error = ErrorModel(message: errorModel.ErrorMessage ?? "unKnown Error")
-//            error.ErrorCode = String(response.response?.statusCode ?? 0)//errorModel.ErrorCode
-//            return error
-//        }catch{
-//            let error:ErrorModel = ErrorModel(message: error.localizedDescription)
-//            return error
-//        }
+        if let responseError = responseError {
+            return LabibaError(error: responseError, statusCode: response.response?.statusCode ?? 0,headers: response.response?.allHeaderFields,response: dataString)
+        }else{
+            return defaultError
+        }
     }
     
     private func printResponse(reqestUrl: URLRequestConvertible,responseData:DataResponse<Data>)  {

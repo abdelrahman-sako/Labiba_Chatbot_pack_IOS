@@ -20,6 +20,7 @@ protocol RemoteDataSourceProtocol {
     func getLastBotResponse(handler: @escaping Handler<LastBotResponseModel>)
     func uploadData(model: UploadDataModel,handler: @escaping Handler<UploadDataResponseModel>)
     func sendLog(model: LoggingModel, handler: @escaping Handler<Bool>)
+    func downloadFile(fileURL:URL, handler: @escaping Handler<URL>)
     
     
     func close()

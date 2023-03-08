@@ -51,22 +51,7 @@ class TextToSpeechManeger:NSObject{
                 self.playNextAudio()
             }
         }
-//        botConnector.textToSpeech(model: TTS_Model) { (result) in
-//            switch result{
-//            case .success(let url):
-//                if let url = URL(string: url){
-//                    self.ToDeletDialogs.first?.voiceUrl = url.absoluteString
-//                    self.ToDeletDialogs.removeFirst()
-//                    self.downloadFileFromURL(url: url)
-//                }
-//            case .failure(_):
-//                self.isPlaying = false
-//                if self.TTS_Models_Array.count > 0 {
-//                    self.TTS_Models_Array.remove(at: 0)
-//                }
-//                self.playNextAudio()
-//            }
-//        }
+
         
         //        let url  = URL(string: "https://translate.google.com/translate_tts?ie=UTF-8&tl=\( model.langCode)&client=tw-ob&q=\(model.message)".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)
         //self.downloadFileFromURL(url: url)
@@ -140,17 +125,28 @@ class TextToSpeechManeger:NSObject{
     }
     
     //var data:Data?
+//    func downloadFileFromURL(url:URL){
+//
+//        var downloadTask:URLSessionDownloadTask
+//        let session = BotConnector.shared.sessionManager?.session ?? URLSession.shared
+//        downloadTask = session.downloadTask(with: url  , completionHandler: {[weak self](url, response, err) in
+//            guard let url = url else{return}
+//          //  self?.data = try! Data(contentsOf: url)
+//            self?.play(url: url)
+//        })
+//
+//        downloadTask.resume()
+//    }
     func downloadFileFromURL(url:URL){
         
-        var downloadTask:URLSessionDownloadTask
-        let session = BotConnector.shared.sessionManager?.session ?? URLSession.shared
-        downloadTask = session.downloadTask(with: url  , completionHandler: {[weak self](url, response, err) in
-            guard let url = url else{return}
-          //  self?.data = try! Data(contentsOf: url)
-            self?.play(url: url)
-        })
-        
-        downloadTask.resume()
+        DataSource.shared.downloadFile(fileURL: url) { [weak self]result in
+            switch result {
+            case .success(let url):
+                self?.play(url: url)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     

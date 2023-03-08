@@ -13,15 +13,16 @@ class Logging {
         
     }
     enum LoggingTag:String {
-        case messaging = "MESSAGING"
-        case lastMessage = "GET_LAST_MESSAGE"
-        case upload  = "UPLOAD_FILES"
-        case voice  = "VOICE"
-        case ratingQuestions = "GET_RATING_QUESTIONS"
-        case ratingSubmit = "SUBMIT_RATING"
-        case help = "HELP"
-        case prechatForm = "PRECHAT_FORM"
-        case upadateToken = "UPDATE_TOKEN"
+        case messaging         = "MESSAGING"
+        case lastMessage       = "GET_LAST_MESSAGE"
+        case upload            = "UPLOAD_FILES"
+        case voice             = "VOICE"
+        case downloadVoiceClip = "DOWNLOAD_VOICE_CLIP"
+        case ratingQuestions   = "GET_RATING_QUESTIONS"
+        case ratingSubmit      = "SUBMIT_RATING"
+        case help              = "HELP"
+        case prechatForm       = "PRECHAT_FORM"
+        case upadateToken      = "UPDATE_TOKEN"
         
         var exception:String {
             return rawValue + "_ERROR"
@@ -30,6 +31,14 @@ class Logging {
         var normal:String {
             return rawValue
         }
+    }
+    
+    // Log Success Case
+    func logSuccessCase(url:String,headers:String? = nil,tag:LoggingTag,method:HTTPMethod,parameter:String ,response:String)  {
+        guard Labiba.Logging.isSuccessLoggingEnabled else {
+            return
+        }
+        log(url: url, tag: tag, method: method, parameter: parameter, response: response,exception: "Success")
     }
     
     func log(url:String,headers:String? = nil,tag:LoggingTag,method:HTTPMethod,parameter:String ,response:String,exception:String? = nil) {
@@ -68,7 +77,7 @@ RecepientID: \(Labiba._pageId)
                                  UserDetails: userDetails,
                                  Request: requestDetails,
                                  Response: filteredRespose,
-                                 Exception: exception ?? "Success",
+                                 Exception: exception ?? "",
                                  SDKVersion: Labiba.version)
         
         let data = try! JSONEncoder().encode(model)
