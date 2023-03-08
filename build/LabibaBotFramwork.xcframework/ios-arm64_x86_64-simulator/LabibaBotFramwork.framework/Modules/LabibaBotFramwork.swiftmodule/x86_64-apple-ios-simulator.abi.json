@@ -67389,7 +67389,7 @@
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/LabibaRestfulBotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 23978,
+      "offset": 23982,
       "length": 1151,
       "value": "\"[\n  {\n    \"message\": {\n      \"metadata\": null,\n      \"attachment\": null,\n      \"quick_replies\": null,\n      \"text\": \"Hello there, it's BOJI.<br><br>I am going to be your virtual assistant from the Bank of Jordan today<br>I can help you with any the financial services for your account, cards or Bills, also you can check the nearest branches and ATMs\"\n    },\n    \"recipient\": {\n      \"id\": \"387F2299-983B-4007-A2DC-6F8AAEFFD9F4\"\n    },\n    \"messaging_type\": \"RESPONSE\"\n  },\n  {\n    \"message\": {\n      \"metadata\": null,\n      \"attachment\": null,\n      \"quick_replies\": [\n        {\n          \"payload\": \"\",\n          \"title\": \"Switch to Arabic\",\n          \"image_url\": null,\n          \"content_type\": \"text\"\n        },\n        {\n          \"payload\": \"\",\n          \"title\": \"Continue\",\n          \"image_url\": null,\n          \"content_type\": \"text\"\n        }\n      ],\n      \"text\": \"If you want to speak in Arabic you can say Arabic or choose from below, if you'd like to continue in English, you can say or choose Continue\"\n    },\n    \"recipient\": {\n      \"id\": \"387F2299-983B-4007-A2DC-6F8AAEFFD9F4\"\n    },\n    \"messaging_type\": \"RESPONSE\"\n  }\n]\""
     },
@@ -74879,126 +74879,126 @@
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16235,
+      "offset": 16269,
       "length": 11,
       "value": "\"MESSAGING\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16274,
+      "offset": 16308,
       "length": 18,
       "value": "\"GET_LAST_MESSAGE\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16316,
+      "offset": 16350,
       "length": 14,
       "value": "\"UPLOAD_FILES\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16353,
+      "offset": 16387,
       "length": 7,
       "value": "\"VOICE\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16392,
+      "offset": 16426,
       "length": 22,
       "value": "\"GET_RATING_QUESTIONS\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16443,
+      "offset": 16477,
       "length": 15,
       "value": "\"SUBMIT_RATING\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16479,
+      "offset": 16513,
       "length": 6,
       "value": "\"HELP\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16513,
+      "offset": 16547,
       "length": 14,
       "value": "\"PRECHAT_FORM\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16556,
+      "offset": 16590,
       "length": 14,
       "value": "\"UPDATE_TOKEN\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16235,
+      "offset": 16269,
       "length": 11,
       "value": "\"MESSAGING\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16274,
+      "offset": 16308,
       "length": 18,
       "value": "\"GET_LAST_MESSAGE\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16316,
+      "offset": 16350,
       "length": 14,
       "value": "\"UPLOAD_FILES\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16353,
+      "offset": 16387,
       "length": 7,
       "value": "\"VOICE\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16392,
+      "offset": 16426,
       "length": 22,
       "value": "\"GET_RATING_QUESTIONS\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16443,
+      "offset": 16477,
       "length": 15,
       "value": "\"SUBMIT_RATING\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16479,
+      "offset": 16513,
       "length": 6,
       "value": "\"HELP\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16513,
+      "offset": 16547,
       "length": 14,
       "value": "\"PRECHAT_FORM\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16556,
+      "offset": 16590,
       "length": 14,
       "value": "\"UPDATE_TOKEN\""
     },
