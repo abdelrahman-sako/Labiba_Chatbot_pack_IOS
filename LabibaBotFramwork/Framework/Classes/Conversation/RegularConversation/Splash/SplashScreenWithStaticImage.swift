@@ -72,14 +72,15 @@ public class SplashScreenWithStaticImage: SplashVC {
     }
     
     func addObservers() {
-        NotificationCenter.default.addObserver(forName: Constants.NotificationNames.languageChanged, object: nil, queue: OperationQueue.main) { [weak self](notification) in
-            switch SharedPreference.shared.botLangCode {
-            case .ar:
-                Labiba.setBotType(botType: .voiceAndKeyboard)
-            default:
-                Labiba.setBotType(botType: .keyboardWithTTS)
-            }
-        }
+//        NotificationCenter.default.addObserver(forName: Constants.NotificationNames.languageChanged, object: nil, queue: OperationQueue.main) { [weak self](notification) in
+//            switch SharedPreference.shared.botLangCode {
+//            case .ar:
+//                Labiba.setBotType(botType: .voiceAndKeyboard)
+//            default:
+//                //.setBotType(botType: .keyboardWithTTS)
+//                Labiba.setBotType(botType: .voiceAndKeyboard)
+//            }
+//        }
     }
     
     
@@ -102,16 +103,17 @@ public class SplashScreenWithStaticImage: SplashVC {
     func startConversation(lang:LabibaLanguage)  {
         Labiba.initialize(RecipientIdAR: "0de26564-1d53-4c87-87b1-60fd6235e1c3",RecipientIdEng: "283c3d0e-550f-4221-87f7-27adaf401ad6" )
         Labiba.setBotLanguage(LangCode: lang)
-        switch SharedPreference.shared.botLangCode  {
-        case .ar:
-            Labiba.setBotType(botType: .voiceAndKeyboard)
-        default:
-            Labiba.setBotType(botType: .keyboardWithTTS)
-        }
+//        switch SharedPreference.shared.botLangCode  {
+//        case .ar:
+//            Labiba.setBotType(botType: .voiceAndKeyboard)
+//        default:
+//            Labiba.setBotType(botType: .keyboardWithTTS)
+//        }
         (Labiba._customHeaderView as? GreetingHeaderView)?.resetUIs() // to handle start language issue in header
         SharedPreference.shared.setUserIDs(ar: "0de26564-1d53-4c87-87b1-60fd6235e1c3", en: "283c3d0e-550f-4221-87f7-27adaf401ad6" ,de:  "bb74141b-099e-497f-adde-990b7836a829", ru:  "0f22a778-09e8-4ae6-8218-6357b1c67157" ,zh:  "453bf578-5226-4cb0-b012-c4bddc0c143a")
         //             LabibaThemes.setSharja_Theme()
-        self.navigationController?.pushViewController(ConversationViewController.create(), animated: true )
+        Labiba.startConversation(onView: self)
+        //self.navigationController?.pushViewController(ConversationViewController.create(), animated: true )
     }
     
     

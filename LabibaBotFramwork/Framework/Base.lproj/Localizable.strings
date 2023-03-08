@@ -181,12 +181,12 @@
 
 "authDenied" = "Authorization denied, please make sure you download the latest version of the app.";
 "noInternetCon" = "Please check your internet connection and try again.";
-"emptyResponseErr" = "Sorry, an unexpected error occurred. Error code 101.";
-"timeoutErr" = "Sorry, an unexpected error occurred. Error code 102.";
-"sslErr" = "Sorry, an unexpected error occurred. Error code 103.";
-"mappingErr" = "Sorry, an unexpected error occurred. Error code 104.";
+"emptyResponseErr" = "Unable to retrieve the data, please try again later.";//"Sorry, an unexpected error occurred. Error code 101.";
+"timeoutErr" = "Connection timed out, please try again later.";//"Sorry, an unexpected error occurred. Error code 102.";
+"sslErr" = "Sorry, an unexpected error occurred.";//"Sorry, an unexpected error occurred. Error code 103.";
+"mappingErr" = "Sorry, a connectivity error occurred. Please try again later.";//"Sorry, an unexpected error occurred. Error code 104.";
 "checkConnectionErr" = "Please check your internet connection and try again.";
-"unknownErr" = "Please try again, an unexpected error occurred. Error code 108.";
+"unknownErr" = "Please try again, an unexpected error occurred.";//"Please try again, an unexpected error occurred. Error code 108.";
 "urlErr" = "Please try again, an unexpected error occurred. Error code 109.";
 "serverNotReachableErr" = "Could not establish a connection. Error code 110.";
 "tooManyRedirects" = "Please try again, an unexpected error occurred. Error code 111.";

@@ -39,6 +39,7 @@ public class LabibaConfig {
         //MARK: Theme
         Labiba.setDelegate(delegate: self)
         // poduction server
+        
 //        Labiba.set_basePath("https://boji.bankofjordan.com.jo")
 //        Labiba.set_messagingServicePath("/api/MobileAPI/MessageHandler")
 //        Labiba.set_voiceBasePath("https://boji.bankofjordan.com.jo")
@@ -65,7 +66,7 @@ public class LabibaConfig {
         
         
         
-        
+        Labiba.timeoutIntervalForRequest = 400
         LabibaThemes.isThemeApplied = true
         Labiba.setBotType(botType: .visualizer)
 

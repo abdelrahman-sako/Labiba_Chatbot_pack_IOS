@@ -47,7 +47,8 @@ class CustomTableViewCell:UITableViewCell, UICollectionViewDataSource, UICollect
         //Comment if you set Datasource and delegate in .xib
         self.myCollectionView.dataSource = self
         self.myCollectionView.delegate = self
-        
+        myCollectionView.clipsToBounds = false
+        self.clipsToBounds = false
         //register the xib for collection view cell
         let cellNib = UINib(nibName: "CustomCollectionViewCell", bundle: Constants.mainBundle)
          let cellNibNoImage = UINib(nibName: "CustomCollectionViewCellNoImage", bundle: Constants.mainBundle)
@@ -120,7 +121,7 @@ class CustomTableViewCell:UITableViewCell, UICollectionViewDataSource, UICollect
             let TapPress = UITapGestureRecognizer(target: self, action: #selector(CustomTableViewCell.handleTap))
             cell.addGestureRecognizer(TapPress)
             TapPress.cancelsTouchesInView = true
-            cell.layer.shadowColor = UIColor.black.cgColor
+            cell.layer.shadowColor = UIColor.black.withAlphaComponent(0.3).cgColor
             cell.layer.shadowOffset = CGSize(width: 0, height: 1)
             cell.layer.shadowRadius = 1.5
             cell.layer.shadowOpacity = 0.15
@@ -147,7 +148,7 @@ class CustomTableViewCell:UITableViewCell, UICollectionViewDataSource, UICollect
             cell.addGestureRecognizer(TapPress)
             TapPress.cancelsTouchesInView = true
             
-            cell.layer.shadowColor = UIColor.black.cgColor
+            cell.layer.shadowColor = UIColor.black.withAlphaComponent(0.3).cgColor
             cell.layer.shadowOffset = CGSize(width: 0, height: 1)
             cell.layer.shadowRadius = 1.5
             cell.layer.shadowOpacity = 0.15

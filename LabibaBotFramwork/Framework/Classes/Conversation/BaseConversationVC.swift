@@ -218,7 +218,10 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             }else if  button.type  == .createPost {
-                delegate?.createPost?(onView: self.view, ["post":payload,"senderId":Labiba._senderId], completionHandler: { (status, data) in
+                let postDic = ["post":payload ,
+                               "senderId":Labiba._senderId ?? ""
+                               ,"recipientId":Labiba._pageId ]
+                delegate?.createPost?(onView: self.view, postDic, completionHandler: { (status, data) in
                     if status {
                         var object:[String:Any] = ["status":"success"] // "status":"success" added for BOJ
                         if let data = data {
