@@ -405,7 +405,8 @@ SWIFT_CLASS("_TtC17LabibaBotFramwork8CameraVC")
 
 SWIFT_CLASS("_TtC17LabibaBotFramwork32CircularGradientLoadingIndicator")
 @interface CircularGradientLoadingIndicator : UIView
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)drawRect:(CGRect)rect;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;

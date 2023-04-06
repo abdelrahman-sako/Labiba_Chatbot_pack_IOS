@@ -22,6 +22,7 @@ class TextToSpeechManeger:NSObject{
     private var voiceRate:Float = 1.3
     private var volume:Float = 1.0
     private let audioSession =  AVAudioSession.sharedInstance()
+    private var downloadTask:AnyCancelable?
     var delegate:TextToSpeechDelegate?
     static let Shared = TextToSpeechManeger()
     var botConnector:BotConnector = BotConnector.shared
@@ -139,7 +140,7 @@ class TextToSpeechManeger:NSObject{
 //    }
     func downloadFileFromURL(url:URL){
         
-        DataSource.shared.downloadFile(fileURL: url) { [weak self]result in
+        downloadTask =  DataSource.shared.downloadFile(fileURL: url) { [weak self]result in
             switch result {
             case .success(let url):
                 self?.play(url: url)
@@ -251,6 +252,7 @@ class TextToSpeechManeger:NSObject{
     
     
     func stop() {
+        downloadTask?.cancelRequest()
         setSessionCategoryForSpeechToText()
         player?.pause()
         player = nil

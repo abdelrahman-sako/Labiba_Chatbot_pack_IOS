@@ -231,10 +231,7 @@ public enum LabibaLanguage : Swift.String, Swift.CaseIterable {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) @objc dynamic public init()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) public func show()
-  @_Concurrency.MainActor(unsafe) public func dismiss()
   @objc deinit
 }
 public enum CornerLocation {
@@ -898,6 +895,15 @@ public class LabibaShadowModel {
   public init(shadowColor: CoreGraphics.CGColor, shadowOffset: CoreFoundation.CGSize, shadowRadius: CoreFoundation.CGFloat, shadowOpacity: Swift.Float)
   @objc deinit
 }
+public enum ApiEndPoints : Swift.String {
+  case getRatingQuestions
+  case submitRating
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class SwiftyWaveView : UIKit.UIView {
   @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var speed: CoreFoundation.CGFloat
   @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var amplitude: CoreFoundation.CGFloat
@@ -1007,6 +1013,7 @@ public enum BotType : Swift.Int {
   }
 }
 @_inheritsConvenienceInitializers @objc public class Labiba : ObjectiveC.NSObject {
+  public static var _BubbleChatImage: UIKit.UIImage?
   public static var liveChatModel: LabibaBotFramwork.LiveChatModel?
   public static let labibaThemes: LabibaBotFramwork.LabibaThemes
   public static var _WithRatingVC: Swift.Bool
@@ -1070,8 +1077,8 @@ public enum BotType : Swift.Int {
   public static func createVoiceExperienceConversation() -> UIKit.UIViewController
   public static func createWatchConnectivity() -> UIKit.UIViewController
   public static func createSplash<vc>(vc: vc.Type) -> UIKit.UIViewController where vc : LabibaBotFramwork.SplashVC
-  public static func showMovableAlias(corner: UIKit.UIRectCorner, margin: CoreFoundation.CGFloat = 15, animated: Swift.Bool)
-  public static func showMovableAlias(position: CoreFoundation.CGPoint, animated: Swift.Bool)
+  public static func showMovableAlias(inViewController vc: UIKit.UIViewController, corner: UIKit.UIRectCorner, margin: CoreFoundation.CGFloat = 15, animated: Swift.Bool)
+  public static func showMovableAlias(inViewController vc: UIKit.UIViewController, position: CoreFoundation.CGPoint, animated: Swift.Bool)
   @objc public class GradientSpecs : ObjectiveC.NSObject {
     public var colors: [UIKit.UIColor]
     public var locations: [CoreFoundation.CGFloat]
@@ -1552,6 +1559,9 @@ extension LabibaBotFramwork.LabibaCornerPin : Swift.Equatable {}
 extension LabibaBotFramwork.LabibaCornerPin : Swift.Hashable {}
 extension LabibaBotFramwork.LabibaFontWeight : Swift.Equatable {}
 extension LabibaBotFramwork.LabibaFontWeight : Swift.Hashable {}
+extension LabibaBotFramwork.ApiEndPoints : Swift.Equatable {}
+extension LabibaBotFramwork.ApiEndPoints : Swift.Hashable {}
+extension LabibaBotFramwork.ApiEndPoints : Swift.RawRepresentable {}
 extension LabibaBotFramwork.TorchMode : Swift.Equatable {}
 extension LabibaBotFramwork.TorchMode : Swift.Hashable {}
 extension LabibaBotFramwork.BotType : Swift.Equatable {}

@@ -91,7 +91,7 @@ class MovableAlias: UIView
 
     var isShown: Bool = false
 
-    func show(position: CGPoint, animated: Bool) -> Void
+    func show(inViewController vc:UIViewController,position: CGPoint, animated: Bool) -> Void
     {
 
         if isShown
@@ -100,7 +100,8 @@ class MovableAlias: UIView
         }
 
         self.imageView.image = Labiba._BubbleChatImage
-        getTheMostTopViewController().view.addSubview(self)
+       // getTheMostTopViewController().view.addSubview(self)
+        vc.view.addSubview(self)
         convVC = ConversationViewController.create()
         var af = self.frame
         af.origin = position

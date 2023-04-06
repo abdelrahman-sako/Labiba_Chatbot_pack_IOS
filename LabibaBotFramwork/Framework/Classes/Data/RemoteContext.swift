@@ -12,6 +12,21 @@ enum ContentType: String{
     case json = "application/json"
     case urlEncoded = "application/x-www-form-urlencoded"
 }
+protocol AnyCancelable{
+    func cancelRequest()
+}
+extension DataRequest:AnyCancelable {
+    func cancelRequest() {
+        super.cancel()
+    }
+    
+   
+}
+extension URLSessionDownloadTask:AnyCancelable {
+    func cancelRequest() {
+        super.cancel()
+    }
+}
 
 final class RemoteContext {
     
@@ -123,7 +138,7 @@ final class RemoteContext {
 
     }
     
-    func downLoad(url: URL,completion: @escaping Handler<URL>){
+    func downLoad(url: URL,completion: @escaping Handler<URL>)->AnyCancelable{
         var downloadTask:URLSessionDownloadTask
         downloadTask = sessionManager.session.downloadTask(with: url  , completionHandler: {(url, response, err) in
             if let error = err {
@@ -142,6 +157,7 @@ final class RemoteContext {
         })
         
         downloadTask.resume()
+        return downloadTask
     }
    
     func multipartRequest(endPoint: EndPointProtocol, params:Parameters?, multipartName: String?, uploadFiles: [Data]?,encoding:String.Encoding? = nil,mimeType:String,fileName:String, completion: @escaping Handler<Data>){

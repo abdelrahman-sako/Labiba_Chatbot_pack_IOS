@@ -78,8 +78,8 @@ final class DataSource: DataSourceProtocol{
         remoteDataSource.sendLog(model: model, handler: handler)
     }
     
-    func downloadFile(fileURL: URL, handler: @escaping Handler<URL>) {
-        remoteDataSource.downloadFile(fileURL: fileURL, handler: handler)
+    func downloadFile(fileURL: URL, handler: @escaping Handler<URL>) -> AnyCancelable {
+        return remoteDataSource.downloadFile(fileURL: fileURL, handler: handler)
     }
     
   

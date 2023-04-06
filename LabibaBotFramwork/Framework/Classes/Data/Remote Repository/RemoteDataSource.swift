@@ -218,8 +218,8 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         }
     }
     
-    func downloadFile(fileURL: URL, handler: @escaping Handler<URL>) {
-        remoteContext.downLoad(url: fileURL) { result in
+    func downloadFile(fileURL: URL, handler: @escaping Handler<URL>)-> AnyCancelable {
+       return remoteContext.downLoad(url: fileURL) { result in
             switch result {
             case .success(let url):
                 handler(.success(url))

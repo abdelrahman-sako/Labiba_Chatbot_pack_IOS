@@ -1631,6 +1631,7 @@
 		529C67FA26F3189300FB8591 /* PrechatForm */ = {
 			isa = PBXGroup;
 			children = (
+				B42954EA22DDDBD2002DE3E9 /* GradientView.swift */,
 				529C680D26F346AD00FB8591 /* Cells */,
 				529C67FB26F318D900FB8591 /* PrechatFormVC.swift */,
 				52F6ECB626F733B700B38518 /* JsonExample1.json */,
@@ -2025,7 +2026,6 @@
 				B42954EB22DDDBD2002DE3E9 /* LoadingIndicator.swift */,
 				B42954E822DDDBD2002DE3E9 /* AudioView.swift */,
 				B42954E922DDDBD2002DE3E9 /* ResponseRenderer.swift */,
-				B42954EA22DDDBD2002DE3E9 /* GradientView.swift */,
 				37B5326523CC562F001D2BDF /* LabibaBotConnector */,
 				B42954EC22DDDBD2002DE3E9 /* Conversation */,
 				521448A225864DFC0099BF38 /* Rating */,

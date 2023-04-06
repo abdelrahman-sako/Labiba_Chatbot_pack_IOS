@@ -106,7 +106,9 @@ public class SplashScreenVC: SplashVC {
     }
     
     @IBAction func showBubble(_ sender: Any) {
-          Labiba.showMovableAlias(corner: .bottomRight, animated: true)
+        if let vc =  Labiba.parentVC {
+            Labiba.showMovableAlias(inViewController: vc, corner: .bottomRight, animated: true)
+        }
     }
     
 
