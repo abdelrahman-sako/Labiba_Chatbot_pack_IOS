@@ -17,6 +17,8 @@ public class LabibaBotChatBubble {
     public var textAlignment:NSTextAlignment?
     public var alpha:CGFloat = 1
     public var cornerRadius:CGFloat = 10
+    public var timeImage:UIImage? 
+    
     public var cornerMaskPin:LabibaCornerPin = .none{
         didSet{
             switch cornerMaskPin {

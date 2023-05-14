@@ -150,7 +150,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                  self.headerHeightConst.constant = Labiba._customHeaderViewHeight ?? 90
             }
            
-            
+            tableView.registerCell(type: VMenuTableCell.self,bundle: self.nibBundle)
+            self.tableView.rowHeight = UITableView.automaticDimension;
+            self.tableView.estimatedRowHeight = 44.0; // set to whatever your "average" cel
+//            self.tableView.allowsSelection = false
             
         }
         else if let grad = Labiba._headerBackgroundGradient
@@ -213,6 +216,11 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
            super.viewDidDisappear(animated)
          print("ConversationViewController viewDidDisappear")
 
+           if Labiba.enableCaching{
+               LocalCache.shared.displayedDialogs = displayedDialogs
+           }
+
+           
 //        voiceTypeDialog?.speechToTextManager.removerObservers()
         //voiceTypeDialog.removeFromSuperview()
 
@@ -477,6 +485,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
      @IBAction func dismissConversation(_ sender: AnyObject) {
          
          self.isClosed = true
+         LocalCache.shared.displayedDialogs = displayedDialogs
          self.botConnector.close()
          self.shutDownBotChat()
      }
@@ -521,7 +530,14 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     func startConversation() -> Void
     {
-        self.botConnector.startConversation()
+        if !Labiba.enableCaching || ((Labiba.enableCaching && LocalCache.shared.displayedDialogs.isEmpty) || SharedPreference.shared.currentUserId != LocalCache.shared.conversationId) {
+            self.botConnector.startConversation()
+        } else {
+            displayedDialogs = LocalCache.shared.displayedDialogs
+            stepsToBeDisplayed = LocalCache.shared.stepsToBeDisplayed
+            scrollToBottom()
+        }
+       
     }
     
     override func displayDialog(_ dialog:ConversationDialog ) -> Void
@@ -833,6 +849,8 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         }
         
         var isMenu = false
+        var isVMenu = false
+        
         if indexPath.row <  self.displayedDialogs.count
         {
             let display = self.displayedDialogs[indexPath.row]
@@ -841,6 +859,10 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
                 if(cards.presentation == .menu)
                 {
                     isMenu = true
+                }
+                if(cards.presentation == .vmnue)
+                {
+                    isVMenu = true
                 }
             }
         }
@@ -852,6 +874,10 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
             let minimumLineSpacing = (2 + 15*ipadFactor)
             let CellTableHeight = (ceil(itemsCount / 3.0) * ((UIScreen.main.bounds.width / 3.0) - 20 )) + CGFloat(ceil((itemsCount / 3.0)) * (15 + minimumLineSpacing)) - (ipadMargin)
             return CellTableHeight
+        }else if(isVMenu){
+            let count = displayedDialogs[indexPath.row].dialog.cards?.items.count ?? 0
+            return  CGFloat(count) * Labiba.vMenuTableTheme.estimatedRowHeight
+
         }
         else
         {
@@ -900,6 +926,13 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
                     //
                     
                     return cell!
+                }else if cards.presentation == .vmnue {
+                    var cell = tableView.dequeueCell(withType: VMenuTableCell.self, for: indexPath)!
+                    
+                    
+                    cell.setDate(selectedDialogIndex: indexPath.row, model: display)
+                    cell.delegate = self
+                    return cell
                 }
                 else
                 {

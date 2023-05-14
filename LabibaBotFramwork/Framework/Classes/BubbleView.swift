@@ -20,7 +20,10 @@ enum BubbleSource
     
     var considersAvatar:Bool = true
     
-    @IBOutlet weak var textLabel: KGCopyableLabel!
+      @IBOutlet weak var bubbleHeightConstraint: NSLayoutConstraint!
+      @IBOutlet weak var timeStackview: UIStackView!
+      @IBOutlet weak var timeImageView: UIImageView!
+      @IBOutlet weak var textLabel: KGCopyableLabel!
     @IBOutlet weak var bubbleContainer: UIView!
     @IBOutlet weak var timestampLbl: UILabel!
     public override  func accessibilityElementDidBecomeFocused() {
@@ -51,18 +54,32 @@ enum BubbleSource
                         dateFormatter.locale = Locale(identifier: "ar")
                         timestampLbl.text = "\(source == .incoming ? botName : userName) - \(dateFormatter.string(from: timestamp))"
                         timestampLbl.textAlignment = source == .incoming  ? .right : .left
+                        timeStackview?.semanticContentAttribute = source == .incoming  ? .forceRightToLeft : .forceLeftToRight
                     }else {
                         dateFormatter.locale = Locale(identifier: "en")
                         timestampLbl.text = "\(source == .incoming ? botName : userName) - \(dateFormatter.string(from: timestamp))"
                         timestampLbl.textAlignment = source == .incoming  ? .left : .right
+                        timeStackview?.semanticContentAttribute = source == .incoming  ? .forceLeftToRight : .forceRightToLeft
                     }
                     
                     timestampLbl.isHidden  = false
+//                    if botName == "bot".localForChosnLangCodeBB {
+                        timeImageView?.isHidden = false
+//                    }
+                    timeStackview?.isHidden = false
+                    
                 }else {
                     timestampLbl.isHidden  = true
+                    timeImageView?.isHidden = true
+                    timeStackview?.isHidden = true
+
                 }
             }else{
                 timestampLbl.isHidden  = true
+                timeImageView?.isHidden = true
+                timeStackview?.isHidden = true
+
+               
             }
             if let frame = currentDialog?.frame {
                 self.frame = frame

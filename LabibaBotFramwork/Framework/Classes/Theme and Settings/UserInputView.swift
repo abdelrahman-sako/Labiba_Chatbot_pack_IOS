@@ -14,6 +14,6 @@ public class LabibaUserInputView{
     public var tintColor:UIColor = UIColor.black
     public var textColor:UIColor = UIColor.black
     public var hintColor:UIColor = UIColor(white: 0, alpha: 0.3)
-    public var sendButton:(tintColor:UIColor,backgroundColor:UIColor) = (#colorLiteral(red: 0.03137254902, green: 0.3725490196, blue: 1, alpha: 1),.white)
+    public var sendButton:(tintColor:UIColor,backgroundColor:UIColor,image:UIImage?) = (#colorLiteral(red: 0.03137254902, green: 0.3725490196, blue: 1, alpha: 1),.white,nil)
     public var attachmentButton:(icon:UIImage,tintColor:UIColor,isHidden:Bool) = (Image(named: "ic_more_vert_black_24pt")!,UIColor.black,false)
 }

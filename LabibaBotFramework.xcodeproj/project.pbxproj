@@ -392,6 +392,16 @@
 		52FC5CF624D0262F00C7B7CF /* LabibaVoiceExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */; };
 		52FC5CF824D02EA500C7B7CF /* VoiceExperienceBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF724D02EA500C7B7CF /* VoiceExperienceBaseView.swift */; };
 		52FFB72425D271D300CFB629 /* HelpPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFB72325D271D300CFB629 /* HelpPageModel.swift */; };
+		7545D1732A08FB2800A09694 /* LocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7545D1722A08FB2800A09694 /* LocalCache.swift */; };
+		7545D1762A0B88AE00A09694 /* ContentSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7545D1752A0B88AE00A09694 /* ContentSizedTableView.swift */; };
+		7545D18E2A0BA09300A09694 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7545D18C2A0BA09300A09694 /* UICollectionViewExtension.swift */; };
+		7545D18F2A0BA09300A09694 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7545D18D2A0BA09300A09694 /* UITableViewExtension.swift */; };
+		757CFBEE2A0BD15F00E568CD /* VMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757CFBEA2A0BD15F00E568CD /* VMenuCell.xib */; };
+		757CFBEF2A0BD15F00E568CD /* VMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CFBEB2A0BD15F00E568CD /* VMenuCell.swift */; };
+		757CFBF02A0BD15F00E568CD /* VMenuCellTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CFBED2A0BD15F00E568CD /* VMenuCellTheme.swift */; };
+		757CFBF72A0BD1D300E568CD /* VMenuTableTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CFBF42A0BD1D300E568CD /* VMenuTableTheme.swift */; };
+		757CFBF82A0BD1D300E568CD /* VMenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757CFBF52A0BD1D300E568CD /* VMenuTableCell.swift */; };
+		757CFBF92A0BD1D300E568CD /* VMenuTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757CFBF62A0BD1D300E568CD /* VMenuTableCell.xib */; };
 		B429548222DDD9D1002DE3E9 /* LabibaBotFramwork.h in Headers */ = {isa = PBXBuildFile; fileRef = B429548022DDD9D1002DE3E9 /* LabibaBotFramwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B429550022DDDBD2002DE3E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B429549522DDDBD2002DE3E9 /* Localizable.strings */; };
 		B429550122DDDBD2002DE3E9 /* SelectableCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B429549822DDDBD2002DE3E9 /* SelectableCardView.xib */; };
@@ -858,6 +868,16 @@
 		52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaVoiceExperience.swift; sourceTree = "<group>"; };
 		52FC5CF724D02EA500C7B7CF /* VoiceExperienceBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceExperienceBaseView.swift; sourceTree = "<group>"; };
 		52FFB72325D271D300CFB629 /* HelpPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageModel.swift; sourceTree = "<group>"; };
+		7545D1722A08FB2800A09694 /* LocalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCache.swift; sourceTree = "<group>"; };
+		7545D1752A0B88AE00A09694 /* ContentSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSizedTableView.swift; sourceTree = "<group>"; };
+		7545D18C2A0BA09300A09694 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		7545D18D2A0BA09300A09694 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		757CFBEA2A0BD15F00E568CD /* VMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VMenuCell.xib; sourceTree = "<group>"; };
+		757CFBEB2A0BD15F00E568CD /* VMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMenuCell.swift; sourceTree = "<group>"; };
+		757CFBED2A0BD15F00E568CD /* VMenuCellTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMenuCellTheme.swift; sourceTree = "<group>"; };
+		757CFBF42A0BD1D300E568CD /* VMenuTableTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMenuTableTheme.swift; sourceTree = "<group>"; };
+		757CFBF52A0BD1D300E568CD /* VMenuTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMenuTableCell.swift; sourceTree = "<group>"; };
+		757CFBF62A0BD1D300E568CD /* VMenuTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VMenuTableCell.xib; sourceTree = "<group>"; };
 		B429547D22DDD9D1002DE3E9 /* LabibaBotFramwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LabibaBotFramwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B429548022DDD9D1002DE3E9 /* LabibaBotFramwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabibaBotFramwork.h; sourceTree = "<group>"; };
 		B429548122DDD9D1002DE3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1062,6 +1082,8 @@
 				371C951323374C780045D4E2 /* CommonGlobals.swift */,
 				376B7F322349C3C800E75CB0 /* LabibaFont.swift */,
 				5296E22925EF9F3B001FB31C /* Extensions */,
+				7545D1722A08FB2800A09694 /* LocalCache.swift */,
+				7545D1752A0B88AE00A09694 /* ContentSizedTableView.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -1583,6 +1605,8 @@
 		5296E22925EF9F3B001FB31C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7545D18C2A0BA09300A09694 /* UICollectionViewExtension.swift */,
+				7545D18D2A0BA09300A09694 /* UITableViewExtension.swift */,
 				B42954D622DDDBD2002DE3E9 /* Extensions.swift */,
 				5296E22A25EF9F63001FB31C /* UIDeviceExt.swift */,
 			);
@@ -1638,6 +1662,7 @@
 		52B6B37E25B6F8C40051ABCE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7545D1772A0B890700A09694 /* Cells */,
 				52B6B37F25B6F8F70051ABCE /* Popup */,
 				372BB4BC24B1DF6C003A8297 /* VoiceAssistantViews */,
 				52E434C52504CF1D00D077D3 /* Header Views */,
@@ -1871,6 +1896,51 @@
 				52FC5CF024D00A9000C7B7CF /* MapPerviewView.swift */,
 			);
 			path = MapPerviewView;
+			sourceTree = "<group>";
+		};
+		7545D1772A0B890700A09694 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				757CFBF22A0BD1D300E568CD /* VMenuTableCell */,
+				757CFBE92A0BD15F00E568CD /* VMenuCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		757CFBE92A0BD15F00E568CD /* VMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				757CFBEA2A0BD15F00E568CD /* VMenuCell.xib */,
+				757CFBEB2A0BD15F00E568CD /* VMenuCell.swift */,
+				757CFBEC2A0BD15F00E568CD /* Theme */,
+			);
+			path = VMenuCell;
+			sourceTree = "<group>";
+		};
+		757CFBEC2A0BD15F00E568CD /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				757CFBED2A0BD15F00E568CD /* VMenuCellTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		757CFBF22A0BD1D300E568CD /* VMenuTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				757CFBF32A0BD1D300E568CD /* VMenuTableTheme */,
+				757CFBF52A0BD1D300E568CD /* VMenuTableCell.swift */,
+				757CFBF62A0BD1D300E568CD /* VMenuTableCell.xib */,
+			);
+			path = VMenuTableCell;
+			sourceTree = "<group>";
+		};
+		757CFBF32A0BD1D300E568CD /* VMenuTableTheme */ = {
+			isa = PBXGroup;
+			children = (
+				757CFBF42A0BD1D300E568CD /* VMenuTableTheme.swift */,
+			);
+			path = VMenuTableTheme;
 			sourceTree = "<group>";
 		};
 		B429547322DDD9D1002DE3E9 = {
@@ -2243,6 +2313,7 @@
 				527756D72730097E00F8ADE0 /* man.json in Resources */,
 				527756D3272FDD6800F8ADE0 /* robot2.json in Resources */,
 				3731DA9C2342283700FDFC42 /* ScrollViewCellView.xib in Resources */,
+				757CFBF92A0BD1D300E568CD /* VMenuTableCell.xib in Resources */,
 				B429550022DDDBD2002DE3E9 /* Localizable.strings in Resources */,
 				B429554322DDDBD2002DE3E9 /* CustomCollectionViewCell.xib in Resources */,
 				B429550222DDDBD2002DE3E9 /* Labiba.storyboard in Resources */,
@@ -2251,6 +2322,7 @@
 				52BF2F552471330500820B37 /* VoiceExperienceView.xib in Resources */,
 				52C0A06D25878D3B004D7AAA /* RatingSatrsLightCell.xib in Resources */,
 				B429550922DDDBD2002DE3E9 /* CustomMapPicker.xib in Resources */,
+				757CFBEE2A0BD15F00E568CD /* VMenuCell.xib in Resources */,
 				B429550A22DDDBD2002DE3E9 /* AudioRecorderView.xib in Resources */,
 				52BF2F53247132AD00820B37 /* LabibaVoiceExperience.storyboard in Resources */,
 				B429550B22DDDBD2002DE3E9 /* AudioView.xib in Resources */,
@@ -2392,6 +2464,7 @@
 				B429552B22DDDBD2002DE3E9 /* StateShownEntryCell.swift in Sources */,
 				3773C47E24BC88CC009A6E04 /* AudioVisualizerView.swift in Sources */,
 				5277568F272EE12F00F8ADE0 /* AnimationTime.swift in Sources */,
+				757CFBF72A0BD1D300E568CD /* VMenuTableTheme.swift in Sources */,
 				370874282326528C00E0C52C /* GreetingHeaderView.swift in Sources */,
 				F9D997CA2871D17700E676B0 /* HumanAgentModel.swift in Sources */,
 				B429551F22DDDBD2002DE3E9 /* ScanView.swift in Sources */,
@@ -2460,6 +2533,7 @@
 				52775633272EE12F00F8ADE0 /* SizeValueProvider.swift in Sources */,
 				527756C8272FCF6C00F8ADE0 /* PresentationVC.swift in Sources */,
 				5277564B272EE12F00F8ADE0 /* Color.swift in Sources */,
+				7545D18E2A0BA09300A09694 /* UICollectionViewExtension.swift in Sources */,
 				52B6B38325B6FA3E0051ABCE /* HelpPopupVC.swift in Sources */,
 				52775672272EE12F00F8ADE0 /* Marker.swift in Sources */,
 				52775673272EE12F00F8ADE0 /* FillRenderer.swift in Sources */,
@@ -2496,6 +2570,7 @@
 				5277563A272EE12F00F8ADE0 /* ImageAsset.swift in Sources */,
 				37460D9A230A7AC1002748CE /* ReferralModel.swift in Sources */,
 				529C681126F3475E00FB8591 /* PrechatFormFieldCell.swift in Sources */,
+				757CFBF02A0BD15F00E568CD /* VMenuCellTheme.swift in Sources */,
 				B429555022DDDBD2002DE3E9 /* Emoticonizer.swift in Sources */,
 				52A1030027DE175B0017A6D6 /* Logging.swift in Sources */,
 				B429551622DDDBD2002DE3E9 /* Platform.swift in Sources */,
@@ -2516,6 +2591,7 @@
 				5277567D272EE12F00F8ADE0 /* AnimationTextProvider.swift in Sources */,
 				B429552E22DDDBD2002DE3E9 /* LocationViewController.swift in Sources */,
 				52775685272EE12F00F8ADE0 /* BezierPath.swift in Sources */,
+				7545D18F2A0BA09300A09694 /* UITableViewExtension.swift in Sources */,
 				52F51A1825B07E7F002C03BB /* AttachmentCardView.swift in Sources */,
 				3782D95623B9F511006A79D4 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				37B96198230D34E70093647C /* DeleteView.swift in Sources */,
@@ -2641,6 +2717,7 @@
 				3782D9A923BA1369006A79D4 /* SRError.m in Sources */,
 				B429551C22DDDBD2002DE3E9 /* CameraVC.swift in Sources */,
 				52DE8DCB248CB9C60067F5EC /* IQTextView.swift in Sources */,
+				757CFBF82A0BD1D300E568CD /* VMenuTableCell.swift in Sources */,
 				3782D94D23B9F511006A79D4 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				52C6DBAD24694849005CFE27 /* AFIError.swift in Sources */,
 				5277563F272EE12F00F8ADE0 /* TextAnimator.swift in Sources */,
@@ -2675,6 +2752,7 @@
 				527756A5272EE12F00F8ADE0 /* Stroke.swift in Sources */,
 				52775649272EE12F00F8ADE0 /* ValueContainer.swift in Sources */,
 				B429554B22DDDBD2002DE3E9 /* LoadingIndicator.swift in Sources */,
+				757CFBEF2A0BD15F00E568CD /* VMenuCell.swift in Sources */,
 				52775694272EE12F00F8ADE0 /* CompositionLayersInitializer.swift in Sources */,
 				379870562325315F00CC968F /* UsageGuideCell.swift in Sources */,
 				52775692272EE12F00F8ADE0 /* ImageLayerModel.swift in Sources */,
@@ -2699,6 +2777,7 @@
 				5277568B272EE12F00F8ADE0 /* Star.swift in Sources */,
 				52C6DBA924694849005CFE27 /* UIImageView+AlamofireImage.swift in Sources */,
 				529C681B26F3855D00FB8591 /* PrechatFormThemeModel.swift in Sources */,
+				7545D1762A0B88AE00A09694 /* ContentSizedTableView.swift in Sources */,
 				5277569C272EE12F00F8ADE0 /* SolidCompositionLayer.swift in Sources */,
 				528AE9672520A73C008AF72E /* Thread+extension.swift in Sources */,
 				52775682272EE12F00F8ADE0 /* CompositionLayer.swift in Sources */,
@@ -2710,6 +2789,7 @@
 				52775663272EE12F00F8ADE0 /* NodePropertyMap.swift in Sources */,
 				5277563D272EE12F00F8ADE0 /* Mask.swift in Sources */,
 				376B7F332349C3C800E75CB0 /* LabibaFont.swift in Sources */,
+				7545D1732A08FB2800A09694 /* LocalCache.swift in Sources */,
 				5277568E272EE12F00F8ADE0 /* Trim.swift in Sources */,
 				52DE30752462D6A000DAF3E7 /* Timeline.swift in Sources */,
 				52775654272EE12F00F8ADE0 /* VectorsExtensions.swift in Sources */,

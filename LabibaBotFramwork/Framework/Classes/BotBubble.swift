@@ -18,7 +18,7 @@ public class BotBubble: BubbleView {
         let bubble = UIView.loadFromNibNamedFromDefaultBundle("BotBubble") as! BotBubble
         bubble.maxWidth = width
         bubble.considersAvatar = Labiba.BotChatBubble.avatar != nil
-        
+    
         bubble.bubbleContainer.layer.shadowColor = Labiba.BotChatBubble.shadow.shadowColor
         bubble.bubbleContainer.layer.shadowOffset = Labiba.BotChatBubble.shadow.shadowOffset
         bubble.bubbleContainer.layer.shadowRadius = Labiba.BotChatBubble.shadow.shadowRadius
@@ -62,7 +62,11 @@ public class BotBubble: BubbleView {
         bubble.source = .incoming
         bubble.textLabel.textColor = Labiba.BotChatBubble.textColor
         bubble.bubbleContainer.alpha = Labiba.BotChatBubble.alpha
-        
+        if let timeImage = Labiba.BotChatBubble.timeImage {
+           
+            bubble.timeImageView.isHidden = false
+            bubble.timeImageView.image = timeImage
+        }
         bubble.timestampLbl.textColor = Labiba.BotChatBubble.timestamp.color
         bubble.timestampLbl.font = applyBotFont(size: Labiba.BotChatBubble.timestamp.fontSize)
         

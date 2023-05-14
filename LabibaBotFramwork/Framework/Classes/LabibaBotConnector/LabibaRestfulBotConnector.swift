@@ -67,7 +67,8 @@ class LabibaRestfulBotConnector:BotConnector{
     
     
     override func startConversation() {
-       // showLoadingIndicator() 
+       // showLoadingIndicator()
+        LocalCache.shared.conversationId = SharedPreference.shared.currentUserId
         self.sendMessage("CONVERSATION-RELOAD")
     }
     
@@ -469,6 +470,13 @@ class LabibaRestfulBotConnector:BotConnector{
                 {
                     dialog.cards?.presentation = .carousel
                     card.title = card.title.replacingOccurrences(of: "CAROUSEL:", with: "")
+                }
+                
+                if card.title.hasPrefix("VMENU:")
+                {
+                    dialog.cards?.presentation = .vmnue
+                    card.title = card.title.replacingOccurrences(of: "VMENU:", with: "")
+
                 }
                 
                 card.imageUrl = elm.image_url

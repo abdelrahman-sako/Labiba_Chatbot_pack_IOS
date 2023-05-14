@@ -62,6 +62,8 @@ public enum BotType:Int {
     public static var liveChatModel:LiveChatModel?
     public static let labibaThemes = LabibaThemes()
     public  static var _WithRatingVC: Bool = false
+    public  static var enableCaching: Bool = false
+    
   //  public  static var isLoggingEnabled: Bool = false
 
      // MARK:- Main Settings
@@ -415,6 +417,9 @@ public enum BotType:Int {
 
     //MARK:- Prechat Form
     public static let PrechatForm = PrechatFormThemeModel()
+    
+    public static var vMenuTheme = VMenuCellTheme()
+    public static var vMenuTableTheme = VMenuTableTheme()
     
     //MARK:- Globals
 

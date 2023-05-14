@@ -9,7 +9,10 @@
 import Foundation
 import CoreLocation
 import ContactsUI
-class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewCellDelegate ,CustomCollectionCellDelegate, DatePickerViewControllerDelegate, DateRangeViewControllerDelegate, LocationSelectViewControllerDelegate , ImageSelectorDelegate {
+class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewCellDelegate ,CustomCollectionCellDelegate, DatePickerViewControllerDelegate, DateRangeViewControllerDelegate, LocationSelectViewControllerDelegate , ImageSelectorDelegate,VMenuTableCellDelegate {
+    
+  
+    
    
    
     override func viewDidLoad() {
@@ -61,7 +64,13 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
             self.botConnector.sendMessage(payload: payload)
         }
     }
-    
+    func collectionView(dialogIndex: Int, selectedCardIndex: Int, selectedCellDialogCardButton: DialogCardButton?, didTappedInTableview TableCell: VMenuTableCell) {
+        if let payload = selectedCellDialogCardButton?.payload
+        {
+            stopTTS_STT()
+            self.botConnector.sendMessage(payload: payload)
+        }
+    }
      //MARK:-  EntryTableViewCellDelegate methods
     
     func choiceWasSelectedFor(display: EntryDisplay, choice: DialogChoice) {

@@ -19,6 +19,7 @@ enum DialogCardPresentation: String
 {
     case carousel = "carousel"
     case menu = "menu"
+    case vmnue = "vmenu"
 }
 
 class ConversationDialog

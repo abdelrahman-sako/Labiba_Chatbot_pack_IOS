@@ -103,6 +103,9 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         self.sendButton.tintColor = Labiba.UserInputView.sendButton.tintColor
         self.sendButton.backgroundColor = Labiba.UserInputView.sendButton.backgroundColor
         
+        if let image = Labiba.UserInputView.sendButton.image {
+            self.sendButton.setImage(image, for: .normal)
+        }
         self.textView.delegate = self
         placeholderLabel.text = ""//"al-feedback-placeholder".localBasedOnChoosenLangCode
         placeholderLabel.font = applyBotFont(size: textView.font?.pointSize ?? 13)//UIFont.systemFont(ofSize: (textView.font?.pointSize)!)
