@@ -36,8 +36,7 @@ class VMenuCell: UITableViewCell {
         menuContentLabel.font = Labiba.vMenuTheme.contentLabelTheme.fontStyle
         menuContentLabel.textColor = Labiba.vMenuTheme.contentLabelTheme.textColor
         
-        contanierView.roundCorners(corners: Labiba.vMenuTheme.cellCornerTheme.corners,
-                                   radius: Labiba.vMenuTheme.cellCornerTheme.radius)
+        contanierView.layer.cornerRadius = 8
         
         if let shadow = Labiba.vMenuTheme.shadow {
             contanierView.applyShadow(color: shadow.color,

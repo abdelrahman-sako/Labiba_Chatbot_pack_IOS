@@ -120,7 +120,7 @@ class VisualizerVoiceAssistantView: UserInput {
         let root = view
         root.addSubview(self)
         self.translatesAutoresizingMaskIntoConstraints = false
-        var bottomConstant = -5
+        var bottomConstant = -20
         switch UIScreen.current {
         case .iPhone6_1 ,.iPhone6_5 ,.iPhone5_8 :
             bottomConstant = -15

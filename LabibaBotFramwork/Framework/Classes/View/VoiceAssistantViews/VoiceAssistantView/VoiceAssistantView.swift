@@ -134,7 +134,7 @@ class VoiceAssistantView: UIView {
         let y = r.size.height
         self.frame = CGRect(x: 0, y: y , width: w, height: VoiceAssistantView.HEIGHT )
         root.addSubview(self)
-        let ty = root.frame.height - self.frame.size.height
+        let ty = root.frame.height - self.frame.size.height - 20
         self.reconfigure(y: ty)
     }
     
