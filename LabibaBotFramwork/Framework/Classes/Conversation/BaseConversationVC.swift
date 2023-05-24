@@ -50,7 +50,7 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
         botConnector.resumeConnection()
     }
     
-    var botConnector:BotConnector = LabibaRestfulBotConnector.shared
+    var botConnector:BotConnector = BotConnector.shared
     var delegate:LabibaDelegate?
    // var humanAgent:WebViewEventHumanAgent?
     

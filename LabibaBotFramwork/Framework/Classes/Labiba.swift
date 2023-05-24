@@ -48,7 +48,7 @@ public enum BotType:Int {
     
     static var  delegate:LabibaDelegate?
     
-    static var _BubbleChatImage:UIImage?// = Image(named: "labiba_icon")
+    public static var _BubbleChatImage:UIImage?// = Image(named: "labiba_icon")
    
   //  static var _GoogleApiKey: String!
    
@@ -538,7 +538,8 @@ public enum BotType:Int {
 
     static func dismiss(tiggerDelegate:Bool = true,compeletion:(()->Void)? = nil ){
         if tiggerDelegate{Labiba.delegate?.labibaWillClose?()}
-        LabibaRestfulBotConnector.shared.close()
+        //LabibaRestfulBotConnector.shared.close()
+        DataSource.shared.close()
         WebViewEventHumanAgent.Shared.forceEnd()
         navigationController?.dismiss(animated: true, completion: {
             compeletion?()
@@ -593,8 +594,8 @@ public enum BotType:Int {
     }
 
     private static let alias = UIView.loadFromNibNamedFromDefaultBundle("MovableAlias") as! MovableAlias
-
-    public static func showMovableAlias(corner: UIRectCorner, margin: CGFloat = 15, animated: Bool) -> Void
+    weak static var parentVC:UIViewController?
+    public static func showMovableAlias(inViewController vc:UIViewController,corner: UIRectCorner, margin: CGFloat = 15, animated: Bool) -> Void
     {
 
         guard self._senderId != nil
@@ -602,7 +603,7 @@ public enum BotType:Int {
         {
             fatalError(SENDER_ERROR)
         }
-
+        parentVC = vc
         let m = margin
         let rf = UIScreen.main.bounds
         let af = alias.frame
@@ -624,11 +625,11 @@ public enum BotType:Int {
         }
 
         alias.imageView.image = Image(named: "labiba_icon")//self._botAvatar
-        alias.show(position: pos, animated: animated)
+        alias.show(inViewController: vc,position: pos, animated: animated)
         _OpenFromBubble = true
     }
 
-    public static func showMovableAlias(position: CGPoint, animated: Bool) -> Void
+    public static func showMovableAlias(inViewController vc:UIViewController, position: CGPoint, animated: Bool) -> Void
     {
 
         guard self._senderId != nil
@@ -636,9 +637,9 @@ public enum BotType:Int {
         {
             fatalError(SENDER_ERROR)
         }
-
+        parentVC = vc
         alias.imageView.image = Image(named: "labiba_icon")//self._botAvatar
-        alias.show(position: position, animated: animated)
+        alias.show(inViewController: vc, position: position, animated: animated)
         _OpenFromBubble = true
     }
     

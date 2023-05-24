@@ -54,12 +54,14 @@ class LabibaError:NSError{
     
     private var stausCode:Int
     private var headers:[AnyHashable : Any]?
+    var response:String
     // MARK:  Intializers
     //Failable Initializers for network errors: 401,403 .......
-    init?(statusCode:Int,headers:[AnyHashable : Any]?){
+    init?(statusCode:Int,headers:[AnyHashable : Any]?,response:String = ""){
         if let networkError = NetworkError(rawValue: statusCode) {
             self.stausCode = networkError.rawValue
             self.headers = headers
+            self.response = response
             super.init(domain: "", code: networkError.labibaError)
         }else{
             return nil
@@ -67,17 +69,19 @@ class LabibaError:NSError{
     }
    
     //Labiaba Errors intialaizer: EncodingError,EmptyResponse ....
-    init(code:Int, statusCode:Int,headers:[AnyHashable : Any]? = nil) {
+    init(code:Int, statusCode:Int,headers:[AnyHashable : Any]? = nil,response:String = "") {
         self.stausCode = statusCode
         self.headers = headers
+        self.response = response
         super.init(domain: "", code: code)
 
     }
     
     //NSError native error intialaizer: NSURLErrorCancelled,NSURLErrorTimedOut ..
-    init(error:Error,statusCode:Int,headers:[AnyHashable : Any]?  = nil) {
+    init(error:Error,statusCode:Int,headers:[AnyHashable : Any]?  = nil,response:String = "") {
         self.stausCode = statusCode
         self.headers = headers
+        self.response = response
         let err = error as NSError
         super.init(domain: err.domain, code: err.code)
        
@@ -200,4 +204,7 @@ class LabibaError:NSError{
         return ""
     }
     
+    static func generalError()-> LabibaError {
+        LabibaError(code: .Unknown, statusCode: 0)
+    }
 }

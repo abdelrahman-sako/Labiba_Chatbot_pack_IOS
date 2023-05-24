@@ -19,7 +19,7 @@ class RatingBaseVC: UIViewController {
     @IBOutlet weak var ratingTableView: UITableView!
     
     var questions:[RatingQuestionModel] = []
-    var botConnector:BotConnector = LabibaRestfulBotConnector.shared
+    var botConnector:BotConnector = BotConnector.shared
     var delegate:SubViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -45,11 +45,13 @@ class RatingBaseVC: UIViewController {
     }
     
     func getQuestions()  {
-        botConnector.getRatingQuestions { [weak self](result) in
+        CircularGradientLoadingIndicator.show()
+        DataSource.shared.getRatingQuestions { [weak self](result) in
+            CircularGradientLoadingIndicator.dismiss()
             switch result {
-            case .success(let model):
-                if model.count > 0 {
-                    self?.questions = model[0].questions ?? []
+            case .success(let questions):
+                if questions.count > 0 {
+                    self?.questions = questions[0].questions ?? []
                     self?.ratingTableView.reloadData()
                 }else{
                     self?.showAlert(result: true, message: "error-msg".localForChosnLangCodeBB)
@@ -58,6 +60,19 @@ class RatingBaseVC: UIViewController {
                 self?.showAlert(result: true, message: err.localizedDescription)
             }
         }
+//        botConnector.getRatingQuestions { [weak self](result) in
+//            switch result {
+//            case .success(let model):
+//                if model.count > 0 {
+//                    self?.questions = model[0].questions ?? []
+//                    self?.ratingTableView.reloadData()
+//                }else{
+//                    self?.showAlert(result: true, message: "error-msg".localForChosnLangCodeBB)
+//                }
+//            case .failure(let err):
+//                self?.showAlert(result: true, message: err.localizedDescription)
+//            }
+//        }
     }
     
     func showAlert(result:Bool , message:String) {

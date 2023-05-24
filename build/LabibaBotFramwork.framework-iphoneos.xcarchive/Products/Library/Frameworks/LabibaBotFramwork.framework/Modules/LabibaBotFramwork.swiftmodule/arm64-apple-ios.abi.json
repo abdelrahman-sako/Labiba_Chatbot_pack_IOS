@@ -10082,32 +10082,6 @@
             ]
           },
           {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CircularGradientLoadingIndicator",
-                "printedName": "LabibaBotFramwork.CircularGradientLoadingIndicator",
-                "usr": "c:@M@LabibaBotFramwork@objc(cs)CircularGradientLoadingIndicator"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "c:@M@LabibaBotFramwork@objc(cs)CircularGradientLoadingIndicator(im)init",
-            "mangledName": "$s17LabibaBotFramwork32CircularGradientLoadingIndicatorCACycfc",
-            "moduleName": "LabibaBotFramwork",
-            "overriding": true,
-            "objc_name": "init",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Custom",
-              "AccessControl"
-            ],
-            "init_kind": "Designated"
-          },
-          {
             "kind": "Function",
             "name": "draw",
             "printedName": "draw(_:)",
@@ -10135,49 +10109,6 @@
               "ObjC",
               "Custom",
               "Override",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "show",
-            "printedName": "show()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:17LabibaBotFramwork32CircularGradientLoadingIndicatorC4showyyF",
-            "mangledName": "$s17LabibaBotFramwork32CircularGradientLoadingIndicatorC4showyyF",
-            "moduleName": "LabibaBotFramwork",
-            "declAttributes": [
-              "Custom",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "dismiss",
-            "printedName": "dismiss()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:17LabibaBotFramwork32CircularGradientLoadingIndicatorC7dismissyyF",
-            "mangledName": "$s17LabibaBotFramwork32CircularGradientLoadingIndicatorC7dismissyyF",
-            "moduleName": "LabibaBotFramwork",
-            "declAttributes": [
-              "Custom",
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
@@ -15110,6 +15041,26 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -15136,6 +15087,16 @@
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "LabibaBotFramwork",
         "declAttributes": [
@@ -30865,6 +30826,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -31002,6 +30973,16 @@
         "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "LabibaBotFramwork"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -31432,6 +31413,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -31456,6 +31447,16 @@
         "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "LabibaBotFramwork"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -37078,6 +37079,206 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "ApiEndPoints",
+        "printedName": "ApiEndPoints",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "getRatingQuestions",
+            "printedName": "getRatingQuestions",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(LabibaBotFramwork.ApiEndPoints.Type) -> LabibaBotFramwork.ApiEndPoints",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ApiEndPoints",
+                    "printedName": "LabibaBotFramwork.ApiEndPoints",
+                    "usr": "s:17LabibaBotFramwork12ApiEndPointsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "LabibaBotFramwork.ApiEndPoints.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ApiEndPoints",
+                        "printedName": "LabibaBotFramwork.ApiEndPoints",
+                        "usr": "s:17LabibaBotFramwork12ApiEndPointsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17LabibaBotFramwork12ApiEndPointsO18getRatingQuestionsyA2CmF",
+            "mangledName": "$s17LabibaBotFramwork12ApiEndPointsO18getRatingQuestionsyA2CmF",
+            "moduleName": "LabibaBotFramwork"
+          },
+          {
+            "kind": "Var",
+            "name": "submitRating",
+            "printedName": "submitRating",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(LabibaBotFramwork.ApiEndPoints.Type) -> LabibaBotFramwork.ApiEndPoints",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ApiEndPoints",
+                    "printedName": "LabibaBotFramwork.ApiEndPoints",
+                    "usr": "s:17LabibaBotFramwork12ApiEndPointsO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "LabibaBotFramwork.ApiEndPoints.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ApiEndPoints",
+                        "printedName": "LabibaBotFramwork.ApiEndPoints",
+                        "usr": "s:17LabibaBotFramwork12ApiEndPointsO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17LabibaBotFramwork12ApiEndPointsO12submitRatingyA2CmF",
+            "mangledName": "$s17LabibaBotFramwork12ApiEndPointsO12submitRatingyA2CmF",
+            "moduleName": "LabibaBotFramwork"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "LabibaBotFramwork.ApiEndPoints?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ApiEndPoints",
+                    "printedName": "LabibaBotFramwork.ApiEndPoints",
+                    "usr": "s:17LabibaBotFramwork12ApiEndPointsO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17LabibaBotFramwork12ApiEndPointsO8rawValueACSgSS_tcfc",
+            "mangledName": "$s17LabibaBotFramwork12ApiEndPointsO8rawValueACSgSS_tcfc",
+            "moduleName": "LabibaBotFramwork",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17LabibaBotFramwork12ApiEndPointsO8rawValueSSvp",
+            "mangledName": "$s17LabibaBotFramwork12ApiEndPointsO8rawValueSSvp",
+            "moduleName": "LabibaBotFramwork",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17LabibaBotFramwork12ApiEndPointsO8rawValueSSvg",
+                "mangledName": "$s17LabibaBotFramwork12ApiEndPointsO8rawValueSSvg",
+                "moduleName": "LabibaBotFramwork",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:17LabibaBotFramwork12ApiEndPointsO",
+        "mangledName": "$s17LabibaBotFramwork12ApiEndPointsO",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -37103,6 +37304,16 @@
         "printedName": "QuartzCore",
         "declKind": "Import",
         "moduleName": "LabibaBotFramwork"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -38235,6 +38446,16 @@
         "printedName": "MobileCoreServices",
         "declKind": "Import",
         "moduleName": "LabibaBotFramwork"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -41173,6 +41394,130 @@
         "name": "Labiba",
         "printedName": "Labiba",
         "children": [
+          {
+            "kind": "Var",
+            "name": "_BubbleChatImage",
+            "printedName": "_BubbleChatImage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17LabibaBotFramwork0A0C16_BubbleChatImageSo7UIImageCSgvpZ",
+            "mangledName": "$s17LabibaBotFramwork0A0C16_BubbleChatImageSo7UIImageCSgvpZ",
+            "moduleName": "LabibaBotFramwork",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17LabibaBotFramwork0A0C16_BubbleChatImageSo7UIImageCSgvgZ",
+                "mangledName": "$s17LabibaBotFramwork0A0C16_BubbleChatImageSo7UIImageCSgvgZ",
+                "moduleName": "LabibaBotFramwork",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17LabibaBotFramwork0A0C16_BubbleChatImageSo7UIImageCSgvsZ",
+                "mangledName": "$s17LabibaBotFramwork0A0C16_BubbleChatImageSo7UIImageCSgvsZ",
+                "moduleName": "LabibaBotFramwork",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17LabibaBotFramwork0A0C16_BubbleChatImageSo7UIImageCSgvMZ",
+                "mangledName": "$s17LabibaBotFramwork0A0C16_BubbleChatImageSo7UIImageCSgvMZ",
+                "moduleName": "LabibaBotFramwork",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
           {
             "kind": "Var",
             "name": "liveChatModel",
@@ -44396,12 +44741,18 @@
           {
             "kind": "Function",
             "name": "showMovableAlias",
-            "printedName": "showMovableAlias(corner:margin:animated:)",
+            "printedName": "showMovableAlias(inViewController:corner:margin:animated:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
               },
               {
                 "kind": "TypeNominal",
@@ -44424,8 +44775,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:17LabibaBotFramwork0A0C16showMovableAlias6corner6margin8animatedySo12UIRectCornerV_14CoreFoundation7CGFloatVSbtFZ",
-            "mangledName": "$s17LabibaBotFramwork0A0C16showMovableAlias6corner6margin8animatedySo12UIRectCornerV_12CoreGraphics7CGFloatVSbtFZ",
+            "usr": "s:17LabibaBotFramwork0A0C16showMovableAlias16inViewController6corner6margin8animatedySo06UIViewI0C_So12UIRectCornerV14CoreFoundation7CGFloatVSbtFZ",
+            "mangledName": "$s17LabibaBotFramwork0A0C16showMovableAlias16inViewController6corner6margin8animatedySo06UIViewI0C_So12UIRectCornerV12CoreGraphics7CGFloatVSbtFZ",
             "moduleName": "LabibaBotFramwork",
             "static": true,
             "declAttributes": [
@@ -44437,12 +44788,18 @@
           {
             "kind": "Function",
             "name": "showMovableAlias",
-            "printedName": "showMovableAlias(position:animated:)",
+            "printedName": "showMovableAlias(inViewController:position:animated:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
               },
               {
                 "kind": "TypeNominal",
@@ -44458,8 +44815,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:17LabibaBotFramwork0A0C16showMovableAlias8position8animatedySo7CGPointV_SbtFZ",
-            "mangledName": "$s17LabibaBotFramwork0A0C16showMovableAlias8position8animatedySo7CGPointV_SbtFZ",
+            "usr": "s:17LabibaBotFramwork0A0C16showMovableAlias16inViewController8position8animatedySo06UIViewI0C_So7CGPointVSbtFZ",
+            "mangledName": "$s17LabibaBotFramwork0A0C16showMovableAlias16inViewController8position8animatedySo06UIViewI0C_So7CGPointVSbtFZ",
             "moduleName": "LabibaBotFramwork",
             "static": true,
             "declAttributes": [
@@ -47737,6 +48094,16 @@
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -55211,6 +55578,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -55259,6 +55636,16 @@
         "printedName": "ContactsUI",
         "declKind": "Import",
         "moduleName": "LabibaBotFramwork"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -57540,6 +57927,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -57973,6 +58370,16 @@
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "LabibaBotFramwork",
         "declAttributes": [
@@ -58930,6 +59337,16 @@
           "AccessControl"
         ],
         "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "LabibaBotFramwork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -64832,91 +65249,91 @@
       "value": "15"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "Array",
       "offset": 488,
       "length": 10,
       "value": "[0.0, 1.0]"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "IntegerLiteral",
       "offset": 527,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "IntegerLiteral",
       "offset": 533,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "IntegerLiteral",
       "offset": 561,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "IntegerLiteral",
       "offset": 567,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "IntegerLiteral",
       "offset": 1825,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "IntegerLiteral",
       "offset": 1831,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "IntegerLiteral",
       "offset": 1872,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "IntegerLiteral",
       "offset": 1878,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "IntegerLiteral",
       "offset": 1986,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "IntegerLiteral",
       "offset": 1992,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "IntegerLiteral",
       "offset": 2027,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/GradientView.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/PrechatForm\/GradientView.swift",
       "kind": "IntegerLiteral",
       "offset": 2033,
       "length": 1,
@@ -65170,21 +65587,21 @@
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Manegers\/CircularGradientLoadingIndicator\/CircularGradientLoadingIndicator.swift",
       "kind": "StringLiteral",
-      "offset": 514,
+      "offset": 568,
       "length": 12,
       "value": "\"Loading...\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Manegers\/CircularGradientLoadingIndicator\/CircularGradientLoadingIndicator.swift",
       "kind": "IntegerLiteral",
-      "offset": 633,
+      "offset": 687,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Manegers\/CircularGradientLoadingIndicator\/CircularGradientLoadingIndicator.swift",
       "kind": "BooleanLiteral",
-      "offset": 869,
+      "offset": 923,
       "length": 5,
       "value": "false"
     },
@@ -67361,35 +67778,7 @@
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/LabibaRestfulBotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 296,
-      "length": 52,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/LabibaRestfulBotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 316,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/LabibaRestfulBotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 347,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/LabibaRestfulBotConnector.swift",
-      "kind": "BooleanLiteral",
-      "offset": 466,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/LabibaRestfulBotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 23982,
+      "offset": 17472,
       "length": 1151,
       "value": "\"[\n  {\n    \"message\": {\n      \"metadata\": null,\n      \"attachment\": null,\n      \"quick_replies\": null,\n      \"text\": \"Hello there, it's BOJI.<br><br>I am going to be your virtual assistant from the Bank of Jordan today<br>I can help you with any the financial services for your account, cards or Bills, also you can check the nearest branches and ATMs\"\n    },\n    \"recipient\": {\n      \"id\": \"387F2299-983B-4007-A2DC-6F8AAEFFD9F4\"\n    },\n    \"messaging_type\": \"RESPONSE\"\n  },\n  {\n    \"message\": {\n      \"metadata\": null,\n      \"attachment\": null,\n      \"quick_replies\": [\n        {\n          \"payload\": \"\",\n          \"title\": \"Switch to Arabic\",\n          \"image_url\": null,\n          \"content_type\": \"text\"\n        },\n        {\n          \"payload\": \"\",\n          \"title\": \"Continue\",\n          \"image_url\": null,\n          \"content_type\": \"text\"\n        }\n      ],\n      \"text\": \"If you want to speak in Arabic you can say Arabic or choose from below, if you'd like to continue in English, you can say or choose Continue\"\n    },\n    \"recipient\": {\n      \"id\": \"387F2299-983B-4007-A2DC-6F8AAEFFD9F4\"\n    },\n    \"messaging_type\": \"RESPONSE\"\n  }\n]\""
     },
@@ -69125,6 +69514,27 @@
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/ErrorHandler.swift",
       "kind": "StringLiteral",
+      "offset": 1731,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/ErrorHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 2205,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/ErrorHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 2538,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/ErrorHandler.swift",
+      "kind": "StringLiteral",
       "offset": 1207,
       "length": 11,
       "value": "\"LabibaBotFramwork.LabibaError\""
@@ -69559,14 +69969,14 @@
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/MovableAlias.swift",
       "kind": "BooleanLiteral",
-      "offset": 3719,
+      "offset": 3791,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/MovableAlias.swift",
       "kind": "BooleanLiteral",
-      "offset": 3751,
+      "offset": 3823,
       "length": 5,
       "value": "false"
     },
@@ -71041,14 +71451,14 @@
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Theme and Settings\/Logging.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Theme and Settings\/LabibaLogging.swift",
       "kind": "BooleanLiteral",
       "offset": 234,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Theme and Settings\/Logging.swift",
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Theme and Settings\/LabibaLogging.swift",
       "kind": "BooleanLiteral",
       "offset": 281,
       "length": 5,
@@ -71468,6 +71878,55 @@
       "value": "\"\""
     },
     {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Remote Repository\/ApiEndPoints.swift",
+      "kind": "StringLiteral",
+      "offset": 222,
+      "length": 30,
+      "value": "\"https:\/\/botbuilder.labiba.ai\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Remote Repository\/ApiEndPoints.swift",
+      "kind": "StringLiteral",
+      "offset": 286,
+      "length": 41,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Remote Repository\/ApiEndPoints.swift",
+      "kind": "StringLiteral",
+      "offset": 297,
+      "length": 1,
+      "value": "\"\/api\/MobileAPI\/FetchQuestions\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Remote Repository\/ApiEndPoints.swift",
+      "kind": "StringLiteral",
+      "offset": 360,
+      "length": 31,
+      "value": "\"\/api\/MobileAPI\/FetchQuestions\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Remote Repository\/ApiEndPoints.swift",
+      "kind": "StringLiteral",
+      "offset": 416,
+      "length": 24,
+      "value": "\"\/api\/ratingform\/submit\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Remote Repository\/ApiEndPoints.swift",
+      "kind": "StringLiteral",
+      "offset": 360,
+      "length": 31,
+      "value": "\"\/api\/MobileAPI\/FetchQuestions\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Remote Repository\/ApiEndPoints.swift",
+      "kind": "StringLiteral",
+      "offset": 416,
+      "length": 24,
+      "value": "\"\/api\/ratingform\/submit\""
+    },
+    {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/ImportedLibraries\/Alamofire\/ServerTrustPolicy.swift",
       "kind": "StringLiteral",
       "offset": 2885,
@@ -71494,6 +71953,62 @@
       "offset": 3007,
       "length": 4,
       "value": "true"
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/RemoteContext.swift",
+      "kind": "StringLiteral",
+      "offset": 202,
+      "length": 18,
+      "value": "\"application\/json\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/RemoteContext.swift",
+      "kind": "StringLiteral",
+      "offset": 243,
+      "length": 35,
+      "value": "\"application\/x-www-form-urlencoded\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/RemoteContext.swift",
+      "kind": "StringLiteral",
+      "offset": 202,
+      "length": 18,
+      "value": "\"application\/json\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/RemoteContext.swift",
+      "kind": "StringLiteral",
+      "offset": 243,
+      "length": 35,
+      "value": "\"application\/x-www-form-urlencoded\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/RemoteContext.swift",
+      "kind": "StringLiteral",
+      "offset": 703,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/RemoteContext.swift",
+      "kind": "StringLiteral",
+      "offset": 14678,
+      "length": 20,
+      "value": "\"arrayParametersKey\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/RemoteContext.swift",
+      "kind": "Array",
+      "offset": 15525,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/RemoteContext.swift",
+      "kind": "StringLiteral",
+      "offset": 16490,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/BubbleCellTypes\/SelectableCardView.swift",
@@ -72359,182 +72874,182 @@
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2500,
+      "offset": 2505,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2667,
+      "offset": 2672,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "Array",
-      "offset": 2715,
+      "offset": 2720,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2747,
+      "offset": 2752,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2867,
+      "offset": 2872,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2902,
+      "offset": 2907,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2934,
+      "offset": 2939,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2979,
+      "offset": 2984,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 18869,
+      "offset": 18874,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 19090,
+      "offset": 19132,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 20492,
+      "offset": 20534,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 50447,
+      "offset": 50489,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 50472,
+      "offset": 50514,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 50500,
+      "offset": 50542,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 50527,
+      "offset": 50569,
       "length": 4,
       "value": "0.75"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 50555,
+      "offset": 50597,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 50447,
+      "offset": 50489,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 50472,
+      "offset": 50514,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 50500,
+      "offset": 50542,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 50527,
+      "offset": 50569,
       "length": 4,
       "value": "0.75"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 50555,
+      "offset": 50597,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 50447,
+      "offset": 50489,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 50472,
+      "offset": 50514,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 50500,
+      "offset": 50542,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 50527,
+      "offset": 50569,
       "length": 4,
       "value": "0.75"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/RegularConversation\/ConversationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 50555,
+      "offset": 50597,
       "length": 1,
       "value": "1"
     },
@@ -72870,189 +73385,189 @@
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "StringLiteral",
-      "offset": 1895,
+      "offset": 1902,
       "length": 11,
       "value": "\"NOT_VALID\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 2113,
+      "offset": 2120,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 2272,
+      "offset": 2279,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "StringLiteral",
-      "offset": 5099,
+      "offset": 5106,
       "length": 8,
       "value": "\"mobile\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "StringLiteral",
-      "offset": 7048,
+      "offset": 7055,
       "length": 4,
       "value": "\"en\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 8286,
+      "offset": 8293,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "FloatLiteral",
-      "offset": 8398,
+      "offset": 8405,
       "length": 3,
       "value": "1.3"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "FloatLiteral",
-      "offset": 8437,
+      "offset": 8444,
       "length": 3,
       "value": "1.3"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 8677,
+      "offset": 8684,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 8737,
+      "offset": 8744,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "IntegerLiteral",
-      "offset": 8785,
+      "offset": 8792,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 9812,
+      "offset": 9819,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 10570,
+      "offset": 10577,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 10624,
+      "offset": 10631,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "StringLiteral",
-      "offset": 10749,
+      "offset": 10756,
       "length": 9,
       "value": "\"ps_back\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "StringLiteral",
-      "offset": 11006,
+      "offset": 11013,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "IntegerLiteral",
-      "offset": 11372,
+      "offset": 11379,
       "length": 2,
       "value": "90"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "IntegerLiteral",
-      "offset": 12413,
+      "offset": 12420,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 12476,
+      "offset": 12483,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 13267,
+      "offset": 13274,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "StringLiteral",
-      "offset": 15851,
+      "offset": 15858,
       "length": 159,
       "value": "\"You must first provide a unique senderId for your app user. Call Labiba.setSenderId(_ senderId:String) at some point in your application before calling this.\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 16723,
+      "offset": 16730,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 17326,
+      "offset": 17333,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "BooleanLiteral",
-      "offset": 17850,
+      "offset": 17857,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "StringLiteral",
-      "offset": 19542,
+      "offset": 19585,
       "length": 14,
       "value": "\"MovableAlias\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "IntegerLiteral",
-      "offset": 19656,
+      "offset": 19782,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Labiba.swift",
       "kind": "StringLiteral",
-      "offset": 20920,
+      "offset": 21169,
       "length": 13,
       "value": "\"LabibaBotFramwork.GradientSpecs\""
     },
@@ -73248,14 +73763,14 @@
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Manegers\/TextToSpeechManeger.swift",
       "kind": "Array",
-      "offset": 899,
+      "offset": 886,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Manegers\/TextToSpeechManeger.swift",
       "kind": "BooleanLiteral",
-      "offset": 10454,
+      "offset": 10798,
       "length": 5,
       "value": "false"
     },
@@ -74865,142 +75380,37 @@
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 2254,
+      "offset": 1453,
       "length": 6,
       "value": "\"2314\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 3595,
-      "length": 2,
+      "offset": 2147,
+      "length": 52,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16269,
-      "length": 11,
-      "value": "\"MESSAGING\""
+      "offset": 2167,
+      "length": 1,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
       "kind": "StringLiteral",
-      "offset": 16308,
-      "length": 18,
-      "value": "\"GET_LAST_MESSAGE\""
+      "offset": 2198,
+      "length": 1,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16350,
-      "length": 14,
-      "value": "\"UPLOAD_FILES\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16387,
-      "length": 7,
-      "value": "\"VOICE\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16426,
-      "length": 22,
-      "value": "\"GET_RATING_QUESTIONS\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16477,
-      "length": 15,
-      "value": "\"SUBMIT_RATING\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16513,
-      "length": 6,
-      "value": "\"HELP\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16547,
-      "length": 14,
-      "value": "\"PRECHAT_FORM\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16590,
-      "length": 14,
-      "value": "\"UPDATE_TOKEN\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16269,
-      "length": 11,
-      "value": "\"MESSAGING\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16308,
-      "length": 18,
-      "value": "\"GET_LAST_MESSAGE\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16350,
-      "length": 14,
-      "value": "\"UPLOAD_FILES\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16387,
-      "length": 7,
-      "value": "\"VOICE\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16426,
-      "length": 22,
-      "value": "\"GET_RATING_QUESTIONS\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16477,
-      "length": 15,
-      "value": "\"SUBMIT_RATING\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16513,
-      "length": 6,
-      "value": "\"HELP\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16547,
-      "length": 14,
-      "value": "\"PRECHAT_FORM\""
-    },
-    {
-      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/LabibaBotConnector\/BotConnector.swift",
-      "kind": "StringLiteral",
-      "offset": 16590,
-      "length": 14,
-      "value": "\"UPDATE_TOKEN\""
+      "kind": "BooleanLiteral",
+      "offset": 2241,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/MediaView.swift",
@@ -75318,6 +75728,13 @@
       "value": "0"
     },
     {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Remote Repository\/RemoteDataSource.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12310,
+      "length": 4,
+      "value": "true"
+    },
+    {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/ImportedLibraries\/Lottie\/Rectangle.swift",
       "kind": "StringLiteral",
       "offset": 527,
@@ -75376,7 +75793,7 @@
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Conversation\/BaseConversationVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 15538,
+      "offset": 15525,
       "length": 1,
       "value": "0"
     },
@@ -75794,6 +76211,146 @@
       "value": "1"
     },
     {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 320,
+      "length": 11,
+      "value": "\"MESSAGING\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 365,
+      "length": 18,
+      "value": "\"GET_LAST_MESSAGE\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 417,
+      "length": 14,
+      "value": "\"UPLOAD_FILES\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 465,
+      "length": 7,
+      "value": "\"VOICE\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 506,
+      "length": 21,
+      "value": "\"DOWNLOAD_VOICE_CLIP\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 561,
+      "length": 22,
+      "value": "\"GET_RATING_QUESTIONS\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 617,
+      "length": 15,
+      "value": "\"SUBMIT_RATING\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 666,
+      "length": 6,
+      "value": "\"HELP\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 706,
+      "length": 14,
+      "value": "\"PRECHAT_FORM\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 754,
+      "length": 14,
+      "value": "\"UPDATE_TOKEN\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 320,
+      "length": 11,
+      "value": "\"MESSAGING\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 365,
+      "length": 18,
+      "value": "\"GET_LAST_MESSAGE\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 417,
+      "length": 14,
+      "value": "\"UPLOAD_FILES\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 465,
+      "length": 7,
+      "value": "\"VOICE\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 506,
+      "length": 21,
+      "value": "\"DOWNLOAD_VOICE_CLIP\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 561,
+      "length": 22,
+      "value": "\"GET_RATING_QUESTIONS\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 617,
+      "length": 15,
+      "value": "\"SUBMIT_RATING\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 666,
+      "length": 6,
+      "value": "\"HELP\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 706,
+      "length": 14,
+      "value": "\"PRECHAT_FORM\""
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Data\/Logging.swift",
+      "kind": "StringLiteral",
+      "offset": 754,
+      "length": 14,
+      "value": "\"UPDATE_TOKEN\""
+    },
+    {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/ImportedLibraries\/Lottie\/FloatValueProvider.swift",
       "kind": "BooleanLiteral",
       "offset": 424,
@@ -76135,6 +76692,13 @@
       "offset": 636,
       "length": 10,
       "value": "0xFFFFCC02"
+    },
+    {
+      "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/Models\/LoggingModel.swift",
+      "kind": "StringLiteral",
+      "offset": 231,
+      "length": 5,
+      "value": "\"IOS\""
     },
     {
       "filePath": "\/Users\/abdulrahmanqasem\/Desktop\/Abdulrahman\/LabibaBotFramework\/LabibaBotFramwork\/Framework\/Classes\/ImportedLibraries\/Lottie\/SolidCompositionLayer.swift",

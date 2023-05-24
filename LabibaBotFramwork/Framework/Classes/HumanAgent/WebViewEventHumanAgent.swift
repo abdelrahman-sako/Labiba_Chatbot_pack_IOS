@@ -74,11 +74,14 @@ class WebViewEventHumanAgent:NSObject {
             let url = "https://botbuilder.labiba.ai/api/LiveChat/v1.0/CloseConversation/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile"
             end()
             DispatchQueue.global(qos: .background).async {
+                DataSource.shared.closeConversation { result in
+                    
+                }
 //                request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseData { response in
 //                }
-                LabibaRestfulBotConnector.shared.LabibaRequest([String].self, url: url, method: .post,headers: nil) { result in
-                    completionHandler?()
-                }
+//                LabibaRestfulBotConnector.shared.LabibaRequest([String].self, url: url, method: .post,headers: nil) { result in
+//                    completionHandler?()
+//                }
             }
             print("The task has started")
             
@@ -134,7 +137,7 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
             }
         case "end":
             end()
-            LabibaRestfulBotConnector.shared.sendGetStarted()
+            BotConnector.shared.sendGetStarted()
         default:
             break
         }
