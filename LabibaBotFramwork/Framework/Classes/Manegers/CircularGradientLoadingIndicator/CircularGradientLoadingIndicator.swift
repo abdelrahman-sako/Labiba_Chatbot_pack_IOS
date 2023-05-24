@@ -14,7 +14,7 @@ public class CircularGradientLoadingIndicator: UIView {
     var containerView:UIView?
     
     let loaderLabel = UILabel()
-    public var LoadingText:String = "Loading..."{
+    public var LoadingText:String = "تحميل..." {
         didSet{
             loaderLabel.text = LoadingText
         }
@@ -42,6 +42,8 @@ public class CircularGradientLoadingIndicator: UIView {
         super.init(frame: UIScreen.main.bounds)
         
          if CircularGradientLoadingIndicator.isShown {return}
+        
+        LoadingText = Labiba.loaderText
         
         containerView = UIView(frame: CGRect(origin: origin, size: CGSize(width: width + sideSpaces, height: width + topSpace + 45)))
         self.addSubview(containerView!)

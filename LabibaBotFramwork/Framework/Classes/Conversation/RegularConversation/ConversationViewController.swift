@@ -27,6 +27,11 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         }
     }
     
+    override func collectionView(dialogIndex: Int, selectedCardIndex: Int, selectedCellDialogCardButton: DialogCardButton?, didTappedInTableview TableCell: VMenuTableCell) {
+        submitLocalUserText(self.displayedDialogs[dialogIndex].dialog.cards?.items[selectedCardIndex].title ?? "")
+        super.collectionView(dialogIndex: dialogIndex, selectedCardIndex: selectedCardIndex, selectedCellDialogCardButton: selectedCellDialogCardButton, didTappedInTableview: TableCell)
+
+    }
     
     
     let dateFormatter = DateFormatter()

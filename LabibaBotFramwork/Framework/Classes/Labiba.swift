@@ -63,7 +63,7 @@ public enum BotType:Int {
     public static let labibaThemes = LabibaThemes()
     public  static var _WithRatingVC: Bool = false
     public  static var enableCaching: Bool = false
-    
+    public static var loaderText:String = "تحميل..."
   //  public  static var isLoggingEnabled: Bool = false
 
      // MARK:- Main Settings
@@ -73,6 +73,7 @@ public enum BotType:Int {
         SharedPreference.shared.setUserIDs(ar: RecipientIdAR, en: RecipientIdEng)
         self._pageId = SharedPreference.shared.currentUserId
        
+        loaderText = SharedPreference.shared.botLangCode == .ar ? "تحميل...." : "Loading...."
         LocationService.shared.updateLocation()
         var uuid = "";
         let preferences = UserDefaults.standard
