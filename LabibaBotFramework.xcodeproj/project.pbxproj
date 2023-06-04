@@ -392,7 +392,17 @@
 		52FC5CF624D0262F00C7B7CF /* LabibaVoiceExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */; };
 		52FC5CF824D02EA500C7B7CF /* VoiceExperienceBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF724D02EA500C7B7CF /* VoiceExperienceBaseView.swift */; };
 		52FFB72425D271D300CFB629 /* HelpPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFB72325D271D300CFB629 /* HelpPageModel.swift */; };
+		756D52012A2323170047E73A /* ContentSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D52002A2323170047E73A /* ContentSizedTableView.swift */; };
+		756D52032A2323320047E73A /* LocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D52022A2323320047E73A /* LocalCache.swift */; };
+		756D52052A2323420047E73A /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D52042A2323420047E73A /* UICollectionViewExtension.swift */; };
+		756D52072A2323470047E73A /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D52062A2323470047E73A /* UITableViewExtension.swift */; };
 		75EA910C292F5CCC00A0F352 /* EncryptionManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA910B292F5CCC00A0F352 /* EncryptionManeger.swift */; };
+		75EDDA7C2A1E5DE1003D6152 /* VMenuTableTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EDDA742A1E5DE1003D6152 /* VMenuTableTheme.swift */; };
+		75EDDA7D2A1E5DE1003D6152 /* VMenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EDDA752A1E5DE1003D6152 /* VMenuTableCell.swift */; };
+		75EDDA7E2A1E5DE1003D6152 /* VMenuTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75EDDA762A1E5DE1003D6152 /* VMenuTableCell.xib */; };
+		75EDDA7F2A1E5DE1003D6152 /* VMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75EDDA782A1E5DE1003D6152 /* VMenuCell.xib */; };
+		75EDDA802A1E5DE1003D6152 /* VMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EDDA792A1E5DE1003D6152 /* VMenuCell.swift */; };
+		75EDDA812A1E5DE1003D6152 /* VMenuCellTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EDDA7B2A1E5DE1003D6152 /* VMenuCellTheme.swift */; };
 		B429548222DDD9D1002DE3E9 /* LabibaBotFramwork.h in Headers */ = {isa = PBXBuildFile; fileRef = B429548022DDD9D1002DE3E9 /* LabibaBotFramwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B429550022DDDBD2002DE3E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B429549522DDDBD2002DE3E9 /* Localizable.strings */; };
 		B429550122DDDBD2002DE3E9 /* SelectableCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B429549822DDDBD2002DE3E9 /* SelectableCardView.xib */; };
@@ -874,7 +884,17 @@
 		52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaVoiceExperience.swift; sourceTree = "<group>"; };
 		52FC5CF724D02EA500C7B7CF /* VoiceExperienceBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceExperienceBaseView.swift; sourceTree = "<group>"; };
 		52FFB72325D271D300CFB629 /* HelpPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageModel.swift; sourceTree = "<group>"; };
+		756D52002A2323170047E73A /* ContentSizedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSizedTableView.swift; sourceTree = "<group>"; };
+		756D52022A2323320047E73A /* LocalCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalCache.swift; sourceTree = "<group>"; };
+		756D52042A2323420047E73A /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		756D52062A2323470047E73A /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		75EA910B292F5CCC00A0F352 /* EncryptionManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManeger.swift; sourceTree = "<group>"; };
+		75EDDA742A1E5DE1003D6152 /* VMenuTableTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMenuTableTheme.swift; sourceTree = "<group>"; };
+		75EDDA752A1E5DE1003D6152 /* VMenuTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMenuTableCell.swift; sourceTree = "<group>"; };
+		75EDDA762A1E5DE1003D6152 /* VMenuTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VMenuTableCell.xib; sourceTree = "<group>"; };
+		75EDDA782A1E5DE1003D6152 /* VMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VMenuCell.xib; sourceTree = "<group>"; };
+		75EDDA792A1E5DE1003D6152 /* VMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMenuCell.swift; sourceTree = "<group>"; };
+		75EDDA7B2A1E5DE1003D6152 /* VMenuCellTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMenuCellTheme.swift; sourceTree = "<group>"; };
 		B429547D22DDD9D1002DE3E9 /* LabibaBotFramwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LabibaBotFramwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B429548022DDD9D1002DE3E9 /* LabibaBotFramwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabibaBotFramwork.h; sourceTree = "<group>"; };
 		B429548122DDD9D1002DE3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1095,6 +1115,8 @@
 		37460D9B230A96CB002748CE /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				756D52022A2323320047E73A /* LocalCache.swift */,
+				756D52002A2323170047E73A /* ContentSizedTableView.swift */,
 				37460D9C230A9710002748CE /* SharedPreference.swift */,
 				371C951323374C780045D4E2 /* CommonGlobals.swift */,
 				376B7F322349C3C800E75CB0 /* LabibaFont.swift */,
@@ -1621,6 +1643,8 @@
 		5296E22925EF9F3B001FB31C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				756D52062A2323470047E73A /* UITableViewExtension.swift */,
+				756D52042A2323420047E73A /* UICollectionViewExtension.swift */,
 				B42954D622DDDBD2002DE3E9 /* Extensions.swift */,
 				F9D20113292A488D0024FE48 /* EncodableExtension.swift */,
 				5296E22A25EF9F63001FB31C /* UIDeviceExt.swift */,
@@ -1678,6 +1702,7 @@
 		52B6B37E25B6F8C40051ABCE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				75EDDA712A1E5DE0003D6152 /* Cells */,
 				52B6B37F25B6F8F70051ABCE /* Popup */,
 				372BB4BC24B1DF6C003A8297 /* VoiceAssistantViews */,
 				52E434C52504CF1D00D077D3 /* Header Views */,
@@ -1911,6 +1936,51 @@
 				52FC5CF024D00A9000C7B7CF /* MapPerviewView.swift */,
 			);
 			path = MapPerviewView;
+			sourceTree = "<group>";
+		};
+		75EDDA712A1E5DE0003D6152 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				75EDDA722A1E5DE0003D6152 /* VMenuTableCell */,
+				75EDDA772A1E5DE1003D6152 /* VMenuCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		75EDDA722A1E5DE0003D6152 /* VMenuTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				75EDDA732A1E5DE1003D6152 /* VMenuTableTheme */,
+				75EDDA752A1E5DE1003D6152 /* VMenuTableCell.swift */,
+				75EDDA762A1E5DE1003D6152 /* VMenuTableCell.xib */,
+			);
+			path = VMenuTableCell;
+			sourceTree = "<group>";
+		};
+		75EDDA732A1E5DE1003D6152 /* VMenuTableTheme */ = {
+			isa = PBXGroup;
+			children = (
+				75EDDA742A1E5DE1003D6152 /* VMenuTableTheme.swift */,
+			);
+			path = VMenuTableTheme;
+			sourceTree = "<group>";
+		};
+		75EDDA772A1E5DE1003D6152 /* VMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				75EDDA782A1E5DE1003D6152 /* VMenuCell.xib */,
+				75EDDA792A1E5DE1003D6152 /* VMenuCell.swift */,
+				75EDDA7A2A1E5DE1003D6152 /* Theme */,
+			);
+			path = VMenuCell;
+			sourceTree = "<group>";
+		};
+		75EDDA7A2A1E5DE1003D6152 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				75EDDA7B2A1E5DE1003D6152 /* VMenuCellTheme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		B429547322DDD9D1002DE3E9 = {
@@ -2331,6 +2401,7 @@
 				52BF2F552471330500820B37 /* VoiceExperienceView.xib in Resources */,
 				52C0A06D25878D3B004D7AAA /* RatingSatrsLightCell.xib in Resources */,
 				B429550922DDDBD2002DE3E9 /* CustomMapPicker.xib in Resources */,
+				75EDDA7F2A1E5DE1003D6152 /* VMenuCell.xib in Resources */,
 				B429550A22DDDBD2002DE3E9 /* AudioRecorderView.xib in Resources */,
 				52BF2F53247132AD00820B37 /* LabibaVoiceExperience.storyboard in Resources */,
 				B429550B22DDDBD2002DE3E9 /* AudioView.xib in Resources */,
@@ -2342,6 +2413,7 @@
 				F9D998062874747200E676B0 /* index.html in Resources */,
 				5214489B258647B90099BF38 /* Rating.storyboard in Resources */,
 				B429550C22DDDBD2002DE3E9 /* UserTextInputNoLocal.xib in Resources */,
+				75EDDA7E2A1E5DE1003D6152 /* VMenuTableCell.xib in Resources */,
 				B429550322DDDBD2002DE3E9 /* BotBubble.xib in Resources */,
 				52BF2F4F247131D600820B37 /* MessageView.xib in Resources */,
 				B429550522DDDBD2002DE3E9 /* PhotoView.xib in Resources */,
@@ -2435,6 +2507,7 @@
 				52775657272EE12F00F8ADE0 /* CompatibleAnimationView.swift in Sources */,
 				52775669272EE12F00F8ADE0 /* ShapeCompositionLayer.swift in Sources */,
 				52775637272EE12F00F8ADE0 /* InterpolatableExtensions.swift in Sources */,
+				756D52012A2323170047E73A /* ContentSizedTableView.swift in Sources */,
 				B429555222DDDBD2002DE3E9 /* VideoPlayerViewController.swift in Sources */,
 				52DE307D2462D6A000DAF3E7 /* Result.swift in Sources */,
 				527260E12518BB1A002130BA /* AttachmentView.swift in Sources */,
@@ -2453,6 +2526,7 @@
 				52775647272EE12F00F8ADE0 /* SolidLayerModel.swift in Sources */,
 				52775648272EE12F00F8ADE0 /* TextCompositionLayer.swift in Sources */,
 				372BB4C324B1E1CD003A8297 /* VoiceAssistant.swift in Sources */,
+				756D52032A2323320047E73A /* LocalCache.swift in Sources */,
 				B429554E22DDDBD2002DE3E9 /* LabibaBotConnector.swift in Sources */,
 				5277569B272EE12F00F8ADE0 /* PrecompAsset.swift in Sources */,
 				5277568C272EE12F00F8ADE0 /* GroupInterpolator.swift in Sources */,
@@ -2460,6 +2534,7 @@
 				B429551722DDDBD2002DE3E9 /* Common.swift in Sources */,
 				52DE8E1C248CEB880067F5EC /* GIFImageView.swift in Sources */,
 				526FD85225010E0C004B2408 /* QuickChoicesHeaderView.swift in Sources */,
+				756D52052A2323420047E73A /* UICollectionViewExtension.swift in Sources */,
 				52775643272EE12F00F8ADE0 /* ShapeLayerModel.swift in Sources */,
 				52487BBC278F1CDA00964441 /* WatchConnectivityViewController.swift in Sources */,
 				3782D99F23BA1369006A79D4 /* SRMutex.m in Sources */,
@@ -2488,6 +2563,7 @@
 				5277562D272EE12F00F8ADE0 /* TextAnimatorNode.swift in Sources */,
 				B429552822DDDBD2002DE3E9 /* StateOnHoldEntryCell.swift in Sources */,
 				522D1640256E41FB002758D5 /* RatingVC.swift in Sources */,
+				75EDDA812A1E5DE1003D6152 /* VMenuCellTheme.swift in Sources */,
 				52775659272EE12F00F8ADE0 /* Repeater.swift in Sources */,
 				521C0086244C2E2700961B54 /* LabibaRestfulBotConnector.swift in Sources */,
 				52AA90E32717FDDB00D6EA60 /* UpdateTokenModel.swift in Sources */,
@@ -2548,6 +2624,7 @@
 				52775673272EE12F00F8ADE0 /* FillRenderer.swift in Sources */,
 				52DE307E2462D6A000DAF3E7 /* ParameterEncoding.swift in Sources */,
 				52775651272EE12F00F8ADE0 /* ItemsExtension.swift in Sources */,
+				756D52072A2323470047E73A /* UITableViewExtension.swift in Sources */,
 				5277565D272EE12F00F8ADE0 /* FillI.swift in Sources */,
 				52775674272EE12F00F8ADE0 /* PathOutputNode.swift in Sources */,
 				37BD1BC223CB5807005DBA67 /* LabibaModelEnums.swift in Sources */,
@@ -2567,6 +2644,7 @@
 				52DE8E17248CEB880067F5EC /* CGSize.swift in Sources */,
 				52DE8E1E248CEB880067F5EC /* ImageSourceHelpers.swift in Sources */,
 				F9D2010F292A289A0024FE48 /* DataSource.swift in Sources */,
+				75EDDA802A1E5DE1003D6152 /* VMenuCell.swift in Sources */,
 				52775698272EE12F00F8ADE0 /* LottieView.swift in Sources */,
 				52DE8DD0248CB9C60067F5EC /* IQToolbar.swift in Sources */,
 				52775634272EE12F00F8ADE0 /* AnimationKeypath.swift in Sources */,
@@ -2595,6 +2673,7 @@
 				B429555322DDDBD2002DE3E9 /* RadiusViewController.swift in Sources */,
 				B429552722DDDBD2002DE3E9 /* EntryViewCell.swift in Sources */,
 				52DE307B2462D6A000DAF3E7 /* DispatchQueue+Alamofire.swift in Sources */,
+				75EDDA7D2A1E5DE1003D6152 /* VMenuTableCell.swift in Sources */,
 				52775686272EE12F00F8ADE0 /* KeyframeInterpolator.swift in Sources */,
 				5277564F272EE12F00F8ADE0 /* GradientFill.swift in Sources */,
 				52775639272EE12F00F8ADE0 /* FillNode.swift in Sources */,
@@ -2692,6 +2771,7 @@
 				52C6DBA824694849005CFE27 /* ImageFilter.swift in Sources */,
 				52C6DBAC24694849005CFE27 /* Image.swift in Sources */,
 				52DE8DD1248CB9C60067F5EC /* IQPreviousNextView.swift in Sources */,
+				75EDDA7C2A1E5DE1003D6152 /* VMenuTableTheme.swift in Sources */,
 				52C6DBA724694849005CFE27 /* UIButton+AlamofireImage.swift in Sources */,
 				52FC5CF624D0262F00C7B7CF /* LabibaVoiceExperience.swift in Sources */,
 				52DE30732462D6A000DAF3E7 /* Response.swift in Sources */,

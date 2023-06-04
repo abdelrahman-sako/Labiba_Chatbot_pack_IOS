@@ -339,6 +339,11 @@ class LabibaRestfulBotConnector{ //
                     dialog.cards?.presentation = .carousel
                     card.title = card.title.replacingOccurrences(of: "CAROUSEL:", with: "")
                 }
+                if card.title.hasPrefix("VMENU:")
+                {
+                    dialog.cards?.presentation = .vmnue
+                    card.title = card.title.replacingOccurrences(of: "VMENU:", with: "")
+                }
                 
                 card.imageUrl = elm.image_url
                 card.subtitle = elm.subtitle

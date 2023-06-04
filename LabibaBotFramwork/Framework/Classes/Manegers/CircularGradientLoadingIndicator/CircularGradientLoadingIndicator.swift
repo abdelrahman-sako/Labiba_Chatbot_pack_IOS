@@ -43,7 +43,7 @@ public class CircularGradientLoadingIndicator: UIView {
         
          if CircularGradientLoadingIndicator.isShown {return}
         
-        LoadingText = Labiba.loaderText
+        
         
         containerView = UIView(frame: CGRect(origin: origin, size: CGSize(width: width + sideSpaces, height: width + topSpace + 45)))
         self.addSubview(containerView!)
@@ -125,6 +125,9 @@ public class CircularGradientLoadingIndicator: UIView {
             
             if !shared.isDescendant(of: rootVC){
                     CircularGradientLoadingIndicator.isShown = true
+                
+                shared.LoadingText = Labiba.loaderText
+                
                     rootVC.addSubview(shared)
                 shared.containerView?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
                     UIView.animate(withDuration: 0.1) {
