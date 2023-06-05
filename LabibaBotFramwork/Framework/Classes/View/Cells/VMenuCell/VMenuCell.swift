@@ -10,7 +10,8 @@ import UIKit
 
 class VMenuCell: UITableViewCell {
 
-    @IBOutlet weak var actionButton: UIButton!
+  @IBOutlet weak var stackView: UIStackView!
+  @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var contanierView: UIView!
     @IBOutlet weak var menuContentLabel: UILabel!
     @IBOutlet weak var menuImageView: UIImageView!
@@ -38,6 +39,8 @@ class VMenuCell: UITableViewCell {
         
         contanierView.layer.cornerRadius = 8
         
+      stackView.semanticContentAttribute = Labiba.botLang == .en ? .forceLeftToRight : .forceRightToLeft
+      menuContentLabel.semanticContentAttribute  = Labiba.botLang == .en ? .forceLeftToRight : .forceRightToLeft
         if let shadow = Labiba.vMenuTheme.shadow {
             contanierView.applyShadow(color: shadow.color,
                                       opacity: shadow.opacity, offset: shadow.offset,radius: shadow.radius)

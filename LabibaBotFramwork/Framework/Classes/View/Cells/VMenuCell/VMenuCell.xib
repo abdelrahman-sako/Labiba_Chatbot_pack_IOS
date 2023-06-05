@@ -70,6 +70,7 @@
                 <outlet property="contanierView" destination="41X-ke-tzh" id="0lN-90-iwX"/>
                 <outlet property="menuContentLabel" destination="Bb7-3v-uVS" id="5yz-8B-hOK"/>
                 <outlet property="menuImageView" destination="1RK-Cb-frD" id="7fd-JF-boI"/>
+                <outlet property="stackView" destination="oxD-Jq-n3j" id="N5f-bO-hyV"/>
             </connections>
             <point key="canvasLocation" x="64.885496183206101" y="18.661971830985916"/>
         </tableViewCell>
