@@ -15,7 +15,7 @@ public struct VMenuTableTheme {
     public var showVerticalIndicator: Bool = true
     public var showHorizontalIndicator: Bool = true
     public var edgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    public var estimatedRowHeight = 95.0
+    public var estimatedRowHeight = 85.0
     public var rowHeight = UITableView.automaticDimension
         
 }
