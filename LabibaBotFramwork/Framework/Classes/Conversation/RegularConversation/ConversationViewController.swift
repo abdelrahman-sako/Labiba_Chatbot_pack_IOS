@@ -879,7 +879,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
             return CellTableHeight
         }else if(isVMenu){
             let count = displayedDialogs[indexPath.row].dialog.cards?.items.count ?? 0
-            return  CGFloat(count) * Labiba.vMenuTableTheme.estimatedRowHeight
+            return  (CGFloat(count) * Labiba.vMenuTableTheme.estimatedRowHeight) + 20
 
         }
         else

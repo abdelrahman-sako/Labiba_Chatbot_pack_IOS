@@ -52,7 +52,7 @@
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     </button>
                 </subviews>
-                <color key="backgroundColor" white="0.66666666666666663" alpha="0.070000000000000007" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="41X-ke-tzh" secondAttribute="trailing" constant="20" id="2M3-b4-uiq"/>
                     <constraint firstAttribute="trailing" secondItem="wZD-hl-cmB" secondAttribute="trailing" id="8kH-At-oEZ"/>
@@ -65,6 +65,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="actionButton" destination="wZD-hl-cmB" id="bdH-R2-lqy"/>
                 <outlet property="contanierView" destination="41X-ke-tzh" id="0lN-90-iwX"/>
