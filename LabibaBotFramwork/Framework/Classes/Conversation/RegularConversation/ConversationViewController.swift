@@ -598,7 +598,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
         
     }
-    
     override func finishedDisplayForDialog(dialog: ConversationDialog)
     {
         if(stepsToBeDisplayed.count > 0)
