@@ -21,7 +21,7 @@
                         <rect key="frame" x="20" y="5" width="397" height="135"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oxD-Jq-n3j">
-                                <rect key="frame" x="5" y="5" width="387" height="125"/>
+                                <rect key="frame" x="8" y="5" width="381" height="125"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1RK-Cb-frD">
                                         <rect key="frame" x="0.0" y="30" width="65" height="65"/>
@@ -31,7 +31,10 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb7-3v-uVS">
-                                        <rect key="frame" x="85" y="52.333333333333336" width="302" height="20.333333333333336"/>
+                                        <rect key="frame" x="85" y="30" width="296" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="dGC-mt-yUF"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -41,10 +44,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oxD-Jq-n3j" firstAttribute="leading" secondItem="41X-ke-tzh" secondAttribute="leading" constant="5" id="UYf-3C-O7G"/>
+                            <constraint firstItem="oxD-Jq-n3j" firstAttribute="leading" secondItem="41X-ke-tzh" secondAttribute="leading" constant="8" id="UYf-3C-O7G"/>
                             <constraint firstAttribute="bottom" secondItem="oxD-Jq-n3j" secondAttribute="bottom" constant="5" id="geL-eL-CWl"/>
                             <constraint firstItem="oxD-Jq-n3j" firstAttribute="top" secondItem="41X-ke-tzh" secondAttribute="top" constant="5" id="tJl-ZY-6vf"/>
-                            <constraint firstAttribute="trailing" secondItem="oxD-Jq-n3j" secondAttribute="trailing" constant="5" id="xxN-6H-VO2"/>
+                            <constraint firstAttribute="trailing" secondItem="oxD-Jq-n3j" secondAttribute="trailing" constant="8" id="xxN-6H-VO2"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZD-hl-cmB">
@@ -69,9 +72,11 @@
             <connections>
                 <outlet property="actionButton" destination="wZD-hl-cmB" id="bdH-R2-lqy"/>
                 <outlet property="contanierView" destination="41X-ke-tzh" id="0lN-90-iwX"/>
+                <outlet property="leadingStackViewConst" destination="UYf-3C-O7G" id="OKp-5f-g6O"/>
                 <outlet property="menuContentLabel" destination="Bb7-3v-uVS" id="5yz-8B-hOK"/>
                 <outlet property="menuImageView" destination="1RK-Cb-frD" id="7fd-JF-boI"/>
                 <outlet property="stackView" destination="oxD-Jq-n3j" id="N5f-bO-hyV"/>
+                <outlet property="trailingStackViewConst" destination="xxN-6H-VO2" id="W4q-9a-6BB"/>
             </connections>
             <point key="canvasLocation" x="64.885496183206101" y="18.661971830985916"/>
         </tableViewCell>
