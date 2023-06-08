@@ -29,7 +29,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     override func collectionView(dialogIndex: Int, selectedCardIndex: Int, selectedCellDialogCardButton: DialogCardButton?, didTappedInTableview TableCell: VMenuTableCell) {
-        submitLocalUserText(self.displayedDialogs[dialogIndex].dialog.cards?.items[selectedCardIndex].title ?? "")
+        if Labiba.MenuCardView.clearNonSelectedItems{
+            let SelectedDialogCard = self.displayedDialogs[dialogIndex].dialog.cards?.items[selectedCardIndex]
+            self.displayedDialogs[dialogIndex].dialog.cards?.items.removeAll()
+            self.displayedDialogs[dialogIndex].dialog.cards?.items.append(SelectedDialogCard!)
+        }else{
+            submitLocalUserText(self.displayedDialogs[dialogIndex].dialog.cards?.items[selectedCardIndex].title ?? "")
+        }
         super.collectionView(dialogIndex: dialogIndex, selectedCardIndex: selectedCardIndex, selectedCellDialogCardButton: selectedCellDialogCardButton, didTappedInTableview: TableCell)
 
     }
@@ -191,7 +197,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
       
         tableView.registerCell(type: VMenuTableCell.self,bundle: self.nibBundle)
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 44.0
+        self.tableView.estimatedRowHeight = 1044.0
         
         //self.fillEdgeSpace(withColor: self.view.backgroundColor ?? .white, edge: .bottom)
        // addHintsCell()
@@ -286,9 +292,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             keyboardTypeDialog.popUp(on: self.backgroundView)
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
-              tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + ipadFactor*10
+              tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 70
             default:
-               tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + 20 + ipadFactor*15
+               tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + 70 + ipadFactor*15
             }
             
         case .voiceAssistance ,.voiceAndKeyboard ,.voiceToVoice:
@@ -556,31 +562,63 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     func renderStep(step:ConversationDialog, wait:Double = 0.0) -> Void
     {
-        DispatchQueue.main.asyncAfter(deadline: .now() + wait)
-        {
-            if(step.cards?.presentation == .menu) //CardsViewController.present(forDialog: step, andDelegate: self)
-            {
-                self.insertCellIntoTable(step: step)
-                //                CardsViewController.present(forDialog: step, andDelegate: self)
-                //                self.showTyping = false
-                //                self.tableView.reloadData()
-                //return
-            }
-            else
-            {
-               // let holderStepMessage = step.message
-                step.message?.removeArabicDiacritic()
-                let renderedDialog = EntryDisplay(dialog: step)
-                renderedDialog.target = self
-                self.clearChoices()
-                self.showTyping = false
-                self.insertDisplay(renderedDialog)
-                if step.hasMessage
+                DispatchQueue.main.asyncAfter(deadline: .now() + wait)
                 {
-                    self.finishedDisplayForDialog(dialog: step)
-                }
+        if(step.cards?.presentation == .menu ) //CardsViewController.present(forDialog: step, andDelegate: self)
+        {
+            self.insertCellIntoTable(step: step)
+            //                CardsViewController.present(forDialog: step, andDelegate: self)
+            //                self.showTyping = false
+            //                self.tableView.reloadData()
+            //return
+        }else if (step.cards?.presentation == .vmnue){
+            
+            let renderedDialog = EntryDisplay(dialog: step)
+            renderedDialog.target = self
+            
+            self.showTyping = false
+            let index = IndexPath(row: self.displayedDialogs.endIndex, section: 0)
+            self.displayedDialogs.append(renderedDialog)
+            self.tableView.reloadData()
+            self.tableView.scrollToRow(at: index, at: .top, animated: true)
+
+            if step.hasMessage
+            {
+                self.finishedDisplayForDialog(dialog: step)
             }
         }
+        else
+        {
+            // let holderStepMessage = step.message
+            step.message?.removeArabicDiacritic()
+            let renderedDialog = EntryDisplay(dialog: step)
+            renderedDialog.target = self
+            self.clearChoices()
+            self.showTyping = false
+//            if self.displayedDialogs.count == 0 {
+                self.displayedDialogs.append(renderedDialog)
+                
+                self.tableView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
+                let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height)
+                self.tableView.setContentOffset(scrollPoint, animated: true)
+            }
+            // self.insertDisplay(renderedDialog)
+
+//            }else {
+//                let index = IndexPath(row: self.displayedDialogs.endIndex, section: 0)
+//                self.displayedDialogs.append(renderedDialog)
+//                self.tableView.insertRows(at: [index], with: .automatic)
+//                self.tableView.scrollToRow(at: index, at: .top, animated: true)
+//
+//            }
+            
+            if step.hasMessage
+            {
+                self.finishedDisplayForDialog(dialog: step)
+            }
+        }
+    }
     }
     
     func insertCellIntoTable(step: ConversationDialog)
@@ -929,7 +967,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
                     
                     return cell!
                 }else if cards.presentation == .vmnue {
-                    var cell = tableView.dequeueCell(withType: VMenuTableCell.self, for: indexPath)!
+                    let cell = tableView.dequeueCell(withType: VMenuTableCell.self, for: indexPath)!
                     
                     
                     cell.setDate(selectedDialogIndex: indexPath.row, model: display)
@@ -974,7 +1012,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
             return tableView.dequeueReusableCell(withIdentifier: "indicatorCell", for: indexPath) as! TypingIndicatorCell
         }
     }
-    
+
     //tableview finished loading
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if cell is TypingIndicatorCell

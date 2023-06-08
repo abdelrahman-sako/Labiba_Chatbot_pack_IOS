@@ -56,6 +56,8 @@ class VMenuCell: UITableViewCell {
       menuImageView.af_setImage(withURL: url)
       leadingStackViewConst.constant = 5
       trailingStackViewConst.constant = 5
+        menuImageView.isHidden = false
+
     } else {
       menuImageView.isHidden = true
       leadingStackViewConst.constant = 20

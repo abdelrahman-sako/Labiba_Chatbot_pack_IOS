@@ -48,7 +48,7 @@ class VMenuTableCell: UITableViewCell {
         self.SelectedDialogIndex = selectedDialogIndex
         self.aDisplayedDialogs = model
         self.tableView.reloadData()
-        self.tableView.layoutIfNeeded()
+       // self.tableView.layoutIfNeeded()
         guard let dialog = aDisplayedDialogs?.dialog else {
             return
         }
@@ -91,8 +91,7 @@ extension VMenuTableCell : UITableViewDelegate, UITableViewDataSource{
         }
         return UITableViewCell()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if isFirstReloading {
             cell.alpha = 0
             cell.transform = CGAffineTransform(translationX: -15, y: 0)
@@ -100,7 +99,13 @@ extension VMenuTableCell : UITableViewDelegate, UITableViewDataSource{
                 cell.alpha = 1
                 cell.transform = .identity
             }, completion: nil)
+            
         }
+        if let categoryItems = self.aDisplayedDialogs?.dialog.cards?.items
+        {
+            tableView.scrollToRow(at: IndexPath(row: categoryItems.count - 1, section: 0), at: .bottom, animated: true)
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
