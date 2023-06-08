@@ -101,10 +101,7 @@ extension VMenuTableCell : UITableViewDelegate, UITableViewDataSource{
             }, completion: nil)
             
         }
-        if let categoryItems = self.aDisplayedDialogs?.dialog.cards?.items
-        {
-            tableView.scrollToRow(at: IndexPath(row: categoryItems.count - 1, section: 0), at: .bottom, animated: true)
-        }
+       
        
     }
     
