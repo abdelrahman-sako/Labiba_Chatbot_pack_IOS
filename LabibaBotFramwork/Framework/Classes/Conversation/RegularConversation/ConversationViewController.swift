@@ -294,11 +294,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             keyboardTypeDialog.popUp(on: self.backgroundView)
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
-                tavleViewBottomConst.constant = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 50
-                //tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 70
+              tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 25
             default:
-                tavleViewBottomConst.constant = UserTextInputNoLocal.HEIGHT + 50 + ipadFactor*15
-                //tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + 70 + ipadFactor*15
+               tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + 45 + ipadFactor*15
             }
             
         case .voiceAssistance ,.voiceAndKeyboard ,.voiceToVoice:
@@ -306,29 +304,29 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             voiceTypeDialog.popUp(on: self.backgroundView)
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
-                tavleViewBottomConst.constant = 50
-                //tableView.contentInset.bottom  = 80
+                //tavleViewBottomConst.constant = 50
+                tableView.contentInset.bottom  = 80
             case .iPhone5_5 :
-                tavleViewBottomConst.constant = 90
-                //tableView.contentInset.bottom = 110
+                //tavleViewBottomConst.constant = 90
+                tableView.contentInset.bottom = 130
             default:
-                tavleViewBottomConst.constant = 90
-                //tableView.contentInset.bottom = 110
+             //   tavleViewBottomConst.constant = VoiceK
+                tableView.contentInset.bottom = 130
             }
         case .visualizer:
             visualizerDialog.popUp(on: self.backgroundView)
             visualizerDialog.delegate = self
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
-                tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
-                //tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 50
+                //tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
+                tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 50
             default:
-                tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
-                //tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 50
+                //tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
+                tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 50
             }
         }
-        tableView.contentInset.bottom = 0
-        tableViewBottomInset = tavleViewBottomConst.constant
+        tableView.contentInset.bottom = tableView.contentInset.bottom
+        tableViewBottomInset = tableView.contentInset.bottom
         tableView.contentInset.top = Labiba._OpenFromBubble ?  30 : 70
         tableTopConstraint.constant = -70
         
@@ -995,7 +993,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        tableView.contentInset.bottom = showTyping ?  70 : 20
+       // tableView.contentInset.bottom = showTyping ?  70 : 20
         if indexPath.row <  self.displayedDialogs.count
         {
 //            tableView.contentInset.bottom = 0
@@ -1058,7 +1056,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         }
         else
         {
-            tableView.contentInset.bottom = 70
+           // tableView.contentInset.bottom = 70
             print("TrackSteps Table cellForRowAt index path ore than displayed dialogs")
             return tableView.dequeueReusableCell(withIdentifier: "indicatorCell", for: indexPath) as! TypingIndicatorCell
         }
@@ -1129,8 +1127,8 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
             default:
                 break
             }
-            self.tableView.contentInset.bottom = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue - 20
-            self.tavleViewBottomConst.constant = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue
+            self.tableView.contentInset.bottom = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue 
+           // self.tavleViewBottomConst.constant = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue
             if self.displayedDialogs.count > 0 {
                 let lastIndex = IndexPath(row: self.displayedDialogs.count - 1, section: 0)
                 self.tableView.scrollToRow(at: lastIndex, at: .none, animated: false)
@@ -1143,9 +1141,11 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         //        UIView.animate(withDuration: 0.3) {
         //            self.tableView.transform = CGAffineTransform.identity
         //        }
-        self.tableView.contentInset.bottom = 0
         
-        tavleViewBottomConst.constant = tableViewBottomInset
+        //addInterationDialog(currentBotType: Labiba.Temporary_Bot_Type)
+        self.tableView.contentInset.bottom = tableViewBottomInset
+        
+        //tavleViewBottomConst.constant = tableViewBottomInset
     }
     
     
@@ -1421,8 +1421,8 @@ extension ConversationViewController: VoiceAssistantKeyboardDelegate
         default:
             break
         }
-        self.tavleViewBottomConst.constant = keyboardHight + VisualizerVoiceAssistantView.INPUT_HEIGHT - addedValue - 20
-         self.tableView.contentInset.bottom = 70
+       // self.tavleViewBottomConst.constant = keyboardHight + VisualizerVoiceAssistantView.INPUT_HEIGHT - addedValue - 20
+         self.tableView.contentInset.bottom =  keyboardHight + VisualizerVoiceAssistantView.INPUT_HEIGHT - addedValue - 20
         if self.displayedDialogs.count > 0 {
             let lastIndex = IndexPath(row: self.displayedDialogs.count - 1, section: 0)
             self.tableView.scrollToRow(at: lastIndex, at: .none, animated: false)
@@ -1430,8 +1430,8 @@ extension ConversationViewController: VoiceAssistantKeyboardDelegate
     }
     
     func voiceAssistantKeyboardWillHide() {
-        self.tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
-        tableView.contentInset.bottom = 0
+        //self.tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
+        tableView.contentInset.bottom = tableViewBottomInset
     }
 }
 
