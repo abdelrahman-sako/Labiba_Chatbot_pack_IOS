@@ -294,9 +294,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             keyboardTypeDialog.popUp(on: self.backgroundView)
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
-              tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 25
+              tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 30
             default:
-               tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + 45 + ipadFactor*15
+               tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + 50 + ipadFactor*15
             }
             
         case .voiceAssistance ,.voiceAndKeyboard ,.voiceToVoice:
@@ -305,7 +305,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
                 //tavleViewBottomConst.constant = 50
-                tableView.contentInset.bottom  = 80
+                tableView.contentInset.bottom  = 110
             case .iPhone5_5 :
                 //tavleViewBottomConst.constant = 90
                 tableView.contentInset.bottom = 130
@@ -993,7 +993,6 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-       // tableView.contentInset.bottom = showTyping ?  70 : 20
         if indexPath.row <  self.displayedDialogs.count
         {
 //            tableView.contentInset.bottom = 0
