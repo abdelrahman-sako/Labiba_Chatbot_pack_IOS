@@ -41,7 +41,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     
-   
+    
     
     @IBOutlet weak var tavleViewBottomConst: NSLayoutConstraint!
     let dateFormatter = DateFormatter()
@@ -295,10 +295,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
                 tavleViewBottomConst.constant = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 50
-                tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 70
+                //tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 70
             default:
                 tavleViewBottomConst.constant = UserTextInputNoLocal.HEIGHT + 50 + ipadFactor*15
-                tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + 70 + ipadFactor*15
+                //tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + 70 + ipadFactor*15
             }
             
         case .voiceAssistance ,.voiceAndKeyboard ,.voiceToVoice:
@@ -307,13 +307,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
                 tavleViewBottomConst.constant = 50
-                tableView.contentInset.bottom  = 80
+                //tableView.contentInset.bottom  = 80
             case .iPhone5_5 :
                 tavleViewBottomConst.constant = 90
-                tableView.contentInset.bottom = 110
+                //tableView.contentInset.bottom = 110
             default:
                 tavleViewBottomConst.constant = 90
-                tableView.contentInset.bottom = 110
+                //tableView.contentInset.bottom = 110
             }
         case .visualizer:
             visualizerDialog.popUp(on: self.backgroundView)
@@ -321,13 +321,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
                 tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
-                tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 50
+                //tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 50
             default:
                 tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
-                tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 50
+                //tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 50
             }
         }
-        
+        tableView.contentInset.bottom = 0
         tableViewBottomInset = tavleViewBottomConst.constant
         tableView.contentInset.top = Labiba._OpenFromBubble ?  30 : 70
         tableTopConstraint.constant = -70
@@ -556,7 +556,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         } else {
             displayedDialogs = LocalCache.shared.displayedDialogs
             stepsToBeDisplayed = LocalCache.shared.stepsToBeDisplayed
-            scrollToBottom()
+            // MARK:
+            //scrollToBottom()
+            scrollDown(delay: 0.3)
         }
     }
     
@@ -566,7 +568,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         if (stepsToBeDisplayed.count == 1)
         {
             
-            renderStep(step: dialog)
+            renderStep(step: dialog,wait: 0.3)
         }
     }
     
@@ -592,25 +594,20 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 self.showTyping = false
                 self.displayedDialogs.append(renderedDialog)
                 self.tableView.reloadData()
-                let index = IndexPath(row: self.displayedDialogs.endIndex, section: 0)
-
+                //let index = IndexPath(row: self.displayedDialogs.endIndex, section: 0)
                 
                 
-               
-//                let cell = self.tableView.cellForRow(at: index)
-//                self.tableView.scrollToRow(at: IndexPath(row: self.displayedDialogs.endIndex, section: 0), at: ., animated: true)
-                if renderedDialog.height < self.tableView.frame.height - 50 {
-                    DispatchQueue.main.async {
-                        let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height  )
-                        self.tableView.setContentOffset(scrollPoint, animated: true)
-                    }
-                }else {
-                    DispatchQueue.main.async {
-                        let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height - 350  )
-                        self.tableView.setContentOffset(scrollPoint, animated: true)
-                    }
-                }
-
+                
+                
+                //                let cell = self.tableView.cellForRow(at: index)
+                //                self.tableView.scrollToRow(at: IndexPath(row: self.displayedDialogs.endIndex, section: 0), at: ., animated: true)
+                //                if renderedDialog.height < self.tableView.frame.height - 50 {
+                //                    DispatchQueue.main.async {
+                //                        let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height  )
+                //                        self.tableView.setContentOffset(scrollPoint, animated: true)
+                //                    }
+                //                }else {
+                self.scrollDown(delay: 0.15)
                 if step.hasMessage
                 {
                     self.finishedDisplayForDialog(dialog: step)
@@ -628,13 +625,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 self.displayedDialogs.append(renderedDialog)
                 
                 self.tableView.reloadData()
-//                if !self.isFirstMessage{
-                    DispatchQueue.main.async {
-                        let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height)
-                        self.tableView.setContentOffset(scrollPoint, animated: true)
-                    }
-//                }
-               
+                //                if !self.isFirstMessage{
+                self.scrollDown(delay: wait)
+                //                }
+                
                 //self.insertDisplay(renderedDialog)
                 
                 //            }else {
@@ -688,16 +682,22 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         self.cardButton(btn, ofCard: card, wasSelectedForDialog: dialog)
     }
     
-    func insertDisplay(_ display:EntryDisplay ) -> Void
+    func insertDisplay(_ display:EntryDisplay,delay:CGFloat = 0.15 ) -> Void
     {
         self.displayedDialogs.append(display)
         self.tableView.reloadData()
-        DispatchQueue.main.async {
-            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height)
+        scrollDown(delay: 0.15)
+    }
+    
+    func scrollDown(delay:CGFloat){
+      //  self.tableView.contentInset.bottom = 0
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+
+            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height + self.tableView.adjustedContentInset.bottom)
             self.tableView.setContentOffset(scrollPoint, animated: true)
         }
     }
-    
     
     //MARK:titi choice selected
     override func choiceWasSelectedFor(display: EntryDisplay, choice: DialogChoice)
@@ -776,43 +776,43 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         self.showTyping = rows > count
     }
     
-    func scrollToBottom() -> Void
-    {
-        let lastIndex = self.showTyping ? self.displayedDialogs.count : self.displayedDialogs.count - 1
-        if (lastIndex >= 0)
-        {
-            let index = IndexPath(row: lastIndex, section: 0)
-            guard index.row == (self.displayedDialogs.count - 1) else {
-                return
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1)
-            {
-                if(self.displayedDialogs.count > lastIndex)
-                {
-                    let display = self.displayedDialogs[lastIndex]
-                    if let cards = display.dialog.cards
-                    {
-                        //                        if(cards.presentation == .menu) // i comment this in order to scrol when the dialog is carousal
-                        //                        {
-                        self.tableView.scrollToRow(at: index, at: .top, animated: true)
-                        //                        }
-                    }
-                    
-                    else
-                    {
-                        self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
-                    }
-                }
-                else
-                {
-                    
-                    self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
-                    
-                    
-                }
-            }
-        }
-    }
+    //    func scrollToBottom() -> Void
+    //    {
+    //        let lastIndex = self.showTyping ? self.displayedDialogs.count : self.displayedDialogs.count - 1
+    //        if (lastIndex >= 0)
+    //        {
+    //            let index = IndexPath(row: lastIndex, section: 0)
+    //            guard index.row == (self.displayedDialogs.count - 1) else {
+    //                return
+    //            }
+    //            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1)
+    //            {
+    //                if(self.displayedDialogs.count > lastIndex)
+    //                {
+    //                    let display = self.displayedDialogs[lastIndex]
+    //                    if let cards = display.dialog.cards
+    //                    {
+    //                        //                        if(cards.presentation == .menu) // i comment this in order to scrol when the dialog is carousal
+    //                        //                        {
+    //                        self.tableView.scrollToRow(at: index, at: .top, animated: true)
+    //                        //                        }
+    //                    }
+    //
+    //                    else
+    //                    {
+    //                        self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+    //                    }
+    //                }
+    //                else
+    //                {
+    //
+    //                    self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+    //
+    //
+    //                }
+    //            }
+    //        }
+    //    }
     
     func reloadTable() -> Void
     {
@@ -920,17 +920,19 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         {
             if displayedDialogs.count > 0 { // to ensure that table content will scroll only once when cell presented for the first time
                 if displayedDialogs[displayedDialogs.count - 1].status == .NotShown || self.showTyping{
-                    if displayedDialogs[displayedDialogs.count - 1].height < self.tableView.frame.height - 50 {
-                        DispatchQueue.main.async {
-                            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height  )
-                            self.tableView.setContentOffset(scrollPoint, animated: true)
-                        }
-                    }else {
-                        DispatchQueue.main.async {
-                            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height - 350  )
-                            self.tableView.setContentOffset(scrollPoint, animated: true)
-                        }
-                    }
+                    // scrollToBottom()
+                    //                    if displayedDialogs[displayedDialogs.count - 1].height < self.tableView.frame.height - 50 {
+                    //                        scrollToBottom()
+                    ////                        DispatchQueue.main.async {
+                    ////                            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height  )
+                    ////                            self.tableView.setContentOffset(scrollPoint, animated: true)
+                    ////                        }
+                    //                    }else {
+                    //                        DispatchQueue.main.async {
+                    //                            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height - 350  )
+                    //                            self.tableView.setContentOffset(scrollPoint, animated: true)
+                    //                        }
+                    //                    }
                 }
             }
         }
@@ -993,9 +995,10 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        
+        tableView.contentInset.bottom = showTyping ?  70 : 20
         if indexPath.row <  self.displayedDialogs.count
         {
+//            tableView.contentInset.bottom = 0
             let display = self.displayedDialogs[indexPath.row]
             if let cards = display.dialog.cards
             {
@@ -1055,6 +1058,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         }
         else
         {
+            tableView.contentInset.bottom = 70
             print("TrackSteps Table cellForRowAt index path ore than displayed dialogs")
             return tableView.dequeueReusableCell(withIdentifier: "indicatorCell", for: indexPath) as! TypingIndicatorCell
         }
@@ -1139,6 +1143,7 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         //        UIView.animate(withDuration: 0.3) {
         //            self.tableView.transform = CGAffineTransform.identity
         //        }
+        self.tableView.contentInset.bottom = 0
         
         tavleViewBottomConst.constant = tableViewBottomInset
     }
@@ -1189,8 +1194,11 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         self.showTyping = false
         self.insertDisplay(renderedDialog)
         self.finishedDisplayForDialog(dialog: dialog)
-        self.scrollToBottom()
+        //MARK:
         
+        
+        //self.scrollToBottom()
+        scrollDown(delay:0.1)
         self.botConnector.sendVoice(voice) { (remotePath) in
             
             renderedDialog.loadingStatus = remotePath != nil ? .success : .failed
@@ -1221,7 +1229,7 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         self.clearChoices()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.scrollToBottom()
+            // self.scrollToBottom()
         }
     }
     
@@ -1414,7 +1422,7 @@ extension ConversationViewController: VoiceAssistantKeyboardDelegate
             break
         }
         self.tavleViewBottomConst.constant = keyboardHight + VisualizerVoiceAssistantView.INPUT_HEIGHT - addedValue - 20
-        self.tableView.contentInset.bottom = keyboardHight + VisualizerVoiceAssistantView.INPUT_HEIGHT - addedValue
+         self.tableView.contentInset.bottom = 70
         if self.displayedDialogs.count > 0 {
             let lastIndex = IndexPath(row: self.displayedDialogs.count - 1, section: 0)
             self.tableView.scrollToRow(at: lastIndex, at: .none, animated: false)
@@ -1423,7 +1431,7 @@ extension ConversationViewController: VoiceAssistantKeyboardDelegate
     
     func voiceAssistantKeyboardWillHide() {
         self.tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
-        tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 50
+        tableView.contentInset.bottom = 0
     }
 }
 
