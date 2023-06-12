@@ -198,8 +198,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         addNotificationCenterObservers()
         
         tableView.registerCell(type: VMenuTableCell.self,bundle: self.nibBundle)
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 1044.0
+//        self.tableView.rowHeight = UITableView.automaticDimension
+//        self.tableView.estimatedRowHeight = 1044.0
         
         //self.fillEdgeSpace(withColor: self.view.backgroundColor ?? .white, edge: .bottom)
         // addHintsCell()
@@ -379,7 +379,11 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         { (notification) in
             //self.addInterationDialog(currentBotType:Labiba.Bot_Type) // to handel first time, when using bubble, where backgroud view frame  not correct for the first time
         }
-        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("MediaRender"),
+                                               object: nil, queue: nil)
+        { (notification) in
+            self.scrollDown(delay: 0.5)
+        }
         NotificationCenter.default.addObserver(forName: Constants.NotificationNames.ShowHideDynamicGIF,
                                                object: nil, queue: nil)
         { (notification) in
@@ -605,7 +609,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 //                        self.tableView.setContentOffset(scrollPoint, animated: true)
                 //                    }
                 //                }else {
-                self.scrollDown(delay: 0.15)
+                //self.scrollDown(delay: 0.15)
                 if step.hasMessage
                 {
                     self.finishedDisplayForDialog(dialog: step)
@@ -624,7 +628,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 
                 self.tableView.reloadData()
                 //                if !self.isFirstMessage{
-                self.scrollDown(delay: wait)
+                //self.scrollDown(delay: wait)
                 //                }
                 
                 //self.insertDisplay(renderedDialog)
@@ -684,7 +688,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     {
         self.displayedDialogs.append(display)
         self.tableView.reloadData()
-        scrollDown(delay: 0.15)
+        //scrollDown(delay: 0.15)
     }
     
     func scrollDown(delay:CGFloat){
@@ -692,8 +696,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
 
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
 
-            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height + self.tableView.adjustedContentInset.bottom)
-            self.tableView.setContentOffset(scrollPoint, animated: true)
+            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height + self.tableView.adjustedContentInset.bottom )
+            self.view.layoutIfNeeded()
+        //    UIView.animate(withDuration: 0.3) {
+                self.tableView.setContentOffset(scrollPoint, animated: true)
+        //    }
+            
+           // self.tableView.setC
         }
     }
     
@@ -774,43 +783,43 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         self.showTyping = rows > count
     }
     
-    //    func scrollToBottom() -> Void
-    //    {
-    //        let lastIndex = self.showTyping ? self.displayedDialogs.count : self.displayedDialogs.count - 1
-    //        if (lastIndex >= 0)
-    //        {
-    //            let index = IndexPath(row: lastIndex, section: 0)
-    //            guard index.row == (self.displayedDialogs.count - 1) else {
-    //                return
-    //            }
-    //            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1)
-    //            {
-    //                if(self.displayedDialogs.count > lastIndex)
-    //                {
-    //                    let display = self.displayedDialogs[lastIndex]
-    //                    if let cards = display.dialog.cards
-    //                    {
-    //                        //                        if(cards.presentation == .menu) // i comment this in order to scrol when the dialog is carousal
-    //                        //                        {
-    //                        self.tableView.scrollToRow(at: index, at: .top, animated: true)
-    //                        //                        }
-    //                    }
-    //
-    //                    else
-    //                    {
-    //                        self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
-    //                    }
-    //                }
-    //                else
-    //                {
-    //
-    //                    self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
-    //
-    //
-    //                }
-    //            }
-    //        }
-    //    }
+        func scrollToBottom() -> Void
+        {
+            let lastIndex = self.showTyping ? self.displayedDialogs.count : self.displayedDialogs.count - 1
+            if (lastIndex >= 0)
+            {
+                let index = IndexPath(row: lastIndex, section: 0)
+                guard index.row == (self.displayedDialogs.count - 1) else {
+                    return
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1)
+                {
+                    if(self.displayedDialogs.count > lastIndex)
+                    {
+                        let display = self.displayedDialogs[lastIndex]
+                        if let cards = display.dialog.cards
+                        {
+                            //                        if(cards.presentation == .menu) // i comment this in order to scrol when the dialog is carousal
+                            //                        {
+                            self.tableView.scrollToRow(at: index, at: .top, animated: true)
+                            //                        }
+                        }
+    
+                        else
+                        {
+                            self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+                        }
+                    }
+                    else
+                    {
+    
+                        self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+    
+    
+                    }
+                }
+            }
+        }
     
     func reloadTable() -> Void
     {
@@ -918,19 +927,15 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         {
             if displayedDialogs.count > 0 { // to ensure that table content will scroll only once when cell presented for the first time
                 if displayedDialogs[displayedDialogs.count - 1].status == .NotShown || self.showTyping{
-                    // scrollToBottom()
-                    //                    if displayedDialogs[displayedDialogs.count - 1].height < self.tableView.frame.height - 50 {
-                    //                        scrollToBottom()
-                    ////                        DispatchQueue.main.async {
-                    ////                            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height  )
-                    ////                            self.tableView.setContentOffset(scrollPoint, animated: true)
-                    ////                        }
-                    //                    }else {
-                    //                        DispatchQueue.main.async {
-                    //                            let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height - 350  )
-                    //                            self.tableView.setContentOffset(scrollPoint, animated: true)
-                    //                        }
-                    //                    }
+                    if displayedDialogs[displayedDialogs.count - 1].dialog.cards?.presentation == .vmnue || self.showTyping || displayedDialogs[displayedDialogs.count - 1].dialog.party == .user {
+                        scrollDown(delay: 0.2 )
+                    }else{
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                            self.scrollToBottom()
+
+                        }
+
+                    }
                 }
             }
         }
@@ -995,7 +1000,6 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
     {
         if indexPath.row <  self.displayedDialogs.count
         {
-//            tableView.contentInset.bottom = 0
             let display = self.displayedDialogs[indexPath.row]
             if let cards = display.dialog.cards
             {
@@ -1055,7 +1059,6 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         }
         else
         {
-           // tableView.contentInset.bottom = 70
             print("TrackSteps Table cellForRowAt index path ore than displayed dialogs")
             return tableView.dequeueReusableCell(withIdentifier: "indicatorCell", for: indexPath) as! TypingIndicatorCell
         }
