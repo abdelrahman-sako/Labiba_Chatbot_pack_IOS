@@ -27,8 +27,6 @@ class TextToSpeechManeger:NSObject{
     static let Shared = TextToSpeechManeger()
     var botConnector:BotConnector = BotConnector.shared
     private var ToDeletDialogs:[ConversationDialog] = []
-  var audioPlayer: AVAudioPlayer?
-  var base64String : String?
   
     private override init(){
         super.init()
@@ -257,8 +255,6 @@ class TextToSpeechManeger:NSObject{
     
     
     func stop() {
-      audioPlayer?.pause()
-      audioPlayer = nil
         downloadTask?.cancelRequest()
         setSessionCategoryForSpeechToText()
         player?.pause()
@@ -303,12 +299,12 @@ class TextToSpeechManeger:NSObject{
     
     do {
       // Create an AVAudioPlayer with the audio data
-      audioPlayer = try AVAudioPlayer(data: audioData)
+      player = try AVAudioPlayer(data: audioData)
       
       // Prepare the audio player for playback
-      audioPlayer?.prepareToPlay()
+      player?.prepareToPlay()
       
-      return audioPlayer
+      return player
     } catch {
       print("Failed to create AVAudioPlayer: \(error)")
       return nil
