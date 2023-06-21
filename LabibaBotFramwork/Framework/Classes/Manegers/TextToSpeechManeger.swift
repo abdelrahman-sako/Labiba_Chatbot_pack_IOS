@@ -35,6 +35,7 @@ class TextToSpeechManeger:NSObject{
         addStopTTSObserver()
     }
     
+
     func getURL(for model:TTSMessageModel) {//-> URL? {
         let message = model.message.replacingOccurrences(of: "\"", with: "")
       let TTS_Model = TextToSpeechModel(text: message, googleVoice: GoogleVoice(voiceLang: LabibaLanguage(rawValue:model.langCode) ?? .ar), clientid: "0",isSSML: model.isSSML, isBase64: Labiba.audioType)
@@ -256,6 +257,8 @@ class TextToSpeechManeger:NSObject{
     
     
     func stop() {
+      audioPlayer?.pause()
+      audioPlayer = nil
         downloadTask?.cancelRequest()
         setSessionCategoryForSpeechToText()
         player?.pause()
