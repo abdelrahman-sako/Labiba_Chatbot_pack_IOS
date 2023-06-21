@@ -188,7 +188,8 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             "voicename" : model.googleVoice.voicename,
             "clientid" : model.clientid,
             "language" : model.googleVoice.language,
-            "isSSML":"\(model.isSSML)"
+            "isSSML":"\(model.isSSML)",
+            "isBase64": "\(model.isBase64)"
         ]
         
         remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in

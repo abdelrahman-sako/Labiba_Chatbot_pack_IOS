@@ -19,6 +19,11 @@ public enum BotType:Int {
     case visualizer = 6
 }
 
+public enum AudioType{
+  case base64
+  case url
+}
+
 
 @objc public class Labiba: NSObject
 {
@@ -28,7 +33,7 @@ public enum BotType:Int {
   //  static var _basePath = "ws://whatsapp.labibabot.com/api/mws"
    // static var _basePath = "ws://botbuilder.labiba.ai/api/mws"
    // static var _socketBasePath = "wss://botbuilder.labiba.ai/api/mws"
-    
+    public static var audioType = false
     static var _basePath = ""     //"https://botbuilder.labiba.ai"
     static var _messagingServicePath = ""    //"/api/MobileAPI/MessageHandler"
     static var _voiceBasePath = ""     //"https://voice.labibabot.com"
@@ -99,6 +104,10 @@ public enum BotType:Int {
         }
     }
     
+  
+  public static func setAudioType(audioType: AudioType){
+    self.audioType = audioType == AudioType.base64 ? true : false
+  }
     public static func setDelegate( delegate: LabibaDelegate)
        {
            self.delegate = delegate
