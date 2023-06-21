@@ -33,7 +33,7 @@ public enum AudioType{
   //  static var _basePath = "ws://whatsapp.labibabot.com/api/mws"
    // static var _basePath = "ws://botbuilder.labiba.ai/api/mws"
    // static var _socketBasePath = "wss://botbuilder.labiba.ai/api/mws"
-    public static var audioType = false
+    public static var audioType = 2
     static var _basePath = ""     //"https://botbuilder.labiba.ai"
     static var _messagingServicePath = ""    //"/api/MobileAPI/MessageHandler"
     static var _voiceBasePath = ""     //"https://voice.labibabot.com"
@@ -106,7 +106,7 @@ public enum AudioType{
     
   
   public static func setAudioType(audioType: AudioType){
-    self.audioType = audioType == AudioType.base64 ? true : false
+    self.audioType = audioType == AudioType.base64 ? 1 : 2
   }
     public static func setDelegate( delegate: LabibaDelegate)
        {

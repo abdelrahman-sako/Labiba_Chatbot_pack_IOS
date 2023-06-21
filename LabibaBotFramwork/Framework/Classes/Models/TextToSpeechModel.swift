@@ -65,9 +65,9 @@ class TextToSpeechModel{
     var googleVoice:GoogleVoice
     var clientid:String
     var isSSML:Bool
-    var isBase64:Bool
+    var isBase64:Int
   
-  init(text:String,googleVoice:GoogleVoice,clientid:String,isSSML:Bool = false, isBase64:Bool) {
+  init(text:String,googleVoice:GoogleVoice,clientid:String,isSSML:Bool = false, isBase64:Int) {
         self.text = text
         self.googleVoice = googleVoice
         self.clientid = clientid

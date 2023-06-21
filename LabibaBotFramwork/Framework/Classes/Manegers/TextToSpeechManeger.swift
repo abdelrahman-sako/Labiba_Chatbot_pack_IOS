@@ -319,8 +319,8 @@ class TTSMessageModel{
     var langCode:String
     var rate:Float
     var isSSML:Bool
-    var isBase64:Bool
-  init(message:String ,langCode:String ,rate:Float ,isSSML:Bool = false, isBsae64:Bool) {
+    var isBase64:Int
+  init(message:String ,langCode:String ,rate:Float ,isSSML:Bool = false, isBsae64:Int) {
         self.message = message
         self.langCode = langCode
         self.rate = rate
