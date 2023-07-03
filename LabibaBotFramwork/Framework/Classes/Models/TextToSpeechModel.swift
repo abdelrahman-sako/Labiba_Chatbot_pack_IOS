@@ -65,12 +65,14 @@ class TextToSpeechModel{
     var googleVoice:GoogleVoice
     var clientid:String
     var isSSML:Bool
-    init(text:String,googleVoice:GoogleVoice,clientid:String,isSSML:Bool = false) {
+    var isBase64:Int
+  
+  init(text:String,googleVoice:GoogleVoice,clientid:String,isSSML:Bool = false, isBase64:Int) {
         self.text = text
         self.googleVoice = googleVoice
         self.clientid = clientid
         self.isSSML = isSSML
-        
+        self.isBase64 = isBase64
     }
     func testText() -> String {
         return "دَفِعْ 1.912 دينار اردني لِفَاتُورَة <br> <br>مِنْ حْسَابْ جَّارِيْ 000@:@<speak> رَحْ تِدْفَعْ 1.912 دينار اردني لَفَاتُوْرِةْ مِنْ حْسَابْ جَّارِيْ 000</speak>‎"
