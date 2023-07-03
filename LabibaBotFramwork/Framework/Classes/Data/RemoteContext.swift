@@ -343,7 +343,7 @@ final class RemoteContext {
     
     private func updateToken(handler: @escaping Handler<UpdateTokenModel>) {
         let url =   Labiba._updateTokenUrl
-        let endPoint = EndPoint(url: url, httpMethod: .post)
+        let endPoint = EndPoint(url: url, httpMethod: .post,headers: ["Content-Type": "application/json"])
         let params:[String:Any] = [
             "Username":Labiba.jwtAuthParamerters.username,
             "Password":Labiba.jwtAuthParamerters.password
