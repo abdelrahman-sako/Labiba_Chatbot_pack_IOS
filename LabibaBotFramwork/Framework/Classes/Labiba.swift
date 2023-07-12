@@ -233,7 +233,9 @@ public enum AudioType{
         self._pageId = SharedPreference.shared.currentUserId
     }
     
-    
+    public static func setSecurityHeaderParams(token:[[String:Any]]){
+        KeyChainManager.save(key: "labibaTokens", data: token)
+    }
     
      static func setLastMessageLangCode(_ text: String)
     {
@@ -387,7 +389,6 @@ public enum AudioType{
     {
         self._Logo = image
     }
-    
     
     
     
@@ -558,6 +559,7 @@ public enum AudioType{
             if tiggerDelegate{Labiba.delegate?.labibaDidClose?()}
         })
     }
+
     
 //    static func createConversation(closable: Bool = true, onClose: ConversationCloseHandler? = nil) -> UIViewController
 //    { // this is should not be public

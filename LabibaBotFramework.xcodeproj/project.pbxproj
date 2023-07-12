@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		20811CCC2A55497000B0573C /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20811CCB2A55497000B0573C /* KeyChainManager.swift */; };
 		370196EA24CDA5DE0003266B /* VedioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370196E924CDA5DE0003266B /* VedioPlayerView.swift */; };
 		37030D7023F2AB5400BF8ED3 /* FontDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */; };
 		370874282326528C00E0C52C /* GreetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370874272326528C00E0C52C /* GreetingHeaderView.swift */; };
@@ -510,6 +511,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20811CCB2A55497000B0573C /* KeyChainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		370196E924CDA5DE0003266B /* VedioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VedioPlayerView.swift; sourceTree = "<group>"; };
 		37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDownloader.swift; sourceTree = "<group>"; };
 		370874272326528C00E0C52C /* GreetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingHeaderView.swift; sourceTree = "<group>"; };
@@ -1015,6 +1017,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20811CCA2A55494300B0573C /* KeyChainManager */ = {
+			isa = PBXGroup;
+			children = (
+				20811CCB2A55497000B0573C /* KeyChainManager.swift */,
+			);
+			path = KeyChainManager;
+			sourceTree = "<group>";
+		};
 		370196E824CDA5670003266B /* VedioPlayerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1374,6 +1384,7 @@
 		37EF394922EF1777004D1C85 /* Manegers */ = {
 			isa = PBXGroup;
 			children = (
+				20811CCA2A55494300B0573C /* KeyChainManager */,
 				5237BD3A272A936F006C8632 /* KeyboardManager */,
 				37030D6E23F2AB3B00BF8ED3 /* FontDownloader */,
 				3782D95C23BA1369006A79D4 /* SocketRocket */,
@@ -2347,6 +2358,7 @@
 				TargetAttributes = {
 					3732462A23CDEDD6004F87F7 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1430;
 					};
 					B429547C22DDD9D1002DE3E9 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -2521,6 +2533,7 @@
 				52DE8DCA248CB9C60067F5EC /* IQInvocation.swift in Sources */,
 				52DE8DC4248CB9C60067F5EC /* IQUITextFieldView+Additions.swift in Sources */,
 				52775679272EE12F00F8ADE0 /* CompoundBezierPath.swift in Sources */,
+				20811CCC2A55497000B0573C /* KeyChainManager.swift in Sources */,
 				374FB3E923EABE5A0066E325 /* StanderdSplashVC.swift in Sources */,
 				52D2F06B25ADC1A300FBE51C /* BotChatBubble.swift in Sources */,
 				52775647272EE12F00F8ADE0 /* SolidLayerModel.swift in Sources */,
@@ -2916,11 +2929,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LT6MNHQ4GW;
 				EXCLUDED_ARCHS = "";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_WORKSPACE = NO;
 				VALID_ARCHS = "arm64 arm64e armv7 armv7s i386 x86_64";
 			};
@@ -2930,11 +2946,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LT6MNHQ4GW;
 				EXCLUDED_ARCHS = "";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_WORKSPACE = NO;
 				VALID_ARCHS = "arm64 arm64e armv7 armv7s i386 x86_64";
 			};

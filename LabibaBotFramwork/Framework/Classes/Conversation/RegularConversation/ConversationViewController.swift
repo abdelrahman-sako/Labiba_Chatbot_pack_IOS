@@ -928,7 +928,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
             if displayedDialogs.count > 0 { // to ensure that table content will scroll only once when cell presented for the first time
                 if displayedDialogs[displayedDialogs.count - 1].status == .NotShown || self.showTyping{
                     if displayedDialogs[displayedDialogs.count - 1].dialog.cards?.presentation == .vmnue || self.showTyping || displayedDialogs[displayedDialogs.count - 1].dialog.party == .user {
-                        scrollDown(delay: 0.2 )
+//                        scrollDown(delay: 0.2 )
                     }else{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
                             self.scrollToBottom()

@@ -276,7 +276,7 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         }
     }
     
-    private let topViewC = getTheMostTopViewController()!
+    private let topViewC = getTheMostTopViewController()
     
 
     func popUp() -> Void

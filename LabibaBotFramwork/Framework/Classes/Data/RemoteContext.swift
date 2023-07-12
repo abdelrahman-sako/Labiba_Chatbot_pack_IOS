@@ -243,7 +243,7 @@ final class RemoteContext {
         
         
         
-        if let headers = endPoint.headers {
+        if var headers = endPoint.headers {
             headers.keys.forEach({ (key) in
                 urlRequest.setValue(headers[key]!, forHTTPHeaderField: key )
             })
