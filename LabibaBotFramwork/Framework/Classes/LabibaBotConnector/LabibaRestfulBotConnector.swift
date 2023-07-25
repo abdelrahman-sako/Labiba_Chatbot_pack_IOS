@@ -24,7 +24,7 @@ class LabibaRestfulBotConnector{ //
     
     var attachmentPayload:PayloadModel?
     static let shared = LabibaRestfulBotConnector()
-    weak var delegate:MessageAnalyizerDelegate?
+     var delegate:MessageAnalyizerDelegate?
     func readExampleData() -> Data {
         if let path = Labiba.bundle.url(forResource: "JsonExample", withExtension: "json") {
             do {

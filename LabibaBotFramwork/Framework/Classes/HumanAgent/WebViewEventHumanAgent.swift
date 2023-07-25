@@ -121,12 +121,16 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print(message.name,message.body)
-        guard let messageDic =  message.body as? [String:String], let statusParam = messageDic["param1"] else {
+        guard let messageDic =  message.body as? [String:Any] else {
             return
         }
-        switch statusParam {
-        case "msg":
-            if let stringModel = messageDic["param2"], let dataModel = stringModel.data(using: .utf8) {
+        guard let statusParam = messageDic["messageType"] else {
+            return
+        }
+        
+        
+        if statusParam as? String == "msg" {
+            if let stringModel = messageDic["msg"] as? String, let dataModel = stringModel.data(using: .utf8) {
                 let decoder = JSONDecoder()
                 do {
                     let model = try decoder.decode(HumanAgentModel.self, from: dataModel)
@@ -135,12 +139,13 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
                     print(error.localizedDescription)
                 }
             }
-        case "end":
+        }
+        
+        if statusParam as? String == "end" {
             end()
             BotConnector.shared.sendGetStarted()
-        default:
-            break
         }
+        
        
     }
 }

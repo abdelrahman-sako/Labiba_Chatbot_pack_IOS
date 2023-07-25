@@ -60,7 +60,7 @@ class BotConnector: NSObject {
     private override init() {
         super.init()
 
-        messageAnalyizer = LabibaRestfulBotConnector()
+        messageAnalyizer = LabibaRestfulBotConnector.shared
         messageAnalyizer.delegate = self
         
     }
