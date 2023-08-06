@@ -24,8 +24,24 @@ class ReferralModel:Codable {
             let encodedData = try jsonEncoder.encode(self)
             let jsonDecoder = JSONDecoder()
             do{
-                let model = try jsonDecoder.decode([String:String].self, from: encodedData)
-                return model
+                switch Labiba.loggingAndRefferalEncodingType {
+                    
+                case .jsonObject:
+                    let data = ref.data(using: .utf8)!
+
+                    var json = try JSONSerialization.jsonObject(with: encodedData, options: []) as! [String:Any]
+                    let refData = try JSONSerialization.jsonObject(with: data, options: []) as! [[String:Any]]
+                    json["ref"] = refData
+                    return json
+                case .base64:
+                    var model = try jsonDecoder.decode([String:String].self, from: encodedData)
+                    model["ref"] = ref.toBase64()
+                    return model
+                case .jsonString:
+                    let model = try jsonDecoder.decode([String:String].self, from: encodedData)
+                    return model
+                }
+               
             }catch{
                 
             }

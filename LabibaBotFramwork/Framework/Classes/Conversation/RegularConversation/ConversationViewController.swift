@@ -697,9 +697,12 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
 
             let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height + self.tableView.adjustedContentInset.bottom )
-            self.view.layoutIfNeeded()
+            //self.view.layoutIfNeeded()
         //    UIView.animate(withDuration: 0.3) {
+            if self.tableView.frame.size.height < self.tableView.contentSize.height {
                 self.tableView.setContentOffset(scrollPoint, animated: true)
+            }
+               
         //    }
             
            // self.tableView.setC
@@ -928,7 +931,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
             if displayedDialogs.count > 0 { // to ensure that table content will scroll only once when cell presented for the first time
                 if displayedDialogs[displayedDialogs.count - 1].status == .NotShown || self.showTyping{
                     if displayedDialogs[displayedDialogs.count - 1].dialog.cards?.presentation == .vmnue || self.showTyping || displayedDialogs[displayedDialogs.count - 1].dialog.party == .user {
-//                        scrollDown(delay: 0.2 )
+                        scrollDown(delay: 0.2 )
                     }else{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
                             self.scrollToBottom()

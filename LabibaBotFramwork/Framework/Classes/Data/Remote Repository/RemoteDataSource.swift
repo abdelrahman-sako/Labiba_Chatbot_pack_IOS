@@ -209,6 +209,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         let url =  "\(Labiba._basePath)\(Labiba._loggingServicePath)"
         let endPoint = EndPoint(url: url, httpMethod: .post)
         let params = model.dictionary
+
         remoteContext.request(endPoint: endPoint, parameters: params) { result in
             switch result {
             case .success(_):

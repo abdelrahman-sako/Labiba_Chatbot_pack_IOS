@@ -283,8 +283,18 @@ class TextToSpeechManeger:NSObject{
   
   func playBase64Content(base64String: String) {
     if let audioPlayer = convertBase64ToVoice(base64String: base64String) {
-      // Play the audio
-      audioPlayer.play()
+        do {
+            try audioSession.setCategory(AVAudioSession.Category.playback)
+
+           audioPlayer.volume = volume
+           audioPlayer.enableRate = true
+           audioPlayer.rate = voiceRate
+         // Play the audio
+         audioPlayer.play()
+        }catch {
+            print("Failed to create AVAudioPlayer: \(error)")
+          }
+       
     } else {
       print("Failed to convert Base64 to voice.")
     }
@@ -299,6 +309,7 @@ class TextToSpeechManeger:NSObject{
     
     do {
       // Create an AVAudioPlayer with the audio data
+        try audioSession.setCategory(AVAudioSession.Category.playback)
       player = try AVAudioPlayer(data: audioData)
       
       // Prepare the audio player for playback

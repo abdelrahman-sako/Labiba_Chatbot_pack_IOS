@@ -24,6 +24,12 @@ public enum AudioType{
   case url
 }
 
+public enum LoggingAndRefferalEncodingType{
+    case jsonObject
+    case base64
+    case jsonString
+}
+
 
 @objc public class Labiba: NSObject
 {
@@ -70,6 +76,7 @@ public enum AudioType{
     public  static var enableCaching: Bool = false
     public static var loaderText:String = "تحميل..."
     public static var botLang : LabibaLanguage = .en
+    public static var loggingAndRefferalEncodingType : LoggingAndRefferalEncodingType = .jsonString
   //  public  static var isLoggingEnabled: Bool = false
 
      // MARK:- Main Settings
