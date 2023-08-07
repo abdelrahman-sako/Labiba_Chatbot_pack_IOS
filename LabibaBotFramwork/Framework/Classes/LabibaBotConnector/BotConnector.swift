@@ -79,7 +79,7 @@ class BotConnector: NSObject {
         let null = NSNull()
         var filteredMessage = message
         filteredMessage?.removeHiddenCharacters() // there is a hidden chars produced by Speech framework
-        Labiba.resetReferral()
+       
 
         var msgLoad: [String: Any] = [
             "object": "page",
