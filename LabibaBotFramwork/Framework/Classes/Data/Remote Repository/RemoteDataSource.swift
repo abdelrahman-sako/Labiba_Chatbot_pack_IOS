@@ -9,6 +9,8 @@
 import Foundation
 
 class RemoteDataSource:RemoteDataSourceProtocol{
+
+    
    
   
     func uploadData(model: UploadDataModel, handler: @escaping Handler<UploadDataResponseModel>) {
@@ -57,7 +59,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         let endPoint = EndPoint(url: url, httpMethod: .post)
        
         
-        remoteContext.request(endPoint: endPoint, parameters: nil) { result in
+        remoteContext.request(endPoint: endPoint, parameters: "") { result in
             switch  result {
             case .success(let data):
                 self.parser(data: data, model: [String].self, handler: handler)
@@ -88,17 +90,34 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         let url = "\(Labiba._basePath)\(Labiba._messagingServicePath)"
         let endPoint = EndPoint(url: url, httpMethod: .post,headers: ["Content-Type":ContentType.json.rawValue])
         let params = model
-        remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
-            switch  result {
-            case .success(let data):
-                self.parser(data: data, model: [LabibaModel].self, handler: handler)
-                let dataString = String(data: data, encoding: .utf8) ?? ""
-                Logging.shared.logSuccessCase(url: url, tag: .messaging, method: .post, parameter: params.description, response: dataString)
-            case .failure(let error):
-                handler(.failure(error))
-                Logging.shared.log(url: url, tag: .messaging, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
+        if Labiba.loggingAndRefferalEncodingType != .base64 {
+            remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
+                switch  result {
+                case .success(let data):
+                    self.parser(data: data, model: [LabibaModel].self, handler: handler)
+                    let dataString = String(data: data, encoding: .utf8) ?? ""
+                    Logging.shared.logSuccessCase(url: url, tag: .messaging, method: .post, parameter: params.description, response: dataString)
+                case .failure(let error):
+                    handler(.failure(error))
+                    Logging.shared.log(url: url, tag: .messaging, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
+                }
+                
+            }
+        }else{
+            remoteContext.withTokenRequest(endPoint: endPoint, parameters: params.toBase64()) { result in
+                switch  result {
+                case .success(let data):
+                    self.parserBase64(data: data, model: [LabibaModel].self, handler: handler)
+                    let dataString = String(data: data, encoding: .utf8) ?? ""
+                    Logging.shared.logSuccessCase(url: url, tag: .messaging, method: .post, parameter: params.description, response: dataString)
+                case .failure(let error):
+                    handler(.failure(error))
+                    Logging.shared.log(url: url, tag: .messaging, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
+                }
             }
         }
+        
+  
     }
     
     func getRatingQuestions(handler: @escaping Handler<[GetRatingFormQuestionsModel]>) {
@@ -208,16 +227,29 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     func sendLog(model: LoggingModel, handler: @escaping Handler<Bool>) {
         let url =  "\(Labiba._basePath)\(Labiba._loggingServicePath)"
         let endPoint = EndPoint(url: url, httpMethod: .post)
+        
         let params = model.dictionary
 
-        remoteContext.request(endPoint: endPoint, parameters: params) { result in
-            switch result {
-            case .success(_):
-                print("log success")
-            case .failure(let error):
-                print("log faild with error: \(error.localizedDescription)")
+//        if Labiba.loggingAndRefferalEncodingType == .base64 {
+//            remoteContext.request(endPoint: endPoint, parameters: "\"\(params.toBase64()!)\"") { result in
+//                switch result {
+//                case .success(_):
+//                    print("log success")
+//                case .failure(let error):
+//                    print("log faild with error: \(error.localizedDescription)")
+//                }
+//            }
+//        }else{
+            remoteContext.request(endPoint: endPoint, parameters: params) { result in
+                switch result {
+                case .success(_):
+                    print("log success")
+                case .failure(let error):
+                    print("log faild with error: \(error.localizedDescription)")
+                }
             }
-        }
+//        }
+        
     }
     
     func downloadFile(fileURL: URL, handler: @escaping Handler<URL>)-> AnyCancelable {
@@ -252,7 +284,30 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         let decoder =  JSONDecoder()
         do {
             let model = try decoder.decode(T.self, from: data)
+            
             handler(.success(model))
+        } catch {
+          //  handler(.failure(ErrorModel(message: error.localizedDescription)))
+            handler(.failure(LabibaError(error: error, statusCode: 200)))
+        }
+    }
+    
+    
+    private func parserBase64<T:Decodable>(data:Data,model:T.Type, handler: @escaping Handler<T>) {
+        
+        let decoder =  JSONDecoder()
+        do {
+            if let base64Response = String(data: data, encoding: .utf8) {
+                let refactoredBase64 = base64Response.replacingOccurrences(of: "\"", with: "")
+
+                let response = refactoredBase64.fromBase64()
+                let dataResponse = Data(response?.utf8 ?? "".utf8)
+                let model = try decoder.decode(T.self, from: dataResponse)
+                handler(.success(model))
+            }
+            
+            handler(.failure(LabibaError(error: ErrorModel(message: "Error"), statusCode: 200)))
+            
         } catch {
           //  handler(.failure(ErrorModel(message: error.localizedDescription)))
             handler(.failure(LabibaError(error: error, statusCode: 200)))

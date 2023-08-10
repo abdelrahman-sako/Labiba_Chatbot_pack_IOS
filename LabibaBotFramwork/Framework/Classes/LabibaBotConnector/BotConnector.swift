@@ -80,8 +80,7 @@ class BotConnector: NSObject {
         var filteredMessage = message
         filteredMessage?.removeHiddenCharacters() // there is a hidden chars produced by Speech framework
        
-
-        var msgLoad: [String: Any] = [
+        let msgLoad: [String: Any] = [
             "object": "page",
             "entry": [[
                 "id": "221231835260127",
@@ -112,7 +111,9 @@ class BotConnector: NSObject {
             print(String(data: data, encoding: .utf8)!)
         }
         print("\n*********************************** END PARAMETERS ***********************************\n")
-        sendData(parameters: msgLoad)
+      
+            sendData(parameters: msgLoad)
+
         self.delegate?.botConnectorDidRecieveTypingActivity(self)
         Labiba.resetReferral()
         NotificationCenter.default.post(name: Constants.NotificationNames.ChangeTextViewKeyboardType,object:nil) // to rest keyboard content type
@@ -198,6 +199,8 @@ class BotConnector: NSObject {
         }
         
     }
+    
+
     
     func sendPhoto(_ photo: UIImage)
     {

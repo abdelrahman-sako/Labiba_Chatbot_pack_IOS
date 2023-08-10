@@ -81,6 +81,19 @@ final class RemoteContext {
         }
     }
     
+    func withTokenRequest(endPoint: EndPointProtocol, parameters:String?, completion: @escaping Handler<Data>) {
+        // this should be changed since we can make alamofire wait untill certain request response return
+       let parameters = "\"\(parameters!) \""
+       
+        checkToken { result in
+            switch result {
+            case .success(_):
+                self.request(endPoint: endPoint, parameters: parameters,completion: completion)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
     /// Creates an HTTP request to a given endpoint address
     ///
     /// - Parameters:
@@ -91,6 +104,30 @@ final class RemoteContext {
         let urlRequest = buildURlRequest(endPoint: endPoint, params: parameters)
        
         sendRequest(reqestUrl: urlRequest) { (result) in
+            switch result{
+            case .success(let response):
+                guard let wsResponse = response as? DataResponse<Data> else{
+                    let error = LabibaError(code: .Unknown, statusCode: 0)
+                    completion(.failure(error))
+                    return
+                }
+                if let wsData = wsResponse.data {
+                    completion(.success(wsData))
+                }else {
+                    let headers =  wsResponse.response?.allHeaderFields
+                    let error =  LabibaError(statusCode: wsResponse.response?.statusCode ?? 0, headers:headers) ?? LabibaError(code: .Unknown, statusCode: wsResponse.response?.statusCode ?? 0,headers: headers)
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }//End sendRequest
+    }
+    
+    func request(endPoint: EndPointProtocol, parameters:String?, completion: @escaping Handler<Data>){
+        
+        
+        sendRequest(reqestUrl: URL(string: endPoint.url)!,encoding: parameters ?? "") { (result) in
             switch result{
             case .success(let response):
                 guard let wsResponse = response as? DataResponse<Data> else{
@@ -129,13 +166,13 @@ final class RemoteContext {
                     return
                 }
                 if let wsData = wsResponse.data {
-                        completion(.success(wsData))
+                    completion(.success(wsData))
                 }
             case .failure(let error):
                 completion(.failure(error))
             }
         }
-
+        
     }
     
     func downLoad(url: URL,completion: @escaping Handler<URL>)->AnyCancelable{
@@ -224,7 +261,21 @@ final class RemoteContext {
         
     }
     
-   
+    private func sendRequest (reqestUrl: URL, encoding: ParameterEncoding = URLEncoding.default,
+                              completion: @escaping Handler<Any> ) {
+        sessionManager.request(reqestUrl,method: .post,encoding: encoding,headers: ["Content-Type":"application/json"]).validate().responseData { (response) in
+            //self.printResponse(reqestUrl: reqestUrl, responseData: response)
+            switch response.result {
+            case .success:
+                completion(.success(response))
+            case .failure(let responseError as NSError):
+                let error = self.buildError(response: response, responseError: responseError)
+                completion(.failure(error))
+            }
+        }//End sessionManager.request
+        
+    }
+    
     
     /// Helper method to build an HTTP request.
     ///

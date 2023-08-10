@@ -34,8 +34,9 @@ extension String {
 extension String {
 
     func fromBase64() -> String? {
+        
         guard let data = Data(base64Encoded: self) else {
-            return nil
+            return self
         }
 
         return String(data: data, encoding: .utf8)
@@ -43,6 +44,16 @@ extension String {
 
     func toBase64() -> String {
         return Data(self.utf8).base64EncodedString()
+    }
+
+}
+
+extension String: ParameterEncoding {
+
+     func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
+        var request = try urlRequest.asURLRequest()
+        request.httpBody = data(using: .utf8, allowLossyConversion: false)
+        return request
     }
 
 }

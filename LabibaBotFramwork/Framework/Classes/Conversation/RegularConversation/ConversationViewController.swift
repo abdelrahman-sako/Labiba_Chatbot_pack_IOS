@@ -58,6 +58,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet public weak var headerView: UIView!
     
+    var cellHeights = [IndexPath: CGFloat]()
     
     @IBAction func viewDidTap(_ sender: Any)
     {
@@ -294,9 +295,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             keyboardTypeDialog.popUp(on: self.backgroundView)
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
-              tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 30
+              tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 40
             default:
-               tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + 50 + ipadFactor*15
+               tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + 60 + ipadFactor*15
             }
             
         case .voiceAssistance ,.voiceAndKeyboard ,.voiceToVoice:
@@ -305,13 +306,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
                 //tavleViewBottomConst.constant = 50
-                tableView.contentInset.bottom  = 110
+                tableView.contentInset.bottom  = 120
             case .iPhone5_5 :
                 //tavleViewBottomConst.constant = 90
-                tableView.contentInset.bottom = 130
+                tableView.contentInset.bottom = 140
             default:
              //   tavleViewBottomConst.constant = VoiceK
-                tableView.contentInset.bottom = 130
+                tableView.contentInset.bottom = 140
             }
         case .visualizer:
             visualizerDialog.popUp(on: self.backgroundView)
@@ -319,16 +320,16 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
                 //tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
-                tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 50
+                tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 60
             default:
                 //tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
-                tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 50
+                tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 60
             }
         }
         tableView.contentInset.bottom = tableView.contentInset.bottom
         tableViewBottomInset = tableView.contentInset.bottom
-        tableView.contentInset.top = Labiba._OpenFromBubble ?  30 : 70
-        tableTopConstraint.constant = -70
+        tableView.contentInset.top = Labiba._OpenFromBubble ?  40 : 80
+        tableTopConstraint.constant = -60
         
         
     }
@@ -570,7 +571,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         if (stepsToBeDisplayed.count == 1)
         {
             
-            renderStep(step: dialog,wait: 0.3)
+            renderStep(step: dialog,wait: 0.1)
         }
     }
     
@@ -1067,12 +1068,19 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         }
     }
     
-    //tableview finished loading
-    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    
+   
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if cell is TypingIndicatorCell
         {
             (cell as! TypingIndicatorCell).showLoadingIndicator()
         }
+        cellHeights[indexPath] = cell.frame.size.height
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeights[indexPath] ?? UITableView.automaticDimension
     }
     
     public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {

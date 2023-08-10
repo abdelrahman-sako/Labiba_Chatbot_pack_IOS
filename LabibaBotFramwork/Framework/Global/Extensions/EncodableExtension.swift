@@ -14,3 +14,16 @@ extension Encodable {
         return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]
     }
 }
+
+extension Dictionary where Key == String, Value == Any {
+    func toBase64() -> String? {
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: self, options: [])
+            let base64String = jsonData.base64EncodedString()
+            return base64String
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+}
