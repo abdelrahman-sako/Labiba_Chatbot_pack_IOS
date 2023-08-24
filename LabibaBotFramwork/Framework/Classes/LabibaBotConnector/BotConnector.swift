@@ -170,6 +170,9 @@ class BotConnector: NSObject {
     func startConversation() {
         // showLoadingIndicator()
         LocalCache.shared.conversationId = SharedPreference.shared.currentUserId
+        if SharedPreference.shared.isHumanAgentStarted {
+            WebViewEventHumanAgent.Shared.forceEnd()
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             CircularGradientLoadingIndicator.show()
         }

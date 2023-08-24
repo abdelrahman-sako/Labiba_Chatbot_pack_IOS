@@ -94,12 +94,6 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
                 switch  result {
                 case .success(let data):
-                    if String(data: data, encoding: .utf8) == "agent" {
-                        Labiba.isHumanAgentStarted = true
-                        let dataString = String(data: data, encoding: .utf8) ?? ""
-                        Logging.shared.logSuccessCase(url: url, tag: .messaging, method: .post, parameter: params.description, response: dataString)
-                        handler(.success([]))
-                    }
                     self.parser(data: data, model: [LabibaModel].self, handler: handler)
                     let dataString = String(data: data, encoding: .utf8) ?? ""
                     Logging.shared.logSuccessCase(url: url, tag: .messaging, method: .post, parameter: params.description, response: dataString)
