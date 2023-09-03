@@ -285,10 +285,14 @@ class TextToSpeechManeger:NSObject{
     if let audioPlayer = convertBase64ToVoice(base64String: base64String) {
         do {
             try audioSession.setCategory(AVAudioSession.Category.playback)
+            delegate?.TextToSpeechDidStart()
+            audioPlayer.prepareToPlay()
 
            audioPlayer.volume = volume
            audioPlayer.enableRate = true
            audioPlayer.rate = voiceRate
+            audioPlayer.delegate = self
+
          // Play the audio
          audioPlayer.play()
         }catch {

@@ -397,6 +397,8 @@
 		756D52032A2323320047E73A /* LocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D52022A2323320047E73A /* LocalCache.swift */; };
 		756D52052A2323420047E73A /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D52042A2323420047E73A /* UICollectionViewExtension.swift */; };
 		756D52072A2323470047E73A /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D52062A2323470047E73A /* UITableViewExtension.swift */; };
+		757381582A9F25390079B867 /* Base64FS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757381572A9F25380079B867 /* Base64FS.swift */; };
+		7573815A2A9F33D80079B867 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757381592A9F33D70079B867 /* Base64.swift */; };
 		75EA910C292F5CCC00A0F352 /* EncryptionManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA910B292F5CCC00A0F352 /* EncryptionManeger.swift */; };
 		75EDDA7C2A1E5DE1003D6152 /* VMenuTableTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EDDA742A1E5DE1003D6152 /* VMenuTableTheme.swift */; };
 		75EDDA7D2A1E5DE1003D6152 /* VMenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EDDA752A1E5DE1003D6152 /* VMenuTableCell.swift */; };
@@ -890,6 +892,8 @@
 		756D52022A2323320047E73A /* LocalCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalCache.swift; sourceTree = "<group>"; };
 		756D52042A2323420047E73A /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		756D52062A2323470047E73A /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		757381572A9F25380079B867 /* Base64FS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Base64FS.swift; path = ../../../../../../Downloads/Base64FS.swift; sourceTree = "<group>"; };
+		757381592A9F33D70079B867 /* Base64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
 		75EA910B292F5CCC00A0F352 /* EncryptionManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManeger.swift; sourceTree = "<group>"; };
 		75EDDA742A1E5DE1003D6152 /* VMenuTableTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMenuTableTheme.swift; sourceTree = "<group>"; };
 		75EDDA752A1E5DE1003D6152 /* VMenuTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMenuTableCell.swift; sourceTree = "<group>"; };
@@ -1125,6 +1129,8 @@
 		37460D9B230A96CB002748CE /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				757381592A9F33D70079B867 /* Base64.swift */,
+				757381572A9F25380079B867 /* Base64FS.swift */,
 				756D52022A2323320047E73A /* LocalCache.swift */,
 				756D52002A2323170047E73A /* ContentSizedTableView.swift */,
 				37460D9C230A9710002748CE /* SharedPreference.swift */,
@@ -2574,6 +2580,7 @@
 				52775653272EE12F00F8ADE0 /* TextDocument.swift in Sources */,
 				3782D95423B9F511006A79D4 /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
 				5277562D272EE12F00F8ADE0 /* TextAnimatorNode.swift in Sources */,
+				7573815A2A9F33D80079B867 /* Base64.swift in Sources */,
 				B429552822DDDBD2002DE3E9 /* StateOnHoldEntryCell.swift in Sources */,
 				522D1640256E41FB002758D5 /* RatingVC.swift in Sources */,
 				75EDDA812A1E5DE1003D6152 /* VMenuCellTheme.swift in Sources */,
@@ -2775,6 +2782,7 @@
 				371378EF22F86B6500ED8299 /* TextToSpeechManeger.swift in Sources */,
 				37CC2512234B43E500168766 /* RatingStarsRatingCell.swift in Sources */,
 				B429551B22DDDBD2002DE3E9 /* HeaderVC.swift in Sources */,
+				757381582A9F25390079B867 /* Base64FS.swift in Sources */,
 				F9D20114292A488D0024FE48 /* EncodableExtension.swift in Sources */,
 				5281A65224502E09001605E8 /* WepPageViewController.swift in Sources */,
 				52DE8DC2248CB9C60067F5EC /* IQNSArray+Sort.swift in Sources */,

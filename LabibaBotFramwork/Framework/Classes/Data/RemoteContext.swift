@@ -83,7 +83,7 @@ final class RemoteContext {
     
     func withTokenRequest(endPoint: EndPointProtocol, parameters:String?, completion: @escaping Handler<Data>) {
         // this should be changed since we can make alamofire wait untill certain request response return
-       let parameters = "\"\(parameters!) \""
+        let parameters = "\"\(parameters!)\"".trimmingCharacters(in: .whitespacesAndNewlines)
        
         checkToken { result in
             switch result {

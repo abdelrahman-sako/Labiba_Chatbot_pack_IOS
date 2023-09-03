@@ -73,9 +73,9 @@ RecepientID: \(Labiba._pageId)
         }
         
         if Labiba.loggingAndRefferalEncodingType == .base64 {
-            requestDetails = requestDetails.toBase64()
-            filteredRespose = filteredRespose.toBase64()
-             encodedExeption = encodedExeption?.toBase64()
+            requestDetails = requestDetails.toBase64Safe()
+            filteredRespose = filteredRespose.toBase64Safe() 
+             encodedExeption = encodedExeption?.toBase64Safe()
         }
         
         let model = LoggingModel(Tag: exception == nil ? tag.normal : tag.exception,

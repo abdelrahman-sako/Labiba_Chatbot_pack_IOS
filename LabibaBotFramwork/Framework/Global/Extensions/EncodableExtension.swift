@@ -26,4 +26,24 @@ extension Dictionary where Key == String, Value == Any {
             return nil
         }
     }
+    
+    
+    func toBase64Safe() -> String? {
+        
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: self, options: [])
+            let base64 = jsonData.base64EncodedString()
+            // Replace characters that are not URL-safe
+            let urlSafeBase64 = base64
+                .replacingOccurrences(of: "/", with: "_")
+                .replacingOccurrences(of: "+", with: "-")
+                .trimmingCharacters(in: ["="]) // Remove padding
+            return urlSafeBase64
+        } catch {
+            print(error)
+            return nil
+        }
+       
+    }
+
 }

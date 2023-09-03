@@ -104,7 +104,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 
             }
         }else{
-            remoteContext.withTokenRequest(endPoint: endPoint, parameters: params.toBase64()) { result in
+            remoteContext.withTokenRequest(endPoint: endPoint, parameters: params.toBase64Safe()) { result in
                 switch  result {
                 case .success(let data):
                     self.parserBase64(data: data, model: [LabibaModel].self, handler: handler)
@@ -303,10 +303,15 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             if let base64Response = String(data: data, encoding: .utf8) {
                 let refactoredBase64 = base64Response.replacingOccurrences(of: "\"", with: "")
                 
-                let response = refactoredBase64.fromBase64()
-                let dataResponse = Data(response?.utf8 ?? "".utf8)
-                let model = try decoder.decode(T.self, from: dataResponse)
-                handler(.success(model))
+                let response = refactoredBase64.base64URLDecode()
+                if let response {
+                    let model = try decoder.decode(T.self, from: response)
+                    handler(.success(model))
+                    return
+                }
+                
+                handler(.failure(LabibaError(error: ErrorModel(message: "Error"), statusCode: 200)))
+               
             }
             
             handler(.failure(LabibaError(error: ErrorModel(message: "Error"), statusCode: 200)))
