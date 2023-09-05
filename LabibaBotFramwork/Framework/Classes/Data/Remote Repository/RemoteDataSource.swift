@@ -104,7 +104,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 
             }
         }else{
-            remoteContext.withTokenRequest(endPoint: endPoint, parameters: params.toBase64Safe()) { result in
+            remoteContext.withTokenRequest(endPoint: endPoint, parameters: params.toBase64()) { result in
                 switch  result {
                 case .success(let data):
                     self.parserBase64(data: data, model: [LabibaModel].self, handler: handler)
