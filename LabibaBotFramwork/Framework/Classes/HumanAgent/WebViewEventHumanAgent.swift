@@ -70,7 +70,8 @@ class WebViewEventHumanAgent:NSObject {
     
     func forceEnd(completionHandler:(()->Void)? = nil) {
         
-//        if Labiba.isHumanAgentStarted  {
+        if SharedPreference.shared.isHumanAgentStarted  {
+            print("SharedPreference.shared.isHumanAgentStarted Ended")
             Labiba.isHumanAgentStarted = false
             SharedPreference.shared.isHumanAgentStarted = false
             let url = "https://botbuilder.labiba.ai/api/LiveChat/v1.0/CloseConversation/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile"
@@ -87,7 +88,7 @@ class WebViewEventHumanAgent:NSObject {
             }
             print("The task has started")
             
-//        }
+        }
     }
 }
 
