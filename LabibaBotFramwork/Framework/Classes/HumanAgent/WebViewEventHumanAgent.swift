@@ -44,7 +44,7 @@ class WebViewEventHumanAgent:NSObject {
     }
    
     func start() {
-        let url = "https://botbuilder.labiba.ai/SignalRChannel/Index?device=ios&userid=\(Labiba._senderId ?? "")&storyId=\(Labiba._pageId)"
+        let url = "\(Labiba.HumanAgent.url)?device=ios&userid=\(Labiba._senderId ?? "")&storyId=\(Labiba._pageId)"
         print(url)
         if let url = URL(string: url){
             Labiba.isHumanAgentStarted = true
