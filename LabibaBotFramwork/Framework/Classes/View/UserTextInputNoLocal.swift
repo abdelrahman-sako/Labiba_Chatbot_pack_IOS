@@ -115,7 +115,7 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         self.textView.font = applyBotFont(size: 13)
         self.textView.addSubview(placeholderLabel)
         self.textField.font = applyBotFont(size: 13)
-        
+        self.textView.isEditable = true
 //        placeholderLabel.textColor = Labiba._UserInputColors.hintColor//UIColor(white: 0, alpha: 0.3)
         placeholderLabel.textColor = Labiba.UserInputView.textColor
         placeholderLabel.isHidden = !textView.text.isEmpty
@@ -140,6 +140,9 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        print("Did begin Editing")
+    }
     override func draw(_ rect: CGRect) {
         print("draw" , self.sendButton.frame.height/2)
         self.container.layer.cornerRadius = self.sendButton.frame.height/2

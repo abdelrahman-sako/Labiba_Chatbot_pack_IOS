@@ -171,6 +171,7 @@ class TextToSpeechManeger:NSObject{
             //self.player = try AVAudioPlayer(data: data!)
             delegate?.TextToSpeechDidStart()
             player?.prepareToPlay()
+            
             player?.volume = volume
             player?.enableRate = true
             player?.rate = voiceRate

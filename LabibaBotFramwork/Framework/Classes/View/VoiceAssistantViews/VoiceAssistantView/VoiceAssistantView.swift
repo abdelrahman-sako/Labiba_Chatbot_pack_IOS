@@ -148,6 +148,8 @@ class VoiceAssistantView: UIView {
    
     
     private let topViewC = getTheMostTopViewController()
+    
+    
     func reconfigure(y: CGFloat) -> Void
     {
         let insets = topViewC?.additionalSafeAreaInsets
