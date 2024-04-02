@@ -94,7 +94,12 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
                 switch  result {
                 case .success(let data):
-                    self.parser(data: data, model: [LabibaModel].self, handler: handler)
+                    if !SharedPreference.shared.isHumanAgentStarted {
+                        self.parser(data: data, model: [LabibaModel].self, handler: handler)
+
+                    }else{
+                        handler(.success([]))
+                    }
                     let dataString = String(data: data, encoding: .utf8) ?? ""
                     Logging.shared.logSuccessCase(url: url, tag: .messaging, method: .post, parameter: params.description, response: dataString)
                 case .failure(let error):

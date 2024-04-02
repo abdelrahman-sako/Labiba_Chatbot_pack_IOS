@@ -172,7 +172,13 @@ public enum LoggingAndRefferalEncodingType{
         self._updateTokenUrl = path
     }
     
+    public static func clearCache(){
+        LocalCache.shared.displayedDialogs = []
+        LocalCache.shared.stepsToBeDisplayed = []
+        LocalCache.shared.conversationId = nil
+        
     
+    }
     
 //    public static func set_helpPath(_ path: String)
 //    {

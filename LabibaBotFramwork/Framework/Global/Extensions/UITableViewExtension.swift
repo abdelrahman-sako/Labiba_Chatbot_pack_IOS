@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-public extension UITableView {
+extension UITableView {
     
     /**
      Register nibs faster by passing the type - if for some reason the `identifier` is different then it can be passed

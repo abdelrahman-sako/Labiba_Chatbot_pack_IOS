@@ -61,7 +61,8 @@ class WebViewEventHumanAgent:NSObject {
     }
     
     func end() {
-        
+        Labiba.isHumanAgentStarted = false
+        SharedPreference.shared.isHumanAgentStarted = false
         if let url = Labiba.bundle.url(forResource: "index", withExtension: "html") {
                 let request = URLRequest(url: url)
                 webView.load(request)
