@@ -131,6 +131,11 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print(message.name,message.body)
+        
+        if message.name == "error"{
+            webView.reload()
+            return
+        }
         guard let messageDic =  message.body as? [String:Any] else {
             return
         }
