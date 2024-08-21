@@ -99,30 +99,30 @@ extension WebViewEventHumanAgent: WKNavigationDelegate {
         print("human agent finish loading ")
         
     }
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        print("human agent failed to load with error\(error.localizedDescription)")
-        showErrorMessage("Error: \(error.localizedDescription)\n\n \(error)")
-
-      //  showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
-    }
-    
-    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        print("human agent failed to load with error\(error.localizedDescription)")
-        showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
-    }
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        print("human agent failed to load with error\(error.localizedDescription)")
-        showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
-    }
-    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse,
-                 decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-
-        if let response = navigationResponse.response as? HTTPURLResponse {
-            print("status code: ", response.statusCode)
-            showErrorMessage("status code: \(response.statusCode)")
-        }
-        decisionHandler(.allow)
-    }
+//    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+//        print("human agent failed to load with error\(error.localizedDescription)")
+//        showErrorMessage("Error: \(error.localizedDescription)\n\n \(error)")
+//
+//      //  showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
+//    }
+//    
+//    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+//        print("human agent failed to load with error\(error.localizedDescription)")
+//        showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
+//    }
+//    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+//        print("human agent failed to load with error\(error.localizedDescription)")
+//        showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
+//    }
+//    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse,
+//                 decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+//
+//        if let response = navigationResponse.response as? HTTPURLResponse {
+//            print("status code: ", response.statusCode)
+//            showErrorMessage("status code: \(response.statusCode)")
+//        }
+//        decisionHandler(.allow)
+//    }
     
 
 }
