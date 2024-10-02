@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
  public class LabibaThemes {
+    public static var HideCardOneButton:Bool = true
     public static var isThemeApplied = false
     var default_Gradient_Animation_Colors:[[CGColor]] = [[UIColor(argb:0xffEC1B43).cgColor,UIColor(argb:0xffAFC525).cgColor],
                                                          [UIColor(argb:0xffC127A1).cgColor,UIColor(argb:0xff0F9CBA).cgColor],
@@ -25,7 +26,6 @@ import UIKit
                                                          [UIColor(argb:0xff196576).cgColor,UIColor(argb:0xffFFFFFF).cgColor]]
     
 
-    
     func setChatDefaultTheme()
     {
         LabibaThemes.isThemeApplied = true
@@ -102,6 +102,7 @@ import UIKit
         Labiba.CarousalCardView.titleColor = UIColor(argb: 0xffffffff)
         Labiba.CarousalCardView.subtitleColor = UIColor(argb: 0xffffffff)
         Labiba.CarousalCardView.buttonTitleColor = UIColor(argb: 0xffffffff)
+//        Labiba.CarousalCardView.but
         //Labiba.setCarousalCardColor(backgroundColor: UIColor(argb: 0xaa292929))
        // Labiba._CarousalCardTitleColor = UIColor(argb: 0xffffffff)
 //        Labiba._CarousalCardSubtitleColor = UIColor(argb: 0xffffffff)

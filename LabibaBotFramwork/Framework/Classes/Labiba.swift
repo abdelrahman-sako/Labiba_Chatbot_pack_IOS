@@ -323,7 +323,10 @@ public enum LoggingAndRefferalEncodingType{
     
     
     
-   
+    
+    public static func hideIfSingleButton(_ hide:Bool){
+        Labiba.CarousalCardView.HideCardOneButton = hide
+    }
     
   
     //MARK:- ******************THEME SETTING******************
@@ -402,9 +405,6 @@ public enum LoggingAndRefferalEncodingType{
     {
         self._Logo = image
     }
-    
-    
-    
     
     //MARK:- Main Background View UIConfiguration
     public static let BackgroundView = LabibaBackgroundView()

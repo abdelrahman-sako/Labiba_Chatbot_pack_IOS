@@ -298,6 +298,10 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
         case .countDownTimer:
             break
             
+        case .yearAndMonth:
+            break
+        @unknown default:
+            break
         }
         
         self.botConnector.sendMessage(botText)
