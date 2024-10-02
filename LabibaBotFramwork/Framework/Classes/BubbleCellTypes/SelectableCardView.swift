@@ -19,6 +19,7 @@ protocol SelectableCardViewDelegate: class
 
 class SelectableCardView: UIView
 {
+    
 
     @IBOutlet var buttonContainerViews: [UIView]!
     @IBOutlet var buttons: [UIButton]!
