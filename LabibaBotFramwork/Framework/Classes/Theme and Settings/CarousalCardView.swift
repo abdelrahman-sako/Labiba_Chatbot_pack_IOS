@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public class LabibaCarousalCardView {
-    
+    public var HideCardOneButton:Bool = true
     public var backgroundColor:UIColor = UIColor(argb: 0xFFf7f7f7)
     public var border:(width:CGFloat,color:UIColor) = (0,.clear)
     public var alpha: CGFloat = 1
@@ -42,7 +42,7 @@ public class LabibaCarousalCardView {
     public var shadow:LabibaShadowModel = LabibaShadowModel(shadowColor:  UIColor.black.cgColor, shadowOffset: CGSize(width: 0, height: 1), shadowRadius: 1.5, shadowOpacity: 0.15)
     
     // custom buttons
-    public var button1: (backgroundColor:UIColor,titleColor:UIColor)? = nil
-    public var button2: (backgroundColor:UIColor,titleColor:UIColor)? = nil
-    public var button3: (backgroundColor:UIColor,titleColor:UIColor)? = nil
+    public var button1: (backgroundColor:UIColor,titleColor:UIColor)? = (UIColor.clear,UIColor.gray)
+    public var button2: (backgroundColor:UIColor,titleColor:UIColor)? = (UIColor.clear,UIColor.gray)
+    public var button3: (backgroundColor:UIColor,titleColor:UIColor)? = (UIColor.clear,UIColor.gray)
 }
