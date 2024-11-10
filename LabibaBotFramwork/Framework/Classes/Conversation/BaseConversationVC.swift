@@ -297,7 +297,8 @@ class BaseConversationVC:UIViewController ,BotConnectorDelegate, EntryTableViewC
             botText = df.string(from: selectedDate)
         case .countDownTimer:
             break
-            
+        @unknown default:
+            break
         }
         
         self.botConnector.sendMessage(botText)

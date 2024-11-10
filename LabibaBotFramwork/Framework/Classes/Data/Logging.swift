@@ -42,6 +42,7 @@ class Logging {
     }
     
     func log(url:String,headers:String? = nil,tag:LoggingTag,method:HTTPMethod,parameter:String ,response:String,exception:String? = nil) {
+        var encodedExeption = exception
         guard Labiba.Logging.isEnabled else {
             return
         }
@@ -53,7 +54,7 @@ SystemVersion: \(UIDevice.current.systemVersion)
 Model: \(UIDevice.current.model)
 BatteryLevel: \(UIDevice.current.batteryLevel*100)%
 """
-        let requestDetails:String = """
+        var requestDetails:String = """
 URL: \(url)
 Method: \(method.rawValue)
 Headers:\(headers ?? "")
@@ -71,13 +72,18 @@ RecepientID: \(Labiba._pageId)
             filteredRespose = "HTML response" + filteredRespose.replacingOccurrences(of: "<", with: "").replacingOccurrences(of: ">", with: "")
         }
         
+        if Labiba.loggingAndRefferalEncodingType == .base64 {
+            requestDetails = requestDetails.toBase64()
+            filteredRespose = filteredRespose.toBase64()
+             encodedExeption = encodedExeption?.toBase64()
+        }
         
         let model = LoggingModel(Tag: exception == nil ? tag.normal : tag.exception,
                                  DeviceDetails: deviceDetails,
                                  UserDetails: userDetails,
                                  Request: requestDetails,
                                  Response: filteredRespose,
-                                 Exception: exception ?? "",
+                                 Exception: encodedExeption ?? "",
                                  SDKVersion: Labiba.version)
         
         let data = try! JSONEncoder().encode(model)

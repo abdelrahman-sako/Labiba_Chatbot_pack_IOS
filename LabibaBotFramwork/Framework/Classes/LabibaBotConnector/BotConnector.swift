@@ -27,18 +27,18 @@ protocol BotConnectorInterface:AnyObject {
 }
 
 class BotConnector: NSObject {
-   
+    
     
     
     
     var currentRequest: DataRequest?
-
+    
     static let shared = BotConnector()
     
-
-  //  private let LabibaUploadPath = "\(Labiba._basePath)/maker/FileUploader.ashx"
+    
+    //  private let LabibaUploadPath = "\(Labiba._basePath)/maker/FileUploader.ashx"
     fileprivate var LabibaUploadPath:String {
-//        return "\(Labiba._basePath)/WebBotConversation/UploadHomeReport?id=\(SharedPreference.shared.currentUserId)"
+        //        return "\(Labiba._basePath)/WebBotConversation/UploadHomeReport?id=\(SharedPreference.shared.currentUserId)"
         return "\(Labiba._uploadUrl)?id=\(SharedPreference.shared.currentUserId)"
     }
     var userId:String = "2314"
@@ -55,29 +55,31 @@ class BotConnector: NSObject {
     
     //MARK: Initializer
     var messageAnalyizer:LabibaRestfulBotConnector!
-  //  var sessionManager:SessionManager?
+    //  var sessionManager:SessionManager?
     var opQueue:OperationQueue?
     private override init() {
         super.init()
 
-        messageAnalyizer = LabibaRestfulBotConnector()
+        messageAnalyizer = LabibaRestfulBotConnector.shared
+        
         messageAnalyizer.delegate = self
         
     }
     
-
+    
     var baseURL = "\(Labiba._basePath)\(Labiba._messagingServicePath)"
-  
-
+    
+    
     var isTherePendingRequest:Bool = false
-   
-     func sendMessage(_ message: String? = nil, payload: String? = nil, withAttachments attachments: [[String : Any]]? = nil, withEntities entities: [[String : Any]]? = nil) {
+    
+    func sendMessage(_ message: String? = nil, payload: String? = nil, withAttachments attachments: [[String : Any]]? = nil, withEntities entities: [[String : Any]]? = nil) {
         let pageId = Labiba._pageId;
         let senderId = Labiba._senderId;
         let time = Int(Date().timeIntervalSince1970 * 1000)
         let null = NSNull()
         var filteredMessage = message
         filteredMessage?.removeHiddenCharacters() // there is a hidden chars produced by Speech framework
+       
         let msgLoad: [String: Any] = [
             "object": "page",
             "entry": [[
@@ -102,34 +104,91 @@ class BotConnector: NSObject {
                 ]]
             ]]
         ]
+        
         print("\n***********************************  PARAMETERS  *********************************** \n")
         if let data = try? JSONSerialization.data(withJSONObject: msgLoad, options: .prettyPrinted)
         {
             print(String(data: data, encoding: .utf8)!)
         }
         print("\n*********************************** END PARAMETERS ***********************************\n")
-        
-        sendData(parameters: msgLoad)
+      
+            sendData(parameters: msgLoad)
+
         self.delegate?.botConnectorDidRecieveTypingActivity(self)
         Labiba.resetReferral()
         NotificationCenter.default.post(name: Constants.NotificationNames.ChangeTextViewKeyboardType,object:nil) // to rest keyboard content type
     }
     
-    
-     func startConversation() {
-        // showLoadingIndicator()
-         LocalCache.shared.conversationId = SharedPreference.shared.currentUserId
-         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-             CircularGradientLoadingIndicator.show()
-         }
-         self.sendMessage("CONVERSATION-RELOAD")
+    func removeEmptyStringsOrNulls(jsonData: [String: Any]) -> [String: Any] {
+      var newJsonData = [String: Any]()
+      for (key, value) in jsonData {
+        if value is String {
+          if (value as! String) == ""  {
+            continue
+          }
+        }
+          if  value is NSNull {
+              continue
+          }
+          if value is [String:Any?] || value is [String:Any] {
+              print("Value_________\(value)" )
+              print("Key_________\(key)" )
+              
+               let temp  = removeEmptyStringsOrNulls(jsonData: value as! [String:Any])
+             
+              if temp.isEmpty {
+                 continue
+              }
+              newJsonData[key]  = temp
+              continue
+          }
+          if value is [[String:Any?]] || value is [[String:Any]] {
+              var entity :[[String:Any]] = []
+              for item in (value as! [[String:Any]]){
+                   let vl = removeEmptyStringsOrNulls(jsonData: item as [String:Any])
+
+                  entity.append(vl)
+              }
+              newJsonData[key] = entity
+              continue
+          }
+          
+          if value is [String:Any] {
+              if (value as! [String:Any]).isEmpty {
+                  newJsonData[key] = NSNull()
+                  newJsonData[key] = removeEmptyStringsOrNulls(jsonData: value as! [String:Any])
+              }
+          }
+          
+
+        newJsonData[key] = value
+      }
+        
+        return newJsonData
     }
     
-     
+    func startConversation() {
+        // showLoadingIndicator()
+        LocalCache.shared.conversationId = SharedPreference.shared.currentUserId
+        if SharedPreference.shared.isHumanAgentStarted {
+            WebViewEventHumanAgent.Shared.forceEnd()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            CircularGradientLoadingIndicator.show()
+        }
+        self.sendMessage("CONVERSATION-RELOAD")
+    }
+    
+    
     
     func sendData(parameters:[String:Any])  {
         isTherePendingRequest = true
-        DataSource.shared.messageHandler(model: parameters) { result in
+         let p = removeEmptyStringsOrNulls(jsonData: parameters)
+        if let data = try? JSONSerialization.data(withJSONObject: p, options: .prettyPrinted)
+        {
+            print(String(data: data, encoding: .utf8)!)
+        }
+        DataSource.shared.messageHandler(model: p) { result in
             CircularGradientLoadingIndicator.dismiss()
             switch result {
             case .success(let model):
@@ -141,8 +200,10 @@ class BotConnector: NSObject {
             }
             self.isTherePendingRequest = false
         }
-
+        
     }
+    
+
     
     func sendPhoto(_ photo: UIImage)
     {
@@ -156,12 +217,12 @@ class BotConnector: NSObject {
                 switch result {
                 case .success(let model):
                     if (model.urls?.count ?? 0) > 0, let link = model.urls?[0] {
-                            self.sendMessage(withAttachments: [
-                                [
-                                    "type": "image",
-                                    "payload": ["url": link]
-                                ]
-                            ])
+                        self.sendMessage(withAttachments: [
+                            [
+                                "type": "image",
+                                "payload": ["url": link]
+                            ]
+                        ])
                     }else {
                         self.sendMessage("Failure")
                     }
@@ -210,7 +271,7 @@ class BotConnector: NSObject {
     
     func getLastBotResponse()  {
         self.delegate?.botConnectorDidRecieveTypingActivity(self)
-     
+        
         DataSource.shared.getLastBotResponse { response in
             //self.loader.dismiss()
             switch response {
@@ -226,7 +287,7 @@ class BotConnector: NSObject {
         }
     }
     
-     func resumeConnection() {
+    func resumeConnection() {
         if isTherePendingRequest {
             isTherePendingRequest = false
             currentRequest?.cancel()
@@ -237,7 +298,7 @@ class BotConnector: NSObject {
         }
     }
     
-     func sendLocation(_ location: CLLocationCoordinate2D) {
+    func sendLocation(_ location: CLLocationCoordinate2D) {
         let attachment =
         [["payload":["coordinates":[
             "lat":location.latitude ,
@@ -250,9 +311,9 @@ class BotConnector: NSObject {
     func ShowDialog(){
         messageAnalyizer.ShowDialog()
     }
-
-
-   
+    
+    
+    
 }
 
 
@@ -265,10 +326,10 @@ extension BotConnector:LocationServiceDelegate {
 
 extension BotConnector: URLSessionDelegate {
     public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-       //Trust the certificate even if not valid
-       let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
-
-       completionHandler(.useCredential, urlCredential)
+        //Trust the certificate even if not valid
+        let urlCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+        
+        completionHandler(.useCredential, urlCredential)
     }
 }
 
@@ -293,6 +354,6 @@ extension BotConnector : MessageAnalyizerDelegate {
         delegate?.botConnectorRemoveTypingActivity(self)
     }
     func sendGetStarted() {
-       self.sendMessage("get started")
-   }
+        self.sendMessage("get started")
+    }
 }

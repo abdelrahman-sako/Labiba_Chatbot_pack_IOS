@@ -19,6 +19,7 @@ protocol SelectableCardViewDelegate: class
 
 class SelectableCardView: UIView
 {
+    
 
     @IBOutlet var buttonContainerViews: [UIView]!
     @IBOutlet var buttons: [UIButton]!
@@ -260,11 +261,18 @@ class SelectableCardView: UIView
             
         }
         if card.buttons.count == 1 {
+
+
             totalCardButton.isHidden = false
             if card.buttons[0].title == card.title {
                 height += 15
                 self.frame.size.height = height
                 return
+            }
+            if Labiba.CarousalCardView.HideCardOneButton{
+                    height += 15
+                    self.frame.size.height = height
+                    return
             }
         }else{
             totalCardButton.isHidden = true
@@ -280,17 +288,20 @@ class SelectableCardView: UIView
             
             
             buttons[i].tintColor = Labiba.CarousalCardView.buttonTitleColor
-            if i == 0, let btn1 = Labiba.CarousalCardView.button1{
-                buttons[i].tintColor = btn1.titleColor
-                buttons[i].backgroundColor = btn1.backgroundColor
+            if i == 0{
+                let btn1 = Labiba.CarousalCardView.button1
+                buttons[i].tintColor = btn1?.titleColor
+                buttons[i].backgroundColor = btn1?.backgroundColor
             }
-            if i == 1, let btn2 = Labiba.CarousalCardView.button2{
-                buttons[i].tintColor = btn2.titleColor
-                buttons[i].backgroundColor = btn2.backgroundColor
+            if i == 1{
+                 let btn2 = Labiba.CarousalCardView.button2
+                buttons[i].tintColor = btn2?.titleColor
+                buttons[i].backgroundColor = btn2?.backgroundColor
             }
-            if i == 2, let btn3 = Labiba.CarousalCardView.button3{
-                buttons[i].tintColor = btn3.titleColor
-                buttons[i].backgroundColor = btn3.backgroundColor
+            if i == 2{
+                let btn3 = Labiba.CarousalCardView.button3
+                buttons[i].tintColor = btn3?.titleColor
+                buttons[i].backgroundColor = btn3?.backgroundColor
             }
             
             

@@ -44,10 +44,11 @@ class WebViewEventHumanAgent:NSObject {
     }
    
     func start() {
-        let url = "https://botbuilder.labiba.ai/SignalRChannel/Index?device=ios&userid=\(Labiba._senderId ?? "")&storyId=\(Labiba._pageId)"
+        let url = "\(Labiba.HumanAgent.url)?device=ios&userid=\(Labiba._senderId ?? "")&storyId=\(Labiba._pageId)"
         print(url)
         if let url = URL(string: url){
             Labiba.isHumanAgentStarted = true
+            SharedPreference.shared.isHumanAgentStarted = true
             let request = URLRequest(url: url)
             webView.load(request)
             guard let topVC = UIApplication.shared.topMostViewController else{return}
@@ -60,7 +61,8 @@ class WebViewEventHumanAgent:NSObject {
     }
     
     func end() {
-        
+        Labiba.isHumanAgentStarted = false
+        SharedPreference.shared.isHumanAgentStarted = false
         if let url = Labiba.bundle.url(forResource: "index", withExtension: "html") {
                 let request = URLRequest(url: url)
                 webView.load(request)
@@ -68,9 +70,11 @@ class WebViewEventHumanAgent:NSObject {
     }
     
     func forceEnd(completionHandler:(()->Void)? = nil) {
-        if Labiba.isHumanAgentStarted  {
+        
+        if SharedPreference.shared.isHumanAgentStarted  {
+            print("SharedPreference.shared.isHumanAgentStarted Ended")
             Labiba.isHumanAgentStarted = false
-            
+            SharedPreference.shared.isHumanAgentStarted = false
             let url = "https://botbuilder.labiba.ai/api/LiveChat/v1.0/CloseConversation/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile"
             end()
             DispatchQueue.global(qos: .background).async {
@@ -93,11 +97,15 @@ class WebViewEventHumanAgent:NSObject {
 extension WebViewEventHumanAgent: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("human agent finish loading ")
+        
     }
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        print("human agent failed to load with error\(error.localizedDescription)")
-      //  showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
-    }
+//    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+//        print("human agent failed to load with error\(error.localizedDescription)")
+//        showErrorMessage("Error: \(error.localizedDescription)\n\n \(error)")
+//
+//      //  showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
+//    }
+//    
 //    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
 //        print("human agent failed to load with error\(error.localizedDescription)")
 //        showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
@@ -115,18 +123,29 @@ extension WebViewEventHumanAgent: WKNavigationDelegate {
 //        }
 //        decisionHandler(.allow)
 //    }
+    
+
 }
 
 extension WebViewEventHumanAgent: WKScriptMessageHandler {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print(message.name,message.body)
-        guard let messageDic =  message.body as? [String:String], let statusParam = messageDic["param1"] else {
+        
+        if message.name == "error"{
+            webView.reload()
             return
         }
-        switch statusParam {
-        case "msg":
-            if let stringModel = messageDic["param2"], let dataModel = stringModel.data(using: .utf8) {
+        guard let messageDic =  message.body as? [String:Any] else {
+            return
+        }
+        guard let statusParam = messageDic["messageType"] else {
+            return
+        }
+        
+        
+        if statusParam as? String == "msg" {
+            if let stringModel = messageDic["msg"] as? String, let dataModel = stringModel.data(using: .utf8) {
                 let decoder = JSONDecoder()
                 do {
                     let model = try decoder.decode(HumanAgentModel.self, from: dataModel)
@@ -135,12 +154,13 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
                     print(error.localizedDescription)
                 }
             }
-        case "end":
+        }
+        
+        if statusParam as? String == "end" {
             end()
             BotConnector.shared.sendGetStarted()
-        default:
-            break
         }
+        
        
     }
 }

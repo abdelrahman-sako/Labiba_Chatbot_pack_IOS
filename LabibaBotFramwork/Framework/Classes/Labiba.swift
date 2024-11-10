@@ -19,6 +19,17 @@ public enum BotType:Int {
     case visualizer = 6
 }
 
+public enum AudioType{
+  case base64
+  case url
+}
+
+public enum LoggingAndRefferalEncodingType{
+    case jsonObject
+    case base64
+    case jsonString
+}
+
 
 @objc public class Labiba: NSObject
 {
@@ -28,7 +39,7 @@ public enum BotType:Int {
   //  static var _basePath = "ws://whatsapp.labibabot.com/api/mws"
    // static var _basePath = "ws://botbuilder.labiba.ai/api/mws"
    // static var _socketBasePath = "wss://botbuilder.labiba.ai/api/mws"
-    
+    public static var audioType = 2
     static var _basePath = ""     //"https://botbuilder.labiba.ai"
     static var _messagingServicePath = ""    //"/api/MobileAPI/MessageHandler"
     static var _voiceBasePath = ""     //"https://voice.labibabot.com"
@@ -65,6 +76,7 @@ public enum BotType:Int {
     public  static var enableCaching: Bool = false
     public static var loaderText:String = "تحميل..."
     public static var botLang : LabibaLanguage = .en
+    public static var loggingAndRefferalEncodingType : LoggingAndRefferalEncodingType = .jsonString
   //  public  static var isLoggingEnabled: Bool = false
 
      // MARK:- Main Settings
@@ -99,6 +111,10 @@ public enum BotType:Int {
         }
     }
     
+  
+  public static func setAudioType(audioType: AudioType){
+    self.audioType = audioType == AudioType.base64 ? 1 : 2
+  }
     public static func setDelegate( delegate: LabibaDelegate)
        {
            self.delegate = delegate
@@ -156,7 +172,13 @@ public enum BotType:Int {
         self._updateTokenUrl = path
     }
     
+    public static func clearCache(){
+        LocalCache.shared.displayedDialogs = []
+        LocalCache.shared.stepsToBeDisplayed = []
+        LocalCache.shared.conversationId = nil
+        
     
+    }
     
 //    public static func set_helpPath(_ path: String)
 //    {
@@ -224,7 +246,9 @@ public enum BotType:Int {
         self._pageId = SharedPreference.shared.currentUserId
     }
     
-    
+    public static func setSecurityHeaderParams(token:[[String:Any]]){
+        KeyChainManager.save(key: "labibaTokens", data: token)
+    }
     
      static func setLastMessageLangCode(_ text: String)
     {
@@ -299,7 +323,10 @@ public enum BotType:Int {
     
     
     
-   
+    
+    public static func hideIfSingleButton(_ hide:Bool){
+        Labiba.CarousalCardView.HideCardOneButton = hide
+    }
     
   
     //MARK:- ******************THEME SETTING******************
@@ -378,10 +405,6 @@ public enum BotType:Int {
     {
         self._Logo = image
     }
-    
-    
-    
-    
     
     //MARK:- Main Background View UIConfiguration
     public static let BackgroundView = LabibaBackgroundView()
@@ -549,6 +572,7 @@ public enum BotType:Int {
             if tiggerDelegate{Labiba.delegate?.labibaDidClose?()}
         })
     }
+
     
 //    static func createConversation(closable: Bool = true, onClose: ConversationCloseHandler? = nil) -> UIViewController
 //    { // this is should not be public

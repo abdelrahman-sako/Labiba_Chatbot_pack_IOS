@@ -208,10 +208,13 @@ class StateOnHoldEntryCell: StateEntryCell, EntryDisplayDelegate, SelectableCard
             self.renderAvatar()
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2)
         {
             self.currentDisplay.status = .Shown
             self.currentDisplay.reload()
+            NotificationCenter.default
+                        .post(name: NSNotification.Name("MediaRender"),
+                         object: nil)
         }
     }
 

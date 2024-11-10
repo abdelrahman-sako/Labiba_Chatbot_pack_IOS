@@ -10,4 +10,5 @@ import Foundation
 class TextToSpeachResponseModel:Codable {
     var file:String?
     var status:String?
+    var audioContent: String?
 }

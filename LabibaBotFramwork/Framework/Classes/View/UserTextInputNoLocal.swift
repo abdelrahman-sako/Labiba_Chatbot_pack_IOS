@@ -115,7 +115,7 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         self.textView.font = applyBotFont(size: 13)
         self.textView.addSubview(placeholderLabel)
         self.textField.font = applyBotFont(size: 13)
-        
+        self.textView.isEditable = true
 //        placeholderLabel.textColor = Labiba._UserInputColors.hintColor//UIColor(white: 0, alpha: 0.3)
         placeholderLabel.textColor = Labiba.UserInputView.textColor
         placeholderLabel.isHidden = !textView.text.isEmpty
@@ -140,6 +140,9 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        print("Did begin Editing")
+    }
     override func draw(_ rect: CGRect) {
         print("draw" , self.sendButton.frame.height/2)
         self.container.layer.cornerRadius = self.sendButton.frame.height/2
@@ -207,8 +210,12 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         controller.dismiss(animated: true, completion: nil)
-        //self.delegate?.userTextInput(<#T##dialog: UserTextInputNoLocal##UserTextInputNoLocal#>, didSubmitFile: <#T##URL#>)
+        if let url = urls.first {
+            self.delegate?.userTextInput(self, didSubmitFile: url)
+
+        }
     }
+    
     
     func dismissAttachmentsMenu() {
        // requestAttachmentButton.setImage(Image(named: "ic_more_vert_black_24pt"), for: .normal)
@@ -276,7 +283,7 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         }
     }
     
-    private let topViewC = getTheMostTopViewController()!
+    private let topViewC = getTheMostTopViewController()
     
 
     func popUp() -> Void

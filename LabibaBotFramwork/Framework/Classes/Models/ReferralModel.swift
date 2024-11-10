@@ -26,6 +26,7 @@ class ReferralModel:Codable {
             do{
                 let model = try jsonDecoder.decode([String:String].self, from: encodedData)
                 return model
+               
             }catch{
                 
             }

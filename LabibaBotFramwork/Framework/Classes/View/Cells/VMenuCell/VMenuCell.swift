@@ -51,7 +51,7 @@ class VMenuCell: UITableViewCell {
   
   
   func setData(model:DialogCard){
-    menuContentLabel.text = model.title
+    menuContentLabel.text = model.title.trimmingCharacters(in: .whitespacesAndNewlines)
     if let url = URL(string: model.imageUrl ?? ""){
       menuImageView.af_setImage(withURL: url)
       leadingStackViewConst.constant = 5

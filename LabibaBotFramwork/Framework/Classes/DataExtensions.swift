@@ -7,8 +7,6 @@
 //
 
 import Foundation
-//import SwiftyJSON
-//import Alamofire
 import MobileCoreServices
 
 extension Request {

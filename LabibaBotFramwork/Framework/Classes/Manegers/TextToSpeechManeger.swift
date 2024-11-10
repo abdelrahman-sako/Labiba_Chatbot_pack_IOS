@@ -26,16 +26,17 @@ class TextToSpeechManeger:NSObject{
     var delegate:TextToSpeechDelegate?
     static let Shared = TextToSpeechManeger()
     var botConnector:BotConnector = BotConnector.shared
-    
     private var ToDeletDialogs:[ConversationDialog] = []
+  
     private override init(){
         super.init()
         addStopTTSObserver()
     }
     
+
     func getURL(for model:TTSMessageModel) {//-> URL? {
         let message = model.message.replacingOccurrences(of: "\"", with: "")
-        let TTS_Model = TextToSpeechModel(text: message, googleVoice: GoogleVoice(voiceLang: LabibaLanguage(rawValue:model.langCode) ?? .ar), clientid: "0",isSSML: model.isSSML)
+      let TTS_Model = TextToSpeechModel(text: message, googleVoice: GoogleVoice(voiceLang: LabibaLanguage(rawValue:model.langCode) ?? .ar), clientid: "0",isSSML: model.isSSML, isBase64: Labiba.audioType)
         DataSource.shared.textToSpeech(model: TTS_Model) { result in
             switch result{
             case .success(let model):
@@ -43,6 +44,8 @@ class TextToSpeechManeger:NSObject{
                     self.ToDeletDialogs.first?.voiceUrl = url.absoluteString
                     self.ToDeletDialogs.removeFirst()
                     self.downloadFileFromURL(url: url)
+                }else{
+                  self.playBase64Content(base64String: model.audioContent ?? "")
                 }
             case .failure(_):
                 self.isPlaying = false
@@ -88,9 +91,9 @@ class TextToSpeechManeger:NSObject{
         // TTS_Models_Array += longMessageDivider(text: filteredText, langCode: langCode, rate: rate)
         var  messageModel:TTSMessageModel!
         if let ssml = dialog.SSML {
-            messageModel = TTSMessageModel(message: ssml, langCode: langCode, rate: rate,isSSML: true)
+          messageModel = TTSMessageModel(message: ssml, langCode: langCode, rate: rate,isSSML: true, isBsae64: Labiba.audioType)
         }else{
-            messageModel = TTSMessageModel(message: filteredText, langCode: langCode, rate: rate)
+          messageModel = TTSMessageModel(message: filteredText, langCode: langCode, rate: rate, isBsae64: Labiba.audioType)
         }
         TTS_Models_Array.append(messageModel)
         playNextAudio()
@@ -113,15 +116,15 @@ class TextToSpeechManeger:NSObject{
                     let addedValue = stringForSpace[stringForSpace.startIndex...firstSpaceIndex].count
                     endIndex = customString.index(startIndex, offsetBy: 180 + addedValue)
                 }
-                segmentArray.append( TTSMessageModel(message: String(customString[..<endIndex]), langCode: langCode, rate: rate) )
+              segmentArray.append( TTSMessageModel(message: String(customString[..<endIndex]), langCode: langCode, rate: rate, isBsae64: Labiba.audioType) )
                 customString = String(customString[endIndex...])
             }
             if reminder > 0 {
-                segmentArray.append(TTSMessageModel(message: String(customString[customString.startIndex..<customString.endIndex]), langCode: langCode, rate: rate))
+              segmentArray.append(TTSMessageModel(message: String(customString[customString.startIndex..<customString.endIndex]), langCode: langCode, rate: rate, isBsae64: Labiba.audioType))
             }
             return segmentArray
         }else{
-            return [TTSMessageModel(message: text, langCode: langCode, rate: rate)]
+          return [TTSMessageModel(message: text, langCode: langCode, rate: rate, isBsae64: Labiba.audioType)]
         }
     }
     
@@ -168,6 +171,7 @@ class TextToSpeechManeger:NSObject{
             //self.player = try AVAudioPlayer(data: data!)
             delegate?.TextToSpeechDidStart()
             player?.prepareToPlay()
+            
             player?.volume = volume
             player?.enableRate = true
             player?.rate = voiceRate
@@ -277,20 +281,65 @@ class TextToSpeechManeger:NSObject{
     }
     
     
+  
+  func playBase64Content(base64String: String) {
+    if let audioPlayer = convertBase64ToVoice(base64String: base64String) {
+        do {
+            try audioSession.setCategory(AVAudioSession.Category.playback)
+            delegate?.TextToSpeechDidStart()
+            audioPlayer.prepareToPlay()
+
+           audioPlayer.volume = volume
+           audioPlayer.enableRate = true
+           audioPlayer.rate = voiceRate
+            audioPlayer.delegate = self
+
+         // Play the audio
+         audioPlayer.play()
+        }catch {
+            print("Failed to create AVAudioPlayer: \(error)")
+          }
+       
+    } else {
+      print("Failed to convert Base64 to voice.")
+    }
+  }
+  
+  func convertBase64ToVoice(base64String: String) -> AVAudioPlayer? {
+    // Convert Base64 string to Data
+    guard let audioData = Data(base64Encoded: base64String) else {
+      print("Invalid Base64 string.")
+      return nil
+    }
+    
+    do {
+      // Create an AVAudioPlayer with the audio data
+        try audioSession.setCategory(AVAudioSession.Category.playback)
+      player = try AVAudioPlayer(data: audioData)
+      
+      // Prepare the audio player for playback
+      player?.prepareToPlay()
+      
+      return player
+    } catch {
+      print("Failed to create AVAudioPlayer: \(error)")
+      return nil
+    }
+  }
 }
-
-
 
 class TTSMessageModel{
     var message:String
     var langCode:String
     var rate:Float
     var isSSML:Bool
-    init(message:String ,langCode:String ,rate:Float ,isSSML:Bool = false) {
+    var isBase64:Int
+  init(message:String ,langCode:String ,rate:Float ,isSSML:Bool = false, isBsae64:Int) {
         self.message = message
         self.langCode = langCode
         self.rate = rate
         self.isSSML = isSSML
+        self.isBase64 = isBsae64
     }
 }
 
