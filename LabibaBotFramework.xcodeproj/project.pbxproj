@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		20153EA52D626F0000DF1246 /* JsonThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20153EA42D626F0000DF1246 /* JsonThemeModel.swift */; };
 		20811CCC2A55497000B0573C /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20811CCB2A55497000B0573C /* KeyChainManager.swift */; };
 		370196EA24CDA5DE0003266B /* VedioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370196E924CDA5DE0003266B /* VedioPlayerView.swift */; };
 		37030D7023F2AB5400BF8ED3 /* FontDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */; };
@@ -512,6 +513,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20153EA42D626F0000DF1246 /* JsonThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonThemeModel.swift; sourceTree = "<group>"; };
 		20811CCB2A55497000B0573C /* KeyChainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		370196E924CDA5DE0003266B /* VedioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VedioPlayerView.swift; sourceTree = "<group>"; };
 		37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDownloader.swift; sourceTree = "<group>"; };
@@ -1106,6 +1108,7 @@
 			isa = PBXGroup;
 			children = (
 				37460D99230A7AC1002748CE /* ReferralModel.swift */,
+				20153EA42D626F0000DF1246 /* JsonThemeModel.swift */,
 				522D1649256E44F2002758D5 /* GetRatingFormQuestionsModel.swift */,
 				3778B5F323CAFDC2005CD740 /* LabibaModel.swift */,
 				37BD1BC123CB5807005DBA67 /* LabibaModelEnums.swift */,
@@ -2710,6 +2713,7 @@
 				52775632272EE12F00F8ADE0 /* CompatibleAnimationKeypath.swift in Sources */,
 				B429554F22DDDBD2002DE3E9 /* PhotoViewController.swift in Sources */,
 				52775646272EE12F00F8ADE0 /* RectNode.swift in Sources */,
+				20153EA52D626F0000DF1246 /* JsonThemeModel.swift in Sources */,
 				B429551E22DDDBD2002DE3E9 /* ScannerVC.swift in Sources */,
 				522D165D256E9C9E002758D5 /* GeneralThemeSettings.swift in Sources */,
 				F9D2010A292A289A0024FE48 /* ApiEndPoints.swift in Sources */,

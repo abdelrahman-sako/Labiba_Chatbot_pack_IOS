@@ -274,6 +274,20 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     }
     
     
+    func getLabibaTheme(_ completionHandler:@escaping Handler<LabibaThemeModel>){
+        let url = "https://api.npoint.io/79ab562d735a67229269"
+
+        let endPoint = EndPoint(url: url, httpMethod: .post)
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: "") { result in
+            switch result{
+            case .success(let data):
+                self.parser(data: data, model: LabibaThemeModel.self, handler: completionHandler)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     
     
     

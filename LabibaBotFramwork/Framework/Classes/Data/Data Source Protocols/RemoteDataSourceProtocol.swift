@@ -23,7 +23,7 @@ protocol RemoteDataSourceProtocol {
     
 
     func downloadFile(fileURL:URL, handler: @escaping Handler<URL>)-> AnyCancelable
-    
+    func getLabibaTheme(_ completionHandler:@escaping Handler<LabibaThemeModel>)
     
     func close()
 

@@ -630,5 +630,22 @@ import UIKit
     //
     //    }
     
+     
+     public static func setThemeFromJson(from bundle: Bundle,_ fileName:String){
+         if let themeModel = loadJson(from: bundle, filename: fileName){
+             
+         }
+     }
     
+     private static func loadJson(from bundle: Bundle,filename local: String) -> LabibaThemeModel? {
+         if let url = bundle.url(forResource: local, withExtension: "json") {
+             do {
+                 let data = try Data(contentsOf: url)
+                 return try JSONDecoder().decode(LabibaThemeModel.self, from: data)
+             } catch {
+                 print("Error reading JSON:\(error)")
+             }
+         }
+         return nil
+     }
 }
