@@ -83,7 +83,7 @@ final class DataSource: DataSourceProtocol{
         return remoteDataSource.downloadFile(fileURL: fileURL, handler: handler)
     }
     
-    func getLabibaTheme(_ completionHandler:@escaping Handler<LabibaThemeModel>){
+    func getLabibaTheme(_ completionHandler: @escaping Handler<LabibaThemeModel>){
         return remoteDataSource.getLabibaTheme(completionHandler)
     }
     

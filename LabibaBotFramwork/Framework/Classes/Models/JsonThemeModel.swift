@@ -1,18 +1,17 @@
-
 import Foundation
 
-// MARK: - JSONThemeModel
+// MARK: - LabibaThemeResponseModel
 struct LabibaThemeModel: Codable {
-    let config: Config
-    let theme: Theme
+    let theme: Theme?
+    let config: Config?
 }
 
 // MARK: - Config
 struct Config: Codable {
-    let urls: Urls
-    let botIDS: BotIDS
-    let startLang: String
-    let textToSpeechVoice: TextToSpeechVoice
+    let urls: Urls?
+    let botIDS: BotIDS?
+    let startLang: String?
+    let textToSpeechVoice: TextToSpeechVoice?
     
     enum CodingKeys: String, CodingKey {
         case urls
@@ -23,107 +22,113 @@ struct Config: Codable {
 
 // MARK: - BotIDS
 struct BotIDS: Codable {
-    let ar, en, fr, du: String
+    let ar, du, en, fr: String?
 }
 
 // MARK: - TextToSpeechVoice
 struct TextToSpeechVoice: Codable {
-    let arabic, english: String
+    let arabic, english: String?
 }
 
 // MARK: - Urls
 struct Urls: Codable {
-    let basePath: String
-    let messagingServicePath: String
-    let voiceBasePath: String
-    let voiceServicePath: String
-    let humanAgentURL, mediaUploadURL: String
-    let loggingURL: String
+    let basePath: String?
+    let loggingURL: String?
+    let humanAgentURL, voiceBasePath, mediaUploadURL: String?
+    let voiceServicePath, messagingServicePath: String?
     
     enum CodingKeys: String, CodingKey {
-        case basePath, messagingServicePath, voiceBasePath, voiceServicePath
-        case humanAgentURL = "humanAgentUrl"
-        case mediaUploadURL = "mediaUploadUrl"
+        case basePath
         case loggingURL = "loggingUrl"
+        case humanAgentURL = "humanAgentUrl"
+        case voiceBasePath
+        case mediaUploadURL = "mediaUploadUrl"
+        case voiceServicePath, messagingServicePath
     }
 }
 
 // MARK: - Theme
 struct Theme: Codable {
-    let settting: Settting
-    let fonts: Fonts
-    let backGroundColor: Back
-    let header: Header
-    let userUI: UserUI
-    let botChat: BotChat
-    let labibaRatingForm: LabibaRatingForm1
+    let fonts: Fonts1?
+    let header: Header?
+    let userUI: UserUI?
+    let botChat: BotChat?
+    let settting: Settting?
+    let backGroundColor: Back?
+    let labibaRatingForm: LabibaRatingForm1?
     
     enum CodingKeys: String, CodingKey {
-        case settting, fonts, backGroundColor, header, userUI
+        case fonts, header, userUI
         case botChat = "BotChat"
-        case labibaRatingForm = "LabibaRatingForm"
+        case settting, backGroundColor
+        case labibaRatingForm = "LabibaRatingForm1"
     }
 }
 
 // MARK: - Back
 struct Back: Codable {
-    let type, color: String
-    let image: String
-    let gradiant: [String]
+    let type, color: String?
+    let image: String?
+    let gradiant: [String]?
 }
 
 // MARK: - BotChat
 struct BotChat: Codable {
-    let typingIndicatorColor: String
-    let backGround: Back
-    let textColor: String
-    let fontsize, alpha, cornerRadius: Int
-    let timeImage: String
-    let shadow: Shadow
-    let timestamp: Timestamp
-    let botName: String
+    let alpha: Int?
+    let shadow: Shadow?
+    let botName: String?
+    let fontsize: Int?
+    let textColor, timeImage: String?
+    let timestamp: Timestamp?
+    let backGround: Back?
+    let cornerRadius: Int?
+    let typingIndicatorColor: String?
 }
 
 // MARK: - Shadow
 struct Shadow: Codable {
-    let shadowColor: String
-    let shadowOffset: ShadowOffset
-    let shadowRadius, shadowOpacity: Double
+    let shadowColor: String?
+    let shadowOffset: ShadowOffset?
+    let shadowRadius, shadowOpacity: Double?
 }
 
 // MARK: - ShadowOffset
 struct ShadowOffset: Codable {
-    let width, height: Int
+    let width, height: Int?
 }
 
 // MARK: - Timestamp
 struct Timestamp: Codable {
-    let fontSize: Int
-    let color, formate: String
+    let color, formate: String?
+    let fontSize: Int?
 }
 
-// MARK: - Fonts
-struct Fonts: Codable {
-    let regAR, boldAR, regEN, boldEN: String
+// MARK: - Fonts1
+struct Fonts1: Codable {
+    let regAR, regEN, boldAR, boldEN: String?
 }
 
 // MARK: - Header
 struct Header: Codable {
-    let headerBean: [HeaderBean]
-    let headerTopMargine, headerImageSize: Int
-    let statusbarColor: String
-    let headerBackgroundColor: [String]
-    let headerIconColor: String
-    let centerImageView, titleLbl, homeButton, settingButton: RateLaterButton
-    let vedioCallButton, muteButton: RateLaterButton
+    let titleLbl: RateLaterButton?
+    let headerBean: [HeaderBean]?
+    let homeButton, muteButton, settingButton: RateLaterButton?
+    let statusbarColor: String?
+    let centerImageView: RateLaterButton?
+    let headerIconColor: String?
+    let headerImageSize: Int?
+    let vedioCallButton: RateLaterButton?
+    let headerTopMargine: Int?
+    let headerBackgroundColor: [String]?
 }
 
 // MARK: - RateLaterButton
 struct RateLaterButton: Codable {
-    let icon, tintColor: String
-    let isHidden: Bool
-    let backgroundColor: Color
-    let alpha: Int
+    let icon: String?
+    let alpha: Int?
+    let isHidden: Bool?
+    let tintColor: String?
+    let backgroundColor: Color1?
 }
 
 enum Color1: String, Codable {
@@ -132,164 +137,167 @@ enum Color1: String, Codable {
 
 // MARK: - HeaderBean
 struct HeaderBean: Codable {
-    let language: String
-    let image: String
-    let title, body: String
+    let body: String?
+    let image: String?
+    let title, language: String?
 }
 
-// MARK: - LabibaRatingForm
+// MARK: - LabibaRatingForm1
 struct LabibaRatingForm1: Codable {
-    let style: String
-    let background: Back
-    let titleColor: String
-    let titleFont: TitleFont
-    let questionsColor: String
-    let questionsFont: Font
-    let fullStarTintColor, emptyStarTintColor, starsContainerBorderColor, commentContainerColor: String
-    let commentContainerCornerRadius: Int
-    let commentFont: Font
-    let commentColor, mobileNumContainerColor: String
-    let mobileNumFont: Font
-    let mobileNumColor: String
-    let submitButton, rateLaterButton: RateLaterButton
+    let style: String?
+    let titleFont: TitleFont?
+    let background: Back?
+    let titleColor: String?
+    let commentFont: Font1?
+    let commentColor: String?
+    let submitButton: RateLaterButton?
+    let mobileNumFont, questionsFont: Font1?
+    let mobileNumColor, questionsColor: String?
+    let rateLaterButton: RateLaterButton?
+    let fullStarTintColor, emptyStarTintColor, commentContainerColor, mobileNumContainerColor: String?
+    let starsContainerBorderColor: String?
+    let commentContainerCornerRadius: Int?
 }
 
-// MARK: - Font
+// MARK: - Font1
 struct Font1: Codable {
-    let size: Int
-    let weight: String
+    let size: Int?
+    let weight: String?
 }
 
 // MARK: - TitleFont
 struct TitleFont: Codable {
-    let bold: Bool
-    let size: Int
+    let bold: Bool?
+    let size: Int?
 }
 
 // MARK: - Settting
 struct Settting: Codable {
-    let humanAgentType, botType: String
-    let isLoggingEnabled, isSuccessLoggingEnabled, isSwitchableInputs, isAutoListining: Bool
-    let isFullImageCards, isAddHeader, isUseBackgroundLocation, isAddTimeToBubbles: Bool
-    let isEnableTTS: Bool
+    let botType: String?
+    let isAddHeader, isEnableTTS: Bool?
+    let humanAgentType: String?
+    let isAutoListining, isFullImageCards, isLoggingEnabled, isAddTimeToBubbles: Bool?
+    let isSwitchableInputs, isSuccessLoggingEnabled, isUseBackgroundLocation: Bool?
 }
 
 // MARK: - UserUI
 struct UserUI: Codable {
-    let bottomBarColor: [String]
-    let userChatBubble: UserChatBubble
-    let labibaAttachmentTheme: LabibaAttachmentTheme
-    let labibaMapView: LabibaMapView1
-    let voiceAssistantView: VoiceAssistantView1
-    let inputView: InputView
-    let labibaChoiceView: LabibaChoiceView1
-    let labibaMenuCardView: LabibaMenuCardView1
-    let carousalCardView: CarousalCardView
+    let inputView: InputView?
+    let labibaMapView: LabibaMapView1?
+    let bottomBarColor: [String]?
+    let userChatBubble: UserChatBubble?
+    let carousalCardView: CarousalCardView?
+    let labibaChoiceView: LabibaChoiceView1?
+    let labibaMenuCardView: LabibaMenuCardView1?
+    let voiceAssistantView: VoiceAssistantView1?
+    let labibaAttachmentTheme: LabibaAttachmentTheme?
     
     enum CodingKeys: String, CodingKey {
+        case inputView
+        case labibaMapView = "LabibaMapView1"
         case bottomBarColor, userChatBubble
-        case labibaAttachmentTheme = "LabibaAttachmentTheme"
-        case labibaMapView = "LabibaMapView"
-        case voiceAssistantView, inputView
-        case labibaChoiceView = "LabibaChoiceView"
-        case labibaMenuCardView = "LabibaMenuCardView"
         case carousalCardView = "CarousalCardView"
+        case labibaChoiceView = "LabibaChoiceView1"
+        case labibaMenuCardView = "LabibaMenuCardView1"
+        case voiceAssistantView
+        case labibaAttachmentTheme = "LabibaAttachmentTheme"
     }
 }
 
 // MARK: - CarousalCardView
 struct CarousalCardView: Codable {
-    let backgroundColor: String
-    let border: Border
-    let alpha: Int
-    let backgroundImageStyleEnabled: Bool
-    let bottomGradient: BottomGradient
-    let cornerRadius: Int
-    let titleColor, subtitleColor: String
-    let buttonsSpacing: Int
-    let buttonTitleColor: String
-    let titleFont: Font
-    let buttonCornerRadius: Int
-    let buttonFont: Font
-    let shadow: Shadow
-    let button1, button2, button3: RateLaterButton
+    let alpha: Int?
+    let border: Border?
+    let shadow: Shadow?
+    let button1, button2, button3: RateLaterButton?
+    let titleFont, buttonFont: Font1?
+    let titleColor: String?
+    let cornerRadius: Int?
+    let subtitleColor: String?
+    let bottomGradient: BottomGradient?
+    let buttonsSpacing: Int?
+    let backgroundColor, buttonTitleColor: String?
+    let buttonCornerRadius: Int?
+    let backgroundImageStyleEnabled: Bool?
 }
 
 // MARK: - Border
 struct Border: Codable {
-    let width: Int
-    let color: String
+    let color: String?
+    let width: Int?
 }
 
 // MARK: - BottomGradient
 struct BottomGradient: Codable {
-    let colors: [String]
-    let locations: [Int]
-    let start, end: End
-    let viewBackgroundColor: String
+    let end, start: End?
+    let colors: [String]?
+    let locations: [Int]?
+    let viewBackgroundColor: String?
 }
 
 // MARK: - End
 struct End: Codable {
-    let x, y: Int
+    let x, y: Int?
 }
 
 // MARK: - InputView
 struct InputView: Codable {
-    let tintColor: Color
-    let hintColor, textColor, backgroundColor: String
-    let sendButton, attachmentButton: RateLaterButton
+    let hintColor, textColor: String?
+    let tintColor: Color1?
+    let sendButton: RateLaterButton?
+    let backgroundColor: String?
+    let attachmentButton: RateLaterButton?
 }
 
 // MARK: - LabibaAttachmentTheme
 struct LabibaAttachmentTheme: Codable {
-    let card, menu: Card
+    let card, menu: Card?
 }
 
 // MARK: - Card
 struct Card: Codable {
-    let tint, background: String
+    let tint, background: String?
 }
 
-// MARK: - LabibaChoiceView
+// MARK: - LabibaChoiceView1
 struct LabibaChoiceView1: Codable {
-    let backgroundColor, tintColor: String
-    let font: Font
-    let borderColor: String
-    let cornerRadius: Int
+    let font: Font1?
+    let tintColor, borderColor: String?
+    let cornerRadius: Int?
+    let backgroundColor: String?
 }
 
-// MARK: - LabibaMapView
+// MARK: - LabibaMapView1
 struct LabibaMapView1: Codable {
-    let cornerRadius: Int
-    let defaultLocation: DefaultLocation
+    let cornerRadius: Int?
+    let defaultLocation: DefaultLocation?
 }
 
 // MARK: - DefaultLocation
 struct DefaultLocation: Codable {
-    let latitude, longitude: Double
+    let latitude, longitude: Double?
 }
 
-// MARK: - LabibaMenuCardView
+// MARK: - LabibaMenuCardView1
 struct LabibaMenuCardView1: Codable {
-    let backgroundColor, textColor: String
-    let fontSize, alpha: Int
-    let collectionColor: String
-    let clearNonSelectedItems: Bool
+    let alpha, fontSize: Int?
+    let textColor, backgroundColor, collectionColor: String?
+    let clearNonSelectedItems: Bool?
 }
 
 // MARK: - UserChatBubble
 struct UserChatBubble: Codable {
-    let background: Back
-    let textColor: String
-    let fontsize, alpha, cornerRadius: Int
-    let username: String
-    let timestamp: Timestamp
+    let alpha, fontsize: Int?
+    let username, textColor: String?
+    let timestamp: Timestamp?
+    let background: Back?
+    let cornerRadius: Int?
 }
 
-// MARK: - VoiceAssistantView
+// MARK: - VoiceAssistantView1
 struct VoiceAssistantView1: Codable {
-    let background: Back
-    let micButton, keyboardButton, attachmentButton: RateLaterButton
-    let waveColor: String
+    let micButton: RateLaterButton?
+    let waveColor: String?
+    let background: Back?
+    let keyboardButton, attachmentButton: RateLaterButton?
 }

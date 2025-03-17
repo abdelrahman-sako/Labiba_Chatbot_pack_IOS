@@ -636,6 +636,17 @@ import UIKit
              
          }
      }
+     
+     public static func getLabibaTheme(){
+         DataSource.shared.getLabibaTheme { result in
+             switch result{
+             case .success(let data):
+                 print("datattatata \(data)")
+             case .failure(let error):
+                 print(error)
+             }
+         }
+     }
     
      private static func loadJson(from bundle: Bundle,filename local: String) -> LabibaThemeModel? {
          if let url = bundle.url(forResource: local, withExtension: "json") {
