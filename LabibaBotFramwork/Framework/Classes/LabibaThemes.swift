@@ -661,14 +661,18 @@ public class LabibaThemes {
     }
     
     func setLabibaTheme(_ labibaThemeModel:LabibaThemeModel){
-        //         Labiba.MenuCardView.clearNonSelectedItems = labibaThemeModel.theme?.userUI?.labibaMenuCardView?.clearNonSelectedItems ?? false
+        //Logging
         Labiba.Logging.isSuccessLoggingEnabled = labibaThemeModel.theme?.settting?.isSuccessLoggingEnabled ?? false
+       
+        //MenuCardView
         Labiba.MenuCardView.backgroundColor = UIColor(hex:labibaThemeModel.theme?.userUI?.labibaMenuCardView?.backgroundColor ?? "")
         Labiba.MenuCardView.alpha = CGFloat(labibaThemeModel.theme?.userUI?.labibaMenuCardView?.alpha ?? 0)
         Labiba.MenuCardView.fontSize = CGFloat(labibaThemeModel.theme?.userUI?.labibaMenuCardView?.fontSize ?? 0)
         Labiba.MenuCardView.textColor = UIColor(hex:(labibaThemeModel.theme?.userUI?.labibaMenuCardView?.textColor ?? ""))
         Labiba.MenuCardView.collectionColor = UIColor(hex:(labibaThemeModel.theme?.userUI?.labibaMenuCardView?.collectionColor ?? ""))
         Labiba.MenuCardView.clearNonSelectedItems = labibaThemeModel.theme?.userUI?.labibaMenuCardView?.clearNonSelectedItems ?? false
+      
+        //CarousalCardView
         Labiba.CarousalCardView.alpha = CGFloat(labibaThemeModel.theme?.userUI?.carousalCardView?.alpha ?? 0)
         Labiba.CarousalCardView.border = (CGFloat(labibaThemeModel.theme?.userUI?.carousalCardView?.border?.width ?? 0),UIColor(hex:labibaThemeModel.theme?.userUI?.carousalCardView?.border?.color ?? ""))
         Labiba.CarousalCardView.shadow = LabibaShadowModel(shadowColor: UIColor(hex:labibaThemeModel.theme?.userUI?.carousalCardView?.shadow?.shadowColor ?? "").cgColor, shadowOffset:  CGSize(width: labibaThemeModel.theme?.userUI?.carousalCardView?.shadow?.shadowOffset?.width ?? 0, height: labibaThemeModel.theme?.userUI?.carousalCardView?.shadow?.shadowOffset?.height ?? 0), shadowRadius: CGFloat(labibaThemeModel.theme?.userUI?.carousalCardView?.shadow?.shadowRadius ?? 0), shadowOpacity: Float(labibaThemeModel.theme?.userUI?.carousalCardView?.shadow?.shadowOpacity ?? 0))
@@ -680,33 +684,29 @@ public class LabibaThemes {
         Labiba.CarousalCardView.titleColor = UIColor(hex:labibaThemeModel.theme?.userUI?.carousalCardView?.titleColor ?? "")
         Labiba.CarousalCardView.cornerRadius = CGFloat(labibaThemeModel.theme?.userUI?.carousalCardView?.cornerRadius ?? 0)
         Labiba.CarousalCardView.subtitleColor = UIColor(hex:labibaThemeModel.theme?.userUI?.carousalCardView?.subtitleColor ?? "")
-        
         Labiba.CarousalCardView.bottomGradient?.colors = labibaThemeModel.theme?.userUI?.carousalCardView?.bottomGradient?.colors?.map({UIColor(hex: $0)}) ?? []
         Labiba.CarousalCardView.bottomGradient?.locations = labibaThemeModel.theme?.userUI?.carousalCardView?.bottomGradient?.locations?.map({CGFloat($0)}) ?? []
         Labiba.CarousalCardView.bottomGradient?.locations = labibaThemeModel.theme?.userUI?.carousalCardView?.bottomGradient?.locations?.map({CGFloat($0)}) ?? []
         Labiba.CarousalCardView.bottomGradient?.start = CGPoint(x: labibaThemeModel.theme?.userUI?.carousalCardView?.bottomGradient?.start?.x ?? 0, y: labibaThemeModel.theme?.userUI?.carousalCardView?.bottomGradient?.start?.y ?? 0)
         Labiba.CarousalCardView.bottomGradient?.end = CGPoint(x: labibaThemeModel.theme?.userUI?.carousalCardView?.bottomGradient?.end?.x ?? 0, y: labibaThemeModel.theme?.userUI?.carousalCardView?.bottomGradient?.end?.y ?? 0)
         Labiba.CarousalCardView.bottomGradient?.viewBackgroundColor = UIColor(hex:labibaThemeModel.theme?.userUI?.carousalCardView?.bottomGradient?.viewBackgroundColor ?? "")
-
         Labiba.CarousalCardView.buttonsSpacing = CGFloat(labibaThemeModel.theme?.userUI?.carousalCardView?.buttonsSpacing ?? 0)
         Labiba.CarousalCardView.backgroundColor = UIColor(hex:labibaThemeModel.theme?.userUI?.carousalCardView?.backgroundColor ?? "")
         Labiba.CarousalCardView.buttonTitleColor = UIColor(hex:labibaThemeModel.theme?.userUI?.carousalCardView?.buttonTitleColor ?? "")
         Labiba.CarousalCardView.buttonCornerRadius = CGFloat(labibaThemeModel.theme?.userUI?.carousalCardView?.buttonCornerRadius ?? 0)
         Labiba.CarousalCardView.backgroundImageStyleEnabled = labibaThemeModel.theme?.userUI?.carousalCardView?.backgroundImageStyleEnabled ?? false
 
+        //LabibaUserInputView
+        Labiba.UserInputView.hintColor = UIColor(hex: labibaThemeModel.theme?.userUI?.inputView?.hintColor ?? "")
+        Labiba.UserInputView.textColor = UIColor(hex: labibaThemeModel.theme?.userUI?.inputView?.textColor ?? "")
+        Labiba.UserInputView.tintColor = UIColor(hex: labibaThemeModel.theme?.userUI?.inputView?.tintColor ?? "")
+        Labiba.UserInputView.backgroundColor = UIColor(hex: labibaThemeModel.theme?.userUI?.inputView?.backgroundColor ?? "")
+        Labiba.UserInputView.hintColor = UIColor(hex: labibaThemeModel.theme?.userUI?.inputView?.hintColor ?? "")
+        UIImage.getImageFromUrl(labibaThemeModel.theme?.userUI?.inputView?.attachmentButton?.icon ?? "") { image in
+            Labiba.UserInputView.attachmentButton = (image,UIColor(hex:labibaThemeModel.theme?.userUI?.inputView?.attachmentButton?.tintColor ?? ""),labibaThemeModel.theme?.userUI?.inputView?.attachmentButton?.isHidden ?? true)
+        }
+
         
-        let alpha: Int?
-        let border: Border?
-        let shadow: Shadow?
-        let button1, button2, button3: RateLaterButton?
-        let titleFont, buttonFont: Font1?
-        let titleColor: String?
-        let cornerRadius: Int?
-        let subtitleColor: String?
-        let bottomGradient: BottomGradient?
-        let buttonsSpacing: Int?
-        let backgroundColor, buttonTitleColor: String?
-        let buttonCornerRadius: Int?
-        let backgroundImageStyleEnabled: Bool?
+
     }
 }

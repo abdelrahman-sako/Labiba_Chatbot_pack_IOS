@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		20153EA52D626F0000DF1246 /* LabibaThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20153EA42D626F0000DF1246 /* LabibaThemeModel.swift */; };
 		207CBFB52D884D3000C9126D /* LabibaColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CBFB42D884D3000C9126D /* LabibaColorExtension.swift */; };
+		207CBFB72D898C5C00C9126D /* LabibaImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CBFB62D898C5C00C9126D /* LabibaImageExtension.swift */; };
 		20811CCC2A55497000B0573C /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20811CCB2A55497000B0573C /* KeyChainManager.swift */; };
 		370196EA24CDA5DE0003266B /* VedioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370196E924CDA5DE0003266B /* VedioPlayerView.swift */; };
 		37030D7023F2AB5400BF8ED3 /* FontDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */; };
@@ -516,6 +517,7 @@
 /* Begin PBXFileReference section */
 		20153EA42D626F0000DF1246 /* LabibaThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaThemeModel.swift; sourceTree = "<group>"; };
 		207CBFB42D884D3000C9126D /* LabibaColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaColorExtension.swift; sourceTree = "<group>"; };
+		207CBFB62D898C5C00C9126D /* LabibaImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaImageExtension.swift; sourceTree = "<group>"; };
 		20811CCB2A55497000B0573C /* KeyChainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		370196E924CDA5DE0003266B /* VedioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VedioPlayerView.swift; sourceTree = "<group>"; };
 		37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDownloader.swift; sourceTree = "<group>"; };
@@ -1664,6 +1666,7 @@
 			children = (
 				756D52062A2323470047E73A /* UITableViewExtension.swift */,
 				207CBFB42D884D3000C9126D /* LabibaColorExtension.swift */,
+				207CBFB62D898C5C00C9126D /* LabibaImageExtension.swift */,
 				756D52042A2323420047E73A /* UICollectionViewExtension.swift */,
 				B42954D622DDDBD2002DE3E9 /* Extensions.swift */,
 				F9D20113292A488D0024FE48 /* EncodableExtension.swift */,
@@ -2653,6 +2656,7 @@
 				37BD1BC223CB5807005DBA67 /* LabibaModelEnums.swift in Sources */,
 				52775641272EE12F00F8ADE0 /* KeypathSearchable.swift in Sources */,
 				37B9619D230D3DEE0093647C /* BubbbleGestureHandler.swift in Sources */,
+				207CBFB72D898C5C00C9126D /* LabibaImageExtension.swift in Sources */,
 				521448A8258651D20099BF38 /* RatingBaseVC.swift in Sources */,
 				F9D20116292A4A5D0024FE48 /* SubmitRatingResponseModel.swift in Sources */,
 				52C6DBA624694849005CFE27 /* ImageDownloader.swift in Sources */,
