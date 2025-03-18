@@ -14,9 +14,9 @@ public enum LabibaCornerPin{
     case none
 }
 
-public enum LabibaFontWeight{
-    case regular
-    case bold
+public enum LabibaFontWeight:String{
+    case regular = "regular"
+    case bold = "bold"
 }
 
 public enum LabibaBackground {

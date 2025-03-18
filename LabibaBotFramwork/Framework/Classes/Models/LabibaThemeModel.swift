@@ -128,7 +128,7 @@ struct RateLaterButton: Codable {
     let alpha: Int?
     let isHidden: Bool?
     let tintColor: String?
-    let backgroundColor: Color1?
+    let backgroundColor: String?
 }
 
 enum Color1: String, Codable {
@@ -243,7 +243,7 @@ struct End: Codable {
 // MARK: - InputView
 struct InputView: Codable {
     let hintColor, textColor: String?
-    let tintColor: Color1?
+    let tintColor: String?
     let sendButton: RateLaterButton?
     let backgroundColor: String?
     let attachmentButton: RateLaterButton?
