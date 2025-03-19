@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 public class LabibaRatingForm {
-    public enum RatingStyle{
-        case fullScreen
-        case sheet
+    public enum RatingStyle:String{
+        case fullScreen = "fullScreen"
+        case sheet = "sheet"
     }
     public var style:RatingStyle = .fullScreen
     public var background:LabibaBackground = .solid(color:UIColor(argb: 0xff5387B8))

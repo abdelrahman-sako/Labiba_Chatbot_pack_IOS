@@ -661,7 +661,15 @@ public class LabibaThemes {
     }
     
     func setLabibaTheme(_ labibaThemeModel:LabibaThemeModel){
-        //Logging
+//        Labiba.botLang  = labibaThemeModel.config?.startLang ?? ""
+        Labiba._basePath =  labibaThemeModel.config?.urls?.basePath ?? ""
+        Labiba._messagingServicePath =  labibaThemeModel.config?.urls?.messagingServicePath ?? ""
+        Labiba._voiceBasePath =  labibaThemeModel.config?.urls?.voiceBasePath ?? ""
+        Labiba._voiceServicePath =  labibaThemeModel.config?.urls?.voiceServicePath ?? ""
+        Labiba._loggingServicePath =  labibaThemeModel.config?.urls?.loggingURL ?? ""
+        Labiba._uploadUrl = labibaThemeModel.config?.urls?.mediaUploadURL ?? ""
+        Labiba._updateTokenUrl = labibaThemeModel.config?.urls?.mediaUploadURL ?? ""
+        
         Labiba.Logging.isSuccessLoggingEnabled = labibaThemeModel.theme?.settting?.isSuccessLoggingEnabled ?? false
        
         //MenuCardView
@@ -748,5 +756,46 @@ public class LabibaThemes {
         //LabibaMapView
         Labiba.MapView.cornerRadius = CGFloat(labibaThemeModel.theme?.userUI?.labibaMapView?.cornerRadius ?? 0)
         Labiba.MapView.defaultLocation = (labibaThemeModel.theme?.userUI?.labibaMapView?.defaultLocation?.latitude ?? 0,labibaThemeModel.theme?.userUI?.labibaMapView?.defaultLocation?.longitude ?? 0)
+        
+        Labiba.attachmentThemeModel.menu = (UIColor(hex:labibaThemeModel.theme?.userUI?.labibaAttachmentTheme?.menu?.tint ?? ""),UIColor(hex: labibaThemeModel.theme?.userUI?.labibaAttachmentTheme?.menu?.background ?? ""))
+        Labiba.attachmentThemeModel.card = (UIColor(hex:labibaThemeModel.theme?.userUI?.labibaAttachmentTheme?.card?.tint ?? ""),UIColor(hex: labibaThemeModel.theme?.userUI?.labibaAttachmentTheme?.card?.background ?? ""))
+        
+        
+        //LabibaRatingForm
+        Labiba.RatingForm.style = labibaThemeModel.theme?.labibaRatingForm?.style ?? "" ==  LabibaRatingForm.RatingStyle.fullScreen.rawValue ? .fullScreen : .sheet
+        Labiba.RatingForm.titleColor = UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.titleColor ?? "")
+        Labiba.RatingForm.mobileNumColor = UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.mobileNumColor ?? "")
+        Labiba.RatingForm.questionsColor = UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.questionsColor ?? "")
+        Labiba.RatingForm.commentColor = UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.commentColor ?? "")
+        Labiba.RatingForm.starsContainerBorderColor = UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.starsContainerBorderColor ?? "")
+        Labiba.RatingForm.fullStarTintColor = UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.fullStarTintColor ?? "")
+        Labiba.RatingForm.emptyStarTintColor = UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.emptyStarTintColor ?? "")
+        Labiba.RatingForm.commentContainerColor = UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.commentContainerColor ?? "")
+        Labiba.RatingForm.mobileNumContainerColor = UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.mobileNumContainerColor ?? "")
+      
+        Labiba.RatingForm.titleFont = applyBotFont(bold:labibaThemeModel.theme?.labibaRatingForm?.titleFont?.bold ?? false ,size: CGFloat(labibaThemeModel.theme?.labibaRatingForm?.titleFont?.size ?? 0))
+        
+        
+        switch labibaThemeModel.theme?.labibaRatingForm?.background?.type {
+        case "solid":
+            Labiba.RatingForm.background = .solid(color:UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.background?.color ?? "") )
+        case "gradient":
+            //            Labiba.VoiceAssistantView.background = .gradient(gradientSpecs: .init(colors: labibaThemeModel.theme?.userUI?.voiceAssistantView?.background?.gradiant.map({UIColor(hex: $0)}) ?? [], locations: [], start: <#T##CGPoint#>, end: <#T##CGPoint#>))
+        case "image":
+            UIImage.getImageFromUrl(labibaThemeModel.theme?.labibaRatingForm?.background?.image ?? "") { image in
+                Labiba.RatingForm.background = .image(image: image ?? UIImage())
+            }
+        default:
+            break
+        }
+
+        Labiba.RatingForm.commentFont = (CGFloat(labibaThemeModel.theme?.labibaRatingForm?.commentFont?.size ?? 0),labibaThemeModel.theme?.labibaRatingForm?.mobileNumFont?.weight ?? "" == LabibaFontWeight.regular.rawValue ? .regular : .bold )
+      
+        Labiba.RatingForm.questionsFont = (CGFloat(labibaThemeModel.theme?.labibaRatingForm?.questionsFont?.size ?? 0),labibaThemeModel.theme?.labibaRatingForm?.questionsFont?.weight ?? "" == LabibaFontWeight.regular.rawValue ? .regular : .bold )
+       
+        Labiba.RatingForm.mobileNumFont = applyBotFont(size:CGFloat(labibaThemeModel.theme?.labibaRatingForm?.mobileNumFont?.size ?? 0))
+        Labiba.RatingForm.commentContainerCornerRadius = CGFloat(labibaThemeModel.theme?.labibaRatingForm?.commentContainerCornerRadius ?? 0)
+        Labiba.RatingForm.rateLaterButton = (UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.rateLaterButton?.tintColor ?? ""),UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.rateLaterButton?.backgroundColor ?? ""))
+        Labiba.RatingForm.submitButton = (UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.submitButton?.tintColor ?? ""),UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.submitButton?.backgroundColor ?? ""))
     }
 }
