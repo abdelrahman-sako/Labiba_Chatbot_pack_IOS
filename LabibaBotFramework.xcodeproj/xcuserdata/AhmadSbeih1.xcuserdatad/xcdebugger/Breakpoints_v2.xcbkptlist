@@ -50,6 +50,36 @@
             endingLineNumber = "282"
             landmarkName = "getLabibaTheme(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C74FE4F7-3DEB-4823-816E-8D7BD0F70ED6 - 78a42802bcad4064"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LabibaBotFramwork.RemoteDataSource.getLabibaTheme((Swift.Result&lt;LabibaBotFramwork.LabibaThemeModel, LabibaBotFramwork.LabibaError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "LabibaBotFramwork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Documents/AhmadSbeih%20Dev/labibabotframework_ios/LabibaBotFramwork/Framework/Classes/Data/Remote%20Repository/RemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "282"
+                  endingLineNumber = "282">
+               </Location>
+               <Location
+                  uuid = "C74FE4F7-3DEB-4823-816E-8D7BD0F70ED6 - e053973e0c4a005a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, LabibaBotFramwork.LabibaError&gt;) -&gt; () in LabibaBotFramwork.RemoteDataSource.getLabibaTheme((Swift.Result&lt;LabibaBotFramwork.LabibaThemeModel, LabibaBotFramwork.LabibaError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "LabibaBotFramwork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulrahmanqasem/Documents/AhmadSbeih%20Dev/labibabotframework_ios/LabibaBotFramwork/Framework/Classes/Data/Remote%20Repository/RemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "284"
+                  endingLineNumber = "284">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

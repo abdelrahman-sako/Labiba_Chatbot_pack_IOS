@@ -736,5 +736,17 @@ public class LabibaThemes {
         default:
             break
         }
+        
+        
+        //LabibaChoiceView
+        Labiba.ChoiceView.backgroundColor = UIColor(hex:labibaThemeModel.theme?.userUI?.labibaChoiceView?.backgroundColor ?? "")
+        Labiba.ChoiceView.tintColor = UIColor(hex:labibaThemeModel.theme?.userUI?.labibaChoiceView?.tintColor ?? "")
+        Labiba.ChoiceView.borderColor = UIColor(hex:labibaThemeModel.theme?.userUI?.labibaChoiceView?.borderColor ?? "")
+        Labiba.ChoiceView.font = (CGFloat(labibaThemeModel.theme?.userUI?.labibaChoiceView?.font?.size ?? 0),labibaThemeModel.theme?.userUI?.carousalCardView?.buttonFont?.weight ?? "" == LabibaFontWeight.regular.rawValue ? .regular : .bold )
+        Labiba.ChoiceView.cornerRadius = CGFloat(labibaThemeModel.theme?.userUI?.labibaChoiceView?.cornerRadius ?? 0)
+
+        //LabibaMapView
+        Labiba.MapView.cornerRadius = CGFloat(labibaThemeModel.theme?.userUI?.labibaMapView?.cornerRadius ?? 0)
+        Labiba.MapView.defaultLocation = (labibaThemeModel.theme?.userUI?.labibaMapView?.defaultLocation?.latitude ?? 0,labibaThemeModel.theme?.userUI?.labibaMapView?.defaultLocation?.longitude ?? 0)
     }
 }
