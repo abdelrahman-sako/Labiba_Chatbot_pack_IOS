@@ -19,10 +19,39 @@ public enum LabibaFontWeight:String{
     case bold = "bold"
 }
 
-public enum LabibaBackground {
-    case solid (color:UIColor)
-    case gradient (gradientSpecs:Labiba.GradientSpecs)
-    case image (image:UIImage)
+//public enum LabibaBackground {
+//    case solid (color:UIColor)
+//    case gradient (gradientSpecs:Labiba.GradientSpecs)
+//    case image (image:UIImage)
+//}
+
+public enum LabibaBackground: RawRepresentable {
+    case solid(color: UIColor)
+    case gradient(gradientSpecs: Labiba.GradientSpecs)
+    case image(image: UIImage)
+    
+    public typealias RawValue = String
+    
+    public init?(rawValue: String) {
+        switch rawValue {
+        case "solid":
+            self = .solid(color: .gray) // Default color
+        case "gradient":
+            self = .gradient(gradientSpecs: Labiba.GradientSpecs.init(colors: [], locations: [], start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: 0))) // Provide a default gradient
+        case "image":
+            self = .image(image: UIImage()) // Provide a default image
+        default:
+            return nil
+        }
+    }
+    
+    public var rawValue: String {
+        switch self {
+        case .solid: return "solid"
+        case .gradient: return "gradient"
+        case .image: return "image"
+        }
+    }
 }
 
 public class LabibaShadowModel {

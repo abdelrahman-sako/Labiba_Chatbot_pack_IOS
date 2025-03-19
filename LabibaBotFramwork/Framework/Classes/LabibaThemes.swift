@@ -703,10 +703,38 @@ public class LabibaThemes {
         Labiba.UserInputView.backgroundColor = UIColor(hex: labibaThemeModel.theme?.userUI?.inputView?.backgroundColor ?? "")
         Labiba.UserInputView.hintColor = UIColor(hex: labibaThemeModel.theme?.userUI?.inputView?.hintColor ?? "")
         UIImage.getImageFromUrl(labibaThemeModel.theme?.userUI?.inputView?.attachmentButton?.icon ?? "") { image in
-            Labiba.UserInputView.attachmentButton = (image,UIColor(hex:labibaThemeModel.theme?.userUI?.inputView?.attachmentButton?.tintColor ?? ""),labibaThemeModel.theme?.userUI?.inputView?.attachmentButton?.isHidden ?? true)
+            Labiba.UserInputView.attachmentButton = (image ?? UIImage(),UIColor(hex:labibaThemeModel.theme?.userUI?.inputView?.attachmentButton?.tintColor ?? ""),labibaThemeModel.theme?.userUI?.inputView?.attachmentButton?.isHidden ?? true)
+        }
+        
+        //LabibaVoiceAssistantView
+        Labiba.VoiceAssistantView.waveColor = UIColor(hex:labibaThemeModel.theme?.userUI?.voiceAssistantView?.waveColor ?? "")
+        
+        //LabibaVoiceAssistantView/micButton
+        UIImage.getImageFromUrl(labibaThemeModel.theme?.userUI?.voiceAssistantView?.micButton?.icon ?? "") { image in
+            Labiba.VoiceAssistantView.micButton = (image ?? Image(named: "micIcon")!,UIColor(hex:labibaThemeModel.theme?.userUI?.voiceAssistantView?.micButton?.tintColor ?? ""),UIColor(hex:labibaThemeModel.theme?.userUI?.voiceAssistantView?.micButton?.backgroundColor ?? ""),CGFloat(labibaThemeModel.theme?.userUI?.voiceAssistantView?.micButton?.alpha ?? 0))
+        }
+        
+        //LabibaVoiceAssistantView/keyboardButton
+        UIImage.getImageFromUrl(labibaThemeModel.theme?.userUI?.voiceAssistantView?.keyboardButton?.icon ?? "") { image in
+            Labiba.VoiceAssistantView.keyboardButton = (image ?? Image(named: "keyboard_icon")!,UIColor(hex:labibaThemeModel.theme?.userUI?.voiceAssistantView?.keyboardButton?.tintColor ?? ""))
         }
 
-        
+        //LabibaVoiceAssistantView/attachmentButton
+        UIImage.getImageFromUrl(labibaThemeModel.theme?.userUI?.voiceAssistantView?.attachmentButton?.icon ?? "") { image in
+            Labiba.VoiceAssistantView.attachmentButton = (image ?? Image(named: "paperclip-solid")!,UIColor(hex:labibaThemeModel.theme?.userUI?.voiceAssistantView?.attachmentButton?.tintColor ?? ""),false)
+        }
 
+        switch labibaThemeModel.theme?.userUI?.voiceAssistantView?.background?.type {
+        case "solid":
+            Labiba.VoiceAssistantView.background = .solid(color:UIColor(hex:labibaThemeModel.theme?.userUI?.voiceAssistantView?.background?.color ?? "") )
+        case "gradient":
+//            Labiba.VoiceAssistantView.background = .gradient(gradientSpecs: .init(colors: labibaThemeModel.theme?.userUI?.voiceAssistantView?.background?.gradiant.map({UIColor(hex: $0)}) ?? [], locations: [], start: <#T##CGPoint#>, end: <#T##CGPoint#>))
+        case "image":
+            UIImage.getImageFromUrl(labibaThemeModel.theme?.userUI?.voiceAssistantView?.background?.image ?? "") { image in
+                Labiba.VoiceAssistantView.background = .image(image: image ?? UIImage())
+            }
+        default:
+            break
+        }
     }
 }

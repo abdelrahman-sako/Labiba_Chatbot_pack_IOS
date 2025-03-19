@@ -8,9 +8,9 @@
 import Foundation
 
 extension UIImage{
-    static func getImageFromUrl(_ urlString: String, completion: @escaping (UIImage) -> Void) {
+    static func getImageFromUrl(_ urlString: String, completion: @escaping (UIImage?) -> Void) {
         guard let url = URL(string: urlString) else {
-            completion(UIImage())
+            completion(nil)
             return
         }
         
@@ -20,7 +20,7 @@ extension UIImage{
                     completion(image)
                 }
             } else {
-                completion(UIImage())
+                completion(nil)
             }
         }.resume()
     }
