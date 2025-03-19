@@ -797,5 +797,61 @@ public class LabibaThemes {
         Labiba.RatingForm.commentContainerCornerRadius = CGFloat(labibaThemeModel.theme?.labibaRatingForm?.commentContainerCornerRadius ?? 0)
         Labiba.RatingForm.rateLaterButton = (UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.rateLaterButton?.tintColor ?? ""),UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.rateLaterButton?.backgroundColor ?? ""))
         Labiba.RatingForm.submitButton = (UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.submitButton?.tintColor ?? ""),UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.submitButton?.backgroundColor ?? ""))
+        Labiba.RatingForm.titleFont = applyBotFont(bold:labibaThemeModel.theme?.labibaRatingForm?.titleFont?.bold ?? false ,size: CGFloat(labibaThemeModel.theme?.labibaRatingForm?.titleFont?.size ?? 0))
+
+        
+        
+        
+        //UserChatBubble
+        switch labibaThemeModel.theme?.userUI?.userChatBubble?.background?.type {
+        case "solid":
+            Labiba.UserChatBubble.background = .solid(color:UIColor(hex:labibaThemeModel.theme?.userUI?.userChatBubble?.background?.color ?? "") )
+        case "gradient":
+            //            Labiba.VoiceAssistantView.background = .gradient(gradientSpecs: .init(colors: labibaThemeModel.theme?.userUI?.userChatBubble?.background?.gradiant.map({UIColor(hex: $0)}) ?? [], locations: [], start: <#T##CGPoint#>, end: <#T##CGPoint#>))
+        case "image":
+            UIImage.getImageFromUrl(labibaThemeModel.theme?.userUI?.userChatBubble?.background?.image ?? "") { image in
+                Labiba.UserChatBubble.background = .image(image: image ?? UIImage())
+            }
+        default:
+            break
+        }
+        
+        Labiba.UserChatBubble.cornerRadius = CGFloat(labibaThemeModel.theme?.userUI?.userChatBubble?.cornerRadius ?? 0)
+        Labiba.UserChatBubble.alpha = CGFloat(labibaThemeModel.theme?.userUI?.userChatBubble?.alpha ?? 0)
+        Labiba.UserChatBubble.fontsize = CGFloat(labibaThemeModel.theme?.userUI?.userChatBubble?.fontsize ?? 0)
+        Labiba.UserChatBubble.userName = labibaThemeModel.theme?.userUI?.userChatBubble?.username ?? ""
+        Labiba.UserChatBubble.textColor = UIColor(hex:labibaThemeModel.theme?.userUI?.userChatBubble?.username ?? "")
+        Labiba.UserChatBubble.timestamp = (CGFloat(labibaThemeModel.theme?.userUI?.userChatBubble?.timestamp?.fontSize ?? 0),UIColor(hex:labibaThemeModel.theme?.userUI?.userChatBubble?.timestamp?.color ?? ""),labibaThemeModel.theme?.userUI?.userChatBubble?.timestamp?.formate ?? "")
+        
+        
+        //BotChatBubble
+        Labiba.BotChatBubble.alpha = CGFloat(labibaThemeModel.theme?.botChat?.alpha ?? 0)
+        Labiba.BotChatBubble.botName = labibaThemeModel.theme?.botChat?.botName ?? ""
+        Labiba.BotChatBubble.fontsize = CGFloat(labibaThemeModel.theme?.botChat?.fontsize ?? 0)
+        Labiba.BotChatBubble.cornerRadius = CGFloat(labibaThemeModel.theme?.botChat?.cornerRadius ?? 0)
+        Labiba.BotChatBubble.typingIndicatorColor = UIColor(hex:labibaThemeModel.theme?.botChat?.typingIndicatorColor ?? "")
+        Labiba.BotChatBubble.textColor = UIColor(hex:labibaThemeModel.theme?.botChat?.textColor ?? "")
+        Labiba.BotChatBubble.timestamp = (CGFloat(labibaThemeModel.theme?.botChat?.timestamp?.fontSize ?? 0),UIColor(hex:labibaThemeModel.theme?.botChat?.timestamp?.color ?? ""),labibaThemeModel.theme?.botChat?.timestamp?.formate ?? "")
+
+        switch labibaThemeModel.theme?.botChat?.backGround?.type {
+        case "solid":
+            Labiba.BotChatBubble.background = .solid(color:UIColor(hex:labibaThemeModel.theme?.botChat?.backGround?.color ?? "") )
+        case "gradient":
+            //            Labiba.BotChatBubble.background = .gradient(gradientSpecs: .init(colors: labibaThemeModel.theme?.userUI?.userChatBubble?.background?.gradiant.map({UIColor(hex: $0)}) ?? [], locations: [], start: <#T##CGPoint#>, end: <#T##CGPoint#>))
+        case "image":
+            UIImage.getImageFromUrl(labibaThemeModel.theme?.botChat?.backGround?.image ?? "") { image in
+                Labiba.BotChatBubble.background = .image(image: image ?? UIImage())
+            }
+        default:
+            break
+        }
+        UIImage.getImageFromUrl(labibaThemeModel.theme?.botChat?.timeImage ?? "") { image in
+            Labiba.BotChatBubble.timeImage = image ?? UIImage()
+        }
+
+        Labiba.BotChatBubble.shadow = .init(shadowColor: UIColor(hex:labibaThemeModel.theme?.botChat?.shadow?.shadowColor ?? "").cgColor, shadowOffset: CGSize(width: labibaThemeModel.theme?.botChat?.shadow?.shadowOffset?.width ?? 0, height: labibaThemeModel.theme?.botChat?.shadow?.shadowOffset?.width ?? 0), shadowRadius: labibaThemeModel.theme?.botChat?.shadow?.shadowRadius ?? 0, shadowOpacity: Float(labibaThemeModel.theme?.botChat?.shadow?.shadowOpacity ?? 0))
+        
+        
+        let shadow: Shadow?
     }
 }
