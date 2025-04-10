@@ -571,7 +571,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         if (stepsToBeDisplayed.count == 1)
         {
             
-            renderStep(step: dialog,wait: 0.1)
+            renderStep(step: dialog,wait: 0.0)
         }
     }
     
@@ -674,8 +674,11 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         
         if let step =  stepsToBeDisplayed.last
         {
-            renderStep(step: step, wait: 0.05)
+            renderStep(step: step, wait: 0.00)
         }
+//        else{
+//            scrollDown(delay: 0.2 )
+//        }
     }
     
     func cardsViewController(_ cardsVC: CardsViewController, didSelectCard card: DialogCard, ofDialog dialog: ConversationDialog)

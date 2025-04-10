@@ -45,6 +45,8 @@
 	<string>Your microphone will be used to record your speech allowing you to use your voice to search for destinations, activities, events and more</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Speech recognition will be used to determine which words you speak into the device’s microphone</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>cairo-_bold.ttf</string>

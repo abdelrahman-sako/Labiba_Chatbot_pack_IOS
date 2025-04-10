@@ -51,6 +51,9 @@ class RatingVC: RatingBaseVC {
         ratingTableView.register(nib4, forCellReuseIdentifier: "SubmitRatingCell")
         let nib5 = UINib(nibName: "TextFiledRatingCell", bundle: self.nibBundle)
         ratingTableView.register(nib5, forCellReuseIdentifier: "TextFiledRatingCell")
+        
+        let nib6 = UINib(nibName: "NumberRatingCell", bundle: self.nibBundle)
+        ratingTableView.register(nib6, forCellReuseIdentifier: "NumberRatingCell")
     }
     
     @objc func didTap(_ G:UITapGestureRecognizer){
@@ -78,8 +81,9 @@ class RatingVC: RatingBaseVC {
                         cell.contentView.shake()
                         return
                     }
-                case .comment ,.textField:
+                case .comment ,.textField, .number:
                     break
+                
                 }
             }
             let ratingModel = SubmitRatingModel(recepient_id: SharedPreference.shared.currentUserId,
@@ -188,6 +192,12 @@ extension RatingVC: UITableViewDelegate , UITableViewDataSource {
             case .none:
                 return UITableViewCell()
                 
+            case .number:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "NumberRatingCell", for: indexPath) as! NumberRatingCell
+                cell.onSelected = { index in
+                    question.rating = index + 1
+                }
+                return cell
             }
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitRatingCell", for: indexPath) as! SubmitRatingCell
