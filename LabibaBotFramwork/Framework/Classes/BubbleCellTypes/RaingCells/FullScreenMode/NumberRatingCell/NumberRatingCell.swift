@@ -20,8 +20,12 @@ class NumberRatingCell: RatingCell {
         collectionView.allowsMultipleSelection = false
         collectionView.allowsSelection = true
         
+        
         let nib = UINib(nibName: "NumberItemCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "NumberItemCell")
+        questionLabel.font =  applyBotFont( bold: Labiba.RatingForm.questionsFont.weight == .bold, size: Labiba.RatingForm.questionsFont.size)
+        questionLabel.textColor = Labiba.RatingForm.questionsColor
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
