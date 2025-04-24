@@ -442,7 +442,6 @@ public enum LoggingAndRefferalEncodingType{
     //MARK:- Rating Form
     public static let RatingForm = LabibaRatingForm()
     
-    public static let NewRatingForm = LabibaNewRatingForm()
     //MARK:- Prechat Form
     public static let PrechatForm = PrechatFormThemeModel()
     

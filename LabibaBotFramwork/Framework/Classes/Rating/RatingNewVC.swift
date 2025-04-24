@@ -29,7 +29,7 @@ class RatingNewVC: RatingBaseVC {
     
     
     func uiConfiguration()  {
-        switch Labiba.NewRatingForm.background {
+        switch Labiba.RatingForm.background {
         case .solid(color: let color):
             self.view.backgroundColor = color
         case .gradient(gradientSpecs: let grad):
