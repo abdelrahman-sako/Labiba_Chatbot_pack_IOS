@@ -60,6 +60,7 @@ final class RemoteContext {
         let servertrustManager = ServerTrustPolicyManager(policies: serverTrustPolicies)
         
         sessionManager = SessionManager(configuration: configuration,serverTrustPolicyManager: servertrustManager)
+//        sessionManager
     }
     
     /// check  token  and update it if it's required, then continue with the normal request flow
@@ -198,6 +199,8 @@ final class RemoteContext {
     }
    
     func multipartRequest(endPoint: EndPointProtocol, params:Parameters?, multipartName: String?, uploadFiles: [Data]?,encoding:String.Encoding? = nil,mimeType:String,fileName:String, completion: @escaping Handler<Data>){
+        var headres = Labiba.passedHeaders
+
         let urlRequest = buildURlRequestArray(endPoint: endPoint, params: params)
         sessionManager.upload(multipartFormData: { (multipartFormData) in
             if let params = params{

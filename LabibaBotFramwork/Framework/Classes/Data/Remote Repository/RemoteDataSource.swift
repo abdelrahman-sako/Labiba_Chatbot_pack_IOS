@@ -15,7 +15,9 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func uploadData(model: UploadDataModel, handler: @escaping Handler<UploadDataResponseModel>) {
         let url = "\(Labiba._uploadUrl)?id=\(SharedPreference.shared.currentUserId)"
-        let endPoint = EndPoint(url: url, httpMethod: .post)
+        let headres = Labiba.passedHeaders
+
+        let endPoint = EndPoint(url: url, httpMethod: .post,headers: headres)
         remoteContext.multipartRequest(endPoint: endPoint, params: nil, multipartName: "", uploadFiles: [model.data], mimeType: model.mimeType,fileName: model.fileName) { result in
             switch  result {
             case .success(let data):
@@ -33,12 +35,15 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func getLastBotResponse(handler: @escaping Handler<LastBotResponseModel>) {
         let url = "\(Labiba._basePath)/api/getLastBotResponse"
-        let endPoint = EndPoint(url: url, httpMethod: .get)
+        
+        let headres = Labiba.passedHeaders
+        let endPoint = EndPoint(url: url, httpMethod: .get,headers: headres)
         
         let params:[String:String] = [
             "RecepientID" :Labiba._pageId,
             "SenderID":Labiba._senderId
         ]
+                
         remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
             switch  result {
             case .success(let data):
@@ -56,7 +61,9 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         //api/LiveChat/v1.0/CloseConversation/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile
         
         let url = "\(Labiba._basePath)/api/LiveChat/v1.0/CloseConversation/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile"
-        let endPoint = EndPoint(url: url, httpMethod: .post)
+        var headres = Labiba.passedHeaders
+
+        let endPoint = EndPoint(url: url, httpMethod: .post,headers: headres)
         
         
         remoteContext.request(endPoint: endPoint, parameters: "") { result in
@@ -88,7 +95,10 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func messageHandler(model: [String : Any], handler: @escaping Handler<[LabibaModel]>) {
         let url = "\(Labiba._basePath)\(Labiba._messagingServicePath)"
-        let endPoint = EndPoint(url: url, httpMethod: .post,headers: ["Content-Type":ContentType.json.rawValue])
+        var headres = Labiba.passedHeaders
+        headres["Content-Type"] = ContentType.json.rawValue
+
+        let endPoint = EndPoint(url: url, httpMethod: .post,headers: headres)
         let params = model
         if Labiba.loggingAndRefferalEncodingType != .base64 {
             remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
@@ -127,7 +137,9 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func getRatingQuestions(handler: @escaping Handler<[GetRatingFormQuestionsModel]>) {
         let url = "\(Labiba._basePath)/api/MobileAPI/FetchQuestions"
-        let endPoint = EndPoint(url: url, httpMethod: .get)
+        var headres = Labiba.passedHeaders
+
+        let endPoint = EndPoint(url: url, httpMethod: .get,headers: headres)
         let params:[String:Any] = [
             "bot_id" : SharedPreference.shared.currentUserId
         ]
@@ -146,7 +158,9 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func submitRating(ratingModel: SubmitRatingModel, handler: @escaping Handler<SubmitRatingResponseModel>) {
         let url = "\(Labiba._basePath)/api/ratingform/submit"
-        let endPoint = EndPoint(url: url, httpMethod: .post)
+        var headres = Labiba.passedHeaders
+
+        let endPoint = EndPoint(url: url, httpMethod: .post,headers: headres)
         let params = ratingModel.dictionary
         
         remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
@@ -165,7 +179,10 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func getHelpPageData(handler: @escaping Handler<HelpPageModel>) {
         let url = Labiba._helpUrl
-        let endPoint = EndPoint(url: url, httpMethod: .get)
+        var headres = Labiba.passedHeaders
+
+        let endPoint = EndPoint(url: url, httpMethod: .get,headers: headres)
+        
         let params:[String:Any] = [
             "bot_id" : SharedPreference.shared.currentUserId
         ]
@@ -186,7 +203,9 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func getPrechatForm(handler: @escaping Handler<[PrechatFormModel]>) {
         let url =  "\(Labiba._basePath)\(Labiba._prechatFormServicePath)"
-        let endPoint = EndPoint(url: url, httpMethod: .post)
+        var headres = Labiba.passedHeaders
+
+        let endPoint = EndPoint(url: url, httpMethod: .post,headers: headres)
         let params:[String:Any] = [
             "bot_id" : SharedPreference.shared.currentUserId
         ]
@@ -206,7 +225,9 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func textToSpeech(model: TextToSpeechModel, handler: @escaping Handler<TextToSpeachResponseModel>) {
         let url =  "\(Labiba._voiceBasePath)\(Labiba._voiceServicePath)"
-        let endPoint = EndPoint(url: url, httpMethod: .post)
+        var headres = Labiba.passedHeaders
+
+        let endPoint = EndPoint(url: url, httpMethod: .post,headers: headres)
         
         let params:[String:Any] = [
             "text":Labiba.loggingAndRefferalEncodingType == .base64 ? model.text.toBase64() : model.text,
@@ -234,7 +255,9 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func sendLog(model: LoggingModel, handler: @escaping Handler<Bool>) {
         let url =  "\(Labiba._basePath)\(Labiba._loggingServicePath)"
-        let endPoint = EndPoint(url: url, httpMethod: .post)
+        var headres = Labiba.passedHeaders
+
+        let endPoint = EndPoint(url: url, httpMethod: .post,headers: headres)
         
         let params = model.dictionary
         

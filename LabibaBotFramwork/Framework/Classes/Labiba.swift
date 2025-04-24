@@ -77,6 +77,8 @@ public enum LoggingAndRefferalEncodingType{
     public static var loaderText:String = "تحميل..."
     public static var botLang : LabibaLanguage = .en
     public static var loggingAndRefferalEncodingType : LoggingAndRefferalEncodingType = .jsonString
+    
+    static var passedHeaders = [String: String]()
   //  public  static var isLoggingEnabled: Bool = false
 
      // MARK:- Main Settings
@@ -111,6 +113,10 @@ public enum LoggingAndRefferalEncodingType{
         }
     }
     
+    public static func setHeaders(_ headers: [String: String])
+    {
+        passedHeaders = headers
+    }
   
   public static func setAudioType(audioType: AudioType){
     self.audioType = audioType == AudioType.base64 ? 1 : 2
