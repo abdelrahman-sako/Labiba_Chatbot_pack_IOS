@@ -14,7 +14,7 @@ class NumberItemCell: UICollectionViewCell {
     @IBOutlet weak var numberLabel: UILabel!
     override var isSelected: Bool {
         didSet {
-            contanierView.backgroundColor = isSelected ? .white :  .clear
+            contanierView.backgroundColor = isSelected ? Labiba.NewRatingForm.fullStarTintColor :  Labiba.NewRatingForm.emptyStarTintColor
         }
     }
     override func awakeFromNib() {
@@ -25,6 +25,7 @@ class NumberItemCell: UICollectionViewCell {
         
         contanierView.layer.borderColor = UIColor.black.cgColor
         contanierView.layer.borderWidth = 0.5
+        numberLabel.font =  applyBotFont( bold: Labiba.RatingForm.numberLblFont.weight == .bold, size: Labiba.RatingForm.questionsFont.size)
     }
 
 }

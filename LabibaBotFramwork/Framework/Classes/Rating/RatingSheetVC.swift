@@ -87,6 +87,14 @@ class RatingSheetVC: RatingBaseVC {
                     }
                 case .comment ,.textField:
                     break
+                case .number:
+                    if  quesion.option == nil{
+                        guard let cell = ratingTableView.cellForRow(at: IndexPath(row: index + 1, section: 0)) as? RadioButtonsRatingCell else {
+                            return
+                        }
+                        cell.contentView.shake()
+                        return
+                    }
                 }
             }
             let ratingModel = SubmitRatingModel(recepient_id: SharedPreference.shared.currentUserId,
@@ -184,9 +192,17 @@ extension RatingSheetVC: UITableViewDelegate , UITableViewDataSource {
                 cell.phoneTextField.keyboardType = .phonePad
                 cell.selectionStyle = .none
                 return cell
+            case .number:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "NumberRatingCell", for: indexPath) as! NumberRatingCell
+                cell.questionLabel.text = question.question ?? ""
+               // cell.questionModel = question
+               // cell.phoneTextField.keyboardType = .phonePad
+                cell.selectionStyle = .none
+                return cell 
             case .none:
                 return UITableViewCell()
                 
+            
             }
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitRatingLightCell", for: indexPath) as! SubmitRatingLightCell
