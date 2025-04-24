@@ -1,45 +1,43 @@
 //
-//  RatingSheetVC.swift
+//  RatingNewVC.swift
 //  LabibaBotFramwork
 //
-//  Created by Abdulrahman Qasem on 12/13/20.
-//  Copyright © 2020 Abdul Rahman. All rights reserved.
+//  Created by Mohammad Khalil on 10/04/2025.
+//  Copyright © 2025 Abdul Rahman. All rights reserved.
 //
 
 import UIKit
 
-class RatingSheetVC: RatingBaseVC {
+class RatingNewVC: RatingBaseVC {
 
     override class func present(fromVC vc:UIViewController,delegate:SubViewControllerDelegate){
-        let ratingVC = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingSheetVC") as! RatingBaseVC
-        ratingVC.modalPresentationStyle = .overCurrentContext
+        let ratingVC = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingNewVC") as! RatingBaseVC
+        ratingVC.modalPresentationStyle = .fullScreen
         ratingVC.modalTransitionStyle = .crossDissolve
         ratingVC.delegate = delegate
         Labiba.navigationController?.pushViewController(ratingVC, animated: true)
-       // vc.present(ratingVC, animated: true, completion: nil)
     }
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet var tapGesture: UITapGestureRecognizer!
+ 
+    @IBOutlet weak var RatingsTableView: ContentSizedTableView!
     
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         uiConfiguration()
         cellRegistration()
     }
     
+    
     func uiConfiguration()  {
         switch Labiba.RatingForm.background {
         case .solid(color: let color):
-            self.containerView.backgroundColor = color
+            self.view.backgroundColor = color
         case .gradient(gradientSpecs: let grad):
-            self.containerView.applyGradient(colours: grad.colors, locations: nil)
+            self.view.applyGradient(colours: grad.colors, locations: nil)
         case .image(image: _):break
         }
-        ratingTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        containerView.layer.cornerRadius  = 15
-        tapGesture.addTarget(self, action: #selector(didTap(_:)))
-        self.view.applyHierarchicalSemantics()
+    //    ratingTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            //    tapGesture.addTarget(self, action: #selector(didTap(_:)))
     }
     
     func cellRegistration()  {
@@ -53,15 +51,8 @@ class RatingSheetVC: RatingBaseVC {
         ratingTableView.register(nib4, forCellReuseIdentifier: "SubmitRatingLightCell")
         let nib5 = UINib(nibName: "TextFiledRatingCell", bundle: self.nibBundle)
         ratingTableView.register(nib5, forCellReuseIdentifier: "TextFiledRatingCell")
-    }
-    
-    @objc func didTap(_ G:UITapGestureRecognizer){
-        self.view.endEditing(true)
-    }
-    
-    @IBAction func dismissAcion(_ sender: UIButton) {
-        Labiba.dismiss()
-     //   self.dismiss(animated: true, completion: nil)
+        let nib6 = UINib(nibName: "NumberRatingCell", bundle: self.nibBundle)
+        RatingsTableView.register(nib6, forCellReuseIdentifier: "NumberRatingCell")
     }
     
     @objc func submitRate(_ button:UIButton){
@@ -71,7 +62,7 @@ class RatingSheetVC: RatingBaseVC {
                 switch (RatingCellType(rawValue:quesion.type ?? "1") ?? .rating) {
                 case .rating:
                     if  quesion.rating == nil{
-                        guard let cell = ratingTableView.cellForRow(at: IndexPath(row: index + 1, section: 0)) as? RatingSatrsLightCell else {
+                        guard let cell = ratingTableView.cellForRow(at: IndexPath(row: index + 1, section: 0)) as? RatingStarsRatingCell else {
                             return
                         }
                         cell.starsStack.shake()
@@ -85,16 +76,9 @@ class RatingSheetVC: RatingBaseVC {
                         cell.contentView.shake()
                         return
                     }
-                case .comment ,.textField:
+                case .comment ,.textField, .number:
                     break
-                case .number:
-                    if  quesion.option == nil{
-                        guard let cell = ratingTableView.cellForRow(at: IndexPath(row: index + 1, section: 0)) as? RadioButtonsRatingCell else {
-                            return
-                        }
-                        cell.contentView.shake()
-                        return
-                    }
+                
                 }
             }
             let ratingModel = SubmitRatingModel(recepient_id: SharedPreference.shared.currentUserId,
@@ -116,7 +100,6 @@ class RatingSheetVC: RatingBaseVC {
                     self.showAlert(result: false, message: err.localizedDescription)
                 }
             }
-            
 //            botConnector.submitRating(ratingModel: ratingModel) { (result) in
 //                switch result{
 //                case .success(let result):
@@ -127,21 +110,27 @@ class RatingSheetVC: RatingBaseVC {
 //                    }
 //                case .failure(let err):
 //                    self.showAlert(result: false, message: err.localizedDescription)
-//                   // showToast(message: "failure", inView: self.view)
 //                }
 //            }
+            
+            
         }else{
-            kill(getpid(), SIGKILL)
+         //   kill(getpid(), SIGKILL)
            //exit(0)
+//            Labiba.navigationController?.dismiss(animated: true, completion: {
+//                Labiba.delegate?.labibaWillClose?()
+//            })
+            Labiba.dismiss()
         }
 
     }
     
     
-   
+    
+    
 }
 
-extension RatingSheetVC: UITableViewDelegate , UITableViewDataSource {
+extension RatingNewVC: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count > 0 ? questions.count + 2 : 0
     }
@@ -163,14 +152,14 @@ extension RatingSheetVC: UITableViewDelegate , UITableViewDataSource {
             switch  RatingCellType(rawValue: (question.type) ?? "1"){
             case .comment:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "WriteCommentRatingCell", for: indexPath) as! WriteCommentRatingCell
-                
+                KeyboardFieldsHandler.shared.insertField(field: cell.commentTextView)
+                cell.commentTextView.addKeyboardToolBar(leftButtons:  [], rightButtons:  [.cancel], toolBarDelegate: self)
                 cell.titleLbl.text = question.question ?? ""
-                cell.titleLbl.textAlignment = .natural
                 cell.questionModel = question
                 cell.selectionStyle = .none
                 return cell
             case .rating:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "RatingSatrsLightCell", for: indexPath) as! RatingSatrsLightCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "RatingStarsRatingCell", for: indexPath) as! RatingStarsRatingCell
                 cell.titleLbl.text = question.question ?? ""
                 cell.questionModel = question
                 cell.selectionStyle = .none
@@ -187,29 +176,28 @@ extension RatingSheetVC: UITableViewDelegate , UITableViewDataSource {
                 return cell
             case .textField:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TextFiledRatingCell", for: indexPath) as! TextFiledRatingCell
+                KeyboardFieldsHandler.shared.insertField(field: cell.phoneTextField)
+                cell.phoneTextField.addKeyboardToolBar(leftButtons:  [], rightButtons:  [.cancel], toolBarDelegate: self)
                 cell.titleLbl.text = question.question ?? ""
                 cell.questionModel = question
                 cell.phoneTextField.keyboardType = .phonePad
                 cell.selectionStyle = .none
                 return cell
-            case .number:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "NumberRatingCell", for: indexPath) as! NumberRatingCell
-                cell.questionLabel.text = question.question ?? ""
-               // cell.questionModel = question
-               // cell.phoneTextField.keyboardType = .phonePad
-                cell.selectionStyle = .none
-                return cell 
             case .none:
                 return UITableViewCell()
                 
-            
+            case .number:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "NumberRatingCell", for: indexPath) as! NumberRatingCell
+                cell.onSelected = { index in
+                    question.rating = index + 1
+                }
+                return cell
             }
         }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitRatingLightCell", for: indexPath) as! SubmitRatingLightCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitRatingCell", for: indexPath) as! SubmitRatingCell
             cell.selectionStyle = .none
             cell.rateLaterButton.addTarget(self, action: #selector(submitRate(_:)), for: .touchUpInside)
             cell.submitButton.addTarget(self, action: #selector(submitRate(_:)), for: .touchUpInside)
-            cell.stackView.spacing = 30
             return cell
         }
         

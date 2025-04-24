@@ -495,6 +495,7 @@
 		B429555322DDDBD2002DE3E9 /* RadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42954F422DDDBD2002DE3E9 /* RadiusViewController.swift */; };
 		B429555A22DDDBD2002DE3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */; };
 		B462725122DEF4C20070E044 /* AttachmentsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */; };
+		E8A14E582DA7B97100A27C08 /* RatingNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A14E572DA7B97100A27C08 /* RatingNewVC.swift */; };
 		F9013BE328716DEC00DE2BA0 /* WebViewEventHumanAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */; };
 		F96C538B293778210038440A /* UploadDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C538A293778210038440A /* UploadDataResponseModel.swift */; };
 		F96C538D29377D760038440A /* UploadDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C538C29377D760038440A /* UploadDataModel.swift */; };
@@ -996,6 +997,7 @@
 		B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B42954FF22DDDBD2002DE3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsMenuViewController.swift; sourceTree = "<group>"; };
+		E8A14E572DA7B97100A27C08 /* RatingNewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingNewVC.swift; sourceTree = "<group>"; };
 		F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEventHumanAgent.swift; sourceTree = "<group>"; };
 		F96C538A293778210038440A /* UploadDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataResponseModel.swift; sourceTree = "<group>"; };
 		F96C538C29377D760038440A /* UploadDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataModel.swift; sourceTree = "<group>"; };
@@ -1429,6 +1431,7 @@
 				521448A7258651D20099BF38 /* RatingBaseVC.swift */,
 				522D163F256E41FB002758D5 /* RatingVC.swift */,
 				521448A325864FE00099BF38 /* RatingSheetVC.swift */,
+				E8A14E572DA7B97100A27C08 /* RatingNewVC.swift */,
 			);
 			path = Rating;
 			sourceTree = "<group>";
@@ -2835,6 +2838,7 @@
 				527756A4272EE12F00F8ADE0 /* ColorValueProvider.swift in Sources */,
 				5281F42425C83CE4005D39CD /* PushNotificationConfig.swift in Sources */,
 				B429551322DDDBD2002DE3E9 /* UIImage+Extensions.swift in Sources */,
+				E8A14E582DA7B97100A27C08 /* RatingNewVC.swift in Sources */,
 				3782D95523B9F511006A79D4 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				52DE8DCE248CB9C60067F5EC /* IQUIView+Hierarchy.swift in Sources */,
 				3731DA9A2342282100FDFC42 /* ScrollViewCellView.swift in Sources */,
