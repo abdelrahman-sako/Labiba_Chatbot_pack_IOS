@@ -121,5 +121,4 @@ class SharedPreference {
     
     var conversationMessages: [String] = []
    
-    
 }
