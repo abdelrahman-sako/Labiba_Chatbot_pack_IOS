@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginPopupVC" customModule="LabibaBotFramwork" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="LqO-Ta-s67" id="neZ-mF-9zU"/>
+                <outlet property="emailTextField" destination="j6N-es-rrf" id="fIJ-w5-ZXZ"/>
+                <outlet property="nameTextField" destination="H74-hD-De3" id="X4F-FY-33n"/>
+                <outlet property="sendButton" destination="agz-Ne-76z" id="hms-vZ-hsb"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmi-OB-wbI">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="dismissButtonTapped:" destination="-1" eventType="touchUpInside" id="bDd-3D-xcB"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeP-cV-qfg" customClass="CustomView" customModule="LabibaBotFramwork" customModuleProvider="target">
+                    <rect key="frame" x="50" y="287" width="293" height="278"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="R6L-XF-cjb">
+                            <rect key="frame" x="0.0" y="30" width="293" height="218"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="5Mk-R4-6d9" userLabel="Name">
+                                    <rect key="frame" x="20" y="0.0" width="253" height="69"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIn-GB-dB3">
+                                            <rect key="frame" x="0.0" y="0.0" width="253" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                            <color key="textColor" systemColor="systemGray2Color"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H74-hD-De3">
+                                            <rect key="frame" x="0.0" y="29" width="253" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="GUd-6q-9lc"/>
+                                            </constraints>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="H74-hD-De3" secondAttribute="trailing" id="0bA-DM-CEU"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="K8s-Lj-lbN" userLabel="Email">
+                                    <rect key="frame" x="20" y="84" width="253" height="69"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lj-1g-t7c">
+                                            <rect key="frame" x="0.0" y="0.0" width="253" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                            <color key="textColor" systemColor="systemGray2Color"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6N-es-rrf">
+                                            <rect key="frame" x="0.0" y="29" width="253" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="o5Y-OK-jYW"/>
+                                            </constraints>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="j6N-es-rrf" secondAttribute="trailing" id="ICw-CD-TPh"/>
+                                    </constraints>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHM-lz-svP" userLabel="Spacer">
+                                    <rect key="frame" x="0.0" y="168" width="293" height="0.0"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="y9d-mU-5HB"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="crx-hY-6uU">
+                                    <rect key="frame" x="20" y="183" width="253" height="35"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agz-Ne-76z" customClass="CustomButton" customModule="LabibaBotFramwork" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="116.66666666666667" height="35"/>
+                                            <color key="backgroundColor" name="Purple"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="PWe-dZ-Lfu"/>
+                                            </constraints>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Send"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="sendButtonTapped:" destination="-1" eventType="touchUpInside" id="WIJ-ct-3cj"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqO-Ta-s67" customClass="CustomButton" customModule="LabibaBotFramwork" customModuleProvider="target">
+                                            <rect key="frame" x="136.66666666666666" y="0.0" width="116.33333333333334" height="35"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" name="Purple"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="cancel"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="Purple"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="myt-QH-qCu"/>
+                                                <action selector="dismissButtonTapped:" destination="-1" eventType="touchUpInside" id="gLY-bu-7Xh"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="MCJ-pG-jI5"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="5Mk-R4-6d9" secondAttribute="trailing" constant="20" id="ECC-AK-m8R"/>
+                                <constraint firstAttribute="trailing" secondItem="K8s-Lj-lbN" secondAttribute="trailing" constant="20" id="LzX-Tr-Bl4"/>
+                                <constraint firstItem="QHM-lz-svP" firstAttribute="leading" secondItem="R6L-XF-cjb" secondAttribute="leading" id="U4u-we-0ok"/>
+                                <constraint firstAttribute="trailing" secondItem="QHM-lz-svP" secondAttribute="trailing" id="hKz-EC-cqs"/>
+                                <constraint firstItem="5Mk-R4-6d9" firstAttribute="leading" secondItem="R6L-XF-cjb" secondAttribute="leading" constant="20" id="rdq-gG-OI0"/>
+                                <constraint firstAttribute="trailing" secondItem="crx-hY-6uU" secondAttribute="trailing" constant="20" id="wRS-fV-YmD"/>
+                                <constraint firstItem="crx-hY-6uU" firstAttribute="leading" secondItem="R6L-XF-cjb" secondAttribute="leading" constant="20" id="yhM-76-UcB"/>
+                                <constraint firstItem="K8s-Lj-lbN" firstAttribute="leading" secondItem="R6L-XF-cjb" secondAttribute="leading" constant="20" id="znS-vo-WIr"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="R6L-XF-cjb" firstAttribute="leading" secondItem="QeP-cV-qfg" secondAttribute="leading" id="YSW-tD-R9J"/>
+                        <constraint firstAttribute="bottom" secondItem="R6L-XF-cjb" secondAttribute="bottom" constant="30" id="hUJ-Uj-DHl"/>
+                        <constraint firstAttribute="trailing" secondItem="R6L-XF-cjb" secondAttribute="trailing" id="sld-4Y-9cG"/>
+                        <constraint firstItem="R6L-XF-cjb" firstAttribute="top" secondItem="QeP-cV-qfg" secondAttribute="top" constant="30" id="vaX-f1-rDG"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="QeP-cV-qfg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="CQM-QP-3D0"/>
+                <constraint firstItem="QeP-cV-qfg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="FVB-7e-DY5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qmi-OB-wbI" secondAttribute="trailing" id="GPa-Ke-szp"/>
+                <constraint firstItem="qmi-OB-wbI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZH4-rt-C8Y"/>
+                <constraint firstItem="QeP-cV-qfg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dT3-Ny-ffK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qmi-OB-wbI" secondAttribute="bottom" id="enh-xx-O1n"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QeP-cV-qfg" secondAttribute="trailing" constant="50" id="iUb-O8-hKA"/>
+                <constraint firstItem="qmi-OB-wbI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lJP-5h-7hs"/>
+            </constraints>
+            <point key="canvasLocation" x="-92.36641221374046" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Purple">
+            <color red="0.40000000000000002" green="0.2627450980392157" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

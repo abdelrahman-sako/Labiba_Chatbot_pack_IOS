@@ -162,6 +162,41 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         }
     }
     
+    func sendTranscript(name:String, email:String, handler: @escaping Handler<EmptyModel>) {
+//        let url = "\(Labiba._basePath)/api/SendTranscript/SendChatHistoryEmail"
+        let url = "https://botbuilder.labiba.ai/api/SendTranscript/SendChatHistoryEmail"
+        
+        let params: [String:Any] = ["Name":name,"FromEmail": "abdelrahman@imagine.com.jo","Email":email,"History": formatConversation(userMessages: SharedPreference.shared.userMessages, botMessages: SharedPreference.shared.botMessages)
+, "startingTime": "","Duration":"",  "PageURL": "", "Title": "Chat Transcript", "IsContentEncrypted": true
+
+]
+        let endPoint = EndPoint(url: url, httpMethod: .post)
+        
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
+            switch  result {
+            case .success(let data):
+                self.parser(data: data, model: EmptyModel.self, handler: handler)
+                let dataString = String(data: data, encoding: .utf8) ?? ""
+                Logging.shared.logSuccessCase(url: url, tag: .ratingSubmit, method: .post, parameter: params.description, response: dataString)
+            case .failure(let error):
+                handler(.failure(error))
+                Logging.shared.log(url: url, tag: .ratingSubmit, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
+            }
+        }
+    }
+    
+    func formatConversation(userMessages: [String], botMessages: [String]) -> String {
+        let count = min(userMessages.count, botMessages.count)
+        var conversation = ""
+        
+        for i in 0..<count {
+            conversation += "Bot: \(botMessages[i])\n"
+            conversation += "User: \(userMessages[i])\n"
+        }
+        
+        return conversation
+    }
+    
     
     func getHelpPageData(handler: @escaping Handler<HelpPageModel>) {
         let url = Labiba._helpUrl
@@ -364,3 +399,7 @@ func getHeaders(withToken:Bool = true) -> [String : String]{
     return headers
 }
 
+
+struct EmptyModel: Codable{
+    
+}

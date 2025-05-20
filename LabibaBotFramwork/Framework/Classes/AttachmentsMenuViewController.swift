@@ -16,6 +16,7 @@ enum AttachmentType {
    // case voice
     case calendar
     case file
+    case login
 }
 
 protocol AttachmentsMenuViewControllerDelegate :  class {
@@ -28,6 +29,7 @@ protocol AttachmentsMenuViewControllerDelegate :  class {
 
 class AttachmentsMenuViewController: UIViewController {
     
+    @IBOutlet weak var emailButton: UIButton!
     static func present(withDelegate delegate:AttachmentsMenuViewControllerDelegate?) -> Void {
         
         if let topVC = getTheMostTopViewController(),
@@ -102,6 +104,9 @@ class AttachmentsMenuViewController: UIViewController {
        // self.dismissWithType(.voice)
     }
     
+    @IBAction func popupButtonTapped(_ sender: Any) {
+        self.dismissWithType(.login)
+    }
     @IBAction func photoLibrarySelected(_ sender: Any) {
         
         self.dismissWithType(.photoLibrary)

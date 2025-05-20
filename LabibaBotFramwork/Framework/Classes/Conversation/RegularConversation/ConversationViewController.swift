@@ -868,6 +868,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         
         if let message = dialog.message {
             Labiba.setLastMessageLangCode(message)
+            //this is bot mesasge
+            SharedPreference.shared.botMessages.append(message)
+            SharedPreference.shared.conversationMessages.append(message)
+
             if Labiba.Bot_Type != .keyboardType {
                 if dialog.enableTTS {
                     TextToSpeechManeger.Shared.append(dialog: dialog)
@@ -1344,6 +1348,9 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         //self.clearChoices()
         let dialog = ConversationDialog(by: .user, time: Date())
         dialog.message = text
+        // this is user message
+        SharedPreference.shared.userMessages.append(text)
+        SharedPreference.shared.conversationMessages.append(text)
         //self.displayDialog(dialog)
         self.displayMyDialog(dialog)
         self.botConnector.sendMessage(text)

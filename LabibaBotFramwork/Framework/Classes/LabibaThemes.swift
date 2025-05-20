@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 public class LabibaThemes {
+   // static var shared = LabibaThemes()
+    static var labibaThemeAPIModel: LabibaThemeModel?
+    static var labibaThemeFileModel: LabibaThemeModel?
     public static var HideCardOneButton:Bool = true
     public static var isThemeApplied = false
     var default_Gradient_Animation_Colors:[[CGColor]] = [[UIColor(argb:0xffEC1B43).cgColor,UIColor(argb:0xffAFC525).cgColor],
@@ -25,7 +28,7 @@ public class LabibaThemes {
                                                           [UIColor(argb:0xffFFFFFF).cgColor,UIColor(argb:0xff31C0E0).cgColor],
                                                           [UIColor(argb:0xff196576).cgColor,UIColor(argb:0xffFFFFFF).cgColor]]
     
-    
+    public static var optionMenuThemeColor:UIColor = .purple
     func setChatDefaultTheme()
     {
         LabibaThemes.isThemeApplied = true
@@ -255,6 +258,10 @@ public class LabibaThemes {
         Labiba.attachmentThemeModel.menu.tint = UIColor(argb: 0xffffffff)
         
         // Labiba.setMicButtondAlpha(alpha: 0.8)
+    }
+    
+    public static func setOptionMenuThemeColor(_ color:UIColor){
+        optionMenuThemeColor = color
     }
     
     //     static func  setNatHealth_Theme() {
@@ -631,9 +638,9 @@ public class LabibaThemes {
     //    }
     
     
-    public static func setThemeFromJson(from bundle: Bundle,_ fileName:String){
+    public static func setLabibaThemeJson(from bundle: Bundle,_ fileName:String){
         if let themeModel = loadJson(from: bundle, filename: fileName){
-            setLabibaTheme()
+            self.labibaThemeFileModel = themeModel
         }
     }
     
@@ -642,6 +649,7 @@ public class LabibaThemes {
             switch result{
             case .success(let data):
                 print("datattatata \(data)")
+                self.labibaThemeAPIModel = data
             case .failure(let error):
                 print(error)
             }
@@ -660,8 +668,14 @@ public class LabibaThemes {
         return nil
     }
     
-    func setLabibaTheme(_ labibaThemeModel:LabibaThemeModel){
+    private static func setLabibaThemeInModel(){
 //        Labiba.botLang  = labibaThemeModel.config?.startLang ?? ""
+        var labibaThemeModel = labibaThemeAPIModel ?? labibaThemeFileModel
+        guard let labibaThemeModel else {
+            
+            return
+        }
+//        guard let labibaThemeModel = self.labibaThemeAPIModel != nil ? self.labibaThemeAPIModel : labibaThemeFileModel else{return}
         Labiba._basePath =  labibaThemeModel.config?.urls?.basePath ?? ""
         Labiba._messagingServicePath =  labibaThemeModel.config?.urls?.messagingServicePath ?? ""
         Labiba._voiceBasePath =  labibaThemeModel.config?.urls?.voiceBasePath ?? ""
@@ -735,7 +749,7 @@ public class LabibaThemes {
         switch labibaThemeModel.theme?.userUI?.voiceAssistantView?.background?.type {
         case "solid":
             Labiba.VoiceAssistantView.background = .solid(color:UIColor(hex:labibaThemeModel.theme?.userUI?.voiceAssistantView?.background?.color ?? "") )
-        case "gradient":
+        case "gradient": break
 //            Labiba.VoiceAssistantView.background = .gradient(gradientSpecs: .init(colors: labibaThemeModel.theme?.userUI?.voiceAssistantView?.background?.gradiant.map({UIColor(hex: $0)}) ?? [], locations: [], start: <#T##CGPoint#>, end: <#T##CGPoint#>))
         case "image":
             UIImage.getImageFromUrl(labibaThemeModel.theme?.userUI?.voiceAssistantView?.background?.image ?? "") { image in
@@ -779,7 +793,7 @@ public class LabibaThemes {
         switch labibaThemeModel.theme?.labibaRatingForm?.background?.type {
         case "solid":
             Labiba.RatingForm.background = .solid(color:UIColor(hex:labibaThemeModel.theme?.labibaRatingForm?.background?.color ?? "") )
-        case "gradient":
+        case "gradient": break
             //            Labiba.VoiceAssistantView.background = .gradient(gradientSpecs: .init(colors: labibaThemeModel.theme?.userUI?.voiceAssistantView?.background?.gradiant.map({UIColor(hex: $0)}) ?? [], locations: [], start: <#T##CGPoint#>, end: <#T##CGPoint#>))
         case "image":
             UIImage.getImageFromUrl(labibaThemeModel.theme?.labibaRatingForm?.background?.image ?? "") { image in
@@ -806,7 +820,7 @@ public class LabibaThemes {
         switch labibaThemeModel.theme?.userUI?.userChatBubble?.background?.type {
         case "solid":
             Labiba.UserChatBubble.background = .solid(color:UIColor(hex:labibaThemeModel.theme?.userUI?.userChatBubble?.background?.color ?? "") )
-        case "gradient":
+        case "gradient": break
             //            Labiba.VoiceAssistantView.background = .gradient(gradientSpecs: .init(colors: labibaThemeModel.theme?.userUI?.userChatBubble?.background?.gradiant.map({UIColor(hex: $0)}) ?? [], locations: [], start: <#T##CGPoint#>, end: <#T##CGPoint#>))
         case "image":
             UIImage.getImageFromUrl(labibaThemeModel.theme?.userUI?.userChatBubble?.background?.image ?? "") { image in
@@ -836,7 +850,7 @@ public class LabibaThemes {
         switch labibaThemeModel.theme?.botChat?.backGround?.type {
         case "solid":
             Labiba.BotChatBubble.background = .solid(color:UIColor(hex:labibaThemeModel.theme?.botChat?.backGround?.color ?? "") )
-        case "gradient":
+        case "gradient": break
             //            Labiba.BotChatBubble.background = .gradient(gradientSpecs: .init(colors: labibaThemeModel.theme?.userUI?.userChatBubble?.background?.gradiant.map({UIColor(hex: $0)}) ?? [], locations: [], start: <#T##CGPoint#>, end: <#T##CGPoint#>))
         case "image":
             UIImage.getImageFromUrl(labibaThemeModel.theme?.botChat?.backGround?.image ?? "") { image in
@@ -851,7 +865,11 @@ public class LabibaThemes {
 
         Labiba.BotChatBubble.shadow = .init(shadowColor: UIColor(hex:labibaThemeModel.theme?.botChat?.shadow?.shadowColor ?? "").cgColor, shadowOffset: CGSize(width: labibaThemeModel.theme?.botChat?.shadow?.shadowOffset?.width ?? 0, height: labibaThemeModel.theme?.botChat?.shadow?.shadowOffset?.width ?? 0), shadowRadius: labibaThemeModel.theme?.botChat?.shadow?.shadowRadius ?? 0, shadowOpacity: Float(labibaThemeModel.theme?.botChat?.shadow?.shadowOpacity ?? 0))
         
-        
-        let shadow: Shadow?
+        Labiba.isMuteButtonHidden = labibaThemeModel.theme?.header?.muteButton?.isHidden ?? true
+        Labiba.isVedioButtonHidden = labibaThemeModel.theme?.header?.vedioCallButton?.isHidden ?? true
+        Labiba._HeaderTintColor = UIColor(hex:labibaThemeModel.theme?.header?.statusbarColor ?? "")
+        UIImage.getImageFromUrl(labibaThemeModel.theme?.header?.centerImageView?.icon ?? "", completion: { image in
+            Labiba._Logo = image
+        })
     }
 }

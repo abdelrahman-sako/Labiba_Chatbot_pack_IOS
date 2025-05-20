@@ -849,7 +849,7 @@ extension UIApplication {
     }
 
     
-    var topMostViewController : UIViewController? {
+    public var topMostViewController : UIViewController? {
         return self.keyWindow?.rootViewController?.topMostViewController
     }
 }

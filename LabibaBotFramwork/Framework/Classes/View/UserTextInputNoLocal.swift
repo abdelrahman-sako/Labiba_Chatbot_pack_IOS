@@ -162,38 +162,38 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         
         switch type {
         case .camera:
-
+            
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
-
+                
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
                 imagePicker.sourceType = .camera
                 imagePicker.allowsEditing = false
                 //imagePicker.mediaTypes = [kUTTypeMovie as String,kUTTypeJPEG as String]
                 imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera) ?? []
-
+                
                 topVC.present(imagePicker, animated: true, completion: nil)
             } else {
-
+                
                 showErrorMessage("camera-inaccessible".local)
             }
             
         case .photoLibrary:
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-
+                
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
                 imagePicker.sourceType = .photoLibrary
                 imagePicker.allowsEditing = false
-
+                
                 topVC.present(imagePicker, animated: true, completion: nil)
             } else {
-
+                
                 showErrorMessage("library-inaccessible".local)
             }
-//        case .location:
-//            break
-//           // LocationSelectViewController.present(withDelegate: self)
+            //        case .location:
+            //            break
+            //           // LocationSelectViewController.present(withDelegate: self)
             
         case .calendar:
             
@@ -202,8 +202,16 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         case .file:
             let topVC = getTheMostTopViewController()
             let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePDF].map({ $0 as String }), in: .import)
-                       documentPicker.delegate = self
+            documentPicker.delegate = self
             topVC?.present(documentPicker, animated: true, completion: nil)
+        case .login:
+            let bundle = Bundle(for: LoginPopupVC.self)
+
+            let popupVC = LoginPopupVC(nibName: "LoginPopupVC", bundle: bundle)
+            popupVC.modalPresentationStyle = .overCurrentContext
+            popupVC.modalTransitionStyle = .crossDissolve
+            
+            topVC.present(popupVC, animated: true, completion: nil)
         }
        
     }

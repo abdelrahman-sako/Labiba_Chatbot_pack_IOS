@@ -22,9 +22,13 @@
 
 /* Begin PBXBuildFile section */
 		20153EA52D626F0000DF1246 /* LabibaThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20153EA42D626F0000DF1246 /* LabibaThemeModel.swift */; };
+		205B7DAF2DDB0FCA00A28A73 /* TextInputsValidationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B7DAE2DDB0FCA00A28A73 /* TextInputsValidationExtension.swift */; };
 		207CBFB52D884D3000C9126D /* LabibaColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CBFB42D884D3000C9126D /* LabibaColorExtension.swift */; };
 		207CBFB72D898C5C00C9126D /* LabibaImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CBFB62D898C5C00C9126D /* LabibaImageExtension.swift */; };
 		20811CCC2A55497000B0573C /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20811CCB2A55497000B0573C /* KeyChainManager.swift */; };
+		20CDC6282DDB0792005F9F1C /* LoginPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDC6262DDB0792005F9F1C /* LoginPopupVC.swift */; };
+		20CDC6292DDB0792005F9F1C /* LoginPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CDC6272DDB0792005F9F1C /* LoginPopupVC.xib */; };
+		20CDC62B2DDB088B005F9F1C /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDC62A2DDB088B005F9F1C /* CustomViews.swift */; };
 		370196EA24CDA5DE0003266B /* VedioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370196E924CDA5DE0003266B /* VedioPlayerView.swift */; };
 		37030D7023F2AB5400BF8ED3 /* FontDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */; };
 		370874282326528C00E0C52C /* GreetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370874272326528C00E0C52C /* GreetingHeaderView.swift */; };
@@ -516,9 +520,13 @@
 
 /* Begin PBXFileReference section */
 		20153EA42D626F0000DF1246 /* LabibaThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaThemeModel.swift; sourceTree = "<group>"; };
+		205B7DAE2DDB0FCA00A28A73 /* TextInputsValidationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputsValidationExtension.swift; sourceTree = "<group>"; };
 		207CBFB42D884D3000C9126D /* LabibaColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaColorExtension.swift; sourceTree = "<group>"; };
 		207CBFB62D898C5C00C9126D /* LabibaImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaImageExtension.swift; sourceTree = "<group>"; };
 		20811CCB2A55497000B0573C /* KeyChainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		20CDC6262DDB0792005F9F1C /* LoginPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPopupVC.swift; sourceTree = "<group>"; };
+		20CDC6272DDB0792005F9F1C /* LoginPopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginPopupVC.xib; sourceTree = "<group>"; };
+		20CDC62A2DDB088B005F9F1C /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
 		370196E924CDA5DE0003266B /* VedioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VedioPlayerView.swift; sourceTree = "<group>"; };
 		37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDownloader.swift; sourceTree = "<group>"; };
 		370874272326528C00E0C52C /* GreetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingHeaderView.swift; sourceTree = "<group>"; };
@@ -1033,6 +1041,15 @@
 			path = KeyChainManager;
 			sourceTree = "<group>";
 		};
+		20CDC6252DDB077B005F9F1C /* login */ = {
+			isa = PBXGroup;
+			children = (
+				20CDC6262DDB0792005F9F1C /* LoginPopupVC.swift */,
+				20CDC6272DDB0792005F9F1C /* LoginPopupVC.xib */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
 		370196E824CDA5670003266B /* VedioPlayerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1409,6 +1426,7 @@
 				371ADD7622FC221D00AB68FB /* GradientAnimationManeger.swift */,
 				3772B5252339E9F100262298 /* Reachability.swift */,
 				75EA910B292F5CCC00A0F352 /* EncryptionManeger.swift */,
+				205B7DAE2DDB0FCA00A28A73 /* TextInputsValidationExtension.swift */,
 			);
 			path = Manegers;
 			sourceTree = "<group>";
@@ -1740,6 +1758,7 @@
 		52B6B37F25B6F8F70051ABCE /* Popup */ = {
 			isa = PBXGroup;
 			children = (
+				20CDC6252DDB077B005F9F1C /* login */,
 				52B6B38025B6F9AE0051ABCE /* HelpPopupVC */,
 			);
 			path = Popup;
@@ -2153,6 +2172,7 @@
 				B42954AD22DDDBD2002DE3E9 /* UIImage+Extensions.swift */,
 				B42954AE22DDDBD2002DE3E9 /* ScanAnimation.swift */,
 				B42954AF22DDDBD2002DE3E9 /* AVMetadataObject+Extensions.swift */,
+				20CDC62A2DDB088B005F9F1C /* CustomViews.swift */,
 				B42954B022DDDBD2002DE3E9 /* Platform.swift */,
 			);
 			path = Extensions;
@@ -2427,6 +2447,7 @@
 				B429550922DDDBD2002DE3E9 /* CustomMapPicker.xib in Resources */,
 				75EDDA7F2A1E5DE1003D6152 /* VMenuCell.xib in Resources */,
 				B429550A22DDDBD2002DE3E9 /* AudioRecorderView.xib in Resources */,
+				20CDC6292DDB0792005F9F1C /* LoginPopupVC.xib in Resources */,
 				52BF2F53247132AD00820B37 /* LabibaVoiceExperience.storyboard in Resources */,
 				B429550B22DDDBD2002DE3E9 /* AudioView.xib in Resources */,
 				B429551D22DDDBD2002DE3E9 /* HeaderVC.xib in Resources */,
@@ -2703,6 +2724,7 @@
 				75EDDA7D2A1E5DE1003D6152 /* VMenuTableCell.swift in Sources */,
 				52775686272EE12F00F8ADE0 /* KeyframeInterpolator.swift in Sources */,
 				5277564F272EE12F00F8ADE0 /* GradientFill.swift in Sources */,
+				20CDC62B2DDB088B005F9F1C /* CustomViews.swift in Sources */,
 				52775639272EE12F00F8ADE0 /* FillNode.swift in Sources */,
 				52F51A0325B053DD002C03BB /* LabibaVoiceAssistantView.swift in Sources */,
 				B429552522DDDBD2002DE3E9 /* StateEntryCell.swift in Sources */,
@@ -2756,6 +2778,7 @@
 				5277562A272EE12F00F8ADE0 /* LayerImageProvider.swift in Sources */,
 				527756A0272EE12F00F8ADE0 /* Shape.swift in Sources */,
 				3782D95323B9F511006A79D4 /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
+				205B7DAF2DDB0FCA00A28A73 /* TextInputsValidationExtension.swift in Sources */,
 				B429553022DDDBD2002DE3E9 /* DatePickerViewController.swift in Sources */,
 				5277562B272EE12F00F8ADE0 /* Font.swift in Sources */,
 				5277565C272EE12F00F8ADE0 /* Vectors.swift in Sources */,
@@ -2893,6 +2916,7 @@
 				52775636272EE12F00F8ADE0 /* AnimatorNode.swift in Sources */,
 				52DE307C2462D6A000DAF3E7 /* Request.swift in Sources */,
 				37F003DE2333B57600A1AC17 /* SplashScreenWithStaticImage.swift in Sources */,
+				20CDC6282DDB0792005F9F1C /* LoginPopupVC.swift in Sources */,
 				52C0A07B2587A846004D7AAA /* RatingCell.swift in Sources */,
 				F96C5390293894F50038440A /* Logging.swift in Sources */,
 				5277565A272EE12F00F8ADE0 /* FloatValueProvider.swift in Sources */,

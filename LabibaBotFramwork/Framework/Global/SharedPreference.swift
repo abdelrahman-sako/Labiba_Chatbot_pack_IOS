@@ -115,6 +115,11 @@ class SharedPreference {
                 standered.string(forKey: userIdZH) ?? "")
     }
     
+    var userMessages:[String] = []
+    
+    var botMessages:[String] = []
+    
+    var conversationMessages: [String] = []
    
     
 }
