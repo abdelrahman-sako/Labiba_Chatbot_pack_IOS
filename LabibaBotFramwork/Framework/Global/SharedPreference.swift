@@ -31,8 +31,13 @@ class SharedPreference {
     //let userIdAR = "userIdAR"
     
     private let standered = UserDefaults.standard
-    static let shared = SharedPreference()
     
+    static let shared = SharedPreference()
+    var userMessages:[String] = []
+    var botMessages:[String] = []
+    var conversationMessages: [String] = []
+    
+
     private init(){
         
     }
@@ -115,10 +120,13 @@ class SharedPreference {
                 standered.string(forKey: userIdZH) ?? "")
     }
     
-    var userMessages:[String] = []
-    
-    var botMessages:[String] = []
-    
-    var conversationMessages: [String] = []
-   
+    func formatConversation(userMessages: [String], botMessages: [String]) -> String {
+        let count = min(userMessages.count, botMessages.count)
+        var conversation = ""
+        for i in 0..<count {
+            conversation += "Bot: \(botMessages[i])\n"
+            conversation += "User: \(userMessages[i])\n"
+        }
+        return conversation
+    }
 }

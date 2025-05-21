@@ -45,7 +45,7 @@ class LoginPopupVC: UIViewController {
         DataSource.shared.sendTranscript(name: nameTextField.text!, email: emailTextField.text!) { [weak self] result in
             self?.sendButton.isUserInteractionEnabled = true
             switch result{
-            case .success(let data):
+            case .success( _):
                 self?.dismiss(animated: true)
             case .failure(let error):
                 print(error)

@@ -166,7 +166,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
 //        let url = "\(Labiba._basePath)/api/SendTranscript/SendChatHistoryEmail"
         let url = "https://botbuilder.labiba.ai/api/SendTranscript/SendChatHistoryEmail"
         
-        let params: [String:Any] = ["Name":name,"FromEmail": "abdelrahman@imagine.com.jo","Email":email,"History": formatConversation(userMessages: SharedPreference.shared.userMessages, botMessages: SharedPreference.shared.botMessages)
+        let params: [String:Any] = ["Name":name,"FromEmail": "abdelrahman@imagine.com.jo","Email":email,"History": SharedPreference.shared.formatConversation(userMessages: SharedPreference.shared.userMessages, botMessages: SharedPreference.shared.botMessages)
 , "startingTime": "","Duration":"",  "PageURL": "", "Title": "Chat Transcript", "IsContentEncrypted": true
 
 ]
@@ -184,19 +184,6 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             }
         }
     }
-    
-    func formatConversation(userMessages: [String], botMessages: [String]) -> String {
-        let count = min(userMessages.count, botMessages.count)
-        var conversation = ""
-        
-        for i in 0..<count {
-            conversation += "Bot: \(botMessages[i])\n"
-            conversation += "User: \(userMessages[i])\n"
-        }
-        
-        return conversation
-    }
-    
     
     func getHelpPageData(handler: @escaping Handler<HelpPageModel>) {
         let url = Labiba._helpUrl
