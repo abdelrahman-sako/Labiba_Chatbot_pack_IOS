@@ -1257,6 +1257,9 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
     func submitLocalUserText(_ text:String) {
         let dialog = ConversationDialog(by: .user, time: Date())
         dialog.message = text
+        SharedPreference.shared.userMessages.append(text)
+        SharedPreference.shared.conversationMessages.append(text)
+
         self.displayDialog(dialog)
     }
     

@@ -121,12 +121,16 @@ class SharedPreference {
     }
     
     func formatConversation(userMessages: [String], botMessages: [String]) -> String {
-        let count = min(userMessages.count, botMessages.count)
         var conversation = ""
-        for i in 0..<count {
-            conversation += "Bot: \(botMessages[i])\n"
-            conversation += "User: \(userMessages[i])\n"
-        }
+        let count = max(userMessages.count, botMessages.count)
+            for i in 0..<count {
+                if i < botMessages.count{
+                    conversation += "Bot: \(botMessages[i])\n"
+                }
+                if i < userMessages.count{
+                    conversation += "User: \(userMessages[i])\n"
+                }
+            }
         return conversation
     }
 }
