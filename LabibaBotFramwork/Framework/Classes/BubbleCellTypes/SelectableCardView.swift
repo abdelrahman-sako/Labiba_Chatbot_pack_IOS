@@ -261,17 +261,18 @@ class SelectableCardView: UIView
             
         }
         if card.buttons.count == 1 {
-            if Labiba.CarousalCardView.HideCardOneButton{
-                    height += 15
-                    self.frame.size.height = height
-                    return
-            }
+
 
             totalCardButton.isHidden = false
             if card.buttons[0].title == card.title {
                 height += 15
                 self.frame.size.height = height
                 return
+            }
+            if Labiba.CarousalCardView.HideCardOneButton{
+                    height += 15
+                    self.frame.size.height = height
+                    return
             }
         }else{
             totalCardButton.isHidden = true

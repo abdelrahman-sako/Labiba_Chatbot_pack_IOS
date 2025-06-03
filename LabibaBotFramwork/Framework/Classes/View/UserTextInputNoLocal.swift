@@ -218,8 +218,12 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         controller.dismiss(animated: true, completion: nil)
-        //self.delegate?.userTextInput(<#T##dialog: UserTextInputNoLocal##UserTextInputNoLocal#>, didSubmitFile: <#T##URL#>)
+        if let url = urls.first {
+            self.delegate?.userTextInput(self, didSubmitFile: url)
+
+        }
     }
+    
     
     func dismissAttachmentsMenu() {
        // requestAttachmentButton.setImage(Image(named: "ic_more_vert_black_24pt"), for: .normal)

@@ -97,11 +97,15 @@ class WebViewEventHumanAgent:NSObject {
 extension WebViewEventHumanAgent: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("human agent finish loading ")
+        
     }
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        print("human agent failed to load with error\(error.localizedDescription)")
-      //  showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
-    }
+//    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+//        print("human agent failed to load with error\(error.localizedDescription)")
+//        showErrorMessage("Error: \(error.localizedDescription)\n\n \(error)")
+//
+//      //  showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
+//    }
+//    
 //    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
 //        print("human agent failed to load with error\(error.localizedDescription)")
 //        showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
@@ -119,12 +123,19 @@ extension WebViewEventHumanAgent: WKNavigationDelegate {
 //        }
 //        decisionHandler(.allow)
 //    }
+    
+
 }
 
 extension WebViewEventHumanAgent: WKScriptMessageHandler {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print(message.name,message.body)
+        
+        if message.name == "error"{
+            webView.reload()
+            return
+        }
         guard let messageDic =  message.body as? [String:Any] else {
             return
         }
