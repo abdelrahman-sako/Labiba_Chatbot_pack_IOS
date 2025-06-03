@@ -308,6 +308,31 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             }
         }
     }
+    func submitNPSScore(_ completionHandler:@escaping Handler<LabibaThemeModel>){
+        let url = "https://botbuilder.labiba.ai/api/LiveChat/SubmitNpsScore"
+        let endPoint = EndPoint(url: url, httpMethod: .post)
+        remoteContext.requestWithGet(endpoint: endPoint, method: .get) { result in
+            switch result{
+            case .success(let data):
+                self.dataParamParser(data: data, model: LabibaThemeModel.self, completion: completionHandler)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func getActiveQuestion(_ completionHandler:@escaping Handler<LabibaThemeModel>){
+        let url = "https://botbuilder.labiba.ai/api/Nps/GetCurrentActiveQuestion/4cd0f7c9-804a-4e48-b4af-559528005203"
+        let endPoint = EndPoint(url: url, httpMethod: .get)
+        remoteContext.requestWithGet(endpoint: endPoint, method: .get) { result in
+            switch result{
+            case .success(let data):
+                self.dataParamParser(data: data, model: LabibaThemeModel.self, completion: completionHandler)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
     
     
     
