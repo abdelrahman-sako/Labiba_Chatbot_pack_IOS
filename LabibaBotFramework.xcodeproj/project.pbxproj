@@ -400,6 +400,10 @@
 		52FC5CF624D0262F00C7B7CF /* LabibaVoiceExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */; };
 		52FC5CF824D02EA500C7B7CF /* VoiceExperienceBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC5CF724D02EA500C7B7CF /* VoiceExperienceBaseView.swift */; };
 		52FFB72425D271D300CFB629 /* HelpPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFB72325D271D300CFB629 /* HelpPageModel.swift */; };
+		7569E0D62DA28E93009E9AC0 /* NumberRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7569E0D52DA28E93009E9AC0 /* NumberRatingCell.xib */; };
+		7569E0D72DA28E93009E9AC0 /* NumberRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569E0D42DA28E93009E9AC0 /* NumberRatingCell.swift */; };
+		7569E0DB2DA29001009E9AC0 /* NumberItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7569E0DA2DA29001009E9AC0 /* NumberItemCell.xib */; };
+		7569E0DC2DA29001009E9AC0 /* NumberItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569E0D92DA29001009E9AC0 /* NumberItemCell.swift */; };
 		756D52012A2323170047E73A /* ContentSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D52002A2323170047E73A /* ContentSizedTableView.swift */; };
 		756D52032A2323320047E73A /* LocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D52022A2323320047E73A /* LocalCache.swift */; };
 		756D52052A2323420047E73A /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D52042A2323420047E73A /* UICollectionViewExtension.swift */; };
@@ -498,6 +502,7 @@
 		B429555322DDDBD2002DE3E9 /* RadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42954F422DDDBD2002DE3E9 /* RadiusViewController.swift */; };
 		B429555A22DDDBD2002DE3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */; };
 		B462725122DEF4C20070E044 /* AttachmentsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */; };
+		E8A14E582DA7B97100A27C08 /* RatingNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A14E572DA7B97100A27C08 /* RatingNewVC.swift */; };
 		F9013BE328716DEC00DE2BA0 /* WebViewEventHumanAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */; };
 		F96C538B293778210038440A /* UploadDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C538A293778210038440A /* UploadDataResponseModel.swift */; };
 		F96C538D29377D760038440A /* UploadDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C538C29377D760038440A /* UploadDataModel.swift */; };
@@ -901,6 +906,10 @@
 		52FC5CF524D0262F00C7B7CF /* LabibaVoiceExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaVoiceExperience.swift; sourceTree = "<group>"; };
 		52FC5CF724D02EA500C7B7CF /* VoiceExperienceBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceExperienceBaseView.swift; sourceTree = "<group>"; };
 		52FFB72325D271D300CFB629 /* HelpPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageModel.swift; sourceTree = "<group>"; };
+		7569E0D42DA28E93009E9AC0 /* NumberRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRatingCell.swift; sourceTree = "<group>"; };
+		7569E0D52DA28E93009E9AC0 /* NumberRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberRatingCell.xib; sourceTree = "<group>"; };
+		7569E0D92DA29001009E9AC0 /* NumberItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberItemCell.swift; sourceTree = "<group>"; };
+		7569E0DA2DA29001009E9AC0 /* NumberItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberItemCell.xib; sourceTree = "<group>"; };
 		756D52002A2323170047E73A /* ContentSizedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSizedTableView.swift; sourceTree = "<group>"; };
 		756D52022A2323320047E73A /* LocalCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalCache.swift; sourceTree = "<group>"; };
 		756D52042A2323420047E73A /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
@@ -1002,6 +1011,7 @@
 		B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B42954FF22DDDBD2002DE3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsMenuViewController.swift; sourceTree = "<group>"; };
+		E8A14E572DA7B97100A27C08 /* RatingNewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingNewVC.swift; sourceTree = "<group>"; };
 		F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEventHumanAgent.swift; sourceTree = "<group>"; };
 		F96C538A293778210038440A /* UploadDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataResponseModel.swift; sourceTree = "<group>"; };
 		F96C538C29377D760038440A /* UploadDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataModel.swift; sourceTree = "<group>"; };
@@ -1446,6 +1456,7 @@
 				521448A7258651D20099BF38 /* RatingBaseVC.swift */,
 				522D163F256E41FB002758D5 /* RatingVC.swift */,
 				521448A325864FE00099BF38 /* RatingSheetVC.swift */,
+				E8A14E572DA7B97100A27C08 /* RatingNewVC.swift */,
 			);
 			path = Rating;
 			sourceTree = "<group>";
@@ -1826,6 +1837,7 @@
 		52C0A07125878D48004D7AAA /* FullScreenMode */ = {
 			isa = PBXGroup;
 			children = (
+				7569E0D32DA28E31009E9AC0 /* NumberRatingCell */,
 				52E49F982487DA4E00476FF6 /* TextFiledRatingCell */,
 				3793986E234C856700396E42 /* SubmitRatingCell */,
 				37939864234C5B5A00396E42 /* RadioButtonsRatingCell */,
@@ -1978,6 +1990,25 @@
 				52FC5CF024D00A9000C7B7CF /* MapPerviewView.swift */,
 			);
 			path = MapPerviewView;
+			sourceTree = "<group>";
+		};
+		7569E0D32DA28E31009E9AC0 /* NumberRatingCell */ = {
+			isa = PBXGroup;
+			children = (
+				7569E0D82DA28FB1009E9AC0 /* NumberItemCell */,
+				7569E0D42DA28E93009E9AC0 /* NumberRatingCell.swift */,
+				7569E0D52DA28E93009E9AC0 /* NumberRatingCell.xib */,
+			);
+			path = NumberRatingCell;
+			sourceTree = "<group>";
+		};
+		7569E0D82DA28FB1009E9AC0 /* NumberItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				7569E0D92DA29001009E9AC0 /* NumberItemCell.swift */,
+				7569E0DA2DA29001009E9AC0 /* NumberItemCell.xib */,
+			);
+			path = NumberItemCell;
 			sourceTree = "<group>";
 		};
 		75EDDA712A1E5DE0003D6152 /* Cells */ = {
@@ -2450,6 +2481,7 @@
 				20CDC6292DDB0792005F9F1C /* LoginPopupVC.xib in Resources */,
 				52BF2F53247132AD00820B37 /* LabibaVoiceExperience.storyboard in Resources */,
 				B429550B22DDDBD2002DE3E9 /* AudioView.xib in Resources */,
+				7569E0DB2DA29001009E9AC0 /* NumberItemCell.xib in Resources */,
 				B429551D22DDDBD2002DE3E9 /* HeaderVC.xib in Resources */,
 				37CC251E234B73D400168766 /* WriteCommentRatingCell.xib in Resources */,
 				372BB4C524B1E1F7003A8297 /* VisualizerVoiceAssistantView.xib in Resources */,
@@ -2488,6 +2520,7 @@
 				526FD84B2500FECD004B2408 /* QuickChoicesHeaderView.xib in Resources */,
 				529C67F926F3154E00FB8591 /* PrechatForm.storyboard in Resources */,
 				B429550D22DDDBD2002DE3E9 /* MapView.xib in Resources */,
+				7569E0D62DA28E93009E9AC0 /* NumberRatingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2840,6 +2873,7 @@
 				527756A4272EE12F00F8ADE0 /* ColorValueProvider.swift in Sources */,
 				5281F42425C83CE4005D39CD /* PushNotificationConfig.swift in Sources */,
 				B429551322DDDBD2002DE3E9 /* UIImage+Extensions.swift in Sources */,
+				E8A14E582DA7B97100A27C08 /* RatingNewVC.swift in Sources */,
 				3782D95523B9F511006A79D4 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				52DE8DCE248CB9C60067F5EC /* IQUIView+Hierarchy.swift in Sources */,
 				3731DA9A2342282100FDFC42 /* ScrollViewCellView.swift in Sources */,
@@ -2882,11 +2916,13 @@
 				520DEE6F265F83F500B538A5 /* BackgroundView.swift in Sources */,
 				B429551A22DDDBD2002DE3E9 /* ScanAnimationStyle.swift in Sources */,
 				371E27DE24AA0A86003A4150 /* LabibaConfig.swift in Sources */,
+				7569E0DC2DA29001009E9AC0 /* NumberItemCell.swift in Sources */,
 				52775658272EE12F00F8ADE0 /* AnyValueContainer.swift in Sources */,
 				F9D2010B292A289A0024FE48 /* RemoteDataSource.swift in Sources */,
 				B429554522DDDBD2002DE3E9 /* MediaStreamer.swift in Sources */,
 				52775644272EE12F00F8ADE0 /* Rectangle.swift in Sources */,
 				52BF2F45247130FE00820B37 /* BaseConversationVC.swift in Sources */,
+				7569E0D72DA28E93009E9AC0 /* NumberRatingCell.swift in Sources */,
 				52DE8DC9248CB9C60067F5EC /* IQKeyboardManager.swift in Sources */,
 				52DE8DCC248CB9C60067F5EC /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				F96C538D29377D760038440A /* UploadDataModel.swift in Sources */,
@@ -3073,7 +3109,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 38HH87J6NV;
+				DEVELOPMENT_TEAM = LT6MNHQ4GW;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3293,7 +3329,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 38HH87J6NV;
+				DEVELOPMENT_TEAM = LT6MNHQ4GW;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

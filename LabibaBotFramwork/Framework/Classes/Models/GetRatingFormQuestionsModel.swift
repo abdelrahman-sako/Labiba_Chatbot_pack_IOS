@@ -12,6 +12,7 @@ enum RatingCellType:String {
     case options = "2"
     case comment = "3"
     case textField = "4"
+    case number = "6"
 }
 //MARK:  get questions model
 class GetRatingFormQuestionsModel:Codable {

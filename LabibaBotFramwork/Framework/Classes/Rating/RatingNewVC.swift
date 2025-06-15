@@ -1,32 +1,32 @@
 //
-//  RatingVC.swift
+//  RatingNewVC.swift
 //  LabibaBotFramwork
 //
-//  Created by Abdulrahman on 10/7/19.
-//  Copyright © 2019 Abdul Rahman. All rights reserved.
+//  Created by Mohammad Khalil on 10/04/2025.
+//  Copyright © 2025 Abdul Rahman. All rights reserved.
 //
 
 import UIKit
 
-class RatingVC: RatingBaseVC {
+class RatingNewVC: RatingBaseVC {
+
     override class func present(fromVC vc:UIViewController,delegate:SubViewControllerDelegate){
-        let ratingVC = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingVC") as! RatingBaseVC
+        let ratingVC = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingNewVC") as! RatingBaseVC
         ratingVC.modalPresentationStyle = .fullScreen
         ratingVC.modalTransitionStyle = .crossDissolve
-        
         ratingVC.delegate = delegate
-//        vc.present(ratingVC, animated: true, completion: nil)
         Labiba.navigationController?.pushViewController(ratingVC, animated: true)
     }
+ 
+    @IBOutlet weak var RatingsTableView: ContentSizedTableView!
     
-    @IBOutlet var tapGesture: UITapGestureRecognizer!
-    
-    //var delegate:RatingScreenProtocol?
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         uiConfiguration()
         cellRegistration()
     }
+    
     
     func uiConfiguration()  {
         switch Labiba.RatingForm.background {
@@ -36,28 +36,23 @@ class RatingVC: RatingBaseVC {
             self.view.applyGradient(colours: grad.colors, locations: nil)
         case .image(image: _):break
         }
-        ratingTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        tapGesture.addTarget(self, action: #selector(didTap(_:)))
+    //    ratingTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            //    tapGesture.addTarget(self, action: #selector(didTap(_:)))
     }
     
     func cellRegistration()  {
-        let nib = UINib(nibName: "RatingStarsRatingCell", bundle: self.nibBundle)
-        ratingTableView.register(nib, forCellReuseIdentifier: "RatingStarsRatingCell")
+        let nib = UINib(nibName: "RatingSatrsLightCell", bundle: self.nibBundle)
+        ratingTableView.register(nib, forCellReuseIdentifier: "RatingSatrsLightCell")
         let nib2 = UINib(nibName: "WriteCommentRatingCell", bundle: self.nibBundle)
         ratingTableView.register(nib2, forCellReuseIdentifier: "WriteCommentRatingCell")
         let nib3 = UINib(nibName: "RadioButtonsRatingCell", bundle: self.nibBundle)
         ratingTableView.register(nib3, forCellReuseIdentifier: "RadioButtonsRatingCell")
-        let nib4 = UINib(nibName: "SubmitRatingCell", bundle: self.nibBundle)
-        ratingTableView.register(nib4, forCellReuseIdentifier: "SubmitRatingCell")
+        let nib4 = UINib(nibName: "SubmitRatingLightCell", bundle: self.nibBundle)
+        ratingTableView.register(nib4, forCellReuseIdentifier: "SubmitRatingLightCell")
         let nib5 = UINib(nibName: "TextFiledRatingCell", bundle: self.nibBundle)
         ratingTableView.register(nib5, forCellReuseIdentifier: "TextFiledRatingCell")
-        
         let nib6 = UINib(nibName: "NumberRatingCell", bundle: self.nibBundle)
-        ratingTableView.register(nib6, forCellReuseIdentifier: "NumberRatingCell")
-    }
-    
-    @objc func didTap(_ G:UITapGestureRecognizer){
-        self.view.endEditing(true)
+        RatingsTableView.register(nib6, forCellReuseIdentifier: "NumberRatingCell")
     }
     
     @objc func submitRate(_ button:UIButton){
@@ -131,12 +126,11 @@ class RatingVC: RatingBaseVC {
     }
     
     
-  
     
     
 }
 
-extension RatingVC: UITableViewDelegate , UITableViewDataSource {
+extension RatingNewVC: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count > 0 ? questions.count + 2 : 0
     }
@@ -220,5 +214,3 @@ extension RatingVC: UITableViewDelegate , UITableViewDataSource {
     
     
 }
-
-

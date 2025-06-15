@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="367" id="KGk-i7-Jjw" customClass="NumberRatingCell" customModule="LabibaBotFramwork" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="517" height="367"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="517" height="367"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="GfN-HM-zJM">
+                        <rect key="frame" x="0.0" y="0.0" width="517" height="367"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNH-TX-Dhg">
+                                <rect key="frame" x="0.0" y="0.0" width="517" height="101.66666666666667"/>
+                                <string key="text">We value your feedback and would love to know how you feel about your experience. On a scale of 1 to 10, how likely are you to recommend our
+service to a friend or colleague? (1 = Not at all
+likely, 10 = Extremely likely)</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.46951482379999998" green="0.091872789029999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ne4-d5-lBt">
+                                <rect key="frame" x="0.0" y="141.66666666666663" width="517" height="225.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="hOA-wE-t1F"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ig7-x2-oBy">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="GfN-HM-zJM" secondAttribute="trailing" id="144-Zr-oMJ"/>
+                    <constraint firstItem="GfN-HM-zJM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UkT-4F-kxt"/>
+                    <constraint firstAttribute="bottom" secondItem="GfN-HM-zJM" secondAttribute="bottom" id="VJa-FE-idf"/>
+                    <constraint firstItem="GfN-HM-zJM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sxK-Ch-YDo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="collectionView" destination="ne4-d5-lBt" id="uYh-6r-MGf"/>
+            </connections>
+            <point key="canvasLocation" x="38.931297709923662" y="42.605633802816904"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
