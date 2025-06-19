@@ -207,11 +207,14 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         case .login:
             let bundle = Bundle(for: LoginPopupVC.self)
 
-            let popupVC = LoginPopupVC(nibName: "LoginPopupVC", bundle: bundle)
-            popupVC.modalPresentationStyle = .overCurrentContext
-            popupVC.modalTransitionStyle = .crossDissolve
+//            let popupVC = LoginPopupVC(nibName: "LoginPopupVC", bundle: bundle)
+//            popupVC.modalPresentationStyle = .overCurrentContext
+//            popupVC.modalTransitionStyle = .crossDissolve
             
-            topVC.present(popupVC, animated: true, completion: nil)
+            let viewController = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingNewVC") as! RatingNewVC
+            let navController = UINavigationController(rootViewController: viewController)
+            viewController.modalPresentationStyle = .fullScreen
+            topVC.present(navController, animated: true, completion: nil)
         }
        
     }

@@ -14,24 +14,41 @@ class NumberRatingCell: RatingCell {
     @IBOutlet weak var questionLabel: UILabel!
     
     var onSelected: ((Int) -> Void)?
+    var selectedIndex = -1
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        collectionView.allowsMultipleSelection = false
-        collectionView.allowsSelection = true
-        
-        
-        let nib = UINib(nibName: "NumberItemCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "NumberItemCell")
-        questionLabel.font =  applyBotFont( bold: Labiba.RatingForm.questionsFont.weight == .bold, size: Labiba.RatingForm.questionsFont.size)
-        questionLabel.textColor = Labiba.RatingForm.questionsColor
-        
+        setupCollectionView()
+        setupUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    
+    func setupUI(){
+        questionLabel.textColor = LabibaThemes.ratingColor
+    }
+    
+    func setupCollectionView(){
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        let currentBundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: "NumberItemCell", bundle: currentBundle)
+        collectionView.register(nib, forCellWithReuseIdentifier: "NumberItemCell")
+    }
+    
+    func getQuestion(){
+        DataSource.shared.getActiveQuestion { [weak self] result in
+            switch result{
+            case .success(let data):
+                self?.questionLabel.text = data.data.question
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
 }
@@ -45,17 +62,21 @@ extension NumberRatingCell: UICollectionViewDataSource, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NumberItemCell", for: indexPath) as! NumberItemCell
         cell.numberLabel.text = "\(indexPath.row + 1)"
-        
+        cell.contanierView.backgroundColor = selectedIndex >= indexPath.row ?  LabibaThemes.ratingColor : .black.withAlphaComponent(0.2)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width / 10 - 8
-        return CGSize(width: width, height: width)
+        return CGSize(width: 30, height: 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
         onSelected?(indexPath.row)
+        collectionView.reloadData()
     }
-    
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return (UIScreen.main.bounds.width - 300) / 10
+    }
 }

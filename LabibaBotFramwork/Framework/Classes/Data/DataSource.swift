@@ -90,7 +90,13 @@ final class DataSource: DataSourceProtocol{
     func sendTranscript(name:String, email:String, handler: @escaping Handler<EmptyModel>){
         return remoteDataSource.sendTranscript(name: name, email: email, handler: handler)
     }
+    func getActiveQuestion(_ completionHandler:@escaping Handler<getActiveQuestionsResponseModel>){
+        return remoteDataSource.getActiveQuestion(completionHandler)
+    }
     
+    func submitNPSScore(_ score:String,_ completionHandler:@escaping Handler<LabibaThemeModel>){
+        remoteDataSource.submitNPSScore(score,completionHandler)
+    }
 //    func sendData(_ data: Data, handler: @escaping Handler<UploadDataResponseModel>) {
 //        remoteDataSource.sendData(data, handler: handler)
 //    }

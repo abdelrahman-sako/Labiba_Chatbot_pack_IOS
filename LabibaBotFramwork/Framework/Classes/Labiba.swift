@@ -196,7 +196,9 @@ public enum LoggingAndRefferalEncodingType{
 //    }
 //
     
-    
+    public static func setRatingColor(_ color: UIColor){
+        LabibaThemes.ratingColor = color
+    }
     
     // MARK:- UserParameters and Referrals
     public static var _ReferralSource:String = "mobile"

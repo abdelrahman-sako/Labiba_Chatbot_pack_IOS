@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -145,24 +146,24 @@
         <!--Rating NewVC-->
         <scene sceneID="AaY-BV-pPd">
             <objects>
-                <viewController id="ujz-h0-oGn" customClass="RatingNewVC" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RatingNewVC" id="ujz-h0-oGn" customClass="RatingNewVC" customModule="LabibaBotFramwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hBd-C1-6FB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="vZW-ew-qLt">
-                                <rect key="frame" x="20" y="68" width="374" height="760"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="vZW-ew-qLt">
+                                <rect key="frame" x="0.0" y="68" width="414" height="760"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4J3-de-6by" customClass="ContentSizedTableView" customModule="LabibaBotFramwork" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="650"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4J3-de-6by" customClass="ContentSizedTableView" customModule="LabibaBotFramwork" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="650"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wj3-Zj-NS8">
-                                        <rect key="frame" x="0.0" y="710" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="710" width="374" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VG-MX-tfB">
                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
-                                                <color key="backgroundColor" red="0.46951482384908116" green="0.091872789028703772" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" name="Purple"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="UA5-rO-lsl"/>
                                                 </constraints>
@@ -171,6 +172,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Submit">
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="submitButtonTapped:" destination="ujz-h0-oGn" eventType="touchUpInside" id="cjG-7z-owR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fr-8I-uWj">
                                                 <rect key="frame" x="197" y="0.0" width="177" height="50"/>
@@ -180,28 +184,38 @@
                                                 </constraints>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Submit">
+                                                <buttonConfiguration key="configuration" style="plain" title="Later">
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="dismissButtonTapped:" destination="ujz-h0-oGn" eventType="touchUpInside" id="gyK-EB-g9P"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="wj3-Zj-NS8" secondAttribute="trailing" constant="20" id="33t-SL-VM5"/>
+                                    <constraint firstAttribute="trailing" secondItem="4J3-de-6by" secondAttribute="trailing" id="YHa-kr-aMB"/>
+                                    <constraint firstAttribute="trailing" secondItem="4J3-de-6by" secondAttribute="trailing" id="dqw-oY-NXJ"/>
+                                    <constraint firstItem="4J3-de-6by" firstAttribute="leading" secondItem="vZW-ew-qLt" secondAttribute="leading" id="eBF-gh-E2u"/>
+                                    <constraint firstItem="4J3-de-6by" firstAttribute="leading" secondItem="vZW-ew-qLt" secondAttribute="leading" id="iIS-oY-Jta"/>
+                                    <constraint firstItem="wj3-Zj-NS8" firstAttribute="leading" secondItem="vZW-ew-qLt" secondAttribute="leading" constant="20" id="rEc-hn-RXR"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hyl-My-lDn"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" name="Color"/>
                         <constraints>
-                            <constraint firstItem="vZW-ew-qLt" firstAttribute="leading" secondItem="hyl-My-lDn" secondAttribute="leading" constant="20" id="Aqd-KC-Pfq"/>
                             <constraint firstItem="vZW-ew-qLt" firstAttribute="centerY" secondItem="hBd-C1-6FB" secondAttribute="centerY" id="IUx-oQ-G03"/>
-                            <constraint firstItem="vZW-ew-qLt" firstAttribute="leading" secondItem="hyl-My-lDn" secondAttribute="leading" constant="20" id="Q2k-xt-C09"/>
-                            <constraint firstItem="hyl-My-lDn" firstAttribute="trailing" secondItem="vZW-ew-qLt" secondAttribute="trailing" constant="20" id="Vme-Hk-D3G"/>
-                            <constraint firstItem="hyl-My-lDn" firstAttribute="trailing" secondItem="vZW-ew-qLt" secondAttribute="trailing" constant="20" id="kF4-6E-7hu"/>
+                            <constraint firstItem="vZW-ew-qLt" firstAttribute="leading" secondItem="hyl-My-lDn" secondAttribute="leading" id="Q2k-xt-C09"/>
+                            <constraint firstItem="hyl-My-lDn" firstAttribute="trailing" secondItem="vZW-ew-qLt" secondAttribute="trailing" id="Vme-Hk-D3G"/>
                             <constraint firstItem="vZW-ew-qLt" firstAttribute="top" secondItem="hyl-My-lDn" secondAttribute="top" constant="20" id="u8e-qc-0gS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="RatingsTableView" destination="4J3-de-6by" id="sV4-wW-0xz"/>
+                        <outlet property="submitButton" destination="2VG-MX-tfB" id="cnV-lJ-OXz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7M-bf-lxp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -211,14 +225,17 @@
     </scenes>
     <resources>
         <image name="cancelled" width="500" height="500"/>
+        <namedColor name="Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Purple">
+            <color red="0.40000000000000002" green="0.2627450980392157" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

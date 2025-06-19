@@ -29,6 +29,7 @@
 		20CDC6282DDB0792005F9F1C /* LoginPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDC6262DDB0792005F9F1C /* LoginPopupVC.swift */; };
 		20CDC6292DDB0792005F9F1C /* LoginPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CDC6272DDB0792005F9F1C /* LoginPopupVC.xib */; };
 		20CDC62B2DDB088B005F9F1C /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDC62A2DDB088B005F9F1C /* CustomViews.swift */; };
+		20FE11CB2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE11CA2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift */; };
 		370196EA24CDA5DE0003266B /* VedioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370196E924CDA5DE0003266B /* VedioPlayerView.swift */; };
 		37030D7023F2AB5400BF8ED3 /* FontDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */; };
 		370874282326528C00E0C52C /* GreetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370874272326528C00E0C52C /* GreetingHeaderView.swift */; };
@@ -532,6 +533,7 @@
 		20CDC6262DDB0792005F9F1C /* LoginPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPopupVC.swift; sourceTree = "<group>"; };
 		20CDC6272DDB0792005F9F1C /* LoginPopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginPopupVC.xib; sourceTree = "<group>"; };
 		20CDC62A2DDB088B005F9F1C /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
+		20FE11CA2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getActiveQuestionsResponseModel.swift; sourceTree = "<group>"; };
 		370196E924CDA5DE0003266B /* VedioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VedioPlayerView.swift; sourceTree = "<group>"; };
 		37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDownloader.swift; sourceTree = "<group>"; };
 		370874272326528C00E0C52C /* GreetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingHeaderView.swift; sourceTree = "<group>"; };
@@ -1154,6 +1156,7 @@
 				F96C538A293778210038440A /* UploadDataResponseModel.swift */,
 				F96C538C29377D760038440A /* UploadDataModel.swift */,
 				F96C5391293895B80038440A /* LoggingModel.swift */,
+				20FE11CA2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2593,6 +2596,7 @@
 				5277565E272EE12F00F8ADE0 /* Transform.swift in Sources */,
 				52DE8DC5248CB9C60067F5EC /* IQUIScrollView+Additions.swift in Sources */,
 				B429551822DDDBD2002DE3E9 /* CornerLocation.swift in Sources */,
+				20FE11CB2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift in Sources */,
 				52775627272EE12F00F8ADE0 /* GradientStroke.swift in Sources */,
 				5214229425AC965400B78AB0 /* ChoiceView.swift in Sources */,
 				B429553522DDDBD2002DE3E9 /* ImagePicking.swift in Sources */,

@@ -308,10 +308,18 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             }
         }
     }
-    func submitNPSScore(_ completionHandler:@escaping Handler<LabibaThemeModel>){
+    func submitNPSScore(_ score:String,_ completionHandler:@escaping Handler<LabibaThemeModel>){
         let url = "https://botbuilder.labiba.ai/api/LiveChat/SubmitNpsScore"
         let endPoint = EndPoint(url: url, httpMethod: .post)
-        remoteContext.requestWithGet(endpoint: endPoint, method: .get) { result in
+        let parameters:[String:Any] = ["LongClientId":"",
+                                       "NpsQuestionTemplateLongId" : "",
+                                       "ConversationId" : "",
+                                       "Score" : score,
+                                       "StoryId" : SharedPreference.shared.currentUserId,
+                                       "SenderId" : Labiba._senderId ?? "",
+        ]
+        
+        remoteContext.requestWithGet(endpoint: endPoint, method: .post,parameters: parameters) { result in
             switch result{
             case .success(let data):
                 self.dataParamParser(data: data, model: LabibaThemeModel.self, completion: completionHandler)
@@ -321,13 +329,13 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         }
     }
     
-    func getActiveQuestion(_ completionHandler:@escaping Handler<LabibaThemeModel>){
-        let url = "https://botbuilder.labiba.ai/api/Nps/GetCurrentActiveQuestion/4cd0f7c9-804a-4e48-b4af-559528005203"
+    func getActiveQuestion(_ completionHandler:@escaping Handler<getActiveQuestionsResponseModel>){
+        let url = "https://botbuilder.labiba.ai/api/Nps/GetCurrentActiveQuestion/\(SharedPreference.shared.currentUserId)"
         let endPoint = EndPoint(url: url, httpMethod: .get)
         remoteContext.requestWithGet(endpoint: endPoint, method: .get) { result in
             switch result{
             case .success(let data):
-                self.dataParamParser(data: data, model: LabibaThemeModel.self, completion: completionHandler)
+                self.dataParamParser(data: data, model: getActiveQuestionsResponseModel.self, completion: completionHandler)
             case .failure(let error):
                 print(error)
             }
