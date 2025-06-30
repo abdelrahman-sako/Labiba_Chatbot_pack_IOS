@@ -111,10 +111,10 @@ public class BubbleView: UIView {
                 }
                 else
                 {
-                    let formattedLinestext = text.replacingOccurrences(of: "\n", with: "<br>", options: .literal, range: nil)
+                    var  formattedLinestext = text.replacingOccurrences(of: "\n", with: "<br>", options: .literal, range: nil)
                     fontSize = Labiba.BotChatBubble.fontsize
-                    let lang = text.detectedLangauge()
-                    if lang == "ar" {text.addArabicAlignment()}
+                    let lang = formattedLinestext.detectedLangauge()
+                    if lang == "ar" {formattedLinestext.addArabicAlignment()}
                     let boldFont =  applyBotFont(textLang: LabibaLanguage(rawValue: lang ?? "") ?? .ar ,bold:true, size: fontSize )
                     let regularFont =  applyBotFont(textLang: LabibaLanguage(rawValue: lang ?? "") ?? .ar , size: fontSize)
                     self.textLabel.attributedText = formattedLinestext.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba.BotChatBubble.textColor)

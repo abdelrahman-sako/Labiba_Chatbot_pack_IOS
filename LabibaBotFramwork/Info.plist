@@ -47,6 +47,12 @@
 	<string>Speech recognition will be used to determine which words you speak into the device’s microphone</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Frutiger LT Arabic 55 Roman.ttf</string>
+		<string>FrutigerLTArabic-45Light.ttf</string>
+		<string>FrutigerLTArabic-65Bold.ttf</string>
+		<string>BentonSans-Regular.otf</string>
+		<string>BentonSans-Medium.otf</string>
+		<string>BentonSans-Bold.otf</string>
 		<string>cairo-_bold.ttf</string>
 		<string>cairo_regular.ttf</string>
 		<string>cairo_light.ttf</string>
