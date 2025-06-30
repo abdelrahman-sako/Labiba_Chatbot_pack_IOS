@@ -49,7 +49,6 @@ class VMenuCell: UITableViewCell {
     }
   }
   
-  
   func setData(model:DialogCard){
       var fontSize = 13.0
    
@@ -70,5 +69,4 @@ class VMenuCell: UITableViewCell {
       trailingStackViewConst.constant = 20
     }
   }
-  
 }
