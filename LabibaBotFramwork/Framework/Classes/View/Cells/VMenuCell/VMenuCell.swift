@@ -51,9 +51,14 @@ class VMenuCell: UITableViewCell {
   
   
   func setData(model:DialogCard){
-    menuContentLabel.text = model.title.trimmingCharacters(in: .whitespacesAndNewlines)
+      var fontSize = 13.0
+   
+      fontSize = Labiba.BotChatBubble.fontsize
+      let lang = model.title.detectedLangauge()
+      if lang == "ar" {model.title.addArabicAlignment()}
+      menuContentLabel.font = applyBotFont(textLang: LabibaLanguage(rawValue: lang ?? "") ?? .ar ,bold:true, size: fontSize )
+      menuContentLabel.text = model.title.trimmingCharacters(in: .whitespacesAndNewlines)
     if let url = URL(string: model.imageUrl ?? ""){
-      menuImageView.image = nil
       menuImageView.af_setImage(withURL: url)
       leadingStackViewConst.constant = 5
       trailingStackViewConst.constant = 5
@@ -64,8 +69,6 @@ class VMenuCell: UITableViewCell {
       leadingStackViewConst.constant = 20
       trailingStackViewConst.constant = 20
     }
-    
-    
   }
   
 }
