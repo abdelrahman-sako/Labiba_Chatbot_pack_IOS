@@ -504,6 +504,12 @@
 		B429555A22DDDBD2002DE3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */; };
 		B462725122DEF4C20070E044 /* AttachmentsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */; };
 		E8A14E582DA7B97100A27C08 /* RatingNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A14E572DA7B97100A27C08 /* RatingNewVC.swift */; };
+		E81355E32E0BE3E000078C75 /* BentonSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E81355DE2E0BE3E000078C75 /* BentonSans-Regular.otf */; };
+		E81355E42E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E81355E12E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf */; };
+		E81355E52E0BE3E000078C75 /* BentonSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E81355DC2E0BE3E000078C75 /* BentonSans-Bold.otf */; };
+		E81355E62E0BE3E000078C75 /* FrutigerLTArabic-45Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E81355E02E0BE3E000078C75 /* FrutigerLTArabic-45Light.ttf */; };
+		E81355E72E0BE3E000078C75 /* Frutiger LT Arabic 55 Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E81355DF2E0BE3E000078C75 /* Frutiger LT Arabic 55 Roman.ttf */; };
+		E81355E82E0BE3E000078C75 /* BentonSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E81355DD2E0BE3E000078C75 /* BentonSans-Medium.otf */; };
 		F9013BE328716DEC00DE2BA0 /* WebViewEventHumanAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */; };
 		F96C538B293778210038440A /* UploadDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C538A293778210038440A /* UploadDataResponseModel.swift */; };
 		F96C538D29377D760038440A /* UploadDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C538C29377D760038440A /* UploadDataModel.swift */; };
@@ -1014,6 +1020,12 @@
 		B42954FF22DDDBD2002DE3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsMenuViewController.swift; sourceTree = "<group>"; };
 		E8A14E572DA7B97100A27C08 /* RatingNewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingNewVC.swift; sourceTree = "<group>"; };
+		E81355DC2E0BE3E000078C75 /* BentonSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans-Bold.otf"; sourceTree = "<group>"; };
+		E81355DD2E0BE3E000078C75 /* BentonSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans-Medium.otf"; sourceTree = "<group>"; };
+		E81355DE2E0BE3E000078C75 /* BentonSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans-Regular.otf"; sourceTree = "<group>"; };
+		E81355DF2E0BE3E000078C75 /* Frutiger LT Arabic 55 Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Frutiger LT Arabic 55 Roman.ttf"; sourceTree = "<group>"; };
+		E81355E02E0BE3E000078C75 /* FrutigerLTArabic-45Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FrutigerLTArabic-45Light.ttf"; sourceTree = "<group>"; };
+		E81355E12E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FrutigerLTArabic-65Bold.ttf"; sourceTree = "<group>"; };
 		F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEventHumanAgent.swift; sourceTree = "<group>"; };
 		F96C538A293778210038440A /* UploadDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataResponseModel.swift; sourceTree = "<group>"; };
 		F96C538C29377D760038440A /* UploadDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataModel.swift; sourceTree = "<group>"; };
@@ -2301,8 +2313,22 @@
 				37A1483524B5A7EE0025954D /* cairo_regular.ttf */,
 				37A1483624B5A7EF0025954D /* cairo-_bold.ttf */,
 				B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */,
+				E81355E22E0BE3E000078C75 /* Fonts */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E81355E22E0BE3E000078C75 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E81355DC2E0BE3E000078C75 /* BentonSans-Bold.otf */,
+				E81355DD2E0BE3E000078C75 /* BentonSans-Medium.otf */,
+				E81355DE2E0BE3E000078C75 /* BentonSans-Regular.otf */,
+				E81355DF2E0BE3E000078C75 /* Frutiger LT Arabic 55 Roman.ttf */,
+				E81355E02E0BE3E000078C75 /* FrutigerLTArabic-45Light.ttf */,
+				E81355E12E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F9013BE128716D4900DE2BA0 /* HumanAgent */ = {
@@ -2513,6 +2539,12 @@
 				B429554222DDDBD2002DE3E9 /* CustomCollectionViewCellNoImage.xib in Resources */,
 				B429550E22DDDBD2002DE3E9 /* SelectableCollectionCellView.xib in Resources */,
 				526FD850250100FD004B2408 /* HeaderQuickChoiceCell.xib in Resources */,
+				E81355E32E0BE3E000078C75 /* BentonSans-Regular.otf in Resources */,
+				E81355E42E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf in Resources */,
+				E81355E52E0BE3E000078C75 /* BentonSans-Bold.otf in Resources */,
+				E81355E62E0BE3E000078C75 /* FrutigerLTArabic-45Light.ttf in Resources */,
+				E81355E72E0BE3E000078C75 /* Frutiger LT Arabic 55 Roman.ttf in Resources */,
+				E81355E82E0BE3E000078C75 /* BentonSans-Medium.otf in Resources */,
 				37939874234C85DF00396E42 /* SubmitRatingCell.xib in Resources */,
 				527756D1272FDA0200F8ADE0 /* robot.json in Resources */,
 				37C4631A22F1BC5B004EAC7E /* VoiceAssistantView.xib in Resources */,

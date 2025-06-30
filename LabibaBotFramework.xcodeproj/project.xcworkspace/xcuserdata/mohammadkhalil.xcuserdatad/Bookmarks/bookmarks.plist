@@ -38,6 +38,7 @@
 </string>
 				<key>leading</key>
 				<string>                    var formattedLinestext = text.replacingOccurrences(of: "\n", with: "&lt;br&gt;", options: .literal, range: nil)
+				<string>                    var  formattedLinestext = text.replacingOccurrences(of: "\n", with: "&lt;br&gt;", options: .literal, range: nil)
                     fontSize = Labiba.BotChatBubble.fontsize
 </string>
 				<key>trailing</key>
@@ -90,6 +91,13 @@
 				<string>
     
     public static func setFont(regAR:String , boldAR:String , regEN:String , boldEN:String){
+				<string>    public static func setFont(regAR:String , boldAR:String , regEN:String , boldEN:String){
+        self.font = (regAR,boldAR ,regEN,boldEN)
+     </string>
+				<key>trailing</key>
+				<string>   self.registerFonts()
+    }
+    
 </string>
 			</dict>
 			<key>title</key>
