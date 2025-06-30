@@ -37,7 +37,7 @@
 				<string>                    let lang = formattedLinestext.detectedLangauge()
 </string>
 				<key>leading</key>
-				<string>                    var formattedLinestext = text.replacingOccurrences(of: "\n", with: "&lt;br&gt;", options: .literal, range: nil)
+				<string>                    var  formattedLinestext = text.replacingOccurrences(of: "\n", with: "&lt;br&gt;", options: .literal, range: nil)
                     fontSize = Labiba.BotChatBubble.fontsize
 </string>
 				<key>trailing</key>
@@ -83,13 +83,13 @@
 				<key>focused</key>
 				<string></string>
 				<key>leading</key>
-				<string>            EnableTextToSpeech = false
-        }
-    }</string>
+				<string>    public static func setFont(regAR:String , boldAR:String , regEN:String , boldEN:String){
+        self.font = (regAR,boldAR ,regEN,boldEN)
+     </string>
 				<key>trailing</key>
-				<string>
+				<string>   self.registerFonts()
+    }
     
-    public static func setFont(regAR:String , boldAR:String , regEN:String , boldEN:String){
 </string>
 			</dict>
 			<key>title</key>
@@ -103,15 +103,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>89</string>
+					<string>5</string>
 					<key>EndingLineNumber</key>
-					<string>59</string>
+					<string>70</string>
 					<key>StartingColumnNumber</key>
-					<string>6</string>
+					<string>5</string>
 					<key>StartingLineNumber</key>
-					<string>55</string>
+					<string>70</string>
 					<key>Timestamp</key>
-					<string>772957066.1691951</string>
+					<string>772958763.288222</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -127,19 +127,15 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>fontSize = Labiba.BotChatBubble.fontsize
-      let lang = model.title.detectedLangauge()
-      if lang == "ar" {model.title.addArabicAlignment()}
-      menuContentLabel.font = applyBotFont(textLang: LabibaLanguage(rawValue: lang ?? "") ?? .ar ,bold:true, size: fontSize )
-      menuContentLabel.text = model.title.trimmingCharacters(in: .whitespacesAndNewlines)</string>
+				<string></string>
 				<key>leading</key>
-				<string>      var fontSize = 13.0
-   
-      </string>
+				<string>      leadingStackViewConst.constant = 20
+      trailingStackViewConst.constant = 20
+    }</string>
 				<key>trailing</key>
 				<string>
-    if let url = URL(string: model.imageUrl ?? ""){
-      menuImageView.af_setImage(withURL: url)
+  }
+  
 </string>
 			</dict>
 			<key>title</key>
