@@ -280,6 +280,7 @@ public enum LoggingAndRefferalEncodingType{
     
     public static func setFont(regAR:String , boldAR:String , regEN:String , boldEN:String){
         self.font = (regAR,boldAR ,regEN,boldEN)
+        registerFonts()
     }
     
     // MARK:- Human Agent Transfer
