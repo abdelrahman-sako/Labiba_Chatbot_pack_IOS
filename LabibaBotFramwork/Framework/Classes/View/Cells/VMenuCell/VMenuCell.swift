@@ -54,7 +54,7 @@ class VMenuCell: UITableViewCell {
    
       fontSize = Labiba.BotChatBubble.fontsize
       let lang = model.title.detectedLangauge()
-      if lang == "ar" {model.title.addArabicAlignment()}
+      if lang == "ar" {model.title.addArabicAlignmentForLabel()}
       menuContentLabel.font = applyBotFont(textLang: LabibaLanguage(rawValue: lang ?? "") ?? .ar ,bold:true, size: fontSize )
       menuContentLabel.text = model.title.trimmingCharacters(in: .whitespacesAndNewlines)
     if let url = URL(string: model.imageUrl ?? ""){

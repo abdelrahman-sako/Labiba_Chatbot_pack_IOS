@@ -272,7 +272,16 @@ extension String
     }
     
     mutating func addArabicAlignment() {
+        self = "<html dir=\"rtl\" lang=\"ar\">\u{202B}\(self)\u{200f}\u{202C}</html>".replacingOccurrences(of: "\n", with: "\u{200f}\n\u{200f}").replacingOccurrences(of: "<br>", with: "\u{200f}<br>\u{200f}")
+        
+        //\u{200f} this is right to left unicode (zero width) to handle puncuation marks at the end of the sentences
+        //\u{200f} this is right to left
+        //\u{202C} POP DIRECTIONAL FORMATTING
+    }
+    
+    mutating func addArabicAlignmentForLabel() {
         self = "\u{202B}\(self)\u{200f}\u{202C}".replacingOccurrences(of: "\n", with: "\u{200f}\n\u{200f}").replacingOccurrences(of: "<br>", with: "\u{200f}<br>\u{200f}")
+
         //\u{200f} this is right to left unicode (zero width) to handle puncuation marks at the end of the sentences
         //\u{200f} this is right to left
         //\u{202C} POP DIRECTIONAL FORMATTING
