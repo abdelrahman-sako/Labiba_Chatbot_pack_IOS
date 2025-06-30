@@ -126,7 +126,7 @@ final class RemoteContext {
     
     func request(endPoint: EndPointProtocol, parameters:String?, completion: @escaping Handler<Data>){
         
-        
+        print("headdders are \(endPoint.headers)")
         sendRequest(reqestUrl: URL(string: endPoint.url)!,encoding: parameters ?? "") { (result) in
             switch result{
             case .success(let response):
@@ -155,6 +155,7 @@ final class RemoteContext {
     ///   - parameters: [Any], Optional array of objects
     ///   - completion: A callback function invoked when the operation is completed.
     func request(endPoint: EndPointProtocol, paramsAny:[Any]?, completion: @escaping Handler<Any>){
+        print("headdders are \(endPoint.headers)")
         let params = paramsAny?.asParameters()
         let urlRequest = buildURlRequestArray(endPoint: endPoint, params: params)
         sendRequest(reqestUrl: urlRequest) { (result) in
@@ -198,6 +199,8 @@ final class RemoteContext {
     }
     
     func multipartRequest(endPoint: EndPointProtocol, params:Parameters?, multipartName: String?, uploadFiles: [Data]?,encoding:String.Encoding? = nil,mimeType:String,fileName:String, completion: @escaping Handler<Data>){
+        print("headdders are \(endPoint.headers)")
+
         let urlRequest = buildURlRequestArray(endPoint: endPoint, params: params)
         sessionManager.upload(multipartFormData: { (multipartFormData) in
             if let params = params{
@@ -284,6 +287,7 @@ final class RemoteContext {
     ///   - params: Http request parameter as [String: Any], optional.
     /// - Returns: An Http request object of type URLRequestConvertible.
     private func buildURlRequest(endPoint: EndPointProtocol, params: Parameters?) -> URLRequestConvertible{
+        print("headdders are \(endPoint.headers)")
         let relativePath =  endPoint.url
         let url = URL(string: relativePath)!
         
@@ -330,6 +334,8 @@ final class RemoteContext {
     ///   - params: Http request parameter as [Any], optional.
     /// - Returns: An Http request object of type URLRequestConvertible.
     private func buildURlRequestArray(endPoint: EndPointProtocol, params: Parameters?) -> URLRequestConvertible{
+        print("headdders are \(endPoint.headers)")
+
         let relativePath =  endPoint.url
         let url = URL(string: relativePath)!
         

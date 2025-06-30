@@ -45,22 +45,17 @@ struct EndPoint: EndPointProtocol {
     init(url: String, httpMethod: HTTPMethod, headers: [String:String]? = nil) {
         self.url = url
         self.httpMethod = httpMethod
-        self.headers = headers
-//        self.headers = getHeaders(headers: headers)
+//        self.headers = headers
+        self.headers = getHeaders(headers: headers)
     }
-    func getSecurityHeaders()->[[String:String]] {
-        if let tokens = KeyChainManager.load(key: "labibaTokens"){
-            return tokens.to(type: [[String: String]].self)
-        }else{
-            return []
-        }
-    }
+
     func getHeaders(headers:[String:String]? = nil)->[String:String]{
-        var finalHeaders = headers
-        let securityHeaders = getSecurityHeaders()
-        for tokenDict in securityHeaders{
-            finalHeaders = tokenDict
+        var finalHeaders = headers ?? [:]
+        for dict in Labiba.clientHeaders {
+            for (key, value) in dict {
+                finalHeaders[key] = value  // Later values will overwrite earlier ones
+            }
         }
-        return finalHeaders ?? headers!
+        return finalHeaders
     }
 }

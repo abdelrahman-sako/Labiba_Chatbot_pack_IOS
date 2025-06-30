@@ -1,19 +1,16 @@
 //
 //  KeyChainManager.swift
-//  LabibaPoC
+//  LabibaLiveness
 //
-//  Created by Ahmad Sbeih on 04/07/2023.
+//  Created by Ahmad Sbeih on 02/12/2024.
 //
-
-import Foundation
 
 import Security
 import UIKit
 
-class KeyChainManager {
+class KeyChain {
     
-    class func save(key: String, data: Any) -> OSStatus {
-        let data = Data(from: data)
+    class func save(key: String, data: Data) -> OSStatus {
         let query = [
             kSecClass as String       : kSecClassGenericPassword as String,
             kSecAttrAccount as String : key,
@@ -48,6 +45,11 @@ class KeyChainManager {
         
         let swiftString: String = cfStr as String
         return swiftString
+    }
+    
+    class func storeValue<T>(value: T,valueKey:String) {
+        let data = Data(from: value)
+        let status = KeyChain.save(key:valueKey , data: data)
     }
 }
 

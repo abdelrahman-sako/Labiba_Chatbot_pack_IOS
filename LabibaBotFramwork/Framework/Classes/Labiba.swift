@@ -69,7 +69,7 @@ public enum LoggingAndRefferalEncodingType{
     
     private(set) static var hintsArray:[String]? = nil // add localized keys in ordeer to support both languages
     private(set) static var _OpenFromBubble:Bool = false
-    
+    public static var clientHeaders:[[String:String]] = [[:]]
     public static var liveChatModel:LiveChatModel?
     public static let labibaThemes = LabibaThemes()
     public  static var _WithRatingVC: Bool = false
@@ -248,8 +248,10 @@ public enum LoggingAndRefferalEncodingType{
         self._pageId = SharedPreference.shared.currentUserId
     }
     
-    public static func setSecurityHeaderParams(token:[[String:Any]]){
-        KeyChainManager.save(key: "labibaTokens", data: token)
+    public static func setSecurityHeaderParams(_ headers:[[String:String]]){
+//        KeyChain.save(key: "labibaTokens", data: Data(from: token))
+//        let saved = KeyChain.load(key: "labibaTokens")
+        self.clientHeaders = headers
     }
     
      static func setLastMessageLangCode(_ text: String)

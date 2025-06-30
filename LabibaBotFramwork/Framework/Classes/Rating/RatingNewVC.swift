@@ -11,6 +11,7 @@ import UIKit
 class RatingNewVC:UIViewController {
     @IBOutlet weak var RatingsTableView: ContentSizedTableView!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet var buttons: [UIButton]!
     
     var selectedScore = -1
     
@@ -32,6 +33,7 @@ class RatingNewVC:UIViewController {
     
     func setupUI(){
         submitButton.backgroundColor = LabibaThemes.ratingColor
+        buttons.forEach({$0.layer.cornerRadius = 25})
     }
     func submitRate(){
 
@@ -59,6 +61,7 @@ extension RatingNewVC: UITableViewDelegate , UITableViewDataSource {
         cell.onSelected = { index in
             self.selectedScore = index
         }
+        cell.selectionStyle = .none
         return cell
     }
     

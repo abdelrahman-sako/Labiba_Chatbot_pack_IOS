@@ -77,6 +77,6 @@ extension NumberRatingCell: UICollectionViewDataSource, UICollectionViewDelegate
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return (UIScreen.main.bounds.width - 300) / 10
+        return (UIScreen.main.bounds.width - 340) / 10
     }
 }
