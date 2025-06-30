@@ -37,7 +37,7 @@
 				<string>                    let lang = formattedLinestext.detectedLangauge()
 </string>
 				<key>leading</key>
-				<string>                    var  formattedLinestext = text.replacingOccurrences(of: "\n", with: "&lt;br&gt;", options: .literal, range: nil)
+				<string>                    var formattedLinestext = text.replacingOccurrences(of: "\n", with: "&lt;br&gt;", options: .literal, range: nil)
                     fontSize = Labiba.BotChatBubble.fontsize
 </string>
 				<key>trailing</key>
@@ -57,15 +57,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>28</string>
+					<string>5</string>
 					<key>EndingLineNumber</key>
 					<string>278</string>
 					<key>StartingColumnNumber</key>
-					<string>8</string>
+					<string>5</string>
 					<key>StartingLineNumber</key>
 					<string>278</string>
 					<key>Timestamp</key>
-					<string>772957041.707553</string>
+					<string>772958510.826438</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -81,15 +81,15 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>self.registerFonts()</string>
+				<string></string>
 				<key>leading</key>
-				<string>    public static func setFont(regAR:String , boldAR:String , regEN:String , boldEN:String){
-        self.font = (regAR,boldAR ,regEN,boldEN)
-        </string>
+				<string>            EnableTextToSpeech = false
+        }
+    }</string>
 				<key>trailing</key>
 				<string>
-    }
     
+    public static func setFont(regAR:String , boldAR:String , regEN:String , boldEN:String){
 </string>
 			</dict>
 			<key>title</key>
