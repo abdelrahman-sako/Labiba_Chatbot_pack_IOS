@@ -162,29 +162,6 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         }
     }
     
-    func sendTranscript(name:String, email:String, handler: @escaping Handler<EmptyModel>) {
-//        let url = "\(Labiba._basePath)/api/SendTranscript/SendChatHistoryEmail"
-        let url = "https://botbuilder.labiba.ai/api/SendTranscript/SendChatHistoryEmail"
-        
-        let params: [String:Any] = ["Name":name,"FromEmail": "abdelrahman@imagine.com.jo","Email":email,"History": SharedPreference.shared.formatConversation(userMessages: SharedPreference.shared.userMessages, botMessages: SharedPreference.shared.botMessages)
-, "startingTime": "","Duration":"",  "PageURL": "", "Title": "Chat Transcript", "IsContentEncrypted": true
-
-]
-        let endPoint = EndPoint(url: url, httpMethod: .post)
-        
-        remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
-            switch  result {
-            case .success(let data):
-                self.parser(data: data, model: EmptyModel.self, handler: handler)
-                let dataString = String(data: data, encoding: .utf8) ?? ""
-                Logging.shared.logSuccessCase(url: url, tag: .ratingSubmit, method: .post, parameter: params.description, response: dataString)
-            case .failure(let error):
-                handler(.failure(error))
-                Logging.shared.log(url: url, tag: .ratingSubmit, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
-            }
-        }
-    }
-    
     func getHelpPageData(handler: @escaping Handler<HelpPageModel>) {
         let url = Labiba._helpUrl
         let endPoint = EndPoint(url: url, httpMethod: .get)
@@ -308,7 +285,44 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             }
         }
     }
-    func submitNPSScore(_ score:String,_ completionHandler:@escaping Handler<LabibaThemeModel>){
+
+    func getActiveQuestion(_ completionHandler:@escaping Handler<getActiveQuestionsResponseModel>){
+        let url = "https://botbuilder.labiba.ai/api/Nps/GetCurrentActiveQuestion/\(SharedPreference.shared.currentUserId)"
+        let endPoint = EndPoint(url: url, httpMethod: .get)
+        remoteContext.requestWithGet(endpoint: endPoint, method: .get) { result in
+            switch result{
+            case .success(let data):
+                self.dataParamParser(data: data, model: getActiveQuestionsResponseModel.self, completion: completionHandler)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func sendTranscript(name:String, email:String, handler: @escaping Handler<EmptyModel>) {
+        //        let url = "\(Labiba._basePath)/api/SendTranscript/SendChatHistoryEmail"
+        let url = "https://botbuilder.labiba.ai/api/SendTranscript/SendChatHistoryEmail"
+        
+        let params: [String:Any] = ["Name":name,"FromEmail": Labiba.transcriptSenderEmail ?? "","Email":email,"History": SharedPreference.shared.formatConversation(userMessages: SharedPreference.shared.userMessages, botMessages: SharedPreference.shared.botMessages)
+                                    , "startingTime": "","Duration":"",  "PageURL": "", "Title": "Chat Transcript", "IsContentEncrypted": true
+                                    
+        ]
+        let endPoint = EndPoint(url: url, httpMethod: .post)
+        
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
+            switch  result {
+            case .success(let data):
+                self.parser(data: data, model: EmptyModel.self, handler: handler)
+                let dataString = String(data: data, encoding: .utf8) ?? ""
+                Logging.shared.logSuccessCase(url: url, tag: .ratingSubmit, method: .post, parameter: params.description, response: dataString)
+            case .failure(let error):
+                handler(.failure(error))
+                Logging.shared.log(url: url, tag: .ratingSubmit, method: .post, parameter: params.description, response: error.response,exception: error.logDescription)
+            }
+        }
+    }
+    
+    func submitNPSScore(_ score:String,_ completionHandler:@escaping Handler<String?>){
         let url = "https://botbuilder.labiba.ai/api/LiveChat/SubmitNpsScore"
         let endPoint = EndPoint(url: url, httpMethod: .post)
         let parameters:[String:Any] = ["LongClientId":"",
@@ -319,23 +333,10 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                                        "SenderId" : Labiba._senderId ?? "",
         ]
         
-        remoteContext.requestWithGet(endpoint: endPoint, method: .post,parameters: parameters) { result in
+        remoteContext.withTokenRequest(endPoint: endPoint,parameters: parameters) { result in
             switch result{
             case .success(let data):
-                self.dataParamParser(data: data, model: LabibaThemeModel.self, completion: completionHandler)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func getActiveQuestion(_ completionHandler:@escaping Handler<getActiveQuestionsResponseModel>){
-        let url = "https://botbuilder.labiba.ai/api/Nps/GetCurrentActiveQuestion/\(SharedPreference.shared.currentUserId)"
-        let endPoint = EndPoint(url: url, httpMethod: .get)
-        remoteContext.requestWithGet(endpoint: endPoint, method: .get) { result in
-            switch result{
-            case .success(let data):
-                self.dataParamParser(data: data, model: getActiveQuestionsResponseModel.self, completion: completionHandler)
+                self.dataParamParser(data: data, model: String?.self, completion: completionHandler)
             case .failure(let error):
                 print(error)
             }

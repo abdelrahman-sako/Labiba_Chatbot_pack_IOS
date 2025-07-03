@@ -2,7 +2,7 @@
 //  RatingNewVC.swift
 //  LabibaBotFramwork
 //
-//  Created by Mohammad Khalil on 10/04/2025.
+//  Created by Ahamd Sbeih on 20/04/2025.
 //  Copyright © 2025 Abdul Rahman. All rights reserved.
 //
 
@@ -13,7 +13,8 @@ class RatingNewVC:UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet var buttons: [UIButton]!
     
-    var selectedScore = -1
+    var selectedScore:Int?
+    var vcDismissed:((_ status:String)-> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,26 @@ class RatingNewVC:UIViewController {
     }
     
     @IBAction func submitButtonTapped(_ sender: Any) {
+        guard let selectedScore else {
+            showErrorMessage("Please Select a Score")
+            return
+        }
         DataSource.shared.submitNPSScore(String(selectedScore)) { result in
+            switch result{
+            case .success(let result):
+                DispatchQueue.main.async{
+                    self.dismiss(animated: true,completion: {
+                        self.vcDismissed?(result ?? "error")
+                    })
+                }
+            case .failure(let error):
+                print(error)
+                DispatchQueue.main.async{
+                    self.dismiss(animated: true,completion: {
+                        self.vcDismissed?(error.localizedDescription)
+                    })
+                }
+            }
             
         }
     }

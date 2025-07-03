@@ -204,19 +204,13 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
             let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePDF].map({ $0 as String }), in: .import)
             documentPicker.delegate = self
             topVC?.present(documentPicker, animated: true, completion: nil)
-        case .login:
-            let bundle = Bundle(for: LoginPopupVC.self)
-
-//            let popupVC = LoginPopupVC(nibName: "LoginPopupVC", bundle: bundle)
-//            popupVC.modalPresentationStyle = .overCurrentContext
-//            popupVC.modalTransitionStyle = .crossDissolve
-            
-            let viewController = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingNewVC") as! RatingNewVC
-            let navController = UINavigationController(rootViewController: viewController)
-            viewController.modalPresentationStyle = .fullScreen
-            topVC.present(navController, animated: true, completion: nil)
+        case .transcript:
+            let bundle = Bundle(for: TranscriptVC.self)
+            let vc = TranscriptVC(nibName: "TranscriptVC", bundle: bundle)
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            topVC.present(vc, animated: true, completion: nil)
         }
-       
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {

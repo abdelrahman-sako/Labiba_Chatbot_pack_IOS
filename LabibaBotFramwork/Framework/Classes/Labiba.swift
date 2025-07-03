@@ -49,7 +49,7 @@ public enum LoggingAndRefferalEncodingType{
     static var _uploadUrl = "https://botbuilder.labiba.ai/WebBotConversation/UploadHomeReport"
     static var _helpUrl = ""   //"https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage"
     static var _updateTokenUrl = ""   //"http://api.labiba.ai/api/Auth/Login"
-    
+    static var isRatingVCPresenting = false
    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
    
@@ -69,7 +69,6 @@ public enum LoggingAndRefferalEncodingType{
     
     private(set) static var hintsArray:[String]? = nil // add localized keys in ordeer to support both languages
     private(set) static var _OpenFromBubble:Bool = false
-    public static var clientHeaders:[[String:String]] = [[:]]
     public static var liveChatModel:LiveChatModel?
     public static let labibaThemes = LabibaThemes()
     public  static var _WithRatingVC: Bool = false
@@ -77,6 +76,12 @@ public enum LoggingAndRefferalEncodingType{
     public static var loaderText:String = "تحميل..."
     public static var botLang : LabibaLanguage = .en
     public static var loggingAndRefferalEncodingType : LoggingAndRefferalEncodingType = .jsonString
+    public static var clientHeaders:[[String:String]] = [[:]]
+    public static var isNPSRatingEnabled = false
+    public static var isTranscriptEnabled = false
+    public static var isHeaderFadingEnabled = true
+    public static var transcriptSenderEmail:String?
+    
   //  public  static var isLoggingEnabled: Bool = false
 
      // MARK:- Main Settings
@@ -248,14 +253,24 @@ public enum LoggingAndRefferalEncodingType{
         self._pageId = SharedPreference.shared.currentUserId
     }
     
-    public static func setSecurityHeaderParams(_ headers:[[String:String]]){
-//        KeyChain.save(key: "labibaTokens", data: Data(from: token))
-//        let saved = KeyChain.load(key: "labibaTokens")
+    public static func setHeaderParams(_ headers:[[String:String]]){
         self.clientHeaders = headers
     }
     
-     static func setLastMessageLangCode(_ text: String)
-    {
+    public static func setNPSRating(_ isEnabled: Bool){
+        self.isNPSRatingEnabled = isEnabled
+    }
+
+    public static func setHeaderFading(_ isEnabled: Bool){
+        self.isHeaderFadingEnabled = isEnabled
+    }
+    
+    public static func setTranscript(isEnabled:Bool,email:String){
+        self.transcriptSenderEmail = email
+        self.isTranscriptEnabled = isEnabled
+    }
+    
+     static func setLastMessageLangCode(_ text: String){
         _LastMessageLangCode = text.detectedLangauge() ?? "en"
         print( _LastMessageLangCode)
     }
@@ -569,6 +584,26 @@ public enum LoggingAndRefferalEncodingType{
     }
 
     static func dismiss(tiggerDelegate:Bool = true,compeletion:(()->Void)? = nil ){
+        guard !isRatingVCPresenting else { return }
+        if isNPSRatingEnabled{
+            isRatingVCPresenting = true
+
+            guard let topVC = UIApplication.shared.topMostViewController else{return}
+            let viewController = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingNewVC") as! RatingNewVC
+            viewController.modalPresentationStyle = .fullScreen
+            topVC.present(viewController, animated: true) {
+                isRatingVCPresenting = false
+            }
+            viewController.vcDismissed = { state in
+                print("submit rating result \(state)")
+                handleDismiss(tiggerDelegate: tiggerDelegate,compeletion: compeletion)
+            }
+        }else{
+            handleDismiss(tiggerDelegate: tiggerDelegate,compeletion: compeletion)
+        }
+    }
+    
+    static func handleDismiss(tiggerDelegate:Bool = true,compeletion:(()->Void)? = nil ){
         if tiggerDelegate{Labiba.delegate?.labibaWillClose?()}
         //LabibaRestfulBotConnector.shared.close()
         DataSource.shared.close()

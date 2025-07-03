@@ -261,10 +261,11 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     func addTableMask()  {
-        maskImage = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: self.view.bounds.width, height: self.view.bounds.height)))
-        
-        maskImage.image = Image(named: ipadFactor == 0 ? "gradientMask-9":"gradientMask-7")
-        tableView.mask = maskImage
+        if Labiba.isHeaderFadingEnabled{
+            maskImage = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: self.view.bounds.width, height: self.view.bounds.height)))
+            maskImage.image = Image(named: ipadFactor == 0 ? "gradientMask-9":"gradientMask-7")
+            tableView.mask = maskImage
+        }
     }
     
     func addHintsCell() {
@@ -328,10 +329,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         }
         tableView.contentInset.bottom = tableView.contentInset.bottom
         tableViewBottomInset = tableView.contentInset.bottom
-        tableView.contentInset.top = Labiba._OpenFromBubble ?  40 : 80
-        tableTopConstraint.constant = -60
-        
-        
+        if Labiba.isHeaderFadingEnabled{
+            tableView.contentInset.top = Labiba._OpenFromBubble ?  40 : 80
+            tableTopConstraint.constant = -60
+        }
     }
     
     
@@ -1003,7 +1004,9 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        maskImage.frame.origin.y = scrollView.contentOffset.y
+        if Labiba.isHeaderFadingEnabled{
+            maskImage.frame.origin.y = scrollView.contentOffset.y
+        }
         //print(scrollView.contentOffset.y)
     }
     

@@ -26,7 +26,7 @@ protocol RemoteDataSourceProtocol {
     func getLabibaTheme(_ completionHandler:@escaping Handler<LabibaThemeModel>)
     func sendTranscript(name:String, email:String, handler: @escaping Handler<EmptyModel>) 
     func getActiveQuestion(_ completionHandler:@escaping Handler<getActiveQuestionsResponseModel>)
-    func submitNPSScore(_ score:String,_ completionHandler:@escaping Handler<LabibaThemeModel>)
+    func submitNPSScore(_ score:String,_ completionHandler:@escaping Handler<String?>)
     func close()
 
 }

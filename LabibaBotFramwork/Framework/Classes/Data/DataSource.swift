@@ -94,7 +94,7 @@ final class DataSource: DataSourceProtocol{
         return remoteDataSource.getActiveQuestion(completionHandler)
     }
     
-    func submitNPSScore(_ score:String,_ completionHandler:@escaping Handler<LabibaThemeModel>){
+    func submitNPSScore(_ score:String,_ completionHandler:@escaping Handler<String?>){
         remoteDataSource.submitNPSScore(score,completionHandler)
     }
 //    func sendData(_ data: Data, handler: @escaping Handler<UploadDataResponseModel>) {
