@@ -66,7 +66,9 @@ class RatingNewVC:UIViewController {
     }
     
     @IBAction func dismissButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true)
+        self.dismiss(animated: true,completion: {
+            self.vcDismissed?("rate later")
+        })
     }
     
 }
@@ -79,6 +81,14 @@ extension RatingNewVC: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NumberRatingCell", for: indexPath) as! NumberRatingCell
         cell.onSelected = { index in
+            if index == -1 {
+                DispatchQueue.main.async{
+                    self.dismiss(animated: true,completion: {
+                        self.vcDismissed?("Question not loaded")
+                    })
+                }
+
+            }
             self.selectedScore = index
         }
         cell.selectionStyle = .none

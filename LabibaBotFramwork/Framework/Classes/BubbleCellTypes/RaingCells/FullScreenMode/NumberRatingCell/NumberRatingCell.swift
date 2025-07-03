@@ -20,6 +20,7 @@ class NumberRatingCell: RatingCell {
         super.awakeFromNib()
         setupCollectionView()
         setupUI()
+        getQuestion()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -44,8 +45,19 @@ class NumberRatingCell: RatingCell {
         DataSource.shared.getActiveQuestion { [weak self] result in
             switch result{
             case .success(let data):
-                self?.questionLabel.text = data.data.question
+                DispatchQueue.main.async{
+                   if data.header.isSuccess {
+                        self?.questionLabel.text = data.data.question
+                    }else{
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                            self?.onSelected?(-1)
+                        })
+                    }
+                }
             case .failure(let error):
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    self?.onSelected?(-1)
+                })
                 print(error)
             }
         }

@@ -595,7 +595,7 @@ public enum LoggingAndRefferalEncodingType{
                 isRatingVCPresenting = false
             }
             viewController.vcDismissed = { state in
-                print("submit rating result \(state)")
+                print("submit rating result is: \(state)")
                 handleDismiss(tiggerDelegate: tiggerDelegate,compeletion: compeletion)
             }
         }else{

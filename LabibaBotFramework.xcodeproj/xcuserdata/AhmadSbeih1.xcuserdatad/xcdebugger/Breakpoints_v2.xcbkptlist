@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "74889972-E94F-4EB8-AE75-4A6CEA68979A"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabibaBotFramwork/Framework/Classes/Data/Remote Repository/RemoteDataSource.swift"
@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F938C468-AB67-40FF-8607-978B9AF215F6"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabibaBotFramwork/Framework/Classes/Data/Remote Repository/RemoteDataSource.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C74FE4F7-3DEB-4823-816E-8D7BD0F70ED6"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LabibaBotFramwork/Framework/Classes/Data/Remote Repository/RemoteDataSource.swift"
