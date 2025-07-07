@@ -78,6 +78,7 @@ public enum LoggingAndRefferalEncodingType{
     public static var loggingAndRefferalEncodingType : LoggingAndRefferalEncodingType = .jsonString
     public static var clientHeaders:[[String:String]] = [[:]]
     public static var isNPSRatingEnabled = false
+    public static var isAgentRatingEnabled = false
     public static var isTranscriptEnabled = false
     public static var isHeaderFadingEnabled = true
     public static var transcriptSenderEmail:String?
@@ -260,6 +261,10 @@ public enum LoggingAndRefferalEncodingType{
     
     public static func setNPSRating(_ isEnabled: Bool){
         self.isNPSRatingEnabled = isEnabled
+    }
+    
+    public static func setAgentRating(_ isEnabled: Bool){
+        self.isAgentRatingEnabled = isEnabled
     }
 
     public static func setHeaderFading(_ isEnabled: Bool){
@@ -586,7 +591,6 @@ public enum LoggingAndRefferalEncodingType{
 
     static func handleNPSRartingAndQuit(_ isForAgent:Bool){
         guard !isRatingVCPresenting else { return }
-        if isNPSRatingEnabled{
             isRatingVCPresenting = true
 
             guard let topVC = UIApplication.shared.topMostViewController else{return}
@@ -600,9 +604,6 @@ public enum LoggingAndRefferalEncodingType{
                 print("submit rating result is: \(state)")
                 dismiss(tiggerDelegate: true,compeletion: nil)
             }
-        }else{
-            dismiss(tiggerDelegate: true,compeletion: nil)
-        }
     }
     
     static func dismiss(tiggerDelegate:Bool = true ,compeletion:(()->Void)? = nil){

@@ -459,7 +459,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     func shutDownBotChat() -> Void {
-        Labiba.handleNPSRartingAndQuit(false)
+        Labiba.isNPSRatingEnabled ? Labiba.handleNPSRartingAndQuit(false) : Labiba.dismiss()
         UIApplication.shared.setStatusBarColor(color: .clear)
     }
     

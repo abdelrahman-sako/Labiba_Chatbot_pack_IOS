@@ -160,7 +160,7 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
         }
         
         if statusParam as? String == "end" {
-            end(goToRate: true)
+            end(goToRate: Labiba.isAgentRatingEnabled)
             BotConnector.shared.sendGetStarted()
         }
         
