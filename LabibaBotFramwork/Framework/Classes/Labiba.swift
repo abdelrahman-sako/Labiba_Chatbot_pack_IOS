@@ -81,6 +81,7 @@ public enum LoggingAndRefferalEncodingType{
     public static var isTranscriptEnabled = false
     public static var isHeaderFadingEnabled = true
     public static var transcriptSenderEmail:String?
+    public static var isRateForAgent:Bool = false
     
   //  public  static var isLoggingEnabled: Bool = false
 
@@ -583,27 +584,28 @@ public enum LoggingAndRefferalEncodingType{
         vc.present(createLabibaNavigation(rootViewController: prechatVC), animated: animated, completion: nil)
     }
 
-    static func dismiss(tiggerDelegate:Bool = true,compeletion:(()->Void)? = nil ){
+    static func handleNPSRartingAndQuit(_ isForAgent:Bool){
         guard !isRatingVCPresenting else { return }
         if isNPSRatingEnabled{
             isRatingVCPresenting = true
 
             guard let topVC = UIApplication.shared.topMostViewController else{return}
             let viewController = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingNewVC") as! RatingNewVC
+            Labiba.isRateForAgent = isForAgent
             viewController.modalPresentationStyle = .fullScreen
             topVC.present(viewController, animated: true) {
                 isRatingVCPresenting = false
             }
             viewController.vcDismissed = { state in
                 print("submit rating result is: \(state)")
-                handleDismiss(tiggerDelegate: tiggerDelegate,compeletion: compeletion)
+                dismiss(tiggerDelegate: true,compeletion: nil)
             }
         }else{
-            handleDismiss(tiggerDelegate: tiggerDelegate,compeletion: compeletion)
+            dismiss(tiggerDelegate: true,compeletion: nil)
         }
     }
     
-    static func handleDismiss(tiggerDelegate:Bool = true,compeletion:(()->Void)? = nil ){
+    static func dismiss(tiggerDelegate:Bool = true ,compeletion:(()->Void)? = nil){
         if tiggerDelegate{Labiba.delegate?.labibaWillClose?()}
         //LabibaRestfulBotConnector.shared.close()
         DataSource.shared.close()
@@ -612,6 +614,7 @@ public enum LoggingAndRefferalEncodingType{
             compeletion?()
             if tiggerDelegate{Labiba.delegate?.labibaDidClose?()}
         })
+
     }
 
     

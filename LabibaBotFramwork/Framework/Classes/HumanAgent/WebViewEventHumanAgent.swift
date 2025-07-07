@@ -60,12 +60,15 @@ class WebViewEventHumanAgent:NSObject {
         
     }
     
-    func end() {
+    func end(goToRate:Bool = false) {
         Labiba.isHumanAgentStarted = false
         SharedPreference.shared.isHumanAgentStarted = false
         if let url = Labiba.bundle.url(forResource: "index", withExtension: "html") {
                 let request = URLRequest(url: url)
                 webView.load(request)
+           if goToRate{
+                Labiba.handleNPSRartingAndQuit(true)
+            }
         }
     }
     
@@ -157,7 +160,7 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
         }
         
         if statusParam as? String == "end" {
-            end()
+            end(goToRate: true)
             BotConnector.shared.sendGetStarted()
         }
         

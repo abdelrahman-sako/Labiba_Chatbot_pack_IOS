@@ -287,7 +287,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     }
 
     func getActiveQuestion(_ completionHandler:@escaping Handler<getActiveQuestionsResponseModel>){
-        let url = "https://botbuilder.labiba.ai/api/Nps/GetCurrentActiveQuestion/\(SharedPreference.shared.currentUserId)"
+        let url = "https://botbuilder.labiba.ai/api/Nps/GetCurrentActiveQuestion/\(SharedPreference.shared.currentUserId)\(Labiba.isRateForAgent ? "/2" : "")"
         let endPoint = EndPoint(url: url, httpMethod: .get)
         remoteContext.requestWithGet(endpoint: endPoint, method: .get) { result in
             switch result{
