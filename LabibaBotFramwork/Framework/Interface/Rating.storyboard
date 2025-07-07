@@ -152,14 +152,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="vZW-ew-qLt">
-                                <rect key="frame" x="0.0" y="328" width="414" height="240"/>
+                                <rect key="frame" x="0.0" y="118.5" width="414" height="659"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4J3-de-6by" customClass="ContentSizedTableView" customModule="LabibaBotFramwork" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="549"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wj3-Zj-NS8">
-                                        <rect key="frame" x="20" y="190" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="609" width="374" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VG-MX-tfB">
                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
@@ -203,22 +203,34 @@
                                     <constraint firstItem="wj3-Zj-NS8" firstAttribute="leading" secondItem="vZW-ew-qLt" secondAttribute="leading" constant="20" id="rEc-hn-RXR"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share Your Rating !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S4-sp-vBe">
+                                <rect key="frame" x="134.5" y="78" width="145" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="rD8-Wr-gc2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hyl-My-lDn"/>
                         <color key="backgroundColor" name="Color"/>
                         <constraints>
+                            <constraint firstItem="8S4-sp-vBe" firstAttribute="top" secondItem="hyl-My-lDn" secondAttribute="top" constant="30" id="3uh-dE-GAQ"/>
+                            <constraint firstItem="8S4-sp-vBe" firstAttribute="centerX" secondItem="hBd-C1-6FB" secondAttribute="centerX" id="Hb7-rn-b4j"/>
                             <constraint firstItem="vZW-ew-qLt" firstAttribute="leading" secondItem="hyl-My-lDn" secondAttribute="leading" id="Q2k-xt-C09"/>
                             <constraint firstItem="hyl-My-lDn" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vZW-ew-qLt" secondAttribute="bottom" constant="30" id="TX5-fu-TJ8"/>
                             <constraint firstItem="hyl-My-lDn" firstAttribute="trailing" secondItem="vZW-ew-qLt" secondAttribute="trailing" id="Vme-Hk-D3G"/>
-                            <constraint firstItem="vZW-ew-qLt" firstAttribute="centerY" secondItem="hBd-C1-6FB" secondAttribute="centerY" id="Yiy-r9-OjZ"/>
+                            <constraint firstItem="vZW-ew-qLt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8S4-sp-vBe" secondAttribute="bottom" constant="20" id="X4V-na-b6X"/>
                             <constraint firstItem="vZW-ew-qLt" firstAttribute="centerY" secondItem="hBd-C1-6FB" secondAttribute="centerY" id="cQX-xn-5qq"/>
                             <constraint firstItem="vZW-ew-qLt" firstAttribute="centerX" secondItem="hBd-C1-6FB" secondAttribute="centerX" id="iXO-QS-unt"/>
-                            <constraint firstItem="vZW-ew-qLt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hyl-My-lDn" secondAttribute="top" constant="30" id="u8e-qc-0gS"/>
+                            <constraint firstItem="vZW-ew-qLt" firstAttribute="centerY" secondItem="hBd-C1-6FB" secondAttribute="centerY" id="sCQ-YB-QuD"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="RatingsTableView" destination="4J3-de-6by" id="sV4-wW-0xz"/>
                         <outlet property="submitButton" destination="2VG-MX-tfB" id="cnV-lJ-OXz"/>
+                        <outlet property="welcomeLabel" destination="8S4-sp-vBe" id="HCB-4p-yMR"/>
                         <outletCollection property="buttons" destination="2VG-MX-tfB" collectionClass="NSMutableArray" id="qcs-O4-LxM"/>
                         <outletCollection property="buttons" destination="4fr-8I-uWj" collectionClass="NSMutableArray" id="Sg8-2w-Kz1"/>
                     </connections>

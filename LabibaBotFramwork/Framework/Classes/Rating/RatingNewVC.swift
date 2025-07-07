@@ -9,6 +9,7 @@
 import UIKit
 
 class RatingNewVC:UIViewController {
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var RatingsTableView: ContentSizedTableView!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet var buttons: [UIButton]!
@@ -35,6 +36,12 @@ class RatingNewVC:UIViewController {
     func setupUI(){
         submitButton.backgroundColor = LabibaThemes.ratingColor
         buttons.forEach({$0.layer.cornerRadius = 25})
+        
+        welcomeLabel.text = "Share Your Rating!".localForChosnLangCodeBB
+        buttons[0].setTitle("Submit".localForChosnLangCodeBB, for: .normal)
+        buttons[1].setTitle("Later".localForChosnLangCodeBB, for: .normal)
+        
+        RatingsTableView.semanticContentAttribute = .forceLeftToRight
     }
     func submitRate(){
 
@@ -89,7 +96,7 @@ extension RatingNewVC: UITableViewDelegate , UITableViewDataSource {
                 }
 
             }
-            self.selectedScore = index
+            self.selectedScore = index + 1
         }
         cell.selectionStyle = .none
         return cell

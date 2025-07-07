@@ -259,12 +259,9 @@ public enum LoggingAndRefferalEncodingType{
         self.clientHeaders = headers
     }
     
-    public static func setNPSRating(_ isEnabled: Bool){
-        self.isNPSRatingEnabled = isEnabled
-    }
-    
-    public static func setAgentRating(_ isEnabled: Bool){
-        self.isAgentRatingEnabled = isEnabled
+    public static func setNPS(agent: Bool,bot:Bool){
+        self.isNPSRatingEnabled = bot
+        self.isAgentRatingEnabled = agent
     }
 
     public static func setHeaderFading(_ isEnabled: Bool){

@@ -202,3 +202,12 @@
 "callActiveErr" = "يُرجى إعادة المحاولة حدث خطأ ما. رمز الخطأ 114.";
 "dataNotAllowedErr" = "يُرجى إعادة المحاولة حدث خطأ ما. رمز الخطأ 115.";
 "bgSessionError" = "يُرجى إعادة المحاولة حدث خطأ ما. رمز الخطأ 116.";
+
+
+// nps rating
+"Submit" = "تقديم";
+"Later" = "التقييم لاحقا";
+"Share Your Rating!" = "شاركنا رأيك!";
+
+// header
+"This is the virtual assistant from AMEX" = "معك المساعد الرقمي من  أمريكان إكسبريس";
