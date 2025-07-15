@@ -83,14 +83,16 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     var isFirstMessage:Bool = true
     var canLunchRating:Bool = false
     var isTTSMuted:Bool = false
-    var tableViewBottomInset:CGFloat = 50
+    var tableViewBottomInset:CGFloat = 20
     
     lazy var keyboardTypeDialog = UserTextInputNoLocal.create()
     lazy var visualizerDialog = VisualizerVoiceAssistantView.create()
     lazy var voiceTypeDialog = VoiceAssistantView.create()
     lazy var dynamicGifView = DynamicGIF.create()
     var maskImage:UIImageView!
-    
+    private var warningViewBottomConstraint: NSLayoutConstraint?
+    private var warningView: UIView?
+    private var isWarningShowing = false
     // to remove
     @objc func tapaction(){
         if SpeechToTextManager.shared.isRecording {
@@ -206,6 +208,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         // addHintsCell()
         self.startConversation() //it's now from [ self.botConnector.configureInternetReachability()]
         
+        if Labiba.warningMessageModel?.isWarningMessageEnabled ?? false{
+            addWarningMessage()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -327,7 +332,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 60
             }
         }
-        tableView.contentInset.bottom = tableView.contentInset.bottom
+//        tableView.contentInset.bottom = tableView.contentInset.bottom
         tableViewBottomInset = tableView.contentInset.bottom
         if Labiba.isHeaderFadingEnabled{
             tableView.contentInset.top = Labiba._OpenFromBubble ?  40 : 80
@@ -923,6 +928,91 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     
     
+    func addWarningMessage(){
+        // 1. Container View
+        let warningView = UIView()
+        warningView.backgroundColor = Labiba.warningMessageModel?.backgroundColor ?? UIColor.systemYellow.withAlphaComponent(0.2)
+        warningView.layer.cornerRadius = 12
+        warningView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(warningView)
+        self.warningView = warningView
+
+        
+        // 2. Label
+        let warningLabel = UILabel()
+        warningLabel.text = Labiba.botLang == .ar ?  Labiba.warningMessageModel?.arTitle : Labiba.warningMessageModel?.enTitle //"Please don’t share any personal information like username or password to the chatbot"
+        warningLabel.font = UIFont(name: Labiba.warningMessageModel?.fontName ??  UIFont.systemFont(ofSize: 14).fontName, size: 14)
+        warningLabel.numberOfLines = 0
+        warningLabel.textAlignment = .center
+        warningLabel.textColor = Labiba.warningMessageModel?.fontColor ?? .darkText
+        warningLabel.translatesAutoresizingMaskIntoConstraints = false
+        warningLabel.adjustsFontSizeToFitWidth = true
+        warningLabel.minimumScaleFactor = 0.7 // 70% of original font size
+        warningLabel.lineBreakMode = .byTruncatingTail
+        warningView.addSubview(warningLabel)
+        
+        // 3. Create the close button
+        let closeButton = UIButton(type: .system)
+        closeButton.setTitle("✕", for: .normal)
+        closeButton.setTitleColor(.black, for: .normal)
+        closeButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        warningView.addSubview(closeButton)
+        closeButton.addTarget(self, action: #selector(dismissWarningView), for: .touchUpInside)
+
+        
+        // 3. Constraints for label inside warning view
+        NSLayoutConstraint.activate([
+            warningLabel.topAnchor.constraint(equalTo: warningView.topAnchor, constant: 12),
+            warningLabel.bottomAnchor.constraint(equalTo: warningView.bottomAnchor, constant: -12),
+            warningLabel.leadingAnchor.constraint(equalTo: warningView.leadingAnchor, constant: 12),
+            warningLabel.trailingAnchor.constraint(equalTo: warningView.trailingAnchor, constant: -30)
+        ])
+        
+        // 4. Constraints for warning view
+        NSLayoutConstraint.activate([
+            warningView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            warningView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            warningView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
+            warningView.heightAnchor.constraint(lessThanOrEqualToConstant: 100)
+        ])
+        
+        // 5. Constraints for closeButton
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: warningView.topAnchor, constant: 4),
+            closeButton.trailingAnchor.constraint(equalTo: warningView.trailingAnchor, constant: -4),
+            closeButton.widthAnchor.constraint(equalToConstant: 24),
+            closeButton.heightAnchor.constraint(equalToConstant: 24)
+        ])
+        
+        // Bottom constraint (this one we animate later)
+        let bottomConstraint = warningView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80)
+        self.warningViewBottomConstraint = bottomConstraint
+
+        // Constraints for warningView
+        NSLayoutConstraint.activate([
+            warningView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            warningView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            bottomConstraint
+        ])
+        
+//        self.tableView.contentInset.bottom = 190
+        tavleViewBottomConst.constant = 140
+        isWarningShowing = true
+    }
+    
+    // Remove the warning view when close button is tapped
+    @objc private func dismissWarningView() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.warningView?.alpha = 0
+        }, completion: { _ in
+            self.warningView?.removeFromSuperview()
+            self.isWarningShowing = false
+            self.warningViewBottomConstraint?.constant = 0
+            self.tavleViewBottomConst.constant -= 80
+            self.scrollDown(delay: 0.3)
+        })
+    }
 }
 
 extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
@@ -1147,15 +1237,35 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
             switch UIScreen.current{
             case .iPhone5_8 ,.iPhone6_1 ,.iPhone6_5:
                 addedValue = 15
+            case .iPhone4_7:
+                addedValue = -20
             default:
                 break
             }
-            self.tableView.contentInset.bottom = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue 
-           // self.tavleViewBottomConst.constant = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue
-            if self.displayedDialogs.count > 0 {
-                let lastIndex = IndexPath(row: self.displayedDialogs.count - 1, section: 0)
-                self.tableView.scrollToRow(at: lastIndex, at: .none, animated: false)
+
+            
+            if Labiba.warningMessageModel?.isWarningMessageEnabled ?? false && isWarningShowing{
+                guard let bottomConstraint = warningViewBottomConstraint else { return }
+                
+                self.tableView.contentInset.bottom = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue
+                bottomConstraint.constant = -(keyboardSize.height - addedValue + 70) // move up
+                UIView.animate(withDuration: 0.3) {
+                    self.view.layoutIfNeeded()
+                }
+                if self.displayedDialogs.count > 0 {
+                    let lastIndex = IndexPath(row: self.displayedDialogs.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: lastIndex, at: .none, animated: false)
+                }
+                
+            }else{
+                self.tableView.contentInset.bottom = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue
+                // self.tavleViewBottomConst.constant = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue
+                if self.displayedDialogs.count > 0 {
+                    let lastIndex = IndexPath(row: self.displayedDialogs.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: lastIndex, at: .none, animated: false)
+                }
             }
+
         }
         
     }
@@ -1166,8 +1276,13 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         //        }
         
         //addInterationDialog(currentBotType: Labiba.Temporary_Bot_Type)
-        self.tableView.contentInset.bottom = tableViewBottomInset
-        
+        self.tableView.contentInset.bottom = 20
+        guard let bottomConstraint = warningViewBottomConstraint else { return }
+        bottomConstraint.constant = -80 // move down
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+
         //tavleViewBottomConst.constant = tableViewBottomInset
     }
     

@@ -50,6 +50,8 @@ public enum LoggingAndRefferalEncodingType{
     static var _helpUrl = ""   //"https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage"
     static var _updateTokenUrl = ""   //"http://api.labiba.ai/api/Auth/Login"
     static var isRatingVCPresenting = false
+    static var warningMessageModel: WarningMessageModel?
+    
    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
    
@@ -299,7 +301,7 @@ public enum LoggingAndRefferalEncodingType{
     public static func setFont(regAR:String , boldAR:String , regEN:String , boldEN:String){
         self.font = (regAR,boldAR ,regEN,boldEN)
         registerFonts()
-        self.registerFonts()
+//        self.registerFonts()
     }
     
     // MARK:- Human Agent Transfer
@@ -603,6 +605,10 @@ public enum LoggingAndRefferalEncodingType{
             }
     }
     
+   public static func setWarningBanner(enTitle:String, arTitle:String, fontName:String? = nil, fontColor:UIColor = .black, backgroundColor:UIColor = UIColor.systemYellow.withAlphaComponent(0.2)){
+        warningMessageModel = WarningMessageModel(isWarningMessageEnabled: true, enTitle: enTitle, arTitle: arTitle, fontName: fontName, fontColor: fontColor, backgroundColor: backgroundColor)
+    }
+    
     static func dismiss(tiggerDelegate:Bool = true ,compeletion:(()->Void)? = nil){
         if tiggerDelegate{Labiba.delegate?.labibaWillClose?()}
         //LabibaRestfulBotConnector.shared.close()
@@ -827,3 +833,9 @@ class LabibaNavigationController:UINavigationController {
 
  
 
+struct WarningMessageModel{
+    var isWarningMessageEnabled:Bool = false
+    var enTitle, arTitle:String
+    var fontName:String?
+    var fontColor, backgroundColor:UIColor
+}
