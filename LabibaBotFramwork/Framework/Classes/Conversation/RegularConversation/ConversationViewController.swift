@@ -932,7 +932,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         // 1. Container View
         let warningView = UIView()
         warningView.backgroundColor = Labiba.warningMessageModel?.backgroundColor ?? UIColor.systemYellow.withAlphaComponent(0.2)
-        warningView.layer.cornerRadius = 12
+        warningView.layer.cornerRadius = CGFloat(Labiba.warningMessageModel?.cornerRadius ?? 12)
+        warningView.layer.borderWidth = 1
+        warningView.layer.borderColor = Labiba.warningMessageModel?.fontColor.cgColor
         warningView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(warningView)
         self.warningView = warningView
@@ -954,14 +956,27 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         // 3. Create the close button
         let closeButton = UIButton(type: .system)
         closeButton.setTitle("✕", for: .normal)
+        closeButton.tintColor = Labiba.warningMessageModel?.fontColor ?? .darkText
         closeButton.setTitleColor(.black, for: .normal)
         closeButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         warningView.addSubview(closeButton)
         closeButton.addTarget(self, action: #selector(dismissWarningView), for: .touchUpInside)
 
-        
-        // 3. Constraints for label inside warning view
+       // 4  create link button if needded
+        let linkButton = UIButton(type: .system)
+        if let link = Labiba.warningMessageModel?.link {
+            linkButton.setTitle(Labiba.botLang == .ar ? "اضغط هنا" : "Press here", for: .normal)
+            linkButton.tintColor = Labiba.warningMessageModel?.fontColor ?? .darkText
+            linkButton.setTitleColor(.black, for: .normal)
+            linkButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+            linkButton.translatesAutoresizingMaskIntoConstraints = false
+            warningView.addSubview(linkButton)
+            linkButton.addTarget(self, action: #selector(linkButtonTapped), for: .touchUpInside)
+
+        }
+
+        // 6. Constraints for label inside warning view
         NSLayoutConstraint.activate([
             warningLabel.topAnchor.constraint(equalTo: warningView.topAnchor, constant: 12),
             warningLabel.bottomAnchor.constraint(equalTo: warningView.bottomAnchor, constant: -12),
@@ -969,15 +984,20 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             warningLabel.trailingAnchor.constraint(equalTo: warningView.trailingAnchor, constant: -30)
         ])
         
-        // 4. Constraints for warning view
+        // 7. Constraints for warning view
         NSLayoutConstraint.activate([
-            warningView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            warningView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            warningView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: CGFloat(Labiba.warningMessageModel?.padding ?? 20)),
+            warningView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -CGFloat(Labiba.warningMessageModel?.padding ?? 20)),
             warningView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
             warningView.heightAnchor.constraint(lessThanOrEqualToConstant: 100)
         ])
         
-        // 5. Constraints for closeButton
+        // Bottom constraint (this one we animate later)
+        let bottomConstraint = warningView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80)
+        self.warningViewBottomConstraint = bottomConstraint
+
+        
+        // 8. Constraints for closeButton
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: warningView.topAnchor, constant: 4),
             closeButton.trailingAnchor.constraint(equalTo: warningView.trailingAnchor, constant: -4),
@@ -985,19 +1005,20 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             closeButton.heightAnchor.constraint(equalToConstant: 24)
         ])
         
-        // Bottom constraint (this one we animate later)
-        let bottomConstraint = warningView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80)
-        self.warningViewBottomConstraint = bottomConstraint
+        //9 Constraints for linkButton
+        if let link = Labiba.warningMessageModel?.link {
+            NSLayoutConstraint.activate([
+                linkButton.bottomAnchor.constraint(equalTo: warningLabel.bottomAnchor),
+                linkButton.leadingAnchor.constraint(equalTo: warningLabel.trailingAnchor, constant: -5)
+            ])
+        }
+        
 
         // Constraints for warningView
-        NSLayoutConstraint.activate([
-            warningView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            warningView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            bottomConstraint
-        ])
+        bottomConstraint.isActive = true
         
-//        self.tableView.contentInset.bottom = 190
-        tavleViewBottomConst.constant = 140
+        warningView.layoutIfNeeded()
+        tavleViewBottomConst.constant = 80 + warningView.frame.height
         isWarningShowing = true
     }
     
@@ -1009,10 +1030,17 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             self.warningView?.removeFromSuperview()
             self.isWarningShowing = false
             self.warningViewBottomConstraint?.constant = 0
-            self.tavleViewBottomConst.constant -= 80
+            self.tavleViewBottomConst.constant -= self.warningView?.frame.height ?? 0
+
             self.scrollDown(delay: 0.3)
         })
     }
+    
+    @objc private func linkButtonTapped() {
+        guard let url = URL(string: Labiba.warningMessageModel?.link ?? "") else { return }
+        UIApplication.shared.open(url)
+    }
+    
 }
 
 extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
@@ -1248,7 +1276,7 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
                 guard let bottomConstraint = warningViewBottomConstraint else { return }
                 
                 self.tableView.contentInset.bottom = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue
-                bottomConstraint.constant = -(keyboardSize.height - addedValue + 70) // move up
+                bottomConstraint.constant = -(keyboardSize.height - addedValue + 80) // move up
                 UIView.animate(withDuration: 0.3) {
                     self.view.layoutIfNeeded()
                 }
@@ -1265,9 +1293,7 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
                     self.tableView.scrollToRow(at: lastIndex, at: .none, animated: false)
                 }
             }
-
         }
-        
     }
     
     func keyboardWillHide(notification: NSNotification) {

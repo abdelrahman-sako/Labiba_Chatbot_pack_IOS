@@ -605,8 +605,8 @@ public enum LoggingAndRefferalEncodingType{
             }
     }
     
-   public static func setWarningBanner(enTitle:String, arTitle:String, fontName:String? = nil, fontColor:UIColor = .black, backgroundColor:UIColor = UIColor.systemYellow.withAlphaComponent(0.2)){
-        warningMessageModel = WarningMessageModel(isWarningMessageEnabled: true, enTitle: enTitle, arTitle: arTitle, fontName: fontName, fontColor: fontColor, backgroundColor: backgroundColor)
+    public static func setWarningBanner(enTitle:String, arTitle:String,link:String? = nil, fontName:String? = nil, fontColor:UIColor = .black, backgroundColor:UIColor = UIColor.systemYellow.withAlphaComponent(0.2), padding:Int = 20,cornerRadius:Int = 12){
+        warningMessageModel = WarningMessageModel(isWarningMessageEnabled: true, enTitle: enTitle, arTitle: arTitle,link: link, fontName: fontName, fontColor: fontColor, backgroundColor: backgroundColor,padding: padding, cornerRadius: cornerRadius)
     }
     
     static func dismiss(tiggerDelegate:Bool = true ,compeletion:(()->Void)? = nil){
@@ -836,6 +836,9 @@ class LabibaNavigationController:UINavigationController {
 struct WarningMessageModel{
     var isWarningMessageEnabled:Bool = false
     var enTitle, arTitle:String
+    var link:String?
     var fontName:String?
     var fontColor, backgroundColor:UIColor
+    var padding:Int
+    var cornerRadius:Int
 }

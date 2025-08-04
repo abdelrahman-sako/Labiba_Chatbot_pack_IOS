@@ -267,17 +267,17 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
             let size = CGSize(width: textView.bounds.width, height: .infinity)
             let estimatedHight = textView.sizeThatFits(size)
             
-            if textView.numberOfLines() > 4 {
+            if textView.numberOfLines() > 1 {
                 textView.isScrollEnabled = true
             }else{
                 textView.isScrollEnabled = false
                 if estimatedHight.height <= 50 {
-                  self.heightCons.constant = 44
+                  self.heightCons.constant = 24
                 }else{
                 self.heightCons.constant = estimatedHight.height + 10
                 }
-                if estimatedHight.height <= 60 {
-                  self.hightConsIpad.constant = 55
+                if estimatedHight.height <= 40 {
+                  self.hightConsIpad.constant = 30
                 }else{
                 self.hightConsIpad.constant = estimatedHight.height + 10
                 }
