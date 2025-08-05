@@ -605,8 +605,8 @@ public enum LoggingAndRefferalEncodingType{
             }
     }
     
-    public static func setWarningBanner(enTitle:String, arTitle:String,link:String? = nil, fontName:String? = nil, fontColor:UIColor = .black, backgroundColor:UIColor = UIColor.systemYellow.withAlphaComponent(0.2), padding:Int = 20,cornerRadius:Int = 12,showBoarder:Bool = false){
-        warningMessageModel = WarningMessageModel(isWarningMessageEnabled: true, enTitle: enTitle, arTitle: arTitle,link: link,fontName: fontName, fontColor: fontColor, backgroundColor: backgroundColor,padding: padding, cornerRadius: cornerRadius,showBoarder: showBoarder)
+    public static func setWarningBanner(enTitle:String, arTitle:String,link:String? = nil,linkEnPressTitle:String? = nil,linkArPressTitle:String? = nil, linkPressColor:UIColor,fontName:String? = nil, fontColor:UIColor = .black, backgroundColor:UIColor = UIColor.systemYellow.withAlphaComponent(0.2), padding:Int = 20,cornerRadius:Int = 12,showBoarder:Bool = false){
+        warningMessageModel = WarningMessageModel(isWarningMessageEnabled: true, enTitle: enTitle, arTitle: arTitle,link: link,linkEnPressTitle:linkEnPressTitle,linkArPressTitle: linkArPressTitle, linkPressColor: linkPressColor,fontName: fontName, fontColor: fontColor, backgroundColor: backgroundColor,padding: padding, cornerRadius: cornerRadius,showBoarder: showBoarder)
     }
     
     static func dismiss(tiggerDelegate:Bool = true ,compeletion:(()->Void)? = nil){
@@ -837,6 +837,8 @@ struct WarningMessageModel{
     var isWarningMessageEnabled:Bool = false
     var enTitle, arTitle:String
     var link:String?
+    var linkEnPressTitle,linkArPressTitle: String?
+    var linkPressColor:UIColor = .black
     var fontName:String?
     var fontColor, backgroundColor:UIColor
     var padding:Int

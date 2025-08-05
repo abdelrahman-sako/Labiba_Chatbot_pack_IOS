@@ -951,14 +951,36 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         warningTextView.translatesAutoresizingMaskIntoConstraints = false
 
         let fullText = ((Labiba.botLang == .ar ?  Labiba.warningMessageModel?.arTitle : Labiba.warningMessageModel?.enTitle) ?? "") + " "
-        let pressMeText = (Labiba.warningMessageModel?.link?.isEmpty ?? true) ? " " : (Labiba.botLang == .ar ? "اضغط هنا" : "Press here")
+        var pressMeText = " "
+        if !((Labiba.warningMessageModel?.linkEnPressTitle?.isEmpty ?? true) || (Labiba.warningMessageModel?.linkArPressTitle?.isEmpty ?? true)){
+            pressMeText = (Labiba.warningMessageModel?.link?.isEmpty ?? true) ? " " : (Labiba.botLang == .ar ? Labiba.warningMessageModel?.linkArPressTitle ?? " " : Labiba.warningMessageModel?.linkEnPressTitle ?? " ")
+        }
         
         let attributed = NSMutableAttributedString(string: fullText + pressMeText)
         attributed.addAttribute(.link, value: "pressMe://action", range: NSRange(location: fullText.count, length: pressMeText.count))
         
+        // Add a hidden link behind the image
+        attributed.addAttribute(.link, value: "action://linkIcon", range: NSRange(location: fullText.count - 1, length: 1))
+
+        // Create an image attachment (icon)
+        
+        if ((Labiba.warningMessageModel?.linkEnPressTitle?.isEmpty ?? true) || (Labiba.warningMessageModel?.linkArPressTitle?.isEmpty ?? true)){
+            pressMeText = " "
+            let imageAttachment = NSTextAttachment()
+            if let baseImage = UIImage(named: "link")?.tinted(with: Labiba.warningMessageModel?.linkPressColor ?? .systemBlue) {
+                imageAttachment.image = baseImage
+                imageAttachment.bounds = CGRect(x: 0, y: -3, width: 15, height: 15)
+            }
+            let imageString = NSAttributedString(attachment: imageAttachment)
+            
+            // Append image to attributed text
+            attributed.append(imageString)
+        }
+
+
         warningTextView.attributedText = attributed
         warningTextView.delegate = self
-        warningTextView.linkTextAttributes = [ .foregroundColor: UIColor.systemBlue ]
+        warningTextView.linkTextAttributes = [ .foregroundColor: Labiba.warningMessageModel?.linkPressColor ?? .systemBlue ]
         
         warningView.addSubview(warningTextView)
 
@@ -1697,11 +1719,28 @@ extension ConversationViewController: SubViewControllerDelegate {
 
 extension ConversationViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
-        if URL.scheme == "pressMe" {
-            print("Press Me tapped!")
+        switch URL.absoluteString {
+        case "pressMe://action":
             linkButtonTapped()
-            return false
+        case "action://linkIcon":
+            linkButtonTapped()
+        default:
+            break
         }
-        return true
+        return false
+    }
+}
+
+extension UIImage {
+    func tinted(with color: UIColor) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        color.setFill()
+        
+        let drawRect = CGRect(origin: .zero, size: size)
+        withRenderingMode(.alwaysTemplate).draw(in: drawRect)
+        
+        let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return tintedImage
     }
 }
