@@ -605,8 +605,8 @@ public enum LoggingAndRefferalEncodingType{
             }
     }
     
-    public static func setWarningBanner(enTitle:String, arTitle:String,link:String? = nil, fontName:String? = nil, fontColor:UIColor = .black, backgroundColor:UIColor = UIColor.systemYellow.withAlphaComponent(0.2), padding:Int = 20,cornerRadius:Int = 12){
-        warningMessageModel = WarningMessageModel(isWarningMessageEnabled: true, enTitle: enTitle, arTitle: arTitle,link: link, fontName: fontName, fontColor: fontColor, backgroundColor: backgroundColor,padding: padding, cornerRadius: cornerRadius)
+    public static func setWarningBanner(enTitle:String, arTitle:String,link:String? = nil, fontName:String? = nil, fontColor:UIColor = .black, backgroundColor:UIColor = UIColor.systemYellow.withAlphaComponent(0.2), padding:Int = 20,cornerRadius:Int = 12,showBoarder:Bool = false){
+        warningMessageModel = WarningMessageModel(isWarningMessageEnabled: true, enTitle: enTitle, arTitle: arTitle,link: link,fontName: fontName, fontColor: fontColor, backgroundColor: backgroundColor,padding: padding, cornerRadius: cornerRadius,showBoarder: showBoarder)
     }
     
     static func dismiss(tiggerDelegate:Bool = true ,compeletion:(()->Void)? = nil){
@@ -841,4 +841,5 @@ struct WarningMessageModel{
     var fontColor, backgroundColor:UIColor
     var padding:Int
     var cornerRadius:Int
+    var showBoarder:Bool = false
 }

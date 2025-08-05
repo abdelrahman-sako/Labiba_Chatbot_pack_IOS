@@ -933,26 +933,35 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         let warningView = UIView()
         warningView.backgroundColor = Labiba.warningMessageModel?.backgroundColor ?? UIColor.systemYellow.withAlphaComponent(0.2)
         warningView.layer.cornerRadius = CGFloat(Labiba.warningMessageModel?.cornerRadius ?? 12)
-        warningView.layer.borderWidth = 1
+        warningView.layer.borderWidth = Labiba.warningMessageModel?.showBoarder ?? false ? 1 : 0
         warningView.layer.borderColor = Labiba.warningMessageModel?.fontColor.cgColor
         warningView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(warningView)
         self.warningView = warningView
 
+        // WarningTextView
+        let warningTextView = UITextView()
+        warningTextView.isEditable = false
+        warningTextView.isScrollEnabled = false
+        warningTextView.backgroundColor = .clear
+        warningTextView.translatesAutoresizingMaskIntoConstraints = false
+        warningTextView.font = UIFont(name: Labiba.warningMessageModel?.fontName ??  UIFont.systemFont(ofSize: 14).fontName, size: 14)
+        warningTextView.textAlignment = Labiba.botLang == .ar ? .right : .left
+        warningTextView.textColor = Labiba.warningMessageModel?.fontColor ?? .darkText
+        warningTextView.translatesAutoresizingMaskIntoConstraints = false
+
+        let fullText = ((Labiba.botLang == .ar ?  Labiba.warningMessageModel?.arTitle : Labiba.warningMessageModel?.enTitle) ?? "") + " "
+        let pressMeText = (Labiba.warningMessageModel?.link?.isEmpty ?? true) ? " " : (Labiba.botLang == .ar ? "اضغط هنا" : "Press here")
         
-        // 2. Label
-        let warningLabel = UILabel()
-        warningLabel.text = Labiba.botLang == .ar ?  Labiba.warningMessageModel?.arTitle : Labiba.warningMessageModel?.enTitle //"Please don’t share any personal information like username or password to the chatbot"
-        warningLabel.font = UIFont(name: Labiba.warningMessageModel?.fontName ??  UIFont.systemFont(ofSize: 14).fontName, size: 14)
-        warningLabel.numberOfLines = 0
-        warningLabel.textAlignment = .center
-        warningLabel.textColor = Labiba.warningMessageModel?.fontColor ?? .darkText
-        warningLabel.translatesAutoresizingMaskIntoConstraints = false
-        warningLabel.adjustsFontSizeToFitWidth = true
-        warningLabel.minimumScaleFactor = 0.7 // 70% of original font size
-        warningLabel.lineBreakMode = .byTruncatingTail
-        warningView.addSubview(warningLabel)
+        let attributed = NSMutableAttributedString(string: fullText + pressMeText)
+        attributed.addAttribute(.link, value: "pressMe://action", range: NSRange(location: fullText.count, length: pressMeText.count))
         
+        warningTextView.attributedText = attributed
+        warningTextView.delegate = self
+        warningTextView.linkTextAttributes = [ .foregroundColor: UIColor.systemBlue ]
+        
+        warningView.addSubview(warningTextView)
+
         // 3. Create the close button
         let closeButton = UIButton(type: .system)
         closeButton.setTitle("✕", for: .normal)
@@ -963,25 +972,12 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         warningView.addSubview(closeButton)
         closeButton.addTarget(self, action: #selector(dismissWarningView), for: .touchUpInside)
 
-       // 4  create link button if needded
-        let linkButton = UIButton(type: .system)
-        if let link = Labiba.warningMessageModel?.link {
-            linkButton.setTitle(Labiba.botLang == .ar ? "اضغط هنا" : "Press here", for: .normal)
-            linkButton.tintColor = Labiba.warningMessageModel?.fontColor ?? .darkText
-            linkButton.setTitleColor(.black, for: .normal)
-            linkButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-            linkButton.translatesAutoresizingMaskIntoConstraints = false
-            warningView.addSubview(linkButton)
-            linkButton.addTarget(self, action: #selector(linkButtonTapped), for: .touchUpInside)
-
-        }
-
         // 6. Constraints for label inside warning view
         NSLayoutConstraint.activate([
-            warningLabel.topAnchor.constraint(equalTo: warningView.topAnchor, constant: 12),
-            warningLabel.bottomAnchor.constraint(equalTo: warningView.bottomAnchor, constant: -12),
-            warningLabel.leadingAnchor.constraint(equalTo: warningView.leadingAnchor, constant: 12),
-            warningLabel.trailingAnchor.constraint(equalTo: warningView.trailingAnchor, constant: -30)
+            warningTextView.topAnchor.constraint(equalTo: warningView.topAnchor, constant: 5),
+            warningTextView.bottomAnchor.constraint(equalTo: warningView.bottomAnchor, constant: -5),
+            warningTextView.leadingAnchor.constraint(equalTo: warningView.leadingAnchor, constant: 10),
+            warningTextView.trailingAnchor.constraint(equalTo: warningView.trailingAnchor, constant: -30)
         ])
         
         // 7. Constraints for warning view
@@ -1005,15 +1001,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             closeButton.heightAnchor.constraint(equalToConstant: 24)
         ])
         
-        //9 Constraints for linkButton
-        if let link = Labiba.warningMessageModel?.link {
-            NSLayoutConstraint.activate([
-                linkButton.bottomAnchor.constraint(equalTo: warningLabel.bottomAnchor),
-                linkButton.leadingAnchor.constraint(equalTo: warningLabel.trailingAnchor, constant: -5)
-            ])
-        }
-        
-
         // Constraints for warningView
         bottomConstraint.isActive = true
         
@@ -1707,3 +1694,14 @@ extension ConversationViewController: SubViewControllerDelegate {
 //        self.dismiss(animated: true, completion: nil)
 //    }
 //}
+
+extension ConversationViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+        if URL.scheme == "pressMe" {
+            print("Press Me tapped!")
+            linkButtonTapped()
+            return false
+        }
+        return true
+    }
+}
