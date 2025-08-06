@@ -938,7 +938,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         warningView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(warningView)
         self.warningView = warningView
-
+        
         // WarningTextView
         let warningTextView = UITextView()
         warningTextView.isEditable = false
@@ -949,22 +949,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         warningTextView.textAlignment = Labiba.botLang == .ar ? .right : .left
         warningTextView.textColor = Labiba.warningMessageModel?.fontColor ?? .darkText
         warningTextView.translatesAutoresizingMaskIntoConstraints = false
-
+        
+        var attributedFullText = NSMutableAttributedString(string: " ")
         let fullText = ((Labiba.botLang == .ar ?  Labiba.warningMessageModel?.arTitle : Labiba.warningMessageModel?.enTitle) ?? "") + " "
         var pressMeText = " "
         if !((Labiba.warningMessageModel?.linkEnPressTitle?.isEmpty ?? true) || (Labiba.warningMessageModel?.linkArPressTitle?.isEmpty ?? true)){
             pressMeText = (Labiba.warningMessageModel?.link?.isEmpty ?? true) ? " " : (Labiba.botLang == .ar ? Labiba.warningMessageModel?.linkArPressTitle ?? " " : Labiba.warningMessageModel?.linkEnPressTitle ?? " ")
-        }
-        
-        let attributed = NSMutableAttributedString(string: fullText + pressMeText)
-        attributed.addAttribute(.link, value: "pressMe://action", range: NSRange(location: fullText.count, length: pressMeText.count))
-        
-        // Add a hidden link behind the image
-        attributed.addAttribute(.link, value: "action://linkIcon", range: NSRange(location: fullText.count - 1, length: 1))
-
-        // Create an image attachment (icon)
-        
-        if ((Labiba.warningMessageModel?.linkEnPressTitle?.isEmpty ?? true) || (Labiba.warningMessageModel?.linkArPressTitle?.isEmpty ?? true)){
+        }else{
             pressMeText = " "
             let imageAttachment = NSTextAttachment()
             if let baseImage = UIImage(named: "link")?.tinted(with: Labiba.warningMessageModel?.linkPressColor ?? .systemBlue) {
@@ -974,11 +965,29 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             let imageString = NSAttributedString(attachment: imageAttachment)
             
             // Append image to attributed text
-            attributed.append(imageString)
+            attributedFullText.append(imageString)
+        }
+    
+        
+        attributedFullText = NSMutableAttributedString(string: fullText + pressMeText)
+        attributedFullText.addAttribute(.link, value: "pressMe://action", range: NSRange(location: fullText.count, length: pressMeText.count))
+        
+        // Add a hidden link behind the image
+        attributedFullText.addAttribute(.link, value: "action://linkIcon", range: NSRange(location: fullText.count - 1, length: 1))
+
+        // Create an image attachment (icon)
+        
+        if ((Labiba.warningMessageModel?.linkEnPressTitle?.isEmpty ?? true) || (Labiba.warningMessageModel?.linkArPressTitle?.isEmpty ?? true)){
+
         }
 
-
-        warningTextView.attributedText = attributed
+//        pressMeText.addAttributes([
+//            .link: "action://press",
+//            .underlineStyle: NSUnderlineStyle.single.rawValue
+//        ], range: NSRange(location: 0, length: pressMeText.length))
+//        
+        
+        warningTextView.attributedText = attributedFullText
         warningTextView.delegate = self
         warningTextView.linkTextAttributes = [ .foregroundColor: Labiba.warningMessageModel?.linkPressColor ?? .systemBlue ]
         
