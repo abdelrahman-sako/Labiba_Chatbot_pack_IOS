@@ -932,9 +932,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         // 1. Container View
         let warningView = UIView()
         warningView.backgroundColor = Labiba.warningMessageModel?.backgroundColor ?? UIColor.systemYellow.withAlphaComponent(0.2)
-        warningView.layer.cornerRadius = CGFloat(Labiba.warningMessageModel?.cornerRadius ?? 12)
+        warningView.layer.cornerRadius = CGFloat(Labiba.warningMessageModel?.cornerRadius ?? 10)
         warningView.layer.borderWidth = Labiba.warningMessageModel?.showBoarder ?? false ? 1 : 0
-        warningView.layer.borderColor = Labiba.warningMessageModel?.fontColor.cgColor
+        warningView.layer.borderColor = Labiba.warningMessageModel?.boarderColor.cgColor ?? UIColor.black.withAlphaComponent(0.3).cgColor
         warningView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(warningView)
         self.warningView = warningView
@@ -945,13 +945,14 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         warningTextView.isScrollEnabled = false
         warningTextView.backgroundColor = .clear
         warningTextView.translatesAutoresizingMaskIntoConstraints = false
-        warningTextView.font = UIFont(name: Labiba.warningMessageModel?.fontName ??  UIFont.systemFont(ofSize: 14).fontName, size: 14)
         warningTextView.textAlignment = Labiba.botLang == .ar ? .right : .left
-        warningTextView.textColor = Labiba.warningMessageModel?.fontColor ?? .darkText
         warningTextView.translatesAutoresizingMaskIntoConstraints = false
         
-        var attributedFullText = NSMutableAttributedString(string: " ")
         let fullText = ((Labiba.botLang == .ar ?  Labiba.warningMessageModel?.arTitle : Labiba.warningMessageModel?.enTitle) ?? "") + " "
+        let attributedFullText = NSMutableAttributedString(string: fullText, attributes: [
+            .font: UIFont(name: Labiba.warningMessageModel?.fontName ??  UIFont.systemFont(ofSize: 13).fontName, size: 13) ?? UIFont.systemFont(ofSize: 13),
+            .foregroundColor: Labiba.warningMessageModel?.fontColor ?? .black
+        ])
         var pressMeText = " "
         
         if !(Labiba.warningMessageModel?.link?.isEmpty ?? true){
@@ -969,7 +970,23 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             }
         }
         
-        attributedFullText = NSMutableAttributedString(string: fullText + pressMeText)
+//        attributedFullText = NSMutableAttributedString(string: fullText)
+        
+        // Define font
+        let boldFont = UIFont.boldSystemFont(ofSize: 13)
+        
+        // Create "press me" as an attributed substring
+        let pressMeAttr = NSMutableAttributedString(string: pressMeText, attributes: [
+            .font: boldFont,
+            .underlineStyle: NSUnderlineStyle.single.rawValue,
+            .foregroundColor: Labiba.warningMessageModel?.linkPressColor ?? .systemBlue,
+            .link: "pressMe://action"
+                
+        ])
+        
+        // Append "press me" to the full text
+        attributedFullText.append(pressMeAttr)
+
         attributedFullText.addAttribute(.link, value: "pressMe://action", range: NSRange(location: fullText.count, length: pressMeText.count))
         
         // Add a hidden link behind the image
@@ -998,7 +1015,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         closeButton.setTitle("✕", for: .normal)
         closeButton.tintColor = Labiba.warningMessageModel?.fontColor ?? .darkText
         closeButton.setTitleColor(.black, for: .normal)
-        closeButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        closeButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .bold)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         warningView.addSubview(closeButton)
         closeButton.addTarget(self, action: #selector(dismissWarningView), for: .touchUpInside)
