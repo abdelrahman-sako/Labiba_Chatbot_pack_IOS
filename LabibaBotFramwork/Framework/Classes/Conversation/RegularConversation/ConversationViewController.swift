@@ -953,21 +953,21 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         var attributedFullText = NSMutableAttributedString(string: " ")
         let fullText = ((Labiba.botLang == .ar ?  Labiba.warningMessageModel?.arTitle : Labiba.warningMessageModel?.enTitle) ?? "") + " "
         var pressMeText = " "
-        if !((Labiba.warningMessageModel?.linkEnPressTitle?.isEmpty ?? true) || (Labiba.warningMessageModel?.linkArPressTitle?.isEmpty ?? true)){
-            pressMeText = (Labiba.warningMessageModel?.link?.isEmpty ?? true) ? " " : (Labiba.botLang == .ar ? Labiba.warningMessageModel?.linkArPressTitle ?? " " : Labiba.warningMessageModel?.linkEnPressTitle ?? " ")
-        }else{
-            pressMeText = " "
-            let imageAttachment = NSTextAttachment()
-            if let baseImage = UIImage(named: "link")?.tinted(with: Labiba.warningMessageModel?.linkPressColor ?? .systemBlue) {
-                imageAttachment.image = baseImage
-                imageAttachment.bounds = CGRect(x: 0, y: -3, width: 15, height: 15)
+        
+        if !(Labiba.warningMessageModel?.link?.isEmpty ?? true){
+            if !((Labiba.warningMessageModel?.linkEnPressTitle?.isEmpty ?? true) || (Labiba.warningMessageModel?.linkArPressTitle?.isEmpty ?? true)){
+                pressMeText = (Labiba.botLang == .ar ? Labiba.warningMessageModel?.linkArPressTitle ?? " " : Labiba.warningMessageModel?.linkEnPressTitle ?? " ")
             }
-            let imageString = NSAttributedString(attachment: imageAttachment)
-            
-            // Append image to attributed text
-            attributedFullText.append(imageString)
+            else{
+                let imageAttachment = NSTextAttachment()
+                if let baseImage = UIImage(named: "link")?.tinted(with: Labiba.warningMessageModel?.linkPressColor ?? .systemBlue) {
+                    imageAttachment.image = baseImage
+                    imageAttachment.bounds = CGRect(x: 0, y: -3, width: 15, height: 15)
+                }
+                let imageString = NSAttributedString(attachment: imageAttachment)
+                attributedFullText.append(imageString)
+            }
         }
-    
         
         attributedFullText = NSMutableAttributedString(string: fullText + pressMeText)
         attributedFullText.addAttribute(.link, value: "pressMe://action", range: NSRange(location: fullText.count, length: pressMeText.count))
