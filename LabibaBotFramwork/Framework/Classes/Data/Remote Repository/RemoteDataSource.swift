@@ -55,7 +55,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     func closeConversation(handler: @escaping Handler<[String]>) {
         //api/LiveChat/v1.0/CloseConversation/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile
         
-        let url = "\(Labiba._basePath)/api/LiveChat/v1.0/CloseConversation/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile"
+        let url = Labiba.endConversationUrl ?? "\(Labiba._basePath)/api/LiveChat/v1.0/CloseConversation/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile"
         let endPoint = EndPoint(url: url, httpMethod: .post)
         
         

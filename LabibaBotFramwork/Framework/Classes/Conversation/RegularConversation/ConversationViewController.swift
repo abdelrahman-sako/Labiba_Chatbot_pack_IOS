@@ -945,14 +945,17 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         warningTextView.isScrollEnabled = false
         warningTextView.backgroundColor = .clear
         warningTextView.translatesAutoresizingMaskIntoConstraints = false
-        warningTextView.textAlignment = Labiba.botLang == .ar ? .right : .left
+        warningTextView.textAlignment = .center
         warningTextView.translatesAutoresizingMaskIntoConstraints = false
         
         let fullText = ((Labiba.botLang == .ar ?  Labiba.warningMessageModel?.arTitle : Labiba.warningMessageModel?.enTitle) ?? "") + " "
         let attributedFullText = NSMutableAttributedString(string: fullText, attributes: [
-            .font: UIFont(name: Labiba.warningMessageModel?.fontName ??  UIFont.systemFont(ofSize: 13).fontName, size: 13) ?? UIFont.systemFont(ofSize: 13),
             .foregroundColor: Labiba.warningMessageModel?.fontColor ?? .black
         ])
+        
+        let font = UIFont(name: Labiba.warningMessageModel?.fontName ??  UIFont.systemFont(ofSize: 14).fontName, size: 14) ?? UIFont.systemFont(ofSize: 14)
+        attributedFullText.addAttribute(.font, value: font, range: NSRange(location: 0, length: attributedFullText.length))
+
         var pressMeText = " "
         
         if !(Labiba.warningMessageModel?.link?.isEmpty ?? true){
@@ -973,7 +976,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
 //        attributedFullText = NSMutableAttributedString(string: fullText)
         
         // Define font
-        let boldFont = UIFont.boldSystemFont(ofSize: 13)
+        let boldFont = UIFont.boldSystemFont(ofSize: 14)
         
         // Create "press me" as an attributed substring
         let pressMeAttr = NSMutableAttributedString(string: pressMeText, attributes: [
@@ -986,7 +989,12 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         
         // Append "press me" to the full text
         attributedFullText.append(pressMeAttr)
-
+        // ✅ Center alignment
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        
+        attributedFullText.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedFullText.length))
+        
         attributedFullText.addAttribute(.link, value: "pressMe://action", range: NSRange(location: fullText.count, length: pressMeText.count))
         
         // Add a hidden link behind the image
@@ -1015,7 +1023,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         closeButton.setTitle("✕", for: .normal)
         closeButton.tintColor = Labiba.warningMessageModel?.fontColor ?? .darkText
         closeButton.setTitleColor(.black, for: .normal)
-        closeButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        closeButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         warningView.addSubview(closeButton)
         closeButton.addTarget(self, action: #selector(dismissWarningView), for: .touchUpInside)

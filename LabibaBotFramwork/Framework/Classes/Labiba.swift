@@ -51,7 +51,7 @@ public enum LoggingAndRefferalEncodingType{
     static var _updateTokenUrl = ""   //"http://api.labiba.ai/api/Auth/Login"
     static var isRatingVCPresenting = false
     static var warningMessageModel: WarningMessageModel?
-    
+    static var endConversationUrl:String?
    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
    
@@ -273,6 +273,10 @@ public enum LoggingAndRefferalEncodingType{
     public static func setTranscript(isEnabled:Bool,email:String){
         self.transcriptSenderEmail = email
         self.isTranscriptEnabled = isEnabled
+    }
+    
+    public static func setEndConversationUrl(_ url: String){
+        self.endConversationUrl = url
     }
     
      static func setLastMessageLangCode(_ text: String){
