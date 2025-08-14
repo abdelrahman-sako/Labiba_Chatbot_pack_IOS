@@ -52,6 +52,7 @@ public enum LoggingAndRefferalEncodingType{
     static var isRatingVCPresenting = false
     static var warningMessageModel: WarningMessageModel?
     static var endConversationUrl:String?
+    static var skipErrorMessage = false
    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
    

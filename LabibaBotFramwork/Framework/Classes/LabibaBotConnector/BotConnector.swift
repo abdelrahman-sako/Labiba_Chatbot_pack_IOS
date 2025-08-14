@@ -195,7 +195,10 @@ class BotConnector: NSObject {
                 self.messageAnalyizer.parseResponse(response: model)
             case .failure(let err):
                 print(err.localizedDescription)
-                showErrorMessage(err.localizedDescription)
+                if !Labiba.skipErrorMessage {
+                    showErrorMessage(err.localizedDescription)
+                    Labiba.skipErrorMessage = false
+                }
                 self.delegate?.botConnectorRemoveTypingActivity(self)
             }
             self.isTherePendingRequest = false

@@ -60,8 +60,8 @@ class AttachmentModel:Codable {
     var type:String?
 }
 enum PayloadValue: Codable {
-    case string(String)
-    case payloadModel(PayloadModel)
+    case string(String?)
+    case payloadModel(PayloadModel?)
 
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()

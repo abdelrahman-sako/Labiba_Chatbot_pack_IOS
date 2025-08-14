@@ -203,12 +203,12 @@ class LabibaRestfulBotConnector{ //
                     switch payload {
                     case .string(let message):
                         if let attachType = attach?.type, attachType == "backPropagation"{
-                            Labiba.delegate?.labibaDataUpdate?(payload: message)
+                            Labiba.delegate?.labibaDataUpdate?(payload: message ?? "")
                             return
                         }else{
                             switch message {
                             case "goRealtime":
-                                delegate?.botConnector( didRequestHumanAgent: message)
+                                delegate?.botConnector( didRequestHumanAgent: message ?? "")
                                 print("redirect to human agent with message: ",message)
                             case "redirectToStart":
                                 DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now()+0.5, execute: {
@@ -226,7 +226,7 @@ class LabibaRestfulBotConnector{ //
                         if let attachType = attach?.type{
                             NotificationCenter.default.post(name: Constants.NotificationNames.ChangeInputToVoiceAssistantType,
                                                             object: nil)
-                            if attachType == "template", let elements = payload.elements
+                            if attachType == "template", let elements = payload?.elements
                             {
                                 
                                 
@@ -261,7 +261,7 @@ class LabibaRestfulBotConnector{ //
                                 })
                                 ShowDialog()
                                 cancelCard = true
-                            } else if let attachUrl = payload.url {
+                            } else if let attachUrl = payload?.url {
                                 switch attachType
                                 {
                                 case "audio":

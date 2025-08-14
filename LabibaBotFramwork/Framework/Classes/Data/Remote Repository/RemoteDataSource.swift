@@ -94,9 +94,10 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             remoteContext.withTokenRequest(endPoint: endPoint, parameters: params) { result in
                 switch  result {
                 case .success(let data):
+                    self.searchForEndedChats(data)
                     if !SharedPreference.shared.isHumanAgentStarted {
                         self.parser(data: data, model: [LabibaModel].self, handler: handler)
-
+                        
                     }else{
                         handler(.success([]))
                     }
@@ -121,8 +122,40 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 }
             }
         }
+    }
+    
+    func searchForEndedChats(_ jsonData:Data){
         
-        
+        do {
+            let jsonObject = try JSONSerialization.jsonObject(with: jsonData)
+            if findType(in: jsonObject) {
+                print("Found type 'call.nps.agent'")
+                Labiba.skipErrorMessage = true
+                
+            } else {
+                print("Type not found")
+            }
+        } catch {
+            print("Failed to parse JSON: \(error)")
+        }
+    }
+    func findType(in json: Any) -> Bool {
+        if let dict = json as? [String: Any] {
+            for (key, value) in dict {
+                if key == "type", let typeValue = value as? String, typeValue == "call.nps.agent" {
+                    return true
+                } else if findType(in: value) { // recurse into nested
+                    return true
+                }
+            }
+        } else if let array = json as? [Any] {
+            for item in array {
+                if findType(in: item) { // recurse into array
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     func getRatingQuestions(handler: @escaping Handler<[GetRatingFormQuestionsModel]>) {
@@ -287,7 +320,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     }
 
     func getActiveQuestion(_ completionHandler:@escaping Handler<getActiveQuestionsResponseModel>){
-        let url = "https://botbuilder.labiba.ai/api/Nps/GetCurrentActiveQuestion/\(SharedPreference.shared.currentUserId)\(Labiba.isRateForAgent ? "/2" : "")"
+        let url = "\(Labiba._basePath)/api/Nps/GetCurrentActiveQuestion/\(SharedPreference.shared.currentUserId)\(Labiba.isRateForAgent ? "/2" : "")"
         let endPoint = EndPoint(url: url, httpMethod: .get)
         remoteContext.requestWithGet(endpoint: endPoint, method: .get) { result in
             switch result{
@@ -342,6 +375,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             }
         }
     }
+    
     
     
     
