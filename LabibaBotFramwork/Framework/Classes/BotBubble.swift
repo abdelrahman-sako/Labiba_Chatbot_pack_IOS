@@ -12,7 +12,7 @@ let BotBubbleColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 
 public class BotBubble: BubbleView {
     
-   
+    // Method
     override class func createBubble(withWidth width:CGFloat) -> BubbleView {
        
         let bubble = UIView.loadFromNibNamedFromDefaultBundle("BotBubble") as! BotBubble
