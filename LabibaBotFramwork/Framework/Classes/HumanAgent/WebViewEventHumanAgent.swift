@@ -75,7 +75,7 @@ class WebViewEventHumanAgent:NSObject {
                 let request = URLRequest(url: url)
                 webView.load(request)
            if goToRate{
-                Labiba.handleNPSRartingAndQuit(true)
+               Labiba.handleNPSRartingAndQuit(isForAgent: true)
             }
         }
     }
@@ -87,9 +87,15 @@ class WebViewEventHumanAgent:NSObject {
             Labiba.isHumanAgentStarted = false
             SharedPreference.shared.isHumanAgentStarted = false
             let url = "\(Labiba.endConversationUrl ?? "https://botbuilder.labiba.ai/api/LiveChat/v1.0/CloseConversation")/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile"
-            end()
+            end(goToRate: Labiba.isNPSAgentRatingEnabled)
             DispatchQueue.global(qos: .background).async {
                 DataSource.shared.closeConversation { result in
+                    switch result{
+                    case .success(let data):
+                        print("conEndeddd \(data)")
+                    case .failure(let error):
+                        print("\(error) notttt conEndeddd")
+                    }
                     
                 }
 //                request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseData { response in
@@ -169,7 +175,7 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
         }
         
         if statusParam as? String == "end" {
-            end(goToRate: Labiba.isAgentRatingEnabled)
+            end(goToRate: Labiba.isNPSAgentRatingEnabled)
             BotConnector.shared.sendGetStarted()
         }
         

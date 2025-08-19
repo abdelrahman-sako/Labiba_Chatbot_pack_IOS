@@ -55,8 +55,8 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     func closeConversation(handler: @escaping Handler<[String]>) {
         //api/LiveChat/v1.0/CloseConversation/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile
         
-        let url = Labiba.endConversationUrl ?? "\(Labiba._basePath)/api/LiveChat/v1.0/CloseConversation/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile"
-        let endPoint = EndPoint(url: url, httpMethod: .post)
+        let url = "\(Labiba.HumanAgent.endConversationUrl)\(SharedPreference.shared.currentUserId)/\(Labiba._senderId ?? "")/mobile"
+        let endPoint = EndPoint(url: url, httpMethod: .post,headers: ["Connection":"close"])
         
         
         remoteContext.request(endPoint: endPoint, parameters: "") { result in
@@ -320,9 +320,10 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     }
 
     func getActiveQuestion(_ completionHandler:@escaping Handler<getActiveQuestionsResponseModel>){
-        let url = "\(Labiba._basePath)/api/Nps/GetCurrentActiveQuestion/\(SharedPreference.shared.currentUserId)\(Labiba.isRateForAgent ? "/2" : "")"
+        let url = "\(Labiba._basePath)/api/Nps/GetCurrentActiveQuestion/\(SharedPreference.shared.currentUserId)\(Labiba.isRateForAgent ? "/2" : "/1")"
         let endPoint = EndPoint(url: url, httpMethod: .get)
-        remoteContext.requestWithGet(endpoint: endPoint, method: .get) { result in
+
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: getHeaders()) { result in
             switch result{
             case .success(let data):
                 self.dataParamParser(data: data, model: getActiveQuestionsResponseModel.self, completion: completionHandler)
@@ -356,7 +357,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     }
     
     func submitNPSScore(_ score:String,_ completionHandler:@escaping Handler<String?>){
-        let url = "https://botbuilder.labiba.ai/api/LiveChat/SubmitNpsScore"
+        let url = "\(Labiba._basePath)/api/LiveChat/SubmitNpsScore"
         let endPoint = EndPoint(url: url, httpMethod: .post)
         let parameters:[String:Any] = ["LongClientId":"",
                                        "NpsQuestionTemplateLongId" : "",
@@ -364,6 +365,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                                        "Score" : score,
                                        "StoryId" : SharedPreference.shared.currentUserId,
                                        "SenderId" : Labiba._senderId ?? "",
+                                       "npsQuestionTemplateLongId" : Labiba.npsQuestionTemplateLongId ?? ""
         ]
         
         remoteContext.withTokenRequest(endPoint: endPoint,parameters: parameters) { result in

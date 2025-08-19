@@ -47,8 +47,10 @@ class NumberRatingCell: RatingCell {
             switch result{
             case .success(let data):
                 DispatchQueue.main.async{
-                   if data.header.isSuccess {
+                    if data.header.isSuccess ?? false {
                        self?.questionLabel.text = Labiba.botLang.rawValue == "en" ? data.data.question : data.data.questionAr
+                        Labiba.npsQuestionTemplateLongId = data.data.npsQuestionTemplateLongID
+
                     }else{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                             self?.onSelected?(-1)

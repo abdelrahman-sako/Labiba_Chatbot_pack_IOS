@@ -268,6 +268,9 @@ final class RemoteContext {
                               completion: @escaping Handler<Any> ) {
         sessionManager.request(reqestUrl,method: .post,encoding: encoding,headers: ["Content-Type":"application/json"]).validate().responseData { (response) in
             //self.printResponse(reqestUrl: reqestUrl, responseData: response)
+            
+            print("request isssss \(reqestUrl.absoluteString)\n ")
+            print("request isssss \(reqestUrl)\n ")
             switch response.result {
             case .success:
                 completion(.success(response))
@@ -549,4 +552,63 @@ class ResponseModel<T:Decodable>:Decodable {
     var ErrorMessage:String?
     var data:T?
     var Link:String?
+}
+
+
+
+
+
+
+extension Request {
+    public func cURLDescription() -> String {
+        var curlCommand = "curl -v "
+        
+        if let method = request?.httpMethod {
+            curlCommand += "-X \(method) "
+        }
+        
+        if let headers = request?.allHTTPHeaderFields {
+            for (key, value) in headers {
+                curlCommand += "-H '\(key): \(value)' "
+            }
+        }
+        
+        if let httpBodyData = request?.httpBody,
+           let body = String(data: httpBodyData, encoding: .utf8) {
+            curlCommand += "-d '\(body)' "
+        }
+        
+        if let url = request?.url?.absoluteString {
+            curlCommand += "\"\(url)\""
+        }
+        
+        return curlCommand
+    }
+}
+extension DataRequest {
+    /// Prints a cURL command that can be pasted into Terminal
+    func debugCurl() {
+        var curl = "curl -v \\\n"
+        
+        if let method = request?.httpMethod {
+            curl += "-X \(method) \\\n"
+        }
+        
+        if let headers = request?.allHTTPHeaderFields {
+            for (key, value) in headers {
+                curl += "-H \"\(key): \(value)\" \\\n"
+            }
+        }
+        
+        if let bodyData = request?.httpBody,
+           let body = String(data: bodyData, encoding: .utf8) {
+            curl += "-d '\(body)' \\\n"
+        }
+        
+        if let url = request?.url?.absoluteString {
+            curl += "\"\(url)\""
+        }
+        
+        print(curl)
+    }
 }

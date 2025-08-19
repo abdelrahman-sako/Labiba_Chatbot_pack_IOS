@@ -83,7 +83,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     var isFirstMessage:Bool = true
     var canLunchRating:Bool = false
     var isTTSMuted:Bool = false
-    var tableViewBottomInset:CGFloat = 20
+    var tableViewBottomInset:CGFloat = 50
     
     lazy var keyboardTypeDialog = UserTextInputNoLocal.create()
     lazy var visualizerDialog = VisualizerVoiceAssistantView.create()
@@ -464,7 +464,12 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     func shutDownBotChat() -> Void {
-        Labiba.isNPSRatingEnabled ? Labiba.handleNPSRartingAndQuit(false) : Labiba.dismiss()
+//        Labiba.isNPSBotRatingEnabled ? Labiba.handleNPSRartingAndQuit(Labiba.isNPSAgentRatingEnabled ? Labiba.isNPSAgentRatingEnabled : Labiba.isNPSBotRatingEnabled) : Labiba.dismiss()
+        if Labiba.isNPSBotRatingEnabled{
+            Labiba.handleNPSRartingAndQuit(isForAgent: false)
+        }else{
+            Labiba.dismiss()
+        }
         UIApplication.shared.setStatusBarColor(color: .clear)
     }
     

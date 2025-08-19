@@ -9,6 +9,7 @@
 import Foundation
 
 
+// MARK: - GetActiveQuestionsResponseModel
 struct getActiveQuestionsResponseModel: Codable {
     let header: QuestionHeader
     let data: NPSQuestionData
@@ -20,19 +21,24 @@ struct getActiveQuestionsResponseModel: Codable {
 }
 
 struct QuestionHeader: Codable {
-    let isSuccess: Bool
+        let isSuccess: Bool?
+        
+        enum CodingKeys: String, CodingKey {
+            case isSuccess = "IsSuccess"
+        }
+    }
+struct NPSQuestionData: Codable {
+    let id, clientID: Int?
+    let question, questionAr, npsQuestionTemplateLongID: String?
+    let npsTypeID: Int?
+    let currentActive: Bool?
     
     enum CodingKeys: String, CodingKey {
-        case isSuccess = "IsSuccess"
+        case id
+        case clientID = "clientId"
+        case question, questionAr
+        case npsQuestionTemplateLongID = "npsQuestionTemplateLongId"
+        case npsTypeID = "npsTypeId"
+        case currentActive
     }
-}
-
-struct NPSQuestionData: Codable {
-    let id: Int?
-    let clientId: Int?
-    let question: String?
-    let questionAr: String?
-    let npsQuestionTemplateLongId: String?
-    let npsTypeId: Int?
-    let currentActive: Bool?
 }

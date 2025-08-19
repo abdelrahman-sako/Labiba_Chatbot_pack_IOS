@@ -80,12 +80,14 @@ public enum LoggingAndRefferalEncodingType{
     public static var botLang : LabibaLanguage = .en
     public static var loggingAndRefferalEncodingType : LoggingAndRefferalEncodingType = .jsonString
     public static var clientHeaders:[[String:String]] = [[:]]
-    public static var isNPSRatingEnabled = false
-    public static var isAgentRatingEnabled = false
+    public static var isNPSBotRatingEnabled = false
+    public static var isNPSAgentRatingEnabled = false
     public static var isTranscriptEnabled = false
     public static var isHeaderFadingEnabled = true
     public static var transcriptSenderEmail:String?
     public static var isRateForAgent:Bool = false
+    public static var npsQuestionTemplateLongId: String?
+
     
   //  public  static var isLoggingEnabled: Bool = false
 
@@ -263,8 +265,8 @@ public enum LoggingAndRefferalEncodingType{
     }
     
     public static func setNPS(agent: Bool,bot:Bool){
-        self.isNPSRatingEnabled = bot
-        self.isAgentRatingEnabled = agent
+        self.isNPSBotRatingEnabled = bot
+        self.isNPSAgentRatingEnabled = agent
     }
 
     public static func setHeaderFading(_ isEnabled: Bool){
@@ -593,7 +595,7 @@ public enum LoggingAndRefferalEncodingType{
         vc.present(createLabibaNavigation(rootViewController: prechatVC), animated: animated, completion: nil)
     }
 
-    static func handleNPSRartingAndQuit(_ isForAgent:Bool){
+    static func handleNPSRartingAndQuit(isForAgent:Bool){
         guard !isRatingVCPresenting else { return }
             isRatingVCPresenting = true
 
@@ -619,11 +621,13 @@ public enum LoggingAndRefferalEncodingType{
         //LabibaRestfulBotConnector.shared.close()
         DataSource.shared.close()
         WebViewEventHumanAgent.Shared.forceEnd()
-        navigationController?.dismiss(animated: true, completion: {
-            compeletion?()
-            if tiggerDelegate{Labiba.delegate?.labibaDidClose?()}
-        })
-
+        
+        if !isRatingVCPresenting{
+            navigationController?.dismiss(animated: true, completion: {
+                compeletion?()
+                if tiggerDelegate{Labiba.delegate?.labibaDidClose?()}
+            })
+        }
     }
 
     
