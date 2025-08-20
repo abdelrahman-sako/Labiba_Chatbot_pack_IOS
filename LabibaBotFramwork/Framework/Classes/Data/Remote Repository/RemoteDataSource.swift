@@ -155,7 +155,9 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             if findType(in: jsonObject) {
                 print("Found type 'call.nps.agent'")
                 Labiba.skipErrorMessage = true
-                
+                if Labiba.isNPSAgentRatingEnabled{
+                    Labiba.handleNPSRartingAndQuit(isForAgent: true)
+                }
             } else {
                 print("Type not found")
             }

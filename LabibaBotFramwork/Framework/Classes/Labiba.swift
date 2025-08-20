@@ -607,6 +607,7 @@ public enum LoggingAndRefferalEncodingType{
                 isRatingVCPresenting = false
             }
             viewController.vcDismissed = { state in
+                Labiba.isNPSAgentRatingEnabled = false
                 print("submit rating result is: \(state)")
                 dismiss(tiggerDelegate: true,compeletion: nil)
             }

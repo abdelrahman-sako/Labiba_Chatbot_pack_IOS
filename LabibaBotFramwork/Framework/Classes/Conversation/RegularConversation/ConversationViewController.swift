@@ -464,9 +464,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     func shutDownBotChat() -> Void {
-//        Labiba.isNPSBotRatingEnabled ? Labiba.handleNPSRartingAndQuit(Labiba.isNPSAgentRatingEnabled ? Labiba.isNPSAgentRatingEnabled : Labiba.isNPSBotRatingEnabled) : Labiba.dismiss()
         if Labiba.isNPSBotRatingEnabled{
-            Labiba.handleNPSRartingAndQuit(isForAgent: false)
+            Labiba.handleNPSRartingAndQuit(isForAgent: Labiba.isNPSAgentRatingEnabled)
         }else{
             Labiba.dismiss()
         }
