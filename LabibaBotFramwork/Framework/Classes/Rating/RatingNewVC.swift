@@ -34,7 +34,7 @@ class RatingNewVC:UIViewController {
     }
     
     func setupUI(){
-        submitButton.backgroundColor = LabibaThemes.ratingColor
+        submitButton.backgroundColor = LabibaThemes.npsRatingColor
         buttons.forEach({$0.layer.cornerRadius = 25})
         
         welcomeLabel.text = "Share Your Rating!".localForChosnLangCodeBB

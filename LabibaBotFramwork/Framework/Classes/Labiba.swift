@@ -82,6 +82,7 @@ public enum LoggingAndRefferalEncodingType{
     public static var clientHeaders:[[String:String]] = [[:]]
     public static var isNPSBotRatingEnabled = false
     public static var isNPSAgentRatingEnabled = false
+    public static var didGoToNPSRating = false
     public static var isTranscriptEnabled = false
     public static var isHeaderFadingEnabled = true
     public static var transcriptSenderEmail:String?
@@ -208,8 +209,8 @@ public enum LoggingAndRefferalEncodingType{
 //    }
 //
     
-    public static func setRatingColor(_ color: UIColor){
-        LabibaThemes.ratingColor = color
+    public static func setNpsRatingColor(_ color: UIColor){
+        LabibaThemes.npsRatingColor = color
     }
     
     // MARK:- UserParameters and Referrals
@@ -607,7 +608,7 @@ public enum LoggingAndRefferalEncodingType{
                 isRatingVCPresenting = false
             }
             viewController.vcDismissed = { state in
-                Labiba.isNPSAgentRatingEnabled = false
+                Labiba.didGoToNPSRating = true
                 print("submit rating result is: \(state)")
                 dismiss(tiggerDelegate: true,compeletion: nil)
             }

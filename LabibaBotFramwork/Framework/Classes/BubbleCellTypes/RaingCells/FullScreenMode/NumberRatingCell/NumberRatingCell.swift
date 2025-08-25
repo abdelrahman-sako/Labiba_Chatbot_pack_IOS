@@ -30,7 +30,7 @@ class NumberRatingCell: RatingCell {
     
     func setupUI(){
         collectionView.semanticContentAttribute = .forceLeftToRight
-        questionLabel.textColor = LabibaThemes.ratingColor
+        questionLabel.textColor = LabibaThemes.npsRatingColor
     }
     
     func setupCollectionView(){
@@ -78,7 +78,7 @@ extension NumberRatingCell: UICollectionViewDataSource, UICollectionViewDelegate
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NumberItemCell", for: indexPath) as! NumberItemCell
         cell.semanticContentAttribute = .forceLeftToRight
         cell.numberLabel.text = "\(indexPath.row + 1)"
-        cell.contanierView.backgroundColor = selectedIndex >= indexPath.row ?  LabibaThemes.ratingColor : .black.withAlphaComponent(0.2)
+        cell.contanierView.backgroundColor = selectedIndex >= indexPath.row ?  LabibaThemes.npsRatingColor : .black.withAlphaComponent(0.2)
         return cell
     }
     

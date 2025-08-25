@@ -14,7 +14,7 @@ public class LabibaThemes {
     static var labibaThemeFileModel: LabibaThemeModel?
     public static var HideCardOneButton:Bool = true
     public static var isThemeApplied = false
-    public static var ratingColor: UIColor = .purple
+    public static var npsRatingColor: UIColor = .purple
     
     var default_Gradient_Animation_Colors:[[CGColor]] = [[UIColor(argb:0xffEC1B43).cgColor,UIColor(argb:0xffAFC525).cgColor],
                                                          [UIColor(argb:0xffC127A1).cgColor,UIColor(argb:0xff0F9CBA).cgColor],
