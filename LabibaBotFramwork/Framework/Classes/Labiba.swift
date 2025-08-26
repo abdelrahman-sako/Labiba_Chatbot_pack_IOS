@@ -54,6 +54,8 @@ public enum LoggingAndRefferalEncodingType{
     static var endConversationUrl:String?
     static var skipErrorMessage = false
     static var isNpsPresentingNow = false
+    static var didGoToRate = false
+    
    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
    
@@ -610,7 +612,7 @@ public enum LoggingAndRefferalEncodingType{
             
             npsRatingVC.vcDismissed = { state in
                 isNpsPresentingNow = false
-                Labiba.isNPSAgentRatingEnabled = false
+                Labiba.didGoToRate = true
                 print("submit rating result is: \(state)")
                 dismiss(tiggerDelegate: true,compeletion: {
                     self.dismiss()
