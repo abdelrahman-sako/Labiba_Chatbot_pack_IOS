@@ -82,7 +82,6 @@ public enum LoggingAndRefferalEncodingType{
     public static var clientHeaders:[[String:String]] = [[:]]
     public static var isNPSBotRatingEnabled = false
     public static var isNPSAgentRatingEnabled = false
-    public static var didGoToNPSRating = false
     public static var isTranscriptEnabled = false
     public static var isHeaderFadingEnabled = true
     public static var transcriptSenderEmail:String?
@@ -599,7 +598,8 @@ public enum LoggingAndRefferalEncodingType{
     static func handleNPSRartingAndQuit(isForAgent:Bool){
         guard !isRatingVCPresenting else { return }
             isRatingVCPresenting = true
-
+        
+        isRateForAgent = isForAgent
             guard let topVC = UIApplication.shared.topMostViewController else{return}
             let viewController = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingNewVC") as! RatingNewVC
             Labiba.isRateForAgent = isForAgent
@@ -607,8 +607,9 @@ public enum LoggingAndRefferalEncodingType{
             topVC.present(viewController, animated: true) {
                 isRatingVCPresenting = false
             }
+        
             viewController.vcDismissed = { state in
-                Labiba.didGoToNPSRating = true
+                Labiba.isNPSAgentRatingEnabled = false
                 print("submit rating result is: \(state)")
                 dismiss(tiggerDelegate: true,compeletion: nil)
             }
