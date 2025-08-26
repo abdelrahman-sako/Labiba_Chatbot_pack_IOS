@@ -49,10 +49,11 @@ public enum LoggingAndRefferalEncodingType{
     static var _uploadUrl = "https://botbuilder.labiba.ai/WebBotConversation/UploadHomeReport"
     static var _helpUrl = ""   //"https://botbuilder.labiba.ai/api/MobileAPI/FetchHelpPage"
     static var _updateTokenUrl = ""   //"http://api.labiba.ai/api/Auth/Login"
-    static var isRatingVCPresenting = false
+//    static var isRatingVCPresenting = false
     static var warningMessageModel: WarningMessageModel?
     static var endConversationUrl:String?
     static var skipErrorMessage = false
+    static var isNpsPresentingNow = false
    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
    
@@ -596,23 +597,26 @@ public enum LoggingAndRefferalEncodingType{
     }
 
     static func handleNPSRartingAndQuit(isForAgent:Bool){
-        guard !isRatingVCPresenting else { return }
-            isRatingVCPresenting = true
-        
+        guard !isNpsPresentingNow else { return }
+
         isRateForAgent = isForAgent
+        if !isNpsPresentingNow{
             guard let topVC = UIApplication.shared.topMostViewController else{return}
-            let viewController = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingNewVC") as! RatingNewVC
+            var npsRatingVC = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingNewVC") as! RatingNewVC
             Labiba.isRateForAgent = isForAgent
-            viewController.modalPresentationStyle = .fullScreen
-            topVC.present(viewController, animated: true) {
-                isRatingVCPresenting = false
-            }
-        
-            viewController.vcDismissed = { state in
+            isNpsPresentingNow = true
+            npsRatingVC.modalPresentationStyle = .fullScreen
+            topVC.present(npsRatingVC, animated: true)
+            
+            npsRatingVC.vcDismissed = { state in
+                isNpsPresentingNow = false
                 Labiba.isNPSAgentRatingEnabled = false
                 print("submit rating result is: \(state)")
-                dismiss(tiggerDelegate: true,compeletion: nil)
+                dismiss(tiggerDelegate: true,compeletion: {
+                    self.dismiss()
+                })
             }
+        }
     }
     
     public static func setWarningBanner(enTitle:String, arTitle:String,link:String? = nil,linkEnPressTitle:String? = nil,linkArPressTitle:String? = nil, linkPressColor:UIColor,fontName:String? = nil, fontColor:UIColor = .black, backgroundColor:UIColor = UIColor.systemYellow.withAlphaComponent(0.2), padding:Int = 20,cornerRadius:Int = 12,showBoarder:Bool = false,boarderColor:UIColor = .black.withAlphaComponent(0.3)){
@@ -625,12 +629,10 @@ public enum LoggingAndRefferalEncodingType{
         DataSource.shared.close()
         WebViewEventHumanAgent.Shared.forceEnd()
         
-        if !isRatingVCPresenting{
             navigationController?.dismiss(animated: true, completion: {
                 compeletion?()
                 if tiggerDelegate{Labiba.delegate?.labibaDidClose?()}
             })
-        }
     }
 
     
