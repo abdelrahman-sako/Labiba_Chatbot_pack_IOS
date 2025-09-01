@@ -44,6 +44,15 @@ class WebViewEventHumanAgent:NSObject {
     }
    
     func start() {
+        loadUrl()
+        guard let topVC = UIApplication.shared.topMostViewController else{return}
+        topVC.view.addSubview(webView)
+        webView.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
+        webView.alpha = 0
+        //webView.isHidden = true
+    }
+    
+    func loadUrl(){
         let url = "\(Labiba.HumanAgent.url)?device=ios&userid=\(Labiba._senderId ?? "")&storyId=\(Labiba._pageId)"
         print(url)
         if let url = URL(string: url){
@@ -59,11 +68,6 @@ class WebViewEventHumanAgent:NSObject {
             }
 
             webView.load(request)
-            guard let topVC = UIApplication.shared.topMostViewController else{return}
-            topVC.view.addSubview(webView)
-            webView.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
-            webView.alpha = 0
-            //webView.isHidden = true
         }
         
     }
@@ -174,6 +178,9 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
                     print(error.localizedDescription)
                 }
             }
+        }else if statusParam as? String == "refresh-token" {
+            print("refresh-token calllled ")
+            loadUrl()
         }
         
         if statusParam as? String == "end" {
