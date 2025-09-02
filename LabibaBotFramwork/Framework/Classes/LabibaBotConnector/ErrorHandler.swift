@@ -52,7 +52,7 @@ class LabibaError:NSError{
         }
     }
     
-    private var stausCode:Int
+     var stausCode:Int
     private var headers:[AnyHashable : Any]?
     var response:String
     // MARK:  Intializers

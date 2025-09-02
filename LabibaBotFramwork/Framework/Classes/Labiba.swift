@@ -264,6 +264,7 @@ public enum LoggingAndRefferalEncodingType{
     }
     
     public static func setHeaderParams(_ headers:[[String:String]]){
+        self.clientHeaders = []
         self.clientHeaders = headers
     }
     
