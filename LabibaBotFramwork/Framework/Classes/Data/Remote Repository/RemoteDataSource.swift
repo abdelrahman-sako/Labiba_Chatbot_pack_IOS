@@ -265,8 +265,8 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func textToSpeech(model: TextToSpeechModel, handler: @escaping Handler<TextToSpeachResponseModel>) {
         let url =  "\(Labiba._voiceBasePath)\(Labiba._voiceServicePath)"
-        let endPoint = EndPoint(url: url, httpMethod: .post)
-        
+        var endPoint = EndPoint(url: url, httpMethod: .post)
+        endPoint.headers = ["Content-Type": "application/x-www-form-urlencoded"]
         let params:[String:Any] = [
             "text":Labiba.loggingAndRefferalEncodingType == .base64 ? model.text.toBase64() : model.text,
             "voicename" : model.googleVoice.voicename,
