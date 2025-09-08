@@ -405,6 +405,20 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         }
     }
     
+    func getChatHistory(pageId:String,senderId:String,_ completionHandler:@escaping Handler<String?>){
+        let url = "\(Labiba._basePath)/api/ChatHistory/GetChatHistory?pageId=\(senderId)&pageId=\(pageId)"
+        let endPoint = EndPoint(url: url, httpMethod: .post)
+        
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: [:]) { result in
+            switch result{
+            case .success(let data):
+                self.dataParamParser(data: data, model: String?.self, completion: completionHandler)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     
     
     

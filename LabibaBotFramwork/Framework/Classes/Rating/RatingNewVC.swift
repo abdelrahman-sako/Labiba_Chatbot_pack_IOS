@@ -9,6 +9,7 @@
 import UIKit
 
 class RatingNewVC:UIViewController {
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var RatingsTableView: ContentSizedTableView!
     @IBOutlet weak var submitButton: UIButton!
@@ -23,30 +24,12 @@ class RatingNewVC:UIViewController {
         setupUI()
     }
 
-    func tableViewSetup()  {
-        RatingsTableView.delegate = self
-        RatingsTableView.dataSource = self
-        RatingsTableView.reloadData()
+    @IBAction func backButtonTapped(_ sender: Any) {
+        Labiba.showBackOnNPS = false
+        Labiba.isNpsPresentingNow = false
+        dismiss(animated: true)
+    }
 
-        let nib6 = UINib(nibName: "NumberRatingCell", bundle: self.nibBundle)
-        RatingsTableView.register(nib6, forCellReuseIdentifier: "NumberRatingCell")
-        RatingsTableView.reloadData()
-    }
-    
-    func setupUI(){
-        submitButton.backgroundColor = LabibaThemes.npsRatingColor
-        buttons.forEach({$0.layer.cornerRadius = 25})
-        
-        welcomeLabel.text = "Share Your Rating!".localForChosnLangCodeBB
-        buttons[0].setTitle("Submit".localForChosnLangCodeBB, for: .normal)
-        buttons[1].setTitle("Later".localForChosnLangCodeBB, for: .normal)
-        
-        RatingsTableView.semanticContentAttribute = .forceLeftToRight
-    }
-    func submitRate(){
-
-    }
-    
     @IBAction func submitButtonTapped(_ sender: Any) {
         guard let selectedScore else {
             showErrorMessage("Please Select a Score")
@@ -77,6 +60,36 @@ class RatingNewVC:UIViewController {
         self.dismiss(animated: true,completion: {
             self.vcDismissed?("rate later")
         })
+    }
+    
+    
+    func tableViewSetup()  {
+        RatingsTableView.delegate = self
+        RatingsTableView.dataSource = self
+        RatingsTableView.reloadData()
+        
+        let nib6 = UINib(nibName: "NumberRatingCell", bundle: self.nibBundle)
+        RatingsTableView.register(nib6, forCellReuseIdentifier: "NumberRatingCell")
+        RatingsTableView.reloadData()
+    }
+    
+    func setupUI(){
+        submitButton.backgroundColor = LabibaThemes.npsRatingColor
+        buttons.forEach({$0.layer.cornerRadius = 25})
+        
+        welcomeLabel.text = "Share Your Rating!".localForChosnLangCodeBB
+        buttons[0].setTitle("Submit".localForChosnLangCodeBB, for: .normal)
+        buttons[1].setTitle("Later".localForChosnLangCodeBB, for: .normal)
+        
+        RatingsTableView.semanticContentAttribute = .forceLeftToRight
+        
+        backButton.isHidden = !Labiba.showBackOnNPS
+        backButton.setTitle("Back".localForChosnLangCodeBB, for: .normal)
+        backButton.titleLabel?.textColor = .black
+    }
+    
+    func submitRate(){
+        
     }
     
 }

@@ -55,7 +55,7 @@ public enum LoggingAndRefferalEncodingType{
     static var skipErrorMessage = false
     static var isNpsPresentingNow = false
     static var didGoToRate = false
-    
+    static var showBackOnNPS = false
    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
    
@@ -213,6 +213,12 @@ public enum LoggingAndRefferalEncodingType{
     
     public static func setNpsRatingColor(_ color: UIColor){
         LabibaThemes.npsRatingColor = color
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            DataSource.shared.getChatHistory(pageId: Labiba._pageId, senderId: Labiba._senderId) { hiii in
+                
+            }
+        })
     }
     
     // MARK:- UserParameters and Referrals
