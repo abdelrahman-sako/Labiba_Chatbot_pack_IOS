@@ -9,6 +9,8 @@
 import Foundation
 class HumanAgentModel:Decodable {
     var result:HumanAgentResult?
+    var messageID: String?
+
     
     class HumanAgentResult:Decodable {
         var fulfillment:[HumanAgentfulfillment]?

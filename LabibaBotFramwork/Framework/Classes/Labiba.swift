@@ -115,7 +115,9 @@ public enum LoggingAndRefferalEncodingType{
         {
             uuid = preferences.string(forKey: SenderId)!
         }
+        
         setSenderId(uuid)
+//        setSenderId("57960621534376")
         if _Referral == nil { createReferral()} // to handel the case (if setUserParams call befor initialize)
         _OpenFromBubble = false
         switch UIScreen.current {
@@ -213,12 +215,6 @@ public enum LoggingAndRefferalEncodingType{
     
     public static func setNpsRatingColor(_ color: UIColor){
         LabibaThemes.npsRatingColor = color
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-            DataSource.shared.getChatHistory(pageId: Labiba._pageId, senderId: Labiba._senderId) { hiii in
-                
-            }
-        })
     }
     
     // MARK:- UserParameters and Referrals

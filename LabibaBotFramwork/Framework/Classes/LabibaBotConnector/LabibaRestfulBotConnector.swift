@@ -303,6 +303,7 @@ class LabibaRestfulBotConnector{ //
                 dialog.media = DialogMedia(type: .Photo)
                 dialog.media?.url = imageUrl
             }
+            DataSource.shared.updateChatHistoryStatus(messagesIds: [model.messageID ?? ""])
             self.delegate?.botConnector( didRecieveActivity: dialog)
         }
     }

@@ -31,6 +31,9 @@ class PrechatFormVC: UIViewController {
         getDate()
     }
    
+    override func viewWillAppear(_ animated: Bool) {
+        print("sako appeared")
+    }
     override func viewDidDisappear(_ animated: Bool) {
         print("viewWillDisappear")
 //        IQKeyboardManager.shared.enable =  falseL

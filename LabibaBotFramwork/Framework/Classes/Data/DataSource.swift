@@ -98,8 +98,12 @@ final class DataSource: DataSourceProtocol{
         remoteDataSource.submitNPSScore(score,completionHandler)
     }
 
-    func getChatHistory(pageId:String,senderId:String,_ completionHandler:@escaping Handler<String?>){
+    func getChatHistory(pageId:String,senderId:String,_ completionHandler:@escaping Handler<MessagesHistoryResponseModel>){
         remoteDataSource.getChatHistory(pageId:pageId,senderId:senderId,completionHandler)
+    }
+
+    func updateChatHistoryStatus(messagesIds:[String]){
+        remoteDataSource.updateChatHistoryStatus(messagesIds:messagesIds)
     }
 //    func sendData(_ data: Data, handler: @escaping Handler<UploadDataResponseModel>) {
 //        remoteDataSource.sendData(data, handler: handler)

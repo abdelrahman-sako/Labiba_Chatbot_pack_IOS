@@ -84,6 +84,11 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     var canLunchRating:Bool = false
     var isTTSMuted:Bool = false
     var tableViewBottomInset:CGFloat = 50
+    private var historyMessagesIds: [String] = []{
+        didSet{
+            updateReadMessages()
+        }
+    }
     
     lazy var keyboardTypeDialog = UserTextInputNoLocal.create()
     lazy var visualizerDialog = VisualizerVoiceAssistantView.create()
@@ -211,7 +216,22 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         if Labiba.warningMessageModel?.isWarningMessageEnabled ?? false{
             addWarningMessage()
         }
-    }
+        
+        // Observe app foreground event
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(appDidBecomeActive),
+            name: UIApplication.didBecomeActiveNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(appDidEnterBackground),
+            name: UIApplication.didEnterBackgroundNotification,
+            object: nil
+        )
+}
     
     override func viewDidAppear(_ animated: Bool)
     {
@@ -221,6 +241,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         
         
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         botConnector.delegate = self
         UIApplication.shared.setStatusBarColor(color: Labiba._StatusBarColor )
@@ -251,8 +273,38 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     deinit {
         print("ConversationViewController deinitialized")
+        NotificationCenter.default.removeObserver(self)
     }
     
+    @objc private func appDidBecomeActive() {
+        // Refresh or re-connect SDK features here
+        
+        if Labiba.isHumanAgentStarted{
+            DataSource.shared.getChatHistory(pageId: Labiba._pageId, senderId: Labiba._senderId) { [unowned self] result in
+                switch result{
+                case .success(let messages):
+                    print("dattaMessages  \(messages)")
+                    var messagesIds: [String] = []
+                    for message in messages{
+                        let dialog = ConversationDialog(by: .bot, time: Date())
+                        dialog.message = message.messageText
+                        dialog.timestampString = message.timeSent
+                        self.displayedDialogs.append(EntryDisplay(dialog:dialog))
+                        self.tableView.reloadData()
+                        //                        messagesIds.append(message.messageID ?? "")
+                    }
+                    self.historyMessagesIds = messagesIds
+                    Labiba.isHumanAgentStarted = (messages.last?.isChatWithAgent) ?? false
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+
+    @objc private func appDidEnterBackground() {
+        
+    }
     override public var preferredStatusBarStyle: UIStatusBarStyle {
         return Labiba._StatusBarStyle
     }
@@ -263,6 +315,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     func HideCardsView() {
+    }
+    
+    func updateReadMessages(){
+        DataSource.shared.updateChatHistoryStatus(messagesIds: historyMessagesIds)
     }
     
     func addTableMask()  {

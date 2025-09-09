@@ -405,20 +405,38 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         }
     }
     
-    func getChatHistory(pageId:String,senderId:String,_ completionHandler:@escaping Handler<String?>){
-        let url = "\(Labiba._basePath)/api/ChatHistory/GetChatHistory?pageId=\(senderId)&pageId=\(pageId)"
+    func getChatHistory(pageId:String,senderId:String,_ completionHandler:@escaping Handler<MessagesHistoryResponseModel>){
+        let url = "\(Labiba._basePath)/api/ChatHistory/GetChatHistory?senderId=\(senderId)&pageId=\(pageId)"
         let endPoint = EndPoint(url: url, httpMethod: .post)
         
         remoteContext.withTokenRequest(endPoint: endPoint, parameters: [:]) { result in
             switch result{
             case .success(let data):
-                self.dataParamParser(data: data, model: String?.self, completion: completionHandler)
+                self.dataParamParser(data: data, model: MessagesHistoryResponseModel.self, completion: completionHandler)
             case .failure(let error):
                 print(error)
             }
         }
     }
     
+    func updateChatHistoryStatus(messagesIds:[String]){
+            let url = "\(Labiba._basePath)/api/ChatHistory/UpdateStatusMessage"
+            let endPoint = EndPoint(url: url, httpMethod: .post)
+        let parameters: [String : Any] = [
+                "messageIds" : messagesIds,
+                "senderId" : Labiba._senderId ?? "",
+                "pageId" : Labiba._pageId,
+                "status" : 2
+            ]
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: parameters) { result in
+                switch result{
+                case .success(let data):
+                    self.dataParamParser(data: data, model: Int.self, completion: {_ in } )
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     
     
     

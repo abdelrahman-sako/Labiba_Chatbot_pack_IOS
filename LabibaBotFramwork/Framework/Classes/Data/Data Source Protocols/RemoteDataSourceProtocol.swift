@@ -27,7 +27,9 @@ protocol RemoteDataSourceProtocol {
     func sendTranscript(name:String, email:String, handler: @escaping Handler<EmptyModel>) 
     func getActiveQuestion(_ completionHandler:@escaping Handler<getActiveQuestionsResponseModel>)
     func submitNPSScore(_ score:String,_ completionHandler:@escaping Handler<String?>)
-    func getChatHistory(pageId:String,senderId:String,_ completionHandler:@escaping Handler<String?>)
+    func getChatHistory(pageId:String,senderId:String,_ completionHandler:@escaping Handler<MessagesHistoryResponseModel>)
+    func updateChatHistoryStatus(messagesIds:[String])
+
     func close()
 
 }
