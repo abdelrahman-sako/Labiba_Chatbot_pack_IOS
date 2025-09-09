@@ -90,6 +90,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         }
     }
     
+//    private var isObserverAdded = false
+
     lazy var keyboardTypeDialog = UserTextInputNoLocal.create()
     lazy var visualizerDialog = VisualizerVoiceAssistantView.create()
     lazy var voiceTypeDialog = VoiceAssistantView.create()
@@ -217,13 +219,16 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             addWarningMessage()
         }
         
-        // Observe app foreground event
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(appDidBecomeActive),
-            name: UIApplication.didBecomeActiveNotification,
-            object: nil
-        )
+//        if !isObserverAdded {
+            // Observe app foreground event
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(appDidBecomeActive),
+                name: UIApplication.didBecomeActiveNotification,
+                object: nil
+            )
+//            isObserverAdded = true
+//        }
         
         NotificationCenter.default.addObserver(
             self,
@@ -273,48 +278,50 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     deinit {
         print("ConversationViewController deinitialized")
-        NotificationCenter.default.removeObserver(self)
+//        NotificationCenter.default.removeObserver(self)
     }
     
     @objc private func appDidBecomeActive() {
         // Refresh or re-connect SDK features here
-        Labiba.isAppInBackground = false
+
         
         if Labiba.isHumanAgentStarted{
             DataSource.shared.getChatHistory(pageId: Labiba._pageId, senderId: Labiba._senderId) { [unowned self] result in
                 switch result{
-                case .success(let messagesss):
-                    var comingMessages = messagesss
-                    print("dattaMessages  \(comingMessages)")
+                case .success(let messages):
+                    print("dattaMessages  \(messages)")
                     var messagesIds: [String] = []
-                    for (index, message) in comingMessages.enumerated(){
+                    for (index, message) in messages.enumerated(){
                         let dialog = ConversationDialog(by: .bot, time: Date())
-                        
-                        if (message.messageText?.contains("@@") ?? false) && (index == comingMessages.count - 1){
-                            let messageToBeSkipped = message.messageText
-                            let fullNameArr = messageToBeSkipped?.components(separatedBy: "@@")
-                            comingMessages[index].messageText = fullNameArr?.first
-                        }
-                        dialog.message = message.messageText
                         dialog.timestampString = message.timeSent
 
+                        if (message.messageText?.contains("@@") ?? false) && (index == messages.count - 1){
+                            let messageToBeSkipped = message.messageText
+                            let fullNameArr = messageToBeSkipped?.components(separatedBy: "@@")
+                            dialog.message = fullNameArr?.first
+                        }else{
+                            dialog.message = message.messageText
+                        }
 
                         self.displayedDialogs.append(EntryDisplay(dialog:dialog))
                         self.tableView.reloadData()
                         messagesIds.append(message.messageID ?? "")
                     }
                     self.historyMessagesIds = messagesIds
-                    Labiba.isHumanAgentStarted = (comingMessages.last?.isChatWithAgent) ?? false
                     DataSource.shared.updateChatHistoryStatus(messagesIds: messagesIds)
                     
-                    if (comingMessages.last?.isChatWithAgent) ?? false{
+                    if !(messages.last?.isChatWithAgent ?? false){
                         BotConnector.shared.sendGetStarted()
                     }
+                    Labiba.isHumanAgentStarted = (messages.last?.isChatWithAgent) ?? false
+
                 case .failure(let error):
                     print(error)
                 }
             }
         }
+        Labiba.isAppInBackground = false
+
     }
 
     @objc private func appDidEnterBackground() {
