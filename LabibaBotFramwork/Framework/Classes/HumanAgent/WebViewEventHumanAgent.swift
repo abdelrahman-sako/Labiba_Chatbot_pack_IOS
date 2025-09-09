@@ -169,13 +169,16 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
         
         
         if statusParam as? String == "msg" {
-            if let stringModel = messageDic["msg"] as? String, let dataModel = stringModel.data(using: .utf8) {
-                let decoder = JSONDecoder()
-                do {
-                    let model = try decoder.decode(HumanAgentModel.self, from: dataModel)
-                    LabibaRestfulBotConnector.shared.parsHumanAgentResponse(model: model)
-                } catch  {
-                    print(error.localizedDescription)
+            
+            if !Labiba.isAppInBackground{
+                if let stringModel = messageDic["msg"] as? String, let dataModel = stringModel.data(using: .utf8) {
+                    let decoder = JSONDecoder()
+                    do {
+                        let model = try decoder.decode(HumanAgentModel.self, from: dataModel)
+                        LabibaRestfulBotConnector.shared.parsHumanAgentResponse(model: model)
+                    } catch  {
+                        print(error.localizedDescription)
+                    }
                 }
             }
         }else if statusParam as? String == "refresh-token" {
@@ -184,8 +187,10 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
         }
         
         if statusParam as? String == "end" {
-            end()
-            BotConnector.shared.sendGetStarted()
+            if !Labiba.isAppInBackground{
+                end()
+                BotConnector.shared.sendGetStarted()
+            }
         }
         
        

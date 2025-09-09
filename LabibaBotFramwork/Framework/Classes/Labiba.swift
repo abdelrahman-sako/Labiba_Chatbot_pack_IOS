@@ -56,6 +56,7 @@ public enum LoggingAndRefferalEncodingType{
     static var isNpsPresentingNow = false
     static var didGoToRate = false
     static var showBackOnNPS = false
+    static var isAppInBackground = false
    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
    

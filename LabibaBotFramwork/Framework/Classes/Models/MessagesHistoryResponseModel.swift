@@ -10,11 +10,11 @@ import Foundation
 
 // MARK: - MessagesHistoryResponseModelElement
 struct MessagesHistoryResponseModelElement: Codable {
-    let id: String
-    let messageText: String?
-    let from, to, dateSent, timeSent: String?
-    let messageID: String?
-    let isChatWithAgent: Bool?
+    var id: String
+    var messageText: String?
+    var from, to, dateSent, timeSent: String?
+    var messageID: String?
+    var isChatWithAgent: Bool?
     
     enum CodingKeys: String, CodingKey {
         case id = "ID"

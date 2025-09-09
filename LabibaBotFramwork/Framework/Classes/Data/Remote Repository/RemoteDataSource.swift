@@ -421,14 +421,14 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func updateChatHistoryStatus(messagesIds:[String]){
             let url = "\(Labiba._basePath)/api/ChatHistory/UpdateStatusMessage"
-            let endPoint = EndPoint(url: url, httpMethod: .post)
+        let endPoint = EndPoint(url: url, httpMethod: .post,headers: ["Content-Type":"application/json"])
         let parameters: [String : Any] = [
                 "messageIds" : messagesIds,
                 "senderId" : Labiba._senderId ?? "",
-                "pageId" : Labiba._pageId,
+                "pageId" : SharedPreference.shared.currentUserId,
                 "status" : 2
             ]
-        remoteContext.withTokenRequest(endPoint: endPoint, parameters: parameters) { result in
+        remoteContext.request(endPoint: endPoint, parameters: parameters) { result in
                 switch result{
                 case .success(let data):
                     self.dataParamParser(data: data, model: Int.self, completion: {_ in } )

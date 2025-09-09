@@ -278,23 +278,38 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     @objc private func appDidBecomeActive() {
         // Refresh or re-connect SDK features here
+        Labiba.isAppInBackground = false
         
         if Labiba.isHumanAgentStarted{
             DataSource.shared.getChatHistory(pageId: Labiba._pageId, senderId: Labiba._senderId) { [unowned self] result in
                 switch result{
-                case .success(let messages):
-                    print("dattaMessages  \(messages)")
+                case .success(let messagesss):
+                    var comingMessages = messagesss
+                    print("dattaMessages  \(comingMessages)")
                     var messagesIds: [String] = []
-                    for message in messages{
+                    for (index, message) in comingMessages.enumerated(){
                         let dialog = ConversationDialog(by: .bot, time: Date())
+                        
+                        if (message.messageText?.contains("@@") ?? false) && (index == comingMessages.count - 1){
+                            let messageToBeSkipped = message.messageText
+                            let fullNameArr = messageToBeSkipped?.components(separatedBy: "@@")
+                            comingMessages[index].messageText = fullNameArr?.first
+                        }
                         dialog.message = message.messageText
                         dialog.timestampString = message.timeSent
+
+
                         self.displayedDialogs.append(EntryDisplay(dialog:dialog))
                         self.tableView.reloadData()
-                        //                        messagesIds.append(message.messageID ?? "")
+                        messagesIds.append(message.messageID ?? "")
                     }
                     self.historyMessagesIds = messagesIds
-                    Labiba.isHumanAgentStarted = (messages.last?.isChatWithAgent) ?? false
+                    Labiba.isHumanAgentStarted = (comingMessages.last?.isChatWithAgent) ?? false
+                    DataSource.shared.updateChatHistoryStatus(messagesIds: messagesIds)
+                    
+                    if (comingMessages.last?.isChatWithAgent) ?? false{
+                        BotConnector.shared.sendGetStarted()
+                    }
                 case .failure(let error):
                     print(error)
                 }
@@ -303,7 +318,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
 
     @objc private func appDidEnterBackground() {
-        
+        Labiba.isAppInBackground = true
     }
     override public var preferredStatusBarStyle: UIStatusBarStyle {
         return Labiba._StatusBarStyle
