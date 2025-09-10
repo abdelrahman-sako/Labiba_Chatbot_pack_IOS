@@ -189,10 +189,10 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
         }
         
         if statusParam as? String == "end" {
-//            if !Labiba.isAppInBackground{
+            if !Labiba.isAppInBackground{
                 end()
-                BotConnector.shared.sendGetStarted()
-//            }
+//                BotConnector.shared.sendGetStarted()
+            }
         }
         
        
