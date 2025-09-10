@@ -317,7 +317,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
 
                             if !(lastMessageStatus ?? true){
                                 WebViewEventHumanAgent.Shared.end()
-//                                BotConnector.shared.sendGetStarted()
                             }
                             Labiba.isHumanAgentStarted = lastMessageStatus ?? true
                             Labiba.isAppInBackground = false

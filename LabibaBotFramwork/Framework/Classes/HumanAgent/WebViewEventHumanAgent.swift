@@ -81,7 +81,7 @@ class WebViewEventHumanAgent:NSObject {
             if !Labiba.didGoToRate && Labiba.isNPSAgentRatingEnabled{
                Labiba.handleNPSRartingAndQuit(isForAgent: true)
             }else{
-                BotConnector.shared.sendMessage("CONVERSATION-RELOAD")
+                BotConnector.shared.sendMessage("get started")
             }
         }
     }
