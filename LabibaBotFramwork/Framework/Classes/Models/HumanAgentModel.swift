@@ -9,7 +9,7 @@
 import Foundation
 class HumanAgentModel:Decodable {
     var result:HumanAgentResult?
-    var messageID: String?
+    var messageId: String?
 
     
     class HumanAgentResult:Decodable {

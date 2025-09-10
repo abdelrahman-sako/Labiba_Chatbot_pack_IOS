@@ -305,7 +305,7 @@ class LabibaRestfulBotConnector{ //
             }
             self.delegate?.botConnector( didRecieveActivity: dialog)
         }
-        DataSource.shared.updateChatHistoryStatus(messagesIds: [model.messageID ?? ""])
+        DataSource.shared.updateChatHistoryStatus(messagesIds: [model.messageId ?? ""])
     }
     
     func ShowDialog()
