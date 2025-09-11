@@ -11,7 +11,10 @@ import UIKit
 
 public class GreetingHeaderView: LabibaChatHeaderView {
 
-    public static func create(withAction:Bool = true,appLogoImgURl:String? = nil ,centerImageURL:String? = nil ,centerImage:UIImage? = nil  ,backgroundImgURL:String? = nil,backgroundImg:UIImage? = nil , bodyAndTitle:[String:String]) -> GreetingHeaderView
+    static var buttonsTopMargin:CGFloat = 0
+    static var buttonsSideMargin:CGFloat = 0
+    
+    public static func create(withAction:Bool = true,appLogoImgURl:String? = nil ,centerImageURL:String? = nil ,centerImage:UIImage? = nil  ,backgroundImgURL:String? = nil,backgroundImg:UIImage? = nil , bodyAndTitle:[String:String],buttonsTopMargin:CGFloat = 0,buttonsSideMargin:CGFloat = 0) -> GreetingHeaderView
     {
         let view = UIView.loadFromNibNamedFromDefaultBundle("GreetingHeaderView") as! GreetingHeaderView
         if let imageURL = centerImageURL ,let url = URL(string: imageURL) {
@@ -49,14 +52,22 @@ public class GreetingHeaderView: LabibaChatHeaderView {
             }
         }
         view.muteButton.isHidden = Labiba.isMuteButtonHidden
+        self.buttonsTopMargin = buttonsTopMargin
+        self.buttonsSideMargin = buttonsSideMargin
         return view
     }
 
-  
+    public override func layoutSubviews() {
+        setHeaderButtonsMargin()
+    }
     
     
 
     
+    @IBOutlet weak var rightStackLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightStackTopConsraints: NSLayoutConstraint!
+    @IBOutlet weak var leftStackTopConsraints: NSLayoutConstraint!
+    @IBOutlet weak var leftStackLeadingConstraint: NSLayoutConstraint!
     @IBOutlet public weak var centerImageView: UIImageView!
     @IBOutlet public weak var centerImageTopCons: NSLayoutConstraint!
     @IBOutlet public weak var centerImageWidthCons: NSLayoutConstraint!
@@ -104,6 +115,7 @@ public class GreetingHeaderView: LabibaChatHeaderView {
         muteButton.tintColor =  Labiba._HeaderTintColor
          vedioCallButton.tintColor =  Labiba._HeaderTintColor
         vedioCallButton.imageView?.contentMode = .scaleAspectFit
+        
     }
    
     
@@ -192,5 +204,23 @@ public class GreetingHeaderView: LabibaChatHeaderView {
            self.delegate?.labibaHeaderViewDidRequestVedioCallAction?()
        }
     
+    
+//     func setHeaderButtonsMargin(toTop margin: CGFloat){
+     func setHeaderButtonsMargin(){
+        
+         leftStackTopConsraints.constant = GreetingHeaderView.buttonsTopMargin
+         leftStackLeadingConstraint.constant = GreetingHeaderView.buttonsSideMargin
+         rightStackLeadingConstraint.constant = GreetingHeaderView.buttonsSideMargin
+         rightStackTopConsraints.constant = GreetingHeaderView.buttonsTopMargin
+//
+//       UIView.animate(withDuration: 0.25) { self.backGroundView.layoutIfNeeded() }
+//       buttonsTopMargin = margin
+
+//       layoutSubviews()
+       
+//       rightStack.layoutIfNeeded()
+//       leftStack.layoutIfNeeded()
+//       layoutSubviews()
+    }
   
 }

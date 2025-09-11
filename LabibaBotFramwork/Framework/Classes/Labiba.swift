@@ -103,9 +103,11 @@ public enum LoggingAndRefferalEncodingType{
         self._pageId = SharedPreference.shared.currentUserId
        
         LocationService.shared.updateLocation()
+        
         var uuid = "";
         let preferences = UserDefaults.standard
         let SenderId = "SenderId"
+        preferences.set(nil, forKey: SenderId)
         if preferences.object(forKey: SenderId) == nil
         {
             uuid = UUID().uuidString
