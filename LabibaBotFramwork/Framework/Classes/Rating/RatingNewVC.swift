@@ -83,7 +83,7 @@ class RatingNewVC:UIViewController {
         
         RatingsTableView.semanticContentAttribute = .forceLeftToRight
         
-        backButton.isHidden = !Labiba.showBackOnNPS
+        backButton.isHidden = Labiba.isRateForAgent
         backButton.setTitle("Back".localForChosnLangCodeBB, for: .normal)
         backButton.titleLabel?.textColor = .black
     }
