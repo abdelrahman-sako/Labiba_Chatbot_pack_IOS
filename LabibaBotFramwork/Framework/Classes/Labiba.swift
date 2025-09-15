@@ -622,6 +622,7 @@ public enum LoggingAndRefferalEncodingType{
                 print("submit rating result is: \(state)")
                 dismiss(tiggerDelegate: true,compeletion: {
                     self.dismiss()
+                    Labiba.showBackOnNPS = false
                 })
             }
         }
@@ -632,6 +633,7 @@ public enum LoggingAndRefferalEncodingType{
     }
     
     static func dismiss(tiggerDelegate:Bool = true ,compeletion:(()->Void)? = nil){
+        Labiba.showBackOnNPS = false
         if tiggerDelegate{Labiba.delegate?.labibaWillClose?()}
         //LabibaRestfulBotConnector.shared.close()
         DataSource.shared.close()
