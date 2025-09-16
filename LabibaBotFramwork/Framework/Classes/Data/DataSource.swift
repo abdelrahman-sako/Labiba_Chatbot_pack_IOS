@@ -112,6 +112,10 @@ final class DataSource: DataSourceProtocol{
 //        remoteDataSource.sendPhoto(data, handler: handler)
 //    }
     
+
+    func getAgentName(_ completionHandler:@escaping Handler<GetAgentInfoResponseModel>){
+        remoteDataSource.getAgentName(completionHandler)
+    }
     
     
     func close() {

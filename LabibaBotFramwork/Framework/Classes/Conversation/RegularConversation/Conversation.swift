@@ -33,6 +33,8 @@ class ConversationDialog
         self.timestamp = time
     }
 
+    var isFromAgent = false
+    
     var hasMessage: Bool
     {
         let message = self.message ?? ""

@@ -93,6 +93,9 @@ public enum LoggingAndRefferalEncodingType{
     public static var npsQuestionTemplateLongId: String?
 
     
+    static var isRatingVCPresenting = false
+    static var botName = "bot".localForChosnLangCodeBB
+    static var agentName: String? 
   //  public  static var isLoggingEnabled: Bool = false
 
      // MARK:- Main Settings
@@ -297,7 +300,9 @@ public enum LoggingAndRefferalEncodingType{
     }
     
     
-    
+    public static func setBotName(_ name:String){
+        botName = name
+    }
     
     
     // MARK:- Bot Type And Font

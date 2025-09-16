@@ -58,9 +58,14 @@ class StateOnHoldEntryCell: StateEntryCell, EntryDisplayDelegate, SelectableCard
             self.addSubview(self.bubble)
             let dateFormatter = DateFormatter()
           //  self.bubble.timeLabel.text = dateFormatter.string(from: self.currentDialog.timestamp)
-            //
+          //
+            
+//            if currentDialog.party == .bot {
+//            currentDialog?.isFromAgent = Labiba.isHumanAgentStarted
+//        }
+
             self.bubble.currentDialog = self.currentDialog
-            //
+
             self.bubble.doSetMessage = self.currentDialog.message!
             self.botBubbleMaxY = self.bubble.frame.maxY
             self.renderAvatar(animated: false)

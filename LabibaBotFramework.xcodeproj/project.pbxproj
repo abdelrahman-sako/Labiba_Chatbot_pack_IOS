@@ -27,6 +27,10 @@
 		207CBFB72D898C5C00C9126D /* LabibaImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CBFB62D898C5C00C9126D /* LabibaImageExtension.swift */; };
 		20811CCC2A55497000B0573C /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20811CCB2A55497000B0573C /* KeyChainManager.swift */; };
 		20B1D9052E6F0CCA0014F2DD /* MessagesHistoryResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1D9042E6F0CCA0014F2DD /* MessagesHistoryResponseModel.swift */; };
+		2081BB852E793D950016616E /* GetAgentInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2081BB842E793D950016616E /* GetAgentInfoResponseModel.swift */; };
+		2095162E2E51AB22000B94EA /* GetSurveyQuestionsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2095162D2E51AB22000B94EA /* GetSurveyQuestionsResponseModel.swift */; };
+		209516302E51BDBA000B94EA /* SurveyQuestionAnswersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2095162F2E51BDBA000B94EA /* SurveyQuestionAnswersModel.swift */; };
+		209516322E51BF58000B94EA /* SurveyQuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209516312E51BF58000B94EA /* SurveyQuestionsVC.swift */; };
 		20CDC6282DDB0792005F9F1C /* TranscriptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDC6262DDB0792005F9F1C /* TranscriptVC.swift */; };
 		20CDC6292DDB0792005F9F1C /* TranscriptVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CDC6272DDB0792005F9F1C /* TranscriptVC.xib */; };
 		20CDC62B2DDB088B005F9F1C /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDC62A2DDB088B005F9F1C /* CustomViews.swift */; };
@@ -538,6 +542,10 @@
 		207CBFB62D898C5C00C9126D /* LabibaImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaImageExtension.swift; sourceTree = "<group>"; };
 		20811CCB2A55497000B0573C /* KeyChainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		20B1D9042E6F0CCA0014F2DD /* MessagesHistoryResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesHistoryResponseModel.swift; sourceTree = "<group>"; };
+		2081BB842E793D950016616E /* GetAgentInfoResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAgentInfoResponseModel.swift; sourceTree = "<group>"; };
+		2095162D2E51AB22000B94EA /* GetSurveyQuestionsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSurveyQuestionsResponseModel.swift; sourceTree = "<group>"; };
+		2095162F2E51BDBA000B94EA /* SurveyQuestionAnswersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionAnswersModel.swift; sourceTree = "<group>"; };
+		209516312E51BF58000B94EA /* SurveyQuestionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionsVC.swift; sourceTree = "<group>"; };
 		20CDC6262DDB0792005F9F1C /* TranscriptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptVC.swift; sourceTree = "<group>"; };
 		20CDC6272DDB0792005F9F1C /* TranscriptVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranscriptVC.xib; sourceTree = "<group>"; };
 		20CDC62A2DDB088B005F9F1C /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
@@ -1172,6 +1180,9 @@
 				F96C538C29377D760038440A /* UploadDataModel.swift */,
 				F96C5391293895B80038440A /* LoggingModel.swift */,
 				20FE11CA2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift */,
+				2095162D2E51AB22000B94EA /* GetSurveyQuestionsResponseModel.swift */,
+				2095162F2E51BDBA000B94EA /* SurveyQuestionAnswersModel.swift */,
+				2081BB842E793D950016616E /* GetAgentInfoResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2608,6 +2619,7 @@
 			files = (
 				5277567C272EE12F00F8ADE0 /* AnimationImageProvider.swift in Sources */,
 				52C6DBAA24694849005CFE27 /* UIImage+AlamofireImage.swift in Sources */,
+				2081BB852E793D950016616E /* GetAgentInfoResponseModel.swift in Sources */,
 				522D164A256E44F2002758D5 /* GetRatingFormQuestionsModel.swift in Sources */,
 				B429552922DDDBD2002DE3E9 /* TypingIndicatorCell.swift in Sources */,
 				527756A2272EE12F00F8ADE0 /* Interpolatable.swift in Sources */,

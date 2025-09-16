@@ -30,7 +30,9 @@ protocol RemoteDataSourceProtocol {
     func getChatHistory(pageId:String,senderId:String,_ completionHandler:@escaping Handler<MessagesHistoryResponseModel>)
     func updateChatHistoryStatus(messagesIds:[String])
 
+    func getAgentName(_ completionHandler:@escaping Handler<GetAgentInfoResponseModel>)
     func close()
+    
 
 }
 

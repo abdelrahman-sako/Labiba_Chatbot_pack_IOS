@@ -440,6 +440,20 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     
     
+    func getAgentName(_ completionHandler:@escaping Handler<GetAgentInfoResponseModel>){
+        let url = "\(Labiba._basePath)/api/LiveChat/v1.0/GetAgentInfo/\(SharedPreference.shared.currentUserId)/\(Labiba._senderId ?? "")"
+        let endPoint = EndPoint(url: url, httpMethod: .get)
+        
+        remoteContext.withTokenRequest(endPoint: endPoint, parameters: [:]) { result in
+            switch result{
+            case .success(let data):
+                self.dataParamParser(data: data, model: GetAgentInfoResponseModel.self, completion: completionHandler)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     
     //MARK: - Close All Session Tasks
     

@@ -38,15 +38,21 @@ public class BubbleView: UIView {
     var maxWidth:CGFloat = 0
     var currentDialog:ConversationDialog?
     var _message:String = ""
+    var isFirstTime = true
     var doSetMessage:String {
-        
         set {
             if Labiba.hasBubbleTimestamp {
                 if let timestamp = currentDialog?.timestamp {
                     let dateFormatter = DateFormatter()
                     
+                    
                     dateFormatter.dateFormat = source == .incoming ? Labiba.BotChatBubble.timestamp.formate : Labiba.UserChatBubble.timestamp.formate
-                    let botName = Labiba.BotChatBubble.botName == nil ? "bot".localForChosnLangCodeBB : Labiba.BotChatBubble.botName!
+                    getBotName()
+//                    let botName = Labiba.BotChatBubble.botName == nil ? "bot".localForChosnLangCodeBB : Labiba.BotChatBubble.botName!
+                    
+//                    let botName = currentDialog?.isFromAgent ?? false ? Labiba.agentName ?? "Agent".localForChosnLangCodeBB : Labiba.botName
+                    let botName = currentDialog?.isFromAgent ?? false ? "Agent-A": "bot-A"
+                    print("this message is from agent ??\(currentDialog?.isFromAgent)")
                     let userName = Labiba.UserChatBubble.userName == nil ? "you".localForChosnLangCodeBB : Labiba.UserChatBubble.userName!
                     
                     
@@ -144,11 +150,36 @@ public class BubbleView: UIView {
                 self.adjustForContent(text:textLabel.attributedText , lang: LabibaLanguage(rawValue: lang ?? "") ?? .ar, fontSize: fontSize)
                 
             }
+            
+            
         }
         
         get
         {
             return self._message
+        }
+    }
+    
+    func getBotName(){
+        if Labiba.isHumanAgentStarted{
+            if source == .incoming && currentDialog?.hasBotMessage ?? false{
+                if !isFirstTime{
+                    if Labiba.agentName == nil{
+                        DataSource.shared.getAgentName { result in
+                            switch result{
+                            case .success(let data):
+                                Labiba.agentName = data.name //?? "Agent".localForChosnLangCodeBB
+                            case .failure(let error):
+                                print(error)
+                            }
+                        }
+                    }
+                }
+                isFirstTime = false
+            }
+        }else{
+            isFirstTime = true
+            Labiba.agentName = nil
         }
     }
     
