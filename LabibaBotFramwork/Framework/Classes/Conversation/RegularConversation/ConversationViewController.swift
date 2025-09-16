@@ -298,6 +298,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                             for (index, message) in messages.enumerated(){
                                 let dialog = ConversationDialog(by: .bot, time: Date())
                                 dialog.timestampString = message.timeSent
+                                dialog.isFromAgent = true
                                 
                                 if (message.messageText?.contains("@@") ?? false){
                                     let messageToBeSkipped = message.messageText

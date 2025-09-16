@@ -170,7 +170,7 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
         
         if statusParam as? String == "msg" {
             
-//            if !Labiba.isAppInBackground{
+            if !Labiba.isAppInBackground{
                 if let stringModel = messageDic["msg"] as? String, let dataModel = stringModel.data(using: .utf8) {
                     let decoder = JSONDecoder()
                     do {
@@ -180,7 +180,7 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
                         print(error.localizedDescription)
                     }
                 }
-//            }
+            }
             
             
         }else if statusParam as? String == "refresh-token" {

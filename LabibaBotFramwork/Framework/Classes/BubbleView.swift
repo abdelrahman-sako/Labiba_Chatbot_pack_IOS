@@ -50,9 +50,8 @@ public class BubbleView: UIView {
                     getBotName()
 //                    let botName = Labiba.BotChatBubble.botName == nil ? "bot".localForChosnLangCodeBB : Labiba.BotChatBubble.botName!
                     
-//                    let botName = currentDialog?.isFromAgent ?? false ? Labiba.agentName ?? "Agent".localForChosnLangCodeBB : Labiba.botName
-                    let botName = currentDialog?.isFromAgent ?? false ? "Agent-A": "bot-A"
-                    print("this message is from agent ??\(currentDialog?.isFromAgent)")
+                    let botName = currentDialog?.isFromAgent ?? false ? Labiba.agentName ?? "Agent".localForChosnLangCodeBB : Labiba.botName
+//                    let botName = currentDialog?.isFromAgent ?? false ? "Agent-A": "bot-A"
                     let userName = Labiba.UserChatBubble.userName == nil ? "you".localForChosnLangCodeBB : Labiba.UserChatBubble.userName!
                     
                     
@@ -163,7 +162,7 @@ public class BubbleView: UIView {
     func getBotName(){
         if Labiba.isHumanAgentStarted{
             if source == .incoming && currentDialog?.hasBotMessage ?? false{
-                if !isFirstTime{
+                if true{
                     if Labiba.agentName == nil{
                         DataSource.shared.getAgentName { result in
                             switch result{
@@ -179,7 +178,7 @@ public class BubbleView: UIView {
             }
         }else{
             isFirstTime = true
-            Labiba.agentName = nil
+//            Labiba.agentName = nil
         }
     }
     

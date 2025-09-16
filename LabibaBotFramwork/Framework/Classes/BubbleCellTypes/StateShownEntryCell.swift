@@ -110,9 +110,7 @@ class StateShownEntryCell: StateEntryCell
 
         if self.currentDialog.hasMessage
         {
-            if currentDialog.party == .bot {
-                currentDialog?.isFromAgent = Labiba.isHumanAgentStarted
-            }
+
             self.bubble.posY = 5.0
             self.addSubview(self.bubble)
 

@@ -65,6 +65,7 @@ class LabibaRestfulBotConnector{ //
             // delegate?.botConnector(self, didRequestHumanAgent: "request human agent")
             let dialog = ConversationDialog(by: .bot, time: timestamp)
             let message = model.message
+            dialog.isFromAgent = Labiba.isHumanAgentStarted
             // message?.text = "livechat.transfer:\(message?.text ?? "")"
             if message?.text?.contains("livechat.transfer:")  ?? false {
                 delegate?.botConnector(didRequestLiveChatTransferWithMessage: "livechat.transfer")
@@ -299,6 +300,7 @@ class LabibaRestfulBotConnector{ //
         }
         if let response  = model.result?.fulfillment?[0] {
             dialog.message = response.message
+            dialog.isFromAgent = Labiba.isHumanAgentStarted
             if let imageUrl =  response.imageUrl {
                 dialog.media = DialogMedia(type: .Photo)
                 dialog.media?.url = imageUrl
