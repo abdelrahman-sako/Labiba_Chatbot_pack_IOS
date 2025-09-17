@@ -34,7 +34,7 @@ class ConversationDialog
     }
 
     var isFromAgent:Bool?
-    
+    var agentNameCounter = 0
     var hasMessage: Bool
     {
         let message = self.message ?? ""

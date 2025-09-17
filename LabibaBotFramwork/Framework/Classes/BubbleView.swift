@@ -49,9 +49,12 @@ public class BubbleView: UIView {
                     dateFormatter.dateFormat = source == .incoming ? Labiba.BotChatBubble.timestamp.formate : Labiba.UserChatBubble.timestamp.formate
                     getBotName()
 //                    let botName = Labiba.BotChatBubble.botName == nil ? "bot".localForChosnLangCodeBB : Labiba.BotChatBubble.botName!
+                    var agentName: String?
+                    if (Labiba.agentNames.count > currentDialog?.agentNameCounter ?? 0){
+                        agentName = Labiba.agentNames[currentDialog?.agentNameCounter ?? 0 - 1]
+                    }
                     
-                    let botName = currentDialog?.isFromAgent ?? false ? Labiba.agentName ?? "Agent".localForChosnLangCodeBB : Labiba.botName
-//                    let botName = currentDialog?.isFromAgent ?? false ? "Agent-A": "bot-A"
+                    let botName = currentDialog?.isFromAgent ?? false ? agentName ?? "Agent".localForChosnLangCodeBB : Labiba.botName
                     let userName = Labiba.UserChatBubble.userName == nil ? "you".localForChosnLangCodeBB : Labiba.UserChatBubble.userName!
                     
                     
@@ -162,23 +165,20 @@ public class BubbleView: UIView {
     func getBotName(){
         if Labiba.isHumanAgentStarted{
             if source == .incoming && currentDialog?.hasBotMessage ?? false{
-                if true{
-                    if Labiba.agentName == nil{
-                        DataSource.shared.getAgentName { result in
-                            switch result{
-                            case .success(let data):
-                                Labiba.agentName = data.name //?? "Agent".localForChosnLangCodeBB
-                            case .failure(let error):
-                                print(error)
+                    DataSource.shared.getAgentName { result in
+                        switch result{
+                        case .success(let data):
+                            if Labiba.agentNames.count < Labiba.agentNameCounter{
+                                Labiba.agentNames.append(nil)
                             }
+                            Labiba.agentNames[Labiba.agentNameCounter - 1] = data.name
+                        case .failure(let error):
+                            print(error)
                         }
                     }
-                }
-                isFirstTime = false
             }
         }else{
-            isFirstTime = true
-//            Labiba.agentName = nil
+            //            Labiba.agentName = nil
         }
     }
     

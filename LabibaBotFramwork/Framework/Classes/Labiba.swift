@@ -91,11 +91,11 @@ public enum LoggingAndRefferalEncodingType{
     public static var transcriptSenderEmail:String?
     public static var isRateForAgent:Bool = false
     public static var npsQuestionTemplateLongId: String?
-
+    static var agentNameCounter = 0
     
     static var isRatingVCPresenting = false
     static var botName = "bot".localForChosnLangCodeBB
-    static var agentName: String? 
+    static var agentNames: [String?] = []
   //  public  static var isLoggingEnabled: Bool = false
 
      // MARK:- Main Settings
@@ -327,7 +327,13 @@ public enum LoggingAndRefferalEncodingType{
     
     // MARK:- Human Agent Transfer
     public static let HumanAgent = HumanAgentSettings() 
-    static var isHumanAgentStarted:Bool = false
+    static var isHumanAgentStarted:Bool = false{
+        didSet{
+            if isHumanAgentStarted{
+                agentNameCounter += 1
+            }
+        }
+    }
     
     // MARK:- [Text to Speech] And [Speech to Text] Settings
     
