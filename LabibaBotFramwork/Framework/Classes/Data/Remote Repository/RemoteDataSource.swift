@@ -245,7 +245,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func getPrechatForm(handler: @escaping Handler<[PrechatFormModel]>) {
         let url =  "\(Labiba._basePath)\(Labiba._prechatFormServicePath)"
-        let endPoint = EndPoint(url: url, httpMethod: .post)
+        let endPoint = EndPoint(url: url, httpMethod: .get)
         let params:[String:Any] = [
             "bot_id" : SharedPreference.shared.currentUserId
         ]
