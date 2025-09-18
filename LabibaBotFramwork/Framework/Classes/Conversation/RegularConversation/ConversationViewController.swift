@@ -295,7 +295,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                         case .success(let messages):
                             print("dattaMessages  \(messages)")
                             var messagesIds: [String] = []
-                            for (index, message) in messages.enumerated(){
+                            for message in messages{
                                 let dialog = ConversationDialog(by: .bot, time: Date())
                                 dialog.timestampString = message.timeSent
                                 dialog.isFromAgent = true
@@ -309,7 +309,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                                 }
                                 
                                 self.displayedDialogs.append(EntryDisplay(dialog:dialog))
-                                self.tableView.reloadData()
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                }
                                 messagesIds.append(message.messageID ?? "")
                                 lastMessageStatus = message.isChatWithAgent
                             }
@@ -319,7 +321,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                             if !(lastMessageStatus ?? true){
                                 WebViewEventHumanAgent.Shared.end()
                             }
-                            Labiba.isHumanAgentStarted = lastMessageStatus ?? true
+//                            Labiba.isHumanAgentStarted = lastMessageStatus ?? true
                             Labiba.isAppInBackground = false
                             
                         case .failure(let error):
@@ -657,6 +659,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     func startConversation() -> Void
     {
+        
         if !Labiba.enableCaching || ((Labiba.enableCaching && LocalCache.shared.displayedDialogs.isEmpty) || SharedPreference.shared.currentUserId != LocalCache.shared.conversationId) {
             self.botConnector.startConversation()
         } else {

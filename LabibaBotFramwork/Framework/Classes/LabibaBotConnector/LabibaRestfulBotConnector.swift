@@ -65,7 +65,7 @@ class LabibaRestfulBotConnector{ //
             // delegate?.botConnector(self, didRequestHumanAgent: "request human agent")
             let dialog = ConversationDialog(by: .bot, time: timestamp)
             let message = model.message
-            dialog.isFromAgent = Labiba.isHumanAgentStarted
+//            dialog.isFromAgent = Labiba.isHumanAgentStarted
             dialog.agentNameCounter = Labiba.agentNameCounter
             // message?.text = "livechat.transfer:\(message?.text ?? "")"
             if message?.text?.contains("livechat.transfer:")  ?? false {
