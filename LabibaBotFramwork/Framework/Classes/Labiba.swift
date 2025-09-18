@@ -95,8 +95,8 @@ public enum LoggingAndRefferalEncodingType{
     
     static var isRatingVCPresenting = false
     static var botName = "bot".localForChosnLangCodeBB
-    static var agentNames: [String?] = []
-  //  public  static var isLoggingEnabled: Bool = false
+    static var currentAgentName:String?
+    //  public  static var isLoggingEnabled: Bool = false
 
      // MARK:- Main Settings
     
@@ -330,6 +330,7 @@ public enum LoggingAndRefferalEncodingType{
     static var isHumanAgentStarted:Bool = false{
         didSet{
             if isHumanAgentStarted{
+                currentAgentName = nil
                 agentNameCounter += 1
             }
         }

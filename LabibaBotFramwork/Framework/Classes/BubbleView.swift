@@ -39,7 +39,7 @@ public class BubbleView: UIView {
     var currentDialog:ConversationDialog?
     var _message:String = ""
     var isFirstTime = true
-    var nameCompletion:((String?)->Void)?
+    var nameCompletion:(()->Void)?
     var doSetMessage:String {
         set {
             if Labiba.hasBubbleTimestamp {
@@ -49,9 +49,9 @@ public class BubbleView: UIView {
                     
                     dateFormatter.dateFormat = source == .incoming ? Labiba.BotChatBubble.timestamp.formate : Labiba.UserChatBubble.timestamp.formate
                     getBotName()
-                    nameCompletion = { [unowned self] agentName in
+                    nameCompletion = { [unowned self] in
                         
-                        let botName = currentDialog?.isFromAgent ?? false ? agentName ?? "Agent".localForChosnLangCodeBB : Labiba.botName
+                        let botName = currentDialog?.isFromAgent ?? false ? currentDialog?.agentName ?? "Agent".localForChosnLangCodeBB : Labiba.botName
                     let userName = Labiba.UserChatBubble.userName == nil ? "you".localForChosnLangCodeBB : Labiba.UserChatBubble.userName!
                     
                     
@@ -163,26 +163,29 @@ public class BubbleView: UIView {
     func getBotName(){
         if currentDialog?.isFromAgent ?? false{
             if source != .outgoing{
-                Labiba.agentNames.append(nil)
-                if Labiba.agentNames[currentDialog?.agentNameCounter ?? 0 - 1 ] == nil{
-                    DataSource.shared.getAgentName { [unowned self] result in
-                        switch result{
-                        case .success(let data):
-                            Labiba.agentNames[currentDialog?.agentNameCounter ?? 0 - 1] = data.name
-                            nameCompletion?(Labiba.agentNames[currentDialog?.agentNameCounter ?? 0 - 1])
-                        case .failure(let error):
-                            print(error)
-                            nameCompletion?(nil)
+                if Labiba.currentAgentName == nil{
+                        DataSource.shared.getAgentName { [unowned self] result in
+                            switch result{
+                            case .success(let data):
+                                Labiba.currentAgentName = data.name
+                                currentDialog?.agentName = data.name
+                                nameCompletion?()
+                            case .failure(let error):
+                                print(error)
+                                nameCompletion?()
+                            }
                         }
-                    }
-                }else{
-                    nameCompletion?(Labiba.agentNames[currentDialog?.agentNameCounter ?? 0 - 1])
+                    }else{
+                        currentDialog?.agentName =  Labiba.currentAgentName
+
+                        nameCompletion?()
                 }
+
             }else{
-                nameCompletion?(nil)
+                nameCompletion?()
             }
         }else{
-            nameCompletion?(nil)
+            nameCompletion?()
         }
     }
     
