@@ -299,7 +299,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                                 let dialog = ConversationDialog(by: .bot, time: Date())
                                 dialog.timestampString = message.timeSent
                                 dialog.isFromAgent = true
-                                dialog.agentNameCounter = Labiba.agentNameCounter
                                 if (message.messageText?.contains("@@") ?? false){
                                     let messageToBeSkipped = message.messageText
                                     let fullNameArr = messageToBeSkipped?.components(separatedBy: "@@")

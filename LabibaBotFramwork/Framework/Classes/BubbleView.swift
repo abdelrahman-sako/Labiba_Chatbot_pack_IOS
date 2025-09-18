@@ -42,6 +42,7 @@ public class BubbleView: UIView {
     var nameCompletion:(()->Void)?
     var doSetMessage:String {
         set {
+            getBotName()
             if Labiba.hasBubbleTimestamp {
                 if let timestamp = currentDialog?.timestamp {
                     let dateFormatter = DateFormatter()
@@ -51,22 +52,24 @@ public class BubbleView: UIView {
                     getBotName()
                     nameCompletion = { [unowned self] in
                         
-                        let botName = currentDialog?.isFromAgent ?? false ? currentDialog?.agentName ?? "Agent".localForChosnLangCodeBB : Labiba.botName
+                        let botName = currentDialog?.agentName
                     let userName = Labiba.UserChatBubble.userName == nil ? "you".localForChosnLangCodeBB : Labiba.UserChatBubble.userName!
                     
-                    
-                    if SharedPreference.shared.botLangCode == .ar{
-                        dateFormatter.locale = Locale(identifier: "ar")
-                        timestampLbl.text = "\(source == .incoming ? botName : userName) - \(dateFormatter.string(from: timestamp))"
-                        timestampLbl.textAlignment = source == .incoming  ? .right : .left
-                        timeStackview?.semanticContentAttribute = source == .incoming  ? .forceRightToLeft : .forceLeftToRight
-                    }else {
-                        dateFormatter.locale = Locale(identifier: "en")
-                        timestampLbl.text = "\(source == .incoming ? botName : userName) - \(dateFormatter.string(from: timestamp))"
-                        timestampLbl.textAlignment = source == .incoming  ? .left : .right
-                        timeStackview?.semanticContentAttribute = source == .incoming  ? .forceLeftToRight : .forceRightToLeft
+                        DispatchQueue.main.async { [unowned self] in
+                            if SharedPreference.shared.botLangCode == .ar{
+                                dateFormatter.locale = Locale(identifier: "ar")
+                                timestampLbl.text = "\(source == .incoming ? botName ?? "" : userName) - \(dateFormatter.string(from: timestamp))"
+                                timestampLbl.textAlignment = source == .incoming  ? .right : .left
+                                timeStackview?.semanticContentAttribute = source == .incoming  ? .forceRightToLeft : .forceLeftToRight
+                            }else {
+                                dateFormatter.locale = Locale(identifier: "en")
+                                timestampLbl.text = "\(source == .incoming ? botName ?? "": userName) - \(dateFormatter.string(from: timestamp))"
+                                timestampLbl.textAlignment = source == .incoming  ? .left : .right
+                                timeStackview?.semanticContentAttribute = source == .incoming  ? .forceLeftToRight : .forceRightToLeft
+                            }
+                        }
                     }
-}
+
                     
                     timestampLbl.isHidden  = false
                     //                    if botName == "bot".localForChosnLangCodeBB {
@@ -161,31 +164,36 @@ public class BubbleView: UIView {
     }
     
     func getBotName(){
-        if currentDialog?.isFromAgent ?? false{
-            if source != .outgoing{
-                if Labiba.currentAgentName == nil{
-                        DataSource.shared.getAgentName { [unowned self] result in
-                            switch result{
-                            case .success(let data):
-                                Labiba.currentAgentName = data.name
-                                currentDialog?.agentName = data.name
-                                nameCompletion?()
-                            case .failure(let error):
-                                print(error)
-                                nameCompletion?()
+        DispatchQueue.main.async{ [unowned self] in
+            if source == .incoming{
+                if currentDialog?.isFromAgent ?? false{
+                    if Labiba.currentAgentName == nil{
+                        DispatchQueue.global(qos: .background).async {
+                            DataSource.shared.getAgentName { [unowned self] result in
+                                switch result{
+                                case .success(let data):
+                                    Labiba.currentAgentName = data.name
+                                    currentDialog?.agentName = data.name
+                                    nameCompletion?()
+                                case .failure(let error):
+                                    print(error)
+                                    nameCompletion?()
+                                }
                             }
                         }
                     }else{
                         currentDialog?.agentName =  Labiba.currentAgentName
-
                         nameCompletion?()
+                    }
+                    
+                }else{
+                    currentDialog?.agentName =  "bot".localForChosnLangCodeBB
+                    nameCompletion?()
                 }
-
             }else{
+                currentDialog?.agentName =  "you".localForChosnLangCodeBB
                 nameCompletion?()
             }
-        }else{
-            nameCompletion?()
         }
     }
     
