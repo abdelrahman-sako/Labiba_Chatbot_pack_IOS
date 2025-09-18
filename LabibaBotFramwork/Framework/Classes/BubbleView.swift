@@ -48,7 +48,6 @@ public class BubbleView: UIView {
                     
                     dateFormatter.dateFormat = source == .incoming ? Labiba.BotChatBubble.timestamp.formate : Labiba.UserChatBubble.timestamp.formate
                     getBotName()
-//                    let botName = Labiba.BotChatBubble.botName == nil ? "bot".localForChosnLangCodeBB : Labiba.BotChatBubble.botName!
                     var agentName: String?
                     if (Labiba.agentNames.count > currentDialog?.agentNameCounter ?? 0){
                         agentName = Labiba.agentNames[currentDialog?.agentNameCounter ?? 0 - 1]
@@ -178,7 +177,6 @@ public class BubbleView: UIView {
                     }
             }
         }else{
-            //            Labiba.agentName = nil
         }
     }
     

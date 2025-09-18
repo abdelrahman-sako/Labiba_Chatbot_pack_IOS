@@ -588,7 +588,7 @@ public enum LoggingAndRefferalEncodingType{
     }
     public static func startConversation(onView vc: UIViewController, animated: Bool = true)
     {
-        
+        Labiba.agentNameCounter = 0
         guard self._senderId != nil
         else
         {
