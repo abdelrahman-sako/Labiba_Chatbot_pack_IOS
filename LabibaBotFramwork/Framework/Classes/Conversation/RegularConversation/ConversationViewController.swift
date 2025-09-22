@@ -13,7 +13,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
 {
     
     //MARK: - IBOutlets
-    @IBOutlet weak var tavleViewBottomConst: NSLayoutConstraint!
+    @IBOutlet weak var tableViewBottomConst: NSLayoutConstraint!
     let dateFormatter = DateFormatter()
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var bacgroundImage: UIImageView!
@@ -52,7 +52,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     var isFirstOpen = true
     private var isObserverAdded = false
     private var lastMessageStatus:Bool?
-    
     lazy var keyboardTypeDialog = UserTextInputNoLocal.create()
     lazy var visualizerDialog = VisualizerVoiceAssistantView.create()
     lazy var voiceTypeDialog = VoiceAssistantView.create()
@@ -761,12 +760,12 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                     
                     else
                     {
-                        self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+                        self.tableView.scrollToRow(at: index, at: .top, animated: true)
                     }
                 }
                 else
                 {
-                    self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+                    self.tableView.scrollToRow(at: index, at: .top, animated: true)
                 }
             }
         }
@@ -985,7 +984,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         bottomConstraint.isActive = true
         
         warningView.layoutIfNeeded()
-        tavleViewBottomConst.constant = 80 + warningView.frame.height
+        tableViewBottomConst.constant = 80 + warningView.frame.height
         isWarningShowing = true
     }
     
@@ -997,7 +996,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             self.warningView?.removeFromSuperview()
             self.isWarningShowing = false
             self.warningViewBottomConstraint?.constant = 0
-            self.tavleViewBottomConst.constant -= self.warningView?.frame.height ?? 0
+            self.tableViewBottomConst.constant -= self.warningView?.frame.height ?? 0
             
             self.scrollDown(delay: 0.3)
         })
