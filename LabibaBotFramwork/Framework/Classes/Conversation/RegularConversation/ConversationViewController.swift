@@ -43,7 +43,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     
     
-    @IBOutlet weak var tavleViewBottomConst: NSLayoutConstraint!
+    @IBOutlet weak var tableViewBottomConst: NSLayoutConstraint!
     let dateFormatter = DateFormatter()
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var bacgroundImage: UIImageView!
@@ -665,7 +665,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             displayedDialogs = LocalCache.shared.displayedDialogs
             stepsToBeDisplayed = LocalCache.shared.stepsToBeDisplayed
             // MARK:
-            //scrollToBottom()
             scrollDown(delay: 0.3)
         }
     }
@@ -715,7 +714,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 //                        self.tableView.setContentOffset(scrollPoint, animated: true)
                 //                    }
                 //                }else {
-                //self.scrollDown(delay: 0.15)
                 if step.hasMessage
                 {
                     self.finishedDisplayForDialog(dialog: step)
@@ -734,7 +732,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 
                 self.tableView.reloadData()
                 //                if !self.isFirstMessage{
-                //self.scrollDown(delay: wait)
                 //                }
                 
                 //self.insertDisplay(renderedDialog)
@@ -782,7 +779,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             renderStep(step: step, wait: 0.00)
         }
 //        else{
-//            scrollDown(delay: 0.2 )
 //        }
     }
     
@@ -797,7 +793,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     {
         self.displayedDialogs.append(display)
         self.tableView.reloadData()
-        //scrollDown(delay: 0.15)
     }
     
     func scrollDown(delay:CGFloat){
@@ -1160,7 +1155,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         bottomConstraint.isActive = true
         
         warningView.layoutIfNeeded()
-        tavleViewBottomConst.constant = 80 + warningView.frame.height
+        tableViewBottomConst.constant = 80 + warningView.frame.height
         isWarningShowing = true
     }
     
@@ -1172,7 +1167,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             self.warningView?.removeFromSuperview()
             self.isWarningShowing = false
             self.warningViewBottomConstraint?.constant = 0
-            self.tavleViewBottomConst.constant -= self.warningView?.frame.height ?? 0
+            self.tableViewBottomConst.constant -= self.warningView?.frame.height ?? 0
 
             self.scrollDown(delay: 0.3)
         })
