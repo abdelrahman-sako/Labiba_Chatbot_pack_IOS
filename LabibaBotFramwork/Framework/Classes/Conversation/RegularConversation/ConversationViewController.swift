@@ -750,21 +750,14 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1)
             {
-                if(self.displayedDialogs.count > lastIndex)
-                {
+                if(self.displayedDialogs.count > lastIndex){
                     let display = self.displayedDialogs[lastIndex]
-                    if let cards = display.dialog.cards
-                    {
+                    if let cards = display.dialog.cards{
+                        self.tableView.scrollToRow(at: index, at: .top, animated: true)
+                    }else{
                         self.tableView.scrollToRow(at: index, at: .top, animated: true)
                     }
-                    
-                    else
-                    {
-                        self.tableView.scrollToRow(at: index, at: .top, animated: true)
-                    }
-                }
-                else
-                {
+                }else{
                     self.tableView.scrollToRow(at: index, at: .top, animated: true)
                 }
             }
