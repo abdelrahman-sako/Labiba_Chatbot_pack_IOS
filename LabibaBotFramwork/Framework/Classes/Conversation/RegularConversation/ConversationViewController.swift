@@ -32,6 +32,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     //MARK: - Variables
     var cellHeights = [IndexPath: CGFloat]()
     var lastDialogsCount:Int? = nil
+    var isFirstTime = true
     var botFrame:CGRect!
     var gradientView:UIView?
     var isClosable:Bool = true
@@ -73,7 +74,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         self.view.addGestureRecognizer(gesture)
         
         print("did load")
-        tableView.backgroundColor = .green
         addTableMask()
         muteButton.isHidden = Labiba.isMuteButtonHidden
         VedioCallButton.isHidden = Labiba.isVedioButtonHidden
@@ -173,6 +173,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     
     override func viewWillAppear(_ animated: Bool) {
+        isFirstTime = true
         botConnector.delegate = self
         UIApplication.shared.setStatusBarColor(color: Labiba._StatusBarColor )
         self.navigationController?.isNavigationBarHidden = true
@@ -598,9 +599,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 {
                     self.finishedDisplayForDialog(dialog: step)
                 }
-            }
-            else
-            {
+            }else{
                 step.message?.removeArabicDiacritic()
                 let renderedDialog = EntryDisplay(dialog: step)
                 renderedDialog.target = self
@@ -615,6 +614,19 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 {
                     self.finishedDisplayForDialog(dialog: step)
                 }
+                
+                if !self.isFirstTime{
+                    if self.displayedDialogs.last?.dialog.party == .bot{
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [unowned self] in
+                            let currentOffset = tableView.contentOffset
+                            let maxOffset = tableView.contentSize.height - tableView.bounds.height
+                            let minOffset = min(currentOffset.y + CGFloat(Labiba.scrollingAmount), maxOffset)
+                            let newOffset = CGPoint(x: currentOffset.x, y: minOffset)
+                            tableView.setContentOffset(newOffset, animated: true)
+                        })
+                    }
+                }
+                self.isFirstTime = false
             }
         }
     }
