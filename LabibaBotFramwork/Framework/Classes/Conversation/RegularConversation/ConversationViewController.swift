@@ -31,7 +31,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     //MARK: - Variables
     var cellHeights = [IndexPath: CGFloat]()
-    var lastAddedCells:Int? = nil
+    var lastDialogsCount:Int? = nil
     var botFrame:CGRect!
     var gradientView:UIView?
     var isClosable:Bool = true
@@ -137,6 +137,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         tableView.registerCell(type: VMenuTableCell.self,bundle: self.nibBundle)
         self.startConversation() //it's now from [ self.botConnector.configureInternetReachability()]
         
+        self.tableViewBottomConst.constant = 80
         if Labiba.warningMessageModel?.isWarningMessageEnabled ?? false{
             addWarningMessage()
         }
@@ -216,7 +217,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                             }else{
                                 dialog.message = message.messageText
                             }
-                            
+                            self.lastDialogsCount = self.displayedDialogs.count
                             self.displayedDialogs.append(EntryDisplay(dialog:dialog))
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
@@ -313,6 +314,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         let renderedDialog = EntryDisplay(dialog: dialog)
         renderedDialog.height = 80
         renderedDialog.status = .guide
+        self.lastDialogsCount = self.displayedDialogs.count
         displayedDialogs.append(renderedDialog)
         
     }
@@ -587,6 +589,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 }
                 
                 self.showTyping = false
+                self.lastDialogsCount = self.displayedDialogs.count
                 self.displayedDialogs.append(renderedDialog)
                 self.tableView.reloadData()
                 
@@ -602,8 +605,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 renderedDialog.target = self
                 self.clearChoices()
                 self.showTyping = false
+                self.lastDialogsCount = self.displayedDialogs.count
                 self.displayedDialogs.append(renderedDialog)
-                
+
                 self.tableView.reloadData()
                 
                 if step.hasMessage
@@ -651,8 +655,15 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     func insertDisplay(_ display:EntryDisplay,delay:CGFloat = 0.15 ) -> Void
     {
+        if display.dialog.party == .user{
+//            self.lastDialogsCount = self.lastDialogsCount ?? 0 + 1
+            scrollDown(delay: 0.3)
+        }else{
+            self.lastDialogsCount = self.displayedDialogs.count
+        }
         self.displayedDialogs.append(display)
         self.tableView.reloadData()
+
     }
     
     func scrollDown(delay:CGFloat){
@@ -744,7 +755,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         let lastIndex = self.showTyping ? self.displayedDialogs.count : self.displayedDialogs.count - 1
         if (lastIndex >= 0)
         {
-            let index = IndexPath(row: lastIndex, section: 0)
+//            let index = IndexPath(row: lastIndex, section: 0)
+            let index = IndexPath(row:(lastDialogsCount ?? 0 ) - 1, section: 0)
             guard index.row == (self.displayedDialogs.count - 1) else {
                 return
             }
@@ -755,10 +767,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                     if let cards = display.dialog.cards{
                         self.tableView.scrollToRow(at: index, at: .top, animated: true)
                     }else{
-                        self.tableView.scrollToRow(at: index, at: .top, animated: true)
+                        self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
                     }
                 }else{
-                    self.tableView.scrollToRow(at: index, at: .top, animated: true)
+                    self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
                 }
             }
         }
@@ -1048,7 +1060,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
             if displayedDialogs.count > 0 { // to ensure that table content will scroll only once when cell presented for the first time
                 if displayedDialogs[displayedDialogs.count - 1].status == .NotShown || self.showTyping{
                     if displayedDialogs[displayedDialogs.count - 1].dialog.cards?.presentation == .vmnue || self.showTyping || displayedDialogs[displayedDialogs.count - 1].dialog.party == .user {
-                        scrollDown(delay: 0.2 )
+                        scrollDown(delay: 0.0 )
                     }else{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
                             self.scrollToBottom()
@@ -1266,7 +1278,7 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.tableView.contentInset.bottom = 20
+        self.tableView.contentInset.bottom = 50
         guard let bottomConstraint = warningViewBottomConstraint else { return }
         bottomConstraint.constant = -80 // move down
         UIView.animate(withDuration: 0.3) {
