@@ -225,9 +225,9 @@ public enum LoggingAndRefferalEncodingType{
         LabibaThemes.npsRatingColor = color
     }
     
-    public static func setConversationScrollingBehavior(scrollToFirstMessage:Bool = true, scrollingAmount:Int = 50 ){
+    public static func setConversationScrollingBehavior(scrollToFirstMessage:Bool = true){
         self.scrollToFirstMessage = scrollToFirstMessage
-        self.scrollingAmount = scrollingAmount
+//        self.scrollingAmount = scrollingAmount
     }
     // MARK:- UserParameters and Referrals
     public static var _ReferralSource:String = "mobile"

@@ -614,19 +614,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 {
                     self.finishedDisplayForDialog(dialog: step)
                 }
-                
-                if !self.isFirstTime{
-                    if self.displayedDialogs.last?.dialog.party == .bot{
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [unowned self] in
-                            let currentOffset = tableView.contentOffset
-                            let maxOffset = tableView.contentSize.height - tableView.bounds.height
-                            let minOffset = min(currentOffset.y + CGFloat(Labiba.scrollingAmount), maxOffset)
-                            let newOffset = CGPoint(x: currentOffset.x, y: minOffset)
-                            tableView.setContentOffset(newOffset, animated: true)
-                        })
-                    }
-                }
-                self.isFirstTime = false
             }
         }
     }
