@@ -49,6 +49,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             updateReadMessages()
         }
     }
+    
     var isFirstOpen = true
     private var isObserverAdded = false
     private var lastMessageStatus:Bool?
@@ -72,7 +73,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         self.view.addGestureRecognizer(gesture)
         
         print("did load")
-        
+        tableView.backgroundColor = .green
         addTableMask()
         muteButton.isHidden = Labiba.isMuteButtonHidden
         VedioCallButton.isHidden = Labiba.isVedioButtonHidden
@@ -755,13 +756,18 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         let lastIndex = self.showTyping ? self.displayedDialogs.count : self.displayedDialogs.count - 1
         if (lastIndex >= 0)
         {
-//            let index = IndexPath(row: lastIndex, section: 0)
-            let index = IndexPath(row:(lastDialogsCount ?? 0 ) - 1, section: 0)
+            var index = IndexPath()
+            if Labiba.scrollToFirstMessage{
+                 index = IndexPath(row:(lastDialogsCount ?? 0 ) + 1, section: 0)
+            }else{
+                 index = IndexPath(row: lastIndex, section: 0)
+
+            }
             guard index.row == (self.displayedDialogs.count - 1) else {
                 return
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1)
-            {
+            { [unowned self] in
                 if(self.displayedDialogs.count > lastIndex){
                     let display = self.displayedDialogs[lastIndex]
                     if let cards = display.dialog.cards{
@@ -772,6 +778,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 }else{
                     self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
                 }
+                
+//                let currentOffset = tableView.contentOffset
+//                let newOffset = CGPoint(x: currentOffset.x, y: currentOffset.y + CGFloat(Labiba.scrollingAmount))
+//                tableView.setContentOffset(newOffset, animated: true)
             }
         }
     }

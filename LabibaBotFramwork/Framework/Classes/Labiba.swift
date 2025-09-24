@@ -57,6 +57,8 @@ public enum LoggingAndRefferalEncodingType{
     static var didGoToRate = false
     static var showBackOnNPS = false
     static var isAppInBackground = false
+    static var scrollingAmount:Int = 50
+    static var scrollToFirstMessage = false
    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
    
@@ -223,6 +225,10 @@ public enum LoggingAndRefferalEncodingType{
         LabibaThemes.npsRatingColor = color
     }
     
+    public static func setConversationScrollingBehavior(scrollToFirstMessage:Bool = true, scrollingAmount:Int = 50 ){
+        self.scrollToFirstMessage = scrollToFirstMessage
+        self.scrollingAmount = scrollingAmount
+    }
     // MARK:- UserParameters and Referrals
     public static var _ReferralSource:String = "mobile"
     static var _Referral:[String:Any]?
