@@ -579,8 +579,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     {
         DispatchQueue.main.asyncAfter(deadline: .now() + wait)
         {
-            if(step.cards?.presentation == .menu )
-            {
+            if(step.cards?.presentation == .menu ){
                 self.insertCellIntoTable(step: step)
             }else if (step.cards?.presentation == .vmnue){
                 
@@ -595,8 +594,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 self.displayedDialogs.append(renderedDialog)
                 self.tableView.reloadData()
                 
-                if step.hasMessage
-                {
+                if step.hasMessage{
                     self.finishedDisplayForDialog(dialog: step)
                 }
             }else{
@@ -615,6 +613,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                     self.finishedDisplayForDialog(dialog: step)
                 }
             }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                self.scrollToBottom()
+            })
         }
     }
     
@@ -659,11 +660,11 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
 //            self.lastDialogsCount = self.lastDialogsCount ?? 0 + 1
             scrollDown(delay: 0.3)
         }else{
-            self.lastDialogsCount = self.displayedDialogs.count
+//            self.lastDialogsCount = self.displayedDialogs.count
         }
+        self.lastDialogsCount = self.displayedDialogs.count
         self.displayedDialogs.append(display)
         self.tableView.reloadData()
-
     }
     
     func scrollDown(delay:CGFloat){
@@ -757,12 +758,12 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         {
             var index = IndexPath()
             if Labiba.scrollToFirstMessage{
-                 index = IndexPath(row:(lastDialogsCount ?? 0 ) + 1, section: 0)
+                 index = IndexPath(row:(lastDialogsCount ?? 0 ) , section: 0)
             }else{
                  index = IndexPath(row: lastIndex, section: 0)
 
             }
-            guard index.row == (self.displayedDialogs.count - 1) else {
+            guard index.row <= (self.displayedDialogs.count - 1) else {
                 return
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1)
@@ -770,17 +771,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 if(self.displayedDialogs.count > lastIndex){
                     let display = self.displayedDialogs[lastIndex]
                     if let cards = display.dialog.cards{
-                        self.tableView.scrollToRow(at: index, at: .top, animated: true)
+                        self.tableView.scrollToRow(at: index, at: Labiba.scrollToFirstMessage ? .top : .bottom, animated: true)
                     }else{
-                        self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+                        self.tableView.scrollToRow(at: index, at: Labiba.scrollToFirstMessage ? .top : .bottom, animated: true)
                     }
                 }else{
-                    self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+                    self.tableView.scrollToRow(at: index, at: .top, animated: true)
                 }
-                
-//                let currentOffset = tableView.contentOffset
-//                let newOffset = CGPoint(x: currentOffset.x, y: currentOffset.y + CGFloat(Labiba.scrollingAmount))
-//                tableView.setContentOffset(newOffset, animated: true)
             }
         }
     }
