@@ -59,6 +59,11 @@ class NumberRatingCell: RatingCell {
                 }
             case .failure(let error):
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    if error.stausCode == 401{
+                        showErrorMessage("authDenied".localForChosnLangCodeBB)
+                    }else{
+                        showErrorMessage(error.localizedDescription)
+                    }
                     self?.onSelected?(-1)
                 })
                 print(error)

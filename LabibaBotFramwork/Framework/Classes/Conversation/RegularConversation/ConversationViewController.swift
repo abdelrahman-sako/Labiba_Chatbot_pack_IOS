@@ -613,9 +613,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                     self.finishedDisplayForDialog(dialog: step)
                 }
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                self.scrollToBottom()
-            })
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//                self.scrollToBottom()
+//            })
         }
     }
     
