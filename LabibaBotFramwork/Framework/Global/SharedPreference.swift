@@ -26,7 +26,7 @@ class SharedPreference {
     private let userIdDE = "userIdDE"
     private let userIdRU = "userIdRU"
     private let userIdZH = "userIdZH"
-    private let humanAgentStarted = "humanAgentStarted"
+//    private let humanAgentStarted = "humanAgentStarted"
 
     //let userIdAR = "userIdAR"
     
@@ -95,15 +95,15 @@ class SharedPreference {
     }
     
     
-    var isHumanAgentStarted : Bool{
-        set{
-            standered.set(newValue, forKey: humanAgentStarted)
-        }
-        get{
-            return standered.bool(forKey: humanAgentStarted)
-        }
-    }
-    
+//    var isHumanAgentStarted : Bool{
+//        set{
+//            standered.set(newValue, forKey: humanAgentStarted)
+//        }
+//        get{
+//            return standered.bool(forKey: humanAgentStarted)
+//        }
+//    }
+//    
     func setUserIDs(ar:String , en:String , de:String = "" , ru:String = "" , zh:String = "")  {
         standered.set(ar, forKey: userIdAR)
         standered.set(en, forKey: userIdEN)

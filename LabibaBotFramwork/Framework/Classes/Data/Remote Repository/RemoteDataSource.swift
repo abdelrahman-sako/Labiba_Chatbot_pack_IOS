@@ -119,7 +119,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 switch  result {
                 case .success(let data):
                     self.searchForEndedChats(data)
-                    if !SharedPreference.shared.isHumanAgentStarted {
+                    if !Labiba.isHumanAgentStarted {
                         self.parser(data: data, model: [LabibaModel].self, handler: handler)
                         
                     }else{
