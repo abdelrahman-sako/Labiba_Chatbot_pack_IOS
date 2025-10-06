@@ -27,7 +27,7 @@ class MessageModel: Codable {
     var metadata:String?
     var quick_replies:[QuickReplyModel]?
     
-   
+    
 }
 
 class QuickReplyModel:Codable{
