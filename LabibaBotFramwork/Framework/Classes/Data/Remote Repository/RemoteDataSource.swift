@@ -52,7 +52,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         }
     }
     
-    func closeConversation(handler: @escaping Handler<[String]>) {
+    func closeConversation(completionHandler: @escaping (()->Void)){
         //api/LiveChat/v1.0/CloseConversation/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile
         
 //        let url = "\(Labiba.HumanAgent.endConversationUrl)\(SharedPreference.shared.currentUserId)/\(Labiba._senderId ?? "")/mobile"
@@ -68,11 +68,11 @@ class RemoteDataSource:RemoteDataSourceProtocol{
 //            }
 //        }
         
-        endConversationWithCookies()
+        endConversationWithCookies(completionHandler)
     }
     
  //this is used because the server needs cookies and thats compatable with URLSession not alamofire
-    func endConversationWithCookies(){
+    func endConversationWithCookies(_ completionHandler: @escaping (()->Void)){
         let url = "\(Labiba.HumanAgent.endConversationUrl)\(SharedPreference.shared.currentUserId)/\(Labiba._senderId ?? "")/mobile"
         var request = URLRequest(url: URL(string: url)!,timeoutInterval: Double.infinity)
         for dict in Labiba.clientHeaders {
@@ -88,6 +88,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 return
             }
             print(String(data: data, encoding: .utf8)!)
+            completionHandler()
         }
         
         task.resume()

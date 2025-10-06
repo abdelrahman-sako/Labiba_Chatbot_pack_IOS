@@ -57,8 +57,8 @@ final class DataSource: DataSourceProtocol{
         remoteDataSource.textToSpeech(model: model, handler: handler)
     }
     
-    func closeConversation(handler: @escaping Handler<[String]>) {
-        remoteDataSource.closeConversation(handler: handler)
+    func closeConversation(completionHandler: @escaping (()->Void)){
+        remoteDataSource.closeConversation(completionHandler: completionHandler)
     }
     
 //    func updateToken(handler: @escaping Handler<UpdateTokenModel>) {

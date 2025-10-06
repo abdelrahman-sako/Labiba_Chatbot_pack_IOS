@@ -74,7 +74,6 @@ class WebViewEventHumanAgent:NSObject {
     
     func end() {
         Labiba.isHumanAgentStarted = false
-//        SharedPreference.shared.isHumanAgentStarted = false
         if let url = Labiba.bundle.url(forResource: "index", withExtension: "html") {
                 let request = URLRequest(url: url)
                 webView.load(request)
@@ -87,32 +86,23 @@ class WebViewEventHumanAgent:NSObject {
     }
     
     func forceEnd(completionHandler:(()->Void)? = nil) {
-        
         if Labiba.isHumanAgentStarted  {
             print("SharedPreference.shared.isHumanAgentStarted Ended")
             Labiba.isHumanAgentStarted = false
-//            SharedPreference.shared.isHumanAgentStarted = false
-            let url = "\(Labiba.endConversationUrl ?? "https://botbuilder.labiba.ai/api/LiveChat/v1.0/CloseConversation")/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile"
             end()
-            DispatchQueue.global(qos: .background).async {
-                DataSource.shared.closeConversation { result in
-                    switch result{
-                    case .success(let data):
-                        print("conEndeddd \(data)")
-                    case .failure(let error):
-                        print("\(error) notttt conEndeddd")
-                    }
-                    
-                }
-//                request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseData { response in
-//                    print("EndConversationResponse is \(response)")
-//                }
-//                LabibaRestfulBotConnector.shared.LabibaRequest([String].self, url: url, method: .post,headers: nil) { result in
-//                    completionHandler?()
-//                }
-            }
-            print("The task has started")
-            
+            DataSource.shared.closeConversation {}
+        }
+    }
+    
+    func ForceEndOnStart(completionHandler:(()->Void)? = nil){
+        print("Agent Ended on start")
+        Labiba.isHumanAgentStarted = false
+        if let url = Labiba.bundle.url(forResource: "index", withExtension: "html") {
+            let request = URLRequest(url: url)
+            webView.load(request)
+        }
+        DataSource.shared.closeConversation {
+            completionHandler?()
         }
     }
 }
@@ -123,32 +113,6 @@ extension WebViewEventHumanAgent: WKNavigationDelegate {
         print("human agent finish loading ")
         
     }
-//    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-//        print("human agent failed to load with error\(error.localizedDescription)")
-//        showErrorMessage("Error: \(error.localizedDescription)\n\n \(error)")
-//
-//      //  showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
-//    }
-//    
-//    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-//        print("human agent failed to load with error\(error.localizedDescription)")
-//        showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
-//    }
-//    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-//        print("human agent failed to load with error\(error.localizedDescription)")
-//        showErrorMessage("human agent failed to load with error: \(error.localizedDescription)")
-//    }
-//    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse,
-//                 decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-//
-//        if let response = navigationResponse.response as? HTTPURLResponse {
-//            print("status code: ", response.statusCode)
-//            showErrorMessage("status code: \(response.statusCode)")
-//        }
-//        decisionHandler(.allow)
-//    }
-    
-
 }
 
 extension WebViewEventHumanAgent: WKScriptMessageHandler {

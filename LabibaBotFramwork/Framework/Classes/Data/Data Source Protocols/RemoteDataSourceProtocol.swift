@@ -15,7 +15,7 @@ protocol RemoteDataSourceProtocol {
     func getHelpPageData(handler: @escaping Handler<HelpPageModel>)
     func getPrechatForm(handler: @escaping Handler<[PrechatFormModel]>)
     func textToSpeech(model:TextToSpeechModel,handler: @escaping Handler<TextToSpeachResponseModel>)
-    func closeConversation(handler: @escaping Handler<[String]>)
+    func closeConversation(completionHandler: @escaping (()->Void))
     //func updateToken(handler: @escaping Handler<UpdateTokenModel>)
     func getLastBotResponse(handler: @escaping Handler<LastBotResponseModel>)
     func uploadData(model: UploadDataModel,handler: @escaping Handler<UploadDataResponseModel>)

@@ -168,15 +168,13 @@ class BotConnector: NSObject {
     }
     
     func startConversation() {
-        // showLoadingIndicator()
         LocalCache.shared.conversationId = SharedPreference.shared.currentUserId
-        if Labiba.isHumanAgentStarted {
-            WebViewEventHumanAgent.Shared.forceEnd()
-        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             CircularGradientLoadingIndicator.show()
         }
-        self.sendMessage("CONVERSATION-RELOAD")
+        WebViewEventHumanAgent.Shared.ForceEndOnStart {
+            self.sendMessage("CONVERSATION-RELOAD")
+        }
     }
     
     

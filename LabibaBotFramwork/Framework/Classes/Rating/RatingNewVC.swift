@@ -35,7 +35,7 @@ class RatingNewVC:UIViewController {
             showErrorMessage("Please Select a Score")
             return
         }
-            DataSource.shared.closeConversation { result in}
+        DataSource.shared.closeConversation { }
         DataSource.shared.submitNPSScore(String(selectedScore)) { result in
             switch result{
             case .success(let result):

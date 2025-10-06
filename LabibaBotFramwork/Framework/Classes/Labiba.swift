@@ -106,26 +106,17 @@ public enum LoggingAndRefferalEncodingType{
     {
         SharedPreference.shared.setUserIDs(ar: RecipientIdAR, en: RecipientIdEng)
         self._pageId = SharedPreference.shared.currentUserId
-       
-        LocationService.shared.updateLocation()
         
+        LocationService.shared.updateLocation()
         var uuid = "";
         let preferences = UserDefaults.standard
         let SenderId = "SenderId"
-        preferences.set(nil, forKey: SenderId)
-        if preferences.object(forKey: SenderId) == nil
-        {
-            uuid = UUID().uuidString
-            preferences.set(uuid, forKey: SenderId)
-            preferences.synchronize()
-        }
-        else
-        {
-            uuid = preferences.string(forKey: SenderId)!
-        }
+        
+        uuid = UUID().uuidString
+        preferences.set(uuid, forKey: SenderId)
+        preferences.synchronize()
         
         setSenderId(uuid)
-//        setSenderId("57960621534376")
         if _Referral == nil { createReferral()} // to handel the case (if setUserParams call befor initialize)
         _OpenFromBubble = false
         switch UIScreen.current {
