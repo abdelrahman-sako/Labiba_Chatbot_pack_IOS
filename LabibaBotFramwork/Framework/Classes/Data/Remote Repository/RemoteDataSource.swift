@@ -53,21 +53,6 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     }
     
     func closeConversation(completionHandler: @escaping (()->Void)){
-        //api/LiveChat/v1.0/CloseConversation/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile
-        
-//        let url = "\(Labiba.HumanAgent.endConversationUrl)\(SharedPreference.shared.currentUserId)/\(Labiba._senderId ?? "")/mobile"
-//        let endPoint = EndPoint(url: url, httpMethod: .post,headers: ["Connection":"close","Cookie":"TS0138c503=016ec82a31c15f1a46acae0819b893edf3165cf878006eaee09e37a658f1b8a03c892efbf3aa4a152c60c41046565dad5a3d5fc287"])
-//        
-//        
-//        remoteContext.request(endPoint: endPoint, parameters: "") { result in
-//            switch  result {
-//            case .success(let data):
-//                self.parser(data: data, model: [String].self, handler: handler)
-//            case .failure(let error):
-//                handler(.failure(error))
-//            }
-//        }
-        
         endConversationWithCookies(completionHandler)
     }
     
@@ -85,6 +70,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
                 print(String(describing: error))
+                completionHandler()
                 return
             }
             print(String(data: data, encoding: .utf8)!)

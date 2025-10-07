@@ -173,6 +173,7 @@ class BotConnector: NSObject {
             CircularGradientLoadingIndicator.show()
         }
         WebViewEventHumanAgent.Shared.ForceEndOnStart {
+            Labiba.isHumanAgentStarted = false
             self.sendMessage("CONVERSATION-RELOAD")
         }
     }
@@ -193,13 +194,12 @@ class BotConnector: NSObject {
                 self.messageAnalyizer.parseResponse(response: model)
             case .failure(let err):
                 print(err.localizedDescription)
-                if !Labiba.skipErrorMessage {
+                if err.stausCode == 401{
+                    showErrorMessage("authDenied".localForChosnLangCodeBB)
+                }else if !Labiba.skipErrorMessage {
                     Labiba.skipErrorMessage = false
-                    if err.stausCode == 401{
-                        showErrorMessage("authDenied".localForChosnLangCodeBB)
-                    }else{
-                        showErrorMessage(err.localizedDescription)
-                    }
+                }else{
+                    showErrorMessage(err.localizedDescription)
                 }
                 self.delegate?.botConnectorRemoveTypingActivity(self)
             }
@@ -293,7 +293,11 @@ class BotConnector: NSObject {
                 }
             case .failure(let err):
                 print(err.localizedDescription)
-                showErrorMessage(err.localizedDescription)
+                if err.stausCode == 401{
+                    showErrorMessage("authDenied".localForChosnLangCodeBB)
+                }else{
+                    showErrorMessage(err.localizedDescription)
+                }
                 self.delegate?.botConnectorRemoveTypingActivity(self)
             }
         }

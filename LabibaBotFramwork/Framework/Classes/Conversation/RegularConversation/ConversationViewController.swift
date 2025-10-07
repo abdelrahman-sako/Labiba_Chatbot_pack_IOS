@@ -231,7 +231,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                         DataSource.shared.updateChatHistoryStatus(messagesIds: messagesIds)
                         
                         if !(lastMessageStatus ?? true){
-                            WebViewEventHumanAgent.Shared.end()
+                            WebViewEventHumanAgent.Shared.end(sendGetStarted: true)
                         }
                         Labiba.isAppInBackground = false
                         

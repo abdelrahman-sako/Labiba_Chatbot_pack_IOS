@@ -592,12 +592,11 @@ public enum LoggingAndRefferalEncodingType{
         {
             fatalError(SENDER_ERROR)
         }
-        
-        let convVC = ConversationViewController.create()
-        convVC.delegate = Labiba.delegate
+        let conversationVC = ConversationViewController.create()
+        conversationVC.delegate = Labiba.delegate
         //convVC.closeHandler = onClose
         //UIApplication.shared.keyWindow?.rootViewController?.present(nav, animated: animated, completion: nil)
-        vc.present(createLabibaNavigation(rootViewController: convVC), animated: animated, completion: nil)
+        vc.present(createLabibaNavigation(rootViewController: conversationVC), animated: animated, completion: nil)
     }
     public static func startConversationWithPrechatForm(onView vc: UIViewController, animated: Bool = true)
     {
@@ -647,7 +646,6 @@ public enum LoggingAndRefferalEncodingType{
         //LabibaRestfulBotConnector.shared.close()
         DataSource.shared.close()
         WebViewEventHumanAgent.Shared.forceEnd()
-        
             navigationController?.dismiss(animated: true, completion: {
                 compeletion?()
                 if tiggerDelegate{Labiba.delegate?.labibaDidClose?()}

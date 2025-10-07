@@ -72,7 +72,7 @@ class WebViewEventHumanAgent:NSObject {
         
     }
     
-    func end() {
+    func end(sendGetStarted:Bool) {
         Labiba.isHumanAgentStarted = false
         if let url = Labiba.bundle.url(forResource: "index", withExtension: "html") {
                 let request = URLRequest(url: url)
@@ -80,16 +80,18 @@ class WebViewEventHumanAgent:NSObject {
             if !Labiba.didGoToRate && Labiba.isNPSAgentRatingEnabled{
                Labiba.handleNPSRartingAndQuit(isForAgent: true)
             }else{
-                BotConnector.shared.sendMessage("get started")
+                if sendGetStarted{
+                    BotConnector.shared.sendMessage("get started")
+                }
             }
         }
     }
     
     func forceEnd(completionHandler:(()->Void)? = nil) {
-        if Labiba.isHumanAgentStarted  {
+        if Labiba.isHumanAgentStarted{
             print("SharedPreference.shared.isHumanAgentStarted Ended")
             Labiba.isHumanAgentStarted = false
-            end()
+            end(sendGetStarted: false)
             DataSource.shared.closeConversation {}
         }
     }
@@ -105,6 +107,7 @@ class WebViewEventHumanAgent:NSObject {
             completionHandler?()
         }
     }
+    
 }
 
 
@@ -154,7 +157,7 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
         
         if statusParam as? String == "end" {
             if !Labiba.isAppInBackground{
-                end()
+                end(sendGetStarted: true)
 //                BotConnector.shared.sendGetStarted()
             }
         }
