@@ -33,6 +33,4 @@ protocol RemoteDataSourceProtocol {
     
     func getAgentName(_ completionHandler:@escaping Handler<GetAgentInfoResponseModel>)
     func close()
-    
-    
 }
