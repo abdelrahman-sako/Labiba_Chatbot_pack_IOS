@@ -12,7 +12,6 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     
     
-    
     func uploadData(model: UploadDataModel, handler: @escaping Handler<UploadDataResponseModel>) {
         let url = "\(Labiba._uploadUrl)?id=\(SharedPreference.shared.currentUserId)"
         let endPoint = EndPoint(url: url, httpMethod: .post)
@@ -52,12 +51,64 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         }
     }
     
-    func closeConversation(completionHandler: @escaping (()->Void)){
-        endConversationWithCookies(completionHandler)
+    func closeConversation(handler: @escaping Handler<[String]>) {
+        endConversationWithCookies()
     }
     
- //this is used because the server needs cookies and thats compatable with URLSession not alamofire
-    func endConversationWithCookies(_ completionHandler: @escaping (()->Void)){
+    func closeConversationWithCallback(onFinished: @escaping () -> Void) {
+        endConversationWithCookies(onFinished: onFinished)
+    }
+    
+    func endConversationWithCookies(
+        onFinished: @escaping() -> Void
+    ) {
+        print("Close Conversation :::::")
+        
+        let url = "\(Labiba.HumanAgent.endConversationUrl)\(SharedPreference.shared.currentUserId)/\(Labiba._senderId ?? "")/mobile"
+        
+        guard let requestUrl = URL(string: url) else {
+            print("Invalid URL")
+            onFinished()
+            return
+        }
+        
+        var request = URLRequest(url: requestUrl, timeoutInterval: Double.infinity)
+        
+        // Add headers
+        for dict in Labiba.clientHeaders {
+            for (key, value) in dict {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+        }
+        
+        request.httpMethod = "POST"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Request failed: \(error)")
+                onFinished()
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received")
+                onFinished()
+                return
+            }
+            
+            let responseString = String(data: data, encoding: .utf8) ?? ""
+            print("Response: \(responseString)")
+            
+            onFinished()
+            
+        }
+        
+        task.resume()
+    }
+    
+    
+    //this is used because the server needs cookies and thats compatable with URLSession not alamofire
+    func endConversationWithCookies(){
         let url = "\(Labiba.HumanAgent.endConversationUrl)\(SharedPreference.shared.currentUserId)/\(Labiba._senderId ?? "")/mobile"
         var request = URLRequest(url: URL(string: url)!,timeoutInterval: Double.infinity)
         for dict in Labiba.clientHeaders {
@@ -70,11 +121,9 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
                 print(String(describing: error))
-                completionHandler()
                 return
             }
             print(String(data: data, encoding: .utf8)!)
-            completionHandler()
         }
         
         task.resume()
@@ -142,7 +191,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             if findType(in: jsonObject) {
                 print("Found type 'call.nps.agent'")
                 Labiba.skipErrorMessage = true
-//                if !Labiba.didGoToRate{
+                //                if !Labiba.didGoToRate{
                 if Labiba.isNPSAgentRatingEnabled{
                     Labiba.handleNPSRartingAndQuit(isForAgent: true)
                 }
@@ -332,11 +381,11 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             }
         }
     }
-
+    
     func getActiveQuestion(_ completionHandler:@escaping Handler<getActiveQuestionsResponseModel>){
         let url = "\(Labiba._basePath)/api/Nps/GetCurrentActiveQuestion/\(SharedPreference.shared.currentUserId)\(Labiba.isRateForAgent ? "/2" : "/1")"
         let endPoint = EndPoint(url: url, httpMethod: .get)
-
+        
         remoteContext.withTokenRequest(endPoint: endPoint, parameters: getHeaders()) { result in
             switch result{
             case .success(let data):
@@ -407,23 +456,23 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     }
     
     func updateChatHistoryStatus(messagesIds:[String]){
-            let url = "\(Labiba._basePath)/api/ChatHistory/UpdateStatusMessage"
+        let url = "\(Labiba._basePath)/api/ChatHistory/UpdateStatusMessage"
         let endPoint = EndPoint(url: url, httpMethod: .post,headers: ["Content-Type":"application/json"])
         let parameters: [String : Any] = [
-                "messageIds" : messagesIds,
-                "senderId" : Labiba._senderId ?? "",
-                "pageId" : SharedPreference.shared.currentUserId,
-                "status" : 2
-            ]
+            "messageIds" : messagesIds,
+            "senderId" : Labiba._senderId ?? "",
+            "pageId" : SharedPreference.shared.currentUserId,
+            "status" : 2
+        ]
         remoteContext.request(endPoint: endPoint, parameters: parameters) { result in
-                switch result{
-                case .success(let data):
-                    self.dataParamParser(data: data, model: Int.self, completion: {_ in } )
-                case .failure(let error):
-                    print(error)
-                }
+            switch result{
+            case .success(let data):
+                self.dataParamParser(data: data, model: Int.self, completion: {_ in } )
+            case .failure(let error):
+                print(error)
             }
         }
+    }
     
     
     
@@ -481,7 +530,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
                 }
                 
                 handler(.failure(LabibaError(error: ErrorModel(message: "Error"), statusCode: 200)))
-               
+                
             }
             
             handler(.failure(LabibaError(error: ErrorModel(message: "Error"), statusCode: 200)))
@@ -501,8 +550,8 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             completion(.failure(LabibaError(error: ErrorModel(message: error.localizedDescription), statusCode: 200)))
         }
     }
-
-
+    
+    
     //MARK: - Properties
     lazy var remoteContext = RemoteContext()
     

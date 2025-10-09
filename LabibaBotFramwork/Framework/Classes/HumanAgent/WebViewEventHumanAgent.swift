@@ -12,18 +12,18 @@ import WebKit
 class WebViewEventHumanAgent:NSObject {
     let webView:WKWebView = WKWebView()
     static let Shared = WebViewEventHumanAgent()
-   private override init() {
+    private override init() {
         super.init()
         webView.navigationDelegate = self
-    
+        
         addJavaScripListner()
         addAppWillTerminateListener()
     }
     
-   private  func addJavaScripListner()  {
+    private  func addJavaScripListner()  {
         let handler = "sakoHandler"
         webView.configuration.userContentController.add(self, name: handler)
-       webView.configuration.userContentController.add(self, name: "error")
+        webView.configuration.userContentController.add(self, name: "error")
     }
     
     private func addAppWillTerminateListener(){
@@ -39,10 +39,10 @@ class WebViewEventHumanAgent:NSObject {
                 // i did this because app was crashing after termination it will not appear to user but it will be shown on testflight when user relanch the application  (crash report will be shown)
             }
             sem.wait() // call wait on main thread freezs the application but here it will call when app terminates
-           
+            
         }
     }
-   
+    
     func start() {
         loadUrl()
         guard let topVC = UIApplication.shared.topMostViewController else{return}
@@ -57,7 +57,7 @@ class WebViewEventHumanAgent:NSObject {
         print(url)
         if let url = URL(string: url){
             Labiba.isHumanAgentStarted = true
-//            SharedPreference.shared.isHumanAgentStarted = true
+            //            SharedPreference.shared.isHumanAgentStarted = true
             var request = URLRequest(url: url)
             var finalHeaders:[String:String] = [:]
             for dict in Labiba.clientHeaders {
@@ -66,21 +66,23 @@ class WebViewEventHumanAgent:NSObject {
                     request.setValue(value, forHTTPHeaderField:key)
                 }
             }
-
+            
             webView.load(request)
         }
         
     }
     
-    func end(sendGetStarted:Bool) {
+    func end(withGetStarted:Bool = false) {
         Labiba.isHumanAgentStarted = false
+        //        SharedPreference.shared.isHumanAgentStarted = false
         if let url = Labiba.bundle.url(forResource: "index", withExtension: "html") {
-                let request = URLRequest(url: url)
-                webView.load(request)
+            let request = URLRequest(url: url)
+            webView.load(request)
             if !Labiba.didGoToRate && Labiba.isNPSAgentRatingEnabled{
-               Labiba.handleNPSRartingAndQuit(isForAgent: true)
+                Labiba.handleNPSRartingAndQuit(isForAgent: true)
             }else{
-                if sendGetStarted{
+                if withGetStarted {
+                    print("Get Started :::::: End With Agent")
                     BotConnector.shared.sendMessage("get started")
                 }
             }
@@ -88,25 +90,37 @@ class WebViewEventHumanAgent:NSObject {
     }
     
     func forceEnd(completionHandler:(()->Void)? = nil) {
-        if Labiba.isHumanAgentStarted{
+        
+        if Labiba.isHumanAgentStarted  {
             print("SharedPreference.shared.isHumanAgentStarted Ended")
             Labiba.isHumanAgentStarted = false
-            end(sendGetStarted: false)
-            DataSource.shared.closeConversation {}
+            //            SharedPreference.shared.isHumanAgentStarted = false
+            let url = "\(Labiba.endConversationUrl ?? "https://botbuilder.labiba.ai/api/LiveChat/v1.0/CloseConversation")/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile"
+            print("End Agent :::::: ForceEnd")
+            
+            end(withGetStarted:false)
+            DispatchQueue.global(qos: .background).async {
+                DataSource.shared.closeConversation { result in
+                    switch result{
+                    case .success(let data):
+                        print("conEndeddd \(data)")
+                    case .failure(let error):
+                        print("\(error) notttt conEndeddd")
+                    }
+                    
+                }
+                
+            }
+            print("The task has started")
+            
         }
     }
     
-    func ForceEndOnStart(completionHandler:(()->Void)? = nil){
-        print("Agent Ended on start")
-        Labiba.isHumanAgentStarted = false
-        if let url = Labiba.bundle.url(forResource: "index", withExtension: "html") {
-            let request = URLRequest(url: url)
-            webView.load(request)
-        }
-        DataSource.shared.closeConversation {
-            completionHandler?()
-        }
+    func forceEndOnStartConversation(onFinished: @escaping() -> Void){
+        
+        DataSource.shared.closeConversationWithCallback(onFinished: onFinished)
     }
+    
     
 }
 
@@ -116,6 +130,7 @@ extension WebViewEventHumanAgent: WKNavigationDelegate {
         print("human agent finish loading ")
         
     }
+    
 }
 
 extension WebViewEventHumanAgent: WKScriptMessageHandler {
@@ -157,11 +172,12 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
         
         if statusParam as? String == "end" {
             if !Labiba.isAppInBackground{
-                end(sendGetStarted: true)
-//                BotConnector.shared.sendGetStarted()
+                print("End Agent :::::: Jobject End inside isAppBackground")
+                end(withGetStarted:true)
+                //                BotConnector.shared.sendGetStarted()
             }
         }
         
-       
+        
     }
 }

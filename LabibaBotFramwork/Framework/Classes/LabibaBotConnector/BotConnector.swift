@@ -111,9 +111,9 @@ class BotConnector: NSObject {
             print(String(data: data, encoding: .utf8)!)
         }
         print("\n*********************************** END PARAMETERS ***********************************\n")
-      
-            sendData(parameters: msgLoad)
-
+        
+        sendData(parameters: msgLoad)
+        
         self.delegate?.botConnectorDidRecieveTypingActivity(self)
         Labiba.resetReferral()
         NotificationCenter.default.post(name: Constants.NotificationNames.ChangeTextViewKeyboardType,object:nil) // to rest keyboard content type
@@ -168,21 +168,28 @@ class BotConnector: NSObject {
     }
     
     func startConversation() {
+        
         LocalCache.shared.conversationId = SharedPreference.shared.currentUserId
+        
+        WebViewEventHumanAgent.Shared.forceEndOnStartConversation{
+            Labiba.isHumanAgentStarted = false
+            print("Sender id = \(Labiba._senderId) ::::::")
+            self.sendMessage("CONVERSATION-RELOAD")
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             CircularGradientLoadingIndicator.show()
         }
-        WebViewEventHumanAgent.Shared.ForceEndOnStart {
-            Labiba.isHumanAgentStarted = false
-            self.sendMessage("CONVERSATION-RELOAD")
-        }
+        
+        
+        
     }
     
     
     
     func sendData(parameters:[String:Any])  {
         isTherePendingRequest = true
-         let p = removeEmptyStringsOrNulls(jsonData: parameters)
+        let p = removeEmptyStringsOrNulls(jsonData: parameters)
         if let data = try? JSONSerialization.data(withJSONObject: p, options: .prettyPrinted)
         {
             print(String(data: data, encoding: .utf8)!)
@@ -194,12 +201,13 @@ class BotConnector: NSObject {
                 self.messageAnalyizer.parseResponse(response: model)
             case .failure(let err):
                 print(err.localizedDescription)
-                if err.stausCode == 401{
-                    showErrorMessage("authDenied".localForChosnLangCodeBB)
-                }else if !Labiba.skipErrorMessage {
+                if !Labiba.skipErrorMessage {
                     Labiba.skipErrorMessage = false
-                }else{
-                    showErrorMessage(err.localizedDescription)
+                    if err.stausCode == 401{
+                        showErrorMessage("authDenied".localForChosnLangCodeBB)
+                    }else{
+                        showErrorMessage(err.localizedDescription)
+                    }
                 }
                 self.delegate?.botConnectorRemoveTypingActivity(self)
             }
@@ -208,7 +216,7 @@ class BotConnector: NSObject {
         
     }
     
-
+    
     
     func sendPhoto(_ photo: UIImage)
     {
@@ -233,11 +241,11 @@ class BotConnector: NSObject {
                     }
                 case .failure(let err):
                     print(err.localizedDescription)
-                        if err.stausCode == 401{
-                            showErrorMessage("authDenied".localForChosnLangCodeBB)
-                        }else{
-                            showErrorMessage(err.localizedDescription)
-                        }
+                    if err.stausCode == 401{
+                        showErrorMessage("authDenied".localForChosnLangCodeBB)
+                    }else{
+                        showErrorMessage(err.localizedDescription)
+                    }
                     self.delegate?.botConnectorRemoveTypingActivity(self)
                 }
             }
@@ -293,11 +301,7 @@ class BotConnector: NSObject {
                 }
             case .failure(let err):
                 print(err.localizedDescription)
-                if err.stausCode == 401{
-                    showErrorMessage("authDenied".localForChosnLangCodeBB)
-                }else{
-                    showErrorMessage(err.localizedDescription)
-                }
+                showErrorMessage(err.localizedDescription)
                 self.delegate?.botConnectorRemoveTypingActivity(self)
             }
         }

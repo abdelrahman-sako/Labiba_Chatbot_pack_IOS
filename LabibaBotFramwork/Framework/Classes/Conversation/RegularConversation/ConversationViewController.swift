@@ -32,7 +32,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     //MARK: - Variables
     var cellHeights = [IndexPath: CGFloat]()
     var lastDialogsCount:Int? = nil
-    var isFirstTime = true
     var botFrame:CGRect!
     var gradientView:UIView?
     var isClosable:Bool = true
@@ -74,6 +73,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         self.view.addGestureRecognizer(gesture)
         
         print("did load")
+        //        tableView.backgroundColor = .green
         addTableMask()
         muteButton.isHidden = Labiba.isMuteButtonHidden
         VedioCallButton.isHidden = Labiba.isVedioButtonHidden
@@ -82,7 +82,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         self.navigationController?.isNavigationBarHidden = true
         Constants.Keyboard_type = ""
         dateFormatter.dateFormat = "h:mm a"
-        self.closeButton.tintColor =  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.closeButton.tintColor = .white
         self.botIconView.image = Labiba._Logo
         
         self.botConnector.delegate = self
@@ -173,7 +173,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     
     override func viewWillAppear(_ animated: Bool) {
-        isFirstTime = true
         botConnector.delegate = self
         UIApplication.shared.setStatusBarColor(color: Labiba._StatusBarColor )
         self.navigationController?.isNavigationBarHidden = true
@@ -231,7 +230,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                         DataSource.shared.updateChatHistoryStatus(messagesIds: messagesIds)
                         
                         if !(lastMessageStatus ?? true){
-                            WebViewEventHumanAgent.Shared.end(sendGetStarted: true)
+                            WebViewEventHumanAgent.Shared.end(withGetStarted: true)
                         }
                         Labiba.isAppInBackground = false
                         
@@ -579,7 +578,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     {
         DispatchQueue.main.asyncAfter(deadline: .now() + wait)
         {
-            if(step.cards?.presentation == .menu ){
+            if(step.cards?.presentation == .menu )
+            {
                 self.insertCellIntoTable(step: step)
             }else if (step.cards?.presentation == .vmnue){
                 
@@ -594,10 +594,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 self.displayedDialogs.append(renderedDialog)
                 self.tableView.reloadData()
                 
-                if step.hasMessage{
+                if step.hasMessage
+                {
                     self.finishedDisplayForDialog(dialog: step)
                 }
-            }else{
+            }
+            else
+            {
                 step.message?.removeArabicDiacritic()
                 let renderedDialog = EntryDisplay(dialog: step)
                 renderedDialog.target = self
@@ -605,7 +608,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 self.showTyping = false
                 self.lastDialogsCount = self.displayedDialogs.count
                 self.displayedDialogs.append(renderedDialog)
-
+                
                 self.tableView.reloadData()
                 
                 if step.hasMessage
@@ -613,9 +616,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                     self.finishedDisplayForDialog(dialog: step)
                 }
             }
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-//                self.scrollToBottom()
-//            })
         }
     }
     
@@ -657,14 +657,14 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     func insertDisplay(_ display:EntryDisplay,delay:CGFloat = 0.15 ) -> Void
     {
         if display.dialog.party == .user{
-//            self.lastDialogsCount = self.lastDialogsCount ?? 0 + 1
+            //            self.lastDialogsCount = self.lastDialogsCount ?? 0 + 1
             scrollDown(delay: 0.3)
         }else{
-//            self.lastDialogsCount = self.displayedDialogs.count
+            self.lastDialogsCount = self.displayedDialogs.count
         }
-        self.lastDialogsCount = self.displayedDialogs.count
         self.displayedDialogs.append(display)
         self.tableView.reloadData()
+        
     }
     
     func scrollDown(delay:CGFloat){
@@ -751,6 +751,17 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         self.showTyping = rows > count
     }
     
+    func scrollDownOffset(animated: Bool = true, offset: CGFloat = 100) -> Void {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+            guard let self = self else { return }
+            let currentOffset = self.tableView.contentOffset
+            let maxOffset = self.tableView.contentSize.height - self.tableView.bounds.height
+            let newY = min(currentOffset.y + offset, maxOffset)
+            let newOffset = CGPoint(x: currentOffset.x, y: newY)
+            self.tableView.setContentOffset(newOffset, animated: true)
+        }
+    }
+    
     func scrollToBottom() -> Void
     {
         let lastIndex = self.showTyping ? self.displayedDialogs.count : self.displayedDialogs.count - 1
@@ -758,12 +769,12 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         {
             var index = IndexPath()
             if Labiba.scrollToFirstMessage{
-                 index = IndexPath(row:(lastDialogsCount ?? 0 ) , section: 0)
+                index = IndexPath(row:(lastDialogsCount ?? 0 ) + 1, section: 0)
             }else{
-                 index = IndexPath(row: lastIndex, section: 0)
-
+                index = IndexPath(row: lastIndex, section: 0)
+                
             }
-            guard index.row <= (self.displayedDialogs.count - 1) else {
+            guard index.row == (self.displayedDialogs.count - 1) else {
                 return
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1)
@@ -776,8 +787,12 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                         self.tableView.scrollToRow(at: index, at: Labiba.scrollToFirstMessage ? .top : .bottom, animated: true)
                     }
                 }else{
-                    self.tableView.scrollToRow(at: index, at: .top, animated: true)
+                    self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
                 }
+                
+                //                let currentOffset = tableView.contentOffset
+                //                let newOffset = CGPoint(x: currentOffset.x, y: currentOffset.y + CGFloat(Labiba.scrollingAmount))
+                //                tableView.setContentOffset(newOffset, animated: true)
             }
         }
     }
@@ -1065,10 +1080,17 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         {
             if displayedDialogs.count > 0 { // to ensure that table content will scroll only once when cell presented for the first time
                 if displayedDialogs[displayedDialogs.count - 1].status == .NotShown || self.showTyping{
-                    if displayedDialogs[displayedDialogs.count - 1].dialog.cards?.presentation == .vmnue || self.showTyping || displayedDialogs[displayedDialogs.count - 1].dialog.party == .user {
+                    if self.showTyping || displayedDialogs[displayedDialogs.count - 1].dialog.party == .user {
                         scrollDown(delay: 0.0 )
+                    }else if displayedDialogs[displayedDialogs.count - 1].dialog.cards?.presentation == .vmnue {
+                        if !Labiba.scrollToFirstMessage {
+                            scrollDownOffset(animated: true, offset: 200)
+                        }
+                    }else if ((displayedDialogs[displayedDialogs.count - 1].dialog.choices?.isEmpty) != nil){
+                        scrollDownOffset(animated: true, offset: 200)
                     }else{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                            
                             self.scrollToBottom()
                             
                         }
@@ -1137,6 +1159,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
     {
         if indexPath.row <  self.displayedDialogs.count
         {
+            
             let display = self.displayedDialogs[indexPath.row]
             if let cards = display.dialog.cards
             {
@@ -1332,7 +1355,7 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         self.finishedDisplayForDialog(dialog: dialog)
         //MARK:
         
-        scrollDown(delay:0.1)
+        scrollDown(delay:0.3)
         self.botConnector.sendVoice(voice) { (remotePath) in
             
             renderedDialog.loadingStatus = remotePath != nil ? .success : .failed
@@ -1368,12 +1391,16 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
     }
     
     func submitLocalUserText(_ text:String) {
+        self.clearChoices()
+        
         let dialog = ConversationDialog(by: .user, time: Date())
         dialog.message = text
         SharedPreference.shared.userMessages.append(text)
         SharedPreference.shared.conversationMessages.append(text)
         
         self.displayDialog(dialog)
+        
+        self.scrollDown(delay: 0.3)
     }
     
     func submitUserText(_ text:String) -> Void
@@ -1646,3 +1673,4 @@ extension UIImage {
         return tintedImage
     }
 }
+
