@@ -43,6 +43,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     var isFirstMessage:Bool = true
     var canLunchRating:Bool = false
     var isTTSMuted:Bool = false
+    var isViewAppearing = false
     var tableViewBottomInset:CGFloat = 50
     private var historyMessagesIds: [String] = []{
         didSet{
@@ -68,7 +69,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     {
         super.viewDidLoad()
 
-
+        isViewAppearing = true
                 checkNetwork()
 
         // to remove
@@ -183,6 +184,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         TextToSpeechManeger.Shared.setVolume(volume: isTTSMuted ? 0 : 1)
     }
     override func viewWillDisappear(_ animated: Bool) {
+        
         print("view Will Disappear")
         TextToSpeechManeger.Shared.setVolume(volume: 0)
         UIApplication.shared.setStatusBarColor(color: .clear)
@@ -190,6 +192,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     override func viewDidDisappear(_ animated: Bool)
     {
         super.viewDidDisappear(animated)
+        isViewAppearing = false
         print("ConversationViewController viewDidDisappear")
         
         if Labiba.enableCaching{
@@ -331,14 +334,15 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     func checkNetwork() {
         if #available(iOS 12.0, *) {
-            ReachabilityObserver.shared.startMonitoring()
-            
-            ReachabilityObserver.shared.onStatusChange = { [unowned self] isConnected in
-                if !isConnected{
-                    handleConnectionIssue(isConnected)
+            if isViewAppearing {
+                ReachabilityObserver.shared.startMonitoring()
+                
+                ReachabilityObserver.shared.onStatusChange = { [unowned self] isConnected in
+                    if !isConnected{
+                        handleConnectionIssue(isConnected)
+                    }
                 }
             }
-            
         } else {
             print("Cannot detect Network on ios 11 or lower")
         }
