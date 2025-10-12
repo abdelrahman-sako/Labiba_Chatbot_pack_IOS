@@ -67,6 +67,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     override public func viewDidLoad()
     {
         super.viewDidLoad()
+
+
+                checkNetwork()
+
         // to remove
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapaction))
         gesture.numberOfTapsRequired = 3
@@ -201,45 +205,50 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         // Refresh or re-connect SDK features here
         
         if !isFirstOpen{
-            if Labiba.isHumanAgentStarted{
-                DataSource.shared.getChatHistory(pageId: Labiba._pageId, senderId: Labiba._senderId) { [unowned self] result in
-                    switch result{
-                    case .success(let messages):
-                        print("dattaMessages  \(messages)")
-                        var messagesIds: [String] = []
-                        for message in messages{
-                            let dialog = ConversationDialog(by: .bot, time: Date())
-                            dialog.timestampString = message.timeSent
-                            dialog.isFromAgent = true
-                            if (message.messageText?.contains("@@") ?? false){
-                                let messageToBeSkipped = message.messageText
-                                let fullNameArr = messageToBeSkipped?.components(separatedBy: "@@")
-                                dialog.message = fullNameArr?.first
-                            }else{
-                                dialog.message = message.messageText
-                            }
-                            self.lastDialogsCount = self.displayedDialogs.count
-                            self.displayedDialogs.append(EntryDisplay(dialog:dialog))
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData()
-                            }
-                            messagesIds.append(message.messageID ?? "")
-                            lastMessageStatus = message.isChatWithAgent
+            getChatHistory()
+        }
+    }
+    
+    func getChatHistory(){
+        if Labiba.isHumanAgentStarted{
+            DataSource.shared.getChatHistory(pageId: Labiba._pageId, senderId: Labiba._senderId) { [unowned self] result in
+                switch result{
+                case .success(let messages):
+                    print("dattaMessages  \(messages)")
+                    var messagesIds: [String] = []
+                    for message in messages{
+                        let dialog = ConversationDialog(by: .bot, time: Date())
+                        dialog.timestampString = message.timeSent
+                        dialog.isFromAgent = true
+                        if (message.messageText?.contains("@@") ?? false){
+                            let messageToBeSkipped = message.messageText
+                            let fullNameArr = messageToBeSkipped?.components(separatedBy: "@@")
+                            dialog.message = fullNameArr?.first
+                        }else{
+                            dialog.message = message.messageText
                         }
-                        self.historyMessagesIds = messagesIds
-                        DataSource.shared.updateChatHistoryStatus(messagesIds: messagesIds)
-                        
-                        if !(lastMessageStatus ?? true){
-                            WebViewEventHumanAgent.Shared.end(withGetStarted: true)
+                        self.lastDialogsCount = self.displayedDialogs.count
+                        self.displayedDialogs.append(EntryDisplay(dialog:dialog))
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
                         }
-                        Labiba.isAppInBackground = false
-                        
-                    case .failure(let error):
-                        print(error)
+                        messagesIds.append(message.messageID ?? "")
+                        lastMessageStatus = message.isChatWithAgent
                     }
+                    self.historyMessagesIds = messagesIds
+                    DataSource.shared.updateChatHistoryStatus(messagesIds: messagesIds)
+                    
+                    if !(lastMessageStatus ?? true){
+                        WebViewEventHumanAgent.Shared.end(withGetStarted: true)
+                    }
+                    Labiba.isAppInBackground = false
+                    
+                case .failure(let error):
+                    print(error)
                 }
             }
         }
+
     }
     
     @objc private func appDidEnterBackground() {
@@ -319,6 +328,43 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         displayedDialogs.append(renderedDialog)
         
     }
+    
+    func checkNetwork() {
+        if #available(iOS 12.0, *) {
+            ReachabilityObserver.shared.startMonitoring()
+            
+            ReachabilityObserver.shared.onStatusChange = { [unowned self] isConnected in
+                if !isConnected{
+                    handleConnectionIssue(isConnected)
+                }
+            }
+            
+        } else {
+            print("Cannot detect Network on ios 11 or lower")
+        }
+    }
+    
+    func handleConnectionIssue(_ isConnected:Bool = ReachabilityObserver.shared.isConnected){
+        let statement = isConnected ? "✅ Internet Connected" : "⚠️ No Internet Connection"
+        
+        if isConnected {
+            print(statement)
+            if isConnected{
+                getChatHistory()
+            }
+        } else {
+            print(statement)
+                Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",cancelLbl: "Exit", okayHandler: {
+                    Labiba.isConnectivityAlertShown = false
+                    self.handleConnectionIssue()
+                },cancelHandler:{
+                    Labiba.isConnectivityAlertShown = false
+                    Labiba.dismiss()
+                })
+        }
+    }
+    
+
     
     func addInterationDialog(currentBotType:BotType)
     {
@@ -1250,12 +1296,12 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
         toastLabel.textAlignment = .center;
-        toastLabel.font = UIFont(name: "Montserrat-Light", size: 8.0)
+//        toastLabel.font = UIFont(name: "Montserrat-Light", size: 8.0)
         toastLabel.text = message
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 10;
         toastLabel.clipsToBounds  =  true
-        self.view.addSubview(toastLabel)
+        view.addSubview(toastLabel)
         UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
             toastLabel.alpha = 0.0
         }, completion: {(isCompleted) in

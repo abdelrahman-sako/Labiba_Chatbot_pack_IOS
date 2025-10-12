@@ -60,6 +60,7 @@ public enum LoggingAndRefferalEncodingType{
     static var scrollingAmount:Int = 50
     static var scrollToFirstMessage = false
     static var isAttachmentClickable = true
+    static var isConnectivityAlertShown = false
     // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
     
@@ -624,19 +625,21 @@ public enum LoggingAndRefferalEncodingType{
     }
     public static func startConversation(onView vc: UIViewController, animated: Bool = true)
     {
-        //        Labiba.agentNameCounter = 0
         guard self._senderId != nil
         else
         {
-            fatalError(SENDER_ERROR)
+            fatalError("SENDER_ERROR \(SENDER_ERROR)")
         }
-        
-        let convVC = ConversationViewController.create()
-        convVC.delegate = Labiba.delegate
-        //convVC.closeHandler = onClose
-        //UIApplication.shared.keyWindow?.rootViewController?.present(nav, animated: animated, completion: nil)
-        vc.present(createLabibaNavigation(rootViewController: convVC), animated: animated, completion: nil)
+
+        self.checkConnectivity { isConnected in
+            if isConnected{
+                    let convVC = ConversationViewController.create()
+                    convVC.delegate = Labiba.delegate
+                    vc.present(createLabibaNavigation(rootViewController: convVC), animated: animated, completion: nil)
+            }
+        }
     }
+    
     public static func startConversationWithPrechatForm(onView vc: UIViewController, animated: Bool = true)
     {
         
@@ -649,6 +652,48 @@ public enum LoggingAndRefferalEncodingType{
         prechatVC.modalPresentationStyle = .fullScreen
         prechatVC.modalTransitionStyle = .crossDissolve
         vc.present(createLabibaNavigation(rootViewController: prechatVC), animated: animated, completion: nil)
+    }
+    
+    static func checkConnectivity(_ completion:((_ isConnected:Bool)->Void)? = nil){
+        if #available(iOS 12.0, *) {
+            ReachabilityObserver.shared.startMonitoring()
+            
+            let isConnected = ReachabilityObserver.shared.isConnected
+            let statement = isConnected ? "✅ Internet Connected" : "⚠️ No Internet Connection"
+            
+            print(statement)
+            if !isConnected{
+                print(statement)
+                    self.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",cancelLbl: "Exit", okayHandler: {
+                        self.checkConnectivity { isConnected in
+                            isConnectivityAlertShown = false
+                            completion?(isConnected)
+                        }
+                    },cancelHandler:{
+                        isConnectivityAlertShown = false
+                        Labiba.dismiss()
+                    })
+            }else{
+                completion?(isConnected)
+            }
+        }
+    }
+    
+    
+    
+    static func showErrorMessageWithTwoActions(_ title:String, message:String, okLbl:String = "OK",cancelLbl:String = "Cancel",okayHandler:(()->Void)? = nil,cancelHandler:(()->Void)? = nil) -> Void {
+        
+        DispatchQueue.main.async {
+            
+            let alert = UIAlertController(title: title,
+                                          message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: okLbl, style: .default, handler: {_ in okayHandler?()})
+            let cancelAction = UIAlertAction(title: cancelLbl, style: .default, handler: {_ in cancelHandler?()})
+            
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            UIApplication.shared.topMostViewController?.present(alert, animated: true, completion: nil)
+        }
     }
     
     static func handleNPSRartingAndQuit(isForAgent:Bool){
@@ -691,6 +736,7 @@ public enum LoggingAndRefferalEncodingType{
             if tiggerDelegate{Labiba.delegate?.labibaDidClose?()}
         })
     }
+
     
     
     //    static func createConversation(closable: Bool = true, onClose: ConversationCloseHandler? = nil) -> UIViewController

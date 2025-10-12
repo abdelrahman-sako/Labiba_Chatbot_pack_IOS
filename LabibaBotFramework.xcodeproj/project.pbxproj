@@ -31,6 +31,7 @@
 		20CDC6282DDB0792005F9F1C /* TranscriptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDC6262DDB0792005F9F1C /* TranscriptVC.swift */; };
 		20CDC6292DDB0792005F9F1C /* TranscriptVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CDC6272DDB0792005F9F1C /* TranscriptVC.xib */; };
 		20CDC62B2DDB088B005F9F1C /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDC62A2DDB088B005F9F1C /* CustomViews.swift */; };
+		20FBB69C2E97E63F00D0B633 /* NetworkConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBB69B2E97E63F00D0B633 /* NetworkConnectionManager.swift */; };
 		20FE11CB2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE11CA2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift */; };
 		370196EA24CDA5DE0003266B /* VedioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370196E924CDA5DE0003266B /* VedioPlayerView.swift */; };
 		37030D7023F2AB5400BF8ED3 /* FontDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */; };
@@ -543,6 +544,7 @@
 		20CDC6262DDB0792005F9F1C /* TranscriptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptVC.swift; sourceTree = "<group>"; };
 		20CDC6272DDB0792005F9F1C /* TranscriptVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranscriptVC.xib; sourceTree = "<group>"; };
 		20CDC62A2DDB088B005F9F1C /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
+		20FBB69B2E97E63F00D0B633 /* NetworkConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionManager.swift; sourceTree = "<group>"; };
 		20FE11CA2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getActiveQuestionsResponseModel.swift; sourceTree = "<group>"; };
 		370196E924CDA5DE0003266B /* VedioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VedioPlayerView.swift; sourceTree = "<group>"; };
 		37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDownloader.swift; sourceTree = "<group>"; };
@@ -1458,6 +1460,7 @@
 				3772B5252339E9F100262298 /* Reachability.swift */,
 				75EA910B292F5CCC00A0F352 /* EncryptionManeger.swift */,
 				205B7DAE2DDB0FCA00A28A73 /* TextInputsValidationExtension.swift */,
+				20FBB69B2E97E63F00D0B633 /* NetworkConnectionManager.swift */,
 			);
 			path = Manegers;
 			sourceTree = "<group>";
@@ -2911,6 +2914,7 @@
 				52F6ECB526F7264600B38518 /* PrechatFormModel.swift in Sources */,
 				B429553122DDDBD2002DE3E9 /* LbLanguage.swift in Sources */,
 				52775661272EE12F00F8ADE0 /* LayerModel.swift in Sources */,
+				20FBB69C2E97E63F00D0B633 /* NetworkConnectionManager.swift in Sources */,
 				52775699272EE12F00F8ADE0 /* GradientStrokeNode.swift in Sources */,
 				5277566E272EE12F00F8ADE0 /* ShapeNode.swift in Sources */,
 				B429551122DDDBD2002DE3E9 /* Constants.swift in Sources */,
