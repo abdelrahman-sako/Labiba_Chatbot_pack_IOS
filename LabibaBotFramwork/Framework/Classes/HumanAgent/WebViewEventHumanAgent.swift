@@ -20,10 +20,14 @@ class WebViewEventHumanAgent:NSObject {
         addAppWillTerminateListener()
     }
     
-    private  func addJavaScripListner()  {
+      func addJavaScripListner()  {
         let handler = "sakoHandler"
         webView.configuration.userContentController.add(self, name: handler)
         webView.configuration.userContentController.add(self, name: "error")
+    }
+    
+    func stopJavaScriptListener(){
+        WebViewEventHumanAgent.Shared.webView.configuration.userContentController.removeScriptMessageHandler(forName: "sakoHandler")
     }
     
     private func addAppWillTerminateListener(){

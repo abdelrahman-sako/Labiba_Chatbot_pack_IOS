@@ -355,15 +355,20 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             print(statement)
             if isConnected{
                 getChatHistory()
+                WebViewEventHumanAgent.Shared.webView.configuration.userContentController.add(WebViewEventHumanAgent.Shared.self, name: "sakoHandler")
+                WebViewEventHumanAgent.Shared.loadUrl()
             }
         } else {
+            WebViewEventHumanAgent.Shared.stopJavaScriptListener()
             print(statement)
                 Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",cancelLbl: "Exit", okayHandler: {
                     Labiba.isConnectivityAlertShown = false
                     self.handleConnectionIssue()
                 },cancelHandler:{
                     Labiba.isConnectivityAlertShown = false
-                    Labiba.dismiss()
+                    Labiba.dismiss {
+                        self.dismiss(animated: true)
+                    }
                 })
         }
     }
@@ -812,8 +817,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         }
     }
     
-    func scrollToBottom() -> Void
-    {
+    func scrollToBottom() -> Void{
         let lastIndex = self.showTyping ? self.displayedDialogs.count : self.displayedDialogs.count - 1
         if (lastIndex >= 0)
         {
@@ -837,12 +841,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                         self.tableView.scrollToRow(at: index, at: Labiba.scrollToFirstMessage ? .top : .bottom, animated: true)
                     }
                 }else{
-                    self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+                    self.tableView.scrollToRow(at: index, at: Labiba.scrollToFirstMessage ? .top : .bottom, animated: true)
                 }
-                
-                //                let currentOffset = tableView.contentOffset
-                //                let newOffset = CGPoint(x: currentOffset.x, y: currentOffset.y + CGFloat(Labiba.scrollingAmount))
-                //                tableView.setContentOffset(newOffset, animated: true)
             }
         }
     }
