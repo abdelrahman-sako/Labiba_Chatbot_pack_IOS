@@ -28,6 +28,7 @@ class WebViewEventHumanAgent:NSObject {
     
     func stopJavaScriptListener(){
         WebViewEventHumanAgent.Shared.webView.configuration.userContentController.removeScriptMessageHandler(forName: "sakoHandler")
+        WebViewEventHumanAgent.Shared.webView.configuration.userContentController.removeScriptMessageHandler(forName: "error")
     }
     
     private func addAppWillTerminateListener(){
@@ -56,11 +57,11 @@ class WebViewEventHumanAgent:NSObject {
         //webView.isHidden = true
     }
     
-    func loadUrl(){
+    func loadUrl(_ enableAgent:Bool = true){
         let url = "\(Labiba.HumanAgent.url)?device=ios&userid=\(Labiba._senderId ?? "")&storyId=\(Labiba._pageId)"
         print(url)
         if let url = URL(string: url){
-            Labiba.isHumanAgentStarted = true
+            Labiba.isHumanAgentStarted = enableAgent
             //            SharedPreference.shared.isHumanAgentStarted = true
             var request = URLRequest(url: url)
             var finalHeaders:[String:String] = [:]

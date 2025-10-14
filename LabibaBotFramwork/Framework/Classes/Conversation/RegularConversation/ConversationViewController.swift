@@ -354,9 +354,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         if isConnected {
             print(statement)
             if isConnected{
-                getChatHistory()
-                WebViewEventHumanAgent.Shared.webView.configuration.userContentController.add(WebViewEventHumanAgent.Shared.self, name: "sakoHandler")
-                WebViewEventHumanAgent.Shared.loadUrl()
+                if displayedDialogs.isEmpty{
+                    BotConnector.shared.sendMessage("CONVERSATION-RELOAD")
+                }else{
+                    getChatHistory()
+                    WebViewEventHumanAgent.Shared.addJavaScripListner()
+                    WebViewEventHumanAgent.Shared.loadUrl(Labiba.isHumanAgentStarted)
+                }
             }
         } else {
             WebViewEventHumanAgent.Shared.stopJavaScriptListener()
