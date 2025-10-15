@@ -702,9 +702,10 @@ public enum LoggingAndRefferalEncodingType{
                 guard let topVC = UIApplication.shared.topMostViewController else{return}
                 var npsRatingVC = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingNewVC") as! RatingNewVC
                 Labiba.isRateForAgent = isForAgent
-                isNpsPresentingNow = true
                 npsRatingVC.modalPresentationStyle = .fullScreen
-                topVC.present(npsRatingVC, animated: true)
+                topVC.present(npsRatingVC, animated: true) {
+                    isNpsPresentingNow = true
+                }
                 
                 npsRatingVC.vcDismissed = { state in
                     isNpsPresentingNow = false

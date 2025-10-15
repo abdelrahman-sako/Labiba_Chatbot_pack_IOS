@@ -186,7 +186,6 @@ extension WebViewEventHumanAgent: WKScriptMessageHandler {
             if !Labiba.isAppInBackground{
                 print("End Agent :::::: Jobject End inside isAppBackground")
                 end(withGetStarted:true)
-                //                BotConnector.shared.sendGetStarted()
             }
         }
         
