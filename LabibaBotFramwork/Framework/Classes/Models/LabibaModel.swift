@@ -14,6 +14,7 @@ class LastBotResponseModel:Codable{
 class LabibaModel:Codable {
     var recipient:RecipientModel?
     var messaging_type:String?
+    var IsTransferredToAgent:String?
     var message:MessageModel?
 }
 
