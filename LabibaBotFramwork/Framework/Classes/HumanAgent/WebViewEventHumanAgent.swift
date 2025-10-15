@@ -12,23 +12,30 @@ import WebKit
 class WebViewEventHumanAgent:NSObject {
     let webView:WKWebView = WKWebView()
     static let Shared = WebViewEventHumanAgent()
+    var isJSLstinerAdded = false
+    
     private override init() {
         super.init()
         webView.navigationDelegate = self
-        
         addJavaScripListner()
         addAppWillTerminateListener()
     }
     
       func addJavaScripListner()  {
-        let handler = "sakoHandler"
-        webView.configuration.userContentController.add(self, name: handler)
-        webView.configuration.userContentController.add(self, name: "error")
+          if !isJSLstinerAdded {
+              let handler = "sakoHandler"
+              webView.configuration.userContentController.add(self, name: handler)
+              webView.configuration.userContentController.add(self, name: "error")
+              isJSLstinerAdded = true
+          }
     }
     
     func stopJavaScriptListener(){
-        WebViewEventHumanAgent.Shared.webView.configuration.userContentController.removeScriptMessageHandler(forName: "sakoHandler")
-        WebViewEventHumanAgent.Shared.webView.configuration.userContentController.removeScriptMessageHandler(forName: "error")
+        if isJSLstinerAdded {
+            WebViewEventHumanAgent.Shared.webView.configuration.userContentController.removeScriptMessageHandler(forName: "sakoHandler")
+            WebViewEventHumanAgent.Shared.webView.configuration.userContentController.removeScriptMessageHandler(forName: "error")
+            isJSLstinerAdded = false
+        }
     }
     
     private func addAppWillTerminateListener(){

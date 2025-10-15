@@ -60,7 +60,6 @@ public enum LoggingAndRefferalEncodingType{
     static var scrollingAmount:Int = 50
     static var scrollToFirstMessage = false
     static var isAttachmentClickable = true
-    static var isConnectivityAlertShown = false
     // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
     //static var _voiceServicePath = "/Handlers/Translate.ashx")
     
@@ -666,11 +665,9 @@ public enum LoggingAndRefferalEncodingType{
                 print(statement)
                     self.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",cancelLbl: "Exit", okayHandler: {
                         self.checkConnectivity { isConnected in
-                            isConnectivityAlertShown = false
                             completion?(isConnected)
                         }
                     },cancelHandler:{
-                        isConnectivityAlertShown = false
                         Labiba.dismiss()
                     })
             }else{
@@ -681,7 +678,7 @@ public enum LoggingAndRefferalEncodingType{
     
     
     
-    static func showErrorMessageWithTwoActions(_ title:String, message:String, okLbl:String = "OK",cancelLbl:String = "Cancel",okayHandler:(()->Void)? = nil,cancelHandler:(()->Void)? = nil) -> Void {
+    static func showErrorMessageWithTwoActions(_ title:String, message:String, okLbl:String = "OK", view:UIViewController? = UIApplication.shared.topMostViewController ?? nil,cancelLbl:String = "Cancel",okayHandler:(()->Void)? = nil,cancelHandler:(()->Void)? = nil) -> Void {
         
         DispatchQueue.main.async {
             
@@ -692,31 +689,35 @@ public enum LoggingAndRefferalEncodingType{
             
             alert.addAction(okAction)
             alert.addAction(cancelAction)
-            UIApplication.shared.topMostViewController?.present(alert, animated: true, completion: nil)
+            view?.present(alert, animated: true, completion: nil)
         }
     }
     
     static func handleNPSRartingAndQuit(isForAgent:Bool){
         guard !isNpsPresentingNow else { return }
         
-        isRateForAgent = isForAgent
-        if !isNpsPresentingNow{
-            guard let topVC = UIApplication.shared.topMostViewController else{return}
-            var npsRatingVC = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingNewVC") as! RatingNewVC
-            Labiba.isRateForAgent = isForAgent
-            isNpsPresentingNow = true
-            npsRatingVC.modalPresentationStyle = .fullScreen
-            topVC.present(npsRatingVC, animated: true)
-            
-            npsRatingVC.vcDismissed = { state in
-                isNpsPresentingNow = false
-                Labiba.didGoToRate = true
-                print("submit rating result is: \(state)")
-                dismiss(tiggerDelegate: true,compeletion: {
-                    self.dismiss()
-                    Labiba.showBackOnNPS = false
-                })
+        if ReachabilityObserver.shared.isConnected{
+            isRateForAgent = isForAgent
+            if !isNpsPresentingNow{
+                guard let topVC = UIApplication.shared.topMostViewController else{return}
+                var npsRatingVC = Labiba.ratingStoryboard.instantiateViewController(withIdentifier: "RatingNewVC") as! RatingNewVC
+                Labiba.isRateForAgent = isForAgent
+                isNpsPresentingNow = true
+                npsRatingVC.modalPresentationStyle = .fullScreen
+                topVC.present(npsRatingVC, animated: true)
+                
+                npsRatingVC.vcDismissed = { state in
+                    isNpsPresentingNow = false
+                    Labiba.didGoToRate = true
+                    print("submit rating result is: \(state)")
+                    dismiss(tiggerDelegate: true,compeletion: {
+                        self.dismiss()
+                        Labiba.showBackOnNPS = false
+                    })
+                }
             }
+        }else{
+            dismiss()
         }
     }
     

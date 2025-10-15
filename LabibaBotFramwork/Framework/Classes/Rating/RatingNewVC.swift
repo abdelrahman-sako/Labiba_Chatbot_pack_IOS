@@ -17,7 +17,7 @@ class RatingNewVC:UIViewController {
     
     var selectedScore:Int?
     var vcDismissed:((_ status:String)-> Void)?
-    
+    var connectionRestoredCallBack:(()->Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetup()
@@ -35,24 +35,28 @@ class RatingNewVC:UIViewController {
             showErrorMessage("Please Select a Score")
             return
         }
-        DataSource.shared.closeConversation { _ in }
-        DataSource.shared.submitNPSScore(String(selectedScore)) { result in
-            switch result{
-            case .success(let result):
-                DispatchQueue.main.async{
-                    self.dismiss(animated: true,completion: {
-                        self.vcDismissed?(result ?? "error")
-                    })
+
+        checkConnection()
+        connectionRestoredCallBack = {
+            DataSource.shared.closeConversation { _ in }
+            DataSource.shared.submitNPSScore(String(selectedScore)) { result in
+                switch result{
+                case .success(let result):
+                    DispatchQueue.main.async{
+                        self.dismiss(animated: true,completion: {
+                            self.vcDismissed?(result ?? "error")
+                        })
+                    }
+                case .failure(let error):
+                    print(error)
+                    DispatchQueue.main.async{
+                        self.dismiss(animated: true,completion: {
+                            self.vcDismissed?(error.localizedDescription)
+                        })
+                    }
                 }
-            case .failure(let error):
-                print(error)
-                DispatchQueue.main.async{
-                    self.dismiss(animated: true,completion: {
-                        self.vcDismissed?(error.localizedDescription)
-                    })
-                }
+                
             }
-            
         }
     }
     
@@ -92,6 +96,21 @@ class RatingNewVC:UIViewController {
         
     }
     
+    func checkConnection(){
+        ReachabilityObserver.shared.startMonitoring()
+        if ReachabilityObserver.shared.isConnected{
+            connectionRestoredCallBack?()
+            
+        }else{
+            Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
+                self.checkConnection()
+            },cancelHandler:{
+                Labiba.dismiss {
+                    self.dismiss(animated: true)
+                }
+            })
+        }
+    }
 }
 
 extension RatingNewVC: UITableViewDelegate , UITableViewDataSource {

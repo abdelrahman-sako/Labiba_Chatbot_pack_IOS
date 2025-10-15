@@ -45,6 +45,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     var isTTSMuted:Bool = false
     var isViewAppearing = false
     var tableViewBottomInset:CGFloat = 50
+    var isConnectionAlertShown = false
     private var historyMessagesIds: [String] = []{
         didSet{
             updateReadMessages()
@@ -179,6 +180,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     override func viewWillAppear(_ animated: Bool) {
         botConnector.delegate = self
+        
+        handleConnectionIssue()
         UIApplication.shared.setStatusBarColor(color: Labiba._StatusBarColor )
         self.navigationController?.isNavigationBarHidden = true
         TextToSpeechManeger.Shared.setVolume(volume: isTTSMuted ? 0 : 1)
@@ -188,6 +191,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         print("view Will Disappear")
         TextToSpeechManeger.Shared.setVolume(volume: 0)
         UIApplication.shared.setStatusBarColor(color: .clear)
+        isConnectionAlertShown = false
     }
     override func viewDidDisappear(_ animated: Bool)
     {
@@ -207,9 +211,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     @objc private func appDidBecomeActive() {
         // Refresh or re-connect SDK features here
         
-        if !isFirstOpen{
-            getChatHistory()
-        }
+//        if !isFirstOpen{
+            handleConnectionIssue()
+//            getChatHistory()
+//        }
     }
     
     func getChatHistory(){
@@ -349,34 +354,38 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     func handleConnectionIssue(_ isConnected:Bool = ReachabilityObserver.shared.isConnected){
-        let statement = isConnected ? "✅ Internet Connected" : "⚠️ No Internet Connection"
-        
-        if isConnected {
-            print(statement)
-            if isConnected{
-                if displayedDialogs.isEmpty{
-                    BotConnector.shared.sendMessage("CONVERSATION-RELOAD")
-                }else{
+        print( isConnected ? "✅ Internet Connected" : "⚠️ No Internet Connection")
+        isConnected ? handleConnected() : handleDisConnected()
+    }
+    
+    
+    func handleConnected(){
+        if !isConnectionAlertShown{
+            if displayedDialogs.isEmpty{
+                BotConnector.shared.sendMessage("CONVERSATION-RELOAD")
+            }else{
+                if !isFirstOpen{
                     getChatHistory()
-                    WebViewEventHumanAgent.Shared.addJavaScripListner()
-                    WebViewEventHumanAgent.Shared.loadUrl(Labiba.isHumanAgentStarted)
                 }
+                WebViewEventHumanAgent.Shared.addJavaScripListner()
+                WebViewEventHumanAgent.Shared.loadUrl(Labiba.isHumanAgentStarted)
             }
-        } else {
-            WebViewEventHumanAgent.Shared.stopJavaScriptListener()
-            print(statement)
-                Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",cancelLbl: "Exit", okayHandler: {
-                    Labiba.isConnectivityAlertShown = false
-                    self.handleConnectionIssue()
-                },cancelHandler:{
-                    Labiba.isConnectivityAlertShown = false
-                    Labiba.dismiss {
-                        self.dismiss(animated: true)
-                    }
-                })
         }
     }
     
+    func handleDisConnected(){
+        WebViewEventHumanAgent.Shared.stopJavaScriptListener()
+        isConnectionAlertShown = true
+        Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
+            self.isConnectionAlertShown = false
+            self.handleConnectionIssue()
+        },cancelHandler:{
+            Labiba.dismiss {
+                self.isConnectionAlertShown = false
+                self.dismiss(animated: true)
+            }
+        })
+    }
 
     
     func addInterationDialog(currentBotType:BotType)

@@ -174,7 +174,7 @@ class BotConnector: NSObject {
         WebViewEventHumanAgent.Shared.forceEndOnStartConversation{
             Labiba.isHumanAgentStarted = false
             print("Sender id = \(Labiba._senderId) ::::::")
-            self.sendMessage("CONVERSATION-RELOAD")
+//            self.sendMessage("CONVERSATION-RELOAD")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
