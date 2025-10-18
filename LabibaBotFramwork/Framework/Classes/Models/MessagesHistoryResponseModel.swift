@@ -12,9 +12,9 @@ import Foundation
 struct MessagesHistoryResponseModelElement: Codable {
     var id: String
     var messageText: String?
-    var from, to, dateSent, timeSent: String?
-    var messageID: String?
+    var from, to, dateSent, timeSent,type,messageID: String?
     var isChatWithAgent: Bool?
+    var senderName: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "ID"
@@ -23,6 +23,8 @@ struct MessagesHistoryResponseModelElement: Codable {
         case dateSent = "DateSent"
         case timeSent = "TimeSent"
         case messageID = "MessageId"
+        case type = "Type"
+        case senderName = "SenderName"
         case isChatWithAgent
     }
 }

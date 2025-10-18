@@ -34,7 +34,8 @@ class ConversationDialog
     }
 
     var isFromAgent:Bool?
-    var agentName:String? 
+    var senderName:String?
+    var agentName:String?
     var hasMessage: Bool
     {
         let message = self.message ?? ""

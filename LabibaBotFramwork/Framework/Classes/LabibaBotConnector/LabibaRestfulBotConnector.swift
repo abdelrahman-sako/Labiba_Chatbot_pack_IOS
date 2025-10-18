@@ -301,6 +301,8 @@ class LabibaRestfulBotConnector{ //
         if let response  = model.result?.fulfillment?[0] {
             dialog.message = response.message
             dialog.isFromAgent = Labiba.isHumanAgentStarted
+            dialog.senderName = response.senderName
+            
             if let imageUrl =  response.imageUrl {
                 dialog.media = DialogMedia(type: .Photo)
                 dialog.media?.url = imageUrl

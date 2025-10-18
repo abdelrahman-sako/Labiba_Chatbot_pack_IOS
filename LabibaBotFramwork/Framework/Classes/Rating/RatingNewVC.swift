@@ -105,9 +105,9 @@ class RatingNewVC:UIViewController {
             Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
                 self.checkConnection()
             },cancelHandler:{
-                Labiba.dismiss {
-                    self.dismiss(animated: true)
-                }
+                self.dismiss(animated: true,completion: {
+                    self.vcDismissed?("Discard nps, no internet connection")
+                })
             })
         }
     }
