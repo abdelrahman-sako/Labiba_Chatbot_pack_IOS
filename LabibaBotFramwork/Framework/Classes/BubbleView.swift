@@ -165,31 +165,31 @@ public class BubbleView: UIView {
     
     func getBotName(){
         DispatchQueue.main.async{ [unowned self] in
-            if source == .incoming{
+            if source != .outgoing{
                 if currentDialog?.isFromAgent ?? false{
-                    if currentDialog?.senderName == nil{
-                        if Labiba.currentAgentName == nil{
-                            DispatchQueue.global(qos: .background).async {
-                                DataSource.shared.getAgentName { [unowned self] result in
-                                    switch result{
-                                    case .success(let data):
-                                        Labiba.currentAgentName = data.name
-                                        currentDialog?.agentName = data.name
-                                        nameCompletion?()
-                                    case .failure(let error):
-                                        print(error)
-                                        nameCompletion?()
-                                    }
-                                }
-                            }
-                        }else{
-                            currentDialog?.agentName =  Labiba.currentAgentName
-                            nameCompletion?()
-                        }
-                    }else{
+//                    if currentDialog?.senderName == nil{
+//                        if Labiba.currentAgentName == nil{
+//                            DispatchQueue.global(qos: .background).async {
+//                                DataSource.shared.getAgentName { [unowned self] result in
+//                                    switch result{
+//                                    case .success(let data):
+//                                        Labiba.currentAgentName = data.name
+//                                        currentDialog?.agentName = data.name
+//                                        nameCompletion?()
+//                                    case .failure(let error):
+//                                        print(error)
+//                                        nameCompletion?()
+//                                    }
+//                                }
+//                            }
+//                        }else{
+//                            currentDialog?.agentName =  Labiba.currentAgentName
+//                            nameCompletion?()
+//                        }
+//                    }else{
                         currentDialog?.agentName = currentDialog?.senderName
                         nameCompletion?()
-                    }
+//                    }
                 }else{
                     currentDialog?.agentName =  "bot".localForChosnLangCodeBB
                     nameCompletion?()

@@ -228,6 +228,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                         let dialog = ConversationDialog(by: .bot, time: Date())
                         dialog.timestampString = message.timeSent
                         dialog.isFromAgent = true
+                        dialog.senderName = message.senderName
                         if (message.messageText?.contains("@@") ?? false){
                             let messageToBeSkipped = message.messageText
                             let fullNameArr = messageToBeSkipped?.components(separatedBy: "@@")

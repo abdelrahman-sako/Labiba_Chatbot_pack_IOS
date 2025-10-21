@@ -685,10 +685,10 @@ public enum LoggingAndRefferalEncodingType{
             let alert = UIAlertController(title: title,
                                           message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: okLbl, style: .default, handler: {_ in okayHandler?()})
-            let cancelAction = UIAlertAction(title: cancelLbl, style: .default, handler: {_ in cancelHandler?()})
+//            let cancelAction = UIAlertAction(title: cancelLbl, style: .default, handler: {_ in cancelHandler?()})
             
             alert.addAction(okAction)
-            alert.addAction(cancelAction)
+//            alert.addAction(cancelAction)
             view?.present(alert, animated: true, completion: nil)
         }
     }
