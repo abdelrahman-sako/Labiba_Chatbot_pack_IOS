@@ -197,6 +197,12 @@
 "dataNotAllowedErr" = "Please try again, an unexpected error occurred. Error code 115.";
 "bgSessionError" = "Please try again, an unexpected error occurred. Error code 116.";
 
+//Connection alert
+"Connection Lost" = "Connection Lost";
+"We’re having trouble connecting. Please check your internet connection and try again" = "We’re having trouble connecting. Please check your internet connection and try again";
+"Retry" = "Retry" ;
+
+
 
 
 

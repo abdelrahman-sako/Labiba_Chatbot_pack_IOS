@@ -682,9 +682,9 @@ public enum LoggingAndRefferalEncodingType{
         
         DispatchQueue.main.async {
             
-            let alert = UIAlertController(title: title,
-                                          message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: okLbl, style: .default, handler: {_ in okayHandler?()})
+            let alert = UIAlertController(title: "Connection Lost".localForChosnLangCodeBB,
+                                          message: "We’re having trouble connecting. Please check your internet connection and try again".localForChosnLangCodeBB, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Retry".localForChosnLangCodeBB, style: .default, handler: {_ in okayHandler?()})
 //            let cancelAction = UIAlertAction(title: cancelLbl, style: .default, handler: {_ in cancelHandler?()})
             
             alert.addAction(okAction)

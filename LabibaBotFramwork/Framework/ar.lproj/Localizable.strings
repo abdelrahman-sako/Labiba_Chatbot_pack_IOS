@@ -212,3 +212,8 @@
 
 // header
 "This is the virtual assistant from AMEX" = "معك المساعد الرقمي من  أمريكان إكسبريس";
+
+//Connection alert
+"Connection Lost" = "انقطع الاتصال" ;
+"Retry" = "المحاولة مرة اخرى" ;
+"We’re having trouble connecting. Please check your internet connection and try again" = "تواجهنا مشكلة في الاتصال. يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى.";
