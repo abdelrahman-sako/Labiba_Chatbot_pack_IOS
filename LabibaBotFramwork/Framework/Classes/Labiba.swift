@@ -94,11 +94,11 @@ public enum LoggingAndRefferalEncodingType{
     public static var transcriptSenderEmail:String?
     public static var isRateForAgent:Bool = false
     public static var npsQuestionTemplateLongId: String?
-    static var agentNameCounter = 0
     
     static var isRatingVCPresenting = false
     static var botName = "bot".localForChosnLangCodeBB
     static var currentAgentName:String?
+    static var internetCheckEnabled:Bool = true
     //  public  static var isLoggingEnabled: Bool = false
     
     // MARK:- Main Settings
@@ -254,6 +254,10 @@ public enum LoggingAndRefferalEncodingType{
     }
     
     
+    public static func setInternetCheck(_ isEnabled: Bool){
+        internetCheckEnabled = isEnabled
+    }
+    
     public static func setConversationScrollingBehavior(scrollToFirstMessage:Bool = true){
         self.scrollToFirstMessage = scrollToFirstMessage
         //        self.scrollingAmount = scrollingAmount
@@ -366,7 +370,6 @@ public enum LoggingAndRefferalEncodingType{
         didSet{
             if isHumanAgentStarted{
                 currentAgentName = nil
-                agentNameCounter += 1
             }
         }
     }
@@ -654,15 +657,17 @@ public enum LoggingAndRefferalEncodingType{
     }
     
     static func checkConnectivity(_ completion:((_ isConnected:Bool)->Void)? = nil){
-        if #available(iOS 12.0, *) {
-            ReachabilityObserver.shared.startMonitoring()
+        if internetCheckEnabled{
             
-            let isConnected = ReachabilityObserver.shared.isConnected
-            let statement = isConnected ? "✅ Internet Connected" : "⚠️ No Internet Connection"
-            
-            print(statement)
-            if !isConnected{
+            if #available(iOS 12.0, *) {
+                ReachabilityObserver.shared.startMonitoring()
+                
+                let isConnected = ReachabilityObserver.shared.isConnected
+                let statement = isConnected ? "✅ Internet Connected" : "⚠️ No Internet Connection"
+                
                 print(statement)
+                if !isConnected{
+                    print(statement)
                     self.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",cancelLbl: "Exit", okayHandler: {
                         self.checkConnectivity { isConnected in
                             completion?(isConnected)
@@ -670,8 +675,9 @@ public enum LoggingAndRefferalEncodingType{
                     },cancelHandler:{
                         Labiba.dismiss()
                     })
-            }else{
-                completion?(isConnected)
+                }else{
+                    completion?(isConnected)
+                }
             }
         }
     }

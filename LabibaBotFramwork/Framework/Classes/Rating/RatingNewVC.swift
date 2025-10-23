@@ -97,18 +97,21 @@ class RatingNewVC:UIViewController {
     }
     
     func checkConnection(){
-        ReachabilityObserver.shared.startMonitoring()
-        if ReachabilityObserver.shared.isConnected{
-            connectionRestoredCallBack?()
+        if Labiba.internetCheckEnabled{
             
-        }else{
-            Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
-                self.checkConnection()
-            },cancelHandler:{
-                self.dismiss(animated: true,completion: {
-                    self.vcDismissed?("Discard nps, no internet connection")
+            ReachabilityObserver.shared.startMonitoring()
+            if ReachabilityObserver.shared.isConnected{
+                connectionRestoredCallBack?()
+                
+            }else{
+                Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
+                    self.checkConnection()
+                },cancelHandler:{
+                    self.dismiss(animated: true,completion: {
+                        self.vcDismissed?("Discard nps, no internet connection")
+                    })
                 })
-            })
+            }
         }
     }
 }

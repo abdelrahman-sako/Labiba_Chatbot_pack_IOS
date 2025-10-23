@@ -339,18 +339,20 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     func checkNetwork() {
-        if #available(iOS 12.0, *) {
-            if isViewAppearing {
-                ReachabilityObserver.shared.startMonitoring()
-                
-                ReachabilityObserver.shared.onStatusChange = { [unowned self] isConnected in
-                    if !isConnected{
-                        handleConnectionIssue(isConnected)
+        if Labiba.internetCheckEnabled{
+            if #available(iOS 12.0, *) {
+                if isViewAppearing {
+                    ReachabilityObserver.shared.startMonitoring()
+                    
+                    ReachabilityObserver.shared.onStatusChange = { [unowned self] isConnected in
+                        if !isConnected{
+                            handleConnectionIssue(isConnected)
+                        }
                     }
                 }
+            } else {
+                print("Cannot detect Network on ios 11 or lower")
             }
-        } else {
-            print("Cannot detect Network on ios 11 or lower")
         }
     }
     
