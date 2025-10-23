@@ -56,6 +56,8 @@ class AttachmentView: UIView, ReusableComponent {
 //      if let url = URL(string: url){
 //            UIApplication.shared.open(url, options: [:], completionHandler: nil)
 //        }
+        
+        guard Labiba.isAttachmentClickable else { return }
         if let url = URL(string: url) {
             let vc = SFSafariViewController(url: url)
             Labiba.navigationController?.present(vc, animated: true)

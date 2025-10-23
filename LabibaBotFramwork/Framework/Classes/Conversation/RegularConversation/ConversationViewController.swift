@@ -46,6 +46,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     var isViewAppearing = false
     var tableViewBottomInset:CGFloat = 50
     var isConnectionAlertShown = false
+    var delayForStartMessage : Double = 0
     private var historyMessagesIds: [String] = []{
         didSet{
             updateReadMessages()
@@ -175,6 +176,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         super.viewDidAppear(animated)
         print("did appear")
         addInterationDialog(currentBotType:Labiba.Bot_Type)
+        
+        print("the delayForStartMessage in didappear is \(delayForStartMessage)")
     }
     
     
@@ -356,22 +359,29 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     func handleConnectionIssue(_ isConnected:Bool = ReachabilityObserver.shared.isConnected){
         print( isConnected ? "✅ Internet Connected" : "⚠️ No Internet Connection")
+        delayForStartMessage += 2
         isConnected ? handleConnected() : handleDisConnected()
     }
     
     
     func handleConnected(){
-        if !isConnectionAlertShown{
-            if displayedDialogs.isEmpty{
-                BotConnector.shared.sendMessage("CONVERSATION-RELOAD")
-            }else{
-                if !isFirstOpen{
-                    getChatHistory()
+        
+        print("handle connected function clousre and dialogs \(displayedDialogs.isEmpty)")
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayForStartMessage , execute: {
+            if !self.isConnectionAlertShown{
+                if self.displayedDialogs.isEmpty{
+                    BotConnector.shared.sendMessage("CONVERSATION-RELOAD")
+                    print("displayedDialogs empty here ")
+                }else{
+                    if !self.isFirstOpen{
+                        self.getChatHistory()
+                    }
+                    WebViewEventHumanAgent.Shared.addJavaScripListner()
+                    WebViewEventHumanAgent.Shared.loadUrl(Labiba.isHumanAgentStarted)
                 }
-                WebViewEventHumanAgent.Shared.addJavaScripListner()
-                WebViewEventHumanAgent.Shared.loadUrl(Labiba.isHumanAgentStarted)
             }
-        }
+        })
+     
     }
     
     func handleDisConnected(){

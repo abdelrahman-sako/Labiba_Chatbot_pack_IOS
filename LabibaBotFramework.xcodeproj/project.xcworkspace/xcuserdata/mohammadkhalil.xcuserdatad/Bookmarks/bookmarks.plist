@@ -83,13 +83,13 @@
 				<key>focused</key>
 				<string></string>
 				<key>leading</key>
-				<string>    public static func setFont(regAR:String , boldAR:String , regEN:String , boldEN:String){
-        self.font = (regAR,boldAR ,regEN,boldEN)
+				<string>    
+    private static func createReferral()  {
      </string>
 				<key>trailing</key>
-				<string>   self.registerFonts()
+				<string>   let model = RefModel(access_token: SharedPreference.shared.refreshToken)
+        _Referral = ReferralModel(ref: model.arrayJsonString()).modelAsDic()
     }
-    
 </string>
 			</dict>
 			<key>title</key>
