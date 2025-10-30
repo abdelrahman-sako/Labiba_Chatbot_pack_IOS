@@ -59,7 +59,7 @@ class BotConnector: NSObject {
     var opQueue:OperationQueue?
     private override init() {
         super.init()
-
+        
         messageAnalyizer = LabibaRestfulBotConnector.shared
         
         messageAnalyizer.delegate = self
@@ -79,7 +79,7 @@ class BotConnector: NSObject {
         let null = NSNull()
         var filteredMessage = message
         filteredMessage?.removeHiddenCharacters() // there is a hidden chars produced by Speech framework
-       
+        
         let msgLoad: [String: Any] = [
             "object": "page",
             "entry": [[
@@ -111,79 +111,85 @@ class BotConnector: NSObject {
             print(String(data: data, encoding: .utf8)!)
         }
         print("\n*********************************** END PARAMETERS ***********************************\n")
-      
-            sendData(parameters: msgLoad)
-
+        
+        sendData(parameters: msgLoad)
+        
         self.delegate?.botConnectorDidRecieveTypingActivity(self)
         Labiba.resetReferral()
         NotificationCenter.default.post(name: Constants.NotificationNames.ChangeTextViewKeyboardType,object:nil) // to rest keyboard content type
     }
     
     func removeEmptyStringsOrNulls(jsonData: [String: Any]) -> [String: Any] {
-      var newJsonData = [String: Any]()
-      for (key, value) in jsonData {
-        if value is String {
-          if (value as! String) == ""  {
-            continue
-          }
+        var newJsonData = [String: Any]()
+        for (key, value) in jsonData {
+            if value is String {
+                if (value as! String) == ""  {
+                    continue
+                }
+            }
+            if  value is NSNull {
+                continue
+            }
+            if value is [String:Any?] || value is [String:Any] {
+                print("Value_________\(value)" )
+                print("Key_________\(key)" )
+                
+                let temp  = removeEmptyStringsOrNulls(jsonData: value as! [String:Any])
+                
+                if temp.isEmpty {
+                    continue
+                }
+                newJsonData[key]  = temp
+                continue
+            }
+            if value is [[String:Any?]] || value is [[String:Any]] {
+                var entity :[[String:Any]] = []
+                for item in (value as! [[String:Any]]){
+                    let vl = removeEmptyStringsOrNulls(jsonData: item as [String:Any])
+                    
+                    entity.append(vl)
+                }
+                newJsonData[key] = entity
+                continue
+            }
+            
+            if value is [String:Any] {
+                if (value as! [String:Any]).isEmpty {
+                    newJsonData[key] = NSNull()
+                    newJsonData[key] = removeEmptyStringsOrNulls(jsonData: value as! [String:Any])
+                }
+            }
+            
+            
+            newJsonData[key] = value
         }
-          if  value is NSNull {
-              continue
-          }
-          if value is [String:Any?] || value is [String:Any] {
-              print("Value_________\(value)" )
-              print("Key_________\(key)" )
-              
-               let temp  = removeEmptyStringsOrNulls(jsonData: value as! [String:Any])
-             
-              if temp.isEmpty {
-                 continue
-              }
-              newJsonData[key]  = temp
-              continue
-          }
-          if value is [[String:Any?]] || value is [[String:Any]] {
-              var entity :[[String:Any]] = []
-              for item in (value as! [[String:Any]]){
-                   let vl = removeEmptyStringsOrNulls(jsonData: item as [String:Any])
-
-                  entity.append(vl)
-              }
-              newJsonData[key] = entity
-              continue
-          }
-          
-          if value is [String:Any] {
-              if (value as! [String:Any]).isEmpty {
-                  newJsonData[key] = NSNull()
-                  newJsonData[key] = removeEmptyStringsOrNulls(jsonData: value as! [String:Any])
-              }
-          }
-          
-
-        newJsonData[key] = value
-      }
         
         return newJsonData
     }
     
     func startConversation() {
-        // showLoadingIndicator()
+        
         LocalCache.shared.conversationId = SharedPreference.shared.currentUserId
-        if SharedPreference.shared.isHumanAgentStarted {
-            WebViewEventHumanAgent.Shared.forceEnd()
+        
+        WebViewEventHumanAgent.Shared.forceEndOnStartConversation{
+            Labiba.isHumanAgentStarted = false
+            print("Sender id = \(Labiba._senderId) ::::::")
+//            self.sendMessage("CONVERSATION-RELOAD")
         }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             CircularGradientLoadingIndicator.show()
         }
-        self.sendMessage("CONVERSATION-RELOAD")
+        
+        
+        
     }
     
     
     
     func sendData(parameters:[String:Any])  {
         isTherePendingRequest = true
-         let p = removeEmptyStringsOrNulls(jsonData: parameters)
+        let p = removeEmptyStringsOrNulls(jsonData: parameters)
         if let data = try? JSONSerialization.data(withJSONObject: p, options: .prettyPrinted)
         {
             print(String(data: data, encoding: .utf8)!)
@@ -195,7 +201,14 @@ class BotConnector: NSObject {
                 self.messageAnalyizer.parseResponse(response: model)
             case .failure(let err):
                 print(err.localizedDescription)
-                showErrorMessage(err.localizedDescription)
+                if !Labiba.skipErrorMessage {
+                    Labiba.skipErrorMessage = false
+                    if err.stausCode == 401{
+                        showErrorMessage("authDenied".localForChosnLangCodeBB)
+                    }else{
+                        showErrorMessage(err.localizedDescription)
+                    }
+                }
                 self.delegate?.botConnectorRemoveTypingActivity(self)
             }
             self.isTherePendingRequest = false
@@ -203,7 +216,7 @@ class BotConnector: NSObject {
         
     }
     
-
+    
     
     func sendPhoto(_ photo: UIImage)
     {
@@ -228,7 +241,11 @@ class BotConnector: NSObject {
                     }
                 case .failure(let err):
                     print(err.localizedDescription)
-                    showErrorMessage(err.localizedDescription)
+                    if err.stausCode == 401{
+                        showErrorMessage("authDenied".localForChosnLangCodeBB)
+                    }else{
+                        showErrorMessage(err.localizedDescription)
+                    }
                     self.delegate?.botConnectorRemoveTypingActivity(self)
                 }
             }
@@ -260,8 +277,11 @@ class BotConnector: NSObject {
                         self.sendMessage("Failure")
                     }
                 case .failure(let err):
-                    print(err.localizedDescription)
-                    showErrorMessage(err.localizedDescription)
+                    if err.stausCode == 401{
+                        showErrorMessage("authDenied".localForChosnLangCodeBB)
+                    }else{
+                        showErrorMessage(err.localizedDescription)
+                    }
                     self.delegate?.botConnectorRemoveTypingActivity(self)
                 }
                 

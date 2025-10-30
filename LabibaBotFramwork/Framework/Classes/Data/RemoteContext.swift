@@ -60,7 +60,6 @@ final class RemoteContext {
         let servertrustManager = ServerTrustPolicyManager(policies: serverTrustPolicies)
         
         sessionManager = SessionManager(configuration: configuration,serverTrustPolicyManager: servertrustManager)
-//        sessionManager
     }
     
     /// check  token  and update it if it's required, then continue with the normal request flow
@@ -85,7 +84,7 @@ final class RemoteContext {
     func withTokenRequest(endPoint: EndPointProtocol, parameters:String?, completion: @escaping Handler<Data>) {
         // this should be changed since we can make alamofire wait untill certain request response return
         let parameters = "\"\(parameters!)\"".trimmingCharacters(in: .whitespacesAndNewlines)
-       
+        
         checkToken { result in
             switch result {
             case .success(_):
@@ -103,7 +102,7 @@ final class RemoteContext {
     ///   - completion: A callback function invoked when the operation is completed.
     func request(endPoint: EndPointProtocol, parameters:Parameters?, completion: @escaping Handler<Data>){
         let urlRequest = buildURlRequest(endPoint: endPoint, params: parameters)
-       
+        
         sendRequest(reqestUrl: urlRequest) { (result) in
             switch result{
             case .success(let response):
@@ -127,7 +126,7 @@ final class RemoteContext {
     
     func request(endPoint: EndPointProtocol, parameters:String?, completion: @escaping Handler<Data>){
         
-        
+        print("headdders are \(endPoint.headers)")
         sendRequest(reqestUrl: URL(string: endPoint.url)!,encoding: parameters ?? "") { (result) in
             switch result{
             case .success(let response):
@@ -156,6 +155,7 @@ final class RemoteContext {
     ///   - parameters: [Any], Optional array of objects
     ///   - completion: A callback function invoked when the operation is completed.
     func request(endPoint: EndPointProtocol, paramsAny:[Any]?, completion: @escaping Handler<Any>){
+        print("headdders are \(endPoint.headers)")
         let params = paramsAny?.asParameters()
         let urlRequest = buildURlRequestArray(endPoint: endPoint, params: params)
         sendRequest(reqestUrl: urlRequest) { (result) in
@@ -197,9 +197,9 @@ final class RemoteContext {
         downloadTask.resume()
         return downloadTask
     }
-   
+    
     func multipartRequest(endPoint: EndPointProtocol, params:Parameters?, multipartName: String?, uploadFiles: [Data]?,encoding:String.Encoding? = nil,mimeType:String,fileName:String, completion: @escaping Handler<Data>){
-        var headres = Labiba.passedHeaders
+        print("headdders are \(endPoint.headers)")
 
         let urlRequest = buildURlRequestArray(endPoint: endPoint, params: params)
         sessionManager.upload(multipartFormData: { (multipartFormData) in
@@ -268,6 +268,9 @@ final class RemoteContext {
                               completion: @escaping Handler<Any> ) {
         sessionManager.request(reqestUrl,method: .post,encoding: encoding,headers: ["Content-Type":"application/json"]).validate().responseData { (response) in
             //self.printResponse(reqestUrl: reqestUrl, responseData: response)
+            
+            print("request isssss \(reqestUrl.absoluteString)\n ")
+            print("request isssss \(reqestUrl)\n ")
             switch response.result {
             case .success:
                 completion(.success(response))
@@ -287,6 +290,7 @@ final class RemoteContext {
     ///   - params: Http request parameter as [String: Any], optional.
     /// - Returns: An Http request object of type URLRequestConvertible.
     private func buildURlRequest(endPoint: EndPointProtocol, params: Parameters?) -> URLRequestConvertible{
+        print("headdders are \(endPoint.headers)")
         let relativePath =  endPoint.url
         let url = URL(string: relativePath)!
         
@@ -317,7 +321,7 @@ final class RemoteContext {
         }else if endPoint.httpMethod == .post {
             encoding = URLEncoding(destination: .httpBody)
         }
-      
+        
         if endPoint.httpMethod == .get || endPoint.httpMethod == .delete  {
             encoding = URLEncoding.default // this == URLEncoding(destination: .queryString) (not sure) from moyad
         }
@@ -333,6 +337,8 @@ final class RemoteContext {
     ///   - params: Http request parameter as [Any], optional.
     /// - Returns: An Http request object of type URLRequestConvertible.
     private func buildURlRequestArray(endPoint: EndPointProtocol, params: Parameters?) -> URLRequestConvertible{
+        print("headdders are \(endPoint.headers)")
+
         let relativePath =  endPoint.url
         let url = URL(string: relativePath)!
         
@@ -352,7 +358,7 @@ final class RemoteContext {
     }
     
     func buildError(response:  DataResponse<Data>, responseError: NSError?) -> LabibaError{
-       
+        
         let defaultCodeError = LabibaError(code: .Unknown, statusCode:  response.response?.statusCode ?? 0)
         let defaultError = LabibaError(statusCode: response.response?.statusCode ?? 0, headers: response.response?.allHeaderFields) ?? defaultCodeError
         guard let data = response.data else {
@@ -411,7 +417,7 @@ final class RemoteContext {
                     handler(.success(model))
                 } catch {
                     let dataString = String(data: data, encoding: .utf8) ?? ""
-                   let error =  LabibaError(code: .EncodingError, statusCode: 200,response: dataString)
+                    let error =  LabibaError(code: .EncodingError, statusCode: 200,response: dataString)
                     handler(.failure(error))
                 }
             case .failure(let error):
@@ -423,7 +429,54 @@ final class RemoteContext {
     func close()  {
         sessionManager?.session.getAllTasks(completionHandler: {$0.forEach({$0.cancel()})})
     }
-   
+    
+    
+    func requestWithGet(endpoint: EndPoint, method: HTTPMethod, parameters: Parameters? = nil, headers: HTTPHeaders? = nil, completion: @escaping Handler<Data>) {
+        makeRequest(url: endpoint.url, method: method, parameters: parameters, headers: headers, completionHandler: completion)
+}
+
+    func makeRequest(url: String, method: HTTPMethod, parameters: [String: Any]?, headers: [String: String]?, completionHandler: @escaping Handler<Data>) {
+        guard let url = URL(string: url) else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        
+        // Add headers if available
+        if let headers = headers {
+            for (key, value) in headers {
+                request.setValue(value, forHTTPHeaderField: key)
+            }
+        }
+        
+        // Add parameters for POST/PUT requests
+        if let parameters = parameters, method != .get {
+            request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Request failed: \(error.localizedDescription)")
+                let error =  LabibaError(code: .EncodingError, statusCode: 200,response: "Request failed: \(error.localizedDescription)")
+                completionHandler(.failure(error))
+                return
+            }
+            
+            guard let data = data, let httpResponse = response as? HTTPURLResponse else {
+                print("Invalid response")
+                let error =  LabibaError(code: .EncodingError, statusCode: 200,response: "Invalid response")
+                completionHandler(.failure(error))
+                return
+            }
+            
+            print("Status Code: \(httpResponse.statusCode)")
+            if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
+                print("Response JSON: \(json)")
+            }
+            completionHandler(.success(data))
+        }
+        task.resume()
+    }
 }
 
 
@@ -499,4 +552,63 @@ class ResponseModel<T:Decodable>:Decodable {
     var ErrorMessage:String?
     var data:T?
     var Link:String?
+}
+
+
+
+
+
+
+extension Request {
+    public func cURLDescription() -> String {
+        var curlCommand = "curl -v "
+        
+        if let method = request?.httpMethod {
+            curlCommand += "-X \(method) "
+        }
+        
+        if let headers = request?.allHTTPHeaderFields {
+            for (key, value) in headers {
+                curlCommand += "-H '\(key): \(value)' "
+            }
+        }
+        
+        if let httpBodyData = request?.httpBody,
+           let body = String(data: httpBodyData, encoding: .utf8) {
+            curlCommand += "-d '\(body)' "
+        }
+        
+        if let url = request?.url?.absoluteString {
+            curlCommand += "\"\(url)\""
+        }
+        
+        return curlCommand
+    }
+}
+extension DataRequest {
+    /// Prints a cURL command that can be pasted into Terminal
+    func debugCurl() {
+        var curl = "curl -v \\\n"
+        
+        if let method = request?.httpMethod {
+            curl += "-X \(method) \\\n"
+        }
+        
+        if let headers = request?.allHTTPHeaderFields {
+            for (key, value) in headers {
+                curl += "-H \"\(key): \(value)\" \\\n"
+            }
+        }
+        
+        if let bodyData = request?.httpBody,
+           let body = String(data: bodyData, encoding: .utf8) {
+            curl += "-d '\(body)' \\\n"
+        }
+        
+        if let url = request?.url?.absoluteString {
+            curl += "\"\(url)\""
+        }
+        
+        print(curl)
+    }
 }

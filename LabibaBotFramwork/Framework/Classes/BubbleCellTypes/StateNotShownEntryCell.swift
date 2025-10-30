@@ -131,7 +131,7 @@ class StateNotShownEntryCell: StateEntryCell, SelectableCardViewDelegate, Select
             self.addSubview(self.bubble)
             let dateFormatter = DateFormatter()
            // self.bubble.timeLabel.text = dateFormatter.string(from: self.currentDialog.timestamp)
-            //
+            
             self.bubble.currentDialog = self.currentDialog
             //
             self.bubble.doSetMessage = self.currentDialog.message!

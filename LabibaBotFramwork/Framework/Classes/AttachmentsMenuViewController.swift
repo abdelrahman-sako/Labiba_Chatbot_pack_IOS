@@ -16,6 +16,7 @@ enum AttachmentType {
    // case voice
     case calendar
     case file
+    case transcript
 }
 
 protocol AttachmentsMenuViewControllerDelegate :  class {
@@ -28,6 +29,7 @@ protocol AttachmentsMenuViewControllerDelegate :  class {
 
 class AttachmentsMenuViewController: UIViewController {
     
+    @IBOutlet weak var emailButton: UIButton!
     static func present(withDelegate delegate:AttachmentsMenuViewControllerDelegate?) -> Void {
         
         if let topVC = getTheMostTopViewController(),
@@ -50,6 +52,7 @@ class AttachmentsMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         self.background.alpha = 0
         leadingCons.constant = ipadMargin
         self.background.applySemanticAccordingToBotLang()
@@ -102,6 +105,9 @@ class AttachmentsMenuViewController: UIViewController {
        // self.dismissWithType(.voice)
     }
     
+    @IBAction func popupButtonTapped(_ sender: Any) {
+        self.dismissWithType(.transcript)
+    }
     @IBAction func photoLibrarySelected(_ sender: Any) {
         
         self.dismissWithType(.photoLibrary)
@@ -124,6 +130,10 @@ class AttachmentsMenuViewController: UIViewController {
     @IBAction func calendarSelected(_ sender: Any) {
         
         self.dismissWithType(.calendar)
+    }
+    
+    func setupViews(){
+        emailButton.isHidden = Labiba.transcriptSenderEmail?.isEmpty ?? true
     }
     
     func dismissWithType( _ type:AttachmentType? ) -> Void {

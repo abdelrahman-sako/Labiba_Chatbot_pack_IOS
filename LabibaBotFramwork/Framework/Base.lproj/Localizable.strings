@@ -98,6 +98,7 @@
 "labiba" = "Labiba";
 "chatbot" = "ChatBot";
 "bot" = "Bot";
+"Agent" = "Agent";
 "you" = "You";
 "uploading" = "Uploading";
 "loading" = "Loading";
@@ -196,5 +197,29 @@
 "dataNotAllowedErr" = "Please try again, an unexpected error occurred. Error code 115.";
 "bgSessionError" = "Please try again, an unexpected error occurred. Error code 116.";
 
+//Connection alert
+"Connection Lost" = "Connection Lost";
+"We’re having trouble connecting. Please check your internet connection and try again" = "We’re having trouble connecting. Please check your internet connection and try again";
+"Retry" = "Retry" ;
 
 
+
+
+
+// nps rating
+"Submit" = "Submit";
+"Later" = "Later";
+"Share Your Rating" = "Share Your Rating";
+
+// header
+"This is the virtual assistant from AMEX" = "This is the virtual assistant from AMEX";
+
+//transcript
+"Would you like to send a transcript of this conversation to your email before exiting?" = "Would you like to send a transcript of this conversation to your email before exiting?";
+
+"Send & Exit" = "Send & Exit" ;
+"Exit" = "Exit" ;
+"Send a transcript of this conversation" = "Send a transcript of this conversation";
+"Email" = "Email";
+"Name" = "Name" ;
+"Send" = "Send" ;

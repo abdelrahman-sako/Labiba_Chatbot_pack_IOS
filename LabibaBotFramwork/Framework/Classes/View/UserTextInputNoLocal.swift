@@ -162,38 +162,38 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         
         switch type {
         case .camera:
-
+            
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
-
+                
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
                 imagePicker.sourceType = .camera
                 imagePicker.allowsEditing = false
                 //imagePicker.mediaTypes = [kUTTypeMovie as String,kUTTypeJPEG as String]
                 imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera) ?? []
-
+                
                 topVC.present(imagePicker, animated: true, completion: nil)
             } else {
-
+                
                 showErrorMessage("camera-inaccessible".local)
             }
             
         case .photoLibrary:
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-
+                
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
                 imagePicker.sourceType = .photoLibrary
                 imagePicker.allowsEditing = false
-
+                
                 topVC.present(imagePicker, animated: true, completion: nil)
             } else {
-
+                
                 showErrorMessage("library-inaccessible".local)
             }
-//        case .location:
-//            break
-//           // LocationSelectViewController.present(withDelegate: self)
+            //        case .location:
+            //            break
+            //           // LocationSelectViewController.present(withDelegate: self)
             
         case .calendar:
             
@@ -202,10 +202,15 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
         case .file:
             let topVC = getTheMostTopViewController()
             let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePDF].map({ $0 as String }), in: .import)
-                       documentPicker.delegate = self
+            documentPicker.delegate = self
             topVC?.present(documentPicker, animated: true, completion: nil)
+        case .transcript:
+            let bundle = Bundle(for: TranscriptVC.self)
+            let vc = TranscriptVC(nibName: "TranscriptVC", bundle: bundle)
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            topVC.present(vc, animated: true, completion: nil)
         }
-       
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
@@ -262,17 +267,17 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
             let size = CGSize(width: textView.bounds.width, height: .infinity)
             let estimatedHight = textView.sizeThatFits(size)
             
-            if textView.numberOfLines() > 4 {
+            if textView.numberOfLines() > 1 {
                 textView.isScrollEnabled = true
             }else{
                 textView.isScrollEnabled = false
                 if estimatedHight.height <= 50 {
-                  self.heightCons.constant = 44
+                  self.heightCons.constant = 24
                 }else{
                 self.heightCons.constant = estimatedHight.height + 10
                 }
-                if estimatedHight.height <= 60 {
-                  self.hightConsIpad.constant = 55
+                if estimatedHight.height <= 40 {
+                  self.hightConsIpad.constant = 30
                 }else{
                 self.hightConsIpad.constant = estimatedHight.height + 10
                 }

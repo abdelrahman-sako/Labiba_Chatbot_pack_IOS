@@ -65,6 +65,7 @@ class LabibaRestfulBotConnector{ //
             // delegate?.botConnector(self, didRequestHumanAgent: "request human agent")
             let dialog = ConversationDialog(by: .bot, time: timestamp)
             let message = model.message
+            dialog.isFromAgent = Labiba.isHumanAgentStarted
             // message?.text = "livechat.transfer:\(message?.text ?? "")"
             if message?.text?.contains("livechat.transfer:")  ?? false {
                 delegate?.botConnector(didRequestLiveChatTransferWithMessage: "livechat.transfer")
@@ -203,12 +204,12 @@ class LabibaRestfulBotConnector{ //
                     switch payload {
                     case .string(let message):
                         if let attachType = attach?.type, attachType == "backPropagation"{
-                            Labiba.delegate?.labibaDataUpdate?(payload: message)
+                            Labiba.delegate?.labibaDataUpdate?(payload: message ?? "")
                             return
                         }else{
                             switch message {
                             case "goRealtime":
-                                delegate?.botConnector( didRequestHumanAgent: message)
+                                delegate?.botConnector( didRequestHumanAgent: message ?? "")
                                 print("redirect to human agent with message: ",message)
                             case "redirectToStart":
                                 DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now()+0.5, execute: {
@@ -226,7 +227,7 @@ class LabibaRestfulBotConnector{ //
                         if let attachType = attach?.type{
                             NotificationCenter.default.post(name: Constants.NotificationNames.ChangeInputToVoiceAssistantType,
                                                             object: nil)
-                            if attachType == "template", let elements = payload.elements
+                            if attachType == "template", let elements = payload?.elements
                             {
                                 
                                 
@@ -261,7 +262,7 @@ class LabibaRestfulBotConnector{ //
                                 })
                                 ShowDialog()
                                 cancelCard = true
-                            } else if let attachUrl = payload.url {
+                            } else if let attachUrl = payload?.url {
                                 switch attachType
                                 {
                                 case "audio":
@@ -299,12 +300,16 @@ class LabibaRestfulBotConnector{ //
         }
         if let response  = model.result?.fulfillment?[0] {
             dialog.message = response.message
+            dialog.isFromAgent = Labiba.isHumanAgentStarted
+            dialog.senderName = response.senderName
+            
             if let imageUrl =  response.imageUrl {
                 dialog.media = DialogMedia(type: .Photo)
                 dialog.media?.url = imageUrl
             }
             self.delegate?.botConnector( didRecieveActivity: dialog)
         }
+        DataSource.shared.updateChatHistoryStatus(messagesIds: [model.messageId ?? ""])
     }
     
     func ShowDialog()

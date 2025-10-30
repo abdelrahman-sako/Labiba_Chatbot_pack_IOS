@@ -21,7 +21,18 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		20153EA52D626F0000DF1246 /* LabibaThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20153EA42D626F0000DF1246 /* LabibaThemeModel.swift */; };
+		205B7DAF2DDB0FCA00A28A73 /* TextInputsValidationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B7DAE2DDB0FCA00A28A73 /* TextInputsValidationExtension.swift */; };
+		207CBFB52D884D3000C9126D /* LabibaColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CBFB42D884D3000C9126D /* LabibaColorExtension.swift */; };
+		207CBFB72D898C5C00C9126D /* LabibaImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CBFB62D898C5C00C9126D /* LabibaImageExtension.swift */; };
 		20811CCC2A55497000B0573C /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20811CCB2A55497000B0573C /* KeyChainManager.swift */; };
+		2081BB852E793D950016616E /* GetAgentInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2081BB842E793D950016616E /* GetAgentInfoResponseModel.swift */; };
+		20B1D9052E6F0CCA0014F2DD /* MessagesHistoryResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1D9042E6F0CCA0014F2DD /* MessagesHistoryResponseModel.swift */; };
+		20CDC6282DDB0792005F9F1C /* TranscriptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDC6262DDB0792005F9F1C /* TranscriptVC.swift */; };
+		20CDC6292DDB0792005F9F1C /* TranscriptVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CDC6272DDB0792005F9F1C /* TranscriptVC.xib */; };
+		20CDC62B2DDB088B005F9F1C /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDC62A2DDB088B005F9F1C /* CustomViews.swift */; };
+		20FBB69C2E97E63F00D0B633 /* NetworkConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBB69B2E97E63F00D0B633 /* NetworkConnectionManager.swift */; };
+		20FE11CB2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE11CA2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift */; };
 		370196EA24CDA5DE0003266B /* VedioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370196E924CDA5DE0003266B /* VedioPlayerView.swift */; };
 		37030D7023F2AB5400BF8ED3 /* FontDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */; };
 		370874282326528C00E0C52C /* GreetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370874272326528C00E0C52C /* GreetingHeaderView.swift */; };
@@ -495,6 +506,12 @@
 		B429555322DDDBD2002DE3E9 /* RadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42954F422DDDBD2002DE3E9 /* RadiusViewController.swift */; };
 		B429555A22DDDBD2002DE3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */; };
 		B462725122DEF4C20070E044 /* AttachmentsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */; };
+		E81355E32E0BE3E000078C75 /* BentonSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E81355DE2E0BE3E000078C75 /* BentonSans-Regular.otf */; };
+		E81355E42E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E81355E12E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf */; };
+		E81355E52E0BE3E000078C75 /* BentonSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E81355DC2E0BE3E000078C75 /* BentonSans-Bold.otf */; };
+		E81355E62E0BE3E000078C75 /* FrutigerLTArabic-45Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E81355E02E0BE3E000078C75 /* FrutigerLTArabic-45Light.ttf */; };
+		E81355E72E0BE3E000078C75 /* Frutiger LT Arabic 55 Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E81355DF2E0BE3E000078C75 /* Frutiger LT Arabic 55 Roman.ttf */; };
+		E81355E82E0BE3E000078C75 /* BentonSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E81355DD2E0BE3E000078C75 /* BentonSans-Medium.otf */; };
 		E8A14E582DA7B97100A27C08 /* RatingNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A14E572DA7B97100A27C08 /* RatingNewVC.swift */; };
 		F9013BE328716DEC00DE2BA0 /* WebViewEventHumanAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */; };
 		F96C538B293778210038440A /* UploadDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C538A293778210038440A /* UploadDataResponseModel.swift */; };
@@ -517,7 +534,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20153EA42D626F0000DF1246 /* LabibaThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaThemeModel.swift; sourceTree = "<group>"; };
+		205B7DAE2DDB0FCA00A28A73 /* TextInputsValidationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputsValidationExtension.swift; sourceTree = "<group>"; };
+		207CBFB42D884D3000C9126D /* LabibaColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaColorExtension.swift; sourceTree = "<group>"; };
+		207CBFB62D898C5C00C9126D /* LabibaImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabibaImageExtension.swift; sourceTree = "<group>"; };
 		20811CCB2A55497000B0573C /* KeyChainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		2081BB842E793D950016616E /* GetAgentInfoResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAgentInfoResponseModel.swift; sourceTree = "<group>"; };
+		20B1D9042E6F0CCA0014F2DD /* MessagesHistoryResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesHistoryResponseModel.swift; sourceTree = "<group>"; };
+		20CDC6262DDB0792005F9F1C /* TranscriptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptVC.swift; sourceTree = "<group>"; };
+		20CDC6272DDB0792005F9F1C /* TranscriptVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranscriptVC.xib; sourceTree = "<group>"; };
+		20CDC62A2DDB088B005F9F1C /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
+		20FBB69B2E97E63F00D0B633 /* NetworkConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionManager.swift; sourceTree = "<group>"; };
+		20FE11CA2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getActiveQuestionsResponseModel.swift; sourceTree = "<group>"; };
 		370196E924CDA5DE0003266B /* VedioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VedioPlayerView.swift; sourceTree = "<group>"; };
 		37030D6F23F2AB5400BF8ED3 /* FontDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDownloader.swift; sourceTree = "<group>"; };
 		370874272326528C00E0C52C /* GreetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingHeaderView.swift; sourceTree = "<group>"; };
@@ -997,6 +1025,12 @@
 		B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B42954FF22DDDBD2002DE3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B462725022DEF4C20070E044 /* AttachmentsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsMenuViewController.swift; sourceTree = "<group>"; };
+		E81355DC2E0BE3E000078C75 /* BentonSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans-Bold.otf"; sourceTree = "<group>"; };
+		E81355DD2E0BE3E000078C75 /* BentonSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans-Medium.otf"; sourceTree = "<group>"; };
+		E81355DE2E0BE3E000078C75 /* BentonSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans-Regular.otf"; sourceTree = "<group>"; };
+		E81355DF2E0BE3E000078C75 /* Frutiger LT Arabic 55 Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Frutiger LT Arabic 55 Roman.ttf"; sourceTree = "<group>"; };
+		E81355E02E0BE3E000078C75 /* FrutigerLTArabic-45Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FrutigerLTArabic-45Light.ttf"; sourceTree = "<group>"; };
+		E81355E12E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FrutigerLTArabic-65Bold.ttf"; sourceTree = "<group>"; };
 		E8A14E572DA7B97100A27C08 /* RatingNewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingNewVC.swift; sourceTree = "<group>"; };
 		F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEventHumanAgent.swift; sourceTree = "<group>"; };
 		F96C538A293778210038440A /* UploadDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataResponseModel.swift; sourceTree = "<group>"; };
@@ -1035,6 +1069,15 @@
 				20811CCB2A55497000B0573C /* KeyChainManager.swift */,
 			);
 			path = KeyChainManager;
+			sourceTree = "<group>";
+		};
+		20CDC6252DDB077B005F9F1C /* login */ = {
+			isa = PBXGroup;
+			children = (
+				20CDC6262DDB0792005F9F1C /* TranscriptVC.swift */,
+				20CDC6272DDB0792005F9F1C /* TranscriptVC.xib */,
+			);
+			path = login;
 			sourceTree = "<group>";
 		};
 		370196E824CDA5670003266B /* VedioPlayerView */ = {
@@ -1116,6 +1159,8 @@
 			isa = PBXGroup;
 			children = (
 				37460D99230A7AC1002748CE /* ReferralModel.swift */,
+				20B1D9042E6F0CCA0014F2DD /* MessagesHistoryResponseModel.swift */,
+				20153EA42D626F0000DF1246 /* LabibaThemeModel.swift */,
 				522D1649256E44F2002758D5 /* GetRatingFormQuestionsModel.swift */,
 				3778B5F323CAFDC2005CD740 /* LabibaModel.swift */,
 				37BD1BC123CB5807005DBA67 /* LabibaModelEnums.swift */,
@@ -1130,6 +1175,8 @@
 				F96C538A293778210038440A /* UploadDataResponseModel.swift */,
 				F96C538C29377D760038440A /* UploadDataModel.swift */,
 				F96C5391293895B80038440A /* LoggingModel.swift */,
+				20FE11CA2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift */,
+				2081BB842E793D950016616E /* GetAgentInfoResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1412,6 +1459,8 @@
 				371ADD7622FC221D00AB68FB /* GradientAnimationManeger.swift */,
 				3772B5252339E9F100262298 /* Reachability.swift */,
 				75EA910B292F5CCC00A0F352 /* EncryptionManeger.swift */,
+				205B7DAE2DDB0FCA00A28A73 /* TextInputsValidationExtension.swift */,
+				20FBB69B2E97E63F00D0B633 /* NetworkConnectionManager.swift */,
 			);
 			path = Manegers;
 			sourceTree = "<group>";
@@ -1669,6 +1718,8 @@
 			isa = PBXGroup;
 			children = (
 				756D52062A2323470047E73A /* UITableViewExtension.swift */,
+				207CBFB42D884D3000C9126D /* LabibaColorExtension.swift */,
+				207CBFB62D898C5C00C9126D /* LabibaImageExtension.swift */,
 				756D52042A2323420047E73A /* UICollectionViewExtension.swift */,
 				B42954D622DDDBD2002DE3E9 /* Extensions.swift */,
 				F9D20113292A488D0024FE48 /* EncodableExtension.swift */,
@@ -1742,6 +1793,7 @@
 		52B6B37F25B6F8F70051ABCE /* Popup */ = {
 			isa = PBXGroup;
 			children = (
+				20CDC6252DDB077B005F9F1C /* login */,
 				52B6B38025B6F9AE0051ABCE /* HelpPopupVC */,
 			);
 			path = Popup;
@@ -2175,6 +2227,7 @@
 				B42954AD22DDDBD2002DE3E9 /* UIImage+Extensions.swift */,
 				B42954AE22DDDBD2002DE3E9 /* ScanAnimation.swift */,
 				B42954AF22DDDBD2002DE3E9 /* AVMetadataObject+Extensions.swift */,
+				20CDC62A2DDB088B005F9F1C /* CustomViews.swift */,
 				B42954B022DDDBD2002DE3E9 /* Platform.swift */,
 			);
 			path = Extensions;
@@ -2269,8 +2322,22 @@
 				37A1483524B5A7EE0025954D /* cairo_regular.ttf */,
 				37A1483624B5A7EF0025954D /* cairo-_bold.ttf */,
 				B42954FC22DDDBD2002DE3E9 /* Assets.xcassets */,
+				E81355E22E0BE3E000078C75 /* Fonts */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E81355E22E0BE3E000078C75 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E81355DC2E0BE3E000078C75 /* BentonSans-Bold.otf */,
+				E81355DD2E0BE3E000078C75 /* BentonSans-Medium.otf */,
+				E81355DE2E0BE3E000078C75 /* BentonSans-Regular.otf */,
+				E81355DF2E0BE3E000078C75 /* Frutiger LT Arabic 55 Roman.ttf */,
+				E81355E02E0BE3E000078C75 /* FrutigerLTArabic-45Light.ttf */,
+				E81355E12E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F9013BE128716D4900DE2BA0 /* HumanAgent */ = {
@@ -2449,6 +2516,7 @@
 				B429550922DDDBD2002DE3E9 /* CustomMapPicker.xib in Resources */,
 				75EDDA7F2A1E5DE1003D6152 /* VMenuCell.xib in Resources */,
 				B429550A22DDDBD2002DE3E9 /* AudioRecorderView.xib in Resources */,
+				20CDC6292DDB0792005F9F1C /* TranscriptVC.xib in Resources */,
 				52BF2F53247132AD00820B37 /* LabibaVoiceExperience.storyboard in Resources */,
 				B429550B22DDDBD2002DE3E9 /* AudioView.xib in Resources */,
 				7569E0DB2DA29001009E9AC0 /* NumberItemCell.xib in Resources */,
@@ -2480,6 +2548,12 @@
 				B429554222DDDBD2002DE3E9 /* CustomCollectionViewCellNoImage.xib in Resources */,
 				B429550E22DDDBD2002DE3E9 /* SelectableCollectionCellView.xib in Resources */,
 				526FD850250100FD004B2408 /* HeaderQuickChoiceCell.xib in Resources */,
+				E81355E32E0BE3E000078C75 /* BentonSans-Regular.otf in Resources */,
+				E81355E42E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf in Resources */,
+				E81355E52E0BE3E000078C75 /* BentonSans-Bold.otf in Resources */,
+				E81355E62E0BE3E000078C75 /* FrutigerLTArabic-45Light.ttf in Resources */,
+				E81355E72E0BE3E000078C75 /* Frutiger LT Arabic 55 Roman.ttf in Resources */,
+				E81355E82E0BE3E000078C75 /* BentonSans-Medium.otf in Resources */,
 				37939874234C85DF00396E42 /* SubmitRatingCell.xib in Resources */,
 				527756D1272FDA0200F8ADE0 /* robot.json in Resources */,
 				37C4631A22F1BC5B004EAC7E /* VoiceAssistantView.xib in Resources */,
@@ -2540,6 +2614,7 @@
 			files = (
 				5277567C272EE12F00F8ADE0 /* AnimationImageProvider.swift in Sources */,
 				52C6DBAA24694849005CFE27 /* UIImage+AlamofireImage.swift in Sources */,
+				2081BB852E793D950016616E /* GetAgentInfoResponseModel.swift in Sources */,
 				522D164A256E44F2002758D5 /* GetRatingFormQuestionsModel.swift in Sources */,
 				B429552922DDDBD2002DE3E9 /* TypingIndicatorCell.swift in Sources */,
 				527756A2272EE12F00F8ADE0 /* Interpolatable.swift in Sources */,
@@ -2563,6 +2638,7 @@
 				5277565E272EE12F00F8ADE0 /* Transform.swift in Sources */,
 				52DE8DC5248CB9C60067F5EC /* IQUIScrollView+Additions.swift in Sources */,
 				B429551822DDDBD2002DE3E9 /* CornerLocation.swift in Sources */,
+				20FE11CB2E004A7D0028BE65 /* getActiveQuestionsResponseModel.swift in Sources */,
 				52775627272EE12F00F8ADE0 /* GradientStroke.swift in Sources */,
 				5214229425AC965400B78AB0 /* ChoiceView.swift in Sources */,
 				B429553522DDDBD2002DE3E9 /* ImagePicking.swift in Sources */,
@@ -2660,6 +2736,7 @@
 				3782D9AA23BA1369006A79D4 /* SRRandom.m in Sources */,
 				3772B5262339E9F100262298 /* Reachability.swift in Sources */,
 				52775678272EE12F00F8ADE0 /* ShapeItem.swift in Sources */,
+				207CBFB52D884D3000C9126D /* LabibaColorExtension.swift in Sources */,
 				52775635272EE12F00F8ADE0 /* TextLayerModel.swift in Sources */,
 				3782D9B023BA1369006A79D4 /* SRIOConsumerPool.m in Sources */,
 				52775665272EE12F00F8ADE0 /* StrokeRenderer.swift in Sources */,
@@ -2679,6 +2756,7 @@
 				37BD1BC223CB5807005DBA67 /* LabibaModelEnums.swift in Sources */,
 				52775641272EE12F00F8ADE0 /* KeypathSearchable.swift in Sources */,
 				37B9619D230D3DEE0093647C /* BubbbleGestureHandler.swift in Sources */,
+				207CBFB72D898C5C00C9126D /* LabibaImageExtension.swift in Sources */,
 				521448A8258651D20099BF38 /* RatingBaseVC.swift in Sources */,
 				F9D20116292A4A5D0024FE48 /* SubmitRatingResponseModel.swift in Sources */,
 				52C6DBA624694849005CFE27 /* ImageDownloader.swift in Sources */,
@@ -2725,6 +2803,7 @@
 				75EDDA7D2A1E5DE1003D6152 /* VMenuTableCell.swift in Sources */,
 				52775686272EE12F00F8ADE0 /* KeyframeInterpolator.swift in Sources */,
 				5277564F272EE12F00F8ADE0 /* GradientFill.swift in Sources */,
+				20CDC62B2DDB088B005F9F1C /* CustomViews.swift in Sources */,
 				52775639272EE12F00F8ADE0 /* FillNode.swift in Sources */,
 				52F51A0325B053DD002C03BB /* LabibaVoiceAssistantView.swift in Sources */,
 				B429552522DDDBD2002DE3E9 /* StateEntryCell.swift in Sources */,
@@ -2743,6 +2822,7 @@
 				52775632272EE12F00F8ADE0 /* CompatibleAnimationKeypath.swift in Sources */,
 				B429554F22DDDBD2002DE3E9 /* PhotoViewController.swift in Sources */,
 				52775646272EE12F00F8ADE0 /* RectNode.swift in Sources */,
+				20153EA52D626F0000DF1246 /* LabibaThemeModel.swift in Sources */,
 				B429551E22DDDBD2002DE3E9 /* ScannerVC.swift in Sources */,
 				522D165D256E9C9E002758D5 /* GeneralThemeSettings.swift in Sources */,
 				F9D2010A292A289A0024FE48 /* ApiEndPoints.swift in Sources */,
@@ -2752,6 +2832,7 @@
 				B429553322DDDBD2002DE3E9 /* DataExtensions.swift in Sources */,
 				B429552322DDDBD2002DE3E9 /* SelectableCardView.swift in Sources */,
 				3782D9AC23BA1369006A79D4 /* SRSIMDHelpers.m in Sources */,
+				20B1D9052E6F0CCA0014F2DD /* MessagesHistoryResponseModel.swift in Sources */,
 				5277565B272EE12F00F8ADE0 /* GroupNode.swift in Sources */,
 				52C6DBAB24694849005CFE27 /* Request+AlamofireImage.swift in Sources */,
 				B429554922DDDBD2002DE3E9 /* ResponseRenderer.swift in Sources */,
@@ -2777,6 +2858,7 @@
 				5277562A272EE12F00F8ADE0 /* LayerImageProvider.swift in Sources */,
 				527756A0272EE12F00F8ADE0 /* Shape.swift in Sources */,
 				3782D95323B9F511006A79D4 /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
+				205B7DAF2DDB0FCA00A28A73 /* TextInputsValidationExtension.swift in Sources */,
 				B429553022DDDBD2002DE3E9 /* DatePickerViewController.swift in Sources */,
 				5277562B272EE12F00F8ADE0 /* Font.swift in Sources */,
 				5277565C272EE12F00F8ADE0 /* Vectors.swift in Sources */,
@@ -2832,6 +2914,7 @@
 				52F6ECB526F7264600B38518 /* PrechatFormModel.swift in Sources */,
 				B429553122DDDBD2002DE3E9 /* LbLanguage.swift in Sources */,
 				52775661272EE12F00F8ADE0 /* LayerModel.swift in Sources */,
+				20FBB69C2E97E63F00D0B633 /* NetworkConnectionManager.swift in Sources */,
 				52775699272EE12F00F8ADE0 /* GradientStrokeNode.swift in Sources */,
 				5277566E272EE12F00F8ADE0 /* ShapeNode.swift in Sources */,
 				B429551122DDDBD2002DE3E9 /* Constants.swift in Sources */,
@@ -2917,6 +3000,7 @@
 				52775636272EE12F00F8ADE0 /* AnimatorNode.swift in Sources */,
 				52DE307C2462D6A000DAF3E7 /* Request.swift in Sources */,
 				37F003DE2333B57600A1AC17 /* SplashScreenWithStaticImage.swift in Sources */,
+				20CDC6282DDB0792005F9F1C /* TranscriptVC.swift in Sources */,
 				52C0A07B2587A846004D7AAA /* RatingCell.swift in Sources */,
 				F96C5390293894F50038440A /* Logging.swift in Sources */,
 				5277565A272EE12F00F8ADE0 /* FloatValueProvider.swift in Sources */,
@@ -3073,7 +3157,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = LT6MNHQ4GW;
+				DEVELOPMENT_TEAM = 38HH87J6NV;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3293,7 +3377,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = LT6MNHQ4GW;
+				DEVELOPMENT_TEAM = 38HH87J6NV;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

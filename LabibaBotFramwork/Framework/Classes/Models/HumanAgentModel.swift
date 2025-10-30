@@ -9,6 +9,8 @@
 import Foundation
 class HumanAgentModel:Decodable {
     var result:HumanAgentResult?
+    var messageId: String?
+
     
     class HumanAgentResult:Decodable {
         var fulfillment:[HumanAgentfulfillment]?
@@ -17,6 +19,7 @@ class HumanAgentModel:Decodable {
     
     class HumanAgentfulfillment:Decodable {
         var message:String?
+        var senderName:String?
 //        var title": null,
 //        var text": null,
         var imageUrl:String?

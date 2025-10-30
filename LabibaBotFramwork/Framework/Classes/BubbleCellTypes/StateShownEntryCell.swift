@@ -116,6 +116,7 @@ class StateShownEntryCell: StateEntryCell
 
            // self.bubble.timeLabel.text = dateFormatter.string(from: self.currentDialog.timestamp)
             //
+
             self.bubble.currentDialog = self.currentDialog
             //
             self.bubble.doSetMessage = self.currentDialog.message!

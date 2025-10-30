@@ -19,7 +19,7 @@ public class BubbleView: UIView {
     class func createBubble(withWidth width:CGFloat) -> BubbleView { return BubbleView()}
     
     var considersAvatar:Bool = true
-    
+    @IBOutlet weak var bubbleStack: UIStackView!
     @IBOutlet weak var bubbleHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var timeStackview: UIStackView!
     @IBOutlet weak var timeImageView: UIImageView!
@@ -38,29 +38,38 @@ public class BubbleView: UIView {
     var maxWidth:CGFloat = 0
     var currentDialog:ConversationDialog?
     var _message:String = ""
+    var isFirstTime = true
+    var nameCompletion:(()->Void)?
     var doSetMessage:String {
-        
         set {
+            getBotName()
             if Labiba.hasBubbleTimestamp {
                 if let timestamp = currentDialog?.timestamp {
                     let dateFormatter = DateFormatter()
                     
+                    
                     dateFormatter.dateFormat = source == .incoming ? Labiba.BotChatBubble.timestamp.formate : Labiba.UserChatBubble.timestamp.formate
-                    let botName = Labiba.BotChatBubble.botName == nil ? "bot".localForChosnLangCodeBB : Labiba.BotChatBubble.botName!
+                    getBotName()
+                    nameCompletion = { [unowned self] in
+                        
+                        let botName = currentDialog?.agentName
                     let userName = Labiba.UserChatBubble.userName == nil ? "you".localForChosnLangCodeBB : Labiba.UserChatBubble.userName!
                     
-                    
-                    if SharedPreference.shared.botLangCode == .ar{
-                        dateFormatter.locale = Locale(identifier: "ar")
-                        timestampLbl.text = "\(source == .incoming ? botName : userName) - \(dateFormatter.string(from: timestamp))"
-                        timestampLbl.textAlignment = source == .incoming  ? .right : .left
-                        timeStackview?.semanticContentAttribute = source == .incoming  ? .forceRightToLeft : .forceLeftToRight
-                    }else {
-                        dateFormatter.locale = Locale(identifier: "en")
-                        timestampLbl.text = "\(source == .incoming ? botName : userName) - \(dateFormatter.string(from: timestamp))"
-                        timestampLbl.textAlignment = source == .incoming  ? .left : .right
-                        timeStackview?.semanticContentAttribute = source == .incoming  ? .forceLeftToRight : .forceRightToLeft
+                        DispatchQueue.main.async { [unowned self] in
+                            if SharedPreference.shared.botLangCode == .ar{
+                                dateFormatter.locale = Locale(identifier: "ar")
+                                timestampLbl.text = "\(source == .incoming ? botName ?? "bot".localForChosnLangCodeBB : userName) - \(dateFormatter.string(from: timestamp))"
+                                timestampLbl.textAlignment = source == .incoming  ? .right : .left
+                                timeStackview?.semanticContentAttribute = source == .incoming  ? .forceRightToLeft : .forceLeftToRight
+                            }else {
+                                dateFormatter.locale = Locale(identifier: "en")
+                                timestampLbl.text = "\(source == .incoming ? botName ?? "bot".localForChosnLangCodeBB : userName) - \(dateFormatter.string(from: timestamp))"
+                                timestampLbl.textAlignment = source == .incoming  ? .left : .right
+                                timeStackview?.semanticContentAttribute = source == .incoming  ? .forceLeftToRight : .forceRightToLeft
+                            }
+                        }
                     }
+
                     
                     timestampLbl.isHidden  = false
                     //                    if botName == "bot".localForChosnLangCodeBB {
@@ -111,10 +120,10 @@ public class BubbleView: UIView {
                 }
                 else
                 {
-                    let formattedLinestext = text.replacingOccurrences(of: "\n", with: "<br>", options: .literal, range: nil)
+                    var formattedLinestext = text.replacingOccurrences(of: "\n", with: "<br>", options: .literal, range: nil)
                     fontSize = Labiba.BotChatBubble.fontsize
-                    let lang = text.detectedLangauge()
-                    if lang == "ar" {text.addArabicAlignment()}
+                    let lang = formattedLinestext.detectedLangauge()
+                    if lang == "ar" {formattedLinestext.addArabicAlignment()}
                     let boldFont =  applyBotFont(textLang: LabibaLanguage(rawValue: lang ?? "") ?? .ar ,bold:true, size: fontSize )
                     let regularFont =  applyBotFont(textLang: LabibaLanguage(rawValue: lang ?? "") ?? .ar , size: fontSize)
                     self.textLabel.attributedText = formattedLinestext.htmlAttributedString(regularFont:regularFont, boldFont: boldFont ,color: Labiba.BotChatBubble.textColor)
@@ -144,11 +153,51 @@ public class BubbleView: UIView {
                 self.adjustForContent(text:textLabel.attributedText , lang: LabibaLanguage(rawValue: lang ?? "") ?? .ar, fontSize: fontSize)
                 
             }
+            
+            
         }
         
         get
         {
             return self._message
+        }
+    }
+    
+    func getBotName(){
+        DispatchQueue.main.async{ [unowned self] in
+            if source != .outgoing{
+                if currentDialog?.isFromAgent ?? false{
+//                    if currentDialog?.senderName == nil{
+//                        if Labiba.currentAgentName == nil{
+//                            DispatchQueue.global(qos: .background).async {
+//                                DataSource.shared.getAgentName { [unowned self] result in
+//                                    switch result{
+//                                    case .success(let data):
+//                                        Labiba.currentAgentName = data.name
+//                                        currentDialog?.agentName = data.name
+//                                        nameCompletion?()
+//                                    case .failure(let error):
+//                                        print(error)
+//                                        nameCompletion?()
+//                                    }
+//                                }
+//                            }
+//                        }else{
+//                            currentDialog?.agentName =  Labiba.currentAgentName
+//                            nameCompletion?()
+//                        }
+//                    }else{
+                        currentDialog?.agentName = currentDialog?.senderName
+                        nameCompletion?()
+//                    }
+                }else{
+                    currentDialog?.agentName =  "bot".localForChosnLangCodeBB
+                    nameCompletion?()
+                }
+            }else{
+                currentDialog?.agentName =  "you".localForChosnLangCodeBB
+                nameCompletion?()
+            }
         }
     }
     
@@ -199,7 +248,12 @@ public class BubbleView: UIView {
         
         
         let maxWidth =  self.maxWidth - _bubbleMargin - TextPadding  - ipadFactor*(ipadMargin + 70)
-        let size = text?.size(maxWidth: maxWidth   , font: applyBotFont(textLang:lang, size: fontSize)) ?? CGSize(width: 50, height: 50)
+        var size = text?.size(maxWidth: maxWidth   , font: applyBotFont(textLang:lang, size: fontSize)) ?? CGSize(width: 50, height: 50)
+        
+        var timeLblSize = timestampLbl.attributedText?.size(maxWidth: maxWidth   , font:  timestampLbl.font) ?? CGSize(width: 50, height: 50) //applyBotFont(textLang:lang, size: fontSize)) ?? CGSize(width: 50, height: 50)
+        
+        size = size.width > timeLblSize.width ? size : timeLblSize
+        
         var height = size.height
         
         height += (20 + ipadFactor*6)

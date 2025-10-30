@@ -14,6 +14,8 @@ public class HumanAgentSettings{
         case outLabiba
     }
     public var url:String = ""
+    public var endConversationUrl = ""
+
     /// if you choose [inLabiba] type, you must add human agent url using  [Labiba.HumanAgent.url = String]
     public var type:type = .inLabiba
     /// This counter indicates the number of misunderstanding sentences before  transfer to human agent 

@@ -16,16 +16,21 @@ protocol RemoteDataSourceProtocol {
     func getPrechatForm(handler: @escaping Handler<[PrechatFormModel]>)
     func textToSpeech(model:TextToSpeechModel,handler: @escaping Handler<TextToSpeachResponseModel>)
     func closeConversation(handler: @escaping Handler<[String]>)
+    func closeConversationWithCallback(onFinished: @escaping() -> Void)
     //func updateToken(handler: @escaping Handler<UpdateTokenModel>)
     func getLastBotResponse(handler: @escaping Handler<LastBotResponseModel>)
     func uploadData(model: UploadDataModel,handler: @escaping Handler<UploadDataResponseModel>)
     func sendLog(model: LoggingModel, handler: @escaping Handler<Bool>)
     
-
+    
     func downloadFile(fileURL:URL, handler: @escaping Handler<URL>)-> AnyCancelable
+    func getLabibaTheme(_ completionHandler:@escaping Handler<LabibaThemeModel>)
+    func sendTranscript(name:String, email:String, handler: @escaping Handler<EmptyModel>)
+    func getActiveQuestion(_ completionHandler:@escaping Handler<getActiveQuestionsResponseModel>)
+    func submitNPSScore(_ score:String,_ completionHandler:@escaping Handler<String?>)
+    func getChatHistory(pageId:String,senderId:String,_ completionHandler:@escaping Handler<MessagesHistoryResponseModel>)
+    func updateChatHistoryStatus(messagesIds:[String])
     
-    
+    func getAgentName(_ completionHandler:@escaping Handler<GetAgentInfoResponseModel>)
     func close()
-
 }
-

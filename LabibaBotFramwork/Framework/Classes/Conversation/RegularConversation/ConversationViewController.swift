@@ -12,38 +12,8 @@ import ContactsUI
 class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsViewControllerDelegate, LabibaChatHeaderViewDelegate, CustomMapPickerDelegate
 {
     
-    
-    override func collectionView(dialogIndex: Int,selectedCardIndex: Int, selectedCellDialogCardButton: DialogCardButton?, didTappedInTableview TableCell: CustomTableViewCell) {
-        if let _ = selectedCellDialogCardButton?.payload
-        {
-            canLunchRating = true
-            if Labiba.MenuCardView.clearNonSelectedItems{
-                let SelectedDialogCard = self.displayedDialogs[dialogIndex].dialog.cards?.items[selectedCardIndex]
-                self.displayedDialogs[dialogIndex].dialog.cards?.items.removeAll()
-                self.displayedDialogs[dialogIndex].dialog.cards?.items.append(SelectedDialogCard!)
-            }else{
-                submitLocalUserText(self.displayedDialogs[dialogIndex].dialog.cards?.items[selectedCardIndex].title ?? "")
-            }
-            super.collectionView(dialogIndex: dialogIndex, selectedCardIndex: selectedCardIndex, selectedCellDialogCardButton: selectedCellDialogCardButton, didTappedInTableview: TableCell)
-        }
-    }
-    
-    override func collectionView(dialogIndex: Int, selectedCardIndex: Int, selectedCellDialogCardButton: DialogCardButton?, didTappedInTableview TableCell: VMenuTableCell) {
-        if Labiba.MenuCardView.clearNonSelectedItems{
-            let SelectedDialogCard = self.displayedDialogs[dialogIndex].dialog.cards?.items[selectedCardIndex]
-            self.displayedDialogs[dialogIndex].dialog.cards?.items.removeAll()
-            self.displayedDialogs[dialogIndex].dialog.cards?.items.append(SelectedDialogCard!)
-        }else{
-            submitLocalUserText(self.displayedDialogs[dialogIndex].dialog.cards?.items[selectedCardIndex].title ?? "")
-        }
-        super.collectionView(dialogIndex: dialogIndex, selectedCardIndex: selectedCardIndex, selectedCellDialogCardButton: selectedCellDialogCardButton, didTappedInTableview: TableCell)
-        
-    }
-    
-    
-    
-    
-    @IBOutlet weak var tavleViewBottomConst: NSLayoutConstraint!
+    //MARK: - IBOutlets
+    @IBOutlet weak var tableViewBottomConst: NSLayoutConstraint!
     let dateFormatter = DateFormatter()
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var bacgroundImage: UIImageView!
@@ -58,23 +28,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet public weak var headerView: UIView!
     
+    
+    //MARK: - Variables
     var cellHeights = [IndexPath: CGFloat]()
-    
-    @IBAction func viewDidTap(_ sender: Any)
-    {
-        self.view.endEditing(true)
-    }
-    
-    
-    
-    // var botConnector:BotConnector = LabibaBotConnector() //MockBotConnector()  //BotDirectLineConnector()
-    // var botConnector:BotConnector = LabibaRestfulBotConnector()//LabibaBotConnectorJC() // LabibaRestfulBotConnector()
-    // var delegate:LabibaDelegate?
+    var lastDialogsCount:Int? = nil
     var botFrame:CGRect!
     var gradientView:UIView?
     var isClosable:Bool = true
-    // var closeHandler:Labiba.ConversationCloseHandler?
-    //  var externalTaskCompletionHandler:Labiba.ِExternalTaskCompletionHandler?
     var showTyping:Bool = false
     var displayedDialogs:[EntryDisplay] = []
     var lastMessage:String = ""
@@ -83,64 +43,56 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     var isFirstMessage:Bool = true
     var canLunchRating:Bool = false
     var isTTSMuted:Bool = false
+    var isViewAppearing = false
     var tableViewBottomInset:CGFloat = 50
+    var isConnectionAlertShown = false
+    var delayForStartMessage : Double = 0
+    private var historyMessagesIds: [String] = []{
+        didSet{
+            updateReadMessages()
+        }
+    }
     
+    var isFirstOpen = true
+    private var isObserverAdded = false
+    private var lastMessageStatus:Bool?
     lazy var keyboardTypeDialog = UserTextInputNoLocal.create()
     lazy var visualizerDialog = VisualizerVoiceAssistantView.create()
     lazy var voiceTypeDialog = VoiceAssistantView.create()
     lazy var dynamicGifView = DynamicGIF.create()
     var maskImage:UIImageView!
+    private var warningViewBottomConstraint: NSLayoutConstraint?
+    private var warningView: UIView?
+    private var isWarningShowing = false
     
-    // to remove
-    @objc func tapaction(){
-        if SpeechToTextManager.shared.isRecording {
-            NotificationCenter.default.post(name: Constants.NotificationNames.StopSpeechToText,
-                                            object: nil)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                UINotificationFeedbackGenerator().notificationOccurred(.error)
-            }
-        }else{
-            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                NotificationCenter.default.post(name: Constants.NotificationNames.StartSpeechToText,
-                                                object: nil)
-            }
-            
-        }
-        
-        
-        
-        
-    }
-    override  func accessibilityPerformMagicTap() -> Bool {
-        tapaction()
-        return true
-    }
     
+    //MARK: - LifeCycle
     override public func viewDidLoad()
     {
         super.viewDidLoad()
+
+        isViewAppearing = true
+                checkNetwork()
+
         // to remove
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapaction))
-        gesture.numberOfTapsRequired = 3
-        self.view.addGestureRecognizer(gesture)
+//        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapaction))
+//        gesture.numberOfTapsRequired = 3
+//        self.view.addGestureRecognizer(gesture)
         
         print("did load")
-        
+        //        tableView.backgroundColor = .green
         addTableMask()
         muteButton.isHidden = Labiba.isMuteButtonHidden
         VedioCallButton.isHidden = Labiba.isVedioButtonHidden
         self.view.applySemanticAccordingToBotLang()
         self.view.layoutIfNeeded()
-        // let podBundle = Bundle(for: ConversationViewController.self)
         self.navigationController?.isNavigationBarHidden = true
         Constants.Keyboard_type = ""
         dateFormatter.dateFormat = "h:mm a"
-        self.closeButton.tintColor =  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.botIconView.image = Labiba._Logo // UIImage(named:"navLogo",in: podBundle, compatibleWith: nil)
+        self.closeButton.tintColor = .white
+        self.botIconView.image = Labiba._Logo
         
         self.botConnector.delegate = self
-        // self.botConnector.configureInternetReachability()
         self.backButton.tintColor = Labiba._HeaderTintColor
         self.backButton.isHidden = Labiba._OpenFromBubble
         self.backButton.setImage(Labiba.backButtonIcon, for: .normal)
@@ -155,7 +107,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             
             hview.frame = self.headerView.bounds
             hview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            //hview.closeButton?.isHidden = !self.isClosable
             hview.delegate = self
             self.headerView.addSubview(hview)
             headerView.backgroundColor = .clear
@@ -165,9 +116,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             default:
                 self.headerHeightConst.constant = Labiba._customHeaderViewHeight ?? 90
             }
-            
-            
-            
         }
         else if let grad = Labiba._headerBackgroundGradient
         {
@@ -192,20 +140,35 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             headerView.applyHierarchicalSemantics(flipImage: true)
         }
         headerView.applyHierarchicalSemantics(flipImage: true)
-        //
-        //
-        //  addInterationDialog(currentBotType:Labiba.Bot_Type)
-        //
         addNotificationCenterObservers()
         
         tableView.registerCell(type: VMenuTableCell.self,bundle: self.nibBundle)
-//        self.tableView.rowHeight = UITableView.automaticDimension
-//        self.tableView.estimatedRowHeight = 1044.0
-        
-        //self.fillEdgeSpace(withColor: self.view.backgroundColor ?? .white, edge: .bottom)
-        // addHintsCell()
         self.startConversation() //it's now from [ self.botConnector.configureInternetReachability()]
         
+        self.tableViewBottomConst.constant = 80
+        if Labiba.warningMessageModel?.isWarningMessageEnabled ?? false{
+            addWarningMessage()
+        }
+        
+        if !isObserverAdded {
+            //             Observe app foreground event
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(appDidBecomeActive),
+                name: UIApplication.didBecomeActiveNotification,
+                object: nil
+            )
+            isObserverAdded = true
+        }
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(appDidEnterBackground),
+            name: UIApplication.didEnterBackgroundNotification,
+            object: nil
+        )
+        
+        isFirstOpen = false
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -214,39 +177,102 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         print("did appear")
         addInterationDialog(currentBotType:Labiba.Bot_Type)
         
-        
+        print("the delayForStartMessage in didappear is \(delayForStartMessage)")
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         botConnector.delegate = self
+        
+        handleConnectionIssue()
         UIApplication.shared.setStatusBarColor(color: Labiba._StatusBarColor )
         self.navigationController?.isNavigationBarHidden = true
         TextToSpeechManeger.Shared.setVolume(volume: isTTSMuted ? 0 : 1)
     }
     override func viewWillDisappear(_ animated: Bool) {
+        
         print("view Will Disappear")
         TextToSpeechManeger.Shared.setVolume(volume: 0)
         UIApplication.shared.setStatusBarColor(color: .clear)
+        isConnectionAlertShown = false
     }
     override func viewDidDisappear(_ animated: Bool)
     {
         super.viewDidDisappear(animated)
+        isViewAppearing = false
         print("ConversationViewController viewDidDisappear")
         
         if Labiba.enableCaching{
             LocalCache.shared.displayedDialogs = displayedDialogs
         }
-        //        voiceTypeDialog?.speechToTextManager.removerObservers()
-        //voiceTypeDialog.removeFromSuperview()
-        
-        //           if self.isClosed
-        //           {
-        //               self.closeHandler?()
-        //               self.closeHandler = nil
-        //           }
     }
+    
     deinit {
         print("ConversationViewController deinitialized")
     }
+    
+    @objc private func appDidBecomeActive() {
+        // Refresh or re-connect SDK features here
+        
+//        if !isFirstOpen{
+            handleConnectionIssue()
+//            getChatHistory()
+//        }
+    }
+    
+    func getChatHistory(){
+        if Labiba.isHumanAgentStarted{
+            DataSource.shared.getChatHistory(pageId: Labiba._pageId, senderId: Labiba._senderId) { [unowned self] result in
+                switch result{
+                case .success(let messages):
+                    print("dattaMessages  \(messages)")
+                    var messagesIds: [String] = []
+                    for message in messages{
+                        let dialog = ConversationDialog(by: .bot, time: Date())
+                        dialog.timestampString = message.timeSent
+                        dialog.isFromAgent = true
+                        dialog.senderName = message.senderName
+                        if (message.messageText?.contains("@@") ?? false){
+                            let messageToBeSkipped = message.messageText
+                            let fullNameArr = messageToBeSkipped?.components(separatedBy: "@@")
+                            dialog.message = fullNameArr?.first
+                        }else{
+                            dialog.message = message.messageText
+                        }
+                        self.lastDialogsCount = self.displayedDialogs.count
+                        self.displayedDialogs.append(EntryDisplay(dialog:dialog))
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        messagesIds.append(message.messageID ?? "")
+                        lastMessageStatus = message.isChatWithAgent
+                    }
+                    self.historyMessagesIds = messagesIds
+                    DataSource.shared.updateChatHistoryStatus(messagesIds: messagesIds)
+                    
+                    if !(lastMessageStatus ?? true){
+                        WebViewEventHumanAgent.Shared.end(withGetStarted: true)
+                    }
+                    Labiba.isAppInBackground = false
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+
+    }
+    
+    @objc private func appDidEnterBackground() {
+        Labiba.isAppInBackground = true
+    }
+    
+    //MARK: - IBActions
+    @IBAction func viewDidTap(_ sender: Any)
+    {
+        self.view.endEditing(true)
+    }
+    
     
     override public var preferredStatusBarStyle: UIStatusBarStyle {
         return Labiba._StatusBarStyle
@@ -257,14 +283,43 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         return Labiba.storyboard.instantiateViewController(withIdentifier: "conversationVC") as! ConversationViewController
     }
     
+    //MARK: - Methods
+    // to remove
+    @objc func tapaction(){
+        if SpeechToTextManager.shared.isRecording {
+            NotificationCenter.default.post(name: Constants.NotificationNames.StopSpeechToText,
+                                            object: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                UINotificationFeedbackGenerator().notificationOccurred(.error)
+            }
+        }else{
+            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                NotificationCenter.default.post(name: Constants.NotificationNames.StartSpeechToText,
+                                                object: nil)
+            }
+        }
+    }
+    
+    override  func accessibilityPerformMagicTap() -> Bool {
+        tapaction()
+        return true
+    }
+    
+    
     func HideCardsView() {
     }
     
+    func updateReadMessages(){
+        DataSource.shared.updateChatHistoryStatus(messagesIds: historyMessagesIds)
+    }
+    
     func addTableMask()  {
-        maskImage = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: self.view.bounds.width, height: self.view.bounds.height)))
-        
-        maskImage.image = Image(named: ipadFactor == 0 ? "gradientMask-9":"gradientMask-7")
-        tableView.mask = maskImage
+        if Labiba.isHeaderFadingEnabled{
+            maskImage = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: self.view.bounds.width, height: self.view.bounds.height)))
+            maskImage.image = Image(named: ipadFactor == 0 ? "gradientMask-9":"gradientMask-7")
+            tableView.mask = maskImage
+        }
     }
     
     func addHintsCell() {
@@ -281,9 +336,68 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         let renderedDialog = EntryDisplay(dialog: dialog)
         renderedDialog.height = 80
         renderedDialog.status = .guide
+        self.lastDialogsCount = self.displayedDialogs.count
         displayedDialogs.append(renderedDialog)
         
     }
+    
+    func checkNetwork() {
+        if #available(iOS 12.0, *) {
+            if isViewAppearing {
+                ReachabilityObserver.shared.startMonitoring()
+                
+                ReachabilityObserver.shared.onStatusChange = { [unowned self] isConnected in
+                    if !isConnected{
+                        handleConnectionIssue(isConnected)
+                    }
+                }
+            }
+        } else {
+            print("Cannot detect Network on ios 11 or lower")
+        }
+    }
+    
+    func handleConnectionIssue(_ isConnected:Bool = ReachabilityObserver.shared.isConnected){
+        print( isConnected ? "✅ Internet Connected" : "⚠️ No Internet Connection")
+        delayForStartMessage += 2
+        isConnected ? handleConnected() : handleDisConnected()
+    }
+    
+    
+    func handleConnected(){
+        
+        print("handle connected function clousre and dialogs \(displayedDialogs.isEmpty)")
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayForStartMessage , execute: {
+            if !self.isConnectionAlertShown{
+                if self.displayedDialogs.isEmpty{
+                    BotConnector.shared.sendMessage("CONVERSATION-RELOAD")
+                    print("displayedDialogs empty here ")
+                }else{
+                    if !self.isFirstOpen{
+                        self.getChatHistory()
+                    }
+                    WebViewEventHumanAgent.Shared.addJavaScripListner()
+                    WebViewEventHumanAgent.Shared.loadUrl(Labiba.isHumanAgentStarted)
+                }
+            }
+        })
+     
+    }
+    
+    func handleDisConnected(){
+        WebViewEventHumanAgent.Shared.stopJavaScriptListener()
+        isConnectionAlertShown = true
+        Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
+            self.isConnectionAlertShown = false
+            self.handleConnectionIssue()
+        },cancelHandler:{
+            Labiba.dismiss {
+                self.isConnectionAlertShown = false
+                self.dismiss(animated: true)
+            }
+        })
+    }
+
     
     func addInterationDialog(currentBotType:BotType)
     {
@@ -295,9 +409,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             keyboardTypeDialog.popUp(on: self.backgroundView)
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
-              tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 40
+                tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + ipadFactor*10 + 40
             default:
-               tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + 60 + ipadFactor*15
+                tableView.contentInset.bottom = UserTextInputNoLocal.HEIGHT + 60 + ipadFactor*15
             }
             
         case .voiceAssistance ,.voiceAndKeyboard ,.voiceToVoice:
@@ -305,13 +419,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             voiceTypeDialog.popUp(on: self.backgroundView)
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
-                //tavleViewBottomConst.constant = 50
                 tableView.contentInset.bottom  = 120
             case .iPhone5_5 :
-                //tavleViewBottomConst.constant = 90
                 tableView.contentInset.bottom = 140
             default:
-             //   tavleViewBottomConst.constant = VoiceK
                 tableView.contentInset.bottom = 140
             }
         case .visualizer:
@@ -319,50 +430,30 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             visualizerDialog.delegate = self
             switch UIScreen.current {
             case .iPhone5_8 ,.iPhone6_1 , .iPhone6_5:
-                //tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
                 tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 60
             default:
-                //tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
                 tableView.contentInset.bottom = visualizerDialog.orginalBottomMargin + 60
             }
         }
-        tableView.contentInset.bottom = tableView.contentInset.bottom
         tableViewBottomInset = tableView.contentInset.bottom
-        tableView.contentInset.top = Labiba._OpenFromBubble ?  40 : 80
-        tableTopConstraint.constant = -60
-        
-        
+        if Labiba.isHeaderFadingEnabled{
+            tableView.contentInset.top = Labiba._OpenFromBubble ?  40 : 80
+            tableTopConstraint.constant = -60
+        }
     }
-    
-    
     
     //MARK:-Add observer
     func addNotificationCenterObservers()  {
         /// this part is no more needed where the code put on media view it self and it's work fine
-        //        NotificationCenter.default.addObserver(forName: Constants.NotificationNames.FullscreenVideoRequested,
-        //                                               object: nil, queue: nil)
-        //        { (notification) in
-        //
-        //            if let info = notification.userInfo, let videoUrl = info["videoUrl"] as? URL {
-        //
-        //                if let videoVC = self.storyboard?.instantiateViewController(withIdentifier: "videoVC") as? VideoPlayerViewController
-        //                {
-        //                    videoVC.videoUrl = videoUrl
-        //                    self.present(videoVC, animated: true, completion: {})
-        //                }
-        //            }
-        //        }
         
         NotificationCenter.default.addObserver(forName: Constants.NotificationNames.ChangeInputToTextViewType,
                                                object: nil, queue: nil)
         { (notification) in
             let char = notification.object as? String ?? ""
-            // if Labiba.Bot_Type == .voiceAssistance {
             self.addInterationDialog(currentBotType: .keyboardType)
             Labiba.Temporary_Bot_Type = .keyboardType
             NotificationCenter.default.post(name: Constants.NotificationNames.ChangeTextViewKeyboardType,
                                             object: char)
-            //  }
         }
         
         NotificationCenter.default.addObserver(forName: Constants.NotificationNames.ChangeInputToVoiceAssistantType,
@@ -378,7 +469,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         NotificationCenter.default.addObserver(forName: Constants.NotificationNames.ScoketDidOpen,
                                                object: nil, queue: nil)
         { (notification) in
-            //self.addInterationDialog(currentBotType:Labiba.Bot_Type) // to handel first time, when using bubble, where backgroud view frame  not correct for the first time
         }
         NotificationCenter.default.addObserver(forName: NSNotification.Name("MediaRender"),
                                                object: nil, queue: nil)
@@ -411,16 +501,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         case .image(image: let image):
             self.bacgroundImage.image = image
         }
-        //        if let bgImage = Labiba._ChatMainBackgroundImage {
-        //            self.bacgroundImage.image = bgImage
-        //        }else if let grad = Labiba._ChatMainBackgroundGradient{
-        //            backgroundView.applyGradient(colours: grad.colors, locations: nil)
-        //            if let backgroundColor = grad.viewBackgroundColor {
-        //                self.backgroundView.backgroundColor = backgroundColor
-        //            }
-        //        }else if let bgColor = Labiba._ChatMainBackgroundColor {
-        //            self.backgroundView.backgroundColor = bgColor
-        //        }
+        
     }
     //MARK:Back and Closing Actions
     @IBAction func backButtonAction(_ sender: UIButton) {
@@ -458,7 +539,18 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     func shutDownBotChat() -> Void {
-        Labiba.dismiss()
+        Labiba.showBackOnNPS = true
+        if Labiba.isNPSBotRatingEnabled{
+            Labiba.handleNPSRartingAndQuit(isForAgent: Labiba.isNPSAgentRatingEnabled && Labiba.isHumanAgentStarted)
+        }else if Labiba.isNPSAgentRatingEnabled{
+            if Labiba.isHumanAgentStarted{
+                Labiba.handleNPSRartingAndQuit(isForAgent: true)
+            }else{
+                Labiba.dismiss()
+            }
+        }else{
+            Labiba.dismiss()
+        }
         UIApplication.shared.setStatusBarColor(color: .clear)
     }
     
@@ -480,21 +572,15 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 }
                 
             }else{
-                // kill(getpid(), SIGKILL)
                 backAction()
-                //exit(0)
             }
             return
         }
-        // }
         backAction()
     }
     
-    
-    
     func labibaHeaderViewDidSubmitText(message: String) {
         stopTTS_STT()
-        //self.botConnector.sendMessage(payload: message)
         self.submitUserText(message)
     }
     
@@ -502,23 +588,15 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         delegate?.createPost?(onView: self.view, ["startVideoCall":true], completionHandler: { (status, data) in})
     }
     
-    
-    
-    
     private var isClosed:Bool = false
     @IBAction func dismissConversation(_ sender: AnyObject) {
         
         self.isClosed = true
-        //         self.botConnector.close()
         DataSource.shared.close()
         self.shutDownBotChat()
     }
     
     var animatesClosing:Bool = true
-    
-    
-    
-    
     
     func clearSelectChoices(_ card: DialogCard) -> Void
     {
@@ -554,13 +632,13 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     func startConversation() -> Void
     {
+        
         if !Labiba.enableCaching || ((Labiba.enableCaching && LocalCache.shared.displayedDialogs.isEmpty) || SharedPreference.shared.currentUserId != LocalCache.shared.conversationId) {
             self.botConnector.startConversation()
         } else {
             displayedDialogs = LocalCache.shared.displayedDialogs
             stepsToBeDisplayed = LocalCache.shared.stepsToBeDisplayed
             // MARK:
-            //scrollToBottom()
             scrollDown(delay: 0.3)
         }
     }
@@ -579,13 +657,9 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     {
         DispatchQueue.main.asyncAfter(deadline: .now() + wait)
         {
-            if(step.cards?.presentation == .menu ) //CardsViewController.present(forDialog: step, andDelegate: self)
+            if(step.cards?.presentation == .menu )
             {
                 self.insertCellIntoTable(step: step)
-                //                CardsViewController.present(forDialog: step, andDelegate: self)
-                //                self.showTyping = false
-                //                self.tableView.reloadData()
-                //return
             }else if (step.cards?.presentation == .vmnue){
                 
                 let renderedDialog = EntryDisplay(dialog: step)
@@ -595,22 +669,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 }
                 
                 self.showTyping = false
+                self.lastDialogsCount = self.displayedDialogs.count
                 self.displayedDialogs.append(renderedDialog)
                 self.tableView.reloadData()
-                //let index = IndexPath(row: self.displayedDialogs.endIndex, section: 0)
                 
-                
-                
-                
-                //                let cell = self.tableView.cellForRow(at: index)
-                //                self.tableView.scrollToRow(at: IndexPath(row: self.displayedDialogs.endIndex, section: 0), at: ., animated: true)
-                //                if renderedDialog.height < self.tableView.frame.height - 50 {
-                //                    DispatchQueue.main.async {
-                //                        let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height  )
-                //                        self.tableView.setContentOffset(scrollPoint, animated: true)
-                //                    }
-                //                }else {
-                //self.scrollDown(delay: 0.15)
                 if step.hasMessage
                 {
                     self.finishedDisplayForDialog(dialog: step)
@@ -618,29 +680,15 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             }
             else
             {
-                // let holderStepMessage = step.message
                 step.message?.removeArabicDiacritic()
                 let renderedDialog = EntryDisplay(dialog: step)
                 renderedDialog.target = self
                 self.clearChoices()
                 self.showTyping = false
-                //            if self.displayedDialogs.count == 0 {
+                self.lastDialogsCount = self.displayedDialogs.count
                 self.displayedDialogs.append(renderedDialog)
                 
                 self.tableView.reloadData()
-                //                if !self.isFirstMessage{
-                //self.scrollDown(delay: wait)
-                //                }
-                
-                //self.insertDisplay(renderedDialog)
-                
-                //            }else {
-                //                let index = IndexPath(row: self.displayedDialogs.endIndex, section: 0)
-                //                self.displayedDialogs.append(renderedDialog)
-                //                self.tableView.insertRows(at: [index], with: .automatic)
-                //                self.tableView.scrollToRow(at: index, at: .top, animated: true)
-                //
-                //            }
                 
                 if step.hasMessage
                 {
@@ -676,9 +724,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         {
             renderStep(step: step, wait: 0.00)
         }
-//        else{
-//            scrollDown(delay: 0.2 )
-//        }
     }
     
     func cardsViewController(_ cardsVC: CardsViewController, didSelectCard card: DialogCard, ofDialog dialog: ConversationDialog)
@@ -690,37 +735,32 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     
     func insertDisplay(_ display:EntryDisplay,delay:CGFloat = 0.15 ) -> Void
     {
+        if display.dialog.party == .user{
+            //            self.lastDialogsCount = self.lastDialogsCount ?? 0 + 1
+            scrollDown(delay: 0.3)
+        }else{
+            self.lastDialogsCount = self.displayedDialogs.count
+        }
         self.displayedDialogs.append(display)
         self.tableView.reloadData()
-        //scrollDown(delay: 0.15)
+        
     }
     
     func scrollDown(delay:CGFloat){
-      //  self.tableView.contentInset.bottom = 0
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-
+            
             let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height + self.tableView.adjustedContentInset.bottom )
-            //self.view.layoutIfNeeded()
-        //    UIView.animate(withDuration: 0.3) {
             if self.tableView.frame.size.height < self.tableView.contentSize.height {
                 self.tableView.setContentOffset(scrollPoint, animated: true)
             }
-               
-        //    }
             
-           // self.tableView.setC
         }
     }
     
     //MARK:titi choice selected
     override func choiceWasSelectedFor(display: EntryDisplay, choice: DialogChoice)
     {
-        //  let livechat = LiveChatHandler()
-        //  livechat.present()
-        //  LabibaBotConnectorJC().testFayvoSecurity { (result) in
-        //      print(result.isSuccess)
-        //    }
         super.choiceWasSelectedFor(display: display, choice: choice)
         if  choice.action == nil{
             self.submitUserText(choice.title)
@@ -790,53 +830,52 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         self.showTyping = rows > count
     }
     
-        func scrollToBottom() -> Void
+    func scrollDownOffset(animated: Bool = true, offset: CGFloat = 100) -> Void {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+            guard let self = self else { return }
+            let currentOffset = self.tableView.contentOffset
+            let maxOffset = self.tableView.contentSize.height - self.tableView.bounds.height
+            let newY = min(currentOffset.y + offset, maxOffset)
+            let newOffset = CGPoint(x: currentOffset.x, y: newY)
+            self.tableView.setContentOffset(newOffset, animated: true)
+        }
+    }
+    
+    func scrollToBottom() -> Void{
+        let lastIndex = self.showTyping ? self.displayedDialogs.count : self.displayedDialogs.count - 1
+        if (lastIndex >= 0)
         {
-            let lastIndex = self.showTyping ? self.displayedDialogs.count : self.displayedDialogs.count - 1
-            if (lastIndex >= 0)
-            {
-                let index = IndexPath(row: lastIndex, section: 0)
-                guard index.row == (self.displayedDialogs.count - 1) else {
-                    return
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1)
-                {
-                    if(self.displayedDialogs.count > lastIndex)
-                    {
-                        let display = self.displayedDialogs[lastIndex]
-                        if let cards = display.dialog.cards
-                        {
-                            //                        if(cards.presentation == .menu) // i comment this in order to scrol when the dialog is carousal
-                            //                        {
-                            self.tableView.scrollToRow(at: index, at: .top, animated: true)
-                            //                        }
-                        }
-    
-                        else
-                        {
-                            self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
-                        }
+            var index = IndexPath()
+            if Labiba.scrollToFirstMessage{
+                index = IndexPath(row:(lastDialogsCount ?? 0 ) + 1, section: 0)
+            }else{
+                index = IndexPath(row: lastIndex, section: 0)
+                
+            }
+            guard index.row == (self.displayedDialogs.count - 1) else {
+                return
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1)
+            { [unowned self] in
+                if(self.displayedDialogs.count > lastIndex){
+                    let display = self.displayedDialogs[lastIndex]
+                    if let cards = display.dialog.cards{
+                        self.tableView.scrollToRow(at: index, at: Labiba.scrollToFirstMessage ? .top : .bottom, animated: true)
+                    }else{
+                        self.tableView.scrollToRow(at: index, at: Labiba.scrollToFirstMessage ? .top : .bottom, animated: true)
                     }
-                    else
-                    {
-    
-                        self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
-    
-    
-                    }
+                }else{
+                    self.tableView.scrollToRow(at: index, at: Labiba.scrollToFirstMessage ? .top : .bottom, animated: true)
                 }
             }
         }
+    }
     
     func reloadTable() -> Void
     {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.tableView.reloadData()
         }
-        //        DispatchQueue.main.async
-        //            {
-        //                self.tableView.reloadData()
-        //        }
     }
     
     override func botConnectorDidRecieveTypingActivity(_ botConnector: BotConnector)
@@ -871,6 +910,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         
         if let message = dialog.message {
             Labiba.setLastMessageLangCode(message)
+            //this is bot mesasge
+            SharedPreference.shared.botMessages.append(message)
+            SharedPreference.shared.conversationMessages.append(message)
+            
             if Labiba.Bot_Type != .keyboardType {
                 if dialog.enableTTS {
                     TextToSpeechManeger.Shared.append(dialog: dialog)
@@ -916,6 +959,183 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         self.clearChoices()
     }
     
+    func addWarningMessage(){
+        // 1. Container View
+        let warningView = UIView()
+        warningView.backgroundColor = Labiba.warningMessageModel?.backgroundColor ?? UIColor.systemYellow.withAlphaComponent(0.2)
+        warningView.layer.cornerRadius = CGFloat(Labiba.warningMessageModel?.cornerRadius ?? 10)
+        warningView.layer.borderWidth = Labiba.warningMessageModel?.showBoarder ?? false ? 1 : 0
+        warningView.layer.borderColor = Labiba.warningMessageModel?.boarderColor.cgColor ?? UIColor.black.withAlphaComponent(0.3).cgColor
+        warningView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(warningView)
+        self.warningView = warningView
+        
+        // WarningTextView
+        let warningTextView = UITextView()
+        warningTextView.isEditable = false
+        warningTextView.isScrollEnabled = false
+        warningTextView.backgroundColor = .clear
+        warningTextView.translatesAutoresizingMaskIntoConstraints = false
+        warningTextView.textAlignment = .center
+        warningTextView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let fullText = ((Labiba.botLang == .ar ?  Labiba.warningMessageModel?.arTitle : Labiba.warningMessageModel?.enTitle) ?? "") + " "
+        let attributedFullText = NSMutableAttributedString(string: fullText, attributes: [
+            .foregroundColor: Labiba.warningMessageModel?.fontColor ?? .black
+        ])
+        
+        let font = UIFont(name: Labiba.warningMessageModel?.fontName ??  UIFont.systemFont(ofSize: 14).fontName, size: 14) ?? UIFont.systemFont(ofSize: 14)
+        attributedFullText.addAttribute(.font, value: font, range: NSRange(location: 0, length: attributedFullText.length))
+        
+        var pressMeText = " "
+        
+        if !(Labiba.warningMessageModel?.link?.isEmpty ?? true){
+            if !((Labiba.warningMessageModel?.linkEnPressTitle?.isEmpty ?? true) || (Labiba.warningMessageModel?.linkArPressTitle?.isEmpty ?? true)){
+                pressMeText = (Labiba.botLang == .ar ? Labiba.warningMessageModel?.linkArPressTitle ?? " " : Labiba.warningMessageModel?.linkEnPressTitle ?? " ")
+            }
+            else{
+                let imageAttachment = NSTextAttachment()
+                if let baseImage = UIImage(named: "link")?.tinted(with: Labiba.warningMessageModel?.linkPressColor ?? .systemBlue) {
+                    imageAttachment.image = baseImage
+                    imageAttachment.bounds = CGRect(x: 0, y: -3, width: 15, height: 15)
+                }
+                let imageString = NSAttributedString(attachment: imageAttachment)
+                attributedFullText.append(imageString)
+            }
+        }
+        
+        // Define font
+        let boldFont = UIFont.boldSystemFont(ofSize: 14)
+        
+        // Create "press me" as an attributed substring
+        let pressMeAttr = NSMutableAttributedString(string: pressMeText, attributes: [
+            .font: boldFont,
+            .underlineStyle: NSUnderlineStyle.single.rawValue,
+            .foregroundColor: Labiba.warningMessageModel?.linkPressColor ?? .systemBlue,
+            .link: "pressMe://action"
+            
+        ])
+        
+        // Append "press me" to the full text
+        attributedFullText.append(pressMeAttr)
+        // ✅ Center alignment
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        
+        attributedFullText.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedFullText.length))
+        
+        attributedFullText.addAttribute(.link, value: "pressMe://action", range: NSRange(location: fullText.count, length: pressMeText.count))
+        
+        // Add a hidden link behind the image
+        attributedFullText.addAttribute(.link, value: "action://linkIcon", range: NSRange(location: fullText.count - 1, length: 1))
+        
+        // Create an image attachment (icon)
+        
+        if ((Labiba.warningMessageModel?.linkEnPressTitle?.isEmpty ?? true) || (Labiba.warningMessageModel?.linkArPressTitle?.isEmpty ?? true)){
+            
+        }
+        
+        warningTextView.attributedText = attributedFullText
+        warningTextView.delegate = self
+        warningTextView.linkTextAttributes = [ .foregroundColor: Labiba.warningMessageModel?.linkPressColor ?? .systemBlue ]
+        
+        warningView.addSubview(warningTextView)
+        
+        // 3. Create the close button
+        let closeButton = UIButton(type: .system)
+        closeButton.setTitle("✕", for: .normal)
+        closeButton.tintColor = Labiba.warningMessageModel?.fontColor ?? .darkText
+        closeButton.setTitleColor(.black, for: .normal)
+        closeButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        warningView.addSubview(closeButton)
+        closeButton.addTarget(self, action: #selector(dismissWarningView), for: .touchUpInside)
+        
+        // 6. Constraints for label inside warning view
+        NSLayoutConstraint.activate([
+            warningTextView.topAnchor.constraint(equalTo: warningView.topAnchor, constant: 5),
+            warningTextView.bottomAnchor.constraint(equalTo: warningView.bottomAnchor, constant: -5),
+            warningTextView.leadingAnchor.constraint(equalTo: warningView.leadingAnchor, constant: 10),
+            warningTextView.trailingAnchor.constraint(equalTo: warningView.trailingAnchor, constant: -30)
+        ])
+        
+        // 7. Constraints for warning view
+        NSLayoutConstraint.activate([
+            warningView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: CGFloat(Labiba.warningMessageModel?.padding ?? 20)),
+            warningView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -CGFloat(Labiba.warningMessageModel?.padding ?? 20)),
+            warningView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
+            warningView.heightAnchor.constraint(lessThanOrEqualToConstant: 100)
+        ])
+        
+        // Bottom constraint (this one we animate later)
+        let bottomConstraint = warningView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80)
+        self.warningViewBottomConstraint = bottomConstraint
+        
+        
+        // 8. Constraints for closeButton
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: warningView.topAnchor, constant: 4),
+            closeButton.trailingAnchor.constraint(equalTo: warningView.trailingAnchor, constant: -4),
+            closeButton.widthAnchor.constraint(equalToConstant: 24),
+            closeButton.heightAnchor.constraint(equalToConstant: 24)
+        ])
+        
+        // Constraints for warningView
+        bottomConstraint.isActive = true
+        
+        warningView.layoutIfNeeded()
+        tableViewBottomConst.constant = 80 + warningView.frame.height
+        isWarningShowing = true
+    }
+    
+    // Remove the warning view when close button is tapped
+    @objc private func dismissWarningView() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.warningView?.alpha = 0
+        }, completion: { _ in
+            self.warningView?.removeFromSuperview()
+            self.isWarningShowing = false
+            self.warningViewBottomConstraint?.constant = 0
+            self.tableViewBottomConst.constant -= self.warningView?.frame.height ?? 0
+            
+            self.scrollDown(delay: 0.3)
+        })
+    }
+    
+    @objc private func linkButtonTapped() {
+        guard let url = URL(string: Labiba.warningMessageModel?.link ?? "") else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    
+    
+    
+    override func collectionView(dialogIndex: Int,selectedCardIndex: Int, selectedCellDialogCardButton: DialogCardButton?, didTappedInTableview TableCell: CustomTableViewCell) {
+        if let _ = selectedCellDialogCardButton?.payload
+        {
+            canLunchRating = true
+            if Labiba.MenuCardView.clearNonSelectedItems{
+                let SelectedDialogCard = self.displayedDialogs[dialogIndex].dialog.cards?.items[selectedCardIndex]
+                self.displayedDialogs[dialogIndex].dialog.cards?.items.removeAll()
+                self.displayedDialogs[dialogIndex].dialog.cards?.items.append(SelectedDialogCard!)
+            }else{
+                submitLocalUserText(self.displayedDialogs[dialogIndex].dialog.cards?.items[selectedCardIndex].title ?? "")
+            }
+            super.collectionView(dialogIndex: dialogIndex, selectedCardIndex: selectedCardIndex, selectedCellDialogCardButton: selectedCellDialogCardButton, didTappedInTableview: TableCell)
+        }
+    }
+    
+    override func collectionView(dialogIndex: Int, selectedCardIndex: Int, selectedCellDialogCardButton: DialogCardButton?, didTappedInTableview TableCell: VMenuTableCell) {
+        if Labiba.MenuCardView.clearNonSelectedItems{
+            let SelectedDialogCard = self.displayedDialogs[dialogIndex].dialog.cards?.items[selectedCardIndex]
+            self.displayedDialogs[dialogIndex].dialog.cards?.items.removeAll()
+            self.displayedDialogs[dialogIndex].dialog.cards?.items.append(SelectedDialogCard!)
+        }else{
+            submitLocalUserText(self.displayedDialogs[dialogIndex].dialog.cards?.items[selectedCardIndex].title ?? "")
+        }
+        super.collectionView(dialogIndex: dialogIndex, selectedCardIndex: selectedCardIndex, selectedCellDialogCardButton: selectedCellDialogCardButton, didTappedInTableview: TableCell)
+        
+    }
     
     
 }
@@ -934,14 +1154,21 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         {
             if displayedDialogs.count > 0 { // to ensure that table content will scroll only once when cell presented for the first time
                 if displayedDialogs[displayedDialogs.count - 1].status == .NotShown || self.showTyping{
-                    if displayedDialogs[displayedDialogs.count - 1].dialog.cards?.presentation == .vmnue || self.showTyping || displayedDialogs[displayedDialogs.count - 1].dialog.party == .user {
-                        scrollDown(delay: 0.2 )
+                    if self.showTyping || displayedDialogs[displayedDialogs.count - 1].dialog.party == .user {
+                        scrollDown(delay: 0.0 )
+                    }else if displayedDialogs[displayedDialogs.count - 1].dialog.cards?.presentation == .vmnue {
+                        if !Labiba.scrollToFirstMessage {
+                            scrollDownOffset(animated: true, offset: 200)
+                        }
+                    }else if ((displayedDialogs[displayedDialogs.count - 1].dialog.choices?.isEmpty) != nil){
+                        scrollDownOffset(animated: true, offset: 200)
                     }else{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                            
                             self.scrollToBottom()
-
+                            
                         }
-
+                        
                     }
                 }
             }
@@ -976,7 +1203,6 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
             let count = displayedDialogs[indexPath.row].dialog.cards?.items.count ?? 0
             let cellHeight = (CGFloat(count) * Labiba.vMenuTableTheme.estimatedRowHeight) + 20
             return  cellHeight
-            
         }
         else
         {
@@ -984,7 +1210,6 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
             {
                 let entry = self.displayedDialogs[indexPath.row]
                 return entry.height
-                
             }
             else
             {
@@ -999,18 +1224,19 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        maskImage.frame.origin.y = scrollView.contentOffset.y
-        //print(scrollView.contentOffset.y)
+        if Labiba.isHeaderFadingEnabled{
+            maskImage.frame.origin.y = scrollView.contentOffset.y
+        }
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         if indexPath.row <  self.displayedDialogs.count
         {
+            
             let display = self.displayedDialogs[indexPath.row]
             if let cards = display.dialog.cards
             {
-                
                 if(cards.presentation == .menu)
                 {
                     var cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell") as? CustomTableViewCell
@@ -1020,8 +1246,6 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
                     }
                     cell?.updateCellWith(selectedDialogIndex: indexPath.row, displayedDialogs: display)
                     cell?.cellDelegate = self
-                    
-                    //
                     
                     return cell!
                 }else if cards.presentation == .vmnue {
@@ -1042,14 +1266,11 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
                     
                     let longPress = UILongPressGestureRecognizer(target: self, action: #selector(ConversationViewController.handleLongPress))
                     cell.addGestureRecognizer(longPress)
-                    //longPress.cancelsTouchesInView = true
-                    
                     return cell
                 }
             }
             else
             {
-                
                 display.delegate = nil
                 let cellReuseID = display.status.rawValue
                 let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseID, for: indexPath) as! StateEntryCell
@@ -1058,11 +1279,8 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
                 
                 let longPress = UILongPressGestureRecognizer(target: self, action: #selector(ConversationViewController.handleLongPress))
                 cell.addGestureRecognizer(longPress)
-                //longPress.cancelsTouchesInView = true
                 return cell
             }
-            
-            
         }
         else
         {
@@ -1071,9 +1289,6 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         }
     }
     
-    
-   
-
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if cell is TypingIndicatorCell
         {
@@ -1081,7 +1296,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         }
         cellHeights[indexPath] = cell.frame.size.height
     }
-
+    
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeights[indexPath] ?? UITableView.automaticDimension
     }
@@ -1105,25 +1320,22 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
     
     func showToast(message : String)
     {
-        
         let toastLabel = UILabel(frame: CGRect(x: 5, y: self.view.frame.size.height-100, width: self.view.frame.size.width - 10, height: 35))
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
         toastLabel.textAlignment = .center;
-        toastLabel.font = UIFont(name: "Montserrat-Light", size: 8.0)
+//        toastLabel.font = UIFont(name: "Montserrat-Light", size: 8.0)
         toastLabel.text = message
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 10;
         toastLabel.clipsToBounds  =  true
-        self.view.addSubview(toastLabel)
+        view.addSubview(toastLabel)
         UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
             toastLabel.alpha = 0.0
         }, completion: {(isCompleted) in
             toastLabel.removeFromSuperview()
         })
     }
-    
-    
 }
 
 extension ConversationViewController: UserTextInputNoLocalDelegate
@@ -1140,35 +1352,45 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
             switch UIScreen.current{
             case .iPhone5_8 ,.iPhone6_1 ,.iPhone6_5:
                 addedValue = 15
+            case .iPhone4_7:
+                addedValue = -20
             default:
                 break
             }
-            self.tableView.contentInset.bottom = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue 
-           // self.tavleViewBottomConst.constant = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue
-            if self.displayedDialogs.count > 0 {
-                let lastIndex = IndexPath(row: self.displayedDialogs.count - 1, section: 0)
-                self.tableView.scrollToRow(at: lastIndex, at: .none, animated: false)
+            if Labiba.warningMessageModel?.isWarningMessageEnabled ?? false && isWarningShowing{
+                guard let bottomConstraint = warningViewBottomConstraint else { return }
+                
+                self.tableView.contentInset.bottom = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue
+                bottomConstraint.constant = -(keyboardSize.height - addedValue + 80) // move up
+                UIView.animate(withDuration: 0.3) {
+                    self.view.layoutIfNeeded()
+                }
+                if self.displayedDialogs.count > 0 {
+                    let lastIndex = IndexPath(row: self.displayedDialogs.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: lastIndex, at: .none, animated: false)
+                }
+                
+            }else{
+                self.tableView.contentInset.bottom = keyboardSize.height + UserTextInputNoLocal.HEIGHT - addedValue
+                if self.displayedDialogs.count > 0 {
+                    let lastIndex = IndexPath(row: self.displayedDialogs.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: lastIndex, at: .none, animated: false)
+                }
             }
         }
-        
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        //        UIView.animate(withDuration: 0.3) {
-        //            self.tableView.transform = CGAffineTransform.identity
-        //        }
-        
-        //addInterationDialog(currentBotType: Labiba.Temporary_Bot_Type)
-        self.tableView.contentInset.bottom = tableViewBottomInset
-        
-        //tavleViewBottomConst.constant = tableViewBottomInset
+        self.tableView.contentInset.bottom = 50
+        guard let bottomConstraint = warningViewBottomConstraint else { return }
+        bottomConstraint.constant = -80 // move down
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
-    
-    
     
     func UserTextType(TextType: UITextView)
     {
-        // TextType.endEditing
         if (Constants.content_type != "" && Constants.content_type != "text")
         {
             let validate = Constants.content_type
@@ -1181,12 +1403,7 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         }
     }
     
-    
     func userTextInput(_ dialog: UserTextInputNoLocal, didSubmitText text: String) {
-        //        if Labiba.Bot_Type == .voiceAssistance {
-        //            addInterationDialog(currentBotType: .voiceAssistance)
-        //            Labiba.Temporary_Bot_Type = .voiceAssistance
-        //        }
         self.submitUserText(text)
     }
     func userTextInput(_ dialog: UserTextInputNoLocal, didSubmitFile Url: URL) {
@@ -1212,9 +1429,7 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         self.finishedDisplayForDialog(dialog: dialog)
         //MARK:
         
-        
-        //self.scrollToBottom()
-        scrollDown(delay:0.1)
+        scrollDown(delay:0.3)
         self.botConnector.sendVoice(voice) { (remotePath) in
             
             renderedDialog.loadingStatus = remotePath != nil ? .success : .failed
@@ -1244,19 +1459,22 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         self.displayDialog(dialog)
         self.clearChoices()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            // self.scrollToBottom()
-        }
     }
     
     func userTextInputRequiresBottomSize(_ dialog: UserTextInputNoLocal, withHeight height: CGFloat) {
-        //  self.bottomConstraint.constant = height + 15.0
     }
     
     func submitLocalUserText(_ text:String) {
+        self.clearChoices()
+        
         let dialog = ConversationDialog(by: .user, time: Date())
         dialog.message = text
+        SharedPreference.shared.userMessages.append(text)
+        SharedPreference.shared.conversationMessages.append(text)
+        
         self.displayDialog(dialog)
+        
+        self.scrollDown(delay: 0.3)
     }
     
     func submitUserText(_ text:String) -> Void
@@ -1327,11 +1545,6 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
             }
             else
             {
-                //                self.botConnector.sendMessage(goodText)
-                //                let dialog = ConversationDialog(by: .user, time: Date())
-                //                dialog.message = goodText
-                //                self.clearChoices()
-                //                self.displayDialog(dialog)
                 displayUserInput(text: goodText)
             }
         }
@@ -1344,14 +1557,14 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
     
     func displayUserInput(text:String)  {
         self.myClearChoices()
-        //self.clearChoices()
         let dialog = ConversationDialog(by: .user, time: Date())
         dialog.message = text
-        //self.displayDialog(dialog)
+        // this is user message
+        SharedPreference.shared.userMessages.append(text)
+        SharedPreference.shared.conversationMessages.append(text)
         self.displayMyDialog(dialog)
         self.botConnector.sendMessage(text)
     }
-    ////////////////////////////////////////////////////////////////////
     
     
     func displayMyDialog(_ dialog:ConversationDialog ) -> Void
@@ -1361,7 +1574,6 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         {
             let renderedDialog = EntryDisplay(dialog: dialog)
             renderedDialog.target = self
-            //self.clearChoices()
             self.showTyping = false
             self.insertDisplay(renderedDialog)
             if dialog.hasMessage
@@ -1371,17 +1583,12 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
         }
     }
     
-    
-    
-    
     func myClearChoices()
     {
         if let display = self.displayedDialogs.last,
            display.dialog.choices != nil
         {
-            // if display.status == .OnHold {
             display.status = .Shown
-            // }
             self.MyReloadView(display: display)
         }
         
@@ -1389,28 +1596,11 @@ extension ConversationViewController: UserTextInputNoLocalDelegate
     
     func MyReloadView(display: EntryDisplay)
     {
-        // comment to remove wired behaviour after select button from choices
-        
-        //        let targetIndex = self.displayedDialogs.firstIndex(of: display)!
-        //        if let indices = self.tableView.indexPathsForVisibleRows
-        //        {
-        
-        //            let rIndices = indices.filter { (index) -> Bool in
-        //                return index.row == targetIndex - 1
-        //            }
         
         let show = self.showTyping
         self.insureTypingShow()
-        //            self.tableView.beginUpdates()
-        //            self.tableView.reloadRows(at: rIndices, with: .fade)
-        //            self.tableView.endUpdates()
         self.showTyping = show
-        //        }
     }
-    
-    
-    ////////////////////////////////////////////////////////////////////
-    
 }
 
 extension ConversationViewController: VoiceAssistantKeyboardDelegate
@@ -1420,12 +1610,6 @@ extension ConversationViewController: VoiceAssistantKeyboardDelegate
     }
     
     func voiceAssistantKeyboard(_ dialog: UIView, didSubmitFile url: URL) {
-        //        let dialog = ConversationDialog(by: .user, time: Date())
-        //        dialog.attachment = AttachmentCard(link: url.absoluteString)
-        //       let display = EntryDisplay(dialog: dialog)
-        //       // display.status = .Shown
-        //        insertDisplay(display)
-        //        // self.displayDialog(dialog)
         self.botConnector.sendFile(url)
     }
     
@@ -1437,8 +1621,8 @@ extension ConversationViewController: VoiceAssistantKeyboardDelegate
         default:
             break
         }
-       // self.tavleViewBottomConst.constant = keyboardHight + VisualizerVoiceAssistantView.INPUT_HEIGHT - addedValue - 20
-         self.tableView.contentInset.bottom =  keyboardHight + VisualizerVoiceAssistantView.INPUT_HEIGHT - addedValue - 20
+        
+        self.tableView.contentInset.bottom =  keyboardHight + VisualizerVoiceAssistantView.INPUT_HEIGHT - addedValue - 20
         if self.displayedDialogs.count > 0 {
             let lastIndex = IndexPath(row: self.displayedDialogs.count - 1, section: 0)
             self.tableView.scrollToRow(at: lastIndex, at: .none, animated: false)
@@ -1446,7 +1630,6 @@ extension ConversationViewController: VoiceAssistantKeyboardDelegate
     }
     
     func voiceAssistantKeyboardWillHide() {
-        //self.tavleViewBottomConst.constant = visualizerDialog.orginalBottomMargin + 30
         tableView.contentInset.bottom = tableViewBottomInset
     }
 }
@@ -1463,7 +1646,6 @@ extension ConversationViewController : RadiusViewControllerDelegate {
         self.currentChoiceToken = nil
     }
     
-    
     func radiusController(_ radiusVC: RadiusViewController, didSelectLocation location: CLLocationCoordinate2D, withDistance distance: Double)
     {
         let text = "\(location.latitude),\(location.longitude),\(distance)"
@@ -1476,11 +1658,8 @@ extension ConversationViewController : RadiusViewControllerDelegate {
         self.clearChoices()
     }
     
-    
-    
     func CustomMapPickerIsSelected(_ address: String, atCoordinates coordinates: CLLocationCoordinate2D, Radius: String)
     {
-        //titi   //تعديل
         let text = "\(coordinates.latitude),\(coordinates.longitude),\(address)"
         self.submitChoiceToken(text)
         
@@ -1496,10 +1675,6 @@ extension ConversationViewController : RadiusViewControllerDelegate {
 
 extension ConversationViewController : VoiceRecognitionProtocol {
     func finishRecognitionWithText(text: String) {
-        //        let regex = try! NSRegularExpression(pattern: "[\\u00a0]", options: NSRegularExpression.Options.caseInsensitive)
-        //        let range = NSMakeRange(0, text.unicodeScalars.count)
-        //        let modString = regex.stringByReplacingMatches(in: text, options: [], range: range, withTemplate: "")
-        //        let t = modString
         self.submitUserText(text)
     }
     func didRecognizeText(text: String) {}
@@ -1545,11 +1720,31 @@ extension ConversationViewController: SubViewControllerDelegate {
     }
     
 }
+extension ConversationViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+        switch URL.absoluteString {
+        case "pressMe://action":
+            linkButtonTapped()
+        case "action://linkIcon":
+            linkButtonTapped()
+        default:
+            break
+        }
+        return false
+    }
+}
 
+extension UIImage {
+    func tinted(with color: UIColor) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        color.setFill()
+        
+        let drawRect = CGRect(origin: .zero, size: size)
+        withRenderingMode(.alwaysTemplate).draw(in: drawRect)
+        
+        let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return tintedImage
+    }
+}
 
-
-//extension ConversationViewController: CNContactViewControllerDelegate{
-//    func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//}

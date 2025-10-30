@@ -14,6 +14,7 @@ class LastBotResponseModel:Codable{
 class LabibaModel:Codable {
     var recipient:RecipientModel?
     var messaging_type:String?
+//    var IsTransferredToAgent:String?
     var message:MessageModel?
 }
 
@@ -27,7 +28,7 @@ class MessageModel: Codable {
     var metadata:String?
     var quick_replies:[QuickReplyModel]?
     
-   
+    
 }
 
 class QuickReplyModel:Codable{
@@ -60,8 +61,8 @@ class AttachmentModel:Codable {
     var type:String?
 }
 enum PayloadValue: Codable {
-    case string(String)
-    case payloadModel(PayloadModel)
+    case string(String?)
+    case payloadModel(PayloadModel?)
 
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()

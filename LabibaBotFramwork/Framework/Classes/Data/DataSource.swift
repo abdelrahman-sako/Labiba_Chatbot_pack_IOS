@@ -8,16 +8,16 @@
 
 import Foundation
 final class DataSource: DataSourceProtocol{
-
     
-   
     
-   
     
-   
-  
     
-   
+    
+    
+    
+    
+    
+    
     //MARK: Shared Instance
     static var shared: DataSourceProtocol = DataSource()
     
@@ -29,7 +29,7 @@ final class DataSource: DataSourceProtocol{
     /// Can't init
     private init() {
     }
-  
+    
     
     //MARK: - Remote Database
     func messageHandler(model: [String : Any], handler: @escaping Handler<[LabibaModel]>) {
@@ -61,9 +61,13 @@ final class DataSource: DataSourceProtocol{
         remoteDataSource.closeConversation(handler: handler)
     }
     
-//    func updateToken(handler: @escaping Handler<UpdateTokenModel>) {
-//        remoteDataSource.updateToken(handler: handler)
-//    }
+    func closeConversationWithCallback(onFinished: @escaping() -> Void) {
+        remoteDataSource.closeConversationWithCallback(onFinished: onFinished)
+    }
+    
+    //    func updateToken(handler: @escaping Handler<UpdateTokenModel>) {
+    //        remoteDataSource.updateToken(handler: handler)
+    //    }
     
     //MARK: - Local Database
     func getRecentOriginCities(handler: @escaping Handler<[LabibaModel]>) {
@@ -83,26 +87,50 @@ final class DataSource: DataSourceProtocol{
         return remoteDataSource.downloadFile(fileURL: fileURL, handler: handler)
     }
     
-  
+    func getLabibaTheme(_ completionHandler: @escaping Handler<LabibaThemeModel>){
+        return remoteDataSource.getLabibaTheme(completionHandler)
+    }
     
-//    func sendData(_ data: Data, handler: @escaping Handler<UploadDataResponseModel>) {
-//        remoteDataSource.sendData(data, handler: handler)
-//    }
-//    func sendPhoto(_ data: Data, handler: @escaping Handler<UploadDataResponseModel>) {
-//        remoteDataSource.sendPhoto(data, handler: handler)
-//    }
+    func sendTranscript(name:String, email:String, handler: @escaping Handler<EmptyModel>){
+        return remoteDataSource.sendTranscript(name: name, email: email, handler: handler)
+    }
+    func getActiveQuestion(_ completionHandler:@escaping Handler<getActiveQuestionsResponseModel>){
+        return remoteDataSource.getActiveQuestion(completionHandler)
+    }
     
+    func submitNPSScore(_ score:String,_ completionHandler:@escaping Handler<String?>){
+        remoteDataSource.submitNPSScore(score,completionHandler)
+    }
+    
+    func getChatHistory(pageId:String,senderId:String,_ completionHandler:@escaping Handler<MessagesHistoryResponseModel>){
+        remoteDataSource.getChatHistory(pageId:pageId,senderId:senderId,completionHandler)
+    }
+    
+    func updateChatHistoryStatus(messagesIds:[String]){
+        remoteDataSource.updateChatHistoryStatus(messagesIds:messagesIds)
+    }
+    //    func sendData(_ data: Data, handler: @escaping Handler<UploadDataResponseModel>) {
+    //        remoteDataSource.sendData(data, handler: handler)
+    //    }
+    //    func sendPhoto(_ data: Data, handler: @escaping Handler<UploadDataResponseModel>) {
+    //        remoteDataSource.sendPhoto(data, handler: handler)
+    //    }
+    
+    
+    func getAgentName(_ completionHandler:@escaping Handler<GetAgentInfoResponseModel>){
+        remoteDataSource.getAgentName(completionHandler)
+    }
     
     
     func close() {
         remoteDataSource.close()
     }
-//    func sendPhoto(_ photo: UIImage, handler: @escaping Handler<String>) {
-//        remoteDataSource.sendPhoto(photo, handler: handler)
-//    }
-//    func sendFile(_ url: URL, handler: @escaping Handler<String>) {
-//        remoteDataSource.sendFile(url, handler: handler)
-//    }
+    //    func sendPhoto(_ photo: UIImage, handler: @escaping Handler<String>) {
+    //        remoteDataSource.sendPhoto(photo, handler: handler)
+    //    }
+    //    func sendFile(_ url: URL, handler: @escaping Handler<String>) {
+    //        remoteDataSource.sendFile(url, handler: handler)
+    //    }
 }
 
 

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>top-level-items</key>
+	<array>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>116</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>115</string>
+					<key>Timestamp</key>
+					<string>772956993.19491</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>LabibaBotFramwork/Framework/Classes/BubbleView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>                    let lang = formattedLinestext.detectedLangauge()
+</string>
+				<key>leading</key>
+				<string>                    var formattedLinestext = text.replacingOccurrences(of: "\n", with: "&lt;br&gt;", options: .literal, range: nil)
+                    fontSize = Labiba.BotChatBubble.fontsize
+</string>
+				<key>trailing</key>
+				<string>                    if lang == "ar" {formattedLinestext.addArabicAlignment()}
+                    let boldFont =  applyBotFont(textLang: LabibaLanguage(rawValue: lang ?? "") ?? .ar ,bold:true, size: fontSize )
+                    let regularFont =  applyBotFont(textLang: LabibaLanguage(rawValue: lang ?? "") ?? .ar , size: fontSize)
+</string>
+			</dict>
+			<key>title</key>
+			<string>change the lang alignment</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>5</string>
+					<key>EndingLineNumber</key>
+					<string>278</string>
+					<key>StartingColumnNumber</key>
+					<string>5</string>
+					<key>StartingLineNumber</key>
+					<string>278</string>
+					<key>Timestamp</key>
+					<string>772958510.826438</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>LabibaBotFramwork/Framework/Classes/Labiba.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>    
+    private static func createReferral()  {
+     </string>
+				<key>trailing</key>
+				<string>   let model = RefModel(access_token: SharedPreference.shared.refreshToken)
+        _Referral = ReferralModel(ref: model.arrayJsonString()).modelAsDic()
+    }
+</string>
+			</dict>
+			<key>title</key>
+			<string>Register Font</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>5</string>
+					<key>EndingLineNumber</key>
+					<string>70</string>
+					<key>StartingColumnNumber</key>
+					<string>5</string>
+					<key>StartingLineNumber</key>
+					<string>70</string>
+					<key>Timestamp</key>
+					<string>772958763.288222</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>LabibaBotFramwork/Framework/Classes/View/Cells/VMenuCell/VMenuCell.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>      leadingStackViewConst.constant = 20
+      trailingStackViewConst.constant = 20
+    }</string>
+				<key>trailing</key>
+				<string>
+  }
+  
+</string>
+			</dict>
+			<key>title</key>
+			<string>Applay font </string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+	</array>
+</dict>
+</plist>
