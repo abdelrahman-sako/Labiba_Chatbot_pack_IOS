@@ -22,6 +22,7 @@ class RatingNewVC:UIViewController {
         super.viewDidLoad()
         tableViewSetup()
         setupUI()
+        ReachabilityObserver.shared.startMonitoring()
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -36,7 +37,6 @@ class RatingNewVC:UIViewController {
             return
         }
 
-        checkConnection()
         connectionRestoredCallBack = {
             DataSource.shared.closeConversation { _ in }
             DataSource.shared.submitNPSScore(String(selectedScore)) { result in
@@ -58,6 +58,7 @@ class RatingNewVC:UIViewController {
                 
             }
         }
+        checkConnection()
     }
     
     @IBAction func dismissButtonTapped(_ sender: Any) {
@@ -97,13 +98,11 @@ class RatingNewVC:UIViewController {
     }
     
     func checkConnection(){
-        if Labiba.internetCheckEnabled{
-            
-            ReachabilityObserver.shared.startMonitoring()
             if ReachabilityObserver.shared.isConnected{
                 connectionRestoredCallBack?()
                 
             }else{
+                if Labiba.internetCheckEnabled{
                 Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
                     self.checkConnection()
                 },cancelHandler:{

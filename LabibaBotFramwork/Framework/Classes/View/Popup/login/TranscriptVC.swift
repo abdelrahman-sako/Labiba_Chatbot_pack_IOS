@@ -11,16 +11,20 @@ import UIKit
 class TranscriptVC: UIViewController {
     
     //MARK: -IBOutlets
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var cancelButton: CustomButton!
     @IBOutlet weak var sendButton: CustomButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
     
     //MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupKeyboard()
         setButtonThemeColor(LabibaThemes.optionMenuThemeColor)
+setupViews()
     }
     
     deinit {
@@ -29,7 +33,7 @@ class TranscriptVC: UIViewController {
     
     //MARK: -IBActions
     @IBAction func sendButtonTapped(_ sender: Any) {
-        validateData() ? send() : nil
+        validateData() ? sendTranscript(name: nameTextField.text!, email: emailTextField.text!, sendTranscriptCompletion: {}) : nil
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -41,23 +45,38 @@ class TranscriptVC: UIViewController {
     }
     
     //MARK: -Methods
+    func setupViews(){
+        titleLabel.text = "Send a transcript of this conversation".localForChosnLangCodeBB
+
+        nameLabel.text = "Name".localForChosnLangCodeBB
+        emailLabel.text = "Email".localForChosnLangCodeBB
+        sendButton.setTitle("Send".localForChosnLangCodeBB, for: .normal)
+        cancelButton.setTitle("Cancel".localForChosnLangCodeBB, for: .normal)
+        
+        nameLabel.textAlignment = Labiba.botLang == .ar ? .right : .left
+        emailLabel.textAlignment = Labiba.botLang == .ar ? .right : .left
+    }
     func validateData() -> Bool{
         return [emailTextField,nameTextField].validateFields()
     }
     
-    func send(){
-        sendButton.isUserInteractionEnabled = false
-        DataSource.shared.sendTranscript(name: nameTextField.text!, email: emailTextField.text!) { [weak self] result in
-            self?.sendButton.isUserInteractionEnabled = true
-            switch result{
-            case .success( _):
-                self?.dismiss(animated: true)
-            case .failure(let error):
-                print(error)
-                self?.dismiss(animated: true)
+    func sendTranscript(name:String,email:String, sendTranscriptCompletion:@escaping ()->Void){
+        if let _ = sendButton{
+            sendButton.isUserInteractionEnabled = false
+        }
+        DataSource.shared.sendTranscript(name: name, email: email) { [weak self] result in
+            sendTranscriptCompletion()
+            if let _ = self?.sendButton{
+                self?.sendButton.isUserInteractionEnabled = true
+                switch result{
+                case .success( _):
+                    self?.dismiss(animated: true)
+                case .failure(let error):
+                    print(error)
+                    self?.dismiss(animated: true)
+                }
             }
         }
-        
     }
     
     func setButtonThemeColor(_ color:UIColor = .purple){

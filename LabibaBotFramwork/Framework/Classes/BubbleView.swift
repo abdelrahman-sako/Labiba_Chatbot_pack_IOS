@@ -19,7 +19,7 @@ public class BubbleView: UIView {
     class func createBubble(withWidth width:CGFloat) -> BubbleView { return BubbleView()}
     
     var considersAvatar:Bool = true
-    
+    @IBOutlet weak var bubbleStack: UIStackView!
     @IBOutlet weak var bubbleHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var timeStackview: UIStackView!
     @IBOutlet weak var timeImageView: UIImageView!
@@ -58,12 +58,12 @@ public class BubbleView: UIView {
                         DispatchQueue.main.async { [unowned self] in
                             if SharedPreference.shared.botLangCode == .ar{
                                 dateFormatter.locale = Locale(identifier: "ar")
-                                timestampLbl.text = "\(source == .incoming ? botName ?? "" : userName) - \(dateFormatter.string(from: timestamp))"
+                                timestampLbl.text = "\(source == .incoming ? botName ?? "bot".localForChosnLangCodeBB : userName) - \(dateFormatter.string(from: timestamp))"
                                 timestampLbl.textAlignment = source == .incoming  ? .right : .left
                                 timeStackview?.semanticContentAttribute = source == .incoming  ? .forceRightToLeft : .forceLeftToRight
                             }else {
                                 dateFormatter.locale = Locale(identifier: "en")
-                                timestampLbl.text = "\(source == .incoming ? botName ?? "": userName) - \(dateFormatter.string(from: timestamp))"
+                                timestampLbl.text = "\(source == .incoming ? botName ?? "bot".localForChosnLangCodeBB : userName) - \(dateFormatter.string(from: timestamp))"
                                 timestampLbl.textAlignment = source == .incoming  ? .left : .right
                                 timeStackview?.semanticContentAttribute = source == .incoming  ? .forceLeftToRight : .forceRightToLeft
                             }
@@ -248,7 +248,12 @@ public class BubbleView: UIView {
         
         
         let maxWidth =  self.maxWidth - _bubbleMargin - TextPadding  - ipadFactor*(ipadMargin + 70)
-        let size = text?.size(maxWidth: maxWidth   , font: applyBotFont(textLang:lang, size: fontSize)) ?? CGSize(width: 50, height: 50)
+        var size = text?.size(maxWidth: maxWidth   , font: applyBotFont(textLang:lang, size: fontSize)) ?? CGSize(width: 50, height: 50)
+        
+        var timeLblSize = timestampLbl.attributedText?.size(maxWidth: maxWidth   , font:  timestampLbl.font) ?? CGSize(width: 50, height: 50) //applyBotFont(textLang:lang, size: fontSize)) ?? CGSize(width: 50, height: 50)
+        
+        size = size.width > timeLblSize.width ? size : timeLblSize
+        
         var height = size.height
         
         height += (20 + ipadFactor*6)

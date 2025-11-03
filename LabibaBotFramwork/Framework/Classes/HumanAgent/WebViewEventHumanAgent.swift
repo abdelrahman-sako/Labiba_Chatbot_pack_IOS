@@ -70,9 +70,11 @@ class WebViewEventHumanAgent:NSObject {
         if let url = URL(string: url){
             Labiba.isHumanAgentStarted = enableAgent
             //            SharedPreference.shared.isHumanAgentStarted = true
+            
             var request = URLRequest(url: url)
             var finalHeaders:[String:String] = [:]
-            for dict in Labiba.clientHeaders {
+            let webHeaders = (Labiba.socketHeaders.first?.keys.isEmpty ?? false)  ? Labiba.clientHeaders : Labiba.socketHeaders
+            for dict in webHeaders {
                 for (key, value) in dict {
                     finalHeaders[key] = value  // Later values will overwrite earlier ones
                     request.setValue(value, forHTTPHeaderField:key)

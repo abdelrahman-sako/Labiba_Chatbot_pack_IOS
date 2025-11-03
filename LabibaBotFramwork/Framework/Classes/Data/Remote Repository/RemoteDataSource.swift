@@ -128,7 +128,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
         
         task.resume()
     }
-    
+
     //    func updateToken(handler: @escaping Handler<UpdateTokenModel>) {
     //        let url = "\(Labiba._basePath)/api/Auth/Login"
     //        let endPoint = EndPoint(url: url, httpMethod: .post)
@@ -398,7 +398,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func sendTranscript(name:String, email:String, handler: @escaping Handler<EmptyModel>) {
         //        let url = "\(Labiba._basePath)/api/SendTranscript/SendChatHistoryEmail"
-        let url = "https://botbuilder.labiba.ai/api/SendTranscript/SendChatHistoryEmail"
+        let url = "\(Labiba._basePath)/api/SendTranscript/SendChatHistoryEmail"
         
         let params: [String:Any] = ["Name":name,"FromEmail": Labiba.transcriptSenderEmail ?? "","Email":email,"History": SharedPreference.shared.formatConversation(userMessages: SharedPreference.shared.userMessages, botMessages: SharedPreference.shared.botMessages)
                                     , "startingTime": "","Duration":"",  "PageURL": "", "Title": "Chat Transcript", "IsContentEncrypted": true

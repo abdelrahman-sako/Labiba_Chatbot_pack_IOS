@@ -46,6 +46,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     var isViewAppearing = false
     var tableViewBottomInset:CGFloat = 50
     var isConnectionAlertShown = false
+    var delayForStartMessage : Double = 0
     private var historyMessagesIds: [String] = []{
         didSet{
             updateReadMessages()
@@ -69,14 +70,14 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     override public func viewDidLoad()
     {
         super.viewDidLoad()
-        
+
         isViewAppearing = true
-        checkNetwork()
-        
+                checkNetwork()
+
         // to remove
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapaction))
-        gesture.numberOfTapsRequired = 3
-        self.view.addGestureRecognizer(gesture)
+//        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapaction))
+//        gesture.numberOfTapsRequired = 3
+//        self.view.addGestureRecognizer(gesture)
         
         print("did load")
         //        tableView.backgroundColor = .green
@@ -175,6 +176,8 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         super.viewDidAppear(animated)
         print("did appear")
         addInterationDialog(currentBotType:Labiba.Bot_Type)
+        
+        print("the delayForStartMessage in didappear is \(delayForStartMessage)")
     }
     
     
@@ -257,7 +260,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 }
             }
         }
-        
+
     }
     
     @objc private func appDidEnterBackground() {
@@ -339,7 +342,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     }
     
     func checkNetwork() {
-        if Labiba.internetCheckEnabled{
             if #available(iOS 12.0, *) {
                 if isViewAppearing {
                     ReachabilityObserver.shared.startMonitoring()
@@ -353,43 +355,49 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
             } else {
                 print("Cannot detect Network on ios 11 or lower")
             }
-        }
     }
     
     func handleConnectionIssue(_ isConnected:Bool = ReachabilityObserver.shared.isConnected){
-        print( isConnected ? "✅ Internet Connected" : "⚠️ No Internet Connection")
-        isConnected ? handleConnected() : handleDisConnected()
-    }
-    
+            print( isConnected ? "✅ Internet Connected" : "⚠️ No Internet Connection")
+            delayForStartMessage += 2
+            isConnected ? handleConnected() : handleDisConnected()
+        }
     
     func handleConnected(){
-        if !isConnectionAlertShown{
-            if displayedDialogs.isEmpty{
-                BotConnector.shared.sendMessage("CONVERSATION-RELOAD")
-            }else{
-                if !isFirstOpen{
-                    getChatHistory()
+        
+        print("handle connected function clousre and dialogs \(displayedDialogs.isEmpty)")
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayForStartMessage , execute: {
+            if !self.isConnectionAlertShown{
+                if self.displayedDialogs.isEmpty{
+                    BotConnector.shared.sendMessage("CONVERSATION-RELOAD")
+                    print("displayedDialogs empty here ")
+                }else{
+                    if !self.isFirstOpen{
+                        self.getChatHistory()
+                    }
+                    WebViewEventHumanAgent.Shared.addJavaScripListner()
+                    WebViewEventHumanAgent.Shared.loadUrl(Labiba.isHumanAgentStarted)
                 }
-                WebViewEventHumanAgent.Shared.addJavaScripListner()
-                WebViewEventHumanAgent.Shared.loadUrl(Labiba.isHumanAgentStarted)
             }
-        }
+        })
+     
     }
     
     func handleDisConnected(){
-        WebViewEventHumanAgent.Shared.stopJavaScriptListener()
-        isConnectionAlertShown = true
-        Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
-            self.isConnectionAlertShown = false
-            self.handleConnectionIssue()
-        },cancelHandler:{
-            Labiba.dismiss {
+        if Labiba.internetCheckEnabled{
+            WebViewEventHumanAgent.Shared.stopJavaScriptListener()
+            isConnectionAlertShown = true
+            Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
                 self.isConnectionAlertShown = false
-                self.dismiss(animated: true)
-            }
-        })
+                self.handleConnectionIssue()
+            },cancelHandler:{
+                Labiba.dismiss {
+                    self.isConnectionAlertShown = false
+                    self.dismiss(animated: true)
+                }
+            })
+        }
     }
-    
     
     func addInterationDialog(currentBotType:BotType)
     {
@@ -1316,7 +1324,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
         toastLabel.textAlignment = .center;
-        //        toastLabel.font = UIFont(name: "Montserrat-Light", size: 8.0)
+//        toastLabel.font = UIFont(name: "Montserrat-Light", size: 8.0)
         toastLabel.text = message
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 10;
@@ -1739,3 +1747,4 @@ extension UIImage {
         return tintedImage
     }
 }
+

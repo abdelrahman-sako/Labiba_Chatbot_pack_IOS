@@ -81,23 +81,28 @@ public enum LoggingAndRefferalEncodingType{
     private(set) static var _OpenFromBubble:Bool = false
     public static var liveChatModel:LiveChatModel?
     public static let labibaThemes = LabibaThemes()
-    public  static var _WithRatingVC: Bool = false
-    public  static var enableCaching: Bool = false
-    public static var loaderText:String = "تحميل..."
-    public static var botLang : LabibaLanguage = .en
-    public static var loggingAndRefferalEncodingType : LoggingAndRefferalEncodingType = .jsonString
-    public static var clientHeaders:[[String:String]] = [[:]]
-    public static var isNPSBotRatingEnabled = false
-    public static var isNPSAgentRatingEnabled = false
-    public static var isTranscriptEnabled = false
-    public static var isHeaderFadingEnabled = true
-    public static var transcriptSenderEmail:String?
-    public static var isRateForAgent:Bool = false
-    public static var npsQuestionTemplateLongId: String?
-    
+    static var _WithRatingVC: Bool = false
+    public static var enableCaching: Bool = false
+    static var loaderText:String = "تحميل..."
+    static var botLang : LabibaLanguage = .en
+    static var loggingAndRefferalEncodingType : LoggingAndRefferalEncodingType = .jsonString
+    static var clientHeaders:[[String:String]] = [[:]]
+    static var socketHeaders:[[String:String]] = [[:]]
+    static var isNPSBotRatingEnabled = false
+    static var isNPSAgentRatingEnabled = false
+    static var isTranscriptEnabled = false
+    static var isHeaderFadingEnabled = true
+    static var transcriptSenderEmail:String?
+    static var isRateForAgent:Bool = false
+    static var npsQuestionTemplateLongId: String?
+    static var agentNameCounter = 0
+    static var transcriptNameAndEmail:(String,String)?
     static var isRatingVCPresenting = false
     static var botName = "bot".localForChosnLangCodeBB
     static var currentAgentName:String?
+    static var transcriptSent = false
+    static var transcriptFinish:(()->Void)?
+    static var isSuggestionTranscriptEnabled = false
     static var internetCheckEnabled:Bool = true
     //  public  static var isLoggingEnabled: Bool = false
     
@@ -315,6 +320,11 @@ public enum LoggingAndRefferalEncodingType{
         self.clientHeaders = headers
     }
     
+    public static func setSocketHeaders(_ headers:[[String:String]]){
+        self.socketHeaders = []
+        self.socketHeaders = headers
+    }
+    
     public static func setNPS(agent: Bool,bot:Bool){
         self.isNPSBotRatingEnabled = bot
         self.isNPSAgentRatingEnabled = agent
@@ -327,6 +337,11 @@ public enum LoggingAndRefferalEncodingType{
     public static func setTranscript(isEnabled:Bool,email:String){
         self.transcriptSenderEmail = email
         self.isTranscriptEnabled = isEnabled
+    }
+    
+    public static func enableSuggestionTranscriptOnExit(isEnabled: Bool, name:String,recipientEmail:String){
+        isSuggestionTranscriptEnabled = isEnabled
+        transcriptNameAndEmail = (name ,recipientEmail)
     }
     
     public static func setEndConversationUrl(_ url: String){
@@ -370,6 +385,7 @@ public enum LoggingAndRefferalEncodingType{
         didSet{
             if isHumanAgentStarted{
                 currentAgentName = nil
+                agentNameCounter += 1
             }
         }
     }
@@ -627,6 +643,7 @@ public enum LoggingAndRefferalEncodingType{
     }
     public static func startConversation(onView vc: UIViewController, animated: Bool = true)
     {
+        Labiba.transcriptSent = false
         guard self._senderId != nil
         else
         {
@@ -679,6 +696,8 @@ public enum LoggingAndRefferalEncodingType{
                     completion?(isConnected)
                 }
             }
+        }else {
+            completion?(true)
         }
     }
     
@@ -733,19 +752,67 @@ public enum LoggingAndRefferalEncodingType{
     }
     
     static func dismiss(tiggerDelegate:Bool = true ,compeletion:(()->Void)? = nil){
-        Labiba.showBackOnNPS = false
-        if tiggerDelegate{Labiba.delegate?.labibaWillClose?()}
-        //LabibaRestfulBotConnector.shared.close()
-        DataSource.shared.close()
-        WebViewEventHumanAgent.Shared.forceEnd()
-        
-        navigationController?.dismiss(animated: true, completion: {
-            compeletion?()
-            if tiggerDelegate{Labiba.delegate?.labibaDidClose?()}
-        })
+        transcriptFinish = {
+            Labiba.showBackOnNPS = false
+            if tiggerDelegate{Labiba.delegate?.labibaWillClose?()}
+            //LabibaRestfulBotConnector.shared.close()
+            DataSource.shared.close()
+            WebViewEventHumanAgent.Shared.forceEnd()
+            
+            navigationController?.dismiss(animated: true, completion: {
+                transcriptSent = true
+                compeletion?()
+                if tiggerDelegate{Labiba.delegate?.labibaDidClose?()}
+            })
+        }
+        sendTranscript()
     }
 
     
+    static func showErrorMessageWithTwoActionsTranscript(_ title:String, message:String, okLbl:String = "OK", view:UIViewController? = UIApplication.shared.topMostViewController ?? nil,cancelLbl:String = "Cancel",okayHandler:(()->Void)? = nil,cancelHandler:(()->Void)? = nil) -> Void {
+        
+        DispatchQueue.main.async {
+            
+            let alert = UIAlertController(title: title.localForChosnLangCodeBB,
+                                          message: message.localForChosnLangCodeBB, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: okLbl.localForChosnLangCodeBB, style: .default, handler: {_ in okayHandler?()})
+            let cancelAction = UIAlertAction(title: cancelLbl, style: .default, handler: {_ in cancelHandler?()})
+            
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            view?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    static func sendTranscript(){
+        if isSuggestionTranscriptEnabled{
+            if !Labiba.isHumanAgentStarted{
+                if let transcriptNameAndEmail{
+                    if !transcriptSent{
+                        if !isRateForAgent{
+                            showErrorMessageWithTwoActionsTranscript("", message: "Would you like to send a transcript of this conversation to your email before exiting?".localForChosnLangCodeBB,okLbl: "Send & Exit".localForChosnLangCodeBB,cancelLbl: "Exit".localForChosnLangCodeBB, okayHandler: {
+                                TranscriptVC().sendTranscript(name: transcriptNameAndEmail.0, email: transcriptNameAndEmail.1, sendTranscriptCompletion: {
+                                    transcriptFinish?()
+                                })
+                            },cancelHandler: {
+                                transcriptFinish?()
+                            })
+                        }else{
+                            transcriptFinish?()
+                        }
+                    }else{
+                        transcriptFinish?()
+                    }
+                }else{
+                    transcriptFinish?()
+                }
+            }else{
+                transcriptFinish?()
+            }
+        }else{
+            transcriptFinish?()
+        }
+    }
     
     //    static func createConversation(closable: Bool = true, onClose: ConversationCloseHandler? = nil) -> UIViewController
     //    { // this is should not be public

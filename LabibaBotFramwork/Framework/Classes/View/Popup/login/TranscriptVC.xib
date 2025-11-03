@@ -13,9 +13,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TranscriptVC" customModule="LabibaBotFramwork" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="LqO-Ta-s67" id="neZ-mF-9zU"/>
+                <outlet property="emailLabel" destination="6lj-1g-t7c" id="ZZt-uE-78N"/>
                 <outlet property="emailTextField" destination="j6N-es-rrf" id="fIJ-w5-ZXZ"/>
+                <outlet property="nameLabel" destination="LIn-GB-dB3" id="L7R-ie-fXO"/>
                 <outlet property="nameTextField" destination="H74-hD-De3" id="X4F-FY-33n"/>
                 <outlet property="sendButton" destination="agz-Ne-76z" id="hms-vZ-hsb"/>
+                <outlet property="titleLabel" destination="wEu-6L-BJk" id="bpw-GR-zVd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,13 +36,21 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeP-cV-qfg" customClass="CustomView" customModule="LabibaBotFramwork" customModuleProvider="target">
-                    <rect key="frame" x="50" y="287" width="293" height="278"/>
+                    <rect key="frame" x="50" y="262.66666666666663" width="293" height="326.66666666666663"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="R6L-XF-cjb">
-                            <rect key="frame" x="0.0" y="30" width="293" height="218"/>
+                            <rect key="frame" x="0.0" y="30" width="293" height="266.66666666666669"/>
                             <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEu-6L-BJk">
+                                    <rect key="frame" x="26.000000000000014" y="0.0" width="241.33333333333337" height="33.666666666666664"/>
+                                    <string key="text">Send a transcript of this conversation
+</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="5Mk-R4-6d9" userLabel="Name">
-                                    <rect key="frame" x="20" y="0.0" width="253" height="69"/>
+                                    <rect key="frame" x="20" y="48.666666666666629" width="253" height="69"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIn-GB-dB3">
                                             <rect key="frame" x="0.0" y="0.0" width="253" height="17"/>
@@ -62,7 +73,7 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="K8s-Lj-lbN" userLabel="Email">
-                                    <rect key="frame" x="20" y="84" width="253" height="69"/>
+                                    <rect key="frame" x="20" y="132.66666666666663" width="253" height="69"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lj-1g-t7c">
                                             <rect key="frame" x="0.0" y="0.0" width="253" height="17"/>
@@ -85,14 +96,14 @@
                                     </constraints>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHM-lz-svP" userLabel="Spacer">
-                                    <rect key="frame" x="0.0" y="168" width="293" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="216.66666666666663" width="293" height="0.0"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" id="y9d-mU-5HB"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="crx-hY-6uU">
-                                    <rect key="frame" x="20" y="183" width="253" height="35"/>
+                                    <rect key="frame" x="20" y="231.66666666666669" width="253" height="35"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agz-Ne-76z" customClass="CustomButton" customModule="LabibaBotFramwork" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="116.66666666666667" height="35"/>
@@ -189,7 +200,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

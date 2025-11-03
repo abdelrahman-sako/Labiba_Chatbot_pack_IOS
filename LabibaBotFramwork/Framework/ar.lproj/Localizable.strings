@@ -217,3 +217,11 @@
 "Connection Lost" = "انقطع الاتصال" ;
 "Retry" = "المحاولة مرة اخرى" ;
 "We’re having trouble connecting. Please check your internet connection and try again" = "تواجهنا مشكلة في الاتصال. يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى.";
+"Would you like to send a transcript of this conversation to your email before exiting?" = "هل ترغب في إرسال نسخة من المحادثة إلى بريدك الإلكتروني قبل الخروج؟";
+"Send & Exit" = "إرسال والخروج" ;
+"Exit" = "الخروج" ;
+
+"Send a transcript of this conversation" = "إرسال نسخة من المحادثة";
+"Email" = "البريد الإلكتروني";
+"Name" = "الاسم" ;
+"Send" = "إرسال" ;

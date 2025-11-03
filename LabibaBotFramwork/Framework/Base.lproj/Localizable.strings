@@ -213,3 +213,13 @@
 
 // header
 "This is the virtual assistant from AMEX" = "This is the virtual assistant from AMEX";
+
+//transcript
+"Would you like to send a transcript of this conversation to your email before exiting?" = "Would you like to send a transcript of this conversation to your email before exiting?";
+
+"Send & Exit" = "Send & Exit" ;
+"Exit" = "Exit" ;
+"Send a transcript of this conversation" = "Send a transcript of this conversation";
+"Email" = "Email";
+"Name" = "Name" ;
+"Send" = "Send" ;

@@ -16,6 +16,7 @@ public class BotBubble: BubbleView {
     override class func createBubble(withWidth width:CGFloat) -> BubbleView {
        
         let bubble = UIView.loadFromNibNamedFromDefaultBundle("BotBubble") as! BotBubble
+        bubble.bubbleStack.alignment = Labiba.botLang == .ar ? .trailing : .leading
         bubble.maxWidth = width
         bubble.considersAvatar = Labiba.BotChatBubble.avatar != nil
     
