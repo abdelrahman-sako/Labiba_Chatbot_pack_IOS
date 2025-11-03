@@ -70,14 +70,14 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     override public func viewDidLoad()
     {
         super.viewDidLoad()
-
+        
         isViewAppearing = true
-                checkNetwork()
-
+        checkNetwork()
+        
         // to remove
-//        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapaction))
-//        gesture.numberOfTapsRequired = 3
-//        self.view.addGestureRecognizer(gesture)
+        //        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapaction))
+        //        gesture.numberOfTapsRequired = 3
+        //        self.view.addGestureRecognizer(gesture)
         
         print("did load")
         //        tableView.backgroundColor = .green
@@ -214,10 +214,10 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
     @objc private func appDidBecomeActive() {
         // Refresh or re-connect SDK features here
         
-//        if !isFirstOpen{
-            handleConnectionIssue()
-//            getChatHistory()
-//        }
+        //        if !isFirstOpen{
+        handleConnectionIssue()
+        //            getChatHistory()
+        //        }
     }
     
     func getChatHistory(){
@@ -260,7 +260,7 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 }
             }
         }
-
+        
     }
     
     @objc private func appDidEnterBackground() {
@@ -363,7 +363,6 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
         isConnected ? handleConnected() : handleDisConnected()
     }
     
-    
     func handleConnected(){
         
         print("handle connected function clousre and dialogs \(displayedDialogs.isEmpty)")
@@ -381,23 +380,24 @@ class ConversationViewController: BaseConversationVC, EntryDisplayTarget, CardsV
                 }
             }
         })
-     
+        
     }
     
     func handleDisConnected(){
-        WebViewEventHumanAgent.Shared.stopJavaScriptListener()
-        isConnectionAlertShown = true
-        Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
-            self.isConnectionAlertShown = false
-            self.handleConnectionIssue()
-        },cancelHandler:{
-            Labiba.dismiss {
+        if Labiba.internetCheckEnabled{
+            WebViewEventHumanAgent.Shared.stopJavaScriptListener()
+            isConnectionAlertShown = true
+            Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
                 self.isConnectionAlertShown = false
-                self.dismiss(animated: true)
-            }
-        })
+                self.handleConnectionIssue()
+            },cancelHandler:{
+                Labiba.dismiss {
+                    self.isConnectionAlertShown = false
+                    self.dismiss(animated: true)
+                }
+            })
+        }
     }
-
     
     func addInterationDialog(currentBotType:BotType)
     {
@@ -1324,7 +1324,7 @@ extension ConversationViewController: UITableViewDataSource, UITableViewDelegate
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
         toastLabel.textAlignment = .center;
-//        toastLabel.font = UIFont(name: "Montserrat-Light", size: 8.0)
+        //        toastLabel.font = UIFont(name: "Montserrat-Light", size: 8.0)
         toastLabel.text = message
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 10;
@@ -1747,4 +1747,3 @@ extension UIImage {
         return tintedImage
     }
 }
-

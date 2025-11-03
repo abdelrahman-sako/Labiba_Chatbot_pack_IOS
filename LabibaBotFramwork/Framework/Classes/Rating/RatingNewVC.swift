@@ -24,19 +24,19 @@ class RatingNewVC:UIViewController {
         setupUI()
         ReachabilityObserver.shared.startMonitoring()
     }
-
+    
     @IBAction func backButtonTapped(_ sender: Any) {
         Labiba.showBackOnNPS = false
         Labiba.isNpsPresentingNow = false
         dismiss(animated: true)
     }
-
+    
     @IBAction func submitButtonTapped(_ sender: Any) {
         guard let selectedScore else {
             showErrorMessage("Please Select a Score")
             return
         }
-
+        
         connectionRestoredCallBack = {
             DataSource.shared.closeConversation { _ in }
             DataSource.shared.submitNPSScore(String(selectedScore)) { result in
@@ -102,13 +102,15 @@ class RatingNewVC:UIViewController {
             connectionRestoredCallBack?()
             
         }else{
-            Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
-                self.checkConnection()
-            },cancelHandler:{
-                self.dismiss(animated: true,completion: {
-                    self.vcDismissed?("Discard nps, no internet connection")
+            if Labiba.internetCheckEnabled{
+                Labiba.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",view:self, cancelLbl: "Exit", okayHandler: {
+                    self.checkConnection()
+                },cancelHandler:{
+                    self.dismiss(animated: true,completion: {
+                        self.vcDismissed?("Discard nps, no internet connection")
+                    })
                 })
-            })
+            }
         }
     }
 }
@@ -127,7 +129,7 @@ extension RatingNewVC: UITableViewDelegate , UITableViewDataSource {
                         self.vcDismissed?("Question not loaded")
                     })
                 }
-
+                
             }
             self.selectedScore = index + 1
         }
@@ -135,7 +137,7 @@ extension RatingNewVC: UITableViewDelegate , UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        UITableView.automaticDimension
-//    }
+    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        UITableView.automaticDimension
+    //    }
 }

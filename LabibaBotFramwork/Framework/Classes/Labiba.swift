@@ -35,6 +35,7 @@ public enum LoggingAndRefferalEncodingType{
 {
     
     
+    
     //  static var _basePath = "ws://whatsapp.labibabot.com/api/mws"
     // static var _basePath = "ws://botbuilder.labiba.ai/api/mws"
     // static var _socketBasePath = "wss://botbuilder.labiba.ai/api/mws"
@@ -102,6 +103,7 @@ public enum LoggingAndRefferalEncodingType{
     static var transcriptSent = false
     static var transcriptFinish:(()->Void)?
     static var isSuggestionTranscriptEnabled = false
+    static var internetCheckEnabled:Bool = true
     //  public  static var isLoggingEnabled: Bool = false
     
     // MARK:- Main Settings
@@ -256,6 +258,10 @@ public enum LoggingAndRefferalEncodingType{
         LabibaThemes.npsRatingColor = color
     }
     
+    
+    public static func setInternetCheck(_ isEnabled: Bool){
+        internetCheckEnabled = isEnabled
+    }
     
     public static func setConversationScrollingBehavior(scrollToFirstMessage:Bool = true){
         self.scrollToFirstMessage = scrollToFirstMessage
@@ -643,12 +649,12 @@ public enum LoggingAndRefferalEncodingType{
         {
             fatalError("SENDER_ERROR \(SENDER_ERROR)")
         }
-
+        
         self.checkConnectivity { isConnected in
             if isConnected{
-                    let convVC = ConversationViewController.create()
-                    convVC.delegate = Labiba.delegate
-                    vc.present(createLabibaNavigation(rootViewController: convVC), animated: animated, completion: nil)
+                let convVC = ConversationViewController.create()
+                convVC.delegate = Labiba.delegate
+                vc.present(createLabibaNavigation(rootViewController: convVC), animated: animated, completion: nil)
             }
         }
     }
@@ -668,15 +674,17 @@ public enum LoggingAndRefferalEncodingType{
     }
     
     static func checkConnectivity(_ completion:((_ isConnected:Bool)->Void)? = nil){
-        if #available(iOS 12.0, *) {
-            ReachabilityObserver.shared.startMonitoring()
+        if internetCheckEnabled{
             
-            let isConnected = ReachabilityObserver.shared.isConnected
-            let statement = isConnected ? "✅ Internet Connected" : "⚠️ No Internet Connection"
-            
-            print(statement)
-            if !isConnected{
+            if #available(iOS 12.0, *) {
+                ReachabilityObserver.shared.startMonitoring()
+                
+                let isConnected = ReachabilityObserver.shared.isConnected
+                let statement = isConnected ? "✅ Internet Connected" : "⚠️ No Internet Connection"
+                
                 print(statement)
+                if !isConnected{
+                    print(statement)
                     self.showErrorMessageWithTwoActions("Network Connection", message: "Internt connection is lost",okLbl: "Retry",cancelLbl: "Exit", okayHandler: {
                         self.checkConnectivity { isConnected in
                             completion?(isConnected)
@@ -684,9 +692,12 @@ public enum LoggingAndRefferalEncodingType{
                     },cancelHandler:{
                         Labiba.dismiss()
                     })
-            }else{
-                completion?(isConnected)
+                }else{
+                    completion?(isConnected)
+                }
             }
+        }else {
+            completion?(true)
         }
     }
     
@@ -699,10 +710,10 @@ public enum LoggingAndRefferalEncodingType{
             let alert = UIAlertController(title: "Connection Lost".localForChosnLangCodeBB,
                                           message: "We’re having trouble connecting. Please check your internet connection and try again".localForChosnLangCodeBB, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Retry".localForChosnLangCodeBB, style: .default, handler: {_ in okayHandler?()})
-//            let cancelAction = UIAlertAction(title: cancelLbl, style: .default, handler: {_ in cancelHandler?()})
+            //            let cancelAction = UIAlertAction(title: cancelLbl, style: .default, handler: {_ in cancelHandler?()})
             
             alert.addAction(okAction)
-//            alert.addAction(cancelAction)
+            //            alert.addAction(cancelAction)
             view?.present(alert, animated: true, completion: nil)
         }
     }
@@ -756,7 +767,7 @@ public enum LoggingAndRefferalEncodingType{
         }
         sendTranscript()
     }
-
+    
     
     static func showErrorMessageWithTwoActionsTranscript(_ title:String, message:String, okLbl:String = "OK", view:UIViewController? = UIApplication.shared.topMostViewController ?? nil,cancelLbl:String = "Cancel",okayHandler:(()->Void)? = nil,cancelHandler:(()->Void)? = nil) -> Void {
         
