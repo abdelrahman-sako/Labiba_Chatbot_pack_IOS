@@ -88,7 +88,6 @@ class WebViewEventHumanAgent:NSObject {
     
     func end(withGetStarted:Bool = false) {
         Labiba.isHumanAgentStarted = false
-        //        SharedPreference.shared.isHumanAgentStarted = false
         if let url = Labiba.bundle.url(forResource: "index", withExtension: "html") {
             let request = URLRequest(url: url)
             webView.load(request)
@@ -108,7 +107,6 @@ class WebViewEventHumanAgent:NSObject {
         if Labiba.isHumanAgentStarted  {
             print("SharedPreference.shared.isHumanAgentStarted Ended")
             Labiba.isHumanAgentStarted = false
-            //            SharedPreference.shared.isHumanAgentStarted = false
             let url = "\(Labiba.endConversationUrl ?? "https://botbuilder.labiba.ai/api/LiveChat/v1.0/CloseConversation")/\(Labiba._pageId)/\(Labiba._senderId ?? "")/mobile"
             print("End Agent :::::: ForceEnd")
             

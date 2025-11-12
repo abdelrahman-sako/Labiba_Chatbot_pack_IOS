@@ -57,18 +57,12 @@ public enum LoggingAndRefferalEncodingType{
     static var scrollingAmount:Int = 50
     static var scrollToFirstMessage = false
     static var isAttachmentClickable = true
-    // static var _helpServicePath = "/api/Mobile/FetchHelpPage"
-    //static var _voiceServicePath = "/Handlers/Translate.ashx")
-    
-    //    static var _submitRatingPath = "https://botbuilder.labiba.ai/api/ratingform/submit"
-    //    static var _ratingQuestionsPath = "https://botbuilder.labiba.ai/api/MobileAPI/FetchQuestions"
     
     
     static var  delegate:LabibaDelegate?
     
     public static var _BubbleChatImage:UIImage?// = Image(named: "labiba_icon")
     
-    //  static var _GoogleApiKey: String!
     
     static var _pageId: String = "NOT_VALID"
     static var _senderId: String!
@@ -201,6 +195,7 @@ public enum LoggingAndRefferalEncodingType{
     public static func enableAttachmentClick(_ enable:Bool){
         isAttachmentClickable = enable
     }
+    // theme for nps page
     public static func setNpsRatingColor(_ color: UIColor){
         LabibaThemes.npsRatingColor = color
     }
