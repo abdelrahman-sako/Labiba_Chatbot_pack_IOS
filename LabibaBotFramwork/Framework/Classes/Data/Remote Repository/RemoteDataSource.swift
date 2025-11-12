@@ -185,13 +185,12 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     }
     
     func searchForEndedChats(_ jsonData:Data){
-        
         do {
             let jsonObject = try JSONSerialization.jsonObject(with: jsonData)
             if findType(in: jsonObject) {
+                // this is from backend when agent ends the conversation
                 print("Found type 'call.nps.agent'")
                 Labiba.skipErrorMessage = true
-                //                if !Labiba.didGoToRate{
                 if Labiba.isNPSAgentRatingEnabled{
                     Labiba.handleNPSRartingAndQuit(isForAgent: true)
                 }
@@ -202,6 +201,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
             print("Failed to parse JSON: \(error)")
         }
     }
+    
     func findType(in json: Any) -> Bool {
         if let dict = json as? [String: Any] {
             for (key, value) in dict {

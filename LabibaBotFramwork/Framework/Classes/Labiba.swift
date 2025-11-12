@@ -36,9 +36,6 @@ public enum LoggingAndRefferalEncodingType{
     
     
     
-    //  static var _basePath = "ws://whatsapp.labibabot.com/api/mws"
-    // static var _basePath = "ws://botbuilder.labiba.ai/api/mws"
-    // static var _socketBasePath = "wss://botbuilder.labiba.ai/api/mws"
     public static var audioType = 2
     static var _basePath = ""     //"https://botbuilder.labiba.ai"
     static var _messagingServicePath = ""    //"/api/MobileAPI/MessageHandler"
@@ -104,44 +101,9 @@ public enum LoggingAndRefferalEncodingType{
     static var transcriptFinish:(()->Void)?
     static var isSuggestionTranscriptEnabled = false
     static var internetCheckEnabled:Bool = true
-    //  public  static var isLoggingEnabled: Bool = false
     
-    // MARK:- Main Settings
-    
-    //    public static func initialize(RecipientIdAR: String,RecipientIdEng: String)
-    //    {
-    //        SharedPreference.shared.setUserIDs(ar: RecipientIdAR, en: RecipientIdEng)
-    //        self._pageId = SharedPreference.shared.currentUserId
-    //
-    //        LocationService.shared.updateLocation()
-    //
-    //        var uuid = "";
-    //        let preferences = UserDefaults.standard
-    //        let SenderId = "SenderId"
-    //        preferences.set(nil, forKey: SenderId)
-    //        if preferences.object(forKey: SenderId) == nil
-    //        {
-    //            uuid = UUID().uuidString
-    //            preferences.set(uuid, forKey: SenderId)
-    //            preferences.synchronize()
-    //        }
-    //        else
-    //        {
-    //            uuid = preferences.string(forKey: SenderId)!
-    //        }
-    //
-    //        setSenderId(uuid)
-    ////        setSenderId("57960621534376")
-    //        if _Referral == nil { createReferral()} // to handel the case (if setUserParams call befor initialize)
-    //        _OpenFromBubble = false
-    //        switch UIScreen.current {
-    //        case .iPad10_5 ,.iPad12_9 ,.iPad9_7 ,.ipad:
-    //            ipadFactor = 1
-    //        default:
-    //            break
-    //        }
-    //    }
-    
+    //MARK: - Main Settings
+
     public static func initialize(RecipientIdAR: String,RecipientIdEng: String)
     {
         SharedPreference.shared.setUserIDs(ar: RecipientIdAR, en: RecipientIdEng)
@@ -234,23 +196,8 @@ public enum LoggingAndRefferalEncodingType{
         
         
     }
-    
-    //    public static func set_helpPath(_ path: String)
-    //    {
-    //        self._helpPath = path
-    //    }
-    
-    //    public static func set_ratingQuestionsPath(_ path: String)
-    //    {
-    //        self._ratingQuestionsPath = path
-    //    }
-    //
-    //    public static func set_submitRatingPath(_ path: String)
-    //    {
-    //        self._submitRatingPath = path
-    //    }
-    //
-    
+
+    // make the attachment clickable or not
     public static func enableAttachmentClick(_ enable:Bool){
         isAttachmentClickable = enable
     }
@@ -315,11 +262,13 @@ public enum LoggingAndRefferalEncodingType{
         self._pageId = SharedPreference.shared.currentUserId
     }
     
+    // this is for all APIs like adding token auth and so
     public static func setHeaderParams(_ headers:[[String:String]]){
         self.clientHeaders = []
         self.clientHeaders = headers
     }
     
+    // this is for webView for conversation with agents
     public static func setSocketHeaders(_ headers:[[String:String]]){
         self.socketHeaders = []
         self.socketHeaders = headers
@@ -649,7 +598,7 @@ public enum LoggingAndRefferalEncodingType{
         {
             fatalError("SENDER_ERROR \(SENDER_ERROR)")
         }
-        
+        // cheack internet connection
         self.checkConnectivity { isConnected in
             if isConnected{
                 let convVC = ConversationViewController.create()
@@ -702,7 +651,7 @@ public enum LoggingAndRefferalEncodingType{
     }
     
     
-    
+    // alert for internet connecction
     static func showErrorMessageWithTwoActions(_ title:String, message:String, okLbl:String = "OK", view:UIViewController? = UIApplication.shared.topMostViewController ?? nil,cancelLbl:String = "Cancel",okayHandler:(()->Void)? = nil,cancelHandler:(()->Void)? = nil) -> Void {
         
         DispatchQueue.main.async {
@@ -747,6 +696,7 @@ public enum LoggingAndRefferalEncodingType{
         }
     }
     
+    //set warning banner sticky messsage
     public static func setWarningBanner(enTitle:String, arTitle:String,link:String? = nil,linkEnPressTitle:String? = nil,linkArPressTitle:String? = nil, linkPressColor:UIColor,fontName:String? = nil, fontColor:UIColor = .black, backgroundColor:UIColor = UIColor.systemYellow.withAlphaComponent(0.2), padding:Int = 20,cornerRadius:Int = 12,showBoarder:Bool = false,boarderColor:UIColor = .black.withAlphaComponent(0.3)){
         warningMessageModel = WarningMessageModel(isWarningMessageEnabled: true, enTitle: enTitle, arTitle: arTitle,link: link,linkEnPressTitle:linkEnPressTitle,linkArPressTitle: linkArPressTitle, linkPressColor: linkPressColor,fontName: fontName, fontColor: fontColor, backgroundColor: backgroundColor,padding: padding, cornerRadius: cornerRadius,showBoarder: showBoarder,boarderColor: boarderColor)
     }
@@ -768,7 +718,7 @@ public enum LoggingAndRefferalEncodingType{
         sendTranscript()
     }
     
-    
+    // alert for transcript
     static func showErrorMessageWithTwoActionsTranscript(_ title:String, message:String, okLbl:String = "OK", view:UIViewController? = UIApplication.shared.topMostViewController ?? nil,cancelLbl:String = "Cancel",okayHandler:(()->Void)? = nil,cancelHandler:(()->Void)? = nil) -> Void {
         
         DispatchQueue.main.async {
@@ -784,6 +734,7 @@ public enum LoggingAndRefferalEncodingType{
         }
     }
     
+    //send the chat conversation to email
     static func sendTranscript(){
         if isSuggestionTranscriptEnabled{
             if !Labiba.isHumanAgentStarted{
@@ -813,26 +764,6 @@ public enum LoggingAndRefferalEncodingType{
             transcriptFinish?()
         }
     }
-    
-    //    static func createConversation(closable: Bool = true, onClose: ConversationCloseHandler? = nil) -> UIViewController
-    //    { // this is should not be public
-    //
-    //        guard self._senderId != nil
-    //        else
-    //        {
-    //            fatalError(SENDER_ERROR)
-    //        }
-    //
-    //        let convVC = ConversationViewController.create()
-    //        convVC.delegate = Labiba.delegate
-    //        convVC.isClosable = closable
-    //        convVC.closeHandler = onClose
-    //
-    //        return convVC
-    //    }
-    
-    
-    
     
     public static func createVoiceExperienceConversation( ) -> UIViewController
     {
@@ -974,67 +905,3 @@ class LabibaNavigationController:UINavigationController {
     
 }
 
-
-
-//extension UIFont
-//{
-//
-//    func registerFont(fontURL: URL) -> Bool
-//    {
-//
-//
-//        FontDownloader.load(URL: URL(string:"s")!, successWithName: { (fontName) in
-//                       self.customFontLabel.font = UIFont(name: fontName, size: 40)
-//                   }) { error in
-//                       print(error.localizedDescription)
-//                   }
-//
-//        return true
-//    }
-//}
-
-//extension UIFont
-//{
-//
-//    @discardableResult static func registerFont(fontURL: URL) -> Bool
-//    {
-//
-//        guard let fontDataProvider = CGDataProvider(url: fontURL as CFURL)
-//        else
-//        {
-//            print("Couldn't load data from the font \(fontURL)")
-//            return false
-//        }
-//
-//        let font = CGFont(fontDataProvider)
-//
-//        var error: Unmanaged<CFError>?
-//        let success = CTFontManagerRegisterGraphicsFont(font!, &error)
-//
-//        guard success
-//        else
-//        {
-//            print("Error registering font: maybe it was already registered.")
-//            return false
-//        }
-//
-//        return true
-//    }
-//}
-
-
-
-
-struct WarningMessageModel{
-    var isWarningMessageEnabled:Bool = false
-    var enTitle, arTitle:String
-    var link:String?
-    var linkEnPressTitle,linkArPressTitle: String?
-    var linkPressColor:UIColor = .black
-    var fontName:String?
-    var fontColor, backgroundColor:UIColor
-    var padding:Int
-    var cornerRadius:Int
-    var showBoarder:Bool = false
-    var boarderColor:UIColor = .black.withAlphaComponent(0.3)
-}
