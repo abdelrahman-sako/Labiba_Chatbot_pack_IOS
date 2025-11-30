@@ -32,7 +32,7 @@ class RemoteDataSource:RemoteDataSourceProtocol{
     
     func getLastBotResponse(handler: @escaping Handler<LastBotResponseModel>) {
         let url = "\(Labiba._basePath)/api/getLastBotResponse"
-        let endPoint = EndPoint(url: url, httpMethod: .get)
+        let endPoint = EndPoint(url: url, httpMethod: .post)
         
         let params:[String:String] = [
             "RecepientID" :Labiba._pageId,

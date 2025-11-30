@@ -312,7 +312,7 @@ class BotConnector: NSObject {
             isTherePendingRequest = false
             currentRequest?.cancel()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                self.getLastBotResponse()
+               // self.getLastBotResponse()
             }
             
         }

@@ -95,6 +95,7 @@ public enum LoggingAndRefferalEncodingType{
     static var transcriptFinish:(()->Void)?
     static var isSuggestionTranscriptEnabled = false
     static var internetCheckEnabled:Bool = true
+    static var isLocationEnabled: Bool = true
     
     //MARK: - Main Settings
 
@@ -365,8 +366,9 @@ public enum LoggingAndRefferalEncodingType{
         ListeningDuration = Duration
     }
     
-    
-    
+    public static func endableLocation(enabled: Bool) {
+       isLocationEnabled = enabled
+    }
     
     
     public static func setHintsArray(hints:[String]){

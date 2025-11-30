@@ -47,6 +47,7 @@ class LocationService: NSObject, CLLocationManagerDelegate
 
     func requestAuthorization() -> Void
     {
+     guard Labiba.isLocationEnabled else{ return }
 
         if authorizationLevel == .always
         {
@@ -102,7 +103,7 @@ class LocationService: NSObject, CLLocationManagerDelegate
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
     {
-
+        guard Labiba.isLocationEnabled else{ return }
         print("Location Change Authorization !")
 
         let status = CLLocationManager.authorizationStatus()
@@ -163,7 +164,7 @@ class LocationService: NSObject, CLLocationManagerDelegate
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
-
+        guard Labiba.isLocationEnabled else{ return }
         print("locationManager Did recieve user location ...")
         manager.stopUpdatingLocation()
 
@@ -206,6 +207,7 @@ class LocationService: NSObject, CLLocationManagerDelegate
 
     func updateLocation() -> Void
     {
+        guard Labiba.isLocationEnabled else{ return }
         print("Updating user location ...")
         self.locationManager.startUpdatingLocation()
     }
