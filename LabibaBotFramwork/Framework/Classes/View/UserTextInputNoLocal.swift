@@ -268,6 +268,13 @@ class UserTextInputNoLocal: UserInput, UITextViewDelegate, LocationSelectViewCon
             let estimatedHight = textView.sizeThatFits(size)
             
             if textView.numberOfLines() > 1 {
+//                if textView.numberOfLines() == 2 && Labiba.warningMessageModel == nil  {
+//                    textView.isScrollEnabled = false
+//                              self.heightCons.constant = estimatedHight.height + 10
+//                              self.hightConsIpad.constant = estimatedHight.height + 10
+//                              return
+//                          }
+
                 textView.isScrollEnabled = true
             }else{
                 textView.isScrollEnabled = false
