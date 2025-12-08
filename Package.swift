@@ -6,23 +6,25 @@
 //  Copyright © 2025 Abdul Rahman. All rights reserved.
 //
 
+
 import PackageDescription
 
 let package = Package(
-    name: "LabibaBotFramework",
+    name: "Labiba_Chatbot_pack_IOS",
     platforms: [
         .iOS(.v13)
     ],
     products: [
         .library(
-            name: "LabibaBotFramework",
-            targets: ["LabibaBotFramework"]
+            name: "Labiba_Chatbot_pack_IOS",
+            targets: ["Labiba_Chatbot_pack_IOS"]
         )
     ],
     targets: [
         .target(
-            name: "LabibaChatBot",
+            name: "Labiba_Chatbot_pack_IOS",
             path: "Sources"
         )
     ]
 )
+
