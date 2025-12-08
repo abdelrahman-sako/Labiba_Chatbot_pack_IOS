@@ -569,7 +569,7 @@
 		37379707240BAA310036C74D /* BankOfJoSplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankOfJoSplashVC.swift; sourceTree = "<group>"; };
 		37460D99230A7AC1002748CE /* ReferralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralModel.swift; sourceTree = "<group>"; };
 		37460D9C230A9710002748CE /* SharedPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPreference.swift; sourceTree = "<group>"; };
-		37460DC4230ACE1A002748CE /* MovableAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovableAlias.swift; path = LabibaBotFramwork/Framework/Classes/MovableAlias.swift; sourceTree = SOURCE_ROOT; };
+		37460DC4230ACE1A002748CE /* MovableAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovableAlias.swift; path = Sources/LabibaBotFramwork/Framework/Classes/MovableAlias.swift; sourceTree = SOURCE_ROOT; };
 		374A3FF523E85F0800C99766 /* TextToSpeechModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechModel.swift; sourceTree = "<group>"; };
 		374FB3E823EABE5A0066E325 /* StanderdSplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StanderdSplashVC.swift; sourceTree = "<group>"; };
 		375404B523FE68200047289F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1034,6 +1034,7 @@
 		E81355E02E0BE3E000078C75 /* FrutigerLTArabic-45Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FrutigerLTArabic-45Light.ttf"; sourceTree = "<group>"; };
 		E81355E12E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FrutigerLTArabic-65Bold.ttf"; sourceTree = "<group>"; };
 		E8A14E572DA7B97100A27C08 /* RatingNewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingNewVC.swift; sourceTree = "<group>"; };
+		E8BEBFFF2EE700020048C84A /* Package.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift.swift; sourceTree = "<group>"; };
 		F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEventHumanAgent.swift; sourceTree = "<group>"; };
 		F96C538A293778210038440A /* UploadDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataResponseModel.swift; sourceTree = "<group>"; };
 		F96C538C29377D760038440A /* UploadDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataModel.swift; sourceTree = "<group>"; };
@@ -2086,8 +2087,8 @@
 		B429547322DDD9D1002DE3E9 = {
 			isa = PBXGroup;
 			children = (
-				B429547F22DDD9D1002DE3E9 /* LabibaBotFramwork */,
-				B429547E22DDD9D1002DE3E9 /* Products */,
+				E8BEBFFF2EE700020048C84A /* Package.swift.swift */,
+				E8BEC0002EE702FE0048C84A /* Sources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2341,6 +2342,15 @@
 				E81355E12E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E8BEC0002EE702FE0048C84A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B429547F22DDD9D1002DE3E9 /* LabibaBotFramwork */,
+				B429547E22DDD9D1002DE3E9 /* Products */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		F9013BE128716D4900DE2BA0 /* HumanAgent */ = {
