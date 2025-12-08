@@ -1,5 +1,5 @@
 //
-//  Package.swift.swift
+//  Package.swift
 //  LabibaBotFramework
 //
 //  Created by Mohammad Khalil on 08/12/2025.
@@ -18,14 +18,14 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "LabibaBotFramework",
+            name: "LabibaBotFramwork",
             targets: ["LabibaBotFramwork"]
             
         )
     ],
     targets: [
         .target(
-            name: "LabibaBotFramwork", 
+            name: "LabibaBotFramwork",
             path: "Sources/LabibaBotFramwork"
         )
     ]
