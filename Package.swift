@@ -7,27 +7,24 @@
 //
 
 
-// swift-tools-version: 6.2 
-
-
+// swift-tools-version:6.2
 import PackageDescription
 
 let package = Package(
-    name: "Labiba_Chatbot_pack_IOS",
+    name: "LabibaBotFramework",
     platforms: [
         .iOS(.v13)
     ],
     products: [
         .library(
-            name: "Labiba_Chatbot_pack_IOS",
-            targets: ["Labiba_Chatbot_pack_IOS"]
+            name: "LabibaBotFramework",
+            targets: ["LabibaBotFramework"]
         )
     ],
     targets: [
         .target(
-            name: "Labiba_Chatbot_pack_IOS",
-            path: "Sources"
+            name: "LabibaBotFramework",
+            path: "Sources/LabibaBotFramework" 
         )
     ]
 )
-
