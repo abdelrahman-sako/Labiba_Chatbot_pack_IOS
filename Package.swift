@@ -21,7 +21,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "MySDK",
+            name: "LabibaChatBot",
             path: "Sources"
         )
     ]
