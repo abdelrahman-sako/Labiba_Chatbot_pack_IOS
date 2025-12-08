@@ -8,6 +8,7 @@
 
 
 // swift-tools-version:6.2
+
 import PackageDescription
 
 let package = Package(
@@ -18,13 +19,14 @@ let package = Package(
     products: [
         .library(
             name: "LabibaBotFramework",
-            targets: ["LabibaBotFramework"]
+            targets: ["LabibaBotFramwork"]
+            
         )
     ],
     targets: [
         .target(
-            name: "LabibaBotFramework",
-            path: "Sources/LabibaBotFramework" 
+            name: "LabibaBotFramwork", 
+            path: "Sources/LabibaBotFramwork"
         )
     ]
 )
