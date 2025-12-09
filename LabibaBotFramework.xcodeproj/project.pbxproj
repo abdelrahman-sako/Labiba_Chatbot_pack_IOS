@@ -938,7 +938,6 @@
 		75EDDA782A1E5DE1003D6152 /* VMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VMenuCell.xib; sourceTree = "<group>"; };
 		75EDDA792A1E5DE1003D6152 /* VMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMenuCell.swift; sourceTree = "<group>"; };
 		75EDDA7B2A1E5DE1003D6152 /* VMenuCellTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMenuCellTheme.swift; sourceTree = "<group>"; };
-		B429547D22DDD9D1002DE3E9 /* LabibaBotFramwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LabibaBotFramwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B429548022DDD9D1002DE3E9 /* LabibaBotFramwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabibaBotFramwork.h; sourceTree = "<group>"; };
 		B429548122DDD9D1002DE3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B429549622DDDBD2002DE3E9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1034,6 +1033,7 @@
 		E81355E02E0BE3E000078C75 /* FrutigerLTArabic-45Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FrutigerLTArabic-45Light.ttf"; sourceTree = "<group>"; };
 		E81355E12E0BE3E000078C75 /* FrutigerLTArabic-65Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FrutigerLTArabic-65Bold.ttf"; sourceTree = "<group>"; };
 		E8A14E572DA7B97100A27C08 /* RatingNewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingNewVC.swift; sourceTree = "<group>"; };
+		E8B2713E2EE80BAB006249AB /* LabibaBotFramwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LabibaBotFramwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BEBFFF2EE700020048C84A /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F9013BE228716DEC00DE2BA0 /* WebViewEventHumanAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEventHumanAgent.swift; sourceTree = "<group>"; };
 		F96C538A293778210038440A /* UploadDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDataResponseModel.swift; sourceTree = "<group>"; };
@@ -2089,15 +2089,8 @@
 			children = (
 				E8BEBFFF2EE700020048C84A /* Package.swift */,
 				E8BEC0002EE702FE0048C84A /* Sources */,
+				E8B2713E2EE80BAB006249AB /* LabibaBotFramwork.framework */,
 			);
-			sourceTree = "<group>";
-		};
-		B429547E22DDD9D1002DE3E9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B429547D22DDD9D1002DE3E9 /* LabibaBotFramwork.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		B429547F22DDD9D1002DE3E9 /* LabibaBotFramwork */ = {
@@ -2348,7 +2341,6 @@
 			isa = PBXGroup;
 			children = (
 				B429547F22DDD9D1002DE3E9 /* LabibaBotFramwork */,
-				B429547E22DDD9D1002DE3E9 /* Products */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -2455,7 +2447,7 @@
 			);
 			name = LabibaBotFramwork;
 			productName = LabibaBotFramwork;
-			productReference = B429547D22DDD9D1002DE3E9 /* LabibaBotFramwork.framework */;
+			productReference = E8B2713E2EE80BAB006249AB /* LabibaBotFramwork.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -2493,7 +2485,7 @@
 				zh,
 			);
 			mainGroup = B429547322DDD9D1002DE3E9;
-			productRefGroup = B429547E22DDD9D1002DE3E9 /* Products */;
+			productRefGroup = B429547322DDD9D1002DE3E9;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -3183,7 +3175,7 @@
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SocketRocket/SocketRocket.framework/Headers\"",
 				);
-				INFOPLIST_FILE = LabibaBotFramwork/Info.plist;
+				INFOPLIST_FILE = Sources/LabibaBotFramwork/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3403,7 +3395,7 @@
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SocketRocket/SocketRocket.framework/Headers\"",
 				);
-				INFOPLIST_FILE = LabibaBotFramwork/Info.plist;
+				INFOPLIST_FILE = Sources/LabibaBotFramwork/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3480,7 +3472,7 @@
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SocketRocket/SocketRocket.framework/Headers\"",
 				);
-				INFOPLIST_FILE = LabibaBotFramwork/Info.plist;
+				INFOPLIST_FILE = Sources/LabibaBotFramwork/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
