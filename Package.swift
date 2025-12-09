@@ -22,7 +22,7 @@ let package = Package(
             targets: ["LabibaBotFramework"]
         )
     ],
-    targets: [
+    .targets: [
         .target(
             name: "LabibaBotFramework",
             path: "Sources/LabibaBotFramwork"
