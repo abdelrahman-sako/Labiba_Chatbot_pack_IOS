@@ -25,8 +25,8 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "LabibaBotFramework",
-            path: "Sources/LabibaBotFramework"
+            name: "LabibaBotFramwork",
+            path: "Sources/LabibaBotFramwork"
         )
     ]
 )

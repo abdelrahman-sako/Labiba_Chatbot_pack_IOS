@@ -1,0 +1,15 @@
+{
+  "originHash" : "a8ad3f3a2dc21f064f2ca3fdd6da649ec40cba13dc42822843e93cb151ace8b0",
+  "pins" : [
+    {
+      "identity" : "labiba_chatbot_pack_ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/abdelrahman-sako/Labiba_Chatbot_pack_IOS",
+      "state" : {
+        "branch" : "main",
+        "revision" : "23ff2e67d815aa6c50fdd9ea790e77bd477c79ad"
+      }
+    }
+  ],
+  "version" : 3
+}
