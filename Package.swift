@@ -18,14 +18,13 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "LabibaBotFramework",
+            name: "LabibaBotFramework", 
             targets: ["LabibaBotFramework"]
-            
         )
     ],
     targets: [
         .target(
-            name: "LabibaBotFramwork",
+            name: "LabibaBotFramework",
             path: "Sources/LabibaBotFramwork"
         )
     ]
